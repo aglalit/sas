@@ -19,7 +19,7 @@ const flash = require('connect-flash');
 
 var index = require('./routes/index');
 
-mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas");
+var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", { useMongoClient: true });
 
 // Connection URL
 var url = "mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas";
@@ -30,6 +30,13 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   console.log('Mongo is connected');
+});
+
+promise.then(function(db) {
+  db.on('error', console.error.bind(console, 'connection error:'));
+  db.on('open', function() {
+    console.log('Mongo is connected');
+});
 });
 
 // create reusable transporter object using the default SMTP transport
