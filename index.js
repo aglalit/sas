@@ -19,26 +19,18 @@ const flash = require('connect-flash');
 
 var index = require('./routes/index');
 
-var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
+mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas");
 
 // Connection URL
 var url = "mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas";
 const GOOGLE_CLIENT_ID = "118043106079-9di4ho7ofbpqq6de49t68dvbjm37kq83.apps.googleusercontent.com";
 const GOOGLE_CLIENT_SECRET = "wumdeuRozgysj238MJtBy5kg";
 // Use connect method to connect to the server
-MongoClient.connect(url, function(err, db) {
-  // assert.equal(null, err);
-  if (err)
-    console.log(err);
-  else
-    console.log("Connected successfully to server");
-    // insertDocument(db, function() {
-    //     db.close();
-    // });
-    // db.close();
-  }
-);
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('Mongo is connected');
+});
 
 // create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
