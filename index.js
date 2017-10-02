@@ -16,10 +16,8 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const session = require('express-session');
 const flash = require('connect-flash');
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
@@ -87,8 +85,6 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
-app.use('/users', users);
-
 app.post('/login', passport.authenticate('local-signup', {
   successRedirect: '/', // redirect to the secure profile section
   failureRedirect: '/', // redirect back to the signup page if there is an error
@@ -118,8 +114,8 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: '/',
-  failureRedirect: '/login'
+  successRedirect: '/profile',
+  failureRedirect: '/'
 }));
 
 function isLoggedIn(req, res, next) {
