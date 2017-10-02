@@ -118,7 +118,9 @@ app.get('/auth/google/callback', passport.authenticate('google', {
   failureRedirect: '/'
 }));
 
-app.get('/profile', res.render('profile'));
+app.get('/profile', function(req,res){
+res.render('profile')
+});
 
 function isLoggedIn(req, res, next) {
 
