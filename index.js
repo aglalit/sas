@@ -118,7 +118,7 @@ app.get('/auth/google/callback', passport.authenticate('google', {
 }));
 
 app.get('/profile', function(req,res){
-res.render('profile')
+res.render('profile',{user: user})
 });
 
 function isLoggedIn(req, res, next) {
