@@ -112,21 +112,13 @@ app.get('/auth/google', passport.authenticate('google', {
   scope: ['profile', 'email']
 }));
 
-app.get('/auth/google/callback', passport.authenticate('google', function(err, user, info) {
-  if (err) {
-    return next(err);
-  }
-  if (!user) {
-    return res.redirect('/google/auth');
-  } else {
-    res.render('profile', {user: user})
-  }
-})
+app.get('/auth/google/callback', passport.authenticate('google'), function(req, res) {
+  res.render('profile',{user:req.user})
+});
 // {
 //   successRedirect: '/profile',
 //   failureRedirect: '/'
 // }
-);
 
 app.get('/profile', function(req, res) {
   res.render('profile', {user: req.user})
