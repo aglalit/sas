@@ -62,9 +62,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
 // required for passport
-app.use(session({secret: 'schoolofadvancedstudiessecret'})); // session secret
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
+// app.use(session({secret: 'schoolofadvancedstudiessecret'})); // session secret
+// app.use(passport.initialize());
+// app.use(passport.session()); // persistent login sessions
 require('./config/passport')(passport);
 app.use(flash()); // use connect-flash for flash messages stored in session
 // app.use(xFrameOptions('ALLOW-FROM http://webvisor.com/'));
@@ -85,17 +85,17 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
-app.post('/login', passport.authenticate('local-signup', {
-  successRedirect: '/', // redirect to the secure profile section
-  failureRedirect: '/', // redirect back to the signup page if there is an error
-  failureFlash: true // allow flash messages
-}));
-
-app.get('/login', function(req, res) {
-  console.log(req.flash('loginMessage'));
-  // render the page and pass in any flash data if it exists
-  res.render('login.pug', {message: req.flash('loginMessage')});
-});
+// app.post('/login', passport.authenticate('local-signup', {
+//   successRedirect: '/', // redirect to the secure profile section
+//   failureRedirect: '/', // redirect back to the signup page if there is an error
+//   failureFlash: true // allow flash messages
+// }));
+//
+// app.get('/login', function(req, res) {
+//   console.log(req.flash('loginMessage'));
+//   // render the page and pass in any flash data if it exists
+//   res.render('login.pug', {message: req.flash('loginMessage')});
+// });
 
 // passport.use(new GoogleStrategy({
 //   clientID: GOOGLE_CLIENT_ID,
