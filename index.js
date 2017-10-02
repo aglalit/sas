@@ -26,8 +26,8 @@ var assert = require('assert');
 
 // Connection URL
 var url = "mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas";
-const GOOGLE_CLIENT_ID = "91994124095-lme1c4d14dk0sdaglfua2bebal1hdpet.apps.googleusercontent.com";
-const GOOGLE_CLIENT_SECRET = "8EGsB-f1QczU2q0lYHRx_4hg";
+const GOOGLE_CLIENT_ID = "118043106079-9di4ho7ofbpqq6de49t68dvbjm37kq83.apps.googleusercontent.com";
+const GOOGLE_CLIENT_SECRET = "wumdeuRozgysj238MJtBy5kg";
 // Use connect method to connect to the server
 MongoClient.connect(url, function(err, db) {
   // assert.equal(null, err);
