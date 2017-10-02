@@ -61,9 +61,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
 // required for passport
-// app.use(session({secret: 'schoolofadvancedstudiessecret'})); // session secret
-// app.use(passport.initialize());
-// app.use(passport.session()); // persistent login sessions
+app.use(session({secret: 'schoolofadvancedstudiessecret'})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
 require('./config/passport')(passport);
 app.use(flash()); // use connect-flash for flash messages stored in session
 // app.use(xFrameOptions('ALLOW-FROM http://webvisor.com/'));
