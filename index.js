@@ -19,7 +19,7 @@ const flash = require('connect-flash');
 
 var index = require('./routes/index');
 
-var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", { useMongoClient: true });
+var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", {useMongoClient: true});
 
 // Connection URL
 var url = "mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas";
@@ -36,7 +36,7 @@ promise.then(function(db) {
   db.on('error', console.error.bind(console, 'connection error:'));
   db.on('open', function() {
     console.log('Mongo is connected');
-});
+  });
 });
 
 // create reusable transporter object using the default SMTP transport
@@ -112,20 +112,24 @@ app.get('/auth/google', passport.authenticate('google', {
   scope: ['profile', 'email']
 }));
 
-app.get('/auth/google/callback', passport.authenticate('google', function(err,user.info){
-  if (err) { return next(err); }
-  if (!user) { return res.redirect('/google/auth'); }
-  else {res.render('profile',{user: user})}
-    });
-}
+app.get('/auth/google/callback', passport.authenticate('google', function(err, user, info) {
+  if (err) {
+    return next(err);
+  }
+  if (!user) {
+    return res.redirect('/google/auth');
+  } else {
+    res.render('profile', {user: user})
+  }
+})
 // {
 //   successRedirect: '/profile',
 //   failureRedirect: '/'
 // }
-));
+);
 
-app.get('/profile', function(req,res){
-res.render('profile',{user: req.user})
+app.get('/profile', function(req, res) {
+  res.render('profile', {user: req.user})
 });
 
 function isLoggedIn(req, res, next) {
