@@ -97,17 +97,17 @@ app.get('/login', function(req, res) {
   res.render('login.pug', {message: req.flash('loginMessage')});
 });
 
-passport.use(new GoogleStrategy({
-  clientID: GOOGLE_CLIENT_ID,
-  clientSecret: GOOGLE_CLIENT_SECRET,
-  callbackURL: "/auth/google/callback"
-}, function(accessToken, refreshToken, profile, done) {
-  User.findOrCreate({
-    googleId: profile.id
-  }, function(err, user) {
-    return done(err, user);
-  });
-}));
+// passport.use(new GoogleStrategy({
+//   clientID: GOOGLE_CLIENT_ID,
+//   clientSecret: GOOGLE_CLIENT_SECRET,
+//   callbackURL: "/auth/google/callback"
+// }, function(accessToken, refreshToken, profile, done) {
+//   User.findOrCreate({
+//     googleId: profile.id
+//   }, function(err, user) {
+//     return done(err, user);
+//   });
+// }));
 
 app.get('/auth/google', passport.authenticate('google', {
   scope: ['profile', 'email']
