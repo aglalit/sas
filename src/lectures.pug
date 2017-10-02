@@ -195,7 +195,7 @@ html(lang="ru")
                 input(id="agreement-checkbox" type="checkbox")
                 label(for="agreement-checkbox" class="form-subscribe__label") Я даю согласие на обработку своих персональных данных
     script(type="text/javascript" src="//vk.com/js/api/openapi.js?146")
-    script if (window.innerWidth>1000) {VK.Widgets.Group("vk_groups", {mode: 3,width:400,height:200,no_cover:1}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}else {VK.Widgets.Group("vk_groups", {mode: 3,width:280,no_cover:1}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}document.getElementById('vk_groups').style.margin = '20px 10px';
+    script try{ if (VK!==undefined){if (window.innerWidth>1000) {VK.Widgets.Group("vk_groups", {mode: 3,width:400,height:200,no_cover:1}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}else {VK.Widgets.Group("vk_groups", {mode: 3,width:280,no_cover:1}, 146251082); document.getElementById('vk_groups').style.margin = '20px';}document.getElementById('vk_groups').style.margin = '20px 10px';};};
 
 
 
