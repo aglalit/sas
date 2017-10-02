@@ -52,7 +52,6 @@ let transporter = nodemailer.createTransport({
 app.set('port', (process.env.PORT || 5000));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.engine('pug', require('pug').__express)
 app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
@@ -118,6 +117,8 @@ app.get('/auth/google/callback', passport.authenticate('google', {
   successRedirect: '/profile',
   failureRedirect: '/'
 }));
+
+app.get('/profile', res.render('profile'));
 
 function isLoggedIn(req, res, next) {
 
