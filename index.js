@@ -112,13 +112,20 @@ app.get('/auth/google', passport.authenticate('google', {
   scope: ['profile', 'email']
 }));
 
-app.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: '/profile',
-  failureRedirect: '/'
-}));
+app.get('/auth/google/callback', passport.authenticate('google', function(err,user.info){
+  if (err) { return next(err); }
+  if (!user) { return res.redirect('/google/auth'); }
+  else {res.render('profile',{user: user})}
+    });
+}
+// {
+//   successRedirect: '/profile',
+//   failureRedirect: '/'
+// }
+));
 
 app.get('/profile', function(req,res){
-res.render('profile',{user: user})
+res.render('profile',{user: req.user})
 });
 
 function isLoggedIn(req, res, next) {
