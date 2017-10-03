@@ -85,11 +85,11 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google'), function(req, res) {
-  res.render('profile',{user:req.user})
+  res.render('polls',{user:req.user})
 });
 
-app.get('/profile', function(req, res) {
-  res.render('profile', {user: req.user})
+app.get('/polls', function(req, res) {
+  res.render('polls', {user: req.user})
 });
 
 app.get('/logout', function(req, res) {
@@ -105,7 +105,7 @@ function isLoggedIn(req, res, next) {
     return next();
 
   // if they aren't redirect them to the home page
-  res.redirect('/auth/google');
+  res.redirect('/login');
 }
 
 app.post('/subscribe', function(req, res) {
