@@ -90,7 +90,7 @@ app.get('/auth/google/callback', passport.authenticate('google'), function(req, 
 });
 
 app.get('/polls', function(req, res) {
-  res.render('polls', {user: req.user})
+  res.render('polls')
 });
 
 app.get('/logout', function(req, res) {
