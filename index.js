@@ -98,6 +98,7 @@ app.get('/polls-ai-1', isLoggedIn, function(req, res) {
 app.post('/polls-ai-1', function(req, res) {
   let question1 = req.body.question1;
   console.log(question1);
+  console.log(req.user);
 });
 
 app.get('/logout', function(req, res) {
