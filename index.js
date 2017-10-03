@@ -92,6 +92,13 @@ app.get('/polls', isLoggedIn, function(req, res) {
   res.render('polls', {user: req.user})
 });
 
+app.get('/polls-ai-1', isLoggedIn, function(req, res) {
+  res.render('polls_ai_1', {user: req.user})
+});
+app.post('/polls-ai-1', function(req, res) {
+  res.render('polls_ai_1', {user: req.user})
+});
+
 app.get('/logout', function(req, res) {
         req.logout();
         res.redirect('/polls');
