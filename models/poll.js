@@ -19,4 +19,4 @@ function pollModelAI(req) {
   });
 }
 
-module.exports = pollModelAI(req);
+module.exports = pollModelAI;
