@@ -1,3 +1,4 @@
+var User            = require('./user');
 function pollModelAI(req) {
   User.findOne({
     '_id': req.user._id
