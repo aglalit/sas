@@ -27,10 +27,6 @@ const GOOGLE_CLIENT_ID = "118043106079-9di4ho7ofbpqq6de49t68dvbjm37kq83.apps.goo
 const GOOGLE_CLIENT_SECRET = "wumdeuRozgysj238MJtBy5kg";
 // Use connect method to connect to the server
 var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('Mongo is connected');
-});
 
 promise.then(function(db) {
   db.on('error', console.error.bind(console, 'connection error:'));
@@ -84,30 +80,6 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
-// app.post('/login', passport.authenticate('local-signup', {
-//   successRedirect: '/', // redirect to the secure profile section
-//   failureRedirect: '/', // redirect back to the signup page if there is an error
-//   failureFlash: true // allow flash messages
-// }));
-//
-// app.get('/login', function(req, res) {
-//   console.log(req.flash('loginMessage'));
-//   // render the page and pass in any flash data if it exists
-//   res.render('login.pug', {message: req.flash('loginMessage')});
-// });
-
-// passport.use(new GoogleStrategy({
-//   clientID: GOOGLE_CLIENT_ID,
-//   clientSecret: GOOGLE_CLIENT_SECRET,
-//   callbackURL: "/auth/google/callback"
-// }, function(accessToken, refreshToken, profile, done) {
-//   User.findOrCreate({
-//     googleId: profile.id
-//   }, function(err, user) {
-//     return done(err, user);
-//   });
-// }));
-
 app.get('/auth/google', passport.authenticate('google', {
   scope: ['profile', 'email']
 }));
@@ -115,14 +87,16 @@ app.get('/auth/google', passport.authenticate('google', {
 app.get('/auth/google/callback', passport.authenticate('google'), function(req, res) {
   res.render('profile',{user:req.user})
 });
-// {
-//   successRedirect: '/profile',
-//   failureRedirect: '/'
-// }
 
 app.get('/profile', function(req, res) {
   res.render('profile', {user: req.user})
 });
+
+app.get('/logout', function(req, res) {
+        req.logout();
+        res.redirect('/');
+    });
+
 
 function isLoggedIn(req, res, next) {
 
@@ -131,7 +105,7 @@ function isLoggedIn(req, res, next) {
     return next();
 
   // if they aren't redirect them to the home page
-  res.redirect('/');
+  res.redirect('/auth/google');
 }
 
 app.post('/subscribe', function(req, res) {

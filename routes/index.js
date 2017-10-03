@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
+const nodemailer = require('nodemailer');
+const fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
