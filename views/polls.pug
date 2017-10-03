@@ -5,8 +5,7 @@ html
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
     style.
-      body        { padding-top:80px;   font-family: 'Agipo-Bold';}
-      h1 {font-family: 'Agipo-Bold';}
+      body        {    font-family: 'Agipo-Bold';}
       @font-face {
         font-family: 'Agipo-Bold';
         src:url('fonts/agipo/Agipo-Bold.woff');
@@ -17,16 +16,13 @@ html
         h1 Опросы Школы перспективных исследований
       .row
         // GOOGLE INFORMATION
-        .col-sm-6
+        .col-sm-3.col-xs-12
           .well
             h3.text-danger
               span.fa.fa-google-plus Google
             p
-              strong id #{user.google.id}
               br
-              strong token #{user.google.token}
+              strong Email: #{user.google.email}
               br
-              strong email #{user.google.email}
-              br
-              strong name #{user.google.name}
+              strong Имя: #{user.google.name}
             a.btn.btn-default.btn-lg(href='/logout') Выйти
