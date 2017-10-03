@@ -96,9 +96,8 @@ app.get('/polls-ai-1', isLoggedIn, function(req, res) {
   res.render('polls_ai_1', {user: req.user})
 });
 app.post('/polls-ai-1', function(req, res) {
-  let question1 = req.body.question1;
-  console.log(question1);
-  console.log(req.user);
+  var model = require('./models/poll');
+  model(req);
 });
 
 app.get('/logout', function(req, res) {
