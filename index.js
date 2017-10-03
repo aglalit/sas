@@ -85,8 +85,7 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google'), function(req, res) {
-  // res.render('polls',{user:req.user})
-  res.redirect('/polls',{user: req.user});
+  res.render('polls',{user:req.user})
 });
 
 app.get('/polls', isLoggedIn, function(req, res) {
