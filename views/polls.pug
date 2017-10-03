@@ -1,18 +1,22 @@
 doctype html
 html
   head
-    title Node Authentication
+    title Опросы Школы перспективных исследований - Главная
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
     style.
-      body        { padding-top:80px; word-wrap:break-word; }
+      body        { padding-top:80px;   font-family: 'Agipo-Bold';}
+      h1 {font-family: 'Agipo-Bold';}
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('fonts/agipo/Agipo-Bold.woff');
+      }
   body
     .container
       .page-header.text-center
         h1
-          span.fa.fa-anchor
-          |  Profile Page
-        a.btn.btn-default.btn-sm(href='/logout') Logout
+          span.fa.fa-anchor Опросы Школы перспективных исследований - Главная
+        a.btn.btn-default.btn-sm(href='/logout') Выйти
       .row
         // GOOGLE INFORMATION
         .col-sm-6

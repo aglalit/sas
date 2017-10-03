@@ -1,16 +1,23 @@
 doctype html
 head
-  title Node Authentication
+  title Школа перспективных исследований - Регистрация
   link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
   // load bootstrap css
   link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
   // load fontawesome
   style.
-    body        { padding-top:80px; }
+    body        { padding-top:80px;   font-family: 'Agipo-Bold';}
+    h1 {font-family: 'Agipo-Bold';}
+    @font-face {
+      font-family: 'Agipo-Bold';
+      src:url('fonts/agipo/Agipo-Bold.woff');
+    }
 .container
   .jumbotron.text-center
-    h1
-      span.fa.fa-lock Node Authentication
-    p Login or Register with:
-    a.btn.btn-danger(href='/auth/google')
+    h1 Школа перспективных исследований
+    h2
+      span.fa.fa-lock   
+      span  Регистрация
+    p Для участия в опросах зарегистрируйтесь при помощи своего студенческого аккаунта Gmail:
+    a.btn.btn-danger.btn-lg(href='/auth/google')
       span.fa.fa-google-plus Google
