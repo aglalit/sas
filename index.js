@@ -94,10 +94,10 @@ app.get('/polls', isLoggedIn, function(req, res) {
   res.render('polls', {user: req.user})
 });
 
-app.get('/polls-ai-methaphor', isLoggedIn, function(req, res) {
-  res.render('polls_ai_methaphor', {user: req.user})
+app.get('/polls-ai-metaphor', isLoggedIn, function(req, res) {
+  res.render('polls_ai_metaphor', {user: req.user})
 });
-app.post('/polls-ai-methaphor', function(req, res) {
+app.post('/polls-ai-metaphor', function(req, res) {
   User.schema.methods.poll(req);
 });
 
