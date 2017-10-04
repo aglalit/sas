@@ -123,7 +123,7 @@ app.post('/polls-ai-metaphor', function(req, res) {
       from: '"SAS" <sas@utmn.ru>', // sender address
       to: 'marat.goya@gmail.com', // list of receivers
       subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
-      text: req.body, // plain text body
+      text: JSON.stringify(req.body), // plain text body
       html: '<b>' + req.body + '</b>' // html body
     };
     transporter.sendMail(mailOptions, (error, info) => {
