@@ -19,6 +19,7 @@ const flash = require('connect-flash');
 
 var index = require('./routes/index');
 var User = require('./models/user');
+console.log(User.schema.methods);
 
 var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", {useMongoClient: true});
 
@@ -98,7 +99,13 @@ app.get('/polls-ai-metaphor', isLoggedIn, function(req, res) {
 });
 app.post('/polls-ai-metaphor', function(req, res) {
   console.log(User);
-  User.schema.methods.poll(req);
+  try{
+    User.schema.methods.poll(req);
+  }
+  catch(e){
+    console.log(e);
+  }
+
 });
 
 app.get('/logout', function(req, res) {
