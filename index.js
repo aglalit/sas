@@ -90,13 +90,13 @@ app.get('/auth/google/callback', passport.authenticate('google'), function(req, 
 });
 
 app.get('/polls',
-// isLoggedIn,
+isLoggedIn,
 function(req, res) {
   res.render('polls', {user: req.user})
 });
 
 app.get('/polls-ai-metaphor',
-// isLoggedIn,
+isLoggedIn,
 function(req, res) {
   res.render('polls_ai_metaphor', {user: req.user})
 });
@@ -109,11 +109,10 @@ app.post('/polls-ai-metaphor', function(req, res) {
 
       if (user) {
         user.polls.AI_Metaphor.LECTURES["Как хорошо были организованы материалы курса"] = req.body["Как хорошо были организованы материалы курса"];
-  console.log(req.body);
+        user.polls.AI_Metaphor.SEMINARS["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"] = req.body["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"];
         user.save(function(err, user) {
           if (err)
             return console.error(err);
-          console.log(user);
         });
       } else {
         console.log('There isn\'t such user in the database');
