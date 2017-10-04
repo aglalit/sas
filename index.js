@@ -18,6 +18,8 @@ const session = require('express-session');
 const flash = require('connect-flash');
 
 var index = require('./routes/index');
+var User = require('./models/user');
+console.log(User.schema.methods);
 
 var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", {useMongoClient: true});
 
@@ -92,12 +94,11 @@ app.get('/polls', isLoggedIn, function(req, res) {
   res.render('polls', {user: req.user})
 });
 
-app.get('/polls-ai-1', isLoggedIn, function(req, res) {
-  res.render('polls_ai_1', {user: req.user})
+app.get('/polls-ai-methaphor', isLoggedIn, function(req, res) {
+  res.render('polls_ai_methaphor', {user: req.user})
 });
-app.post('/polls-ai-1', function(req, res) {
-  var model = require('./models/poll');
-  model(req);
+app.post('/polls-ai-methaphor', function(req, res) {
+  User.schema.methods.poll(req);
 });
 
 app.get('/logout', function(req, res) {
