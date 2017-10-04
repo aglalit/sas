@@ -101,6 +101,7 @@ function(req, res) {
   res.render('polls_ai_metaphor', {user: req.user})
 });
 app.post('/polls-ai-metaphor', function(req, res) {
+    console.log(User);
     User.findOne({
       '_id': req.user._id
     }, function(err, user) {
