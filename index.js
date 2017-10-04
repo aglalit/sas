@@ -19,7 +19,6 @@ const flash = require('connect-flash');
 
 var index = require('./routes/index');
 var User = require('./models/user');
-console.log(User.schema.methods);
 
 var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", {useMongoClient: true});
 
@@ -90,21 +89,36 @@ app.get('/auth/google/callback', passport.authenticate('google'), function(req, 
   res.render('polls',{user:req.user})
 });
 
-app.get('/polls', isLoggedIn, function(req, res) {
+app.get('/polls',
+// isLoggedIn,
+function(req, res) {
   res.render('polls', {user: req.user})
 });
 
-app.get('/polls-ai-metaphor', isLoggedIn, function(req, res) {
+app.get('/polls-ai-metaphor',
+// isLoggedIn,
+function(req, res) {
   res.render('polls_ai_metaphor', {user: req.user})
 });
 app.post('/polls-ai-metaphor', function(req, res) {
-  console.log(User);
-  try{
-    User.schema.methods.poll(req);
-  }
-  catch(e){
-    console.log(e);
-  }
+    User.findOne({
+      '_id': req.user._id
+    }, function(err, user) {
+      if (err)
+        return done(err);
+
+      if (user) {
+        user.polls.AI_Metaphor.LECTURES["Как хорошо были организованы материалы курса"] = req.body["Как хорошо были организованы материалы курса"];
+  console.log(req.body);
+        user.save(function(err, user) {
+          if (err)
+            return console.error(err);
+          console.log(user);
+        });
+      } else {
+        console.log('There isn\'t such user in the database');
+      }
+    });
 
 });
 
