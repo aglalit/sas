@@ -14,7 +14,7 @@ var userSchema = mongoose.Schema({
     AI_Metaphor: {
       LECTURES:{
         "Как хорошо были организованы материалы курса" : Number
-      }
+      },
       SEMINARS:{
 
       }
