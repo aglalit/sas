@@ -119,7 +119,20 @@ app.post('/polls-ai-metaphor', function(req, res) {
         console.log('There isn\'t such user in the database');
       }
     });
-res.redirect('/polls-ai-metaphor');
+    let mailOptions = {
+      from: '"SAS" <sas@utmn.ru>', // sender address
+      to: 'marat.goya@gmail.com', // list of receivers
+      subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
+      text: req.body, // plain text body
+      html: '<b>' + req.body + '</b>' // html body
+    };
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log('Message %s sent: %s', info.messageId, info.response);
+    });
+res.redirect('/polls');
 });
 
 app.get('/logout', function(req, res) {
