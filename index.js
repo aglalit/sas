@@ -119,7 +119,7 @@ app.post('/polls-ai-metaphor', function(req, res) {
         console.log('There isn\'t such user in the database');
       }
     });
-
+res.redirect('/polls-ai-metaphor');
 });
 
 app.get('/logout', function(req, res) {
