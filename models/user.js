@@ -35,7 +35,7 @@ userSchema.methods.validPassword = function(password) {
 };
 
 userSchema.methods.poll = function(req){
-  User.findOne({
+  userSchema.findOne({
     '_id': req.user._id
   }, function(err, user) {
     if (err)
