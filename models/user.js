@@ -11,7 +11,7 @@ var userSchema = mongoose.Schema({
     name: String
   },
   polls: {
-    AI_Metaphor2: {
+    AI_Metaphor: {
       LECTURES:{
         "Как хорошо были организованы материалы курса" : Number
       },

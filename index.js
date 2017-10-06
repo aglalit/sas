@@ -109,8 +109,8 @@ app.post('/polls-ai-metaphor', function(req, res) {
         return done(err);
 
       if (user) {
-        user.polls.AI_Metaphor2.LECTURES["Как хорошо были организованы материалы курса"] = req.body["Как хорошо были организованы материалы курса"];
-        user.polls.AI_Metaphor2.SEMINARS["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"] = req.body["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"];
+        user.polls.AI_Metaphor.LECTURES["Как хорошо были организованы материалы курса"] = req.body["Как хорошо были организованы материалы курса"];
+        user.polls.AI_Metaphor.SEMINARS["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"] = req.body["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"];
         user.save(function(err, user) {
           if (err)
             return console.error(err);
