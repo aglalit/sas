@@ -110,7 +110,7 @@ app.post('/polls-ai-metaphor', function(req, res) {
 
       if (user) {
         user.polls.AI_Metaphor.LECTURES["Как хорошо были организованы материалы курса"] = parseInt(req.body["Как хорошо были организованы материалы курса"], 10);
-        user.polls.AI_Metaphor.LECTURES["Насколько пунктуален был преподаватель"] = parseInt(req.body["Насколько пунктуален был преподаватель"], 10);
+        user.polls.AI_Metaphor.LECTURES["Насколько пунктуален был преподаватель (лекции)"] = parseInt(req.body["Насколько пунктуален был преподаватель (лекции)"], 10);
         user.polls.AI_Metaphor.LECTURES["Насколько полно преподаватель следовал программе курса"] = parseInt(req.body["Насколько полно преподаватель следовал программе курса"], 10);
         user.polls.AI_Metaphor.LECTURES["Оцените сложность лекций для вашего понимания"] = parseInt(req.body["Оцените сложность лекций для вашего понимания"], 10);
         user.polls.AI_Metaphor.LECTURES["Насколько новым для вас было содержание лекций"] = parseInt(req.body["Насколько новым для вас было содержание лекций"], 10);
