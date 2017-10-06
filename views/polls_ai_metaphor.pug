@@ -25,8 +25,11 @@ head
     .input-group .form-control {
       margin: 20px 0 40px 0;
     }
-    label, input, textarea, select,legend {
+    label,legend {
       text-align: left;
+    }
+    input, textarea, select {
+      float:left;
     }
     @media (max-width:768px){
       body{padding-top:10px}
@@ -35,6 +38,12 @@ head
       }
     legend {
       font-size:30px;
+    }
+    label,legend {
+      text-align: center;
+    }
+    input, textarea, select {
+      float: none;
     }
     }
 .container
