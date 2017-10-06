@@ -14,7 +14,7 @@ head
     .input-group label {
       width:100%;
     }
-  script function OnI(){this.style.height="auto !important",this.style.height=this.scrollHeight+"px !important"}for(var tx=document.getElementsByTagName("textarea"),i=0;i<tx.length;i++)tx[i].setAttribute("style","height:"+tx[i].scrollHeight+"px !important;overflow-y:hidden;"),tx[i].addEventListener("input",OnI,!1);
+  script var tx = document.getElementsByTagName('textarea');for (var i = 0; i < tx.length; i++) {tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');tx[i].addEventListener("input", OnInput, false);}function OnInput() {this.style.height = 'auto';this.style.height = (this.scrollHeight) + 'px';}
 .container
   .jumbotron.text-center
     h1 Обратная связь. Лекции и семинары. "Анализ и интерпретация: Метафора" 
