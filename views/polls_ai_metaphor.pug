@@ -14,9 +14,6 @@ head
     .input-group label {
       width:100%;
     }
-    .form-control[type="textarea"] {
-      height: auto !important;
-    }
 .container
   .jumbotron.text-center
     h1 Обратная связь. Лекции и семинары. "Анализ и интерпретация: Метафора" 
@@ -43,13 +40,13 @@ head
           label(for="Если бы этот курс не входил в ядро, взяли бы вы его как электив") Если бы этот курс не входил в «ядро», взяли бы вы его как электив? Оцените не конкретного преподавателя, а сам курс в целом по шкале от 0 до 10, где 0 – не взял бы ни в коем случае; 5 – взял бы, если бы в это время не было других хороших курсов; 10 – взял бы непременно.
             input(type="number" required class="form-control" name="Если бы этот курс не входил в ядро, взяли бы вы его как электив" min="0" max="10")
           label(for="Что вам больше всего понравилось в этом лекционном курсе") Что вам больше всего понравилось в этом лекционном курсе? 
-            input(type="textarea" rows=4 required class="form-control" name="Что вам больше всего понравилось в этом лекционном курсе") 
+            textarea(rows="4" required class="form-control" name="Что вам больше всего понравилось в этом лекционном курсе") 
           label(for="Что вам больше всего не понравилось в этом лекционном курсе") Что вам больше всего не понравилось в этом лекционном курсе?
-            input(type="textarea" rows=4 required class="form-control" name="Что вам больше всего не понравилось в этом лекционном курсе")
+            textarea(rows="4" required class="form-control" name="Что вам больше всего не понравилось в этом лекционном курсе")
           label(for="Что для вас было самым сложным в этом лекционном курсе") Что для вас было самым сложным в этом лекционном курсе?
-            input(type="textarea" rows=4 required class="form-control" name="Что для вас было самым сложным в этом лекционном курсе")
+            textarea(rows="4" required class="form-control" name="Что для вас было самым сложным в этом лекционном курсе")
           label(for="Как бы вы порекомендовали улучшить этот лекционный курс") Как бы вы порекомендовали улучшить этот лекционный курс?
-            input(type="textarea" rows=4 required class="form-control" name="Как бы вы порекомендовали улучшить этот лекционный курс")  
+            textarea(rows="4" required class="form-control" name="Как бы вы порекомендовали улучшить этот лекционный курс")  
       fieldset
         legend СЕМИНАРЫ:
         div(class="input-group")
@@ -83,11 +80,11 @@ head
           label(for="Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса") Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса?
             input(type="number" required class="form-control" name="Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса" min="0" max="100")
           label(for="Что вам больше всего понравилось в этом семинаре") Что вам больше всего понравилось в этом семинаре?
-            input(type="textarea" rows=4 required class="form-control" name="Что вам больше всего понравилось в этом семинаре")  
+            textarea(rows="4" required class="form-control" name="Что вам больше всего понравилось в этом семинаре")  
           label(for="Что вам больше всего не понравилось в этом семинаре") Что вам больше всего не понравилось в этом семинаре?
-            input(type="textarea" rows=4 required class="form-control" name="Что вам больше всего не понравилось в этом семинаре")
+            textarea(rows="4" required class="form-control" name="Что вам больше всего не понравилось в этом семинаре")
           label(for="Что для вас было самым сложным в этом семинаре") Что для вас было самым сложным в этом семинаре?
-            input(type="textarea" rows=4 required class="form-control" name="Что для вас было самым сложным в этом семинаре") 
+            textarea(rows="4" required class="form-control" name="Что для вас было самым сложным в этом семинаре") 
           label(for="Как бы вы порекомендовали улучшить этот семинар") Как бы вы порекомендовали улучшить этот семинар?
-            input(type="textarea" rows=4 required class="form-control" name="Как бы вы порекомендовали улучшить этот семинар")   
+            textarea(rows="4" required class="form-control" name="Как бы вы порекомендовали улучшить этот семинар")   
       button(type="submit" class="btn btn-primary") Отправить
