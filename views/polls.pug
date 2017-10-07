@@ -14,8 +14,8 @@ html
     div(class="container")
       div(class="page-header text-center")
         h1 Обратная связь. Лекции и семинары
-      -if(info)
-        div(class="alert alert-success") #{info}
+      -if(messages)
+        div(class="alert alert-success") #{messages}
       div(class="row")
         div(class="col-xs-12")
           ul(class="list-unstyled")
