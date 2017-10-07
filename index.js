@@ -147,6 +147,7 @@ app.post('/polls-ai-metaphor', function(req, res) {
         console.log('There isn\'t such user in the database');
       }
     });
+    req.flash('info', 'Ваш результат принят. Благодарим за участие.');
     let mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
       to: 'marat.goya@gmail.com', // list of receivers
