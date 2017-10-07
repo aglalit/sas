@@ -161,7 +161,7 @@ app.post('/polls-ai-metaphor', function(req, res) {
       }
       console.log('Message %s sent: %s', info.messageId, info.response);
     });
-res.redirect('/polls');
+res.render('polls', {messages: req.flash('info')});
 });
 
 app.get('/logout', function(req, res) {
