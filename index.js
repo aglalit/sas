@@ -86,7 +86,7 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google'), function(req, res) {
-  res.render('polls',{user:req.user})
+  res.render('polls_ai_metaphor',{user:req.user})
 });
 
 app.get('/polls',
@@ -152,7 +152,7 @@ app.post('/polls-ai-metaphor', function(req, res) {
       to: 'marat.goya@gmail.com', // list of receivers
       subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
       text: JSON.stringify(req.user) // plain text body
-      // html: '<b>' + JSON.stringify(req.body) + '</b>' // html body
+      html: '<b>' + JSON.stringify(req.body) + '</b>' // html body
     };
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
