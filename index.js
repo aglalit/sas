@@ -152,7 +152,7 @@ app.post('/polls-ai-metaphor', function(req, res) {
       to: 'marat.goya@gmail.com', // list of receivers
       subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
       // text: JSON.stringify(req.user), // plain text body
-      html: '<b>' + JSON.stringify(req.user) + '<br/><br/>'+ JSON.stringify(req.body) + '</b>' // html body
+      html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>'+ JSON.stringify(req.body) + '</b>' // html body
     };
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
