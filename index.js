@@ -58,11 +58,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
 // required for passport
-app.use(session({
-  secret: 'schoolofadvancedstudiessecret'
-}, cookie : {
-  maxAge: 60000
-})); // session secret
+app.use(session({secret: 'schoolofadvancedstudiessecret'})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 require('./config/passport')(passport);
@@ -90,97 +86,98 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google'), function(req, res) {
-  res.render('polls_ai_metaphor', {user: req.user})
+  res.render('polls_ai_metaphor',{user:req.user})
 });
 
-app.get('/polls', isLoggedIn, function(req, res) {
+app.get('/polls',
+isLoggedIn,
+function(req, res) {
   res.render('polls', {user: req.user})
 });
 
-app.get('/polls-ai-metaphor', isLoggedIn, function(req, res) {
+app.get('/polls-ai-metaphor',
+isLoggedIn,
+function(req, res) {
   res.render('polls_ai_metaphor', {user: req.user})
 });
 app.post('/polls-ai-metaphor', function(req, res) {
-  console.log(req.body);
-  User.findOne({
-    '_id': req.user._id
-  }, function(err, user) {
-    if (err)
-      return done(err);
+    console.log(req.body);
+    User.findOne({
+      '_id': req.user._id
+    }, function(err, user) {
+      if (err)
+        return done(err);
 
-    if (user) {
-      user.polls.AI_Metaphor.LECTURES["Как хорошо были организованы материалы курса"] = parseInt(req.body["Как хорошо были организованы материалы курса"]);
-      user.polls.AI_Metaphor.LECTURES["Насколько пунктуален был преподаватель (лекции)"] = parseInt(req.body["Насколько пунктуален был преподаватель (лекции)"]);
-      user.polls.AI_Metaphor.LECTURES["Насколько полно преподаватель следовал программе курса"] = parseInt(req.body["Насколько полно преподаватель следовал программе курса"]);
-      user.polls.AI_Metaphor.LECTURES["Оцените сложность лекций для вашего понимания"] = parseInt(req.body["Оцените сложность лекций для вашего понимания"]);
-      user.polls.AI_Metaphor.LECTURES["Насколько новым для вас было содержание лекций"] = parseInt(req.body["Насколько новым для вас было содержание лекций"]);
-      user.polls.AI_Metaphor.LECTURES["Насколько вам понравилась манера чтения лекций этим преподавателем"] = parseInt(req.body["Насколько вам понравилась манера чтения лекций этим преподавателем"]);
-      user.polls.AI_Metaphor.LECTURES["Насколько изменились ваше мышление, знания и умения"] = parseInt(req.body["Насколько изменились ваше мышление, знания и умения"]);
-      user.polls.AI_Metaphor.LECTURES["Хотите ли вы снова встретиться с этим преподавателем на других курсах"] = parseInt(req.body["Хотите ли вы снова встретиться с этим преподавателем на других курсах"]);
-      user.polls.AI_Metaphor.LECTURES["Если бы этот курс не входил в ядро, взяли бы вы его как электив"] = parseInt(req.body["Если бы этот курс не входил в ядро, взяли бы вы его как электив"]);
-      user.polls.AI_Metaphor.LECTURES["Что вам больше всего понравилось в этом лекционном курсе"] = req.body["Что вам больше всего понравилось в этом лекционном курсе"];
-      user.polls.AI_Metaphor.LECTURES["Что вам больше всего не понравилось в этом лекционном курсе"] = req.body["Что вам больше всего не понравилось в этом лекционном курсе"];
-      user.polls.AI_Metaphor.LECTURES["Что для вас было самым сложным в этом лекционном курсе"] = req.body["Что для вас было самым сложным в этом лекционном курсе"];
-      user.polls.AI_Metaphor.LECTURES["Как бы вы порекомендовали улучшить этот лекционный курс"] = req.body["Как бы вы порекомендовали улучшить этот лекционный курс"];
+      if (user) {
+        user.polls.AI_Metaphor.LECTURES["Как хорошо были организованы материалы курса"] = parseInt(req.body["Как хорошо были организованы материалы курса"]);
+        user.polls.AI_Metaphor.LECTURES["Насколько пунктуален был преподаватель (лекции)"] = parseInt(req.body["Насколько пунктуален был преподаватель (лекции)"]);
+        user.polls.AI_Metaphor.LECTURES["Насколько полно преподаватель следовал программе курса"] = parseInt(req.body["Насколько полно преподаватель следовал программе курса"]);
+        user.polls.AI_Metaphor.LECTURES["Оцените сложность лекций для вашего понимания"] = parseInt(req.body["Оцените сложность лекций для вашего понимания"]);
+        user.polls.AI_Metaphor.LECTURES["Насколько новым для вас было содержание лекций"] = parseInt(req.body["Насколько новым для вас было содержание лекций"]);
+        user.polls.AI_Metaphor.LECTURES["Насколько вам понравилась манера чтения лекций этим преподавателем"] = parseInt(req.body["Насколько вам понравилась манера чтения лекций этим преподавателем"]);
+        user.polls.AI_Metaphor.LECTURES["Насколько изменились ваше мышление, знания и умения"] = parseInt(req.body["Насколько изменились ваше мышление, знания и умения"]);
+        user.polls.AI_Metaphor.LECTURES["Хотите ли вы снова встретиться с этим преподавателем на других курсах"] = parseInt(req.body["Хотите ли вы снова встретиться с этим преподавателем на других курсах"]);
+        user.polls.AI_Metaphor.LECTURES["Если бы этот курс не входил в ядро, взяли бы вы его как электив"] = parseInt(req.body["Если бы этот курс не входил в ядро, взяли бы вы его как электив"]);
+        user.polls.AI_Metaphor.LECTURES["Что вам больше всего понравилось в этом лекционном курсе"] = req.body["Что вам больше всего понравилось в этом лекционном курсе"];
+        user.polls.AI_Metaphor.LECTURES["Что вам больше всего не понравилось в этом лекционном курсе"] = req.body["Что вам больше всего не понравилось в этом лекционном курсе"];
+        user.polls.AI_Metaphor.LECTURES["Что для вас было самым сложным в этом лекционном курсе"] = req.body["Что для вас было самым сложным в этом лекционном курсе"];
+        user.polls.AI_Metaphor.LECTURES["Как бы вы порекомендовали улучшить этот лекционный курс"] = req.body["Как бы вы порекомендовали улучшить этот лекционный курс"];
 
-      user.polls.AI_Metaphor.SEMINARS["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"] = req.body["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"];
-      user.polls.AI_Metaphor.SEMINARS["Насколько полно преподаватель следовал темам"] = parseInt(req.body["Насколько полно преподаватель следовал темам"]);
-      user.polls.AI_Metaphor.SEMINARS["Насколько хорошо преподаватель организует интерактивную коммуникацию в группе"] = parseInt(req.body["Насколько хорошо преподаватель организует интерактивную коммуникацию в группе"]);
-      user.polls.AI_Metaphor.SEMINARS["Сколько раз в течение одного семинарского занятия вы (в среднем) высказывались вслух"] = parseInt(req.body["Сколько раз в течение одного семинарского занятия вы (в среднем) высказывались вслух"]);
-      user.polls.AI_Metaphor.SEMINARS["Насколько хорошо преподаватель объясняет материал"] = parseInt(req.body["Насколько хорошо преподаватель объясняет материал"]);
-      user.polls.AI_Metaphor.SEMINARS["Насколько семинарские занятия помогли вам освоить материал лекций"] = parseInt(req.body["Насколько семинарские занятия помогли вам освоить материал лекций"]);
-      user.polls.AI_Metaphor.SEMINARS["Насколько пунктуален был преподаватель"] = parseInt(req.body["Насколько пунктуален был преподаватель"]);
-      user.polls.AI_Metaphor.SEMINARS["Какую оценку (балл от 0 до 10) вы ожидаете получить за эту часть курса"] = parseInt(req.body["Какую оценку (балл от 0 до 10) вы ожидаете получить за эту часть курса"]);
-      user.polls.AI_Metaphor.SEMINARS["Готовы ли вы снова встретиться с этим преподавателем на других курсах"] = parseInt(req.body["Готовы ли вы снова встретиться с этим преподавателем на других курсах"]);
-      user.polls.AI_Metaphor.SEMINARS["Сколько процентов обязательных текстов по этой части курса вы успевали прочесть"] = parseInt(req.body["Сколько процентов обязательных текстов по этой части курса вы успевали прочесть"]);
-      user.polls.AI_Metaphor.SEMINARS["Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса"] = parseInt(req.body["Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса"]);
-      user.polls.AI_Metaphor.SEMINARS["Что вам больше всего понравилось в этом семинаре"] = req.body["Что вам больше всего понравилось в этом семинаре"];
-      user.polls.AI_Metaphor.SEMINARS["Что вам больше всего не понравилось в этом семинаре"] = req.body["Что вам больше всего не понравилось в этом семинаре"];
-      user.polls.AI_Metaphor.SEMINARS["Что для вас было самым сложным в этом семинаре"] = req.body["Что для вас было самым сложным в этом семинаре"];
-      user.polls.AI_Metaphor.SEMINARS["Как бы вы порекомендовали улучшить этот семинар"] = req.body["Как бы вы порекомендовали улучшить этот семинар"];
+        user.polls.AI_Metaphor.SEMINARS["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"] = req.body["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"];
+        user.polls.AI_Metaphor.SEMINARS["Насколько полно преподаватель следовал темам"] = parseInt(req.body["Насколько полно преподаватель следовал темам"]);
+        user.polls.AI_Metaphor.SEMINARS["Насколько хорошо преподаватель организует интерактивную коммуникацию в группе"] = parseInt(req.body["Насколько хорошо преподаватель организует интерактивную коммуникацию в группе"]);
+        user.polls.AI_Metaphor.SEMINARS["Сколько раз в течение одного семинарского занятия вы (в среднем) высказывались вслух"] = parseInt(req.body["Сколько раз в течение одного семинарского занятия вы (в среднем) высказывались вслух"]);
+        user.polls.AI_Metaphor.SEMINARS["Насколько хорошо преподаватель объясняет материал"] = parseInt(req.body["Насколько хорошо преподаватель объясняет материал"]);
+        user.polls.AI_Metaphor.SEMINARS["Насколько семинарские занятия помогли вам освоить материал лекций"] = parseInt(req.body["Насколько семинарские занятия помогли вам освоить материал лекций"]);
+        user.polls.AI_Metaphor.SEMINARS["Насколько пунктуален был преподаватель"] = parseInt(req.body["Насколько пунктуален был преподаватель"]);
+        user.polls.AI_Metaphor.SEMINARS["Какую оценку (балл от 0 до 10) вы ожидаете получить за эту часть курса"] = parseInt(req.body["Какую оценку (балл от 0 до 10) вы ожидаете получить за эту часть курса"]);
+        user.polls.AI_Metaphor.SEMINARS["Готовы ли вы снова встретиться с этим преподавателем на других курсах"] = parseInt(req.body["Готовы ли вы снова встретиться с этим преподавателем на других курсах"]);
+        user.polls.AI_Metaphor.SEMINARS["Сколько процентов обязательных текстов по этой части курса вы успевали прочесть"] = parseInt(req.body["Сколько процентов обязательных текстов по этой части курса вы успевали прочесть"]);
+        user.polls.AI_Metaphor.SEMINARS["Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса"] = parseInt(req.body["Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса"]);
+        user.polls.AI_Metaphor.SEMINARS["Что вам больше всего понравилось в этом семинаре"] = req.body["Что вам больше всего понравилось в этом семинаре"];
+        user.polls.AI_Metaphor.SEMINARS["Что вам больше всего не понравилось в этом семинаре"] = req.body["Что вам больше всего не понравилось в этом семинаре"];
+        user.polls.AI_Metaphor.SEMINARS["Что для вас было самым сложным в этом семинаре"] = req.body["Что для вас было самым сложным в этом семинаре"];
+        user.polls.AI_Metaphor.SEMINARS["Как бы вы порекомендовали улучшить этот семинар"] = req.body["Как бы вы порекомендовали улучшить этот семинар"];
 
-      user.save(function(err, user) {
-        if (err)
-          return console.error(err);
-        }
-      );
-    } else {
-      console.log('There isn\'t such user in the database');
-    }
-  });
-  req.flash('info', 'Ваш результат принят. Благодарим за участие.');
-  let mailOptions = {
-    from: '"SAS" <sas@utmn.ru>', // sender address
-    to: 'marat.goya@gmail.com', // list of receivers
-    subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
-    // text: JSON.stringify(req.user), // plain text body
-    html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
-  };
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return console.log(error);
-    }
-    console.log('Message %s sent: %s', info.messageId, info.response);
-  });
-  res.render('polls', {
-    user: req.user,
-    messages: req.flash('info')
-  });
+        user.save(function(err, user) {
+          if (err)
+            return console.error(err);
+        });
+      } else {
+        console.log('There isn\'t such user in the database');
+      }
+    });
+    req.flash('info', 'Ваш результат принят. Благодарим за участие.');
+    let mailOptions = {
+      from: '"SAS" <sas@utmn.ru>', // sender address
+      to: 'marat.goya@gmail.com', // list of receivers
+      subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
+      // text: JSON.stringify(req.user), // plain text body
+      html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>'+ JSON.stringify(req.body) + '</b>' // html body
+    };
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log('Message %s sent: %s', info.messageId, info.response);
+    });
+res.render('polls', {user: req.user, messages: req.flash('info')});
 });
 
 app.get('/logout', function(req, res) {
-  req.logout();
-  res.redirect('/polls');
-});
+        req.logout();
+        res.redirect('/polls');
+    });
+
 
 function isLoggedIn(req, res, next) {
 
   // if user is authenticated in the session, carry on
-  if (req.isAuthenticated()) {
+  if (req.isAuthenticated())
+  {
     console.log(req.isAuthenticated());
     console.log('isAuthenticated');
-    return next();
-  }
+    return next();}
 
   // if they aren't redirect them to the home page
   console.log(req.isAuthenticated());
@@ -252,7 +249,7 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = err;
+  res.locals.error  = err;
   // = req.app.get('env') === 'development'
   //   ? err
   //   : {};
