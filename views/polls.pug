@@ -30,7 +30,7 @@ html
               br
               -if(user)
                 strong Email: #{user.google.email}
-              -else 
+              -if(!user)
                 strong Email: #{user.google.email}
               br
               strong Имя: #{user.google.name}
