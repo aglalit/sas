@@ -102,6 +102,8 @@ function(req, res) {
 });
 app.post('/polls-ai-metaphor', function(req, res) {
     console.log(req.body);
+    if (req.user){
+
     User.findOne({
       '_id': req.user._id
     }, function(err, user) {
@@ -162,6 +164,26 @@ app.post('/polls-ai-metaphor', function(req, res) {
       console.log('Message %s sent: %s', info.messageId, info.response);
     });
 res.render('polls', {user: req.user, messages: req.flash('info')});
+}
+
+
+else {
+  req.flash('info', 'Ваш результат принят. Благодарим за участие.');
+  let mailOptions = {
+    from: '"SAS" <sas@utmn.ru>', // sender address
+    to: 'marat.goya@gmail.com', // list of receivers
+    subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
+    // text: JSON.stringify(req.user), // plain text body
+    html: '<b>' + JSON.stringify(req.body) + '</b>' // html body
+  };
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log(error);
+    }
+    console.log('Message %s sent: %s', info.messageId, info.response);
+  });
+res.render('polls', {messages: req.flash('info')});
+}
 });
 
 app.get('/logout', function(req, res) {
