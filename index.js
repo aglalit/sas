@@ -85,24 +85,25 @@ app.get('/auth/google', passport.authenticate('google', {
   scope: ['profile', 'email']
 }));
 
-app.get('/auth/google/callback', passport.authenticate('google'), function(req, res) {
-  res.render('polls_ai_metaphor',{user:req.user})
+app.get('/auth/google/callback', passport.authenticate('google', {
+  successRedirect: '/polls_ai_metaphor',
+  failureRedirect: '/login'
 });
+// passport.authenticate('google'),
+// function(req, res) {
+//   res.render('polls_ai_metaphor',{user:req.user})
+// });
 
-app.get('/polls',
-isLoggedIn,
-function(req, res) {
+app.get('/polls', isLoggedIn, function(req, res) {
   res.render('polls', {user: req.user})
 });
 
-app.get('/polls-ai-metaphor',
-isLoggedIn,
-function(req, res) {
+app.get('/polls-ai-metaphor', isLoggedIn, function(req, res) {
   res.render('polls_ai_metaphor', {user: req.user})
 });
 app.post('/polls-ai-metaphor', function(req, res) {
-    console.log(req.body);
-    if (req.user){
+  console.log(req.body);
+  if (req.user) {
 
     User.findOne({
       '_id': req.user._id
@@ -144,7 +145,8 @@ app.post('/polls-ai-metaphor', function(req, res) {
         user.save(function(err, user) {
           if (err)
             return console.error(err);
-        });
+          }
+        );
       } else {
         console.log('There isn\'t such user in the database');
       }
@@ -155,7 +157,7 @@ app.post('/polls-ai-metaphor', function(req, res) {
       to: 'marat.goya@gmail.com', // list of receivers
       subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
       // text: JSON.stringify(req.user), // plain text body
-      html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>'+ JSON.stringify(req.body) + '</b>' // html body
+      html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
     };
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
@@ -163,43 +165,42 @@ app.post('/polls-ai-metaphor', function(req, res) {
       }
       console.log('Message %s sent: %s', info.messageId, info.response);
     });
-res.render('polls', {user: req.user, messages: req.flash('info')});
-}
-
-
-else {
-  req.flash('info', 'Ваш результат принят. Благодарим за участие.');
-  let mailOptions = {
-    from: '"SAS" <sas@utmn.ru>', // sender address
-    to: 'marat.goya@gmail.com', // list of receivers
-    subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
-    // text: JSON.stringify(req.user), // plain text body
-    html: '<b>' + JSON.stringify(req.body) + '</b>' // html body
-  };
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return console.log(error);
-    }
-    console.log('Message %s sent: %s', info.messageId, info.response);
-  });
-res.render('polls', {messages: req.flash('info')});
-}
+    res.render('polls', {
+      user: req.user,
+      messages: req.flash('info')
+    });
+  } else {
+    req.flash('info', 'Ваш результат принят. Благодарим за участие.');
+    let mailOptions = {
+      from: '"SAS" <sas@utmn.ru>', // sender address
+      to: 'marat.goya@gmail.com', // list of receivers
+      subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
+      // text: JSON.stringify(req.user), // plain text body
+      html: '<b>' + JSON.stringify(req.body) + '</b>' // html body
+    };
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log('Message %s sent: %s', info.messageId, info.response);
+    });
+    res.render('polls', {messages: req.flash('info')});
+  }
 });
 
 app.get('/logout', function(req, res) {
-        req.logout();
-        res.redirect('/polls');
-    });
-
+  req.logout();
+  res.redirect('/polls');
+});
 
 function isLoggedIn(req, res, next) {
 
   // if user is authenticated in the session, carry on
-  if (req.isAuthenticated())
-  {
+  if (req.isAuthenticated()) {
     console.log(req.isAuthenticated());
     console.log('isAuthenticated');
-    return next();}
+    return next();
+  }
 
   // if they aren't redirect them to the home page
   console.log(req.isAuthenticated());
@@ -271,7 +272,7 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error  = err;
+  res.locals.error = err;
   // = req.app.get('env') === 'development'
   //   ? err
   //   : {};
