@@ -30,8 +30,8 @@ html
               br
               -if(user)
                 strong Email: #{user.google.email}
-              -if(!user)
-                strong Email: #{user.google.email}
               br
-              strong Имя: #{user.google.name}
+              -if(user)
+                strong Имя: #{user.google.name}
+                
             a.btn.btn-default.btn-lg(href='/logout') Выйти
