@@ -86,9 +86,7 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google'), function(req, res) {
-  // res.render('polls_ai_metaphor',{user:req.user})
-  passport.authenticate('google', { successRedirect: '/polls_ai_metaphor',
-                                   failureRedirect: '/login' })
+  res.render('polls_ai_metaphor',{user:req.user})
 });
 
 app.get('/polls',
