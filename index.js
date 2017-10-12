@@ -102,6 +102,50 @@ app.get('/polls', isLoggedIn, function(req, res) {
 app.get('/polls-ai-metaphor', isLoggedIn, function(req, res) {
   res.render('polls_ai_metaphor', {user: req.user})
 });
+
+app.get('/2nd-module-electives-1', isLoggedIn, function(req, res) {
+  res.render('2nd-module-electives-1', {user: req.user})
+});
+
+app.post('/2nd-module-electives-1', function(req, res) {
+    User.findOne({
+      '_id': req.user._id
+    }, function(err, user) {
+      if (err)
+        return done(err);
+
+      if (user) {
+        user.polls.ELECTIVES["2module__electives_1"] = parseInt(req.body["2module__electives_1"]);
+
+        user.save(function(err, user) {
+          if (err)
+            return console.error(err);
+          }
+        );
+      } else {
+        console.log('There isn\'t such user in the database');
+      }
+    });
+    req.flash('info', 'Ваш результат принят. Благодарим за участие.');
+    let mailOptions = {
+      from: '"SAS" <sas@utmn.ru>', // sender address
+      to: 'marat.goya@gmail.com', // list of receivers
+      subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
+      // text: JSON.stringify(req.user), // plain text body
+      html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
+    };
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log('Message %s sent: %s', info.messageId, info.response);
+    });
+    res.render('polls', {
+      user: req.user,
+      messages: req.flash('info')
+    });
+});
+
 app.post('/polls-ai-metaphor', function(req, res) {
   console.log(req.body);
   if (req.user) {
