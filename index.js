@@ -19,6 +19,7 @@ const flash = require('connect-flash');
 
 var index = require('./routes/index');
 var User = require('./models/user');
+var Session = require('./models/session');
 
 var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", {useMongoClient: true});
 
@@ -103,7 +104,24 @@ app.get('/polls-ai-metaphor', isLoggedIn, function(req, res) {
   res.render('polls_ai_metaphor', {user: req.user})
 });
 
+app.get('/polls-ai-interpretation', function(req, res) {
+  var newSession = new Session();
+  newSession.id = req.session.id;
+  newSession.save(function(err) {
+      if (err)
+          throw err;
+      return done(null, newSession);
+  });
+  res.render('polls_ai_interpretation');
+});
+
+app.post('/polls-ai-interpretation', function(req, res) {
+  console.log(req.session.id);
+  res.render('polls_ai_interpretation')
+});
+
 app.get('/2nd-module-electives-1', isLoggedIn, function(req, res) {
+
   res.render('2nd-module-electives-1', {user: req.user})
 });
 
