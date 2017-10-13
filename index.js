@@ -100,24 +100,218 @@ app.get('/polls', isLoggedIn, function(req, res) {
   res.render('polls', {user: req.user})
 });
 
+app.get('/polls-anonymous', function(req, res) {
+  res.render('polls_anonymous', {messages: req.flash('info')})
+});
+
 app.get('/polls-ai-metaphor', isLoggedIn, function(req, res) {
   res.render('polls_ai_metaphor', {user: req.user})
 });
 
-app.get('/polls-ai-interpretation', function(req, res) {
-  var newSession = new Session();
-  newSession.id = req.session.id;
-  newSession.save(function(err) {
-      if (err)
-          throw err;
-      return done(null, newSession);
-  });
-  res.render('polls_ai_interpretation');
+app.get('/polls-ai-interpretation-ru', function(req, res) {
+
+  res.render('polls_ai_interpretation_ru');
+});
+app.get('/polls-ai-interpretation-en', function(req, res) {
+
+  res.render('polls_ai_interpretation_en');
 });
 
-app.post('/polls-ai-interpretation', function(req, res) {
-  console.log(req.session.id);
-  res.render('polls_ai_interpretation')
+app.post('/polls-ai-interpretation-ru', function(req, res) {
+  Session.findOne({
+    'session_id': req.session.id
+  }, function(err, session) {
+    if (err)
+      return done(err);
+
+    if (session) {
+      var now = new Date();
+
+      session.polls.AI_Interpretation.language = 'ru';
+      session.polls.AI_Interpretation.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+      session.polls.AI_Interpretation.LECTURES["Как хорошо были организованы материалы курса"] = parseInt(req.body["Как хорошо были организованы материалы курса"]);
+      session.polls.AI_Interpretation.LECTURES["Насколько пунктуален был преподаватель (лекции)(лектор 1)"] = parseInt(req.body["Насколько пунктуален был преподаватель (лекции)(лектор 1)"]);
+      session.polls.AI_Interpretation.LECTURES["Насколько пунктуален был преподаватель (лекции)(лектор 2)"] = parseInt(req.body["Насколько пунктуален был преподаватель (лекции)(лектор 2)"]);
+      session.polls.AI_Interpretation.LECTURES["Насколько полно преподаватель следовал программе курса(лектор 1)"] = parseInt(req.body["Насколько полно преподаватель следовал программе курса(лектор 1)"]);
+      session.polls.AI_Interpretation.LECTURES["Насколько полно преподаватель следовал программе курса(лектор 2)"] = parseInt(req.body["Насколько полно преподаватель следовал программе курса(лектор 2)"]);
+      session.polls.AI_Interpretation.LECTURES["Оцените сложность лекций для вашего понимания(лектор 1)"] = parseInt(req.body["Оцените сложность лекций для вашего понимания(лектор 1)"]);
+      session.polls.AI_Interpretation.LECTURES["Оцените сложность лекций для вашего понимания(лектор 2)"] = parseInt(req.body["Оцените сложность лекций для вашего понимания(лектор 2)"]);
+      session.polls.AI_Interpretation.LECTURES["Насколько новым для вас было содержание лекций(лектор 1)"] = parseInt(req.body["Насколько новым для вас было содержание лекций(лектор 1)"]);
+      session.polls.AI_Interpretation.LECTURES["Насколько новым для вас было содержание лекций(лектор 2)"] = parseInt(req.body["Насколько новым для вас было содержание лекций(лектор 2)"]);
+      session.polls.AI_Interpretation.LECTURES["Насколько вам понравилась манера чтения лекций этим преподавателем(лектор 1)"] = parseInt(req.body["Насколько вам понравилась манера чтения лекций этим преподавателем(лектор 1)"]);
+      session.polls.AI_Interpretation.LECTURES["Насколько вам понравилась манера чтения лекций этим преподавателем(лектор 2)"] = parseInt(req.body["Насколько вам понравилась манера чтения лекций этим преподавателем(лектор 2)"]);
+      session.polls.AI_Interpretation.LECTURES["Насколько изменились ваше мышление, знания и умения"] = parseInt(req.body["Насколько изменились ваше мышление, знания и умения"]);
+      session.polls.AI_Interpretation.LECTURES["Хотите ли вы снова встретиться с этим преподавателем на других курсах(лектор 1)"] = parseInt(req.body["Хотите ли вы снова встретиться с этим преподавателем на других курсах(лектор 1)"]);
+      session.polls.AI_Interpretation.LECTURES["Хотите ли вы снова встретиться с этим преподавателем на других курсах(лектор 2)"] = parseInt(req.body["Хотите ли вы снова встретиться с этим преподавателем на других курсах(лектор 2)"]);
+      session.polls.AI_Interpretation.LECTURES["Если бы этот курс не входил в ядро, взяли бы вы его как электив"] = parseInt(req.body["Если бы этот курс не входил в ядро, взяли бы вы его как электив"]);
+      session.polls.AI_Interpretation.LECTURES["Что вам больше всего понравилось в этом лекционном курсе"] = req.body["Что вам больше всего понравилось в этом лекционном курсе"];
+      session.polls.AI_Interpretation.LECTURES["Что вам больше всего не понравилось в этом лекционном курсе"] = req.body["Что вам больше всего не понравилось в этом лекционном курсе"];
+      session.polls.AI_Interpretation.LECTURES["Что для вас было самым сложным в этом лекционном курсе"] = req.body["Что для вас было самым сложным в этом лекционном курсе"];
+      session.polls.AI_Interpretation.LECTURES["Как бы вы порекомендовали улучшить этот лекционный курс"] = req.body["Как бы вы порекомендовали улучшить этот лекционный курс"];
+
+      session.polls.AI_Interpretation.SEMINARS["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"] = req.body["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"];
+      session.polls.AI_Interpretation.SEMINARS["Насколько полно преподаватель следовал темам"] = parseInt(req.body["Насколько полно преподаватель следовал темам"]);
+      session.polls.AI_Interpretation.SEMINARS["Насколько хорошо преподаватель организует интерактивную коммуникацию в группе"] = parseInt(req.body["Насколько хорошо преподаватель организует интерактивную коммуникацию в группе"]);
+      session.polls.AI_Interpretation.SEMINARS["Сколько раз в течение одного семинарского занятия вы (в среднем) высказывались вслух"] = parseInt(req.body["Сколько раз в течение одного семинарского занятия вы (в среднем) высказывались вслух"]);
+      session.polls.AI_Interpretation.SEMINARS["Насколько хорошо преподаватель объясняет материал"] = parseInt(req.body["Насколько хорошо преподаватель объясняет материал"]);
+      session.polls.AI_Interpretation.SEMINARS["Насколько семинарские занятия помогли вам освоить материал лекций"] = parseInt(req.body["Насколько семинарские занятия помогли вам освоить материал лекций"]);
+      session.polls.AI_Interpretation.SEMINARS["Насколько пунктуален был преподаватель"] = parseInt(req.body["Насколько пунктуален был преподаватель"]);
+      session.polls.AI_Interpretation.SEMINARS["Какую оценку (балл от 0 до 10) вы ожидаете получить за эту часть курса"] = parseInt(req.body["Какую оценку (балл от 0 до 10) вы ожидаете получить за эту часть курса"]);
+      session.polls.AI_Interpretation.SEMINARS["Готовы ли вы снова встретиться с этим преподавателем на других курсах"] = parseInt(req.body["Готовы ли вы снова встретиться с этим преподавателем на других курсах"]);
+      session.polls.AI_Interpretation.SEMINARS["Сколько процентов обязательных текстов по этой части курса вы успевали прочесть"] = parseInt(req.body["Сколько процентов обязательных текстов по этой части курса вы успевали прочесть"]);
+      session.polls.AI_Interpretation.SEMINARS["Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса"] = parseInt(req.body["Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса"]);
+      session.polls.AI_Interpretation.SEMINARS["Что вам больше всего понравилось в этом семинаре"] = req.body["Что вам больше всего понравилось в этом семинаре"];
+      session.polls.AI_Interpretation.SEMINARS["Что вам больше всего не понравилось в этом семинаре"] = req.body["Что вам больше всего не понравилось в этом семинаре"];
+      session.polls.AI_Interpretation.SEMINARS["Что для вас было самым сложным в этом семинаре"] = req.body["Что для вас было самым сложным в этом семинаре"];
+      session.polls.AI_Interpretation.SEMINARS["Как бы вы порекомендовали улучшить этот семинар"] = req.body["Как бы вы порекомендовали улучшить этот семинар"];
+
+      session.save(function(err, session) {
+        if (err)
+          return console.error(err);
+        }
+      );
+    } else {
+      var newSession = new Session();
+      var now = new Date();
+
+      newSession.session_id = req.session.id;
+      newSession.polls.AI_Interpretation.language = 'ru';
+      newSession.polls.AI_Interpretation.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+      newSession.polls.AI_Interpretation.LECTURES["Как хорошо были организованы материалы курса"] = parseInt(req.body["Как хорошо были организованы материалы курса"]);
+      newSession.polls.AI_Interpretation.LECTURES["Насколько пунктуален был преподаватель (лекции)(лектор 1)"] = parseInt(req.body["Насколько пунктуален был преподаватель (лекции)(лектор 1)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Насколько пунктуален был преподаватель (лекции)(лектор 2)"] = parseInt(req.body["Насколько пунктуален был преподаватель (лекции)(лектор 2)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Насколько полно преподаватель следовал программе курса(лектор 1)"] = parseInt(req.body["Насколько полно преподаватель следовал программе курса(лектор 1)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Насколько полно преподаватель следовал программе курса(лектор 2)"] = parseInt(req.body["Насколько полно преподаватель следовал программе курса(лектор 2)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Оцените сложность лекций для вашего понимания(лектор 1)"] = parseInt(req.body["Оцените сложность лекций для вашего понимания(лектор 1)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Оцените сложность лекций для вашего понимания(лектор 2)"] = parseInt(req.body["Оцените сложность лекций для вашего понимания(лектор 2)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Насколько новым для вас было содержание лекций(лектор 1)"] = parseInt(req.body["Насколько новым для вас было содержание лекций(лектор 1)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Насколько новым для вас было содержание лекций(лектор 2)"] = parseInt(req.body["Насколько новым для вас было содержание лекций(лектор 2)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Насколько вам понравилась манера чтения лекций этим преподавателем(лектор 1)"] = parseInt(req.body["Насколько вам понравилась манера чтения лекций этим преподавателем(лектор 1)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Насколько вам понравилась манера чтения лекций этим преподавателем(лектор 2)"] = parseInt(req.body["Насколько вам понравилась манера чтения лекций этим преподавателем(лектор 2)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Насколько изменились ваше мышление, знания и умения"] = parseInt(req.body["Насколько изменились ваше мышление, знания и умения"]);
+      newSession.polls.AI_Interpretation.LECTURES["Хотите ли вы снова встретиться с этим преподавателем на других курсах(лектор 1)"] = parseInt(req.body["Хотите ли вы снова встретиться с этим преподавателем на других курсах(лектор 1)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Хотите ли вы снова встретиться с этим преподавателем на других курсах(лектор 2)"] = parseInt(req.body["Хотите ли вы снова встретиться с этим преподавателем на других курсах(лектор 2)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Если бы этот курс не входил в ядро, взяли бы вы его как электив"] = parseInt(req.body["Если бы этот курс не входил в ядро, взяли бы вы его как электив"]);
+      newSession.polls.AI_Interpretation.LECTURES["Что вам больше всего понравилось в этом лекционном курсе"] = req.body["Что вам больше всего понравилось в этом лекционном курсе"];
+      newSession.polls.AI_Interpretation.LECTURES["Что вам больше всего не понравилось в этом лекционном курсе"] = req.body["Что вам больше всего не понравилось в этом лекционном курсе"];
+      newSession.polls.AI_Interpretation.LECTURES["Что для вас было самым сложным в этом лекционном курсе"] = req.body["Что для вас было самым сложным в этом лекционном курсе"];
+      newSession.polls.AI_Interpretation.LECTURES["Как бы вы порекомендовали улучшить этот лекционный курс"] = req.body["Как бы вы порекомендовали улучшить этот лекционный курс"];
+
+      newSession.polls.AI_Interpretation.SEMINARS["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"] = req.body["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"];
+      newSession.polls.AI_Interpretation.SEMINARS["Насколько полно преподаватель следовал темам"] = parseInt(req.body["Насколько полно преподаватель следовал темам"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Насколько хорошо преподаватель организует интерактивную коммуникацию в группе"] = parseInt(req.body["Насколько хорошо преподаватель организует интерактивную коммуникацию в группе"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Сколько раз в течение одного семинарского занятия вы (в среднем) высказывались вслух"] = parseInt(req.body["Сколько раз в течение одного семинарского занятия вы (в среднем) высказывались вслух"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Насколько хорошо преподаватель объясняет материал"] = parseInt(req.body["Насколько хорошо преподаватель объясняет материал"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Насколько семинарские занятия помогли вам освоить материал лекций"] = parseInt(req.body["Насколько семинарские занятия помогли вам освоить материал лекций"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Насколько пунктуален был преподаватель"] = parseInt(req.body["Насколько пунктуален был преподаватель"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Какую оценку (балл от 0 до 10) вы ожидаете получить за эту часть курса"] = parseInt(req.body["Какую оценку (балл от 0 до 10) вы ожидаете получить за эту часть курса"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Готовы ли вы снова встретиться с этим преподавателем на других курсах"] = parseInt(req.body["Готовы ли вы снова встретиться с этим преподавателем на других курсах"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Сколько процентов обязательных текстов по этой части курса вы успевали прочесть"] = parseInt(req.body["Сколько процентов обязательных текстов по этой части курса вы успевали прочесть"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса"] = parseInt(req.body["Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Что вам больше всего понравилось в этом семинаре"] = req.body["Что вам больше всего понравилось в этом семинаре"];
+      newSession.polls.AI_Interpretation.SEMINARS["Что вам больше всего не понравилось в этом семинаре"] = req.body["Что вам больше всего не понравилось в этом семинаре"];
+      newSession.polls.AI_Interpretation.SEMINARS["Что для вас было самым сложным в этом семинаре"] = req.body["Что для вас было самым сложным в этом семинаре"];
+      newSession.polls.AI_Interpretation.SEMINARS["Как бы вы порекомендовали улучшить этот семинар"] = req.body["Как бы вы порекомендовали улучшить этот семинар"];
+      newSession.save(function(err) {
+          if (err) return console.error(err);
+          return ;
+      });
+    }
+  });
+  req.flash('info', 'Ваш результат принят. Благодарим за участие.');
+  res.render('polls_anonymous',{messages: req.flash('info')})
+});
+
+app.post('/polls-ai-interpretation-en', function(req, res) {
+  Session.findOne({
+    'session_id': req.session.id
+  }, function(err, session) {
+    if (err)
+      return done(err);
+
+    if (session) {
+      var now = new Date();
+
+      session.polls.AI_Interpretation.language = 'en';
+      session.polls.AI_Interpretation.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+      session.polls.AI_Interpretation.LECTURES["Как хорошо были организованы материалы курса"] = parseInt(req.body["Как хорошо были организованы материалы курса"]);
+      session.polls.AI_Interpretation.LECTURES["Насколько пунктуален был преподаватель (лекции)(лектор 1)"] = parseInt(req.body["Насколько пунктуален был преподаватель (лекции)(лектор 1)"]);
+      session.polls.AI_Interpretation.LECTURES["Насколько полно преподаватель следовал программе курса(лектор 1)"] = parseInt(req.body["Насколько полно преподаватель следовал программе курса(лектор 1)"]);
+      session.polls.AI_Interpretation.LECTURES["Оцените сложность лекций для вашего понимания(лектор 1)"] = parseInt(req.body["Оцените сложность лекций для вашего понимания(лектор 1)"]);
+      session.polls.AI_Interpretation.LECTURES["Насколько новым для вас было содержание лекций(лектор 1)"] = parseInt(req.body["Насколько новым для вас было содержание лекций(лектор 1)"]);
+      session.polls.AI_Interpretation.LECTURES["Насколько вам понравилась манера чтения лекций этим преподавателем(лектор 1)"] = parseInt(req.body["Насколько вам понравилась манера чтения лекций этим преподавателем(лектор 1)"]);
+      session.polls.AI_Interpretation.LECTURES["Насколько изменились ваше мышление, знания и умения"] = parseInt(req.body["Насколько изменились ваше мышление, знания и умения"]);
+      session.polls.AI_Interpretation.LECTURES["Хотите ли вы снова встретиться с этим преподавателем на других курсах(лектор 1)"] = parseInt(req.body["Хотите ли вы снова встретиться с этим преподавателем на других курсах(лектор 1)"]);
+      session.polls.AI_Interpretation.LECTURES["Если бы этот курс не входил в ядро, взяли бы вы его как электив"] = parseInt(req.body["Если бы этот курс не входил в ядро, взяли бы вы его как электив"]);
+      session.polls.AI_Interpretation.LECTURES["Что вам больше всего понравилось в этом лекционном курсе"] = req.body["Что вам больше всего понравилось в этом лекционном курсе"];
+      session.polls.AI_Interpretation.LECTURES["Что вам больше всего не понравилось в этом лекционном курсе"] = req.body["Что вам больше всего не понравилось в этом лекционном курсе"];
+      session.polls.AI_Interpretation.LECTURES["Что для вас было самым сложным в этом лекционном курсе"] = req.body["Что для вас было самым сложным в этом лекционном курсе"];
+      session.polls.AI_Interpretation.LECTURES["Как бы вы порекомендовали улучшить этот лекционный курс"] = req.body["Как бы вы порекомендовали улучшить этот лекционный курс"];
+
+      session.polls.AI_Interpretation.SEMINARS["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"] = req.body["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"];
+      session.polls.AI_Interpretation.SEMINARS["Насколько полно преподаватель следовал темам"] = parseInt(req.body["Насколько полно преподаватель следовал темам"]);
+      session.polls.AI_Interpretation.SEMINARS["Насколько хорошо преподаватель организует интерактивную коммуникацию в группе"] = parseInt(req.body["Насколько хорошо преподаватель организует интерактивную коммуникацию в группе"]);
+      session.polls.AI_Interpretation.SEMINARS["Сколько раз в течение одного семинарского занятия вы (в среднем) высказывались вслух"] = parseInt(req.body["Сколько раз в течение одного семинарского занятия вы (в среднем) высказывались вслух"]);
+      session.polls.AI_Interpretation.SEMINARS["Насколько хорошо преподаватель объясняет материал"] = parseInt(req.body["Насколько хорошо преподаватель объясняет материал"]);
+      session.polls.AI_Interpretation.SEMINARS["Насколько семинарские занятия помогли вам освоить материал лекций"] = parseInt(req.body["Насколько семинарские занятия помогли вам освоить материал лекций"]);
+      session.polls.AI_Interpretation.SEMINARS["Насколько пунктуален был преподаватель"] = parseInt(req.body["Насколько пунктуален был преподаватель"]);
+      session.polls.AI_Interpretation.SEMINARS["Какую оценку (балл от 0 до 10) вы ожидаете получить за эту часть курса"] = parseInt(req.body["Какую оценку (балл от 0 до 10) вы ожидаете получить за эту часть курса"]);
+      session.polls.AI_Interpretation.SEMINARS["Готовы ли вы снова встретиться с этим преподавателем на других курсах"] = parseInt(req.body["Готовы ли вы снова встретиться с этим преподавателем на других курсах"]);
+      session.polls.AI_Interpretation.SEMINARS["Сколько процентов обязательных текстов по этой части курса вы успевали прочесть"] = parseInt(req.body["Сколько процентов обязательных текстов по этой части курса вы успевали прочесть"]);
+      session.polls.AI_Interpretation.SEMINARS["Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса"] = parseInt(req.body["Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса"]);
+      session.polls.AI_Interpretation.SEMINARS["Что вам больше всего понравилось в этом семинаре"] = req.body["Что вам больше всего понравилось в этом семинаре"];
+      session.polls.AI_Interpretation.SEMINARS["Что вам больше всего не понравилось в этом семинаре"] = req.body["Что вам больше всего не понравилось в этом семинаре"];
+      session.polls.AI_Interpretation.SEMINARS["Что для вас было самым сложным в этом семинаре"] = req.body["Что для вас было самым сложным в этом семинаре"];
+      session.polls.AI_Interpretation.SEMINARS["Как бы вы порекомендовали улучшить этот семинар"] = req.body["Как бы вы порекомендовали улучшить этот семинар"];
+
+      session.save(function(err, session) {
+        if (err)
+          return console.error(err);
+        }
+      );
+    } else {
+      var newSession = new Session();
+      var now = new Date();
+      newSession.session_id = req.session.id;
+      newSession.polls.AI_Interpretation.language = 'en';
+      newSession.polls.AI_Interpretation.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+      newSession.polls.AI_Interpretation.LECTURES["Как хорошо были организованы материалы курса"] = parseInt(req.body["Как хорошо были организованы материалы курса"]);
+      newSession.polls.AI_Interpretation.LECTURES["Насколько пунктуален был преподаватель (лекции)(лектор 1)"] = parseInt(req.body["Насколько пунктуален был преподаватель (лекции)(лектор 1)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Насколько полно преподаватель следовал программе курса(лектор 1)"] = parseInt(req.body["Насколько полно преподаватель следовал программе курса(лектор 1)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Оцените сложность лекций для вашего понимания(лектор 1)"] = parseInt(req.body["Оцените сложность лекций для вашего понимания(лектор 1)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Насколько новым для вас было содержание лекций(лектор 1)"] = parseInt(req.body["Насколько новым для вас было содержание лекций(лектор 1)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Насколько вам понравилась манера чтения лекций этим преподавателем(лектор 1)"] = parseInt(req.body["Насколько вам понравилась манера чтения лекций этим преподавателем(лектор 1)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Насколько изменились ваше мышление, знания и умения"] = parseInt(req.body["Насколько изменились ваше мышление, знания и умения"]);
+      newSession.polls.AI_Interpretation.LECTURES["Хотите ли вы снова встретиться с этим преподавателем на других курсах(лектор 1)"] = parseInt(req.body["Хотите ли вы снова встретиться с этим преподавателем на других курсах(лектор 1)"]);
+      newSession.polls.AI_Interpretation.LECTURES["Если бы этот курс не входил в ядро, взяли бы вы его как электив"] = parseInt(req.body["Если бы этот курс не входил в ядро, взяли бы вы его как электив"]);
+      newSession.polls.AI_Interpretation.LECTURES["Что вам больше всего понравилось в этом лекционном курсе"] = req.body["Что вам больше всего понравилось в этом лекционном курсе"];
+      newSession.polls.AI_Interpretation.LECTURES["Что вам больше всего не понравилось в этом лекционном курсе"] = req.body["Что вам больше всего не понравилось в этом лекционном курсе"];
+      newSession.polls.AI_Interpretation.LECTURES["Что для вас было самым сложным в этом лекционном курсе"] = req.body["Что для вас было самым сложным в этом лекционном курсе"];
+      newSession.polls.AI_Interpretation.LECTURES["Как бы вы порекомендовали улучшить этот лекционный курс"] = req.body["Как бы вы порекомендовали улучшить этот лекционный курс"];
+
+      newSession.polls.AI_Interpretation.SEMINARS["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"] = req.body["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"];
+      newSession.polls.AI_Interpretation.SEMINARS["Насколько полно преподаватель следовал темам"] = parseInt(req.body["Насколько полно преподаватель следовал темам"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Насколько хорошо преподаватель организует интерактивную коммуникацию в группе"] = parseInt(req.body["Насколько хорошо преподаватель организует интерактивную коммуникацию в группе"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Сколько раз в течение одного семинарского занятия вы (в среднем) высказывались вслух"] = parseInt(req.body["Сколько раз в течение одного семинарского занятия вы (в среднем) высказывались вслух"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Насколько хорошо преподаватель объясняет материал"] = parseInt(req.body["Насколько хорошо преподаватель объясняет материал"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Насколько семинарские занятия помогли вам освоить материал лекций"] = parseInt(req.body["Насколько семинарские занятия помогли вам освоить материал лекций"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Насколько пунктуален был преподаватель"] = parseInt(req.body["Насколько пунктуален был преподаватель"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Какую оценку (балл от 0 до 10) вы ожидаете получить за эту часть курса"] = parseInt(req.body["Какую оценку (балл от 0 до 10) вы ожидаете получить за эту часть курса"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Готовы ли вы снова встретиться с этим преподавателем на других курсах"] = parseInt(req.body["Готовы ли вы снова встретиться с этим преподавателем на других курсах"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Сколько процентов обязательных текстов по этой части курса вы успевали прочесть"] = parseInt(req.body["Сколько процентов обязательных текстов по этой части курса вы успевали прочесть"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса"] = parseInt(req.body["Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса"]);
+      newSession.polls.AI_Interpretation.SEMINARS["Что вам больше всего понравилось в этом семинаре"] = req.body["Что вам больше всего понравилось в этом семинаре"];
+      newSession.polls.AI_Interpretation.SEMINARS["Что вам больше всего не понравилось в этом семинаре"] = req.body["Что вам больше всего не понравилось в этом семинаре"];
+      newSession.polls.AI_Interpretation.SEMINARS["Что для вас было самым сложным в этом семинаре"] = req.body["Что для вас было самым сложным в этом семинаре"];
+      newSession.polls.AI_Interpretation.SEMINARS["Как бы вы порекомендовали улучшить этот семинар"] = req.body["Как бы вы порекомендовали улучшить этот семинар"];
+      newSession.save(function(err) {
+          if (err) return console.error(err);
+          return ;
+      });
+    }
+  });
+  req.flash('info', 'Ваш результат принят. Благодарим за участие.');
+  res.render('polls_anonymous',{messages: req.flash('info')})
 });
 
 app.get('/2nd-module-electives-1', isLoggedIn, function(req, res) {

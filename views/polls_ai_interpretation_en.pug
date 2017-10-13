@@ -1,0 +1,140 @@
+doctype html
+head
+  title Обратная связь. Лекции и семинары
+  link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+  // load bootstrap css
+  link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
+  // load fontawesome
+  style.
+    body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+    @font-face {
+      font-family: 'Agipo-Bold';
+      src:url('fonts/agipo/Agipo-Bold.woff'); 
+    }
+    .jumbotron h1 {
+      font-size:36px;
+      margin-bottom: 40px;
+    }
+    .jumbotron{
+      font-size:18px;
+      line-height: initial;
+    }
+    .input-group label {
+      width:100%;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight: 500;
+    }
+    .input-group .form-control {
+      margin: 20px 0 40px 0;
+      width:75%;
+    }
+    form {
+      margin-top: 30px;
+    }
+    label,legend {
+      text-align: left;
+    }
+    input, textarea, select {
+      float:left;
+      width:75%;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    @media screen and (max-width:767px){
+      body{padding-top:10px}
+      .container{
+        width:95% !important;
+      }
+    legend {
+      font-size:30px;
+    }
+    label,legend {
+      text-align: center;
+    }
+    input, textarea, select {
+      float: none;
+      width:100% !important;
+    }
+    .input-group .form-control {
+      width:100% !important;
+    }
+    }
+.container
+  .jumbotron.text-center
+    h1 Обратная связь. Лекции и семинары. "Анализ и интерпретация: Интерпретация"
+    h3 Уважаемые студенты Школы. Завершилась вторая часть курса "Анализ и интерпретация. Интерпретация", который является обязательной дисциплиной ядра. Опрос состоит из двух частей: оценка лекций (лектор: Джон Тангни) и семинарских занятий. Для Школы очень важна ваша обратная связь, она является вашим главным инструментом влияния на образовательный процесс.  В течение учебного года после прохождения каждого отдельного элемента образовательной программы вы будете получать формы оценки учебных курсов. Просим вас отнестись к заполнению формы максимально внимательно и объективно. Опрос является анонимным и будет доступен для заполнения до 11:00 16 октября. Обращаем ваше внимание на то, что баллы 0, 5 и 10 являются лишь ориентирами для возможной оценки, вы можете использовать любой показатель от 0 до 10. 
+    h3 Опрос полностью анонимен.
+    h3 ВНИМАНИЕ! Ответы должны быть на английском языке.
+    form(action="/polls-ai-interpretation-en" method="post")
+      fieldset
+        legend LECTURES:
+        div(class="input-group")
+          label(for="Как хорошо были организованы материалы курса") In your opinion, was course material arranged/organized well? (reader, handouts, books, digital copies, audio and visual materials, e-mails, social networks, web-sites, etc.) On a scale from 0 to 10, evaluate the professor: 0 – there was no materials at all or they were unusable; 5 – there was not enough materials or it was difficult to use them; 10 – there was enough materials, all of them were well-structured.
+          input(type="number" required="required" class="form-control" name="Как хорошо были организованы материалы курса" min="0" max="10")
+          label(for="Насколько пунктуален был преподаватель (лекции)") Did the professor come to class on time? On a scale from 0 to 10, evaluate the professor: 0 – the professor missed classes and did not make up these classes; 5 – the professor did not miss any classes, however was on average 20 minutes late; 10 – the professor was always on time.
+          input(type="number" required="required" class="form-control" name="Насколько пунктуален был преподаватель (лекции)(лектор 1)" min="0" max="10")
+          label(for="Насколько полно преподаватель следовал программе курса") Did the professor follow the syllabus. On a scale from 0 to 10, evaluate the professor: 0 – did not follow it at all; 5 – followed it 50% of the time; 100 - followed it 100% of the time.
+          input(type="number" required="required" class="form-control" name="Насколько полно преподаватель следовал программе курса(лектор 1)" min="0" max="10")
+          label(for="Оцените сложность лекций для вашего понимания") How difficult was the course for you? On a scale from 0 to 10, evaluate the professor: 0 – I did not understand anything at all; 5 – I understood 50% of the content; 10 – I understood everything.
+          input(type="number" required="required" class="form-control" name="Оцените сложность лекций для вашего понимания(лектор 1)" min="0" max="10")
+
+          label(for="Насколько новым для вас было содержание лекций") Was the course content new for you? On a scale from 0 to 10, evaluate the professor: 0 – I did not learn anything new; 5 – 50% of the content was new for me; 10 – everything in the course was novel for me.
+          input(type="number" required="required" class="form-control" name="Насколько новым для вас было содержание лекций(лектор 1)" min="0" max="10")
+
+          label(for="Насколько вам понравилась манера чтения лекций этим преподавателем") Did you like the way the professor delivered the lectures? (On a scale from 0 to 10, evaluate the professor).
+          input(type="number" required="required" class="form-control" name="Насколько вам понравилась манера чтения лекций этим преподавателем(лектор 1)" min="0" max="10")
+          label(for="Насколько изменились ваше мышление, знания и умения") Did your thinking, knowledge, and skills change as a result of the course? On a scale from 0 to 10, evaluate the professor: 0 – did not change at all; 3 – changed insignificantly; 6 – changed noticeably; 8 – changed significantly; 10 – I am an entirely different person now.
+          input(type="number" required="required" class="form-control" name="Насколько изменились ваше мышление, знания и умения" min="0" max="10")
+          label(for="Хотите ли вы снова встретиться с этим преподавателем на других курсах") Would you like to take other courses with the same professor? On a scale from 0 to 10, evaluate the professor: 0 – under no circumstances, only under the threat of the expulsion from SAS; 5 – I would take it if I am very interested in the topic and no one else teaches it; 10 – I would do anything possible to take classes with this professor again.
+          input(type="number" required="required" class="form-control" name="Хотите ли вы снова встретиться с этим преподавателем на других курсах(лектор 1)" min="0" max="10")
+
+          label(for="Если бы этот курс не входил в ядро, взяли бы вы его как электив") Would you take this course as an elective if it wouldn’t be part of the core? On a scale from 0 to 10, evaluate the course, not the professor: 0 – I would never take this course; 5 – I would take this course if there would be no other interesting courses; 10 – I would certainly take it.
+          input(type="number" required="required" class="form-control" name="Если бы этот курс не входил в ядро, взяли бы вы его как электив" min="0" max="10")
+          label(for="Что вам больше всего понравилось в этом лекционном курсе") What did you like the most in the course?
+          textarea(rows="4" required="required" class="form-control" name="Что вам больше всего понравилось в этом лекционном курсе") 
+          label(for="Что вам больше всего не понравилось в этом лекционном курсе") What did you NOT like in the course?
+          textarea(rows="4" required="required" class="form-control" name="Что вам больше всего не понравилось в этом лекционном курсе")
+          label(for="Что для вас было самым сложным в этом лекционном курсе") What part of the course was the most challenging?
+          textarea(rows="4" required="required" class="form-control" name="Что для вас было самым сложным в этом лекционном курсе")
+          label(for="Как бы вы порекомендовали улучшить этот лекционный курс") If you could, how would you improve the course?
+          textarea(rows="4" required="required" class="form-control" name="Как бы вы порекомендовали улучшить этот лекционный курс")  
+      fieldset
+        legend SEMINARS:
+        div(class="input-group")
+          label(for="Укажите имя и фамилию преподавателя, работавшего с вами на семинарах") Specify first name and last name of the professor who led the seminars.
+          select(class="form-control" required="required" name="Укажите имя и фамилию преподавателя, работавшего с вами на семинарах")
+            option(value="Zakhary Reina") Zakhary Reina
+            option(value="Louie Vervoort") Louie Vervoort
+            option(value="Ann Mulhall") Ann Mulhall
+            option(value="Svetlana Erpyleva") Svetlana Erpyleva
+            option(value="Maxim Alyukov") Maxim Alyukov
+            option(value="Oleg Zhuravlev") Oleg Zhuravlev
+          label(for="Насколько полно преподаватель следовал темам") How closely did the professor follow the topics covered during the lectures? On a scale from 0 to 10, evaluate the professor: 0 – did not follow at all; 5 – followed 50% of the time; 10 – followed 100% of the time.
+          input(type="number" required="required" class="form-control" name="Насколько полно преподаватель следовал темам" min="0" max="10")
+          label(for="Насколько хорошо преподаватель организует интерактивную коммуникацию в группе") How well did the professor organize communication in the group?  On a scale from 0 to 10, evaluate the communication: 0 – there was no interaction between group members due to the fact that the professor lectured all the time and asked question no one could answer; 10 – seminars were very interactive, communication was well organized.
+          input(type="number" required="required" class="form-control" name="Насколько хорошо преподаватель организует интерактивную коммуникацию в группе" min="0" max="10")
+          label(for="Сколько раз в течение одного семинарского занятия вы (в среднем) высказывались вслух") How many times on average did you speak out during single seminar meeting (including raising questions)? (on a scale from 0 to 10)
+          input(type="number" required="required" class="form-control" name="Сколько раз в течение одного семинарского занятия вы (в среднем) высказывались вслух" min="0" max="10")
+          label(for="Насколько хорошо преподаватель объясняет материал") How well did the professor explain course material? (on a scale from 0 to 10)
+          input(type="number" required="required" class="form-control" name="Насколько хорошо преподаватель объясняет материал" min="0" max="10")
+          label(for="Насколько семинарские занятия помогли вам освоить материал лекций") Did the seminar meetings help you to understand the course material and prepare you for the final written assignment?” (0 – did not help at all; 3 – did help but not significantly; 8 – did help significantly; 10 – I was able to understand class material only thanks to the seminars).
+          input(type="number" required="required" class="form-control" name="Насколько семинарские занятия помогли вам освоить материал лекций" min="0" max="10")
+          label(for="Насколько пунктуален был преподаватель") Did the professor come to class on time? (on a scale from 0 to 10: 0 – the professor missed classes and did not make up these classes; 5 – the professor did not miss any classes, however was on average 20 minutes late; 10 – the professor was always on time.»)
+          input(type="number" required="required" class="form-control" name="Насколько пунктуален был преподаватель" min="0" max="10")
+          label(for="Какую оценку (балл от 0 до 10) вы ожидаете получить за эту часть курса") What grade do you expect to get in this part of the course?
+          input(type="number" required="required" class="form-control" name="Какую оценку (балл от 0 до 10) вы ожидаете получить за эту часть курса" min="0" max="10")
+          label(for="Готовы ли вы снова встретиться с этим преподавателем на других курсах") Would you like to take other courses from the same professor? (On a scale from 0 to 10: 0 – under no circumstances, only under the threat of the expulsion from SAS; 5 – I would take it if I am very interested in the topic and no one else teaches it; 10 – I would do anything possible to take classes with this professor again.)
+          input(type="number" required="required" class="form-control" name="Готовы ли вы снова встретиться с этим преподавателем на других курсах" min="0" max="10")
+          label(for="Сколько процентов обязательных текстов по этой части курса вы успевали прочесть") What’s the percentage of the required texts you have read? (0 to 100)
+          input(type="number" required="required" class="form-control" name="Сколько процентов обязательных текстов по этой части курса вы успевали прочесть" min="0" max="100")
+          label(for="Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса") How many hours a week on average did you spend preparing for the seminars?
+          input(type="number" required="required" class="form-control" name="Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса" min="0" max="100")
+          label(for="Что вам больше всего понравилось в этом семинаре") What did you like the most in the seminars?
+          textarea(rows="4" required="required" class="form-control" name="Что вам больше всего понравилось в этом семинаре")  
+          label(for="Что вам больше всего не понравилось в этом семинаре") What did you NOT like in the seminars?
+          textarea(rows="4" required="required" class="form-control" name="Что вам больше всего не понравилось в этом семинаре")
+          label(for="Что для вас было самым сложным в этом семинаре") What part of the seminar meetings was the most challenging?
+          textarea(rows="4" required="required" class="form-control" name="Что для вас было самым сложным в этом семинаре") 
+          label(for="Как бы вы порекомендовали улучшить этот семинар") If you could, how would you improve the seminar meetings?
+          textarea(rows="4" required="required" class="form-control" name="Как бы вы порекомендовали улучшить этот семинар")   
+      button(type="submit" class="btn btn-primary btn-lg") Send

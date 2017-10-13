@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Обратная связь. Лекции и семинары
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
+    style.
+      body        {    font-family: 'Agipo-Bold';}
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('fonts/agipo/Agipo-Bold.woff');
+      }
+  body
+    div(class="container")
+      div(class="page-header text-center")
+        h1 Обратная связь. Лекции и семинары
+      -if(messages)
+        div(class="alert alert-success") #{messages}
+      //- div(class="row")
+      //-   div(class="col-xs-12")
+      //-     ul(class="list-unstyled")
+      //-       li
+      //-         h2
+      //-           a(href="/2nd-module-electives-1") "Выбор элективов второго модуля. Первый этап."
+      //-       li
+      //-         h2
+      //-           a(href="/polls-ai-interpretation-ru") "Анализ и интерпретация: Интерпретация"
+      
