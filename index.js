@@ -267,7 +267,7 @@ app.post('/polls-ai-interpretation-en', function(req, res) {
       session.save(function(err, session) {
         if (err)
           return console.error(err);
-        }
+        });
         let mailOptions = {
           from: '"SAS" <sas@utmn.ru>', // sender address
           to: 'marat.goya@gmail.com', // list of receivers
@@ -280,8 +280,7 @@ app.post('/polls-ai-interpretation-en', function(req, res) {
             return console.log(error);
           }
           console.log('Message %s sent: %s', info.messageId, info.response);
-        });
-      );
+        }
     } else {
       var newSession = new Session();
       var now = new Date();
