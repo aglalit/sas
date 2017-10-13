@@ -268,6 +268,19 @@ app.post('/polls-ai-interpretation-en', function(req, res) {
         if (err)
           return console.error(err);
         }
+        let mailOptions = {
+          from: '"SAS" <sas@utmn.ru>', // sender address
+          to: 'marat.goya@gmail.com', // list of receivers
+          subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
+          // text: JSON.stringify(req.user), // plain text body
+          html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
+        };
+        transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+            return console.log(error);
+          }
+          console.log('Message %s sent: %s', info.messageId, info.response);
+        });
       );
     } else {
       var newSession = new Session();
@@ -307,6 +320,19 @@ app.post('/polls-ai-interpretation-en', function(req, res) {
       newSession.save(function(err) {
           if (err) return console.error(err);
           return ;
+      });
+      let mailOptions = {
+        from: '"SAS" <sas@utmn.ru>', // sender address
+        to: 'marat.goya@gmail.com', // list of receivers
+        subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
+        // text: JSON.stringify(req.user), // plain text body
+        html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
+      };
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
       });
     }
   });
