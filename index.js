@@ -18,7 +18,6 @@ const session = require('express-session');
 const flash = require('connect-flash');
 
 var index = require('./routes/index');
-var polls = require('./routes/polls');
 var User = require('./models/user');
 var Session = require('./models/session');
 
@@ -77,7 +76,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(compression());
 
 app.use('/', index);
-app.use('/polls', polls)
 app.use(subdomain('advanced', router));
 
 app.listen(app.get('port'), function() {
