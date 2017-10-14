@@ -385,7 +385,7 @@ app.post('/polls/2nd-module-electives-1', function(req, res) {
     if (user) {
       user.polls.ELECTIVES["2module__electives_1"].value = req.body["electives"];
       var now = new Date();
-      session.polls.ELECTIVES["2module__electives_1"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+      user.polls.ELECTIVES["2module__electives_1"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
 
       user.save(function(err, user) {
         if (err)
