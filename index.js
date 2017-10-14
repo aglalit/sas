@@ -48,7 +48,10 @@ let transporter = nodemailer.createTransport({
 
 app.set('port', (process.env.PORT || 5000));
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', [
+  path.join(__dirname, 'views'),
+  path.join(__dirname, 'views/polls/')
+]);
 app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
@@ -86,8 +89,7 @@ app.get('/auth/google', passport.authenticate('google', {
   scope: ['profile', 'email']
 }));
 
-app.get('/auth/google/callback',
-passport.authenticate('google', {
+app.get('/auth/google/callback', passport.authenticate('google', {
   successRedirect: '/polls/2nd-module-electives-1',
   failureRedirect: '/login'
 }));
@@ -226,8 +228,9 @@ app.post('/polls-ai-interpretation-ru', function(req, res) {
       newSession.polls.AI_Interpretation.SEMINARS["Что для вас было самым сложным в этом семинаре"] = req.body["Что для вас было самым сложным в этом семинаре"];
       newSession.polls.AI_Interpretation.SEMINARS["Как бы вы порекомендовали улучшить этот семинар"] = req.body["Как бы вы порекомендовали улучшить этот семинар"];
       newSession.save(function(err) {
-          if (err) return console.error(err);
-          return ;
+        if (err)
+          return console.error(err);
+        return;
       });
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
@@ -245,7 +248,7 @@ app.post('/polls-ai-interpretation-ru', function(req, res) {
     }
   });
   req.flash('info', 'Ваш результат принят. Благодарим за участие.');
-  res.render('polls_anonymous',{messages: req.flash('info')})
+  res.render('polls_anonymous', {messages: req.flash('info')})
 });
 
 app.post('/polls-ai-interpretation-en', function(req, res) {
@@ -344,8 +347,9 @@ app.post('/polls-ai-interpretation-en', function(req, res) {
       newSession.polls.AI_Interpretation.SEMINARS["Что для вас было самым сложным в этом семинаре"] = req.body["Что для вас было самым сложным в этом семинаре"];
       newSession.polls.AI_Interpretation.SEMINARS["Как бы вы порекомендовали улучшить этот семинар"] = req.body["Как бы вы порекомендовали улучшить этот семинар"];
       newSession.save(function(err) {
-          if (err) return console.error(err);
-          return ;
+        if (err)
+          return console.error(err);
+        return;
       });
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
@@ -363,53 +367,51 @@ app.post('/polls-ai-interpretation-en', function(req, res) {
     }
   });
   req.flash('info', 'Ваш результат принят. Благодарим за участие.');
-  res.render('polls_anonymous',{messages: req.flash('info')})
+  res.render('polls_anonymous', {messages: req.flash('info')})
 });
 
-app.get('/polls/2nd-module-electives-1',
-isLoggedIn,
-function(req, res) {
+app.get('/polls/2nd-module-electives-1', isLoggedIn, function(req, res) {
 
   res.render('/polls/2nd-module-electives-1', {user: req.user})
 });
 
 app.post('/polls/2nd-module-electives-1', function(req, res) {
-    User.findOne({
-      '_id': req.user._id
-    }, function(err, user) {
-      if (err)
-        return done(err);
+  User.findOne({
+    '_id': req.user._id
+  }, function(err, user) {
+    if (err)
+      return done(err);
 
-      if (user) {
-        user.polls.ELECTIVES["2module__electives_1"] = req.body["2module__electives_1"];
+    if (user) {
+      user.polls.ELECTIVES["2module__electives_1"] = req.body["2module__electives_1"];
 
-        user.save(function(err, user) {
-          if (err)
-            return console.error(err);
-          }
-        );
-      } else {
-        console.log('There isn\'t such user in the database');
-      }
-    });
-    req.flash('info', 'Ваш результат принят. Благодарим за участие.');
-    let mailOptions = {
-      from: '"SAS" <sas@utmn.ru>', // sender address
-      to: 'marat.goya@gmail.com', // list of receivers
-      subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
-      // text: JSON.stringify(req.user), // plain text body
-      html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
-    };
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        return console.log(error);
-      }
-      console.log('Message %s sent: %s', info.messageId, info.response);
-    });
-    res.render('polls', {
-      user: req.user,
-      messages: req.flash('info')
-    });
+      user.save(function(err, user) {
+        if (err)
+          return console.error(err);
+        }
+      );
+    } else {
+      console.log('There isn\'t such user in the database');
+    }
+  });
+  req.flash('info', 'Ваш результат принят. Благодарим за участие.');
+  let mailOptions = {
+    from: '"SAS" <sas@utmn.ru>', // sender address
+    to: 'marat.goya@gmail.com', // list of receivers
+    subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
+    // text: JSON.stringify(req.user), // plain text body
+    html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
+  };
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log(error);
+    }
+    console.log('Message %s sent: %s', info.messageId, info.response);
+  });
+  res.render('polls', {
+    user: req.user,
+    messages: req.flash('info')
+  });
 });
 
 app.post('/polls-ai-metaphor', function(req, res) {
