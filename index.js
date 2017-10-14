@@ -383,7 +383,7 @@ app.post('/polls/2nd-module-electives-1', function(req, res) {
       return done(err);
 
     if (user) {
-      user.polls.ELECTIVES["2module__electives_1"] = req.body["2module__electives_1"];
+      user.polls.ELECTIVES["2module__electives_1"] = req.body["electives"];
 
       user.save(function(err, user) {
         if (err)
