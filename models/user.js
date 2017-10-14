@@ -46,9 +46,11 @@ var userSchema = mongoose.Schema({
       }
     },
     "ELECTIVES":{
-      "2module__electives_1": {
+      "2module__electives": {
         time: String,
-        value: String
+        elective1: String,
+        elective2: String,
+        elective3: String
       }
     }
   }
