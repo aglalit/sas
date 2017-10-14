@@ -372,7 +372,7 @@ app.post('/polls-ai-interpretation-en', function(req, res) {
 
 app.get('/polls/2nd-module-electives-1', isLoggedIn, function(req, res) {
 
-  res.render('/2nd-module-electives-1', {user: req.user})
+  res.render('2nd-module-electives-1', {user: req.user})
 });
 
 app.post('/polls/2nd-module-electives-1', function(req, res) {
