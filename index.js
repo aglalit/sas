@@ -18,6 +18,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 
 var index = require('./routes/index');
+var polls = require('./routes/polls');
 var User = require('./models/user');
 var Session = require('./models/session');
 
@@ -76,6 +77,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(compression());
 
 app.use('/', index);
+app.use('/polls', polls)
 app.use(subdomain('advanced', router));
 
 app.listen(app.get('port'), function() {
@@ -366,12 +368,14 @@ app.post('/polls-ai-interpretation-en', function(req, res) {
   res.render('polls_anonymous',{messages: req.flash('info')})
 });
 
-app.get('/2nd-module-electives-1', isLoggedIn, function(req, res) {
+app.get('/polls/2nd-module-electives-1',
+isLoggedIn,
+function(req, res) {
 
-  res.render('2nd-module-electives-1', {user: req.user})
+  res.render('/polls/2nd-module-electives-1', {user: req.user})
 });
 
-app.post('/2nd-module-electives-1', function(req, res) {
+app.post('/polls/2nd-module-electives-1', function(req, res) {
     User.findOne({
       '_id': req.user._id
     }, function(err, user) {

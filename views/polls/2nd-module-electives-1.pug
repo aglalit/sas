@@ -1,0 +1,115 @@
+doctype html
+head
+  title Выбор элективов, 2-й модуль, 1-й этап
+  link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+  // load bootstrap css
+  style.
+    body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+    @font-face {
+      font-family: 'Agipo-Bold';
+      src:url('fonts/agipo/Agipo-Bold.woff'); 
+    }
+    .jumbotron h1 {
+      font-size:36px;
+      margin-bottom: 40px;
+    }
+    .jumbotron{
+      font-size:18px;
+      line-height: initial;
+    }
+    .container{
+      width:98% !important;
+    }
+    .input-group{
+      margin-bottom:20px;
+    }
+    .input-group label {
+      width:95%;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight: 500;
+      margin: 10px 0;
+      font-size:20px;
+    }
+    .input-group .form-control {
+      margin: 20px 0 40px 0;
+      width:75%;
+    }
+    form {
+      margin-top: 30px;
+    }
+    label,legend {
+      text-align: left;
+    }
+    input, textarea, select {
+      float:left;
+      width:75%;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+
+        border: 2px solid #999;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        top: 5px;
+      }
+      input:checked {
+        border: 9px solid #00f;
+      }
+      button {
+        background-color: #00f !important;
+      }
+
+
+      @media (max-width: 1024px) {
+        
+        body{padding-top:10px}
+        .container{
+          width:95%;
+        }
+      .input-group  label {
+          width:90%;
+          font-size:30px ;
+          margin-bottom:20px;
+        }
+        input[type="radio"]{
+          top:13px;
+        }
+        button.btn-lg {
+          font-size: 30px;
+        }
+      }
+.container
+  .jumbotron.text-center
+    h1 Школа перспективных исследований. Выбор элективов во втором учебном модуле. Первый этап.
+    form(action="/2nd-module-electives-1" method="post")
+      div(class="input-group")
+        input(type="radio" value="Энн Малхолл" name="electives" id="Энн Малхолл")
+        label(for="Энн Малхолл") Après ’68: An Introduction to Contemporary French Theory (English) — Энн Малхолл
+        input(type="radio" value="Евгений Гришин" name="electives" id="Евгений Гришин") 
+        label(for="Евгений Гришин") История российских религий (Russian) — Евгений Гришин
+        input(type="radio" value="Сурендра Бхандари" name="electives" id="Сурендра Бхандари")
+        label(for="Сурендра Бхандари") International Law (English) — Сурендра Бхандари
+        input(type="radio" value="Елена Арбатская" name="electives" id="Елена Арбатская") 
+        label(for="Елена Арбатская") Современные медиа: контент и эстетика (Russian) — Елена Арбатская
+        input(type="radio" value="Закари Рейна" name="electives" id="Закари Рейна") 
+        label(for="Закари Рейна") Nietzsche: Beyond Good and Evil and the Death of God (English) — Закари Рейна
+        input(type="radio" value="Томаш Блушевич" name="electives" id="Томаш Блушевич") 
+        label(for="Томаш Блушевич") The Geopolitics of Energy. Past, Present and Future (English) — Томаш Блушевич
+        input(type="radio" value="Луи Вервурт" name="electives" id="Луи Вервурт")
+        label(for="Луи Вервурт") The Problem of Free Will: When Philosophy Meets Modern Science (English) — Луи Вервурт
+        input(type="radio" value="Наталья Савельева" name="electives" id="Наталья Савельева") 
+        label(for="Наталья Савельева") Почему мы верим? (Russian) — Наталья Савельева
+        input(type="radio" value="Таисья Погодаева" name="electives" id="Таисья Погодаева") 
+        label(for="Таисья Погодаева") Введение в теорию экономического роста (Russian) — Таисья Погодаева
+      button(type="submit" class="btn btn-primary btn-lg") Отправить
