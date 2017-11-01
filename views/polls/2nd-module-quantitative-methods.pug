@@ -1,6 +1,6 @@
-doctype html
+﻿doctype html
 head
-  title Выбор элективов, 2-й модуль, 1-й этап
+  title Численные методы: выбор траектории
   link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
   // load bootstrap css
   style.
@@ -94,11 +94,11 @@ head
       }
 .container
   .jumbotron.text-center
-    h1 Выбор направления по предмету Численные методы во втором учебном модуле Школы.
+    h1 Выбор траектории по курсу Численные методы во втором учебном модуле Школы.
     form(action="/polls/2nd-module-quantitative-methods" method="post")
       div(class="input-group")
         input(type="radio" value="1" name="quantitative_methods" id="1")
-        label(for="1") Направление 1
+        label(for="1") Траектория 1
         input(type="radio" value="2" name="quantitative_methods" id="2")
-        label(for="2") Направление 2
+        label(for="2") Траектория 2
       button(type="submit" class="btn btn-primary btn-lg") Отправить
