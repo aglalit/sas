@@ -8,7 +8,7 @@ html
       body        {    font-family: 'Agipo-Bold'; font-size:30px ;}
       @font-face {
         font-family: 'Agipo-Bold';
-        src:url('fonts/agipo/Agipo-Bold.woff');
+        src:url('../fonts/agipo/Agipo-Bold.woff');
       }
       @media (min-width: 768px){
       .container {
@@ -17,7 +17,7 @@ html
   body
     div(class="container")
       div(class="page-header text-center")
-        h1 Обратная связь. Лекции и семинары
+        h1 Школа перспективных исследований. Обратная связь
       -if(messages)
         div(class="alert alert-success") #{messages}
       div(class="row")
@@ -25,7 +25,7 @@ html
           ul(class="list-unstyled")
             li
               h2
-                a(href="/polls/2nd-module-quantitative-methods") Выбор элективов второго модуля.
+                a(href="/polls/2nd-module-quantitative-methods") Второй модуль. Численные методы: выбор направления.
             li
               h2
                 a(href="/polls-ai-metaphor") Анализ и интерпретация: Метафора
