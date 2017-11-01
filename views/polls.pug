@@ -10,10 +10,15 @@ html
         font-family: 'Agipo-Bold';
         src:url('../fonts/agipo/Agipo-Bold.woff');
       }
+      @media (min-width: 768px){
+.container {
+    width: auto;
+}}
       @media (max-width: 768px){
       .container {
         width: auto;
         }
+        .alert {    margin: 15px;}
       body {font-size:40px}
       h1 {font-size:60px}
       h2 {font-size:50px}}
@@ -33,7 +38,8 @@ html
                 li
                   h2
                     a(href="/polls-ai-metaphor") Анализ и интерпретация: Метафора
-          div(class="col-xs-12")
+          .row
+            div(class="col-xs-12")
               div(class="well")
                 h3.text-danger
                   span.fa.fa-google-plus Google
