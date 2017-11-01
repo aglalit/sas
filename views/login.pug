@@ -9,13 +9,20 @@ head
     body        { padding-top:80px;   font-family: 'Agipo-Bold';}
     @font-face {
       font-family: 'Agipo-Bold';
-      src:url('fonts/agipo/Agipo-Bold.woff'); 
+      src:url('fonts/agipo/Agipo-Bold.woff');
     }
+    @media (min-width: 768px){
+    .container {
+      width: auto;
+      }
+    body {font-size:40px}
+    h1 {font-size:60px}
+    h2 {font-size:50px}}
 .container
   .jumbotron.text-center
     h1 Обратная связь. Лекции и семинары
     h2
-      span.fa.fa-lock   
+      span.fa.fa-lock
       span  Регистрация
     p Для участия в опросах войдите при помощи своего студенческого аккаунта Gmail:
     a.btn.btn-danger.btn-lg(href='/auth/google')
