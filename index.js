@@ -92,7 +92,7 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: '/polls/2nd-module-quantitative-methods',
+  successRedirect: '/polls/3rd-module-quantitative-methods',
   failureRedirect: '/login'
 }));
 // passport.authenticate('google'),
@@ -421,12 +421,12 @@ app.post('/polls/2nd-module-electives', function(req, res) {
   });
 });
 
-app.get('/polls/2nd-module-quantitative-methods', isLoggedIn, function(req, res) {
+app.get('/polls/3rd-module-quantitative-methods', isLoggedIn, function(req, res) {
 
-  res.render('2nd-module-quantitative-methods', {user: req.user})
+  res.render('3rd-module-quantitative-methods', {user: req.user})
 });
 
-app.post('/polls/2nd-module-quantitative-methods', function(req, res) {
+app.post('/polls/3rd-module-quantitative-methods', function(req, res) {
   User.findOne({
     '_id': req.user._id
   }, function(err, user) {
@@ -434,9 +434,9 @@ app.post('/polls/2nd-module-quantitative-methods', function(req, res) {
       return done(err);
 
     if (user) {
-      user.polls.ELECTIVES["2module__quantitative_methods"].value = req.body["quantitative_methods"];
+      user.polls.ELECTIVES["3module__quantitative_methods"].value = req.body["quantitative_methods"];
       var now = new Date();
-      user.polls.ELECTIVES["2module__quantitative_methods"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+      user.polls.ELECTIVES["3module__quantitative_methods"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
 
       user.save(function(err, user) {
         if (err)
