@@ -447,7 +447,7 @@ app.post('/polls/2nd-module-quantitative-methods', function(req, res) {
       console.log('There isn\'t such user in the database');
     }
   });
-  req.flash('info', `Ваш результат принят (Направление № ${req.body["quantitative_methods"]}). Благодарим за участие. Если вами было выбрано неверное значение, вы можете пройти опрос заново.`);
+  req.flash('info', `Ваш результат принят (Направление № ${req.body["quantitative_methods"]}). Благодарим за участие. Если вами было выбрано неверное значение, вы можете пройти опрос <a href="/polls/2nd-module-quantitative-methods">заново</a>.`);
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
     to: 'marat.goya@gmail.com', // list of receivers
