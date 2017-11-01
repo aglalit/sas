@@ -39,10 +39,7 @@ html
                   span.fa.fa-google-plus Google
                 p
                   br
-                  -if(user)
-                    Email: #{user.google.email}
+                  -if(user) Email: #{user.google.email}
                   br
-                  -if(user)
-                    Имя: #{user.google.name}
-
+                  -if(user) Имя: #{user.google.name}
                 a.btn.btn-default.btn-lg(href='/logout') Выйти
