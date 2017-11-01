@@ -51,6 +51,10 @@ var userSchema = mongoose.Schema({
         elective1: String,
         elective2: String,
         elective3: String
+      },
+      "2module__quantitative_methods": {
+        time: String,
+        value: Number
       }
     }
   }
