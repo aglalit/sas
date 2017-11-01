@@ -33,13 +33,15 @@ html
                 li
                   h2
                     a(href="/polls-ai-metaphor") Анализ и интерпретация: Метафора
-            div(class="col-xs-12")
+          div(class="col-xs-12")
               div(class="well")
                 h3.text-danger
                   span.fa.fa-google-plus Google
                 p
                   br
-                  -if(user) Email: #{user.google.email}
+                  -if(user)
+                    span Email: #{user.google.email}
                   br
-                  -if(user) Имя: #{user.google.name}
+                  -if(user)
+                    span Имя: #{user.google.name}
                 a.btn.btn-default.btn-lg(href='/logout') Выйти
