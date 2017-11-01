@@ -92,7 +92,7 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: '/polls/2nd-module-electives',
+  successRedirect: '/polls/2nd-module-quantitative-methods',
   failureRedirect: '/login'
 }));
 // passport.authenticate('google'),
