@@ -17,32 +17,32 @@ html
       body {font-size:40px}
       h1 {font-size:60px}
       h2 {font-size:50px}}
-  body
-    div(class="container")
-      div(class="page-header text-center")
-        h1 Школа перспективных исследований. Обратная связь
-      div(class="row")
-        -if(messages)
-          div(class="alert alert-success") #{messages}
-      div(class="row")
-        div(class="col-xs-12")
-          ul(class="list-unstyled")
-            li
-              h2
-                a(href="/polls/2nd-module-quantitative-methods") Второй модуль. Численные методы: выбор направления.
-            li
-              h2
-                a(href="/polls-ai-metaphor") Анализ и интерпретация: Метафора
-        div(class="row")
-          div(class="col-xs-12")
-            div(class="well")
-              h3.text-danger
-                span.fa.fa-google-plus Google
-              p
-                br
-                -if(user)
+      body
+        div(class="container")
+          div(class="page-header text-center")
+            h1 Школа перспективных исследований. Обратная связь
+          div(class="row")
+            -if(messages)
+              div(class="alert alert-success") #{messages}
+          div(class="row")
+            div(class="col-xs-12")
+              ul(class="list-unstyled")
+                li
+                  h2
+                    a(href="/polls/2nd-module-quantitative-methods") Второй модуль. Численные методы: выбор направления.
+                li
+                  h2
+                    a(href="/polls-ai-metaphor") Анализ и интерпретация: Метафора
+            div(class="col-xs-12")
+              div(class="well")
+                h3.text-danger
+                  span.fa.fa-google-plus Google
+                p
+                  br
+                  -if(user)
                     Email: #{user.google.email}
-                br
-                -if(user)
+                  br
+                  -if(user)
                     Имя: #{user.google.name}
-              a.btn.btn-default.btn-lg(href='/logout') Выйти
+
+                a.btn.btn-default.btn-lg(href='/logout') Выйти
