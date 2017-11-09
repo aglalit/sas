@@ -453,7 +453,7 @@ app.post('/polls/2nd-module-surendra', function(req, res) {
     to: 'marat.goya@gmail.com', // list of receivers
     subject: `${req.user.google.email} - ${req.body["2module__surendra"]}`, // Subject line
     // text: JSON.stringify(req.user), // plain text body
-    html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
+    html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>' + JSON.stringify(req.body["2module__surendra"]) + '</b>' // html body
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
