@@ -451,7 +451,7 @@ app.post('/polls/2nd-module-surendra', function(req, res) {
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
     to: 'marat.goya@gmail.com', // list of receivers
-    subject: `${req.user.google.email} - ${req.body["quantitative_methods"]}`, // Subject line
+    subject: `${req.user.google.email} - ${req.body["2module__surendra"]}`, // Subject line
     // text: JSON.stringify(req.user), // plain text body
     html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
   };
