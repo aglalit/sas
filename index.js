@@ -472,7 +472,7 @@ app.get('/polls/calvert-forum', function(req, res) {
   res.render('calvert-forum', {user: req.user})
 });
 
-app.post('/calvert-forum', function(req, res) {
+app.post('/polls/calvert-forum', function(req, res) {
   Session.findOne({
     'session_id': req.session.id
   }, function(err, session) {
