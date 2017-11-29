@@ -42,7 +42,7 @@ html
       }
       .input-group .form-control {
         margin: 20px 0 40px 0;
-        width:75%;
+        
       }
       form {
         margin-top: 30px;
@@ -89,6 +89,11 @@ html
         }
         button {
           background-color: #00f !important;
+        }
+        
+        .checkbox {
+          width: 3%;
+    margin-top: 6px;
         }
 
 
@@ -158,6 +163,6 @@ body
             input(type="text" required="required" class="form-control" name="Набор ЕГЭ, который ты выбрал или собираешься выбрать")
             label(for="Эссе «В каком университете я хочу учиться»" class="label_width100") Напиши небольшое эссе на тему: «В каком университете я хочу учиться»
             textarea(rows="10" class="form-control" name="Эссе «В каком университете я хочу учиться»")  
-            input(id="agreement-checkbox" type="checkbox" class="form-control")
+            input(id="agreement-checkbox" type="checkbox" class="form-control checkbox")
             label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных
         button(type="submit" class="btn btn-primary btn-lg") Отправить
