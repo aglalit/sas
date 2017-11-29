@@ -819,7 +819,7 @@ console.log('adasd');
     }
   });
   req.flash('info', 'Ваш результат принят. Благодарим за участие.');
-  res.render('polls', {user: req.user})
+  res.render('polls', {messages: req.flash('info')})
 });
 
 // catch 404 and forward to error handler
