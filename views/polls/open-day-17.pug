@@ -45,6 +45,9 @@ html
       form {
         margin-top: 30px;
       }
+      fieldset {
+        margin-bottom:30px;
+      }
       label,legend {
         text-align: left;
         width:95%
@@ -54,6 +57,9 @@ html
         float:left;
         width:75%;
         font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+      .label_width100 {
+        width:100%;
       }
 
       input[type="radio"] {
@@ -133,18 +139,18 @@ body
               label(for="8") Наталья Савельева, Почему мы верим корпоративной идеологии? Случай сетевого маркетинга в России"
               input(type="radio" name="lecture3" id="9" value="Олег Журавлев, «Дружба как объект исследования социальных наук»") 
               label(for="9") Олег Журавлев, «Дружба как объект исследования социальных наук»
-            label(for="ФИО") ФИО
+            label(for="ФИО" class="label_width100") ФИО
             input(type="text" required="required" class="form-control" name="ФИО")
-            label(for="Номер школы, лицея, гимназии") Номер школы, лицея, гимназии
+            label(for="Номер школы, лицея, гимназии" class="label_width100") Номер школы, лицея, гимназии
             input(type="text" required="required" class="form-control" name="Номер школы, лицея, гимназии")
-            label(for="Класс") Класс
+            label(for="Класс" class="label_width100") Класс
             input(type="number" required="required" class="form-control" name="Класс" min="1" max="11")
-            label(for="Телефон") Телефон
+            label(for="Телефон" class="label_width100") Телефон
             input(type="tel" required="required" class="form-control" name="Телефон")
-            label(for="Еmail") Еmail
+            label(for="Еmail" class="label_width100") Еmail
             input(type="email" required="required" class="form-control" name="Еmail")
-            label(for="Набор ЕГЭ, который ты выбрал или собираешься выбрать") Набор ЕГЭ, который ты выбрал или собираешься выбрать
+            label(for="Набор ЕГЭ, который ты выбрал или собираешься выбрать" class="label_width100") Набор ЕГЭ, который ты выбрал или собираешься выбрать
             input(type="text" required="required" class="form-control" name="Набор ЕГЭ, который ты выбрал или собираешься выбрать")
-        label(for="Эссе «В каком университете я хочу учиться»") Эссе «В каком университете я хочу учиться»
-        textarea(rows="10" class="form-control" name="Эссе «В каком университете я хочу учиться»")  
+            label(for="Эссе «В каком университете я хочу учиться»" class="label_width100") Эссе «В каком университете я хочу учиться»
+            textarea(rows="10" class="form-control" name="Эссе «В каком университете я хочу учиться»")  
         button(type="submit" class="btn btn-primary btn-lg") Отправить
