@@ -1,0 +1,150 @@
+doctype html
+html
+  head
+    title День в Школе перспективных исследований. Регистрация
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    // load bootstrap css
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      h2 {font-weight:800; margin-bottom:20px;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+      }
+      h3 {
+        font-size: 1.5em;
+        font-weight: 400;
+      }
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+      }
+      .container{
+        width:98% !important;
+      }
+      .input-group{
+        margin-bottom:20px;
+      }
+      .input-group label {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 10px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+        width:75%;
+      }
+      form {
+        margin-top: 30px;
+      }
+      label,legend {
+        text-align: left;
+        width:95%
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        float:left;
+        width:75%;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        top:0px
+        }
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #00f;
+        }
+        button {
+          background-color: #00f !important;
+        }
+
+
+        @media (max-width: 1024px) {
+
+          body{padding-top:10px}
+          .container{
+          width:95%;
+          }
+        .input-group  label {
+          font-size:30px ;
+          margin-bottom:20px;
+          width:90%;
+          }
+          input[type="radio"]{
+            top:5px;
+          }
+          button.btn-lg {
+            font-size: 30px;
+          }
+        }
+body
+  .container
+    .jumbotron.text-center
+      h1 День в Школе перспективных исследований. Регистрация
+      form(action="/polls/open-day-17" method="post")
+        fieldset
+          legend 
+          div(class="input-group")
+            fieldset
+              legend Выбери несколько лекций, которые тебе интересны
+              h3 Лекция 1, 11:00—11:45
+              input(type="radio" name="lecture1" id="1" value="Duskin Drum, “What is Performance Studies”") 
+              label(for="1") Duskin Drum, “What is Performance Studies”
+              input(type="radio" name="lecture1" id="2" value="Светлана Ерпылева, «Могут ли дети быть гражданами?»") 
+              label(for="2") Светлана Ерпылева, «Могут ли дети быть гражданами?»
+              input(type="radio" name="lecture1" id="3" value="Максим Алюков, «Изучать компьютерные игры»") 
+              label(for="3") Максим Алюков, «Изучать компьютерные игры»
+              h3 Лекция 2, 12:00—12:45 
+              input(type="radio" name="lecture2" id="4" value="Peter Jones, “Studying Love”") 
+              label(for="4") Peter Jones, “Studying Love”
+              input(type="radio" name="lecture2" id="5" value="Zachary Reyna, “Apocalypse and Environmental Political Thought”") 
+              label(for="5") Zachary Reyna, “Apocalypse and Environmental Political Thought”
+              input(type="radio" name="lecture2" id="6" value="Евгений Гришин, «Карта — не территория»") 
+              label(for="6") Евгений Гришин, «Карта — не территория»
+              h3 Лекция 3, 13:30—14:15
+              input(type="radio" name="lecture3" id="7" value="Louis Vervoort, “Free Will: When Philosophy Meets Natural Science”") 
+              label(for="7") Louis Vervoort, “Free Will: When Philosophy Meets Natural Science”
+              input(type="radio" name="lecture3" id="8" value="Наталья Савельева, Почему мы верим корпоративной идеологии? Случай сетевого маркетинга в России") 
+              label(for="8") Наталья Савельева, Почему мы верим корпоративной идеологии? Случай сетевого маркетинга в России"
+              input(type="radio" name="lecture3" id="9" value="Олег Журавлев, «Дружба как объект исследования социальных наук»") 
+              label(for="9") Олег Журавлев, «Дружба как объект исследования социальных наук»
+            label(for="ФИО") ФИО
+            input(type="text" required="required" class="form-control" name="ФИО")
+            label(for="Номер школы, лицея, гимназии") Номер школы, лицея, гимназии
+            input(type="text" required="required" class="form-control" name="Номер школы, лицея, гимназии")
+            label(for="Класс") Класс
+            input(type="number" required="required" class="form-control" name="Класс" min="1" max="11")
+            label(for="Телефон") Телефон
+            input(type="tel" required="required" class="form-control" name="Телефон")
+            label(for="Еmail") Еmail
+            input(type="email" required="required" class="form-control" name="Еmail")
+            label(for="Набор ЕГЭ, который ты выбрал или собираешься выбрать") Набор ЕГЭ, который ты выбрал или собираешься выбрать
+            input(type="text" required="required" class="form-control" name="Набор ЕГЭ, который ты выбрал или собираешься выбрать")
+        label(for="Эссе «В каком университете я хочу учиться»") Эссе «В каком университете я хочу учиться»
+        textarea(rows="10" class="form-control" name="Эссе «В каком университете я хочу учиться»")  
+        button(type="submit" class="btn btn-primary btn-lg") Отправить

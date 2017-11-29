@@ -735,6 +735,83 @@ app.post('/sendresult', function(req, res) {
   });
 });
 
+app.get('/polls/open-day-17', function(req, res) {
+  res.render('open-day-17', {user: req.user})
+});
+
+app.post('/polls/open-day-17', function(req, res) {
+console.log('adasd');
+  Session.findOne({
+    'session_id': req.session.id
+  }, function(err, session) {
+    if (err)
+      return done(err);
+ function sessionQuestions(sess){
+   sess.polls.open_day_17.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+   sess.polls.open_day_17["lecture1"] = req.body["lecture1"];
+   sess.polls.open_day_17["lecture2"] = req.body["lecture2"];
+   sess.polls.open_day_17["lecture3"] = req.body["lecture3"];
+   sess.polls.open_day_17["ФИО"] = req.body["ФИО"];
+   sess.polls.open_day_17["Номер школы, лицея, гимназии"] = req.body["Номер школы, лицея, гимназии"];
+   sess.polls.open_day_17["Класс"] = parseInt(req.body["Класс"]);
+   sess.polls.open_day_17["Телефон"] = req.body["Телефон"];
+   sess.polls.open_day_17["Еmail"] = req.body["Еmail"];
+   sess.polls.open_day_17["Набор ЕГЭ, который ты выбрал или собираешься выбрать"] = req.body["Набор ЕГЭ, который ты выбрал или собираешься выбрать"];
+   sess.polls.open_day_17["Эссе «В каком университете я хочу учиться»"] = req.body["Эссе «В каком университете я хочу учиться»"];
+ }
+
+    if (session) {
+      var now = new Date();
+      sessionQuestions(session)
+
+
+      session.save(function(err, session) {
+        if (err)
+          return console.error(err);
+        }
+      );
+      let mailOptions = {
+        from: '"SAS" <sas@utmn.ru>', // sender address
+        to: 'marat.goya@gmail.com', // list of receivers
+        subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
+        // text: JSON.stringify(req.user), // plain text body
+        html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
+      };
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+      });
+    } else {
+      var newSession = new Session();
+      var now = new Date();
+      sessionQuestions(newSession)
+
+      newSession.save(function(err) {
+        if (err)
+          return console.error(err);
+        return;
+      });
+      let mailOptions = {
+        from: '"SAS" <sas@utmn.ru>', // sender address
+        to: 'marat.goya@gmail.com', // list of receivers
+        subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
+        // text: JSON.stringify(req.user), // plain text body
+        html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
+      };
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+      });
+    }
+  });
+  req.flash('info', 'Ваш результат принят. Благодарим за участие.');
+  res.render('open-day-17', {user: req.user})
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
