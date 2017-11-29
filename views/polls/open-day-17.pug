@@ -149,11 +149,13 @@ body
             label(for="Класс" class="label_width100") Класс
             input(type="number" required="required" class="form-control" name="Класс" min="1" max="11")
             label(for="Телефон" class="label_width100") Телефон
-            input(type="tel" required="required" class="form-control" name="Телефон")
+            input(type="tel" class="form-control" name="Телефон")
             label(for="Еmail" class="label_width100") Еmail
             input(type="email" required="required" class="form-control" name="Еmail")
             label(for="Набор ЕГЭ, который ты выбрал или собираешься выбрать" class="label_width100") Набор ЕГЭ, который ты выбрал или собираешься выбрать
             input(type="text" required="required" class="form-control" name="Набор ЕГЭ, который ты выбрал или собираешься выбрать")
-            label(for="Эссе «В каком университете я хочу учиться»" class="label_width100") Эссе «В каком университете я хочу учиться»
+            label(for="Эссе «В каком университете я хочу учиться»" class="label_width100") Напиши небольшое эссе на тему: «В каком университете я хочу учиться»
             textarea(rows="10" class="form-control" name="Эссе «В каком университете я хочу учиться»")  
+            label(for="agreement-checkbox" class="label_width100") Я даю согласие на обработку своих персональных данных
+            input(id="agreement-checkbox" type="checkbox" class="form-control")
         button(type="submit" class="btn btn-primary btn-lg") Отправить
