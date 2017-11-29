@@ -740,7 +740,6 @@ app.get('/polls/open-day-17', function(req, res) {
 });
 
 app.post('/polls/open-day-17', function(req, res) {
-console.log('adasd');
   Session.findOne({
     'session_id': req.session.id
   }, function(err, session) {
@@ -772,7 +771,7 @@ console.log('adasd');
       );
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'marat.goya@gmail.com', // list of receivers
+        to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -805,7 +804,7 @@ console.log('adasd');
       });
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: ['marat.goya@gmail.com','e.samokhvalova@utmn.ru','a.rusakova@utmn.ru'], // list of receivers
+        to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
