@@ -75,7 +75,9 @@ var sessionSchema = mongoose.Schema({
     // },
       open_day_17: {
         time: String,
-        "Выбери несколько лекций, которые тебе интересны": String,
+        "lecture1": String,
+        "lecture2": String,
+        "lecture3": String,
         "ФИО":String,
         "Номер школы, лицея, гимназии": String,
         "Класс":Number,

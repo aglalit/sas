@@ -747,22 +747,22 @@ console.log('adasd');
     if (err)
       return done(err);
  function sessionQuestions(sess){
-   sess.polls.open_day_17.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
-   sess.polls.open_day_17["lecture1"] = req.body["lecture1"];
-   sess.polls.open_day_17["lecture2"] = req.body["lecture2"];
-   sess.polls.open_day_17["lecture3"] = req.body["lecture3"];
-   sess.polls.open_day_17["ФИО"] = req.body["ФИО"];
-   sess.polls.open_day_17["Номер школы, лицея, гимназии"] = req.body["Номер школы, лицея, гимназии"];
-   sess.polls.open_day_17["Класс"] = parseInt(req.body["Класс"]);
-   sess.polls.open_day_17["Телефон"] = req.body["Телефон"];
-   sess.polls.open_day_17["Еmail"] = req.body["Еmail"];
-   sess.polls.open_day_17["Набор ЕГЭ, который ты выбрал или собираешься выбрать"] = req.body["Набор ЕГЭ, который ты выбрал или собираешься выбрать"];
-   sess.polls.open_day_17["Эссе «В каком университете я хочу учиться»"] = req.body["Эссе «В каком университете я хочу учиться»"];
+
  }
 
     if (session) {
       var now = new Date();
-      sessionQuestions(session)
+      session.polls.open_day_17.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+      session.polls.open_day_17["lecture1"] = req.body["lecture1"];
+      session.polls.open_day_17["lecture2"] = req.body["lecture2"];
+      session.polls.open_day_17["lecture3"] = req.body["lecture3"];
+      session.polls.open_day_17["ФИО"] = req.body["ФИО"];
+      session.polls.open_day_17["Номер школы, лицея, гимназии"] = req.body["Номер школы, лицея, гимназии"];
+      session.polls.open_day_17["Класс"] = parseInt(req.body["Класс"]);
+      session.polls.open_day_17["Телефон"] = req.body["Телефон"];
+      session.polls.open_day_17["Еmail"] = req.body["Еmail"];
+      session.polls.open_day_17["Набор ЕГЭ, который ты выбрал или собираешься выбрать"] = req.body["Набор ЕГЭ, который ты выбрал или собираешься выбрать"];
+      session.polls.open_day_17["Эссе «В каком университете я хочу учиться»"] = req.body["Эссе «В каком университете я хочу учиться»"];
 
 
       session.save(function(err, session) {
@@ -786,7 +786,17 @@ console.log('adasd');
     } else {
       var newSession = new Session();
       var now = new Date();
-      sessionQuestions(newSession)
+      newSession.polls.open_day_17.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+      newSession.polls.open_day_17["lecture1"] = req.body["lecture1"];
+      newSession.polls.open_day_17["lecture2"] = req.body["lecture2"];
+      newSession.polls.open_day_17["lecture3"] = req.body["lecture3"];
+      newSession.polls.open_day_17["ФИО"] = req.body["ФИО"];
+      newSession.polls.open_day_17["Номер школы, лицея, гимназии"] = req.body["Номер школы, лицея, гимназии"];
+      newSession.polls.open_day_17["Класс"] = parseInt(req.body["Класс"]);
+      newSession.polls.open_day_17["Телефон"] = req.body["Телефон"];
+      newSession.polls.open_day_17["Еmail"] = req.body["Еmail"];
+      newSession.polls.open_day_17["Набор ЕГЭ, который ты выбрал или собираешься выбрать"] = req.body["Набор ЕГЭ, который ты выбрал или собираешься выбрать"];
+      newSession.polls.open_day_17["Эссе «В каком университете я хочу учиться»"] = req.body["Эссе «В каком университете я хочу учиться»"];
 
       newSession.save(function(err) {
         if (err)
@@ -809,7 +819,7 @@ console.log('adasd');
     }
   });
   req.flash('info', 'Ваш результат принят. Благодарим за участие.');
-  res.render('open-day-17', {user: req.user})
+  res.render('polls', {user: req.user})
 });
 
 // catch 404 and forward to error handler
