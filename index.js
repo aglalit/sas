@@ -808,7 +808,7 @@ app.post('/polls/open-day-17', function(req, res) {
     }
   });
   req.flash('info', 'Ваш результат принят. Благодарим за участие.');
-  res.render('polls', {messages: req.flash('info')})
+  res.render('polls_anonymous', {messages: req.flash('info')})
 });
 
 // catch 404 and forward to error handler
