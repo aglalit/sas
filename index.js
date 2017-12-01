@@ -507,7 +507,7 @@ app.post('/polls/global-issues-part-2', function(req, res) {
       );
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'marat.goya@gmail.com', // list of receivers
+        to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -522,7 +522,6 @@ app.post('/polls/global-issues-part-2', function(req, res) {
       var newSession = new Session();
       var now = new Date();
       newSession.session_id = req.session.id;
-      newSession.polls.GI_part2.language = 'en';
       newSession.polls.GI_part2.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
       newSession.polls.GI_part2.LECTURES["Оцените сложность содержания тематических сессий лекций"] = parseInt(req.body["Оцените сложность содержания тематических сессий лекций"]);
       newSession.polls.GI_part2.LECTURES["Насколько новым для вас было содержание тематических сессий лекций"] = parseInt(req.body["Насколько новым для вас было содержание тематических сессий лекций"]);
@@ -547,7 +546,7 @@ app.post('/polls/global-issues-part-2', function(req, res) {
       });
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'marat.goya@gmail.com', // list of receivers
+        to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
