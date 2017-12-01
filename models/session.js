@@ -47,6 +47,7 @@ var sessionSchema = mongoose.Schema({
     //     "Как бы вы порекомендовали улучшить этот семинар": String
     //   }
     // },
+    
     GI_part2: {
       time: String,
       LECTURES: {
