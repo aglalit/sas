@@ -448,7 +448,7 @@ app.post('/polls/3rd-module-electives', function(req, res) {
       console.log('There isn\'t such user in the database');
     }
   });
-  req.flash('info', `Ваш результат принят (1-й приоритет — ${req.body["elective1"]}, 2-й приоритет — ${req.body["elective2"]}, 3-й приоритет — ${req.body["elective3"]}). Благодарим за участие.`);
+  req.flash('info', `Ваш результат принят (1-й приоритет — ${req.body["elective1"]}; 2-й приоритет — ${req.body["elective2"]}; 3-й приоритет — ${req.body["elective3"]}). Благодарим за участие.`);
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
     to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
