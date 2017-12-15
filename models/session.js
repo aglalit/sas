@@ -47,8 +47,8 @@ var sessionSchema = mongoose.Schema({
     //     "Как бы вы порекомендовали улучшить этот семинар": String
     //   }
     // },
-    
-    GI_part2: {
+
+    GI_part3: {
       time: String,
       LECTURES: {
         "Оцените сложность содержания лекций": Number,
