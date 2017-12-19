@@ -82,8 +82,8 @@ var sessionSchema = mongoose.Schema({
         "Эссе «В каком университете я хочу учиться»": String
       },
       "22_23_lectures": {
-        "lecture1": Boolean,
-        "lecture2": Boolean,
+        "lecture1": String,
+        "lecture2": String,
         "ФИО":String
       }
   }
