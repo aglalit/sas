@@ -856,7 +856,7 @@ app.post('/polls/open-day-17', function(req, res) {
 });
 
 app.get('/polls/22-23-lectures', function(req, res) {
-  res.render('open-day-17', {user: req.user})
+  res.render('22-23-lectures', {user: req.user})
 });
 
 app.post('/polls/22-23-lectures', function(req, res) {
