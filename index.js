@@ -871,9 +871,9 @@ app.post('/polls/22-23-lectures', function(req, res) {
 
     if (session) {
       var now = new Date();
-      session.polls.open_day_17["lecture1"] = req.body["lecture1"];
-      session.polls.open_day_17["lecture2"] = req.body["lecture2"];
-      session.polls.open_day_17["ФИО"] = req.body["ФИО"];
+      session.polls["22_23_lectures"]["lecture1"] = req.body["lecture1"];
+      session.polls["22_23_lectures"]["lecture2"] = req.body["lecture2"];
+      session.polls["22_23_lectures"]["ФИО"] = req.body["ФИО"];
 
       session.save(function(err, session) {
         if (err)
@@ -896,9 +896,9 @@ app.post('/polls/22-23-lectures', function(req, res) {
     } else {
       var newSession = new Session();
       var now = new Date();
-      newSession.polls.open_day_17["lecture1"] = req.body["lecture1"];
-      newSession.polls.open_day_17["lecture2"] = req.body["lecture2"];
-      newSession.polls.open_day_17["ФИО"] = req.body["ФИО"];
+      newSession.polls["22_23_lectures"]["lecture1"] = req.body["lecture1"];
+      newSession.polls["22_23_lectures"]["lecture2"] = req.body["lecture2"];
+      newSession.polls["22_23_lectures"]["ФИО"] = req.body["ФИО"];
 
       newSession.save(function(err) {
         if (err)
