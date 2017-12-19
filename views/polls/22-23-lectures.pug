@@ -34,7 +34,7 @@ html
       .input-group label {
         font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
         font-weight: 500;
-        margin: 10px 0;
+        margin: 30px 0;
         font-size:20px;
       }
       .input-group .label__description {
@@ -127,10 +127,10 @@ body
           div(class="input-group")
             fieldset
               legend Отметьте лекции, на которые собираетесь пойти
-              input(type="checkbox" name="lecture1" id="1") 
+              input.checkbox(type="checkbox" name="lecture1" id="1") 
               label(for="1") Пятница 22 декабря, 18.00 Валерий Анашвили "Менеджер и маркетинг в культуре"
-              input(type="checkbox" name="lecture2" id="1") 
-              label(for="1") Суббота 23 декабря, 14.00 Альмира Усманова "Визуальная культура: медиа, современное искусство, кураторские практики"
+              input(type="checkbox" name="lecture2" id="2") 
+              label(for="2") Суббота 23 декабря, 14.00 Альмира Усманова "Визуальная культура: медиа, современное искусство, кураторские практики"
               label(for="ФИО" class="label_width100") ФИО
-              input(type="text" required="required" class="form-control" name="ФИО")    
+              input.checkbox(type="text" required="required" class="form-control" name="ФИО")    
         button(type="submit" class="btn btn-primary btn-lg") Отправить
