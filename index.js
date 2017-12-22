@@ -87,6 +87,10 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
+app.get('/', function(req, res) {
+  res.redirect('https://sas.utmn.ru')
+});
+
 app.get('/auth/google', passport.authenticate('google', {
   scope: ['profile', 'email']
 }));
@@ -853,6 +857,10 @@ app.post('/polls/open-day-17', function(req, res) {
   });
   req.flash('info', 'Ваш результат принят. Благодарим за участие.');
   res.render('polls_anonymous', {messages: req.flash('info')})
+});
+
+app.get('/events-2017', function(req, res) {
+  res.render('events-2017')
 });
 
 // catch 404 and forward to error handler
