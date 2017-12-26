@@ -6,7 +6,8 @@ const fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.sendFile(path.join(__dirname, '..', '/public/lectures.html'));
+  // res.sendFile(path.join(__dirname, '..', '/public/lectures.html'));
+  res.redirect(301, 'sas.utmn.ru')
 });
 
 router.get('/login', function(req, res, next) {
