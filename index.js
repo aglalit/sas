@@ -943,11 +943,11 @@ app.post('/polls/open-day-17', function(req, res) {
 app.get('/events-2017', function(req, res) {
   res.render('events-2017')
 
-app.get('/polls/22-23-lectures', function(req, res) {
-  res.render('22-23-lectures', {user: req.user})
+app.get('/polls/electives', function(req, res) {
+  res.render('electives', {user: req.user})
 });
 
-app.post('/polls/22-23-lectures', function(req, res) {
+app.post('/polls/electives', function(req, res) {
   Session.findOne({
     'session_id': req.session.id
   }, function(err, session) {
@@ -1021,76 +1021,6 @@ app.post('/polls/22-23-lectures', function(req, res) {
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
         to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
-        subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
-        // text: JSON.stringify(req.user), // plain text body
-        html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
-      };
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          return console.log(error);
-        }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-      });
-    }
-  });
-  req.flash('info', 'Ваш результат принят. Благодарим за участие.');
-  res.render('polls_anonymous', {messages: req.flash('info')})
-});
-});
-
-app.get('/polls/electives', function(req, res) {
-  res.render('electives', {user: req.user})
-});
-
-app.post('/polls/electives', function(req, res) {
-  Session.findOne({
-    'session_id': req.session.id
-  }, function(err, session) {
-    if (err)
-      return done(err);
- function sessionQuestions(sess){
-
- }
-
-    if (session) {
-      var now = new Date();
-      session.polls["22_23_lectures"]["lecture1"] = req.body["lecture1"];
-      session.polls["22_23_lectures"]["lecture2"] = req.body["lecture2"];
-      session.polls["22_23_lectures"]["ФИО"] = req.body["ФИО"];
-
-      session.save(function(err, session) {
-        if (err)
-          return console.error(err);
-        }
-      );
-      let mailOptions = {
-        from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru, a.rusakova@utmn.ru, e.selikhovkina@utmn.ru', // list of receivers
-        subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
-        // text: JSON.stringify(req.user), // plain text body
-        html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
-      };
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          return console.log(error);
-        }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-      });
-    } else {
-      var newSession = new Session();
-      var now = new Date();
-      newSession.polls["22_23_lectures"]["lecture1"] = req.body["lecture1"];
-      newSession.polls["22_23_lectures"]["lecture2"] = req.body["lecture2"];
-      newSession.polls["22_23_lectures"]["ФИО"] = req.body["ФИО"];
-
-      newSession.save(function(err) {
-        if (err)
-          return console.error(err);
-        return;
-      });
-      let mailOptions = {
-        from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru, a.rusakova@utmn.ru, e.selikhovkina@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
