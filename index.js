@@ -950,7 +950,6 @@ app.post('/polls/electives', function(req, res) {
   req.flash('info', 'Ваш результат принят. Благодарим за участие.');
   res.render('polls_anonymous', {messages: req.flash('info')})
 });
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
