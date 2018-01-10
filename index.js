@@ -608,91 +608,6 @@ app.post('/polls/global-issues-part-3', function(req, res) {
   res.render('polls_anonymous', {messages: req.flash('info')})
 });
 
-app.get('/polls/global-issues-volkov', function(req, res) {
-
-  res.render('global-issues-volkov', {user: req.user})
-});
-
-app.post('/polls/global-issues-volkov', function(req, res) {
-  Session.findOne({
-    'session_id': req.session.id
-  }, function(err, session) {
-    if (err)
-      return done(err);
-
-    if (session) {
-      var now = new Date();
-      session.polls.GI_volkov.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
-      session.polls.GI_volkov.LECTURES["Оцените сложность содержания лекций"] = parseInt(req.body["Оцените сложность содержания лекций"]);
-      session.polls.GI_volkov.LECTURES["Что вам больше всего понравилось на лекциях?"] = req.body["Что вам больше всего понравилось на лекциях?"];
-      session.polls.GI_volkov.LECTURES["Что вам больше всего не понравилось на лекциях?"] = req.body["Что вам больше всего не понравилось на лекциях?"];
-
-      session.polls.GI_volkov.SEMINARS["Оцените, насколько понятной для вас была установка А.Е. Волкова на групповую работу"] = req.body["Оцените, насколько понятной для вас была установка А.Е. Волкова на групповую работу"];
-      session.polls.GI_volkov.SEMINARS["Что именно для вас было непонятным и самым сложным в установке на групповую работу?"] = req.body["Что именно для вас было непонятным и самым сложным в установке на групповую работу?"];
-      session.polls.GI_volkov.SEMINARS["Что для вас было самым сложным в групповой работе?"] = req.body["Что для вас было самым сложным в групповой работе?"];
-      session.polls.GI_volkov.SEMINARS["Укажите имя и фамилию куратора, организовывавшего групповую работу"] = req.body["Укажите имя и фамилию куратора, организовывавшего групповую работу"];
-      session.polls.GI_volkov.SEMINARS["Насколько хорошо куратор организует интерактивную коммуникацию в группе?"] = parseInt(req.body["Насколько хорошо куратор организует интерактивную коммуникацию в группе?"]);
-      session.polls.GI_volkov.SEMINARS["Насколько изменились ваше мышление, знания и умения по результатам модуля с А.Е. Волковым?"] = parseInt(req.body["Насколько изменились ваше мышление, знания и умения по результатам модуля с А.Е. Волковым?"]);
-
-
-      session.save(function(err, session) {
-        if (err)
-          return console.error(err);
-        }
-      );
-      let mailOptions = {
-        from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
-        subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
-        // text: JSON.stringify(req.user), // plain text body
-        html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
-      };
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          return console.log(error);
-        }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-      });
-    } else {
-      var newSession = new Session();
-      var now = new Date();
-      newSession.session_id = req.session.id;
-      newSession.polls.GI_volkov.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
-      newSession.polls.GI_volkov.LECTURES["Оцените сложность содержания лекций"] = parseInt(req.body["Оцените сложность содержания лекций"]);
-      newSession.polls.GI_volkov.LECTURES["Что вам больше всего понравилось на лекциях?"] = req.body["Что вам больше всего понравилось на лекциях?"];
-      newSession.polls.GI_volkov.LECTURES["Что вам больше всего не понравилось на лекциях?"] = req.body["Что вам больше всего не понравилось на лекциях?"];
-
-      newSession.polls.GI_volkov.SEMINARS["Оцените, насколько понятной для вас была установка А.Е. Волкова на групповую работу"] = req.body["Оцените, насколько понятной для вас была установка А.Е. Волкова на групповую работу"];
-      newSession.polls.GI_volkov.SEMINARS["Что именно для вас было непонятным и самым сложным в установке на групповую работу?"] = req.body["Что именно для вас было непонятным и самым сложным в установке на групповую работу?"];
-      newSession.polls.GI_volkov.SEMINARS["Что для вас было самым сложным в групповой работе?"] = req.body["Что для вас было самым сложным в групповой работе?"];
-      newSession.polls.GI_volkov.SEMINARS["Укажите имя и фамилию куратора, организовывавшего групповую работу"] = req.body["Укажите имя и фамилию куратора, организовывавшего групповую работу"];
-      newSession.polls.GI_volkov.SEMINARS["Насколько хорошо куратор организует интерактивную коммуникацию в группе?"] = parseInt(req.body["Насколько хорошо куратор организует интерактивную коммуникацию в группе?"]);
-      newSession.polls.GI_volkov.SEMINARS["Насколько изменились ваше мышление, знания и умения по результатам модуля с А.Е. Волковым?"] = parseInt(req.body["Насколько изменились ваше мышление, знания и умения по результатам модуля с А.Е. Волковым?"]);
-
-      newSession.save(function(err) {
-        if (err)
-          return console.error(err);
-        return;
-      });
-      let mailOptions = {
-        from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
-        subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
-        // text: JSON.stringify(req.user), // plain text body
-        html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
-      };
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          return console.log(error);
-        }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-      });
-    }
-  });
-  req.flash('info', 'Ваш результат принят. Благодарим за участие.');
-  res.render('polls_anonymous', {messages: req.flash('info')})
-});
-
 
 app.post('/polls-ai-metaphor', function(req, res) {
   console.log(req.body);
@@ -941,7 +856,7 @@ app.post('/polls/open-day-17', function(req, res) {
 });
 
 app.get('/events-2017', function(req, res) {
-  res.render('events-2017');
+  res.render('events-2017')
 
 app.get('/polls/electives', function(req, res) {
   res.render('electives', {user: req.user})
@@ -960,7 +875,6 @@ app.post('/polls/electives', function(req, res) {
     if (session) {
       var now = new Date();
       session.polls.electives__17__2["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"] = req.body["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"];
-
       session.polls.electives__17__2["Как хорошо были организованы материалы курса"] = parseInt(req.body["Как хорошо были организованы материалы курса"]);
       session.polls.electives__17__2["Сколько процентов обязательных текстов по этой части курса вы успевали прочесть"] = parseInt(req.body["Сколько процентов обязательных текстов по этой части курса вы успевали прочесть"]);
       session.polls.electives__17__2["Насколько полно преподаватель следовал программе курса"] = parseInt(req.body["Насколько полно преподаватель следовал программе курса"]);
@@ -975,6 +889,7 @@ app.post('/polls/electives', function(req, res) {
       session.polls.electives__17__2["Что вам больше всего не понравилось в этом лекционном курсе"] = req.body["Что вам больше всего не понравилось в этом лекционном курсе"];
       session.polls.electives__17__2["Что для вас было самым сложным в этом лекционном курсе"] = req.body["Что для вас было самым сложным в этом лекционном курсе"];
       session.polls.electives__17__2["Как бы вы порекомендовали улучшить этот лекционный курс"] = req.body["Как бы вы порекомендовали улучшить этот лекционный курс"];
+
       session.save(function(err, session) {
         if (err)
           return console.error(err);
@@ -997,7 +912,6 @@ app.post('/polls/electives', function(req, res) {
       var newSession = new Session();
       var now = new Date();
       newSession.polls.electives__17__2["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"] = req.body["Укажите имя и фамилию преподавателя, работавшего с вами на семинарах"];
-
       newSession.polls.electives__17__2["Как хорошо были организованы материалы курса"] = parseInt(req.body["Как хорошо были организованы материалы курса"]);
       newSession.polls.electives__17__2["Сколько процентов обязательных текстов по этой части курса вы успевали прочесть"] = parseInt(req.body["Сколько процентов обязательных текстов по этой части курса вы успевали прочесть"]);
       newSession.polls.electives__17__2["Насколько полно преподаватель следовал программе курса"] = parseInt(req.body["Насколько полно преподаватель следовал программе курса"]);
@@ -1020,7 +934,7 @@ app.post('/polls/electives', function(req, res) {
       });
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
+        to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru, a.rusakova@utmn.ru, e.selikhovkina@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -1035,6 +949,7 @@ app.post('/polls/electives', function(req, res) {
   });
   req.flash('info', 'Ваш результат принят. Благодарим за участие.');
   res.render('polls_anonymous', {messages: req.flash('info')})
+});
 });
 
 // catch 404 and forward to error handler
