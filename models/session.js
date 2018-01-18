@@ -102,7 +102,7 @@ var sessionSchema = mongoose.Schema({
         "lecture2": String,
         "ФИО":String
       },
-      great_books: {
+      great_books_2_17: {
         time: String,
         "Укажите имя и фамилию преподавателя, работавшего с вами на семинарах":String,
         "Как хорошо были организованы материалы курса":Number,
