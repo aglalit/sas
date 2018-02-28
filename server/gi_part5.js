@@ -1,5 +1,6 @@
-app.get('/polls/global-issues-part-5', function(req, res) {
+module.exports = function(){
 
+app.get('/polls/global-issues-part-5', function(req, res) {
   res.render('global-issues-part-5', {user: req.user})
 });
 
@@ -60,3 +61,4 @@ function parseSession (sess, req, transporter){
     console.log('Message %s sent: %s', info.messageId, info.response);
   });
 }
+};
