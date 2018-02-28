@@ -1,4 +1,4 @@
-module.exports = function(){
+module.exports = function(app, Session, transporter){
 
 app.get('/polls/global-issues-part-5', function(req, res) {
   res.render('global-issues-part-5', {user: req.user})

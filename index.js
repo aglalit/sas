@@ -516,7 +516,7 @@ app.post('/polls/2nd-module-surendra', function(req, res) {
 
 var Gi5 = require('./server/gi_part5.js');
 console.log(Gi5);
-Gi5();
+Gi5(app, Session, transporter);
 
 
 app.post('/polls-ai-metaphor', function(req, res) {
