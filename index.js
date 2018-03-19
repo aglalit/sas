@@ -109,6 +109,8 @@ app.get('/polls-anonymous', function(req, res) {
 });
 
 require('./server/gi_part5.js')(app, Session, transporter);
+require('./server/feminism.js')(app, Session, transporter);
+
 
 app.get('/logout', function(req, res) {
   req.logout();
