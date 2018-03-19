@@ -85,6 +85,8 @@ html
         }
         button {
           background-color: #00f !important;
+          margin-top:30px;
+
         }
 
 
@@ -103,6 +105,7 @@ html
           }
           button.btn-lg {
             font-size: 30px;
+            margin-top:30px;
           }
         }
 body
@@ -115,6 +118,6 @@ body
       h1 Обратная связь. «Актуальные проблемы»
       h3 В современном мире вопросы равенства полов постоянно обсуждаются, тем не менее не всем понятно, в чем именно должно заключаться равенство и как его можно достичь. В пятницу в рамках курса "Актуальные проблемы" перед вами выступит феминистка и исследовательница гендерной истории Алиса Клоц. Напишите, пожалуйста, ваши вопросы о феминизме и равенстве полов, чтобы можно было осветить в том числе и те темы, которые интересуют вас.
       form(action="/polls/feminism" method="post")
-        div(class="input-group")
-          textarea(rows="4" required="required" class="form-control" name="feminism")  
+        fieldset
+          textarea(rows="5" required="required" class="form-control" name="feminism")  
         button(type="submit" class="btn btn-primary btn-lg") Отправить
