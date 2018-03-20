@@ -108,7 +108,7 @@ app.get('/polls-anonymous', function(req, res) {
   res.render('polls_anonymous', {messages: req.flash('info')})
 });
 
-require('./server/gi_part5.js')(app, Session, transporter);
+require('./server/gi_part6.js')(app, Session, transporter);
 require('./server/feminism.js')(app, Session, transporter);
 
 
