@@ -1,6 +1,6 @@
 doctype html
 head
-  title Выбор элективов 3-го модуля
+  title Выбор элективов 4-го модуля
   link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
   // load bootstrap css
   style.
@@ -86,6 +86,10 @@ head
       button {
         background-color: #00f !important;
       }
+      
+      .label_desc {
+        font-size:15px;
+      }
 
 
       @media (max-width: 1024px) {
@@ -99,10 +103,13 @@ head
         margin-bottom:20px;
         }
         input[type="radio"]{
-          top:23px;
+          top:6px;
         }
         button.btn-lg {
           font-size: 30px;
+        }
+        .label_desc {
+          font-size:20px;
         }
       }
 .container
@@ -110,7 +117,7 @@ head
     .logo
       a(href="https://sas.utmn.ru")
         img(src="../assets/Logo__blue.png")
-    h1 Выбор элективов 3-го модуля
+    h1 Выбор элективов на 4-й модуль. Форма выбора доступна до 23 марта, 20:00.
     form(action="/polls/3rd-module-electives" method="post")
       h3 1-й приоритет
       div(class="input-group")
@@ -125,7 +132,8 @@ head
         input(type="radio" value="Oleg Zhuravlev" name="elective1" id="Oleg Zhuravlev") 
         label(for="Oleg Zhuravlev") When Something Happens to Us. Introduction to Sociology of the Event — Oleg Zhuravlev
         input(type="radio" value="Elena Arbatskaya" name="elective1" id="Elena Arbatskaya") 
-        label(for="Elena Arbatskaya") Проектирование медиа — Elena Arbatskaya. Мы разберем универсальные методы и приемы генерации и отбора идей, создания концепций, анализа рисков, бюджетирования, создания прототипов. Также мы изучим специфику медиапроектов. Параллельно вы будете работать над концепциями и пилотными выпусками собственных медиа.  Финальная оценка будет состоять из оценок за участие, тест, текст концепции и пилотный медиапроект. Преподаватель имеет опыт создания и перезапуска медиапроектов. 
+        label(for="Elena Arbatskaya") Проектирование медиа — Elena Arbatskaya. 
+          span(class="label_desc")Мы разберем универсальные методы и приемы генерации и отбора идей, создания концепций, анализа рисков, бюджетирования, создания прототипов. Также мы изучим специфику медиапроектов. Параллельно вы будете работать над концепциями и пилотными выпусками собственных медиа.  Финальная оценка будет состоять из оценок за участие, тест, текст концепции и пилотный медиапроект. Преподаватель имеет опыт создания и перезапуска медиапроектов. 
         input(type="radio" value="Oksana Bulgakowa" name="elective1" id="Oksana Bulgakowa")
         label(for="Oksana Bulgakowa") Film Analysis — Oksana Bulgakowa
         input(type="radio" value="Giacomo Andreoletti" name="elective1" id="Giacomo Andreoletti") 
