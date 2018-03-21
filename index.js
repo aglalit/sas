@@ -83,37 +83,6 @@ app.use(compression());
 app.use('/', index);
 app.use(subdomain('advanced', router));
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
-
-app.get('/auth/google', passport.authenticate('google', {
-  scope: ['profile', 'email']
-}));
-
-app.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: '/polls/3rd-module-electives',
-  failureRedirect: '/login'
-}));
-// passport.authenticate('google'),
-// function(req, res) {
-//   res.render('polls_ai_metaphor',{user:req.user})
-// });
-
-app.get('/polls', isLoggedIn, function(req, res) {
-  res.render('polls', {user: req.user})
-});
-
-app.get('/polls-anonymous', function(req, res) {
-  res.render('polls_anonymous', {messages: req.flash('info')})
-});
-
-
-app.get('/logout', function(req, res) {
-  req.logout();
-  res.redirect('/polls');
-});
-
 function isLoggedIn(req, res, next) {
 
   // if user is authenticated in the session, carry on
@@ -135,6 +104,41 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
+
+app.get('/auth/google', passport.authenticate('google', {
+  scope: ['profile', 'email']
+}));
+
+app.get('/auth/google/callback', passport.authenticate('google', {
+  successRedirect: '/polls/4th-module-electives',
+  failureRedirect: '/login'
+}));
+// passport.authenticate('google'),
+// function(req, res) {
+//   res.render('polls_ai_metaphor',{user:req.user})
+// });
+
+app.get('/polls', isLoggedIn, function(req, res) {
+  res.render('polls', {user: req.user})
+});
+
+app.get('/polls-anonymous', function(req, res) {
+  res.render('polls_anonymous', {messages: req.flash('info')})
+});
+
+
+app.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/polls');
+});
+
+require('./server/gi_part6.js')(app, Session, transporter);
+require('./server/feminism.js')(app, Session, transporter);
+require('./server/4th-module-electives.js')(app, Session, transporter, isLoggedIn);
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -148,9 +152,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-require('./server/gi_part6.js')(app, Session, transporter);
-require('./server/feminism.js')(app, Session, transporter);
-require('./server/4th-module-electives.js')(app, Session, transporter, isLoggedIn);
 
 module.exports = app;
