@@ -1,10 +1,10 @@
-module.exports = function(app, Session, transporter){
+module.exports = function(app, Session, transporter, isLoggedIn){
 
-  app.get('/polls/3rd-module-electives', isLoggedIn, function(req, res) {
-    res.render('3rd-module-electives', {user: req.user})
+  app.get('/polls/4th-module-electives', isLoggedIn, function(req, res) {
+    res.render('4th-module-electives', {user: req.user})
   });
 
-  app.post('/polls/3rd-module-electives', function(req, res) {
+  app.post('/polls/4th-module-electives', function(req, res) {
     User.findOne({
       '_id': req.user._id
     }, function(err, user) {

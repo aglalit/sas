@@ -1,0 +1,168 @@
+doctype html
+head
+  title Выбор элективов 3-го модуля
+  link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+  // load bootstrap css
+  style.
+    body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+    @font-face {
+      font-family: 'Agipo-Bold';
+      src:url('../fonts/agipo/Agipo-Bold.woff');
+    }
+    img {
+      width:100%;
+    }
+    .logo {padding-bottom:30px}
+    h2 {font-weight:800; margin-bottom:20px;}
+    .jumbotron h1 {
+      font-size:36px;
+      margin-bottom: 40px;
+    }
+    h3 {
+      font-size: 1.5em;
+      font-weight: 400;
+    }
+    .jumbotron{
+      font-size:18px;
+      line-height: initial;
+    }
+    .container{
+      width:98% !important;
+    }
+    .input-group{
+      margin-bottom:20px;
+    }
+    .input-group label {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight: 500;
+      margin: 10px 0;
+      font-size:20px;
+    }
+    .input-group .label__description {
+      font-family:initial;
+    }
+    .input-group .form-control {
+      margin: 20px 0 40px 0;
+      width:75%;
+    }
+    form {
+      margin-top: 30px;
+    }
+    label,legend {
+      text-align: left;
+          float: left;
+    }
+    legend {font-size: 1.8em;}
+    input, textarea, select {
+      float:left;
+      width:75%;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    input[type="radio"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+
+      border: 2px solid #999;
+      transition: 0.2s all linear;
+      outline: none;
+      margin-right: 15px;
+
+      position: relative;
+      top:23px;
+      }
+      input:focus {
+        outline: none !important;
+      }
+      input:checked {
+        border: 12px solid #00f;
+      }
+      button {
+        background-color: #00f !important;
+      }
+
+
+      @media (max-width: 1024px) {
+
+        body{padding-top:10px}
+        .container{
+        width:95%;
+        }
+      .input-group  label {
+        font-size:30px ;
+        margin-bottom:20px;
+        }
+        input[type="radio"]{
+          top:23px;
+        }
+        button.btn-lg {
+          font-size: 30px;
+        }
+      }
+.container
+  .jumbotron.text-center
+    .logo
+      a(href="https://sas.utmn.ru")
+        img(src="../assets/Logo__blue.png")
+    h1 Выбор элективов 3-го модуля
+    form(action="/polls/3rd-module-electives" method="post")
+      h3 1-й приоритет
+      div(class="input-group")
+        input(type="radio" value="John Tangney" name="elective1" id="John Tangney")
+        label(for="John Tangney") An Imperial Affliction: Depression in Literature (English) — John Tangney
+        input(type="radio" value="Anil Aba" name="elective1" id="Anil Aba") 
+        label(for="Anil Aba") History of Economic Thought (English) – Anil Aba
+        input(type="radio" value="Surendra Bhandari" name="elective1" id="Surendra Bhandari")
+        label(for="Surendra Bhandari") Human Rights and Free Will (English) — Surendra Bhandari
+        input(type="radio" value="Almir Pepato, Pavel Klimov" name="elective1" id="Almir Pepato, Pavel Klimov") 
+        label(for="Almir Pepato, Pavel Klimov") Introduction to phylogenetic inference based on molecular data (English) — Almir Pepato, Pavel Klimov
+        input(type="radio" value="Svetlana Erpyleva" name="elective1" id="Svetlana Erpyleva") 
+        label(for="Svetlana Erpyleva") Individual and Society: Socialization, Education, Violence (Russian) — Svetlana Erpyleva
+        input(type="radio" value="Maxim Alyukov" name="elective1" id="Maxim Alyukov") 
+        label(for="Maxim Alyukov") Political Communication (Russian) — Maxim Alyukov
+        input(type="radio" value="Natalia Savelyeva, Svetlana Erpyleva" name="elective1" id="Natalia Savelyeva, Svetlana Erpyleva")
+        label(for="Natalia Savelyeva, Svetlana Erpyleva") Qualitative Methods in Social Science (Russian) — Natalia Savelyeva, Svetlana Erpyleva
+        input(type="radio" value="Ruslan Gasseev" name="elective1" id="Ruslan Gasseev") 
+        label(for="Ruslan Gasseev") IT Security (Russian) — Ruslan Gasseev
+      h3 2-й приоритет
+      div(class="input-group")
+        input(type="radio" value="John Tangney" name="elective2" id="John Tangney2")
+        label(for="John Tangney2") An Imperial Affliction: Depression in Literature (English) — John Tangney
+        input(type="radio" value="Anil Aba" name="elective2" id="Anil Aba2") 
+        label(for="Anil Aba2") History of Economic Thought (English) — Anil Aba
+        input(type="radio" value="Surendra Bhandari" name="elective2" id="Surendra Bhandari2")
+        label(for="Surendra Bhandari2") Human Rights and Free Will (English) — Surendra Bhandari
+        input(type="radio" value="Almir Pepato, Pavel Klimov" name="elective2" id="Almir Pepato, Pavel Klimov2") 
+        label(for="Almir Pepato, Pavel Klimov2") Introduction to phylogenetic inference based on molecular data (English) — Almir Pepato, Pavel Klimov
+        input(type="radio" value="Svetlana Erpyleva" name="elective2" id="Svetlana Erpyleva2") 
+        label(for="Svetlana Erpyleva2") Individual and Society: Socialization, Education, Violence (Russian) — Svetlana Erpyleva
+        input(type="radio" value="Maxim Alyukov" name="elective2" id="Maxim Alyukov2") 
+        label(for="Maxim Alyukov2") Political Communication (Russian) — Maxim Alyukov
+        input(type="radio" value="Natalia Savelyeva, Svetlana Erpyleva" name="elective2" id="Natalia Savelyeva, Svetlana Erpyleva2")
+        label(for="Natalia Savelyeva, Svetlana Erpyleva2") Qualitative Methods in Social Science (Russian) — Natalia Savelyeva, Svetlana Erpyleva
+        input(type="radio" value="Ruslan Gasseev" name="elective2" id="Ruslan Gasseev2") 
+        label(for="Ruslan Gasseev2") IT Security (Russian) — Ruslan Gasseev
+      h3 3-й приоритет
+      div(class="input-group")
+        input(type="radio" value="John Tangney" name="elective3" id="John Tangney3")
+        label(for="John Tangney3") An Imperial Affliction: Depression in Literature (English) — John Tangney
+        input(type="radio" value="Anil Aba" name="elective3" id="Anil Aba3") 
+        label(for="Anil Aba3") History of Economic Thought (English) — Anil Aba
+        input(type="radio" value="Surendra Bhandari" name="elective3" id="Surendra Bhandari3")
+        label(for="Surendra Bhandari3") Human Rights and Free Will (English) — Surendra Bhandari
+        input(type="radio" value="Almir Pepato, Pavel Klimov" name="elective3" id="Almir Pepato, Pavel Klimov3") 
+        label(for="Almir Pepato, Pavel Klimov3") Introduction to phylogenetic inference based on molecular data (English) — Almir Pepato, Pavel Klimov
+        input(type="radio" value="Svetlana Erpyleva" name="elective3" id="Svetlana Erpyleva3") 
+        label(for="Svetlana Erpyleva3") Individual and Society: Socialization, Education, Violence (Russian) — Svetlana Erpyleva
+        input(type="radio" value="Maxim Alyukov" name="elective3" id="Maxim Alyukov3") 
+        label(for="Maxim Alyukov3") Political Communication (Russian) — Maxim Alyukov
+        input(type="radio" value="Natalia Savelyeva, Svetlana Erpyleva" name="elective3" id="Natalia Savelyeva, Svetlana Erpyleva3")
+        label(for="Natalia Savelyeva, Svetlana Erpyleva3") Qualitative Methods in Social Science (Russian) — Natalia Savelyeva, Svetlana Erpyleva
+        input(type="radio" value="Ruslan Gasseev" name="elective3" id="Ruslan Gasseev3") 
+        label(for="Ruslan Gasseev3") IT Security (Russian) — Ruslan Gasseev
+      button(type="submit" class="btn btn-primary btn-lg") Отправить
