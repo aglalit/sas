@@ -9,10 +9,18 @@ head
       font-family: 'Agipo-Bold';
       src:url('../fonts/agipo/Agipo-Bold.woff');
     }
+    img {
+      width:100%;
+    }
+    .logo {padding-bottom:30px}
     h2 {font-weight:800; margin-bottom:20px;}
     .jumbotron h1 {
       font-size:36px;
       margin-bottom: 40px;
+    }
+    h3 {
+      font-size: 1.5em;
+      font-weight: 400;
     }
     .jumbotron{
       font-size:18px;
@@ -25,7 +33,6 @@ head
       margin-bottom:20px;
     }
     .input-group label {
-      width:94%;
       font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
       font-weight: 500;
       margin: 10px 0;
@@ -43,7 +50,9 @@ head
     }
     label,legend {
       text-align: left;
+          float: left;
     }
+    legend {font-size: 1.8em;}
     input, textarea, select {
       float:left;
       width:75%;
@@ -65,7 +74,7 @@ head
       margin-right: 15px;
 
       position: relative;
-      top:0px;
+      top:23px;
       }
       input:focus {
         outline: none !important;
@@ -85,12 +94,11 @@ head
         width:95%;
         }
       .input-group  label {
-        width:92%;
         font-size:30px ;
         margin-bottom:20px;
         }
         input[type="radio"]{
-          top:5px;
+          top:23px;
         }
         button.btn-lg {
           font-size: 30px;
@@ -98,6 +106,9 @@ head
       }
 .container
   .jumbotron.text-center
+    .logo
+      a(href="https://sas.utmn.ru")
+        img(src="../assets/Logo__blue.png")
     h1 Выбор элективов 3-го модуля
     form(action="/polls/3rd-module-electives" method="post")
       h3 1-й приоритет
