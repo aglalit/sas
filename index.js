@@ -108,10 +108,6 @@ app.get('/polls-anonymous', function(req, res) {
   res.render('polls_anonymous', {messages: req.flash('info')})
 });
 
-require('./server/gi_part6.js')(app, Session, transporter);
-require('./server/feminism.js')(app, Session, transporter);
-require('./server/4th-module-electives.js')(app, Session, transporter, isLoggedIn);
-
 
 app.get('/logout', function(req, res) {
   req.logout();
@@ -152,5 +148,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+require('./server/gi_part6.js')(app, Session, transporter);
+require('./server/feminism.js')(app, Session, transporter);
+require('./server/4th-module-electives.js')(app, Session, transporter, isLoggedIn);
 
 module.exports = app;
