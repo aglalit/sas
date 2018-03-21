@@ -124,12 +124,12 @@ app.post('/polls/4th-module-electives', function(req, res) {
       return done(err);
 
     if (user) {
-      user.polls.ELECTIVES["3module__electives"].elective1 = req.body["elective1"];
-      user.polls.ELECTIVES["3module__electives"].elective2 = req.body["elective2"];
-      user.polls.ELECTIVES["3module__electives"].elective3 = req.body["elective3"];
+      user.polls.ELECTIVES["4module__electives"].elective1 = req.body["elective1"];
+      user.polls.ELECTIVES["4module__electives"].elective2 = req.body["elective2"];
+      user.polls.ELECTIVES["4module__electives"].elective3 = req.body["elective3"];
 
       var now = new Date();
-      user.polls.ELECTIVES["3module__electives"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+      user.polls.ELECTIVES["4module__electives"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
 
       user.save(function(err, user) {
         if (err)
