@@ -104,7 +104,7 @@ var sessionSchema = mongoose.Schema({
         "ФИО":String
       },
       "feminism": String,
-      great_books_2_17: {
+      great_books_3_17: {
         time: String,
         "Укажите имя и фамилию преподавателя, работавшего с вами на семинарах":String,
         "Как хорошо были организованы материалы курса":Number,

@@ -110,6 +110,8 @@ app.get('/polls-anonymous', function(req, res) {
 
 require('./server/gi_part6.js')(app, Session, transporter);
 require('./server/feminism.js')(app, Session, transporter);
+require('./server/great-books.js')(app, Session, transporter);
+
 // require('./server/4th-module-electives.js')(app, Session, transporter, isLoggedIn);
 
 app.get('/polls/4th-module-electives', isLoggedIn, function(req, res) {
