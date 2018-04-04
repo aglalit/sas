@@ -1,10 +1,10 @@
 module.exports = function(app, Session, transporter){
 
-app.get('/polls/great-books', function(req, res) {
-  res.render('great-books', {user: req.user})
+app.get('/polls/electives', function(req, res) {
+  res.render('electives', {user: req.user})
 });
 
-app.post('/polls/great-books', function(req, res) {
+app.post('/polls/electives', function(req, res) {
   Session.findOne({
     'session_id': req.session.id
   }, function(err, session) {
