@@ -92,7 +92,7 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: '/polls/4th-module-electives',
+  successRedirect: '/polls/5th-module-electives',
   failureRedirect: '/login'
 }));
 // passport.authenticate('google'),
@@ -116,11 +116,11 @@ require('./server/electives.js')(app, Session, transporter);
 
 // require('./server/4th-module-electives.js')(app, Session, transporter, isLoggedIn);
 
-app.get('/polls/4th-module-electives', isLoggedIn, function(req, res) {
-  res.render('4th-module-electives', {user: req.user})
+app.get('/polls/5th-module-electives', isLoggedIn, function(req, res) {
+  res.render('5th-module-electives', {user: req.user})
 });
 
-app.post('/polls/4th-module-electives', function(req, res) {
+app.post('/polls/5th-module-electives', function(req, res) {
   User.findOne({
     '_id': req.user._id
   }, function(err, user) {
@@ -128,12 +128,12 @@ app.post('/polls/4th-module-electives', function(req, res) {
       return done(err);
 
     if (user) {
-      user.polls.ELECTIVES["4module__electives"].elective1 = req.body["elective1"];
-      user.polls.ELECTIVES["4module__electives"].elective2 = req.body["elective2"];
-      user.polls.ELECTIVES["4module__electives"].elective3 = req.body["elective3"];
+      user.polls.ELECTIVES["5module__electives"].elective1 = req.body["elective1"];
+      user.polls.ELECTIVES["5module__electives"].elective2 = req.body["elective2"];
+      user.polls.ELECTIVES["5module__electives"].elective3 = req.body["elective3"];
 
       var now = new Date();
-      user.polls.ELECTIVES["4module__electives"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+      user.polls.ELECTIVES["5module__electives"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
 
       user.save(function(err, user) {
         if (err)
