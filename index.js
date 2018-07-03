@@ -147,7 +147,7 @@ app.post('/polls/5th-module-electives', function(req, res) {
   req.flash('info', `Ваш результат принят (1-й приоритет — ${req.body["elective1"]}; 2-й приоритет — ${req.body["elective2"]}; 3-й приоритет — ${req.body["elective3"]}). Благодарим за участие.`);
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
-    to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
+    to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru', // list of receivers
     subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
     // text: JSON.stringify(req.user), // plain text body
     html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
