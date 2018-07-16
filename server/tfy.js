@@ -26,11 +26,11 @@ function parseSession (sess, req, transporter){
   var now = new Date();
   sess.session_id = req.session.id;
   sess.polls.TFY.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
-  req.body.forEach((el)=>{
-    if (sess.polls.TFY[el.constructor.name]){
-      sess.polls.TFY[el.constructor.name] = el;
+  for (i=0;i<req.body.length;i++){
+    if (sess.polls.TFY[req.body[i].constructor.name]){
+      sess.polls.TFY[req.body[i].constructor.name] = req.body[i];
     }
-  })
+  }
 
   sess.save(function(err) {
     if (err)
