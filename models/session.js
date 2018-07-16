@@ -137,6 +137,17 @@ var sessionSchema = mongoose.Schema({
         "Что вам больше всего не понравилось в этом лекционном курсе":String,
         "Что для вас было самым сложным в этом лекционном курсе":String,
         "Как бы вы порекомендовали улучшить этот лекционный курс":String
+      },
+      TFY: {
+        "Who taught this course?":String,
+        "How well were the course materials organized?":Number,
+        "How challenging was the course for you?":Number,
+        "How well does the teacher explain the material?":Number,
+        "How much did your thinking, knowledge and skills change during the course?":Number,
+        "How well did your teacher organize interactive communication in your course?":Number,
+        "What did you like best about the course?":String,
+        "What did you dislike most about the course?":String,
+        "How would you recommend we improve this course?":String
       }
   }
 });

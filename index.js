@@ -112,6 +112,8 @@ require('./server/gi_part6.js')(app, Session, transporter);
 require('./server/feminism.js')(app, Session, transporter);
 require('./server/great-books.js')(app, Session, transporter);
 require('./server/electives.js')(app, Session, transporter);
+require('./server/tfy.js')(app, Session, transporter);
+
 
 
 // require('./server/4th-module-electives.js')(app, Session, transporter, isLoggedIn);
