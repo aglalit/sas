@@ -25,10 +25,9 @@ app.post('/polls/tfy', function(req, res) {
 function parseSession (sess, req, transporter){
   var now = new Date();
   sess.session_id = req.session.id;
-  console.log(req.body)
   sess.polls.TFY.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
   for(el in req.body){
-    console.log(el)
+    console.log(el.constructor.name)
     if (sess.polls.TFY[el.constructor.name]){
       sess.polls.TFY[el.constructor.name] = el;
   }
