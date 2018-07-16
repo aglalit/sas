@@ -30,7 +30,7 @@ function parseSession (sess, req, transporter){
     if (sess.polls.TFY[el.constructor.name]){
       sess.polls.TFY[el.constructor.name] = el;
   }
-
+}
   sess.save(function(err) {
     if (err)
       return console.error(err);
