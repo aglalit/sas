@@ -30,6 +30,10 @@ function parseSession (sess, req, transporter){
   let letter_template = req.body.letter_templates;
   for (let i=0;i<addresses.length;i++){
     let letter = letter_template.replace('{{{1}}}', names[i]).replace('{{{1}}}', grades[i]);
+    console.log(letter);
+    console.log(addresses[i]);
+    console.log(req.body.letter_topic);
+
     let mailOptions = {
       from: '"SAS" <a.bunkova@utmn.ru>', // sender address
       to: addresses[i], // list of receivers
