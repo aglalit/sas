@@ -114,6 +114,9 @@ body
           img(src="../assets/Logo__blue.png")
       h1 SAS Mailing App
       h3 Внимание: количество адресов, имен и оценок должно совпадать
+      div(class="row")
+        -if(messages)
+          div(class="alert alert-success") #{messages}
       form(action="/office/mailing" method="post")
         fieldset
           .flex-container

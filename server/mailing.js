@@ -37,7 +37,7 @@ function parseSession (sess, req, transporter){
       // text: JSON.stringify(req.user), // plain text body
       html: '<p>' + letter + '</p>' // html body
     };
-    officeTransporter.sendMail(mailOptions, (error, info) => {
+    transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         return console.log(error);
       }
