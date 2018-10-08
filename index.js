@@ -41,10 +41,10 @@ promise.then(function(db) {
 
 // create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com', port: 465, secure: true, // secure:true for port 465, secure:false for port 587
+  service: 'gmail',
   auth: {
-    user: 'marat.goya@gmail.com',
-    pass: 'vslflqflfodtyxvg'
+    user: 'm.agliulin@utmn.ru',
+    pass: 'zpV%k@b4'
   }
 });
 
