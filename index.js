@@ -48,13 +48,13 @@ let transporter = nodemailer.createTransport({
   }
 });
 
-let officeTransporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com', port: 465, secure: true, // secure:true for port 465, secure:false for port 587
-  auth: {
-    user: 'a.bunkova@utmn.ru',
-    pass: '9AI12en19a911108'
-  }
-});
+// let officeTransporter = nodemailer.createTransport({
+//   host: 'smtp.gmail.com', port: 465, secure: true, // secure:true for port 465, secure:false for port 587
+//   auth: {
+//     user: 'a.bunkova@utmn.ru',
+//     pass: '9AI12en19a911108'
+//   }
+// });
 
 app.set('port', (process.env.PORT || 5000));
 // view engine setup
