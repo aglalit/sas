@@ -56,7 +56,7 @@ transporter.verify(function(error, success) {
 });
 
 let officeTransporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com', port: 465, secure: true, // secure:true for port 465, secure:false for port 587
+  service: 'gmail',
   auth: {
     user: 'a.bunkova@utmn.ru',
     pass: '9AI12en19a911108'
