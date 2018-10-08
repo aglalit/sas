@@ -19,7 +19,7 @@ app.post('/office/mailing', function(req, res) {
   //   }
   // });
   req.flash('info', 'Ваш запрос принят');
-  res.render('mailing', {messages: req.flash('info')})
+  //res.render('mailing', {messages: req.flash('info')})
 
   let addresses = req.body.addresses.split(' ');
   let names = req.body.names.split(' ');
