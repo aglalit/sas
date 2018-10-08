@@ -59,7 +59,7 @@ let officeTransporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'a.bunkova@utmn.ru',
-    pass: '9AI12en19a911108'
+    pass: '9Al12en19a911108'
   }
 });
 
