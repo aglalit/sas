@@ -32,7 +32,7 @@ app.post('/office/mailing', function(req, res) {
     console.log(req.body.letter_topic);
 
     let mailOptions = {
-      from: '"SAS" <a.bunkova@utmn.ru>', // sender address
+      from: '"SAS" <marat.goya@gmail.com>', // sender address
       to: addresses[i], // list of receivers
       subject: req.body.letter_topic, // Subject line
       // text: JSON.stringify(req.user), // plain text body
