@@ -14,8 +14,4 @@ router.get('/login', function(req, res, next) {
   res.render('login');
 });
 
-router.get('/office/mailing', function(req, res, next) {
-  res.render('mailing');
-});
-
 module.exports = router;

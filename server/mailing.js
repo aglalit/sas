@@ -20,10 +20,7 @@ app.post('/office/mailing', function(req, res) {
   // });
   req.flash('info', 'Ваш запрос принят');
   res.render('mailing', {messages: req.flash('info')})
-});
 
-function parseSession (sess, req, transporter){
-  var now = new Date();
   let addresses = req.body.addresses.split(' ');
   let names = req.body.names.split(' ');
   let grades = req.body.grades.split(' ');
@@ -49,6 +46,5 @@ function parseSession (sess, req, transporter){
     });
   }
 
-
-}
+});
 }
