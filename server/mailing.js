@@ -24,7 +24,7 @@ app.post('/office/mailing', function(req, res) {
   let addresses = req.body.addresses.split(' ');
   let names = req.body.names.split(' ');
   let grades = req.body.grades.split(' ');
-  let letter_template = req.body.letter_templates;
+  let letter_template = req.body.letter_template;
   for (let i=0;i<addresses.length;i++){
     let letter = letter_template.replace('{{{1}}}', names[i]).replace('{{{1}}}', grades[i]);
     console.log(letter);
