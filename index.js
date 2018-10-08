@@ -121,6 +121,8 @@ require('./server/feminism.js')(app, Session, transporter);
 require('./server/great-books.js')(app, Session, transporter);
 require('./server/electives.js')(app, Session, transporter);
 require('./server/tfy.js')(app, Session, transporter);
+require('./server/mailing.js')(app, Session, transporter);
+
 
 
 
