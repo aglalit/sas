@@ -18,25 +18,33 @@ app.post('/office/mailing', function(req, res) {
   //     parseSession (newSession, req, transporter);
   //   }
   // });
-  req.flash('info', 'Ваш результат принят. Благодарим за участие.');
+  req.flash('info', 'Ваш запрос принят');
   res.render('mailing', {messages: req.flash('info')})
 });
 
 function parseSession (sess, req, transporter){
   var now = new Date();
-  
-  let mailOptions = {
-    from: '"SAS" <sas@utmn.ru>', // sender address
-    to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru', // list of receivers
-    subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
-    // text: JSON.stringify(req.user), // plain text body
-    html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
-  };
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return console.log(error);
-    }
-    console.log('Message %s sent: %s', info.messageId, info.response);
-  });
+  let addresses = req.body.addresses.split(' ');
+  let names = req.body.names.split(' ');
+  let grades = req.body.grades.split(' ');
+  let letter_template = req.body.letter_templates;
+  for (let i=0;i<addresses.length;i++){
+    let letter = letter_template.replace('{{{1}}}', names[i]).replace('{{{1}}}', grades[i]);
+    let mailOptions = {
+      from: '"SAS" <a.bunkova@utmn.ru>', // sender address
+      to: addresses[i], // list of receivers
+      subject: req.body.letter_topic, // Subject line
+      // text: JSON.stringify(req.user), // plain text body
+      html: '<p>' + letter + '</p>' // html body
+    };
+    officeTransporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log('Message %s sent: %s', info.messageId, info.response);
+    });
+  }
+
+
 }
 }

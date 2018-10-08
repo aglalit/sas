@@ -113,18 +113,22 @@ body
         a(href="https://sas.utmn.ru")
           img(src="../assets/Logo__blue.png")
       h1 SAS Mailing App
+      h3 Внимание: количество адресов, имен и оценок должно совпадать
       form(action="/office/mailing" method="post")
         fieldset
           .flex-container
-              label(for="addresses") 1. Список адресов (через пробел)
+              label(for="addresses") Список адресов (через пробел)
               textarea(rows="4" required="required" class="form-control" name="addresses")
           .flex-container
-              label(for="names") 2. Список имен+фамилий (всë через пробел)
+              label(for="names") 1. Список имен+фамилий (всë через пробел)
               textarea(rows="4" required="required" class="form-control" name="names")
           .flex-container
-              label(for="grades") 3. Список оценок (через пробел)
+              label(for="grades") 2. Список оценок (через пробел)
               textarea(rows="4" required="required" class="form-control" name="grades")
           .flex-container
-              label(for="letter_template") Шаблон письма (образец вставки переменных: {{{1}}} ,где '1' — порядковый номер поля)
+              label(for="letter_template") Шаблон письма (образец вставки переменных: {{{2}}} ,где '2' — порядковый номер поля)
               textarea(rows="4" required="required" class="form-control" name="letter_template")
+          .flex-container
+              label(for="letter_topic") Тема письма
+              textarea(rows="4" required="required" class="form-control" name="letter_topic")
         button(type="submit" class="btn btn-primary btn-lg") Отправить
