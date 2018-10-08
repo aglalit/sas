@@ -28,7 +28,7 @@ app.post('/office/mailing', function(req, res) {
   let allMails = '';
   for (let i=0;i<addresses.length;i++){
     let letter = letter_template.replace('{{{1}}}', names[i]).replace('{{{2}}}', grades[i]);
-    allMails += addresses[i] + '\n' + letter + '\n';
+    allMails += addresses[i] + ' ' + names[i] + '<br/>' + letter + '<br/>';
     let mailOptions = {
       from: '"SAS" <a.bunkova@utmn.ru>', // sender address
       to: addresses[i], // list of receivers
