@@ -25,12 +25,10 @@ app.post('/office/mailing', function(req, res) {
   let names = req.body.names.split('\n');
   let grades = req.body.grades.split('\n');
   let letter_template = req.body.letter_template;
+  let allMails = '';
   for (let i=0;i<addresses.length;i++){
     let letter = letter_template.replace('{{{1}}}', names[i]).replace('{{{2}}}', grades[i]);
-    console.log(letter);
-    console.log(addresses[i]);
-    console.log(req.body.letter_topic);
-
+    allMails += addresses[i] + '\n' + letter + '\n';
     let mailOptions = {
       from: '"SAS" <a.bunkova@utmn.ru>', // sender address
       to: addresses[i], // list of receivers
@@ -45,6 +43,19 @@ app.post('/office/mailing', function(req, res) {
       console.log('Message %s sent: %s', info.messageId, info.response);
     });
   }
+  let mailOptions = {
+    from: '"SAS" <a.bunkova@utmn.ru>', // sender address
+    to: 'a.bunkova@utmn.ru', // list of receivers
+    subject: req.body.letter_topic, // Subject line
+    // text: JSON.stringify(req.user), // plain text body
+    html: '<p>' + allMails + '</p>' // html body
+  };
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log(error);
+    }
+    console.log('Message %s sent: %s', info.messageId, info.response);
+  });
 
 });
 }
