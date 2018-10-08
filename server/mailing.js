@@ -26,13 +26,13 @@ app.post('/office/mailing', function(req, res) {
   let grades = req.body.grades.split(' ');
   let letter_template = req.body.letter_template;
   for (let i=0;i<addresses.length;i++){
-    let letter = letter_template.replace('{{{1}}}', names[i]).replace('{{{1}}}', grades[i]);
+    let letter = letter_template.replace('{{{1}}}', names[i]).replace('{{{2}}}', grades[i]);
     console.log(letter);
     console.log(addresses[i]);
     console.log(req.body.letter_topic);
 
     let mailOptions = {
-      from: '"SAS" <marat.goya@gmail.com>', // sender address
+      from: '"SAS" <a.bunkova@utmn.ru>', // sender address
       to: addresses[i], // list of receivers
       subject: req.body.letter_topic, // Subject line
       // text: JSON.stringify(req.user), // plain text body

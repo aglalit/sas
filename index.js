@@ -47,14 +47,21 @@ let transporter = nodemailer.createTransport({
     pass: 'zpV%k@b4'
   }
 });
+transporter.verify(function(error, success) {
+   if (error) {
+        console.log(error);
+   } else {
+        console.log('Server is ready to take our messages');
+   }
+});
 
-// let officeTransporter = nodemailer.createTransport({
-//   host: 'smtp.gmail.com', port: 465, secure: true, // secure:true for port 465, secure:false for port 587
-//   auth: {
-//     user: 'a.bunkova@utmn.ru',
-//     pass: '9AI12en19a911108'
-//   }
-// });
+let officeTransporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com', port: 465, secure: true, // secure:true for port 465, secure:false for port 587
+  auth: {
+    user: 'a.bunkova@utmn.ru',
+    pass: '9AI12en19a911108'
+  }
+});
 
 app.set('port', (process.env.PORT || 5000));
 // view engine setup
@@ -121,7 +128,7 @@ require('./server/feminism.js')(app, Session, transporter);
 require('./server/great-books.js')(app, Session, transporter);
 require('./server/electives.js')(app, Session, transporter);
 require('./server/tfy.js')(app, Session, transporter);
-require('./server/mailing.js')(app, Session, transporter);
+require('./server/mailing.js')(app, Session, officeTransporter);
 
 
 
