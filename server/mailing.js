@@ -21,12 +21,12 @@ app.post('/office/mailing', function(req, res) {
   req.flash('info', 'Ваш запрос принят');
   res.render('mailing', {messages: req.flash('info')})
 
-  let addresses = req.body.addresses.split(' ');
-  let names = req.body.names.split(' ');
-  let grades = req.body.grades.split(' ');
+  let addresses = req.body.addresses.split('\n');
+  let names = req.body.names.split('\n');
+  let grades = req.body.grades.split('\n');
   let letter_template = req.body.letter_template;
   for (let i=0;i<addresses.length;i++){
-    let letter = letter_template.replace('{{{1}}}', names[i*2] + ' ' + names[i*2+1]).replace('{{{2}}}', grades[i]);
+    let letter = letter_template.replace('{{{1}}}', names[i]).replace('{{{2}}}', grades[i]);
     console.log(letter);
     console.log(addresses[i]);
     console.log(req.body.letter_topic);
