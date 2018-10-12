@@ -31,7 +31,7 @@ module.exports = function(app, Session, transporter, isLoggedIn){
         console.log('There isn\'t such user in the database');
       }
     });
-    req.flash('info', `Ваш результат принят (ЭЛЕКТИВ 1: 1-й приоритет — ${req.body["elective1"]}; 2-й приоритет — ${req.body["elective2"]}; 3-й приоритет — ${req.body["elective3"]}; ЭЛЕКТИВ 2: 1-й приоритет — ${req.body["elective4"]}; 2-й приоритет — ${req.body["elective5"]}; 3-й приоритет — ${req.body["elective6"]};). В случае ошибки вы можете произвести выбор заново. Благодарим за участие.`);
+    req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; ELECTIVE 2: 1st priority — ${req.body["elective4"]}; 2nd priority — ${req.body["elective5"]}; 3rd priority — ${req.body["elective6"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
     let mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
       to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru', // list of receivers
