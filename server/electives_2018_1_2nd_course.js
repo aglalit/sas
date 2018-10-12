@@ -28,7 +28,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         console.log('There isn\'t such user in the database');
       }
     });
-    req.flash('info', `Your choice is submitted (1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
+    req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; ELECTIVE 2: 1st priority — ${req.body["elective4"]}; 2nd priority — ${req.body["elective5"]}; 3rd priority — ${req.body["elective6"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
     let mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
       to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru', // list of receivers
