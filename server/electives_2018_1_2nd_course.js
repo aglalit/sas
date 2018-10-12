@@ -1,4 +1,4 @@
-module.exports = function(app, Session, transporter, isLoggedIn){
+module.exports = function(app, Session, transporter, isLoggedIn, User){
 
   app.get('/polls/electives-2018-1-2nd-course', isLoggedIn, function(req, res) {
     res.render('electives-2018-1-2nd-course', {user: req.user})

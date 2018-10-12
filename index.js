@@ -129,7 +129,9 @@ require('./server/great-books.js')(app, Session, transporter);
 require('./server/electives.js')(app, Session, transporter);
 require('./server/tfy.js')(app, Session, transporter);
 require('./server/mailing.js')(app, Session, officeTransporter);
-require('./server/electives_2018_1_1st_course.js')(app, Session, transporter, isLoggedIn);
+require('./server/electives_2018_1_1st_course.js')(app, Session, transporter, isLoggedIn, User);
+require('./server/electives_2018_1_2nd_course.js')(app, Session, transporter, isLoggedIn, User);
+
 
 
 
