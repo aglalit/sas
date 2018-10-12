@@ -46,31 +46,23 @@ var userSchema = mongoose.Schema({
       }
     },
     "ELECTIVES":{
-      "2module__electives": {
+      "2018_1_1st_course": {
+        time: String,
+        elective1: String,
+        elective2: String,
+        elective3: String,
+        elective4: String,
+        elective5: String,
+        elective6: String
+      },
+      "2018_1_2nd_course": {
         time: String,
         elective1: String,
         elective2: String,
         elective3: String
-      },
-      "3module__electives": {
-        time: String,
-        elective1: String,
-        elective2: String,
-        elective3: String
-      },
-      "5module__electives": {
-        time: String,
-        elective1: String,
-        elective2: String,
-        elective3: String
-      },
-      "2module__surendra": {
-        time: String,
-        value: String
       }
     }
   }
-
 });
 
 // methods ======================
