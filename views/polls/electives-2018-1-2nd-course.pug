@@ -17,7 +17,7 @@ head
       width:100%;
     }
     .logo {padding-bottom:30px}
-    h2 {font-weight:800; margin-bottom:20px;}
+    h2 {font-weight:800; margin-bottom:20px;font-size: 1.8em;}
     .jumbotron h1 {
       font-size:36px;
       margin-bottom: 40px;
@@ -128,7 +128,8 @@ head
       a(href="https://sas.utmn.ru")
         img(src="../assets/Logo__blue.png")
     h1 The choice of electives for the 2nd module. The form is available until October 14, 18:00.
-    form(action="/polls/electives-2018-1-2nd-course" method="post")
+    form(action="/polls/electives-2018-1-1st-course" method="post")
+      h2 1st elective
       h3 1st priority
       div(class="input-group")
         .flex-container
@@ -158,6 +159,9 @@ head
         .flex-container
           input(type="radio" value="Команда СКБ-Контур" name="elective1" id="Команда СКБ-Контур1")
           label(for="Команда СКБ-Контур1") Команда СКБ-Контур	— Основы программирования на языке C#
+        .flex-container
+          input(type="radio" value="English" name="elective1" id="English1")
+          label(for="English1") English language course	
       h3 2nd priority
       div(class="input-group")
         .flex-container
@@ -187,6 +191,9 @@ head
         .flex-container
           input(type="radio" value="Команда СКБ-Контур" name="elective2" id="Команда СКБ-Контур2")
           label(for="Команда СКБ-Контур2") Команда СКБ-Контур	— Основы программирования на языке C#
+        .flex-container
+          input(type="radio" value="English" name="elective2" id="English2")
+          label(for="English2") English language course	
       h3 3rd priority
       div(class="input-group")
         .flex-container
@@ -215,5 +222,105 @@ head
           label(for="Дмитрий Кыров3") Дмитрий Кыров — Введение в науки о жизни
         .flex-container
           input(type="radio" value="Команда СКБ-Контур" name="elective3" id="Команда СКБ-Контур3")
-          label(for="Команда СКБ-Контур3") Команда СКБ-Контур	— Основы программирования на языке C#           
+          label(for="Команда СКБ-Контур3") Команда СКБ-Контур	— Основы программирования на языке C#
+        .flex-container
+          input(type="radio" value="English" name="elective3" id="English3")
+          label(for="English3") English language course	        
+      h2 2nd elective
+      h3 1st priority
+      div(class="input-group")
+        .flex-container
+          input(type="radio" value="Anne Mulhall" name="elective4" id="Anne Mulhall4")
+          label(for="Anne Mulhall4") Anne Mulhall — Work Stories
+        .flex-container
+          input(type="radio" value="Tomasz Blusiewicz" name="elective4" id="Tomasz Blusiewicz4")
+          label(for="Tomasz Blusiewicz4") Tomasz Blusiewicz	— The Age of Total War – Global Conflict in the Short Twentieth Century, 1914–1991
+        .flex-container
+          input(type="radio" value="Evgeny Grishin" name="elective4" id="Evgeny Grishin4")
+          label(for="Evgeny Grishin4") Evgeny Grishin — Bible and Contexts I: Introduction to the Old Testament
+        .flex-container
+          input(type="radio" value="Denis Sharapov" name="elective4" id="Denis Sharapov4")
+          label(for="Denis Sharapov4") Introduction to American Anthropology — Denis Sharapov
+        .flex-container
+          input(type="radio" value="Наталья Савельева" name="elective4" id="Наталья Савельева4")
+          label(for="Наталья Савельева4") Наталья Савельева — Почему мы верим?
+        .flex-container
+          input(type="radio" value="Матвей Ломоносов" name="elective4" id="Матвей Ломоносов4")
+          label(for="Матвей Ломоносов4") Матвей Ломоносов	— Социологическое воображение
+        .flex-container
+          input(type="radio" value="Светлана Ерпылева" name="elective4" id="Светлана Ерпылева4")
+          label(for="Светлана Ерпылева4") Светлана Ерпылева — Теории социализации: как мы становимся теми, кто мы есть
+        .flex-container
+          input(type="radio" value="Дмитрий Кыров" name="elective4" id="Дмитрий Кыров4")
+          label(for="Дмитрий Кыров4") Дмитрий Кыров — Введение в науки о жизни
+        .flex-container
+          input(type="radio" value="Команда СКБ-Контур" name="elective4" id="Команда СКБ-Контур4")
+          label(for="Команда СКБ-Контур4") Команда СКБ-Контур	— Основы программирования на языке C#
+        .flex-container
+          input(type="radio" value="English" name="elective4" id="English4")
+          label(for="English4") English language course	        
+      h3 2nd priority
+      div(class="input-group")
+        .flex-container
+          input(type="radio" value="Anne Mulhall" name="elective5" id="Anne Mulhall5")
+          label(for="Anne Mulhall5") Anne Mulhall — Work Stories
+        .flex-container
+          input(type="radio" value="Tomasz Blusiewicz" name="elective5" id="Tomasz Blusiewicz5")
+          label(for="Tomasz Blusiewicz5") Tomasz Blusiewicz	— The Age of Total War – Global Conflict in the Short Twentieth Century, 1914–1991
+        .flex-container
+          input(type="radio" value="Evgeny Grishin" name="elective5" id="Evgeny Grishin5")
+          label(for="Evgeny Grishin5") Evgeny Grishin — Bible and Contexts I: Introduction to the Old Testament
+        .flex-container
+          input(type="radio" value="Denis Sharapov" name="elective5" id="Denis Sharapov5")
+          label(for="Denis Sharapov5") Introduction to American Anthropology — Denis Sharapov
+        .flex-container
+          input(type="radio" value="Наталья Савельева" name="elective5" id="Наталья Савельева5")
+          label(for="Наталья Савельева5") Наталья Савельева — Почему мы верим?
+        .flex-container
+          input(type="radio" value="Матвей Ломоносов" name="elective5" id="Матвей Ломоносов5")
+          label(for="Матвей Ломоносов5") Матвей Ломоносов	— Социологическое воображение
+        .flex-container
+          input(type="radio" value="Светлана Ерпылева" name="elective5" id="Светлана Ерпылева5")
+          label(for="Светлана Ерпылева5") Светлана Ерпылева — Теории социализации: как мы становимся теми, кто мы есть
+        .flex-container
+          input(type="radio" value="Дмитрий Кыров" name="elective5" id="Дмитрий Кыров5")
+          label(for="Дмитрий Кыров5") Дмитрий Кыров — Введение в науки о жизни
+        .flex-container
+          input(type="radio" value="Команда СКБ-Контур" name="elective5" id="Команда СКБ-Контур5")
+          label(for="Команда СКБ-Контур5") Команда СКБ-Контур	— Основы программирования на языке C#
+        .flex-container
+          input(type="radio" value="English" name="elective5" id="English5")
+          label(for="English5") English language course	        
+      h3 3rd priority
+      div(class="input-group")
+        .flex-container
+          input(type="radio" value="Anne Mulhall" name="elective6" id="Anne Mulhall6")
+          label(for="Anne Mulhall6") Anne Mulhall — Work Stories
+        .flex-container
+          input(type="radio" value="Tomasz Blusiewicz" name="elective6" id="Tomasz Blusiewicz6")
+          label(for="Tomasz Blusiewicz6") Tomasz Blusiewicz	— The Age of Total War – Global Conflict in the Short Twentieth Century, 1914–1991
+        .flex-container
+          input(type="radio" value="Evgeny Grishin" name="elective6" id="Evgeny Grishin6")
+          label(for="Evgeny Grishin6") Evgeny Grishin — Bible and Contexts I: Introduction to the Old Testament
+        .flex-container
+          input(type="radio" value="Denis Sharapov" name="elective6" id="Denis Sharapov6")
+          label(for="Denis Sharapov6") Introduction to American Anthropology — Denis Sharapov
+        .flex-container
+          input(type="radio" value="Наталья Савельева" name="elective6" id="Наталья Савельева6")
+          label(for="Наталья Савельева6") Наталья Савельева — Почему мы верим?
+        .flex-container
+          input(type="radio" value="Матвей Ломоносов" name="elective6" id="Матвей Ломоносов6")
+          label(for="Матвей Ломоносов6") Матвей Ломоносов	— Социологическое воображение
+        .flex-container
+          input(type="radio" value="Светлана Ерпылева" name="elective6" id="Светлана Ерпылева6")
+          label(for="Светлана Ерпылева6") Светлана Ерпылева — Теории социализации: как мы становимся теми, кто мы есть
+        .flex-container
+          input(type="radio" value="Дмитрий Кыров" name="elective6" id="Дмитрий Кыров6")
+          label(for="Дмитрий Кыров6") Дмитрий Кыров — Введение в науки о жизни
+        .flex-container
+          input(type="radio" value="Команда СКБ-Контур" name="elective6" id="Команда СКБ-Контур6")
+          label(for="Команда СКБ-Контур6") Команда СКБ-Контур	— Основы программирования на языке C#
+        .flex-container
+          input(type="radio" value="English" name="elective6" id="English6")
+          label(for="English6") English language course	        
       button(type="submit" class="btn btn-primary btn-lg") Submit
