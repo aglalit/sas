@@ -25,12 +25,12 @@ app.post('/polls/ma-2018-fedorova', function(req, res) {
 function parseSession (sess, req, transporter){
   var now = new Date();
   sess.session_id = req.session.id;
-  sess.polls.TFY.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+  sess.polls.ma_2018_fedorova.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
   var keyNames = Object.keys(req.body);
   keyNames.forEach((el)=>{
     console.log(req.body[el]);
 
-      sess.polls.ma_2018_chubarov[el] = req.body[el];
+      sess.polls.ma_2018_fedorova[el] = req.body[el];
 });
   sess.save(function(err) {
     if (err)
