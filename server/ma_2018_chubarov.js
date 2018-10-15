@@ -1,7 +1,7 @@
 module.exports = function(app, Session, transporter){
 
 app.get('/polls/ma-2018-chubarov', function(req, res) {
-  res.render('ma_2018_chubarov', {user: req.user})
+  res.render('ma-2018-chubarov', {user: req.user})
 });
 
 app.post('/polls/ma-2018-chubarov', function(req, res) {
