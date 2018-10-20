@@ -133,6 +133,7 @@ require('./server/electives_2018_1_1st_course.js')(app, Session, transporter, is
 require('./server/electives_2018_1_2nd_course.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/ma_2018_fedorova.js')(app, Session, transporter);
 require('./server/ma_2018_chubarov.js')(app, Session, transporter);
+require('./server/the-city-as-text-2018-video.js')(app, Session, transporter, isLoggedIn, User);
 
 
 

@@ -61,6 +61,9 @@ var userSchema = mongoose.Schema({
         elective2: String,
         elective3: String
       }
+    },
+    "THECITYASTEXT":{
+      video: String
     }
   }
 });
