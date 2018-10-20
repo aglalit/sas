@@ -107,7 +107,7 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: '/polls',
+  successRedirect: '/polls/the-city-as-text-2018-video',
   failureRedirect: '/login'
 }));
 // passport.authenticate('google'),
