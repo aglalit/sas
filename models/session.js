@@ -203,7 +203,7 @@ var sessionSchema = mongoose.Schema({
         "How strongly would you recommend this course to your peers":Number,
         "What did you like best about the course":String,
         "What did you dislike most about the course":String,
-        "ow would you recommend we improve this course":String
+        "How would you recommend we improve this course":String
       },
       ba_2018_course2_module1_aw: {
         time: String,
@@ -225,7 +225,7 @@ var sessionSchema = mongoose.Schema({
         "How strongly would you recommend this course to your peers":Number,
         "What did you like best about the course":String,
         "What did you dislike most about the course":String,
-        "ow would you recommend we improve this course":String
+        "How would you recommend we improve this course":String
       },
       ba_2018_course2_module1_electives: {
         time: String,
@@ -247,7 +247,7 @@ var sessionSchema = mongoose.Schema({
         "How strongly would you recommend this course to your peers":Number,
         "What did you like best about the course":String,
         "What did you dislike most about the course":String,
-        "ow would you recommend we improve this course":String
+        "How would you recommend we improve this course":String
       },
   }
 });
