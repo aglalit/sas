@@ -183,7 +183,7 @@ var sessionSchema = mongoose.Schema({
         "Что для вас было самым сложным в этом лекционном курсе":String,
         "Как бы вы порекомендовали улучшить этот лекционный курс":String
       },
-      ba_2018_course1_module1_wtai: {
+      ba_2018_year1_module1_wtai: {
         time: String,
         "Who taught this course":String,
         "How well were the course materials organized":Number,
@@ -205,7 +205,7 @@ var sessionSchema = mongoose.Schema({
         "What did you dislike most about the course":String,
         "How would you recommend we improve this course":String
       },
-      ba_2018_course2_module1_aw: {
+      ba_2018_year2_module1_aw: {
         time: String,
         "Who taught this course":String,
         "How well were the course materials organized":Number,
@@ -227,7 +227,7 @@ var sessionSchema = mongoose.Schema({
         "What did you dislike most about the course":String,
         "How would you recommend we improve this course":String
       },
-      ba_2018_course2_module1_electives: {
+      ba_2018_year2_module1_electives: {
         time: String,
         "Who taught this course":String,
         "How well were the course materials organized":Number,

@@ -1,10 +1,10 @@
 module.exports = function(app, Session, transporter){
 
-app.get('/polls/ba-2018-course2-module1-aw', function(req, res) {
-  res.render('ba-2018-course2-module1-aw', {user: req.user})
+app.get('/polls/ba-2018-year2-module1-aw', function(req, res) {
+  res.render('ba-2018-year2-module1-aw', {user: req.user})
 });
 
-app.post('/polls/ba-2018-course2-module1-aw', function(req, res) {
+app.post('/polls/ba-2018-year2-module1-aw', function(req, res) {
   Session.findOne({
     'session_id': req.session.id
   }, function(err, session) {
@@ -25,12 +25,12 @@ app.post('/polls/ba-2018-course2-module1-aw', function(req, res) {
 function parseSession (sess, req, transporter){
   var now = new Date();
   sess.session_id = req.session.id;
-  sess.polls.ba_2018_course2_module1_aw.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+  sess.polls.ba_2018_year2_module1_aw.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
   var keyNames = Object.keys(req.body);
   keyNames.forEach((el)=>{
     console.log(req.body[el]);
 
-      sess.polls.ba_2018_course2_module1_aw[el] = req.body[el];
+      sess.polls.ba_2018_year2_module1_aw[el] = req.body[el];
 });
   sess.save(function(err) {
     if (err)
