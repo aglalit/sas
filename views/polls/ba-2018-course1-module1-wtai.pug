@@ -1,0 +1,185 @@
+doctype html
+html
+  head
+    title Feedback
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    // load bootstrap css
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      img {
+        width:100%;
+      }
+      .logo {padding-bottom:30px}
+      h2 {font-weight:800; margin-bottom:20px;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+      }
+      h3 {
+        font-size: 1.5em;
+        font-weight: 400;
+      }
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+        padding-top: 0px;
+      }
+      .container{
+        width:98% !important;
+      }
+      .input-group{
+        margin-bottom:20px;
+      }
+      .input-group label {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 10px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+        width:75%;
+      }
+      form {
+        margin-top: 30px;
+      }
+      label,legend {
+        text-align: left;
+            float: left;
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        float:left;
+        width:75%;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        -webkit-transition: 0.2s all linear;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        top:23px;
+        }
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #00f;
+        }
+        button {
+          background-color: #00f !important;
+        }
+        .flex-container {display:-webkit-box;display:-ms-flexbox;display:flex; -webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction:column; margin:10px 0;}
+
+        @media (max-width: 1024px) {
+
+          body{padding-top:10px}
+          .container{
+          width:95%;
+          }
+        .input-group  label {
+          font-size:30px ;
+          margin-bottom:20px;
+          }
+          input[type="radio"]{
+            top:23px;
+          }
+          button.btn-lg {
+            font-size: 30px;
+          }
+        }
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="../assets/Logo__blue.png")
+      h1 Feedback. 1st course. 1st module. Writing, thinking, analysis, interpretation.
+      h3 Please note that the use of the scoring system 0, 5 and 10 is only a recommendation, you can use any indicator from 0 to 10.
+      form(action="/polls/ba-2018-course1-module1-wtai" method="post")
+        fieldset
+          div(class="input-group")
+            .flex-container
+              label(for="Who taught this course") Who taught this course?
+              select(class="form-control" required="required" name="Who taught this course")
+                option(value="Tomasz Blusiewisz") Tomasz Blusiewisz
+                option(value="Zachary Reyna") Zachary Reyna
+                option(value="Duskin Drum") Duskin Drum
+                option(value="Svetlana Erpyleva") Svetlana Erpyleva
+                option(value="Natalya Savelyeva") Natalya Savelyeva
+                option(value="Oleg Zhuravlev") Oleg Zhuravlev
+                option(value="Maxim Alyukov") Maxim Alyukov
+            .flex-container
+              label(for="How well were the course materials organized") How well were the course materials organized (syllabus, readers, books, e-books, audio-visual materials, e-mail, social media, website, etc.)? Give a score on a scale of 0 to 10, where 0 = no materials were used at all; 5 = the materials were substandard or difficult to use; 10 = there were plenty of materials which were easily accessible and implemented usefully.
+              input(type="number" required="required" class="form-control" name="How well were the course materials organized " min="0" max="10")
+            .flex-container
+              label(for="What percentage of the mandatory readings were you able to do during the course") What percentage of the mandatory readings were you able to do during the course? (0 to 100%)
+              input(type="number" required="required" class="form-control" name="What percentage of the mandatory readings were you able to do during the course" min="0" max="100")
+            .flex-container
+              label(for="What course readings did you find the most useful") What course readings did you find the most useful?
+              textarea(rows="2" required="required" class="form-control" name="What course readings did you find the most useful")
+            .flex-container
+              label(for="What course readings did you find the least useful") What course readings did you find the least useful?
+              textarea(rows="2" required="required" class="form-control" name="What course readings did you find the least useful")
+            .flex-container
+              label(for="How closely did the teacher follow the course syllabus") How closely did the teacher follow the course syllabus? Give a score from 0 to 10, where 0 = didn’t follow it at all; 5 = followed half of it; 10 = followed it fully (100%). 
+              input(type="number" required="required" class="form-control" name="How closely did the teacher follow the course syllabus" min="0" max="10")
+            .flex-container
+              label(for="How well does the teacher explain the material") How well does the teacher explain the material? (score from 0 tо 10).
+              input(type="number" required="required" class="form-control" name="How well does the teacher explain the material" min="0" max="10")
+            .flex-container
+              label(for="How well did your teacher organize interactive communication in your course") How well did your teacher organize interactive communication in your course? Score from 0 to 10, where 0 = there was no interaction, the teacher only lectured and asked questions nobody could answer; 10 = the work during the seminar was very interactive and included all kinds of well-organized interactive formats (discussions, group work, individual and team presentations, debates, etc.)
+              input(type="number" required="required" class="form-control" name="How well did your teacher organize interactive communication in your course" min="0" max="10")
+            .flex-container
+              label(for="Did you feel comfortable speaking up in the classroom") Did you feel comfortable speaking up in the classroom? (score from 0 tо 10).
+              input(type="number" required="required" class="form-control" name="Did you feel comfortable speaking up in the classroom" min="0" max="10")
+            .flex-container
+              label(for="Did your teacher return assignments in a timely fashion") Did your teacher return assignments in a timely fashion? (score from 0 tо 10).
+              input(type="number" required="required" class="form-control" name="Did your teacher return assignments in a timely fashion" min="0" max="10")    
+            .flex-container
+              label(for="Was your teacher accessible and helpful outside of the classroom") Was your teacher accessible and helpful outside of the classroom? (score from 0 tо 10).
+              input(type="number" required="required" class="form-control" name="Was your teacher accessible and helpful outside of the classroom" min="0" max="10")
+            .flex-container
+              label(for="How challenging was the course for you") How challenging was the course for you? Give a score from 0 to 10 where 0 = the course was extremely banal and easy; 5 = the course was moderately challenging and complex; 10 = the course was extremely challenging and complex
+              input(type="number" required="required" class="form-control" name="How challenging was the course for you" min="0" max="10")
+            .flex-container
+              label(for="How much did your thinking, knowledge and skills change during the course") How much did your thinking, knowledge and skills change during the course? Give a score from 0 to 10, where 0 = didn’t change at all; 3 = changed slightly; 6 = noticeably changed; 8 = changed a lot; 10 = I’m a new person now.
+              input(type="number" required="required" class="form-control" name="How much did your thinking, knowledge and skills change during the course" min="0" max="10")  
+            .flex-container
+              label(for="How often did you made your best effort to be attentive and engaged in this class") How often did you made your best effort to be attentive and engaged in this class? Give a score from 0 to 10
+              input(type="number" required="required" class="form-control" name="How often did you made your best effort to be attentive and engaged in this class" min="0" max="10")  
+            .flex-container
+              label(for="How consistently did you met the expectations for preparing for class") How consistently did you met the expectations for preparing for class (e.g. completing readings, submitting assignments)? Give a score from 0 to 10
+              input(type="number" required="required" class="form-control" name="How consistently did you met the expectations for preparing for class" min="0" max="10")  
+            .flex-container
+              label(for="How strongly would you recommend this course to your peers") How strongly would you recommend this course to your peers? (score from 0 tо 10).
+              input(type="number" required="required" class="form-control" name="How strongly would you recommend this course to your peers" min="0" max="10")  
+            .flex-container
+              label(for="What did you like best about the course") What did you like best about the course? What did you find the most instructive/informative/useful?
+              textarea(rows="4" required="required" class="form-control" name="What did you like best about the course") 
+            .flex-container
+              label(for="What did you dislike most about the course") What did you dislike most about the course? What did you find the least instructive/informative/useful?
+              textarea(rows="4" required="required" class="form-control" name="What did you dislike most about the course")
+            .flex-container
+              label(for="How would you recommend we improve this course") How would you recommend we improve this course?
+              textarea(rows="4" required="required" class="form-control" name="How would you recommend we improve this course?
+        button(type="submit" class="btn btn-primary btn-lg") Submit
