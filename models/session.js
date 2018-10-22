@@ -249,6 +249,28 @@ var sessionSchema = mongoose.Schema({
         "What did you dislike most about the course":String,
         "How would you recommend we improve this course":String
       },
+      ba_2018_year2_module1_art: {
+        time: String,
+        "Who taught this course":String,
+        "How well were the course materials organized":Number,
+        "What percentage of the mandatory readings were you able to do during the course":Number,
+        "What course readings did you find the most useful":String,
+        "What course readings did you find the least useful":String,
+        "How closely did the teacher follow the course syllabus":Number,
+        "How well does the teacher explain the material":Number,
+        "How well did your teacher organize interactive communication in your course":Number,
+        "Did you feel comfortable speaking up in the classroom":Number,
+        "Did your teacher return assignments in a timely fashion":Number,
+        "Was your teacher accessible and helpful outside of the classroom":Number,
+        "How challenging was the course for you":Number,
+        "How much did your thinking, knowledge and skills change during the course":Number,
+        "How often did you made your best effort to be attentive and engaged in this class":Number,
+        "How consistently did you met the expectations for preparing for class":Number,
+        "How strongly would you recommend this course to your peers":Number,
+        "What did you like best about the course":String,
+        "What did you dislike most about the course":String,
+        "How would you recommend we improve this course":String
+      }
   }
 });
 

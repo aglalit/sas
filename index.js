@@ -136,6 +136,7 @@ require('./server/ma_2018_chubarov.js')(app, Session, transporter);
 require('./server/ba_2018_course1_module1_wtai.js')(app, Session, transporter);
 require('./server/ba_2018_course2_module1_aw.js')(app, Session, transporter);
 require('./server/ba_2018_course2_module1_electives.js')(app, Session, transporter);
+require('./server/ba_2018_course2_module1_art.js')(app, Session, transporter);
 require('./server/the-city-as-text-2018-video.js')(app, Session, transporter, isLoggedIn, User);
 
 
