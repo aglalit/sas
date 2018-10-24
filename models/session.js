@@ -275,6 +275,9 @@ var sessionSchema = mongoose.Schema({
         "What did you like best about the course":String,
         "What did you dislike most about the course":String,
         "How would you recommend we improve this course":String
+      },
+      ba_2018_year2_gi_preliminary: {
+        "Какая проблема (тема), охватывающая весь мир, кажется вам наиболее актуальной?": String
       }
   }
 });
