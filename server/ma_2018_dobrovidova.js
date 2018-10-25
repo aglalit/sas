@@ -1,10 +1,10 @@
 module.exports = function(app, Session, transporter){
 
-app.get('/polls/ma-2018-fedorova', function(req, res) {
-  res.render('ma-2018-fedorova', {user: req.user})
+app.get('/polls/ma-2018-dobrovidova', function(req, res) {
+  res.render('ma-2018-dobrovidova', {user: req.user})
 });
 
-app.post('/polls/ma-2018-fedorova', function(req, res) {
+app.post('/polls/ma-2018-dobrovidova', function(req, res) {
   Session.findOne({
     'session_id': req.session.id
   }, function(err, session) {
@@ -25,12 +25,12 @@ app.post('/polls/ma-2018-fedorova', function(req, res) {
 function parseSession (sess, req, transporter){
   var now = new Date();
   sess.session_id = req.session.id;
-  sess.polls.ma_2018_fedorova.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+  sess.polls.ma_2018_dobrovidova.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
   var keyNames = Object.keys(req.body);
   keyNames.forEach((el)=>{
     console.log(req.body[el]);
 
-      sess.polls.ma_2018_fedorova[el] = req.body[el];
+      sess.polls.ma_2018_dobrovidova[el] = req.body[el];
 });
   sess.save(function(err) {
     if (err)
