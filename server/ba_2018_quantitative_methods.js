@@ -26,7 +26,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         console.log('There isn\'t such user in the database');
       }
     });
-    req.flash('info', `Your choice is submitted (${req.body["track"]}). In case of mistake, you can make your choice again. Thanks for participation.`);
+    req.flash('info', `Your choice is submitted (Track ${req.body["track"]}). In case of mistake, you can make your choice again. Thanks for participation.`);
     let mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
       to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru', // list of receivers

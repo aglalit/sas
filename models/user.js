@@ -61,7 +61,7 @@ var userSchema = mongoose.Schema({
         elective2: String,
         elective3: String
       },
-      "ba-2018-quantitative-methods": {
+      "ba_2018_quantitative_methods": {
         time: String,
         track: Number
       }
