@@ -60,6 +60,10 @@ var userSchema = mongoose.Schema({
         elective1: String,
         elective2: String,
         elective3: String
+      },
+      "ba-2018-quantitative-methods": {
+        time: String,
+        track: Number
       }
     },
     "THECITYASTEXT":{
