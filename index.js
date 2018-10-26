@@ -140,6 +140,7 @@ require('./server/ba_2018_year1_module1_wtai.js')(app, Session, transporter);
 require('./server/ba_2018_year2_module1_aw.js')(app, Session, transporter);
 require('./server/ba_2018_year2_module1_electives.js')(app, Session, transporter);
 require('./server/ba_2018_year2_module5_art.js')(app, Session, transporter);
+require('./server/ba_2018_year1_the_city_as_text.js')(app, Session, transporter);
 require('./server/ba_2018_year2_gi_preliminary.js')(app, Session, transporter);
 require('./server/the-city-as-text-2018-video.js')(app, Session, transporter, isLoggedIn, User);
 

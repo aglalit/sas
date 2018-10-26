@@ -295,7 +295,11 @@ var sessionSchema = mongoose.Schema({
       },
       ba_2018_year2_gi_preliminary: {
         "Какая проблема (тема), охватывающая весь мир, кажется вам наиболее актуальной?": String
+      },
+      ba_2018_year1_the_city_as_text: {
+        "answers": String
       }
+
   }
 });
 
