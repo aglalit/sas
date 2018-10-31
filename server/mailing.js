@@ -32,9 +32,16 @@ app.post('/office/mailing', function(req, res) {
     let mailOptions = {
       from: '"SAS" <a.bunkova@utmn.ru>', // sender address
       to: addresses[i], // list of receivers
+      cc: 'a.bunkova@utmn.ru',
       subject: req.body.letter_topic, // Subject line
       // text: JSON.stringify(req.user), // plain text body
-      html: '<p>' + letter + '</p>' // html body
+      html: '<p>' + letter + '</p>', // html body
+      dsn: {
+        id: 'some random message specific id',
+        return: 'headers',
+        notify: ['failure', 'delay'],
+        recipient: 'a.bunkova@utmn.ru, m.agliulin@utmn.ru'
+    }
     };
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
@@ -46,9 +53,16 @@ app.post('/office/mailing', function(req, res) {
   let mailOptions = {
     from: '"SAS" <a.bunkova@utmn.ru>', // sender address
     to: 'a.bunkova@utmn.ru', // list of receivers
+    cc: 'a.bunkova@utmn.ru',
     subject: 'Вами отправлены следующие письма:', // Subject line
     // text: JSON.stringify(req.user), // plain text body
-    html: '<p>' + allMails + '</p>' // html body
+    html: '<p>' + allMails + '</p>', // html body
+    dsn: {
+      id: 'some random message specific id',
+      return: 'headers',
+      notify: ['failure', 'delay'],
+      recipient: 'a.bunkova@utmn.ru, m.agliulin@utmn.ru'
+  }
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {

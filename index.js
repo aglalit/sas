@@ -45,7 +45,8 @@ let transporter = nodemailer.createTransport({
   auth: {
     user: 'm.agliulin@utmn.ru',
     pass: 'zpV%k@b4'
-  }
+  },
+  debug: true
 });
 transporter.verify(function(error, success) {
    if (error) {
@@ -60,7 +61,8 @@ let officeTransporter = nodemailer.createTransport({
   auth: {
     user: 'a.bunkova@utmn.ru',
     pass: '9Al12en19a911108'
-  }
+  },
+  debug: true
 });
 
 app.set('port', (process.env.PORT || 5000));
