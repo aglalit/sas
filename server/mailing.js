@@ -39,7 +39,7 @@ app.post('/office/mailing', function(req, res) {
       dsn: {
         id: 'some random message specific id',
         return: 'headers',
-        notify: ['failure', 'delay'],
+        notify: ['success','failure', 'delay'],
         recipient: 'a.bunkova@utmn.ru, m.agliulin@utmn.ru'
     }
     };
