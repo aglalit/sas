@@ -1,0 +1,267 @@
+doctype html
+html
+  head
+    title Feedback
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    // load bootstrap css
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      img {
+        width:100%;
+      }
+      .logo {padding-bottom:30px}
+      h2 {font-weight:800; margin-bottom:20px;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+      }
+      h3 {
+        font-size: 1.5em;
+        font-weight: 400;
+      }
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+        padding-top: 0px;
+      }
+      .container{
+        width:98% !important;
+      }
+      .input-group{
+        margin-bottom:20px;
+      }
+      .input-group label {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 10px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+        width:75%;
+      }
+      form {
+        margin-top: 30px;
+      }
+      label,legend {
+        text-align: left;
+            float: left;
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        float:left;
+        width:75%;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        -webkit-transition: 0.2s all linear;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        top:23px;
+        }
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #00f;
+        }
+        button {
+          background-color: #00f !important;
+        }
+        .flex-container {display:-webkit-box;display:-ms-flexbox;display:flex; -webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction:column; margin:10px 0;}
+
+        @media (max-width: 1024px) {
+
+          body{padding-top:10px}
+          .container{
+          width:95%;
+          }
+        .input-group  label {
+          font-size:30px ;
+          margin-bottom:20px;
+          }
+          input[type="radio"]{
+            top:23px;
+          }
+          button.btn-lg {
+            font-size: 30px;
+          }
+        }
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="../assets/Logo__blue.png")
+      h1 Обратная связь. Принципы естественнонаучного познания, 5 модуль 
+      form(action="/polls/ba-2018-year1-module5-poms" method="post")
+        fieldset
+          div(class="input-group")
+            h3 Если бы этот курс не входил в «ядро», выбрали бы вы его как электив? Оцените не конкретного преподавателя, а сам курс в целом
+            .flex-container
+              input(type="radio" value="Да" name="yes-no" id="1")
+              label(for="1") Да
+            .flex-container
+              input(type="radio" value="Нет" name="yes-no" id="2")
+              label(for="2") Нет
+            .flex-container
+              label(for="yes-no-Комментарий") Комментарий:
+              input(type="textarea" rows="2" class="form-control" name="yes-no-Комментарий")
+            .flex-container
+              label(for="Как хорошо были организованы материалы курса?") Как хорошо были организованы материалы курса?
+              input(type="number" required="required" class="form-control" name="Как хорошо были организованы материалы курса?" min="0" max="10")
+            .flex-container
+              label(for="materials-Комментарий") Комментарий:
+              input(type="textarea" rows="2" class="form-control" name="materials-Комментарий")
+            .flex-container
+              label(for="Сколько времени вы уделяли подготовке к занятиям в рамках курса?") Сколько времени вы уделяли подготовке к занятиям в рамках курса?
+              input(type="textarea" rows="1" class="form-control" name="Сколько времени вы уделяли подготовке к занятиям в рамках курса?")            
+            .flex-container
+              label(for="Какую оценку (от 0 до 10) вы ожидаете получить за этот курс?") Какую оценку (от 0 до 10) вы ожидаете получить за этот курс?
+              input(type="number" required="required" class="form-control" name="Какую оценку (от 0 до 10) вы ожидаете получить за этот курс?" min="0" max="10")
+            .flex-container
+              label(for="marks-Комментарий") Комментарий:
+              input(type="textarea" rows="2" class="form-control" name="marks-Комментарий")
+            h3 Оцените сложность занятий в рамках курса для вашего понимания
+            .flex-container
+              label(for="Сложность — Занятия Ахмедовой И.Д.") Занятия Ахмедовой И.Д.
+              input(type="number" class="form-control" name="Сложность — Занятия Ахмедовой И.Д." min="0" max="10")
+            .flex-container
+              label(for="Сложность — Занятия Ганопольского Р.М.") Занятия Ганопольского Р.М.
+              input(type="number" class="form-control" name="Сложность — Занятия Ганопольского Р.М." min="0" max="10")
+            .flex-container
+              label(for="Сложность — Занятия Кырова Д.Н.") Занятия Кырова Д.Н.
+              input(type="number" class="form-control" name="Сложность — Занятия Кырова Д.Н." min="0" max="10")
+            .flex-container
+              label(for="Сложность — Занятия Марьинских Д.М.") Занятия Марьинских Д.М.
+              input(type="number" class="form-control" name="Сложность — Занятия Марьинских Д.М." min="0" max="10")
+            .flex-container
+              label(for="Сложность — Занятия Нестеровой Н.В.") Занятия Нестеровой Н.В.
+              input(type="number" class="form-control" name="Сложность — Занятия Нестеровой Н.В." min="0" max="10")
+            .flex-container
+              label(for="Сложность — Занятия Сулкарнаевой Л.Д.") Занятия Сулкарнаевой Л.Д.
+              input(type="number" class="form-control" name="Сложность — Занятия Сулкарнаевой Л.Д." min="0" max="10")
+            .flex-container
+              label(for="Сложность-Комментарий") Комментарий:
+              input(type="textarea" rows="2" class="form-control" name="Сложность-Комментарий")
+            h3 Насколько новым для вас было содержание занятий? 
+            .flex-container
+              label(for="Новизна — Занятия Ахмедовой И.Д.") Занятия Ахмедовой И.Д.
+              input(type="number" class="form-control" name="Новизна — Занятия Ахмедовой И.Д." min="0" max="10")
+            .flex-container
+              label(for="Новизна — Занятия Ганопольского Р.М.") Занятия Ганопольского Р.М.
+              input(type="number" class="form-control" name="Новизна — Занятия Ганопольского Р.М." min="0" max="10")
+            .flex-container
+              label(for="Новизна — Занятия Кырова Д.Н.") Занятия Кырова Д.Н.
+              input(type="number" class="form-control" name="Новизна — Занятия Кырова Д.Н." min="0" max="10")
+            .flex-container
+              label(for="Новизна — Занятия Марьинских Д.М.") Занятия Марьинских Д.М.
+              input(type="number" class="form-control" name="Новизна — Занятия Марьинских Д.М." min="0" max="10")
+            .flex-container
+              label(for="Новизна — Занятия Нестеровой Н.В.") Занятия Нестеровой Н.В.
+              input(type="number" class="form-control" name="Новизна — Занятия Нестеровой Н.В." min="0" max="10")
+            .flex-container
+              label(for="Новизна — Занятия Сулкарнаевой Л.Д.") Занятия Сулкарнаевой Л.Д.
+              input(type="number" class="form-control" name="Новизна — Занятия Сулкарнаевой Л.Д." min="0" max="10")
+            .flex-container
+              label(for="Новизна-Комментарий") Комментарий:
+              input(type="textarea" rows="2" class="form-control" name="Новизна-Комментарий")
+            h3 Насколько пунктуален был преподаватель? 
+            .flex-container
+              label(for="Пунктуальность — Занятия Ахмедовой И.Д.") Занятия Ахмедовой И.Д.
+              input(type="number" class="form-control" name="Пунктуальность — Занятия Ахмедовой И.Д." min="0" max="10")
+            .flex-container
+              label(for="Пунктуальность — Занятия Ганопольского Р.М.") Занятия Ганопольского Р.М.
+              input(type="number" class="form-control" name="Пунктуальность — Занятия Ганопольского Р.М." min="0" max="10")
+            .flex-container
+              label(for="Пунктуальность — Занятия Кырова Д.Н.") Занятия Кырова Д.Н.
+              input(type="number" class="form-control" name="Пунктуальность — Занятия Кырова Д.Н." min="0" max="10")
+            .flex-container
+              label(for="Пунктуальность — Занятия Марьинских Д.М.") Занятия Марьинских Д.М.
+              input(type="number" class="form-control" name="Пунктуальность — Занятия Марьинских Д.М." min="0" max="10")
+            .flex-container
+              label(for="Пунктуальность — Занятия Нестеровой Н.В.") Занятия Нестеровой Н.В.
+              input(type="number" class="form-control" name="Пунктуальность — Занятия Нестеровой Н.В." min="0" max="10")
+            .flex-container
+              label(for="Пунктуальность — Занятия Сулкарнаевой Л.Д.") Занятия Сулкарнаевой Л.Д.
+              input(type="number" class="form-control" name="Пунктуальность — Занятия Сулкарнаевой Л.Д." min="0" max="10")
+            .flex-container
+              label(for="Пунктуальность-Комментарий") Комментарий:
+              input(type="textarea" rows="2" class="form-control" name="Пунктуальность-Комментарий")
+            h3 Хотите ли вы снова встретиться с этим преподавателем на других курсах?
+            .flex-container
+              label(for="Хотите ли вы снова встретиться — Занятия Ахмедовой И.Д.") Занятия Ахмедовой И.Д.
+              input(type="number" class="form-control" name="Хотите ли вы снова встретиться — Занятия Ахмедовой И.Д." min="0" max="10")
+            .flex-container
+              label(for="Хотите ли вы снова встретиться — Занятия Ганопольского Р.М.") Занятия Ганопольского Р.М.
+              input(type="number" class="form-control" name="Хотите ли вы снова встретиться — Занятия Ганопольского Р.М." min="0" max="10")
+            .flex-container
+              label(for="Хотите ли вы снова встретиться — Занятия Кырова Д.Н.") Занятия Кырова Д.Н.
+              input(type="number" class="form-control" name="Хотите ли вы снова встретиться — Занятия Кырова Д.Н." min="0" max="10")
+            .flex-container
+              label(for="Хотите ли вы снова встретиться — Занятия Марьинских Д.М.") Занятия Марьинских Д.М.
+              input(type="number" class="form-control" name="Хотите ли вы снова встретиться — Занятия Марьинских Д.М." min="0" max="10")
+            .flex-container
+              label(for="Хотите ли вы снова встретиться — Занятия Нестеровой Н.В.") Занятия Нестеровой Н.В.
+              input(type="number" class="form-control" name="Хотите ли вы снова встретиться — Занятия Нестеровой Н.В." min="0" max="10")
+            .flex-container
+              label(for="Хотите ли вы снова встретиться — Занятия Сулкарнаевой Л.Д.") Занятия Сулкарнаевой Л.Д.
+              input(type="number" class="form-control" name="Хотите ли вы снова встретиться — Занятия Сулкарнаевой Л.Д." min="0" max="10")
+            .flex-container
+              label(for="Хотите ли вы снова встретиться-Комментарий") Комментарий:
+              input(type="textarea" rows="2" class="form-control" name="Хотите ли вы снова встретиться-Комментарий")
+            h3 Насколько хорошо преподаватель объясняет материал? (балл от 0 до 10)
+            .flex-container
+              label(for="Насколько хорошо преподаватель объясняет — Занятия Ахмедовой И.Д.") Занятия Ахмедовой И.Д.
+              input(type="number" class="form-control" name="Насколько хорошо преподаватель объясняет — Занятия Ахмедовой И.Д." min="0" max="10")
+            .flex-container
+              label(for="Насколько хорошо преподаватель объясняет — Занятия Ганопольского Р.М.") Занятия Ганопольского Р.М.
+              input(type="number" class="form-control" name="Насколько хорошо преподаватель объясняет — Занятия Ганопольского Р.М." min="0" max="10")
+            .flex-container
+              label(for="Насколько хорошо преподаватель объясняет — Занятия Кырова Д.Н.") Занятия Кырова Д.Н.
+              input(type="number" class="form-control" name="Насколько хорошо преподаватель объясняет — Занятия Кырова Д.Н." min="0" max="10")
+            .flex-container
+              label(for="Насколько хорошо преподаватель объясняет — Занятия Марьинских Д.М.") Занятия Марьинских Д.М.
+              input(type="number" class="form-control" name="Насколько хорошо преподаватель объясняет — Занятия Марьинских Д.М." min="0" max="10")
+            .flex-container
+              label(for="Насколько хорошо преподаватель объясняет — Занятия Нестеровой Н.В.") Занятия Нестеровой Н.В.
+              input(type="number" class="form-control" name="Насколько хорошо преподаватель объясняет — Занятия Нестеровой Н.В." min="0" max="10")
+            .flex-container
+              label(for="Насколько хорошо преподаватель объясняет — Занятия Сулкарнаевой Л.Д.") Занятия Сулкарнаевой Л.Д.
+              input(type="number" class="form-control" name="Насколько хорошо преподаватель объясняет — Занятия Сулкарнаевой Л.Д." min="0" max="10")
+            .flex-container
+              label(for="Насколько хорошо преподаватель объясняет-Комментарий") Комментарий:
+              input(type="textarea" rows="2" class="form-control" name="Насколько хорошо преподаватель объясняет-Комментарий")    
+            .flex-container
+              label(for="Что вам больше всего понравилось в этом курсе") Что вам больше всего понравилось в этом курсе? Что вы нашли наиболее поучительным / информативным / полезным?
+              textarea(rows="4" required="required" class="form-control" name="Что вам больше всего понравилось в этом курсе") 
+            .flex-container
+              label(for="Что вам больше всего не понравилось в этом курсе") Что вам больше всего не понравилось в этом курсе? Что оказалось наименее поучительным / информативным / полезным?
+              textarea(rows="4" required="required" class="form-control" name="Что вам больше всего не понравилось в этом курсе")
+            .flex-container
+              label(for="Что для вас было самым сложным в этом курсе") Что для вас было самым сложным в этом курсе?
+              textarea(rows="4" required="required" class="form-control" name="Что для вас было самым сложным в этом курсе")
+            .flex-container
+              label(for="Как бы вы порекомендовали улучшить этот курс") Как бы вы порекомендовали улучшить этот курс?
+              textarea(rows="4" required="required" class="form-control" name="Как бы вы порекомендовали улучшить этот курс")                                          
+        button(type="submit" class="btn btn-primary btn-lg") Submit
