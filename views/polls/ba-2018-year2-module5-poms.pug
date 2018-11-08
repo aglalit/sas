@@ -117,11 +117,11 @@ body
       form(action="/polls/ba-2018-year2-module5-poms" method="post")
         fieldset
           div(class="input-group")
-            h3 Если бы этот курс не входил в «ядро», выбрали бы вы его как электив? Оцените не конкретного преподавателя, а сам курс в целом
+            h3.text-left Если бы этот курс не входил в «ядро», выбрали бы вы его как электив? Оцените не конкретного преподавателя, а сам курс в целом
             .flex-container.flex-row
               input(type="radio" value="Да" name="yes-no" id="1")
               label(for="1") Да
-            .flex-container
+            .flex-container.flex-row
               input(type="radio" value="Нет" name="yes-no" id="2")
               label(for="2") Нет
             .flex-container
@@ -142,7 +142,7 @@ body
             .flex-container
               label(for="marks-Комментарий") Комментарий:
               input(type="textarea" rows="2" class="form-control" name="marks-Комментарий")
-            h3 Оцените сложность занятий в рамках курса для вашего понимания
+            h3.text-left Оцените сложность занятий в рамках курса для вашего понимания
             .flex-container
               label(for="Сложность — Занятия Ахмедовой И.Д.") Занятия Ахмедовой И.Д.
               input(type="number" class="form-control" name="Сложность — Занятия Ахмедовой И.Д." min="0" max="10")
@@ -164,7 +164,7 @@ body
             .flex-container
               label(for="Сложность-Комментарий") Комментарий:
               input(type="textarea" rows="2" class="form-control" name="Сложность-Комментарий")
-            h3 Насколько новым для вас было содержание занятий? 
+            h3.text-left Насколько новым для вас было содержание занятий? 
             .flex-container
               label(for="Новизна — Занятия Ахмедовой И.Д.") Занятия Ахмедовой И.Д.
               input(type="number" class="form-control" name="Новизна — Занятия Ахмедовой И.Д." min="0" max="10")
@@ -186,7 +186,7 @@ body
             .flex-container
               label(for="Новизна-Комментарий") Комментарий:
               input(type="textarea" rows="2" class="form-control" name="Новизна-Комментарий")
-            h3 Насколько пунктуален был преподаватель? 
+            h3.text-left Насколько пунктуален был преподаватель? 
             .flex-container
               label(for="Пунктуальность — Занятия Ахмедовой И.Д.") Занятия Ахмедовой И.Д.
               input(type="number" class="form-control" name="Пунктуальность — Занятия Ахмедовой И.Д." min="0" max="10")
@@ -208,7 +208,7 @@ body
             .flex-container
               label(for="Пунктуальность-Комментарий") Комментарий:
               input(type="textarea" rows="2" class="form-control" name="Пунктуальность-Комментарий")
-            h3 Хотите ли вы снова встретиться с этим преподавателем на других курсах?
+            h3.text-left Хотите ли вы снова встретиться с этим преподавателем на других курсах?
             .flex-container
               label(for="Хотите ли вы снова встретиться — Занятия Ахмедовой И.Д.") Занятия Ахмедовой И.Д.
               input(type="number" class="form-control" name="Хотите ли вы снова встретиться — Занятия Ахмедовой И.Д." min="0" max="10")
@@ -230,7 +230,7 @@ body
             .flex-container
               label(for="Хотите ли вы снова встретиться-Комментарий") Комментарий:
               input(type="textarea" rows="2" class="form-control" name="Хотите ли вы снова встретиться-Комментарий")
-            h3 Насколько хорошо преподаватель объясняет материал? (балл от 0 до 10)
+            h3.text-left Насколько хорошо преподаватель объясняет материал? (балл от 0 до 10)
             .flex-container
               label(for="Насколько хорошо преподаватель объясняет — Занятия Ахмедовой И.Д.") Занятия Ахмедовой И.Д.
               input(type="number" class="form-control" name="Насколько хорошо преподаватель объясняет — Занятия Ахмедовой И.Д." min="0" max="10")
