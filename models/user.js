@@ -64,6 +64,10 @@ var userSchema = mongoose.Schema({
       "ba_2018_quantitative_methods": {
         time: String,
         track: Number
+      },
+      "ba_2018_history": {
+        time: String,
+        track: String
       }
     },
     "THECITYASTEXT":{
