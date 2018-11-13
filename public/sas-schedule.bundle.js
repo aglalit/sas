@@ -4905,7 +4905,7 @@ function generateSchedule(sheet){
       }
     }
     row.appendChild(cell);
-    if(!cell.innerHTML){document.removeElement(row)}
+    if(!cell.innerHTML){row.remove()}
   }
 
   // for (let i=1;i<data.length;i++){
