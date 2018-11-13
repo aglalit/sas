@@ -47,6 +47,7 @@ function generateSchedule(sheet){
       }
     }
     row.appendChild(cell);
+    if(!cell.innerHTML){document.removeElement(row)}
   }
 
   // for (let i=1;i<data.length;i++){
