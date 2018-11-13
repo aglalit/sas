@@ -1,8 +1,10 @@
-var GetSheetDone = require('get-sheet-done');
-var moment = require('moment');
+const GetSheetDone = require('get-sheet-done');
+const moment = require('moment');
+let sheetGlobal;
 GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
 document.querySelector('.date').innerHTML = moment().format('MMMM, D');
 function generateSchedule(sheet){
+  sheetGlobal = sheet;
   let data = sheet.data;
   let firstHalf = true;
 
@@ -67,3 +69,4 @@ function generateSchedule(sheet){
     // document.querySelectorAll('.row')[k].appendChild(cell);
   // }
 }
+setInterval(function(){ generateSchedule(sheetGlobal); console.log("refreshed"); }, 10000);
