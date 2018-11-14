@@ -4939,6 +4939,6 @@ setInterval(function(){
     document.querySelector(".table").deleteRow(0);
   }
   generateSchedule(sheetGlobal);
-  console.log("refreshed"); }, 300000);
+  console.log("refreshed"); }, 30000);
 
 },{"get-sheet-done":2,"moment":3}]},{},[4]);

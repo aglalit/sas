@@ -81,4 +81,4 @@ setInterval(function(){
     document.querySelector(".table").deleteRow(0);
   }
   generateSchedule(sheetGlobal);
-  console.log("refreshed"); }, 300000);
+  console.log("refreshed"); }, 30000);
