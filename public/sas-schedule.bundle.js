@@ -4858,17 +4858,14 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 },{}],4:[function(require,module,exports){
 const GetSheetDone = require('get-sheet-done');
 const moment = require('moment');
-let sheetGlobal;
 GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
 document.querySelector('.date').innerHTML = moment().format('MMMM, D');
 function generateSchedule(sheet){
-  sheetGlobal = sheet;
   let data = sheet.data;
   let firstHalf = true;
-
   let delimiterPosition = data[0].indexOf
   if(!moment().isBefore(moment(data[0].changetime, 'HH:mm'))){firstHalf = false;}
-  console.log(sheet)
+  // console.log(sheet)
   let dataToArray = Object.getOwnPropertyNames(data[0]);
   let currentHalf;
   let indexOfDelimiter = dataToArray.indexOf('changetime');
@@ -4876,7 +4873,10 @@ function generateSchedule(sheet){
     currentHalf = dataToArray.splice(0,indexOfDelimiter)
   }
   else { currentHalf = dataToArray.splice(indexOfDelimiter+1) }
-
+  let rows = document.querySelectorAll('.row');
+  for (let t=0;t<rows.length;t++){
+    document.querySelector(".table").deleteRow(0);
+  }
   for (let k=0;k<currentHalf.length;k++){
     let row = document.createElement('tr');
     row.classList.add('row')
@@ -4934,11 +4934,7 @@ function generateSchedule(sheet){
   // }
 }
 setInterval(function(){
-  let rows = document.querySelectorAll('.row');
-  for (let t=0;t<rows.length;t++){
-    document.querySelector(".table").deleteRow(0);
-  }
-  generateSchedule(sheetGlobal);
-  console.log("refreshed"); }, 30000);
+  GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
+  console.log("refreshed"); }, 10000);
 
 },{"get-sheet-done":2,"moment":3}]},{},[4]);
