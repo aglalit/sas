@@ -46,6 +46,7 @@ function generateSchedule(sheet){
       .replace(/\s/g,'&nbsp;')
       .replace(/\d{3}[a-z]?/g, '&nbsp;<span class="room">$&</span>')
       .replace(/&nbsp;&nbsp;/g,'&nbsp;')
+      .replace(/,&nbsp;/g,', ')
       .replace(/–/g,'—');
       professor.innerHTML = professorText;
       entry.appendChild(title);
@@ -80,4 +81,4 @@ setInterval(function(){
     document.querySelector(".table").deleteRow(0);
   }
   generateSchedule(sheetGlobal);
-  console.log("refreshed"); }, 20000);
+  console.log("refreshed"); }, 30000);
