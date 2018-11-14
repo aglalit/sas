@@ -4927,12 +4927,12 @@ function generateSchedule(sheet){
     // document.querySelectorAll('.row')[k].appendChild(cell);
   // }
 }
-setInterval(function(){
-  let rows = document.querySelectorAll('.row');
-  for (let t=0;t<rows.length;t++){
-    document.querySelector(".table").deleteRow(0);
-  }
-  generateSchedule(sheetGlobal);
-  console.log("refreshed"); }, 10000);
+// setInterval(function(){
+//   let rows = document.querySelectorAll('.row');
+//   for (let t=0;t<rows.length;t++){
+//     document.querySelector(".table").deleteRow(0);
+//   }
+//   generateSchedule(sheetGlobal);
+//   console.log("refreshed"); }, 10000);
 
 },{"get-sheet-done":2,"moment":3}]},{},[4]);
