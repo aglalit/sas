@@ -47,7 +47,8 @@ function generateSchedule(sheet){
       .replace(/\d{3}[a-z]?/g, '&nbsp;<span class="room">$&</span>')
       .replace(/&nbsp;&nbsp;/g,'&nbsp;')
       .replace(/,&nbsp;([A-Z])/g,', $1')
-      .replace(/–/g,'—');
+      .replace(/–/g,'—')
+      .replace(/lecture, /g,'lecture,&nbsp;');
       professor.innerHTML = professorText;
       entry.appendChild(title);
       entry.appendChild(professor);
