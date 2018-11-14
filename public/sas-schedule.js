@@ -39,9 +39,14 @@ function generateSchedule(sheet){
       title.classList.add('title');
       let entry = document.createElement('p');
       let professor = document.createElement('span');
+      professor.classList.add('professor');
       entryText.shift();
       let professorText = '('+entryText.join('(');
-      professorText = professorText.replace(/\d{3}[a-z]?/g, '<span class="room">$&</span>');
+      professorText = professorText
+      .replace(/\s/g,'&nbsp;')
+      .replace(/\d{3}[a-z]?/g, '&nbsp;<span class="room">$&</span>')
+      .replace(/&nbsp;&nbsp;/g,'&nbsp;')
+      .replace(/–/g,'—');
       professor.innerHTML = professorText;
       entry.appendChild(title);
       entry.appendChild(professor);
