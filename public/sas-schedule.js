@@ -9,7 +9,7 @@ function generateSchedule(sheet){
   let firstHalf = true;
 
   let delimiterPosition = data[0].indexOf
-  if(moment().format('h:mm') > data[0].changetime){firstHalf = false;}
+  if(!moment().isBefore(moment(data[0].changetime, 'HH:mm'))){firstHalf = false;}
   console.log(sheet)
   let dataToArray = Object.getOwnPropertyNames(data[0]);
   let currentHalf;
