@@ -4902,6 +4902,7 @@ function generateSchedule(sheet){
       let professorText = '('+entryText.join('(');
       professorText = professorText
       .replace(/\s/g,'&nbsp;')
+      .replace(/(\d{3}[a-z]?),&nbsp;/g, '$1, ')
       .replace(/\d{3}[a-z]?/g, '&nbsp;<span class="room">$&</span>')
       .replace(/&nbsp;&nbsp;/g,'&nbsp;')
       .replace(/,&nbsp;([A-Z])/g,', $1')
