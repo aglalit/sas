@@ -88,8 +88,8 @@ html
         button {
           background-color: #00f !important;
         }
-        .flex-container {display:-webkit-box;display:-ms-flexbox;display:flex;  margin:10px 0;}
-
+        .flex-container {display:-webkit-box;display:-ms-flexbox;display:flex; margin:10px 0;}
+        .column {-webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction:column;}
         @media (max-width: 1024px) {
 
           body{padding-top:10px}
@@ -139,19 +139,19 @@ body
             .flex-container
               label(for="Accommodation is planned to be") Accommodation is planned to be a hotel, at relatives’ house, in a private apartment
               input(type="text" required="required" class="form-control" name="Accommodation is planned to be")
-            .flex-container
+            .flex-container.column
               input(type="checkbox" required="required" class="form-control" name="I am aware that I have to be registered at my place")
               label(for="I am aware that I have to be registered at my place") I am aware that I have to be registered at my place of residence in 7 working days. I am responsible for my registration if I travel around Russia.
-            .flex-container
+            .flex-container.column
               input(type="checkbox" required="required" class="form-control" name="I shall bring my documents to the Student Office")
               label(for="I shall bring my documents to the Student Office") I shall bring my documents to the Student Office (Room 102) for re-registration within 1-2 working days after my arrival to Tyumen
-            .flex-container
+            .flex-container.column
               input(type="checkbox" required="required" class="form-control" name="I am aware of the rules of migration registration")
               label(for="I am aware of the rules of migration registration") I am aware of the rules of migration registration
             .flex-container
               label(for="Date of completion") Date of completion
               input(type="date" required="required" class="form-control" name="Date of completion")
-            .flex-container
+            .flex-container.column
               input(type="checkbox" required="required" class="form-control" name="I agree to the processing of my personal data")
               label(for="I agree to the processing of my personal data") I agree to the processing of my personal data              
         button(type="submit" class="btn btn-primary btn-lg") Submit
