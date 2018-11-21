@@ -18,7 +18,7 @@ app.post('/polls/faculty-trips', function(req, res) {
       parseSession (newSession, req, transporter);
     }
   });
-  req.flash('info', 'Ваш результат принят. Благодарим за участие.');
+  req.flash('info', 'Thank you! Your application was successfully submitted.');
   res.render('polls_anonymous', {messages: req.flash('info')})
 });
 
