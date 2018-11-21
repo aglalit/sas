@@ -32,12 +32,9 @@ function parseSession (sess, req, transporter){
 //       sess.polls.ba_2018_year1_the_city_as_text[el] = req.body[el];
 // });
   let emailBody = '';
-  console.log(req.body);
-  for (let i=0;i<req.body.length;i++){
-    var bodyKeys = Object.keys(req.body);
-    console.log(Object.keys(req.body)[i]);
-    console.log(req.body[i]);
-    emailBody += '<p>' + bodyKeys[i] + ': ' + req.body[i] + '</p>';
+  var bodyKeys = Object.keys(req.body);
+  for (let i=0;i<bodyKeys.length;i++){
+    emailBody += '<p>' + bodyKeys[i] + ': ' + req.body[bodyKeys[i]] + '</p>';
   }
   console.log(emailBody);
   let mailOptions = {
