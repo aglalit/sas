@@ -45,7 +45,7 @@ function parseSession (sess, req, transporter){
     to: 'marat.goya@gmail.com,v.savina@utmn.ru', // list of receivers
     subject: 'SAS — Information on my trip for holidays / weekends', // Subject line
     // text: JSON.stringify(req.user), // plain text body
-    html: emailBody.toString(); // html body
+    html: emailBody.toString() // html body
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
