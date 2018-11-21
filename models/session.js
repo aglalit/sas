@@ -299,7 +299,8 @@ var sessionSchema = mongoose.Schema({
       ba_2018_year1_the_city_as_text: {
         "answers": String
       },
-      ba_2018_year2_module5_poms: String
+      ba_2018_year2_module5_poms: String,
+      faculty_trips: String
   }
 });
 

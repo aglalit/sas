@@ -1,0 +1,157 @@
+doctype html
+html
+  head
+    title Information on my trip for holidays / weekends
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    // load bootstrap css
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      img {
+        width:100%;
+      }
+      .logo {padding-bottom:30px}
+      h2 {font-weight:800; margin-bottom:20px;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+      }
+      h3 {
+        font-size: 1.5em;
+        font-weight: 400;
+      }
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+        padding-top: 0px;
+      }
+      .container{
+        width:98% !important;
+      }
+      .input-group{
+        margin-bottom:20px;
+      }
+      .input-group label {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 10px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+        width:75%;
+      }
+      form {
+        margin-top: 30px;
+      }
+      label,legend {
+        text-align: left;
+            float: left;
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        float:left;
+        width:75%;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        -webkit-transition: 0.2s all linear;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        top:23px;
+        }
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #00f;
+        }
+        button {
+          background-color: #00f !important;
+        }
+        .flex-container {display:-webkit-box;display:-ms-flexbox;display:flex; -webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction:column; margin:10px 0;}
+
+        @media (max-width: 1024px) {
+
+          body{padding-top:10px}
+          .container{
+          width:95%;
+          }
+        .input-group  label {
+          font-size:30px ;
+          margin-bottom:20px;
+          }
+          input[type="radio"]{
+            top:23px;
+          }
+          button.btn-lg {
+            font-size: 30px;
+          }
+        }
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="../assets/Logo__blue.png")
+      h1 Information on my trip for holidays / weekends
+      h3 All fields are required
+      form(action="/polls/faculty-trips" method="post")
+        fieldset
+          div(class="input-group")
+            .flex-container
+              label(for="Name") Name
+              input(type="text" required="required" class="form-control" name="Name")
+            .flex-container
+              label(for="Departure date") Departure date
+              input(type="date" required="required" class="form-control" name="Departure date")
+            .flex-container
+              label(for="Return date") Return date
+              input(type="date" required="required" class="form-control" name="Return date")
+            .flex-container
+              label(for="The purpose of the trip") The purpose of the trip
+              input(type="text" required="required" class="form-control" name="The purpose of the trip")
+            .flex-container
+              label(for="Place of destination (country, city)") Place of destination (country, city)
+              input(type="text" required="required" class="form-control" name="Place of destination (country, city)")
+            .flex-container
+              label(for="The trip is planned to be carried out by a transport") The trip is planned to be carried out by a transport (railway, plane, bus, private transport)*
+              input(type="text" required="required" class="form-control" name="The trip is planned to be carried out by a transport")
+            .flex-container
+              label(for="Accommodation is planned to be") Accommodation is planned to be a hotel, at relatives’ house, in a private apartment
+              input(type="text" required="required" class="form-control" name="Accommodation is planned to be")
+            .flex-container
+              label(for="I am aware that I have to be registered at my place") I am aware that I have to be registered at my place of residence in 7 working days. I am responsible for my registration if I travel around Russia.
+              input(type="checkbox" required="required" class="form-control" name="I am aware that I have to be registered at my place")
+            .flex-container
+              label(for="I shall bring my documents to the Student Office") I shall bring my documents to the Student Office (Room 102) for re-registration within 1-2 working days after my arrival to Tyumen
+              input(type="checkbox" required="required" class="form-control" name="I shall bring my documents to the Student Office")
+            .flex-container
+              label(for="I am aware of the rules of migration registration") I am aware of the rules of migration registration
+              input(type="checkbox" required="required" class="form-control" name="I am aware of the rules of migration registration")
+            .flex-container
+              label(for="Date of completion") Date of completion
+              input(type="date" required="required" class="form-control" name="Date of completion")
+            .flex-container
+              label(for="I agree to the processing of my personal data") I agree to the processing of my personal data
+              input(type="checkbox" required="required" class="form-control" name="I agree to the processing of my personal data")              
+        button(type="submit" class="btn btn-primary btn-lg") Submit
