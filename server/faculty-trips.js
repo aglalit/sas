@@ -34,9 +34,10 @@ function parseSession (sess, req, transporter){
   let emailBody = '';
   console.log(req.body);
   for (let i=0;i<req.body.length;i++){
+    var bodyKeys = Object.keys(req.body);
     console.log(Object.keys(req.body)[i]);
     console.log(req.body[i]);
-    emailBody += '<p>' + Object.keys(req.body)[i].toString() + ': ' + req.body[i].toString() + '</p>';
+    emailBody += '<p>' + bodyKeys[i] + ': ' + req.body[i] + '</p>';
   }
   console.log(emailBody);
   let mailOptions = {
@@ -44,7 +45,7 @@ function parseSession (sess, req, transporter){
     to: 'marat.goya@gmail.com,v.savina@utmn.ru', // list of receivers
     subject: 'SAS — Information on my trip for holidays / weekends', // Subject line
     // text: JSON.stringify(req.user), // plain text body
-    html: req.body // html body
+    html: emailBody.toString(); // html body
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
