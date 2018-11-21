@@ -34,9 +34,8 @@ function parseSession (sess, req, transporter){
   let emailBody = '';
   var bodyKeys = Object.keys(req.body);
   for (let i=0;i<bodyKeys.length;i++){
-    emailBody += '<p>' + bodyKeys[i] + ': ' + req.body[bodyKeys[i]] + '</p>';
+    emailBody += '<p><b>' + bodyKeys[i] + '</b>: ' + req.body[bodyKeys[i]] + '</p>';
   }
-  console.log(emailBody);
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
     to: 'marat.goya@gmail.com,v.savina@utmn.ru', // list of receivers
