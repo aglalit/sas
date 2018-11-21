@@ -36,7 +36,7 @@ function parseSession (sess, req, transporter){
   for (let i=0;i<req.body.length;i++){
     console.log(Object.keys(req.body)[i]);
     console.log(req.body[i]);
-    emailBody += '<p>' + Object.keys(req.body)[i] + ': ' + req.body[i] + '</p>';
+    emailBody += '<p>' + Object.keys(req.body)[i].toString() + ': ' + req.body[i].toString() + '</p>';
   }
   console.log(emailBody);
   let mailOptions = {
