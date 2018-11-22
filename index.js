@@ -138,6 +138,10 @@ require('./server/ba_2018_history.js')(app, Session, transporter, isLoggedIn, Us
 
 require('./server/ma_2018_fedorova.js')(app, Session, transporter);
 require('./server/ma_2018_chubarov.js')(app, Session, transporter);
+require('./server/ma_2018_strukov.js')(app, Session, transporter);
+require('./server/ma_2018_apostolov.js')(app, Session, transporter);
+require('./server/ma_2018_art.js')(app, Session, transporter);
+
 require('./server/ma_2018_dobrovidova.js')(app, Session, transporter);
 require('./server/ba_2018_year1_module1_wtai.js')(app, Session, transporter);
 require('./server/ba_2018_year2_module1_aw.js')(app, Session, transporter);
