@@ -37,12 +37,17 @@ function parseSession (sess, req, transporter){
       return console.error(err);
     return;
   });
+  let emailBody = '';
+  var bodyKeys = Object.keys(req.body);
+  for (let i=0;i<bodyKeys.length;i++){
+    emailBody += '<p><b>' + bodyKeys[i] + '</b>: ' + req.body[bodyKeys[i]] + '</p>';
+  }
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
     to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru,a.rusakova@utmn.ru', // list of receivers
     subject: 'SAS — новый результат опроса', // Subject line
     // text: JSON.stringify(req.user), // plain text body
-    html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
+    html: emailBody.toString() // html body
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
