@@ -117,7 +117,7 @@ body
     .jumbotron.text-center
       .logo
         a(href="https://sas.utmn.ru")
-          img(src="../assets/Logo__blue.png")
+          img(src="http://schoolofadvancedstudies.herokuapp.com/assets/Logo__blue.png")
       h1 День в Школе
       h3 Регистрация
       form(action="/polls/open-day-2018" method="post")
@@ -125,27 +125,34 @@ body
           div(class="input-group")
             .flex-container.column
               label(for="ФИО") ФИО
+                sup(style="color:red") *
               input(type="text" required="required" class="form-control" name="ФИО")
             .flex-container.column
               label(for="Город") Город
+                sup(style="color:red") *
               input(type="text" required="required" class="form-control" name="Город")
             .flex-container.column
               label(for="Школа") Школа
+                sup(style="color:red") *
               input(type="text" required="required" class="form-control" name="Школа")
             .flex-container.column
               label(for="Класс") Класс
+                sup(style="color:red") *
               input(type="number" required="required" class="form-control" name="Класс" min="1" max="11")
             .flex-container.column
               label(for="Email") Email
+                sup(style="color:red") *
               input(type="email" required="required" class="form-control" name="Email")
             .flex-container.column
-              label(for="Телефон") Телефон
-              input(type="phone" required="required" class="form-control" name="Телефон")
-            .flex-container.column
               label(for="Откуда вы узнали о Школе?") Откуда вы узнали о Школе?
+                sup(style="color:red") *
               input(type="text" required="required" class="form-control" name="Откуда вы узнали о Школе?")
             .flex-container.row
               input.form-check-input(id="agreement-checkbox" type="checkbox")                         
               label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
                 a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") Политики конфиденциальности
+            label 
+              sup(style="color:red") *
+              span Обязательные поля
+              
         button(type="submit" class="btn btn-primary btn-lg") Отправить
