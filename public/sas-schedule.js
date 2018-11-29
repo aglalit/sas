@@ -1,7 +1,7 @@
 const GetSheetDone = require('get-sheet-done');
 const moment = require('moment');
 GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
-document.querySelector('.date').innerHTML = moment().format('MMMM, D');
+document.querySelector('.date').innerHTML = moment().format('MMMM D, h:mma');
 function generateSchedule(sheet){
   let data = sheet.data;
   let firstHalf = true;
@@ -60,6 +60,14 @@ function generateSchedule(sheet){
     row.appendChild(cell);
     if(!cell.innerHTML){row.remove()}
   }
+  if (moment().format('ss')%2 == 0){
+    document.querySelector('.date').innerHTML = moment().format('MMMM D, H:mm');
+  }
+  else {
+    document.querySelector('.date').innerHTML = moment().format('MMMM D, H<b>:</b>mm');
+  }
+
+
 
   // for (let i=1;i<data.length;i++){
   //   let cell = document.createElement('td');
@@ -80,4 +88,4 @@ function generateSchedule(sheet){
 }
 setInterval(function(){
   GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
-  console.log("refreshed"); }, 10000);
+  console.log("refreshed"); }, 1000);
