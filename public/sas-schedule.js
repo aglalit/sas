@@ -60,12 +60,7 @@ function generateSchedule(sheet){
     row.appendChild(cell);
     if(!cell.innerHTML){row.remove()}
   }
-  if (moment().format('ss')%2 == 0){
-    document.querySelector('.date').innerHTML = moment().format('MMMM D, H:mm');
-  }
-  else {
-    document.querySelector('.date').innerHTML = moment().format('MMMM D, H<b>:</b>mm');
-  }
+  document.querySelector('.date').innerHTML = moment().format('MMMM D, H:mm');
 
 
 
@@ -88,4 +83,4 @@ function generateSchedule(sheet){
 }
 setInterval(function(){
   GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
-  console.log("refreshed"); }, 1000);
+  console.log("refreshed"); }, 2000);
