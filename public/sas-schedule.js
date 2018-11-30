@@ -63,11 +63,11 @@ function generateSchedule(sheet){
   }
   document.querySelector('.date').innerHTML = moment().format('MMMM D, H:mm');
   document.querySelector('.announcement').src = data['1'].changetime
-  if(moment().format('ss')<=15){
-    document.querySelector('.flex-container-img').style.visibility = 'visible';
+  if(moment().format('ss')<=20){
+    document.querySelector('.flex-container-img').style.opacity = '1';
   }
   else {
-    document.querySelector('.flex-container-img').style.visibility = 'hidden';
+    document.querySelector('.flex-container-img').style.opacity = '0';
   }
 
 
