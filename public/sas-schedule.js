@@ -61,14 +61,16 @@ function generateSchedule(sheet){
     row.appendChild(cell);
     if(!cell.innerHTML){row.remove()}
   }
-  console.log(data['1'].changetime);
   document.querySelector('.date').innerHTML = moment().format('MMMM D, H:mm');
-  if (data['1'].changetime) document.querySelector('.announcement').src = data['1'].changetime
-  if(moment().format('ss')<=12 && document.querySelector('.announcement').src !== "null"){
-    document.querySelector('.flex-container-img').style.opacity = '1';
+  document.querySelector('.announcement').src = data['1'].changetime;
+
+  var announcementContainer = document.querySelector('.flex-container-img');
+
+  if(moment().format('ss')<=12 && data['1'].changetime.length > 1){
+    announcementContainer.style.opacity = '1';
   }
   else {
-    document.querySelector('.flex-container-img').style.opacity = '0';
+    announcementContainer.style.opacity = '0';
   }
 
 
