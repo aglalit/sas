@@ -63,7 +63,7 @@ function generateSchedule(sheet){
   }
   document.querySelector('.date').innerHTML = moment().format('MMMM D, H:mm');
   document.querySelector('.announcement').src = data['1'].changetime
-  if(moment().format('ss')<=12){
+  if(moment().format('ss')<=12 && document.querySelector('.announcement').src){
     document.querySelector('.flex-container-img').style.opacity = '1';
   }
   else {
