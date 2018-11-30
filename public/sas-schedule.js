@@ -4,6 +4,7 @@ GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sh
 document.querySelector('.date').innerHTML = moment().format('MMMM D, h:mma');
 function generateSchedule(sheet){
   let data = sheet.data;
+  console.log(data);
   let firstHalf = true;
   let delimiterPosition = data[0].indexOf
   if(!moment().isBefore(moment(data[0].changetime, 'HH:mm'))){firstHalf = false;}
@@ -61,7 +62,13 @@ function generateSchedule(sheet){
     if(!cell.innerHTML){row.remove()}
   }
   document.querySelector('.date').innerHTML = moment().format('MMMM D, H:mm');
-
+  document.querySelector('.announcement').src = data['1'].changetime
+  if(moment().format('ss')<=15){
+    document.querySelector('.flex-container-img').style.visibility = 'visible';
+  }
+  else {
+    document.querySelector('.flex-container-img').style.visibility = 'hidden';
+  }
 
 
   // for (let i=1;i<data.length;i++){
