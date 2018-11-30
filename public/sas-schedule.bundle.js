@@ -4919,9 +4919,10 @@ function generateSchedule(sheet){
     row.appendChild(cell);
     if(!cell.innerHTML){row.remove()}
   }
+  console.log(data['1'].changetime);
   document.querySelector('.date').innerHTML = moment().format('MMMM D, H:mm');
-  document.querySelector('.announcement').src = data['1'].changetime
-  if(moment().format('ss')<=20){
+  if (data['1'].changetime) document.querySelector('.announcement').src = data['1'].changetime
+  if(moment().format('ss')<=12 && document.querySelector('.announcement').src === "null"){
     document.querySelector('.flex-container-img').style.opacity = '1';
   }
   else {
