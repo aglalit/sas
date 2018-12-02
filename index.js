@@ -156,6 +156,8 @@ require('./server/the-city-as-text-2018-video.js')(app, Session, transporter, is
 require('./server/sas-schedule.js')(app);
 require('./server/faculty-trips.js')(app, Session, transporter);
 require('./server/open-day-2018.js')(app, Session, transporter);
+require('./server/open-day-2018-voting.js')(app, Session, transporter);
+
 
 
 
