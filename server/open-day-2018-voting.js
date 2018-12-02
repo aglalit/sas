@@ -49,7 +49,7 @@ module.exports = function(app, Session, transporter){
       }
       console.log('Message %s sent: %s', info.messageId, info.response);
     });
-    sess.polls.open_day_2018 = JSON.stringify(req.body);
+    sess.polls.open_day_2018_voting = JSON.stringify(req.body);
     sess.save(function(err) {
       if (err)
         return console.error(err);
