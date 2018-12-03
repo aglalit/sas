@@ -112,15 +112,25 @@ html
           button.btn-lg {
             font-size: 30px;
           }
+          .small {
+            font-size:20px;
+          }
         }
+        .small {
+          font-size:15px;
+        }
+        
 body
   .container
     .jumbotron.text-center
       .logo
         a(href="https://sas.utmn.ru")
           img(src="http://schoolofadvancedstudies.herokuapp.com/assets/Logo__blue.png")
-      h1 День в Школе
-      h3 Регистрация
+      h1 День в Школе перспективных исследований
+      h3 15 декабря 2018 пройдет день в Школе перспективных исследований.
+      h3 Адрес проведения: ул. 8 Марта 2 к.1
+      p &nbsp;
+      h2 Регистрация
       form(action="/polls/open-day-2018" method="post")
         fieldset
           div(class="input-group")
@@ -135,10 +145,12 @@ body
             .flex-container.column
               label(for="Школа") Школа
                 sup(style="color:red") *
+                p.small (если Вы являетесь родителем/ родственником/ преподавателем/ сопровождающим/ старшим другом, укажите это в свободной форме)
               input(type="text" required="required" class="form-control" name="Школа")
             .flex-container.column
               label(for="Класс") Класс
                 sup(style="color:red") *
+                p.small (если Вы являетесь родителем/ родственником/ преподавателем/ сопровождающим/ старшим другом, укажите это в свободной форме)
               input(type="number" required="required" class="form-control" name="Класс" min="1" max="11")
             .flex-container.column
               label(for="Email") Email
@@ -149,7 +161,7 @@ body
                 sup(style="color:red") *
               input(type="text" required="required" class="form-control" name="Откуда вы узнали о Школе?")
             .flex-container.column
-              h3 Какие занятия планируете выбрать в рамках Дня в Школе?
+              h3 Какие занятия вы планируете выбрать в рамках Дня в Школе?
               h3 11:45–12:30
               label 
                 a(href="https://sas.utmn.ru/louis-vervoort-ru" target="_blank") Louis Vervoort 
