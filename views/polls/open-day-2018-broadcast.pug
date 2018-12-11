@@ -152,13 +152,14 @@ body
                 option(value="Школьник (11 класс)") Школьник (11 класс)
                 option(value="Студент") Студент  
                 option(value="Родитель") Родитель
-                option(value="Другое") Другое                    
+                option(value="Другое") Другое   
+            p &nbsp;                               
             .flex-container.column
               label(for="Email") Email
                 sup(style="color:red") *
               input(type="email" required="required" class="form-control" name="Email")              
             .flex-container.row
-              input.form-check-input(id="agreement-checkbox" type="checkbox" name="agreement")                         
+              input.form-check-input(id="agreement-checkbox" type="checkbox" name="agreement" required="required")                         
               label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
                 a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") Политики конфиденциальности
             label 
