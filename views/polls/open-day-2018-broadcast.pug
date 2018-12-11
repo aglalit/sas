@@ -1,0 +1,168 @@
+doctype html
+html
+  head
+    title Open Day at SAS 2018
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    // load bootstrap css
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      img {
+        width:100%;
+      }
+      .logo {padding-bottom:30px}
+      h2 {font-weight:800; margin-bottom:20px;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+      }
+      h3 {
+        font-size: 1.5em;
+        font-weight: 400;
+      }
+      a {color:#00f}
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+        padding-top: 0px;
+      }
+      .container{
+        width:98% !important;
+      }
+      .input-group{
+        margin-bottom:20px;
+      }
+      .input-group label {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 10px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+        width:75%;
+      }
+      form {
+        margin-top: 30px;
+      }
+      label,legend {
+        text-align: left;
+            float: left;
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        float:left;
+        width:75%;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        -webkit-transition: 0.2s all linear;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        top:0px;
+        }
+        input[type="checkbox"] {max-width: 50px;height: 35px;margin-top:6px}
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #00f;
+        }
+        button {
+          background-color: #00f !important;
+        }
+        .flex-container {display:-webkit-box;display:-ms-flexbox;display:flex; margin:10px 0;}
+        .column {-webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction:column;}
+        .row label {
+          padding-left: 15px;
+        }
+        
+        @media (max-width: 1024px) {
+
+          body{padding-top:10px}
+          .container{
+          width:95%;
+          }
+        .input-group  label {
+          font-size:30px ;
+          margin-bottom:20px;
+          }
+          input[type="radio"]{
+            top:6px;
+            min-width: 5%;
+          }
+          button.btn-lg {
+            font-size: 30px;
+          }
+          .small {
+            font-size:20px;
+          }
+        }
+        .small {
+          font-size:15px;
+        }
+        
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="http://schoolofadvancedstudies.herokuapp.com/assets/Logo__blue.png")
+      h1 День в SAS
+      h3 15 декабря 2018 пройдет день в Школе перспективных исследований.
+      h3 Адрес проведения: ул. 8 Марта 2 к.1
+      p &nbsp;
+      h2 Регистрация
+      form(action="/polls/open-day-2018-broadcast" method="post")
+        fieldset
+          div(class="input-group")
+            .flex-container.column
+              label(for="ФИО") ФИО
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="ФИО")
+            .flex-container.column
+              label(for="Город") Город
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="Город")
+            .flex-container.column
+              label(for="Класс") Кем вы являетесь? (школьник / студент / родитель)
+                sup(style="color:red") *
+              select(name="Класс" required="required")
+                option(value="Не выбрано") Не выбрано
+                option(value="Школьник (8–10 класс)") Школьник (8–10 класс)
+                option(value="Школьник (11 класс)") Школьник (11 класс)
+                option(value="Студент") Студент  
+                option(value="Родитель") Родитель
+                option(value="Другое") Другое                    
+            .flex-container.column
+              label(for="Email") Email
+                sup(style="color:red") *
+              input(type="email" required="required" class="form-control" name="Email")              
+            .flex-container.row
+              input.form-check-input(id="agreement-checkbox" type="checkbox" name="agreement")                         
+              label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
+                a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") Политики конфиденциальности
+            label 
+              sup(style="color:red") * 
+              span — обязательные поля
+              
+        button(type="submit" class="btn btn-primary btn-lg") Отправить
