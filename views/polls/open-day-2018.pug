@@ -78,7 +78,7 @@ html
         margin-right: 15px;
 
         position: relative;
-        top:23px;
+        top:0px;
         }
         input[type="checkbox"] {max-width: 50px;height: 35px;margin-top:6px}
         input:focus {
@@ -107,7 +107,8 @@ html
           margin-bottom:20px;
           }
           input[type="radio"]{
-            top:23px;
+            top:6px;
+            min-width: 5%;
           }
           button.btn-lg {
             font-size: 30px;
@@ -220,7 +221,64 @@ body
                 option(value="David Dusseault — Creating First Rate Humans: Challenges to and Opportunities for Educating the Next Generation") David Dusseault — Creating First Rate Humans: Challenges to and Opportunities for Educating the Next Generation
                 option(value="John Tangney — Literature and Visual Art") John Tangney — Literature and Visual Art
                 option(value="Матвей Ломоносов — Почему мы еще не люди мира? О гражданстве сегодня") Матвей Ломоносов — Почему мы еще не «люди мира»? О гражданстве сегодня
-              p &nbsp;              
+              p &nbsp; 
+            h3 Проголосуйте за самую интересную для вас тему лекции — и 15 декабря 2018 года мы организуем онлайн-трансляцию лекции, набравшей больше всего голосов. 
+            .flex-container
+              input(type="radio" value="Group 1" name="video" id="1")
+              label(for="1") 
+                a(href="https://sas.utmn.ru/louis-vervoort-ru" target="_blank") Louis Vervoort
+                span — Free Will: When Philosophy Meets Science
+            .flex-container
+              input(type="radio" value="Group 2" name="video" id="2")
+              label(for="2") 
+                a(href="https://sas.utmn.ru/tomasz-Blusiewicz" target="_blank") Tomasz Blusiewicz
+                span — Historians from Combatant Countries Look Back at the Origins of World War I together, a Century Later
+            .flex-container
+              input(type="radio" value="Group 3" name="video" id="3")
+              label(for="3") 
+                a(href="https://sas.utmn.ru/svetlana-erpyleva" target="_blank") Светлана Ерпылева
+                span  — Занимательная история: как в XIX веке мы изобрели подростковость
+            .flex-container
+              input(type="radio" value="Group 4" name="video" id="4")
+              label(for="4") 
+                a(href="https://sas.utmn.ru/maxim-alyukov" target="_blank") Максим Алюков
+                span  — Больше, чем игра: как и зачем изучать компьютерные игры?
+            .flex-container
+              input(type="radio" value="Group 5" name="video" id="5")
+              label(for="5") 
+                a(href="https://sas.utmn.ru/Giacomo-Andreoletti" target="_blank") Giacomo Andreoletti
+                span — Identity through Time 
+            .flex-container
+              input(type="radio" value="Group 6" name="video" id="6")
+              label(for="6") 
+                a(href="https://sas.utmn.ru/Brian-Smith" target="_blank") Brian Smith
+                span — Political Violence: Terrorism
+            .flex-container
+              input(type="radio" value="Group 7" name="video" id="7")
+              label(for="7") 
+                a(href="https://sas.utmn.ru/Anne-Mulhall" target="_blank") Anne Mulhall
+                span — Bodies in Crisis in the Literature of the Workplace
+            .flex-container
+              input(type="radio" value="Group 8" name="video" id="8")
+              label(for="8") 
+                a(href="https://sas.utmn.ru/evgeny-grishin" target="_blank") Евгений Гришин
+                span — Любовь в Древнем Новгороде
+            .flex-container
+              input(type="radio" value="Group 9" name="video" id="9")
+              label(for="9") 
+                a(href="https://sas.utmn.ru/David-Dusseault" target="_blank") David Dusseault
+                span — Creating First Rate Humans: Challenges to and Opportunities for Educating the Next Generation 
+            .flex-container
+              input(type="radio" value="Group 10" name="video" id="10")
+              label(for="10") 
+                a(href="https://sas.utmn.ru/John-Tangney" target="_blank") John Tangney
+                span — Literature and Visual Art
+            .flex-container
+              input(type="radio" value="Group 11" name="video" id="11")
+              label(for="11") 
+                a(href="https://sas.utmn.ru/matvey-lomonosov" target="_blank") Матвей Ломоносов
+                span — Почему мы еще не «люди мира»? О гражданстве сегодня 
+            p &nbsp;              
             .flex-container.row
               input.form-check-input(id="agreement-checkbox" type="checkbox" name="agreement")                         
               label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
