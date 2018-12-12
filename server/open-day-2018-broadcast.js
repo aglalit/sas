@@ -49,7 +49,7 @@ function parseSession (sess, req, transporter){
     }
     console.log('Message %s sent: %s', info.messageId, info.response);
   });
-  sess.polls.open_day_2018 = JSON.stringify(req.body);
+  sess.polls.open_day_2018_broadcast = JSON.stringify(req.body);
   sess.save(function(err) {
     if (err)
       return console.error(err);
