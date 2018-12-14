@@ -21,4 +21,4 @@ print(parsed[0])
 
 finalstr = '[' + ','.join(parsed) + ']'
 with open('/Users/marat/dev/sas/sessions_parsed.json', 'w') as write_file:
-    write_file.write(finalstr)
+    write_file.write(dict)
