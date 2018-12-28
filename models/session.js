@@ -358,7 +358,8 @@ var sessionSchema = mongoose.Schema({
       faculty_trips: String,
       open_day_2018: String,
       open_day_2018_voting: String,
-      open_day_2018_broadcast: String
+      open_day_2018_broadcast: String,
+      ba_2018_year1_module2_qm: String
   }
 });
 

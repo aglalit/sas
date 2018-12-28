@@ -158,6 +158,8 @@ require('./server/faculty-trips.js')(app, Session, transporter);
 require('./server/open-day-2018.js')(app, Session, transporter);
 require('./server/open-day-2018-voting.js')(app, Session, transporter);
 require('./server/open-day-2018-broadcast.js')(app, Session, transporter);
+require('./server/ba-2018-year1-module2-qm.js')(app, Session, transporter);
+
 
 
 
