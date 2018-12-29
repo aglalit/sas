@@ -164,7 +164,8 @@ require('./server/ba_2018_year1_module2_gb_ru.js')(app, Session, transporter);
 require('./server/ba_2018_year1_module2_gb_en.js')(app, Session, transporter);
 require('./server/ba_2018_year1_module2_gi.js')(app, Session, transporter);
 require('./server/ba_2018_year2_module6_aw.js')(app, Session, transporter);
-require('./server/ba_2018_electives.js')(app, Session, transporter);
+require('./server/ba_2018_year2_module6_electives.js')(app, Session, transporter);
+require('./server/ba_2018_year1_module2_electives.js')(app, Session, transporter);
 require('./server/ba_2018_year1_module2_english.js')(app, Session, transporter);
 
 

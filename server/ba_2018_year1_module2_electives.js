@@ -1,10 +1,10 @@
 module.exports = function(app, Session, transporter){
 
-app.get('/polls/ba-2018-electives', function(req, res) {
-  res.render('ba-2018-electives', {user: req.user})
+app.get('/polls/ba-2018-year1-module2-electives', function(req, res) {
+  res.render('ba-2018-year1-module2-electives', {user: req.user})
 });
 
-app.post('/polls/ba-2018-electives', function(req, res) {
+app.post('/polls/ba-2018-year1-module2-electives', function(req, res) {
   Session.findOne({
     'session_id': req.session.id
   }, function(err, session) {
