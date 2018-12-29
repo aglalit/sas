@@ -359,7 +359,14 @@ var sessionSchema = mongoose.Schema({
       open_day_2018: String,
       open_day_2018_voting: String,
       open_day_2018_broadcast: String,
-      ba_2018_year1_module2_qm: String
+      ba_2018_year1_module2_qm: String,
+      ba_2018_year1_module2_history: String,
+      ba_2018_year1_module2_gb_en: String,
+      ba_2018_year1_module2_gb_ru: String,
+      ba_2018_year1_module2_gi: String,
+      ba_2018_year1_module2_english: String,
+      ba_2018_year2_module6_aw: String,
+      ba_2018_electives: String
   }
 });
 
