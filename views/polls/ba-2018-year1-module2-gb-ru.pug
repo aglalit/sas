@@ -113,14 +113,13 @@ body
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-01.svg")
-      h1 Обратная связь. Великие книги. 2 модуль.
-      h2 Просим студентов, обучающихся в группах Энн, Луи и Джона, использовать английский язык при ответе на открытые вопросы. 
+      h1 Feedback. Great Bools. 2nd module
       form(action="/polls/ba-2018-year1-module2-gb-ru" method="post")
         fieldset
           div(class="input-group")
             .flex-container
-              label(for="Укажите имя и фамилию преподавателя, работавшего с вами на семинарах") С каким преподавателем вы изучали «Великие книги»
-              select(class="form-control" required="required" name="Укажите имя и фамилию преподавателя, работавшего с вами на семинарах")
+              label(for="Who taught this course") Who taught this course?
+              select(class="form-control" required="required" name="Who taught this course")
                 option(value="Олег Журавлев") Олег Журавлев
                 option(value="Максим Алюков") Максим Алюков
                 option(value="John Tangney") John Tangney 
@@ -128,42 +127,57 @@ body
                 option(value="Anne Mulhall") Anne Mulhall
                 option(value="Louis Vervoort") Louis Vervoort
             .flex-container
-              label(for="Как хорошо были организованы материалы курса") Как хорошо были организованы материалы курса (ридер, раздатки, книги, электронные копии книг, аудиовизуальные материалы, e-mail рассылки, соцсети, web-сайт и т.д.). Оцените по шкале от 0 до 10, где 0 – материалов вообще не было или ими было невозможно пользоваться; 5 – материалов явно не хватало или пользоваться ими было затруднительно; 10 – материалов было достаточно, они были легко доступны и прекрасно структурированы.
-              input(type="number" required="required" class="form-control" name="Как хорошо были организованы материалы курса" min="0" max="10")
+              label(for="How well were the course materials organized") How well were the course materials organized (syllabus, readers, books, e-books, audio-visual materials, e-mail, social media, website, etc.)? Give a score on a scale of 0 to 10, where 0 = no materials were used at all; 5 = the materials were substandard or difficult to use; 10 = there were plenty of materials which were easily accessible and implemented usefully.
+              input(type="number" required="required" class="form-control" name="How well were the course materials organized" min="0" max="10")
             .flex-container
-              label(for="Сколько процентов обязательных текстов по этой части курса вы успевали прочесть") Сколько процентов обязательных текстов по этой части курса вы успевали прочесть? (от 0 до 100)
-                input(type="number" required="required" class="form-control" name="Сколько процентов обязательных текстов по этой части курса вы успевали прочесть" min="0" max="100")
+              label(for="What percentage of the mandatory readings were you able to do during the course") What percentage of the mandatory readings were you able to do during the course? (0 to 100%)
+              input(type="number" required="required" class="form-control" name="What percentage of the mandatory readings were you able to do during the course" min="0" max="100")
             .flex-container
-              label(for="Какой из прочитанных текстов оказал на вас наибольшее влияние? Почему?") Какой из прочитанных текстов оказал на вас наибольшее влияние? Почему?
-              textarea(rows="4" required="required" class="form-control" name="Какой из прочитанных текстов оказал на вас наибольшее влияние? Почему?") 
+              label(for="What course readings did you find the most useful") What course readings did you find the most useful?
+              textarea(rows="2" required="required" class="form-control" name="What course readings did you find the most useful")
             .flex-container
-              label(for="Насколько полно преподаватель следовал программе курса") Насколько полно преподаватель следовал программе курса (силлабусу) . Оцените по шкале от 0 до 10, где 0 - вообще не следовал; 5 – следовал на 50%; 10 – следовал на 100%
-              input(type="number" required="required" class="form-control" name="Насколько полно преподаватель следовал программе курса" min="0" max="10")
+              label(for="What course readings did you find the least useful") What course readings did you find the least useful?
+              textarea(rows="2" required="required" class="form-control" name="What course readings did you find the least useful")
             .flex-container
-              label(for="Оцените сложность лекций для вашего понимания") Оцените сложность курса для вашего понимания. Оцените по шкале от 0 до 10, где 0 – я вообще ничего не понимал; 5 – я понимал 50%; 10 – я понимал все.
-              input(type="number" required="required" class="form-control" name="Оцените сложность лекций для вашего понимания" min="0" max="10")
+              label(for="How closely did the teacher follow the course syllabus") How closely did the teacher follow the course syllabus? Give a score from 0 to 10, where 0 = didn’t follow it at all; 5 = followed half of it; 10 = followed it fully (100%). 
+              input(type="number" required="required" class="form-control" name="How closely did the teacher follow the course syllabus" min="0" max="10")
             .flex-container
-              label(for="Насколько новым для вас было содержание лекций") Насколько новым для вас было содержание курса? Оцените по шкале от 0 до 10, где  0 – я не узнал ничего нового; 5 – 50% материала было для меня новым; 10 – все, о чем говорилось, я слышал впервые.
-              input(type="number" required="required" class="form-control" name="Насколько новым для вас было содержание лекций" min="0" max="10")
+              label(for="How well does the teacher explain the material") How well does the teacher explain the material? (score from 0 tо 10).
+              input(type="number" required="required" class="form-control" name="How well does the teacher explain the material" min="0" max="10")
             .flex-container
-              label(for="Насколько изменились ваше мышление, знания и умения") Насколько изменились ваше мышление, знания и умения под воздействием этого курса? Оцените по шкале от 0 до 10, где 0 - вообще не изменились; 3 – изменились незначительно; 6 – заметно изменились; 8 – сильно изменились; 10 – я стал другим человеком.
-              input(type="number" required="required" class="form-control" name="Насколько изменились ваше мышление, знания и умения" min="0" max="10")
+              label(for="How well did your teacher organize interactive communication in your course") How well did your teacher organize interactive communication in your course? Score from 0 to 10, where 0 = there was no interaction, the teacher only lectured and asked questions nobody could answer; 10 = the work during the seminar was very interactive and included all kinds of well-organized interactive formats (discussions, group work, individual and team presentations, debates, etc.)
+              input(type="number" required="required" class="form-control" name="How well did your teacher organize interactive communication in your course" min="0" max="10")
             .flex-container
-              label(for="Насколько хорошо преподаватель организует интерактивную коммуникацию в группе") Насколько хорошо преподаватель организует интерактивную коммуникацию в группе? (балл от 0 до 10, где  0 – интеракция отсутствует, так как преподаватель читает лекцию или задает вопросы, на которые никто не может ответить; 10 – работа семинара максимально интерактивна, интеракция прекрасно организована).
-                input(type="number" required="required" class="form-control" name="Насколько хорошо преподаватель организует интерактивную коммуникацию в группе" min="0" max="10")
+              label(for="Did you feel comfortable speaking up in the classroom") Did you feel comfortable speaking up in the classroom? (score from 0 tо 10).
+              input(type="number" required="required" class="form-control" name="Did you feel comfortable speaking up in the classroom" min="0" max="10")
             .flex-container
-              label(for="Насколько хорошо преподаватель объясняет материал") Насколько хорошо преподаватель объясняет материал? (балл от 0 до 10)
-                input(type="number" required="required" class="form-control" name="Насколько хорошо преподаватель объясняет материал" min="0" max="10")
+              label(for="Did your teacher return assignments in a timely fashion") Did your teacher return assignments in a timely fashion? (score from 0 tо 10).
+              input(type="number" required="required" class="form-control" name="Did your teacher return assignments in a timely fashion" min="0" max="10")    
             .flex-container
-              label(for="Что вам больше всего понравилось в этом лекционном курсе") Что вам больше всего понравилось в этом курсе? 
-              textarea(rows="4" required="required" class="form-control" name="Что вам больше всего понравилось в этом лекционном курсе") 
+              label(for="Was your teacher accessible and helpful outside of the classroom") Was your teacher accessible and helpful outside of the classroom? (score from 0 tо 10).
+              input(type="number" required="required" class="form-control" name="Was your teacher accessible and helpful outside of the classroom" min="0" max="10")
             .flex-container
-              label(for="Что вам больше всего не понравилось в этом лекционном курсе") Что вам больше всего не понравилось в этом курсе?
-              textarea(rows="4" required="required" class="form-control" name="Что вам больше всего не понравилось в этом лекционном курсе")
+              label(for="How challenging was the course for you") How challenging was the course for you? Give a score from 0 to 10 where 0 = the course was extremely banal and easy; 5 = the course was moderately challenging and complex; 10 = the course was extremely challenging and complex
+              input(type="number" required="required" class="form-control" name="How challenging was the course for you" min="0" max="10")
             .flex-container
-              label(for="Что для вас было самым сложным в этом лекционном курсе") Что для вас было самым сложным в этом курсе?
-              textarea(rows="4" required="required" class="form-control" name="Что для вас было самым сложным в этом лекционном курсе")
+              label(for="How much did your thinking, knowledge and skills change during the course") How much did your thinking, knowledge and skills change during the course? Give a score from 0 to 10, where 0 = didn’t change at all; 3 = changed slightly; 6 = noticeably changed; 8 = changed a lot; 10 = I’m a new person now.
+              input(type="number" required="required" class="form-control" name="How much did your thinking, knowledge and skills change during the course" min="0" max="10")  
             .flex-container
-              label(for="Как бы вы порекомендовали улучшить этот лекционный курс") Как бы вы порекомендовали улучшить этот курс?
-              textarea(rows="4" required="required" class="form-control" name="Как бы вы порекомендовали улучшить этот лекционный курс")
-        button(type="submit" class="btn btn-primary btn-lg") Отправить
+              label(for="How often did you made your best effort to be attentive and engaged in this class") How often did you made your best effort to be attentive and engaged in this class? Give a score from 0 to 10
+              input(type="number" required="required" class="form-control" name="How often did you made your best effort to be attentive and engaged in this class" min="0" max="10")  
+            .flex-container
+              label(for="How consistently did you met the expectations for preparing for class") How consistently did you met the expectations for preparing for class (e.g. completing readings, submitting assignments)? Give a score from 0 to 10
+              input(type="number" required="required" class="form-control" name="How consistently did you met the expectations for preparing for class" min="0" max="10")  
+            .flex-container
+              label(for="How strongly would you recommend this course to your peers") How strongly would you recommend this course to your peers? (score from 0 tо 10).
+              input(type="number" required="required" class="form-control" name="How strongly would you recommend this course to your peers" min="0" max="10")  
+            .flex-container
+              label(for="What did you like best about the course") What did you like best about the course? What did you find the most instructive/informative/useful?
+              textarea(rows="4" required="required" class="form-control" name="What did you like best about the course") 
+            .flex-container
+              label(for="What did you dislike most about the course") What did you dislike most about the course? What did you find the least instructive/informative/useful?
+              textarea(rows="4" required="required" class="form-control" name="What did you dislike most about the course")
+            .flex-container
+              label(for="How would you recommend we improve this course") How would you recommend we improve this course?
+              textarea(rows="4" required="required" class="form-control" name="How would you recommend we improve this course")
+        button(type="submit" class="btn btn-primary btn-lg") Submit
