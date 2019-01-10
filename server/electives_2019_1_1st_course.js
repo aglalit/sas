@@ -42,7 +42,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
     let mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
       to: 'marat.goya@gmail.com, e.samokhvalova@utmn.ru', // list of receivers
-      subject: 'Элективы:' JSON.stringify(req.user.google.name) + ', ' + JSON.stringify(req.user.google.email), // Subject line
+      subject: 'Элективы:' + JSON.stringify(req.user.google.name) + ', ' + JSON.stringify(req.user.google.email), // Subject line
       // text: JSON.stringify(req.user), // plain text body
       html: emailBody.toString() // html body
     };
