@@ -1,10 +1,10 @@
 module.exports = function(app, Session, transporter, isLoggedIn, User){
 
-  app.get('/polls/electives-2019-1-1st-course', isLoggedIn, function(req, res) {
-    res.render('electives-2019-1-1st-course', {user: req.user})
+  app.get('/polls/electives-2019-1-1st-year', isLoggedIn, function(req, res) {
+    res.render('electives-2019-1-1st-year', {user: req.user})
   });
 
-  app.post('/polls/electives-2019-1-1st-course', function(req, res) {
+  app.post('/polls/electives-2019-1-1st-year', function(req, res) {
     User.findOne({
       '_id': req.user._id
     }, function(err, user) {
@@ -12,13 +12,13 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         return done(err);
 
       if (user) {
-        user.polls.ELECTIVES["2019_1_1st_course"].elective1 = req.body["elective1"];
-        user.polls.ELECTIVES["2019_1_1st_course"].elective2 = req.body["elective2"];
-        user.polls.ELECTIVES["2019_1_1st_course"].elective3 = req.body["elective3"];
-        user.polls.ELECTIVES["2019_1_1st_course"].elective4 = req.body["elective4"];
+        user.polls.ELECTIVES["2019_1_1st_year"].elective1 = req.body["elective1"];
+        user.polls.ELECTIVES["2019_1_1st_year"].elective2 = req.body["elective2"];
+        user.polls.ELECTIVES["2019_1_1st_year"].elective3 = req.body["elective3"];
+        user.polls.ELECTIVES["2019_1_1st_year"].elective4 = req.body["elective4"];
 
         var now = new Date();
-        user.polls.ELECTIVES["2019_1_1st_course"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+        user.polls.ELECTIVES["2019_1_1st_year"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
 
         user.save(function(err, user) {
           if (err)

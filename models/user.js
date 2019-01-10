@@ -46,7 +46,7 @@ var userSchema = mongoose.Schema({
       }
     },
     "ELECTIVES":{
-      "2019_1_2nd_course": {
+      "2019_1_2nd_year": {
         time: String,
         elective1: String,
         elective2: String,
@@ -57,7 +57,7 @@ var userSchema = mongoose.Schema({
         elective7: String,
         elective8: String
       },
-      "2019_1_1st_course": {
+      "2019_1_1st_year": {
         time: String,
         elective1: String,
         elective2: String,
