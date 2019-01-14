@@ -141,6 +141,7 @@ require('./server/ma_2018_chubarov.js')(app, Session, transporter);
 require('./server/ma_2018_strukov.js')(app, Session, transporter);
 require('./server/ma_2018_apostolov.js')(app, Session, transporter);
 require('./server/ma_2018_art.js')(app, Session, transporter);
+require('./server/ma_2018_utkin.js')(app, Session, transporter);
 
 require('./server/ma_2018_dobrovidova.js')(app, Session, transporter);
 require('./server/ba_2018_year1_module1_wtai.js')(app, Session, transporter);

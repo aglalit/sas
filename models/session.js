@@ -369,6 +369,7 @@ var sessionSchema = mongoose.Schema({
       ba_2018_year2_module6_aw: String,
       ba_2018_year1_module2_electives: String,
       ba_2018_year2_module6_electives: String,
+      ma_2018_utkin: String
   }
 });
 
