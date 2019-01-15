@@ -87,6 +87,7 @@ html
         }
         button {
           background-color: #00f !important;
+          border:none !important;
         }
         .flex-container {display:flex; flex-direction:column; margin:10px 0;}
 
@@ -118,40 +119,42 @@ body
         fieldset
           div(class="input-group")
             .flex-container
-              label(for="Преподаватель") Укажите имя и фамилию преподавателя, работавшего с вами по курсу «Численные методы»
-              select(class="form-control" required="required" name="Преподаватель")
-                option(value="Валентин Шармин") Валентин Шармин
-                option(value="Дмитрий Шармин") Дмитрий Шармин
-                option(value="Максим Платонов") Максим Платонов
-                option(value="Мария Бузинских") Мария Бузинских
-                option(value="Татьяна Салтанова") Татьяна Салтанова
-                option(value="Ольга Уфукова") Ольга Уфукова
-                option(value="Оксана Бердюгина") Оксана Бердюгина
+              label(for="Who taught this course?") Who taught this course?
+              select(class="form-control" required="required" name="Who taught this course?")
+                option(value="Гловатская Диана") Гловатская Диана
+                option(value="Речапова Елена") Речапова Елена
+                option(value="Яркова Елена") Яркова Елена
+                option(value="Смагина Яна / Гловатская Диана") Смагина Яна / Гловатская Диана
+                option(value="Муравьева Марина") Муравьева Марина
+                option(value="Лазарева Оксана") Ольга Уфукова
             .flex-container
-              label(for="Насколько хорошо преподаватель объясняет материал") Насколько хорошо преподаватель объясняет материал? (балл от 0 до 10)
-              input(type="number" required="required" class="form-control" name="Насколько хорошо преподаватель объясняет материал" min="0" max="10")
+              label(for="How well does the teacher explain the material") How well does the teacher explain the material? (score from 0 tо 10).
+              input(type="number" required="required" class="form-control" name="How well does the teacher explain the material" min="0" max="10")
             .flex-container
-              label(for="Оцените сложность курса для вашего понимания") Оцените сложность курса для вашего понимания. Оцените по шкале от 0 до 10, где 0 – я вообще ничего не понимал; 5 – я понимал 50%; 10 – я понимал все.
-              input(type="number" required="required" class="form-control" name="Оцените сложность курса для вашего понимания" min="0" max="100")
+              label(for="How well did your teacher organize interactive communication in your course") How well did your teacher organize interactive communication in your course? Score from 0 to 10, where 0 = there was no interaction, the teacher only lectured and asked questions nobody could answer; 10 = the work during the seminar was very interactive and included all kinds of well-organized interactive formats (discussions, group work, individual and team presentations, debates, etc.)
+              input(type="number" required="required" class="form-control" name="How well did your teacher organize interactive communication in your course" min="0" max="10")
             .flex-container
-              label(for="Насколько новым для вас было содержание курса") Насколько новым для вас было содержание курса? Оцените по шкале от 0 до 10, где  0 – я не узнал ничего нового; 5 – 50% материала было для меня новым; 10 – все, о чем говорилось, я слышал впервые.
-              input(type="number" required="required" class="form-control" name="Насколько новым для вас было содержание курса" min="0" max="10")
+              label(for="Did you feel comfortable speaking up in the classroom") Did you feel comfortable speaking up in the classroom? (score from 0 tо 10).
+              input(type="number" required="required" class="form-control" name="Did you feel comfortable speaking up in the classroom" min="0" max="10")
             .flex-container
-              label(for="Насколько изменились ваше мышление, знания и умения") Насколько изменились ваше мышление, знания и умения под воздействием этого курса? Оцените по шкале от 0 до 10, где 0 - вообще не изменились; 3 – изменились незначительно; 6 – заметно изменились; 8 – сильно изменились; 10 – я стал другим человеком.
-              input(type="number" required="required" class="form-control" name="Насколько изменились ваше мышление, знания и умения" min="0" max="10")
+              label(for="Did your teacher return assignments in a timely fashion") Did your teacher return assignments in a timely fashion? (score from 0 tо 10).
+              input(type="number" required="required" class="form-control" name="Did your teacher return assignments in a timely fashion" min="0" max="10")
             .flex-container
-              label(for="Чему вы научились в течение курса") Чему вы научились в течение курса? 
-              textarea(rows="4" required="required" class="form-control" name="Чему вы научились в течение курса")
+              label(for="Was your teacher accessible and helpful outside of the classroom") Was your teacher accessible and helpful outside of the classroom? (score from 0 tо 10).
+              input(type="number" required="required" class="form-control" name="Was your teacher accessible and helpful outside of the classroom" min="0" max="10")
             .flex-container
-              label(for="Что вам больше всего понравилось в этом  курсе") Что вам больше всего понравилось в этом курсе? 
-              textarea(rows="4" required="required" class="form-control" name="Что вам больше всего понравилось в этом  курсе") 
+              label(for="How challenging was the course for you") How challenging was the course for you? Give a score from 0 to 10 where 0 = the course was extremely banal and easy; 5 = the course was moderately challenging and complex; 10 = the course was extremely challenging and complex
+              input(type="number" required="required" class="form-control" name="How challenging was the course for you" min="0" max="10")
             .flex-container
-              label(for="Что вам больше всего не понравилось в этом  курсе") Что вам больше всего не понравилось в этом курсе?
-              textarea(rows="4" required="required" class="form-control" name="Что вам больше всего не понравилось в этом  курсе")
+              label(for="How much did your thinking, knowledge, and skills change during the course") How much did your thinking, knowledge, and skills change during the course? Give a score from 0 to 10, where 0 = didn’t change at all; 3 = changed slightly; 6 = noticeably changed; 8 = changed a lot; 10 = I’m a new person now.
+              input(type="number" required="required" class="form-control" name="How much did your thinking, knowledge, and skills change during the course" min="0" max="10")
             .flex-container
-              label(for="Что для вас было самым сложным в этом  курсе") Что для вас было самым сложным в этом курсе?
-              textarea(rows="4" required="required" class="form-control" name="Что для вас было самым сложным в этом  курсе")
+              label(for="What did you like best about the course") What did you like best about the course? What did you find the most instructive/informative/useful?
+              textarea(rows="4" required="required" class="form-control" name="What did you like best about the course")
             .flex-container
-              label(for="Как бы вы порекомендовали улучшить этот  курс") Как бы вы порекомендовали улучшить этот курс?
-              textarea(rows="4" required="required" class="form-control" name="Как бы вы порекомендовали улучшить этот  курс") 
-        button(type="submit" class="btn btn-primary btn-lg") Отправить
+              label(for="What did you dislike most about the course") What did you dislike most about the course? What did you find the least instructive/informative/useful?
+              textarea(rows="4" required="required" class="form-control" name="What did you dislike most about the course") 
+            .flex-container
+              label(for="How would you recommend we improve this course") How would you recommend we improve this course?
+              textarea(rows="4" required="required" class="form-control" name="How would you recommend we improve this course")
+        button(type="submit" class="btn btn-primary btn-lg") Submit
