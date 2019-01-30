@@ -1,5 +1,5 @@
 // load all the things we need
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 
 // load up the user model
 var User            = require('../models/user');
@@ -36,7 +36,12 @@ module.exports = function(passport) {
         clientID        : "1007112818313-kmg9btri07fnska7gb6l16eiue9rffj0.apps.googleusercontent.com",
         clientSecret    : "MJPGOUDVdUgSNR0db1RGEGaQ",
         callbackURL     : "https://schoolofadvancedstudies.herokuapp.com/auth/google/callback",
-
+        passReqToCallback   : true,
+        function(request, accessToken, refreshToken, profile, done) {
+    User.findOrCreate({ googleId: profile.id }, function (err, user) {
+      return done(err, user);
+    });
+  }
     },
     function(token, refreshToken, profile, done) {
 
