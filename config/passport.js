@@ -33,8 +33,8 @@ module.exports = function(passport) {
 
     passport.use(new GoogleStrategy({
 
-        clientID        : "118043106079-9di4ho7ofbpqq6de49t68dvbjm37kq83.apps.googleusercontent.com",
-        clientSecret    : "wumdeuRozgysj238MJtBy5kg",
+        clientID        : "1007112818313-kmg9btri07fnska7gb6l16eiue9rffj0.apps.googleusercontent.com",
+        clientSecret    : "MJPGOUDVdUgSNR0db1RGEGaQ",
         callbackURL     : "https://schoolofadvancedstudies.herokuapp.com/auth/google/callback",
 
     },
