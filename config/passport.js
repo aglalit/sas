@@ -36,7 +36,6 @@ module.exports = function(passport) {
         clientID        : "1007112818313-kmg9btri07fnska7gb6l16eiue9rffj0.apps.googleusercontent.com",
         clientSecret    : "MJPGOUDVdUgSNR0db1RGEGaQ",
         callbackURL     : "https://schoolofadvancedstudies.herokuapp.com/auth/google/callback",
-        passReqToCallback   : true,
     },
     function(token, refreshToken, profile, done) {
 
