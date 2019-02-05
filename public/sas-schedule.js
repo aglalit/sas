@@ -43,7 +43,7 @@ function generateSchedule(sheet){
       professor.classList.add('professor');
       entryText.shift();
       let professorText;
-      if (entryText) {
+      if (entryText.length) {
         professorText = '('+entryText.join('(');
       }
       professorText = professorText
