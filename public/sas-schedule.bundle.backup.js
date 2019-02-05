@@ -4900,10 +4900,7 @@ function generateSchedule(sheet){
       let professor = document.createElement('span');
       professor.classList.add('professor');
       entryText.shift();
-      let professorText;
-      if (entryText) {
-        professorText = '('+entryText.join('(');
-      }
+      let professorText = '('+entryText.join('(');
       professorText = professorText
       .replace(/\s/g,'&nbsp;')
       .replace(/(\d{3}[a-z]?),&nbsp;/g, '$1, ')

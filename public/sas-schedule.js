@@ -42,7 +42,10 @@ function generateSchedule(sheet){
       let professor = document.createElement('span');
       professor.classList.add('professor');
       entryText.shift();
-      let professorText = '('+entryText.join('(');
+      let professorText;
+      if (entryText) {
+        professorText = '('+entryText.join('(');
+      }
       professorText = professorText
       .replace(/\s/g,'&nbsp;')
       .replace(/(\d{3}[a-z]?),&nbsp;/g, '$1, ')
@@ -93,4 +96,4 @@ function generateSchedule(sheet){
 }
 setInterval(function(){
   GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
-  console.log("refreshed"); }, 2000);
+  console.log("refreshed"); }, 20000);
