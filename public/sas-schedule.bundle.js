@@ -4900,7 +4900,7 @@ function generateSchedule(sheet){
       let professor = document.createElement('span');
       professor.classList.add('professor');
       entryText.shift();
-      let professorText;
+      let professorText = '';
       if (entryText.length) {
         professorText = '('+entryText.join('(');
       }
