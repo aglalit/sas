@@ -4956,4 +4956,22 @@ setInterval(function(){
   GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
   console.log("refreshed"); }, 20000);
 
+var justHidden = false;
+var j;
+function hide() {
+  document.getElementsByTagName('body')[0].style.cursor = 'none';
+  justHidden = true;
+  setTimeout(function() {
+    justHidden = false;
+  }, 500);
+}
+document.addEventListener("mousemove", function() {
+  if (!justHidden) {
+    justHidden = false;
+    clearTimeout(j);
+      document.getElementsByTagName('body')[0].style.cursor = 'default';
+    j = setTimeout(hide, 1000);
+  }
+});
+
 },{"get-sheet-done":2,"moment":3}]},{},[4]);
