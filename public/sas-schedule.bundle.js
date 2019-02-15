@@ -4959,20 +4959,20 @@ setInterval(function(){
 var justHidden = false;
 var j;
 document.getElementsByTagName('body')[0].style.cursor = 'none';
-function hide() {
-  document.getElementsByTagName('body')[0].style.cursor = 'none';
-  justHidden = true;
-  setTimeout(function() {
-    justHidden = false;
-  }, 500);
-}
-document.addEventListener("mousemove", function() {
-  if (!justHidden) {
-    justHidden = false;
-    clearTimeout(j);
-      document.getElementsByTagName('body')[0].style.cursor = 'default';
-    j = setTimeout(hide, 1000);
-  }
-});
-
-},{"get-sheet-done":2,"moment":3}]},{},[4]);
+// function hide() {
+//   document.getElementsByTagName('body')[0].style.cursor = 'none';
+//   justHidden = true;
+//   setTimeout(function() {
+//     justHidden = false;
+//   }, 500);
+// }
+// document.addEventListener("mousemove", function() {
+//   if (!justHidden) {
+//     justHidden = false;
+//     clearTimeout(j);
+//       document.getElementsByTagName('body')[0].style.cursor = 'default';
+//     j = setTimeout(hide, 1000);
+//   }
+// });
+//
+// },{"get-sheet-done":2,"moment":3}]},{},[4]);
