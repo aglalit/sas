@@ -1,0 +1,205 @@
+doctype html
+html
+  head
+    title ПРОЕКТНО-АНАЛИТИЧЕСКАЯ СЕССИЯ — 2019. Регистрация
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    // load bootstrap css
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      @font-face {
+        font-family: 'Agipo-Regular';
+        src:url('../fonts/agipo/Agipo-Regular.woff');
+      }
+      h2 {font-weight:800; margin-bottom:20px;
+      font-family: 'Agipo-Bold',Arial,sans-serif;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+        font-family: 'Agipo-Bold',Arial,sans-serif;
+      }
+      h3 {
+        font-size: 1.5em;
+        font-weight: 400;
+        margin-bottom:30px;
+        font-family: 'Agipo-Regular',Arial,sans-serif;;
+      }
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+      }
+      img {
+        width:80%;
+        margin-top:10px;
+      }
+      .logo {padding-bottom:30px}
+      a {color:#f00}
+      .container{
+        width:98% !important;
+      }
+      .input-group{
+        margin-bottom:20px;
+      }
+      .input-group label, h4 {
+        font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 10px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+        
+      }
+      form {
+        margin-top: 30px;
+      }
+      fieldset {
+        margin-bottom:30px;
+      }
+      label,legend,h4 {
+        text-align: left;
+        width:94%
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        float:left;
+        width:75%;
+        font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
+      }
+      .label_width100 {
+        width:100%;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        top:0px
+        }
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #f00;
+        }
+        button {
+          background-color: #f00 !important;
+          border-color: #f00 !important;
+        }
+        
+        .checkbox {
+          width: 3% !important;
+          margin-top: 14px !important;
+        }
+
+
+        @media (max-width: 1024px) {
+
+          body{padding-top:10px}
+          .container{
+          width:95%;
+          }
+        .input-group  label {
+          font-size:30px ;
+          margin-bottom:20px;
+          width:90%;
+          }
+          input[type="radio"]{
+            top:5px;
+          }
+          button.btn-lg {
+            font-size: 30px;
+          }
+          .label_width100 {
+            width:100% !important;
+          }
+        }
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/logo_sas_ut_short-red.svg")
+      h1 Регистрация
+      h2 ПРОЕКТНО-АНАЛИТИЧЕСКАЯ СЕССИЯ ПО ОТБОРУ ПРОФЕССОРОВ И ДИЗАЙНУ МУЛЬТИДИСЦИПЛИНАРНЫХ ИССЛЕДОВАТЕЛЬСКИХ ПРОЕКТОВ — 2019
+      h3 
+        a(href="https://sas.utmn.ru/") Школа перспективных исследований 
+        a(href="https://utmn.ru/") Тюменского государственного университета 
+        span рада анонсировать третий ежегодный конкурс по отбору профессоров в Школу перспективных исследований. Кандидаты из 14 стран, обладатели PhD степени ведущих университетов мира, приедут в Тюмень для участия в 
+        a(href="https://sas.utmn.ru/en/project-design-session-2019-en/") проектно-аналитической сессии
+        span , на которой они будут разрабатывать и защищать междисциплинарные исследовательские проекты. Те команды, чьи проекты окажутся наиболее многообещающими с точки зрения их вклада в мировую дискуссию о наиболее важных проблемах социогуманитарных дисциплин, биологии и IT, смогут получить полные профессорские ставки в Школе. Профили кандидатов можно посмотреть по 
+        a(href="https://sas.utmn.ru/en/project-design-session-2019-en/") ссылке
+        span .
+      h2 7 марта
+      h3 10:00–14:00 — Индивидуальные презентации кандидатов
+      h3 15:00–16:15 — Индивидуальные презентации кандидатов
+      h3 18:00–19:15 — Индивидуальные презентации кандидатов
+      h2 8 марта
+      h3 15:00–19:30 — Пленарное заседание 
+      h2 9 марта
+      h3 15:00–19:30 — Пленарное заседание 
+      h2 10 марта
+      h3 15:00–20:00 — Пленарное заседание 
+
+      form(action="/polls/pds-2019" method="post")
+        fieldset
+          legend 
+          div(class="input-group")
+            label(for="ФИО" class="label_width100") Фамилия, Имя
+            input(type="text" required="required" class="form-control" name="ФИО")
+            label(for="Место работы/Учебы" class="label_width100") Место работы / Учебы
+            input(type="text" required="required" class="form-control" name="Место работы/Учебы")
+            label(for="Еmail" class="label_width100") Еmail
+            input(type="email" required="required" class="form-control" name="Еmail")
+            label(for="Откуда вы узнали о мероприятии?" class="label_width100") Откуда вы узнали о мероприятии?
+            input(type="text" required="required" class="form-control" name="Откуда вы узнали о мероприятии?")  
+            h4 В какие дни вы планируете посетить мероприятие?
+            div
+              input(id="march7" type="checkbox" class=" checkbox" name="foo")
+              label(for="march7") 7 марта
+            div
+              input(id="march8" type="checkbox" class="checkbox" name="foo")
+              label(for="march8") 8 марта
+            div
+              input(id="march9" type="checkbox" class=" checkbox" name="foo")
+              label(for="march9") 9 марта
+            div
+              input(id="march10" type="checkbox" class="checkbox" name="foo")
+              label(for="march10") 10 марта
+            input(id="all" type="checkbox" onClick="toggle(this)" class=" checkbox" )
+            label(for="all") Отметить все дни
+            p &nbsp;            
+            div
+              input(id="broadcast" type="checkbox" class="checkbox")
+              label(for="broadcast") Планирую смотреть онлайн-трансляцию (отметьте, чтобы получить оповещение о начале трансляции и ссылку на запись)
+            p &nbsp;
+            input(id="agreement-checkbox" type="checkbox" required class=" checkbox")
+            label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных
+            script.
+              function toggle(source) {
+              checkboxes = document.getElementsByName('foo');
+              checkboxes.forEach(function(checkbox){
+                    console.log(checkbox.checked)
+                checkbox.checked = source.checked;
+
+              })
+
+                }            
+        button(type="submit" class="btn btn-primary btn-lg") Отправить

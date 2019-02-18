@@ -161,6 +161,8 @@ require('./server/faculty-research-trips.js')(app, Session, transporter);
 require('./server/open-day-2018.js')(app, Session, transporter);
 require('./server/open-day-2018-voting.js')(app, Session, transporter);
 require('./server/open-day-2018-broadcast.js')(app, Session, transporter);
+require('./server/pds-2019.js')(app, Session, transporter);
+
 require('./server/ba_2018_year1_module2_qm.js')(app, Session, transporter);
 require('./server/ba_2018_year1_module2_history.js')(app, Session, transporter);
 require('./server/ba_2018_year1_module2_gb_ru.js')(app, Session, transporter);
