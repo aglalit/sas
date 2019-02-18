@@ -172,29 +172,30 @@ body
             input(type="text" required="required" class="form-control" name="Откуда вы узнали о мероприятии?")  
             h4 В какие дни вы планируете посетить мероприятие?
             div
-              input(id="march7" type="checkbox" class=" checkbox" name="foo")
+              input(id="march7" type="checkbox" class="days checkbox" name="march7")
               label(for="march7") 7 марта
             div
-              input(id="march8" type="checkbox" class="checkbox" name="foo")
+              input(id="march8" type="checkbox" class="days checkbox" name="march8")
               label(for="march8") 8 марта
             div
-              input(id="march9" type="checkbox" class=" checkbox" name="foo")
+              input(id="march9" type="checkbox" class="days checkbox" name="march9")
               label(for="march9") 9 марта
             div
-              input(id="march10" type="checkbox" class="checkbox" name="foo")
+              input(id="march10" type="checkbox" class="checkbox days" name="march10")
               label(for="march10") 10 марта
-            input(id="all" type="checkbox" onClick="toggle(this)" class=" checkbox" )
+            input(id="all" type="checkbox" onClick="toggle(this)" class="checkbox" )
             label(for="all") Отметить все дни
             p &nbsp;            
             div
-              input(id="broadcast" type="checkbox" class="checkbox")
+              input(id="broadcast" type="checkbox" class="checkbox" name="broadcast")
               label(for="broadcast") Планирую смотреть онлайн-трансляцию (отметьте, чтобы получить оповещение о начале трансляции и ссылку на запись)
             p &nbsp;
-            input(id="agreement-checkbox" type="checkbox" required class=" checkbox")
-            label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных
+            input(id="agreement-checkbox" type="checkbox" required class=" checkbox" name="agreement")
+            label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
+              a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") политики конфиденциальности
             script.
               function toggle(source) {
-              checkboxes = document.getElementsByName('foo');
+              checkboxes = document.getElementsByClassname('days');
               checkboxes.forEach(function(checkbox){
                     console.log(checkbox.checked)
                 checkbox.checked = source.checked;
