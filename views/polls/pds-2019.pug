@@ -116,7 +116,7 @@ html
           .container{
           width:95%;
           }
-        .input-group  label {
+        .input-group  label, h4 {
           font-size:30px ;
           margin-bottom:20px;
           width:90%;
@@ -195,12 +195,9 @@ body
               a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") политики конфиденциальности
             script.
               function toggle(source) {
-              checkboxes = document.getElementsByClassname('days');
+              checkboxes = document.getElementsByClassName('days');
               checkboxes.forEach(function(checkbox){
-                    console.log(checkbox.checked)
                 checkbox.checked = source.checked;
-
               })
-
                 }            
         button(type="submit" class="btn btn-primary btn-lg") Отправить
