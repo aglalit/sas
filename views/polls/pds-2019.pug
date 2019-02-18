@@ -50,7 +50,7 @@ html
       .input-group label, h4 {
         font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
         font-weight: 500;
-        margin: 10px 0;
+        margin: 18px 0;
         font-size:20px;
       }
       .input-group .label__description {
@@ -58,7 +58,6 @@ html
       }
       .input-group .form-control {
         margin: 20px 0 40px 0;
-        
       }
       form {
         margin-top: 30px;
@@ -109,7 +108,8 @@ html
         }
         
         .checkbox {
-          width: 3% !important;
+          width: 5% !important;
+          height: 30px;
           margin-top: 14px !important;
         }
 
@@ -142,6 +142,13 @@ html
           }
           .label_width100 {
             width:100% !important;
+          }
+          .checkbox {margin-top: 13px !important;           
+            height: 50px;
+            }
+          .input-group label, h4 {
+            
+            margin: 11px 0;
           }
         }
 body
@@ -209,8 +216,8 @@ body
             script.
               function toggle(source) {
               checkboxes = document.getElementsByClassName('days');
-              checkboxes.forEach(function(checkbox){
-                checkbox.checked = source.checked;
-              })
-                }            
+              for (var i=0;i<checkboxes.length;i++){
+                checkboxes[i].checked = source.checked;
+                }
+              }            
         button(type="submit" class="btn btn-primary btn-lg") Отправить
