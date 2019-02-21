@@ -108,7 +108,7 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: '/polls',
+  successRedirect: '/pds-2019-classes',
   failureRedirect: '/login'
 }));
 // passport.authenticate('google'),
@@ -161,6 +161,7 @@ require('./server/open-day-2018.js')(app, Session, transporter);
 require('./server/open-day-2018-voting.js')(app, Session, transporter);
 require('./server/open-day-2018-broadcast.js')(app, Session, transporter);
 require('./server/pds-2019.js')(app, Session, transporter);
+require('./server/pds_2019_classes.js')(app, Session, transporter);
 
 require('./server/ba_2018_year1_module2_qm.js')(app, Session, transporter);
 require('./server/ba_2018_year1_module2_history.js')(app, Session, transporter);

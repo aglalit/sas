@@ -64,6 +64,13 @@ var userSchema = mongoose.Schema({
         elective3: String,
         elective4: String
       },
+      "pds_2019_classes": {
+        time: String,
+        "9:40": String,
+        "11:30": String,
+        "14:00": String,
+        "15:40": String
+      },
       "ba_2018_quantitative_methods": {
         time: String,
         track: Number
