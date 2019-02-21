@@ -110,35 +110,6 @@ head
           font-size: 30px;
         }
       }
-    script.
-      var inputs = document.querySelectorAll('input[type="checkbox"]');
-      inputs.forEach(function(input) {
-        input.addEventListener('mousedown', function() {
-          var id = event.target.id;
-          var name = event.target.name;
-          if (!event.target.checked) {
-            if (document.querySelectorAll('.checked').length < 3) {
-              event.target.classList.add("checked");
-              inputs.forEach(function(input) {
-                if (input.name === name && input.id !== id) {
-                  input.disabled = true;
-                }
-              });
-            } else {
-              event.target.checked = false;
-              alert('You can choose 3 classes only');
-            }
-          } else {
-            inputs.forEach(function(input) {
-              event.target.removeAttribute("checked");
-              if (input.name === name && input.id !== id) {
-                input.disabled = false;
-              }
-            });
-          }
-
-        });
-      });
 .container
   .jumbotron.text-center
     .logo
@@ -221,3 +192,32 @@ head
           input(type="checkbox" value="Krishna-K" name="15:40" id="Krishna-K")
           label(for="Krishna-K") Krishna-K — Neurobiology of Learning and Memory    
       button(type="submit" class="btn btn-primary btn-lg") Submit
+  script.
+    var inputs = document.querySelectorAll('input[type="checkbox"]');
+    inputs.forEach(function(input) {
+      input.addEventListener('mousedown', function() {
+        var id = event.target.id;
+        var name = event.target.name;
+        if (!event.target.checked) {
+          if (document.querySelectorAll('.checked').length < 3) {
+            event.target.classList.add("checked");
+            inputs.forEach(function(input) {
+              if (input.name === name && input.id !== id) {
+                input.disabled = true;
+              }
+            });
+          } else {
+            event.target.checked = false;
+            alert('You can choose 3 classes only');
+          }
+        } else {
+          inputs.forEach(function(input) {
+            event.target.removeAttribute("checked");
+            if (input.name === name && input.id !== id) {
+              input.disabled = false;
+            }
+          });
+        }
+
+      });
+    });
