@@ -1,6 +1,5 @@
 // load all the things we need
-var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
-
+var GoogleStrategy = require('passport-google-oauth20').Strategy;
 // load up the user model
 var User            = require('../models/user');
 
@@ -33,8 +32,8 @@ module.exports = function(passport) {
 
     passport.use(new GoogleStrategy({
 
-        clientID        : "1007112818313-kmg9btri07fnska7gb6l16eiue9rffj0.apps.googleusercontent.com",
-        clientSecret    : "MJPGOUDVdUgSNR0db1RGEGaQ",
+        clientID        : "118043106079-9di4ho7ofbpqq6de49t68dvbjm37kq83.apps.googleusercontent.com",
+        clientSecret    : "wumdeuRozgysj238MJtBy5kg",
         callbackURL     : "https://schoolofadvancedstudies.herokuapp.com/auth/google/callback",
     },
     function(token, refreshToken, profile, done) {

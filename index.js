@@ -24,7 +24,6 @@ var Session = require('./models/session');
 var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", {useMongoClient: true});
 
 
-
 // Connection URL
 var url = "mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas";
 const GOOGLE_CLIENT_ID = "118043106079-9di4ho7ofbpqq6de49t68dvbjm37kq83.apps.googleusercontent.com";
