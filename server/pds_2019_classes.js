@@ -29,7 +29,10 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         console.log('There isn\'t such user in the database');
       }
     });
-    req.flash('info', `Your choice is submitted (9:40 — ${req.body["9:40"]}; 11:30 — ${req.body["11:30"]}; 14:00 — ${req.body["14:00"]}; 15:40 — ${req.body["15:40"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
+    function undef(time){
+      time===undefined ? return '-' : return time;
+    }
+    req.flash('info', `Your choice is submitted (9:40 — ${undef(req.body["9:40"])}; 11:30 — ${undef(req.body["11:30"])}; 14:00 — ${undef(req.body["14:00"])}; 15:40 — ${undef(req.body["15:40"])};). In case of mistake, you can make your choice again. Thanks for participation.`);
     let emailBody = '';
     var bodyKeys = Object.keys(req.body);
     for (let i=0;i<bodyKeys.length;i++){
