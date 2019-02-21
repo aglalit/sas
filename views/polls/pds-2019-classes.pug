@@ -118,7 +118,7 @@ head
     h1 Отбор профессоров: сессия по дизайну мультидисциплинарных исследовательских проектов. Открытые занятия кандидатов
     form(action="/polls/pds-2019-classes" method="post")
       h3 09:40–11:10
-      div(class="input-group")
+      div(class="input-group" id="slot1")
         .flex-container.row
           input(type="radio" value="Alexandra Coțofană" name="9:40" id="Alexandra Coțofană")
           label(for="Alexandra Coțofană") Alexandra Coțofană — Thinking through models of power. Approaching canonical texts in social sciences and the humanities
@@ -137,8 +137,11 @@ head
         .flex-container.row
           input(type="radio" value="Natalia Zaretskaya" name="9:40" id="Natalia Zaretskaya")
           label(for="Natalia Zaretskaya") Natalia Zaretskaya — Scientific manuscript design
+        .flex-container.row
+          input(type="radio" checked value="none" name="9:40" id="none1")
+          label(for="none") none
       h3 11:30–13:00
-      div(class="input-group")
+      div(class="input-group" id="slot2")
         .flex-container.row
           input(type="radio" value="Mark Geraghty" name="11:30" id="Mark Geraghty")
           label(for="Mark Geraghty") Mark Geraghty — Interpretative Social Science, Anthropology and Hermeneutics
@@ -157,8 +160,11 @@ head
         .flex-container.row
           input(type="radio" value="Adam Szymanski" name="11:30" id="Adam Szymanski")
           label(for="Adam Szymanski") Adam Szymanski — The Cinema of Poetry
+        .flex-container.row
+          input(type="radio" checked value="none" name="11:30" id="none2")
+          label(for="none") none          
       h3 14:00–15:30
-      div(class="input-group")
+      div(class="input-group" id="slot3")
         .flex-container.row
           input(type="radio" value="Emily Jane O’Dell" name="14:00" id="Emily Jane O’Dell")
           label(for="Emily Jane O’Dell") Emily Jane O’Dell — Excavating the Silk Road: Sufism in Post-Soviet Central Asia
@@ -177,8 +183,11 @@ head
         .flex-container.row
           input(type="radio" value="Sergey Shityakov" name="14:00" id="Sergey Shityakov")
           label(for="Sergey Shityakov") Sergey Shityakov — Molecular Neuroscience of Human Interactions: The Behavioral Breakthrough at Molecular Level
+        .flex-container.row
+          input(type="radio" checked value="none" name="14:00" id="none3")
+          label(for="none") none          
       h3 15:40–17:10
-      div(class="input-group")
+      div(class="input-group" id="slot4")
         .flex-container.row
           input(type="radio" value="Anna Varfolomeeva" name="15:40" id="Anna Varfolomeeva")
           label(for="Anna Varfolomeeva") Anna Varfolomeeva — Landscapes of the changing world
@@ -191,4 +200,7 @@ head
         .flex-container.row
           input(type="radio" value="Krishna-K" name="15:40" id="Krishna-K")
           label(for="Krishna-K") Krishna-K — Neurobiology of Learning and Memory
+        .flex-container.row
+          input(type="radio" checked value="none" name="15:40" id="none4")
+          label(for="none") none          
       button(type="submit" class="btn btn-primary btn-lg") Submit
