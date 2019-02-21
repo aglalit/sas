@@ -212,7 +212,7 @@ head
           }
         } else {
           inputs.forEach(function(input) {
-            event.target.removeAttribute("checked");
+            event.target.classList.remove("checked");
             if (input.name === name && input.id !== id) {
               input.disabled = false;
             }
