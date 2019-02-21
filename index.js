@@ -134,6 +134,8 @@ require('./server/electives_2019_1_1st_year.js')(app, Session, transporter, isLo
 require('./server/electives_2019_1_2nd_year.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/ba_2018_quantitative_methods.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/ba_2018_history.js')(app, Session, transporter, isLoggedIn, User);
+require('./server/pds_2019_classes.js')(app, Session, transporter, isLoggedIn, User);
+
 
 require('./server/ma_2018_fedorova.js')(app, Session, transporter);
 require('./server/ma_2018_chubarov.js')(app, Session, transporter);
@@ -161,7 +163,6 @@ require('./server/open-day-2018.js')(app, Session, transporter);
 require('./server/open-day-2018-voting.js')(app, Session, transporter);
 require('./server/open-day-2018-broadcast.js')(app, Session, transporter);
 require('./server/pds-2019.js')(app, Session, transporter);
-require('./server/pds_2019_classes.js')(app, Session, transporter);
 
 require('./server/ba_2018_year1_module2_qm.js')(app, Session, transporter);
 require('./server/ba_2018_year1_module2_history.js')(app, Session, transporter);
