@@ -211,8 +211,8 @@ head
             alert('You can choose 3 classes only');
           }
         } else {
+          event.target.classList.remove("checked");
           inputs.forEach(function(input) {
-            event.target.classList.remove("checked");
             if (input.name === name && input.id !== id) {
               input.disabled = false;
             }
