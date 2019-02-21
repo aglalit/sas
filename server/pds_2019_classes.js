@@ -30,7 +30,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
       }
     });
     function undef(time){
-      return time == undefined ? 'none' : time;
+      return time == undefined ? 'not selected' : time;
     }
     req.flash('info', `Your choice is submitted (9:40 — ${undef(req.body["9:40"])}; 11:30 — ${undef(req.body["11:30"])}; 14:00 — ${undef(req.body["14:00"])}; 15:40 — ${undef(req.body["15:40"])};). In case of mistake, you can make your choice again. Thanks for participation.`);
     let emailBody = '';
