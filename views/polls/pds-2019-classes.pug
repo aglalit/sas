@@ -216,9 +216,10 @@ head
               }
             });
           } else {
-            alert('You can choose 3 classes only');
             event.target.checked = false;
             event.target.classList.remove("checked");
+            event.target.click();
+            alert('You can choose 3 classes only');
           }
         } else {
           event.target.classList.remove("checked");
