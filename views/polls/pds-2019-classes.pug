@@ -218,7 +218,7 @@ head
           } else {
             event.target.checked = false;
             event.target.classList.remove("checked");
-            event.target.click();
+            if (event.target.checked) event.target.click();
             alert('You can choose 3 classes only');
           }
         } else {
