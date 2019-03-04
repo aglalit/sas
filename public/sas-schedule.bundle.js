@@ -4955,14 +4955,14 @@ function generateSchedule(sheet){
 
   var announcementContainer = document.querySelector('.flex-container-img');
 
-  if(moment().format('ss')<=10 && data['1'].changetime.length > 1){
+  if((moment().format('mm')%10 === 5 && moment().format('ss')<=30) && data['1'].changetime.length > 1){
     announcementContainer.style.opacity = '1';
   }
   else {
     announcementContainer.style.opacity = '0';
   }
 
-  if(moment().format('ss')<=35 && data['1'].changetime.length > 1){
+  if(moment().format('ss')<=30 && data['1'].changetime.length > 1){
     firstHalf = true;
   }
   else {
