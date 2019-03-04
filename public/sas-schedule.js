@@ -34,7 +34,7 @@ function generateSchedule(sheet){
     let row = document.createElement('tr');
     row.classList.add('row');
     let timeEntry = document.createElement('td');
-    timeEntry.innerHTML = data[0][currentHalf[k]].replace(/-/g,'–').replace(/—/g,'–');
+    timeEntry.innerHTML = data[0][currentHalf[k]].replace(/-/g,'–').replace(/—/g,' – ').replace(/–/g,' – ');;
     let timeEntryStart = data[0][currentHalf[k]].split('–')[0];
     let classNumber = document.createElement('td');
     let classNumberSpan = document.createElement('span');
@@ -97,7 +97,7 @@ function generateSchedule(sheet){
 
   var announcementContainer = document.querySelector('.flex-container-img');
 
-  if((moment().format('mm')%10 === 5 && moment().format('ss')<=30) && data['1'].changetime.length > 1){
+  if((moment().format('mm')%10 === 0 && moment().format('ss')<=30) && data['1'].changetime.length > 1){
     announcementContainer.style.opacity = '1';
   }
   else {
@@ -131,7 +131,7 @@ function generateSchedule(sheet){
 }
 setInterval(function(){
   GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
-  console.log("refreshed"); }, 2000);
+  console.log("refreshed"); }, 3000);
 
 // var justHidden = false;
 // var j;
