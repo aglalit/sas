@@ -4859,13 +4859,23 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 const GetSheetDone = require('get-sheet-done');
 const moment = require('moment');
 GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
-document.querySelector('.date').innerHTML = moment().format('MMMM D, h:mma');
+const classNumbers = {
+  "8:00":"1",
+  "9:40":"2",
+  "11:30":"3",
+  "14:00":"4",
+  "15:45":"5",
+  "17:30":"6",
+  "19:10":"7"
+};
+let firstHalf = true;
+
+document.querySelector('.date').innerHTML = moment().format('dddd DD/MM, H:mm');
 function generateSchedule(sheet){
   let data = sheet.data;
   console.log(data);
-  let firstHalf = true;
   let delimiterPosition = data[0].indexOf
-  if(!moment().isBefore(moment(data[0].changetime, 'HH:mm'))){firstHalf = false;}
+  // if(!moment().isBefore(moment(data[0].changetime, 'HH:mm'))){firstHalf = false;}
   // console.log(sheet)
   let dataToArray = Object.getOwnPropertyNames(data[0]);
   let currentHalf;
@@ -4880,10 +4890,28 @@ function generateSchedule(sheet){
   }
   for (let k=0;k<currentHalf.length;k++){
     let row = document.createElement('tr');
-    row.classList.add('row')
+    row.classList.add('row');
     let timeEntry = document.createElement('td');
-    timeEntry.innerHTML = data[0][currentHalf[k]];
+    timeEntry.innerHTML = data[0][currentHalf[k]].replace(/-/g,'–').replace(/—/g,'–');
+    let timeEntryStart = data[0][currentHalf[k]].split('–')[0];
+    let classNumber = document.createElement('td');
+    let classNumberSpan = document.createElement('span');
+    classNumberSpan.classList.add('classNumberSpan');
+    classNumber.appendChild(classNumberSpan);
+
+    if (classNumbers[timeEntryStart]){
+      classNumberSpan.innerHTML = classNumbers[timeEntryStart];
+    }
+    var beginningTime = moment(timeEntryStart, 'H:mm');
+    var endTime = moment(timeEntryStart, 'H:mm').add(90, 'minutes');
+    if (beginningTime.isBefore(moment()) && moment().isBefore(endTime) ){
+      classNumberSpan.classList.add('red_highlight');
+      timeEntry.classList.add('red_highlight');
+    }
+
+    classNumber.classList.add('classNumber');
     timeEntry.classList.add('time');
+    row.appendChild(classNumber);
     row.appendChild(timeEntry);
     document.querySelector('.tbody').appendChild(row);
 
@@ -4922,16 +4950,23 @@ function generateSchedule(sheet){
     row.appendChild(cell);
     if(!cell.innerHTML){row.remove()}
   }
-  document.querySelector('.date').innerHTML = moment().format('MMMM D, H:mm');
+  document.querySelector('.date').innerHTML = '<span class="red">' + moment().format('dddd') + "</span> " + moment().format('DD/MM, H:mm');
   document.querySelector('.announcement').src = data['1'].changetime;
 
   var announcementContainer = document.querySelector('.flex-container-img');
 
-  if(moment().format('ss')<=12 && data['1'].changetime.length > 1){
+  if(moment().format('ss')<=10 && data['1'].changetime.length > 1){
     announcementContainer.style.opacity = '1';
   }
   else {
     announcementContainer.style.opacity = '0';
+  }
+
+  if(moment().format('ss')<=35 && data['1'].changetime.length > 1){
+    firstHalf = true;
+  }
+  else {
+    firstHalf = false;
   }
 
 
@@ -4959,13 +4994,14 @@ setInterval(function(){
 // var justHidden = false;
 // var j;
 // document.getElementsByTagName('body')[0].style.cursor = 'none';
+//
 // function hide() {
 //   document.getElementsByTagName('body')[0].style.cursor = 'none';
 //   justHidden = true;
 //   setTimeout(function() {
 //     justHidden = false;
 //   }, 500);
-// };
+// }
 // document.addEventListener("mousemove", function() {
 //   if (!justHidden) {
 //     justHidden = false;
