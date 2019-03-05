@@ -134,7 +134,7 @@ function generateSchedule(sheet){
 }
 setInterval(function(){
   GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
-  console.log("refreshed"); }, 3000);
+  console.log("refreshed"); }, 2000);
 
 // var justHidden = false;
 // var j;
