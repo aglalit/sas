@@ -4906,6 +4906,8 @@ function generateSchedule(sheet){
     var endTime = moment(timeEntryStart, 'H:mm').add(90, 'minutes');
     if (beginningTime.isBefore(moment()) && moment().isBefore(endTime) ){
       classNumberSpan.classList.add('red_highlight');
+      timeEntry.classList.add('red_highlight');
+      timeEntry.style.color = "#fff";
     }
 
     classNumber.classList.add('classNumber');
