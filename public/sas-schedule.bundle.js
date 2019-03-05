@@ -4957,7 +4957,7 @@ function generateSchedule(sheet){
 
   var announcementContainer = document.querySelector('.flex-container-img');
 
-  if((moment().format('mm')%5 === 0 && moment().format('ss')<=30) && data['1'].changetime.length > 1){
+  if((moment().format('mm')%5 === 0 && moment().format('ss')<=32) && data['1'].changetime.length > 1){
     announcementContainer.style.opacity = '1';
     firstHalfReverse = !firstHalfReverse;
   }
