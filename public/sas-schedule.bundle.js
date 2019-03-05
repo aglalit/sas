@@ -4869,6 +4869,7 @@ const classNumbers = {
   "19:10":"7"
 };
 let firstHalf = true;
+let firstHalfReverse = false;
 
 document.querySelector('.date').innerHTML = moment().format('dddd DD/MM, H:mm');
 function generateSchedule(sheet){
@@ -4956,18 +4957,19 @@ function generateSchedule(sheet){
 
   var announcementContainer = document.querySelector('.flex-container-img');
 
-  if((moment().format('mm')%10 === 0 && moment().format('ss')<=30) && data['1'].changetime.length > 1){
+  if((moment().format('mm')%5 === 0 && moment().format('ss')<=30) && data['1'].changetime.length > 1){
     announcementContainer.style.opacity = '1';
+    firstHalfReverse = true;
   }
   else {
     announcementContainer.style.opacity = '0';
   }
 
   if(moment().format('ss')<=30 && data['1'].changetime.length > 1){
-    firstHalf = true;
+    !firstHalfReverse ? firstHalf = true : firstHalf = false;
   }
   else {
-    firstHalf = false;
+    !firstHalfReverse ? firstHalf = false : firstHalf = true;
   }
 
 
