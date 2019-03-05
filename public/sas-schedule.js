@@ -48,7 +48,6 @@ function generateSchedule(sheet){
     var endTime = moment(timeEntryStart, 'H:mm').add(90, 'minutes');
     if (beginningTime.isBefore(moment()) && moment().isBefore(endTime) ){
       classNumberSpan.classList.add('red_highlight');
-      timeEntry.classList.add('red_highlight');
     }
 
     classNumber.classList.add('classNumber');
@@ -93,7 +92,7 @@ function generateSchedule(sheet){
     if(!cell.innerHTML){row.remove()}
   }
   document.querySelector('.date').innerHTML = '<span class="red">' + moment().format('dddd') + "</span> " + moment().format('DD/MM, H:mm');
-  document.querySelector('.announcement').src = data['1'].changetime;
+  if (data['1'].changetime) document.querySelector('.announcement').src = data['1'].changetime;
 
   var announcementContainer = document.querySelector('.flex-container-img');
 
@@ -129,9 +128,9 @@ function generateSchedule(sheet){
     // document.querySelectorAll('.row')[k].appendChild(cell);
   // }
 }
-setInterval(function(){
-  GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
-  console.log("refreshed"); }, 3000);
+// setInterval(function(){
+//   GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
+//   console.log("refreshed"); }, 3000);
 
 // var justHidden = false;
 // var j;
