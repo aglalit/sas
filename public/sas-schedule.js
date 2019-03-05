@@ -95,11 +95,18 @@ function generateSchedule(sheet){
     if(!cell.innerHTML){row.remove()}
   }
   document.querySelector('.date').innerHTML = '<span class="red">' + moment().format('dddd') + "</span> " + moment().format('DD/MM, H:mm');
-  if (data['1'].changetime) document.querySelector('.announcement').src = data['1'].changetime;
 
   var announcementContainer = document.querySelector('.flex-container-img');
 
-  if((moment().format('mm')%5 === 0 && moment().format('ss')<=32) && data['1'].changetime.length > 1){
+  if((moment().format('mm')%10 === 0 && moment().format('ss')<=32) && data['1'].changetime.length > 1){
+    if (data['1'].changetime) document.querySelector('.announcement').src = data['1'].changetime;
+    announcementContainer.style.opacity = '1';
+    firstHalfReverse = !firstHalfReverse;
+  }
+  else if((moment().format('mm')%10 === 5 && moment().format('ss')<=32) && data['2'].changetime.length > 1){
+    if (data['2'].changetime) document.querySelector('.announcement').src = data['2'].changetime;
+    else if (data['1'].changetime) document.querySelector('.announcement').src = data['1'].changetime;
+
     announcementContainer.style.opacity = '1';
     firstHalfReverse = !firstHalfReverse;
   }
