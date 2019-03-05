@@ -101,7 +101,7 @@ function generateSchedule(sheet){
 
   if((moment().format('mm')%5 === 0 && moment().format('ss')<=30) && data['1'].changetime.length > 1){
     announcementContainer.style.opacity = '1';
-    firstHalfReverse = true;
+    firstHalfReverse = !firstHalfReverse;
   }
   else {
     announcementContainer.style.opacity = '0';
