@@ -47,7 +47,7 @@ function generateSchedule(sheet){
     }
     var beginningTime = moment(timeEntryStart, 'H:mm');
     var endTime = moment(timeEntryStart, 'H:mm').add(90, 'minutes');
-    if (timeEntryStart.indexOf('/') > 0 && beginningTime.isBefore(moment()) && moment().isBefore(endTime) ){
+    if (timeEntryStart.indexOf('/') < 0 && beginningTime.isBefore(moment()) && moment().isBefore(endTime) ){
       classNumberSpan.classList.add('red_highlight');
       timeEntry.classList.add('red_highlight');
       timeEntry.style.color = "#fff";
