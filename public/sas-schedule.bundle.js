@@ -4972,7 +4972,7 @@ function generateSchedule(sheet){
     announcementContainer.style.opacity = '0';
   }
 
-  if(moment().format('ss')<=30 && data['1'].changetime.length > 1){
+  if(moment().format('ss')<=30){
     !firstHalfReverse ? firstHalf = true : firstHalf = false;
   }
   else {
@@ -4999,7 +4999,7 @@ function generateSchedule(sheet){
 }
 setInterval(function(){
   GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
-  console.log(firstHalf); }, 2000);
+ }, 2000);
 
 // var justHidden = false;
 // var j;
