@@ -101,24 +101,24 @@ function generateSchedule(sheet){
   if((moment().format('mm')%10 === 5 && moment().format('ss')<=32) && data['1'].changetime.length > 1){
     if (data['1'].changetime) document.querySelector('.announcement').src = data['1'].changetime;
     announcementContainer.style.opacity = '1';
-    firstHalf = !firstHalf;
+    firstHalfReverse = false;
   }
   else if((moment().format('mm')%10 === 0 && moment().format('ss')<=32) && data['2'].changetime.length > 1){
     if (data['2'].changetime) document.querySelector('.announcement').src = data['2'].changetime;
     else if (data['1'].changetime) document.querySelector('.announcement').src = data['1'].changetime;
 
     announcementContainer.style.opacity = '1';
-    firstHalf = !firstHalf;
+    firstHalfReverse = true;
   }
   else {
     announcementContainer.style.opacity = '0';
   }
 
   if(moment().format('ss')<=30 && data['1'].changetime.length > 1){
-    firstHalf = !firstHalf;
+    !firstHalfReverse ? firstHalf = true : firstHalf = false;
   }
   else {
-    firstHalf = !firstHalf;
+    !firstHalfReverse ? firstHalf = false : firstHalf = true;
   }
 
 
