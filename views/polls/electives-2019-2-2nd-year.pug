@@ -517,7 +517,7 @@ head
           var targetClass = event.target.classList[0];
 
           if (!event.target.checked) {
-            var group = document.getElementsByClassname(targetClass);
+            var group = document.getElementsByClassName(targetClass);
             group.forEach(function(el){
               if(el.classList[1] != 'checked'){
                               el.disabled = true;
