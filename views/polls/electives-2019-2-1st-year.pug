@@ -1,0 +1,307 @@
+doctype html
+head
+  title The choice of electives
+  link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+  // load bootstrap css
+  style.
+    body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+    @font-face {
+      font-family: 'Agipo-Bold';
+      src:url('../fonts/agipo/Agipo-Bold.woff');
+    }
+    img {
+      width:80%;
+      margin-top:10px;
+    }
+    .logo {padding-bottom:30px}
+    h2 {font-weight:800; margin-bottom:20px;}
+    .jumbotron h1 {
+      font-size:36px;
+      margin-bottom: 40px;
+    }
+    h3 {
+      font-size: 1.5em;
+      font-weight: 400;
+    }
+    .jumbotron{
+      font-size:18px;
+      line-height: initial;
+      padding-top: 0px;
+    }
+    .container{
+      width:98% !important;
+    }
+    .input-group{
+      margin-bottom:20px;
+    }
+    .input-group label {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight: 500;
+      margin: 10px 0;
+      font-size:20px;
+      width:93%;
+    }
+    .input-group .label__description {
+      font-family:initial;
+    }
+    .input-group .form-control {
+      margin: 20px 0 40px 0;
+      width:75%;
+    }
+    form {
+      margin-top: 30px;
+    }
+    label,legend {
+      text-align: left;
+          float: left;
+    }
+    legend {font-size: 1.8em;}
+    input, textarea, select {
+      float:left;
+      width:75%;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    input[type="radio"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+
+      border: 2px solid #999;
+      transition: 0.2s all linear;
+      outline: none;
+      margin-right: 15px;
+
+      position: relative;
+      top:0;
+      }
+      input:focus {
+        outline: none !important;
+      }
+      input:checked {
+        border: 12px solid #00f;
+      }
+      button {
+        background-color: #00f !important;
+        border: none !important;
+      }
+      .flex-container {display:flex; flex-direction:column; margin:10px 0;}
+      .flex-container.row {flex-direction:row;}
+
+      @media (max-width: 1024px) {
+
+        body{padding-top:10px}
+        .container{
+        width:95%;
+        }
+      .input-group  label {
+        font-size:30px ;
+        margin-bottom:20px;
+        }
+        input[type="radio"]{
+          top:6px;
+        }
+        button.btn-lg {
+          font-size: 30px;
+        }
+      }
+.container
+  .jumbotron.text-center
+    .logo
+      a(href="https://sas.utmn.ru")
+        img(src="/assets/logo_sas_ut_short-01.svg")
+    h1 The choice of electives for the 4th module. The form is available until April 1, 12:00.
+    form(action="/polls/electives-2019-2-1st-year" method="post")
+      h3 1st priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Zachary Reyna" name="elective1" id="Zachary Reyna1")
+          label(for="Zachary Reyna1") Zachary Reyna — What is the Anthropocene?
+        .flex-container.row
+          input(type="radio" value="Giacomo Andreoletti" name="elective1" id="Giacomo Andreoletti1")
+          label(for="Giacomo Andreoletti1") Giacomo Andreoletti — Formal Logic
+        .flex-container.row
+          input(type="radio" value="Tomasz Blusiewicz" name="elective1" id="Tomasz Blusiewicz1")
+          label(for="Tomasz Blusiewicz1") Tomasz Blusiewicz — History of Germany, 1701-1914
+        .flex-container.row
+          input(type="radio" value="Erika Wolf" name="elective1" id="Erika Wolf1")
+          label(for="Erika Wolf1") Erika Wolf — Image Scavengers: Collage, Montage, and Appropriation in 20th Century Art
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective1" id="Anne Mulhall1")
+          label(for="Anne Mulhall1") Anne Mulhall — Contemporary Italian Political Philosophy
+        .flex-container.row
+          input(type="radio" value="Duskin Drum" name="elective1" id="Duskin Drum1")
+          label(for="Duskin Drum1") Duskin Drum — Ecology, Technology and Anime
+        .flex-container.row
+          input(type="radio" value="John Tangney" name="elective1" id="John Tangney1")
+          label(for="John Tangney1") John Tangney — Modern American Poetry
+        .flex-container.row
+          input(type="radio" value="David Dusseault" name="elective1" id="David Dusseault1")
+          label(for="David Dusseault1") David Dusseault — Introduction to Post-Human Politics
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective1" id="Juliette Colinas1")
+          label(for="Juliette Colinas1") Juliette Colinas — Evolution: History, Principles, Case-Studies
+        .flex-container.row
+          input(type="radio" value="Арсений Столяров" name="elective1" id="Арсений Столяров1")
+          label(for="Арсений Столяров1") Арсений Столяров — Поведенческая экономика
+        .flex-container.row
+          input(type="radio" value="Ольга Добровидова" name="elective1" id="Ольга Добровидова1")
+          label(for="Ольга Добровидова1") Ольга Добровидова — Научная коммуникация
+        .flex-container.row
+          input(type="radio" value="Arne Dietrich" name="elective1" id="Arne Dietrich1")
+          label(for="Arne Dietrich1") Arne Dietrich — How Creativity Happens in the Brain
+        .flex-container.row
+          input(type="radio" value="Denis Sharapov" name="elective1" id="Denis Sharapov1")
+          label(for="Denis Sharapov1") Denis Sharapov — Anthropological Archaeology
+        .flex-container.row
+          input(type="radio" value="Louis Vervoort" name="elective1" id="Louis Vervoort1")
+          label(for="Louis Vervoort1") Louis Vervoort — Introduction to Philosophy of Science
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective1" id="Evgeny Grishin1")
+          label(for="Evgeny Grishin1") Evgeny Grishin, duskin drum, Peter Jones — Visions of the past, histories of the future in historical & sci-fi films
+      h3 2nd priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Zachary Reyna" name="elective2" id="Zachary Reyna2")
+          label(for="Zachary Reyna2") Zachary Reyna — What is the Anthropocene?
+        .flex-container.row
+          input(type="radio" value="Giacomo Andreoletti" name="elective2" id="Giacomo Andreoletti2")
+          label(for="Giacomo Andreoletti2") Giacomo Andreoletti — Formal Logic
+        .flex-container.row
+          input(type="radio" value="Tomasz Blusiewicz" name="elective2" id="Tomasz Blusiewicz2")
+          label(for="Tomasz Blusiewicz2") Tomasz Blusiewicz — History of Germany, 1701-1914
+        .flex-container.row
+          input(type="radio" value="Erika Wolf" name="elective2" id="Erika Wolf2")
+          label(for="Erika Wolf2") Erika Wolf — Image Scavengers: Collage, Montage, and Appropriation in 20th Century Art
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective2" id="Anne Mulhall2")
+          label(for="Anne Mulhall2") Anne Mulhall — Contemporary Italian Political Philosophy
+        .flex-container.row
+          input(type="radio" value="Duskin Drum" name="elective2" id="Duskin Drum2")
+          label(for="Duskin Drum2") Duskin Drum — Ecology, Technology and Anime
+        .flex-container.row
+          input(type="radio" value="John Tangney" name="elective2" id="John Tangney2")
+          label(for="John Tangney2") John Tangney — Modern American Poetry
+        .flex-container.row
+          input(type="radio" value="David Dusseault" name="elective2" id="David Dusseault2")
+          label(for="David Dusseault2") David Dusseault — Introduction to Post-Human Politics
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective2" id="Juliette Colinas2")
+          label(for="Juliette Colinas2") Juliette Colinas — Evolution: History, Principles, Case-Studies
+        .flex-container.row
+          input(type="radio" value="Арсений Столяров" name="elective2" id="Арсений Столяров2")
+          label(for="Арсений Столяров2") Арсений Столяров — Поведенческая экономика
+        .flex-container.row
+          input(type="radio" value="Ольга Добровидова" name="elective2" id="Ольга Добровидова2")
+          label(for="Ольга Добровидова2") Ольга Добровидова — Научная коммуникация
+        .flex-container.row
+          input(type="radio" value="Arne Dietrich" name="elective2" id="Arne Dietrich2")
+          label(for="Arne Dietrich2") Arne Dietrich — How Creativity Happens in the Brain
+        .flex-container.row
+          input(type="radio" value="Denis Sharapov" name="elective2" id="Denis Sharapov2")
+          label(for="Denis Sharapov2") Denis Sharapov — Anthropological Archaeology
+        .flex-container.row
+          input(type="radio" value="Louis Vervoort" name="elective2" id="Louis Vervoort2")
+          label(for="Louis Vervoort2") Louis Vervoort — Introduction to Philosophy of Science
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective2" id="Evgeny Grishin2")
+          label(for="Evgeny Grishin2") Evgeny Grishin, duskin drum, Peter Jones — Visions of the past, histories of the future in historical & sci-fi films  
+      h3 3rd priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Zachary Reyna" name="elective3" id="Zachary Reyna3")
+          label(for="Zachary Reyna3") Zachary Reyna — What is the Anthropocene?
+        .flex-container.row
+          input(type="radio" value="Giacomo Andreoletti" name="elective3" id="Giacomo Andreoletti3")
+          label(for="Giacomo Andreoletti3") Giacomo Andreoletti — Formal Logic
+        .flex-container.row
+          input(type="radio" value="Tomasz Blusiewicz" name="elective3" id="Tomasz Blusiewicz3")
+          label(for="Tomasz Blusiewicz3") Tomasz Blusiewicz — History of Germany, 1701-1914
+        .flex-container.row
+          input(type="radio" value="Erika Wolf" name="elective3" id="Erika Wolf3")
+          label(for="Erika Wolf3") Erika Wolf — Image Scavengers: Collage, Montage, and Appropriation in 20th Century Art
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective3" id="Anne Mulhall3")
+          label(for="Anne Mulhall3") Anne Mulhall — Contemporary Italian Political Philosophy
+        .flex-container.row
+          input(type="radio" value="Duskin Drum" name="elective3" id="Duskin Drum3")
+          label(for="Duskin Drum3") Duskin Drum — Ecology, Technology and Anime
+        .flex-container.row
+          input(type="radio" value="John Tangney" name="elective3" id="John Tangney3")
+          label(for="John Tangney3") John Tangney — Modern American Poetry
+        .flex-container.row
+          input(type="radio" value="David Dusseault" name="elective3" id="David Dusseault3")
+          label(for="David Dusseault3") David Dusseault — Introduction to Post-Human Politics
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective3" id="Juliette Colinas3")
+          label(for="Juliette Colinas3") Juliette Colinas — Evolution: History, Principles, Case-Studies
+        .flex-container.row
+          input(type="radio" value="Арсений Столяров" name="elective3" id="Арсений Столяров3")
+          label(for="Арсений Столяров3") Арсений Столяров — Поведенческая экономика
+        .flex-container.row
+          input(type="radio" value="Ольга Добровидова" name="elective3" id="Ольга Добровидова3")
+          label(for="Ольга Добровидова3") Ольга Добровидова — Научная коммуникация
+        .flex-container.row
+          input(type="radio" value="Arne Dietrich" name="elective3" id="Arne Dietrich3")
+          label(for="Arne Dietrich3") Arne Dietrich — How Creativity Happens in the Brain
+        .flex-container.row
+          input(type="radio" value="Denis Sharapov" name="elective3" id="Denis Sharapov3")
+          label(for="Denis Sharapov3") Denis Sharapov — Anthropological Archaeology
+        .flex-container.row
+          input(type="radio" value="Louis Vervoort" name="elective3" id="Louis Vervoort3")
+          label(for="Louis Vervoort3") Louis Vervoort — Introduction to Philosophy of Science
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective3" id="Evgeny Grishin3")
+          label(for="Evgeny Grishin3") Evgeny Grishin, duskin drum, Peter Jones — Visions of the past, histories of the future in historical & sci-fi films
+      h3 4th priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Zachary Reyna" name="elective4" id="Zachary Reyna4")
+          label(for="Zachary Reyna4") Zachary Reyna — What is the Anthropocene?
+        .flex-container.row
+          input(type="radio" value="Giacomo Andreoletti" name="elective4" id="Giacomo Andreoletti4")
+          label(for="Giacomo Andreoletti4") Giacomo Andreoletti — Formal Logic
+        .flex-container.row
+          input(type="radio" value="Tomasz Blusiewicz" name="elective4" id="Tomasz Blusiewicz4")
+          label(for="Tomasz Blusiewicz4") Tomasz Blusiewicz — History of Germany, 1701-1914
+        .flex-container.row
+          input(type="radio" value="Erika Wolf" name="elective4" id="Erika Wolf4")
+          label(for="Erika Wolf4") Erika Wolf — Image Scavengers: Collage, Montage, and Appropriation in 20th Century Art
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective4" id="Anne Mulhall4")
+          label(for="Anne Mulhall4") Anne Mulhall — Contemporary Italian Political Philosophy
+        .flex-container.row
+          input(type="radio" value="Duskin Drum" name="elective4" id="Duskin Drum4")
+          label(for="Duskin Drum4") Duskin Drum — Ecology, Technology and Anime
+        .flex-container.row
+          input(type="radio" value="John Tangney" name="elective4" id="John Tangney4")
+          label(for="John Tangney4") John Tangney — Modern American Poetry
+        .flex-container.row
+          input(type="radio" value="David Dusseault" name="elective4" id="David Dusseault4")
+          label(for="David Dusseault4") David Dusseault — Introduction to Post-Human Politics
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective4" id="Juliette Colinas4")
+          label(for="Juliette Colinas4") Juliette Colinas — Evolution: History, Principles, Case-Studies
+        .flex-container.row
+          input(type="radio" value="Арсений Столяров" name="elective4" id="Арсений Столяров4")
+          label(for="Арсений Столяров4") Арсений Столяров — Поведенческая экономика
+        .flex-container.row
+          input(type="radio" value="Ольга Добровидова" name="elective4" id="Ольга Добровидова4")
+          label(for="Ольга Добровидова4") Ольга Добровидова — Научная коммуникация
+        .flex-container.row
+          input(type="radio" value="Arne Dietrich" name="elective4" id="Arne Dietrich4")
+          label(for="Arne Dietrich4") Arne Dietrich — How Creativity Happens in the Brain
+        .flex-container.row
+          input(type="radio" value="Denis Sharapov" name="elective4" id="Denis Sharapov4")
+          label(for="Denis Sharapov4") Denis Sharapov — Anthropological Archaeology
+        .flex-container.row
+          input(type="radio" value="Louis Vervoort" name="elective4" id="Louis Vervoort4")
+          label(for="Louis Vervoort4") Louis Vervoort — Introduction to Philosophy of Science
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective4" id="Evgeny Grishin4")
+          label(for="Evgeny Grishin4") Evgeny Grishin, duskin drum, Peter Jones — Visions of the past, histories of the future in historical & sci-fi films 
+      button(type="submit" class="btn btn-primary btn-lg") Submit

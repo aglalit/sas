@@ -1,0 +1,425 @@
+doctype html
+head
+  title The choice of electives
+  link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+  // load bootstrap css
+  style.
+    body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+    @font-face {
+      font-family: 'Agipo-Bold';
+      src:url('../fonts/agipo/Agipo-Bold.woff');
+    }
+    img {
+      width:80%;
+      margin-top:10px;
+    }
+    .logo {padding-bottom:30px}
+    h2 {font-weight:800; margin-bottom:20px;}
+    .jumbotron h1 {
+      font-size:36px;
+      margin-bottom: 40px;
+    }
+    h3 {
+      font-size: 1.5em;
+      font-weight: 400;
+    }
+    .jumbotron{
+      font-size:18px;
+      line-height: initial;
+      padding-top: 0px;
+    }
+    .container{
+      width:98% !important;
+    }
+    .input-group{
+      margin-bottom:20px;
+    }
+    .input-group label {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight: 500;
+      margin: 10px 0;
+      font-size:20px;
+        width:93%;
+    }
+    .input-group .label__description {
+      font-family:initial;
+    }
+    .input-group .form-control {
+      margin: 20px 0 40px 0;
+      width:75%;
+    }
+    form {
+      margin-top: 30px;
+    }
+    label,legend {
+      text-align: left;
+          float: left;
+    }
+    legend {font-size: 1.8em;}
+    input, textarea, select {
+      float:left;
+      width:75%;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    input[type="radio"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+
+      border: 2px solid #999;
+      transition: 0.2s all linear;
+      outline: none;
+      margin-right: 15px;
+
+      position: relative;
+      top:0;
+      }
+      input:focus {
+        outline: none !important;
+      }
+      input:checked {
+        border: 12px solid #00f;
+      }
+      button {
+        background-color: #00f !important;
+        border: none !important;
+      }
+      .flex-container {display:flex; flex-direction:column; margin:10px 0;}
+      .flex-container.row{flex-direction:row;}
+
+      @media (max-width: 1024px) {
+
+        body{padding-top:10px}
+        .container{
+        width:95%;
+        }
+      .input-group  label {
+        font-size:30px ;
+        margin-bottom:20px;
+        }
+        input[type="radio"]{
+          top:6px;
+        }
+        button.btn-lg {
+          font-size: 30px;
+        }
+      }
+.container
+  .jumbotron.text-center
+    .logo
+      a(href="https://sas.utmn.ru")
+        img(src="/assets/logo_sas_ut_short-01.svg")
+    h1 The choice of electives for the 8th module. The form is available until April 1, 12:00.
+    form(action="/polls/electives-2019-2-2nd-year" method="post")
+      h2 1st elective
+      h3 1st priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Светлана Ерпылева" name="elective1" id="Светлана Ерпылева1")
+          label(for="Светлана Ерпылева1") Светлана Ерпылева, Наталья Савельева — Как провести качественное исследование в социальных науках?
+        .flex-container.row
+          input(type="radio" value="Наталья Савельева" name="elective1" id="Наталья Савельева1")
+          label(for="Наталья Савельева1") Наталья Савельева — В поисках времени
+        .flex-container.row
+          input(type="radio" value="Максим Алюков" name="elective1" id="Максим Алюков1")
+          label(for="Максим Алюков1") Максим Алюков — Политическая коммуникация
+        .flex-container.row
+          input(type="radio" value="Денис Давыдов" name="elective1" id="Денис Давыдов1")
+          label(for="Денис Давыдов1") Денис Давыдов — Микроэкономика социальных отношений
+        .flex-container.row
+          input(type="radio" value="Zachary Reyna" name="elective1" id="Zachary Reyna1")
+          label(for="Zachary Reyna1") Zachary Reyna — Nietzsche: Beyond Good and Evil and the Death of God
+        .flex-container.row
+          input(type="radio" value="Fabio Grazioso" name="elective1" id="Fabio Grazioso1")
+          label(for="Fabio Grazioso1") Fabio Grazioso — The digital revolution and the hackers culture
+        .flex-container.row
+          input(type="radio" value="Duskin Drum" name="elective1" id="Duskin Drum1")
+          label(for="Duskin Drum1") Duskin Drum — Indigenous ecologies
+        .flex-container.row
+          input(type="radio" value="Louis Vervoort" name="elective1" id="Louis Vervoort1")
+          label(for="Louis Vervoort1") Louis Vervoort — Free Will
+        .flex-container.row
+          input(type="radio" value="Margret Grebowicz" name="elective1" id="Margret Grebowicz1")
+          label(for="Margret Grebowicz1") Margret Grebowicz — Critical Animal Studies
+        .flex-container.row
+          input(type="radio" value="David Dusseault" name="elective1" id="David Dusseault1")
+          label(for="David Dusseault1") David Dusseault — Power Profit and Sustainability
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective1" id="Juliette Colinas1")
+          label(for="Juliette Colinas1") Juliette Colinas — Topics in Genetics: The Strange World of the Nucleus and its Social Implications
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective1" id="Evgeny Grishin1")
+          label(for="Evgeny Grishin1") Evgeny Grishin — Bible and Contexts II: Introduction to the New Testament
+      h3 2nd priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Светлана Ерпылева" name="elective2" id="Светлана Ерпылева2")
+          label(for="Светлана Ерпылева2") Светлана Ерпылева, Наталья Савельева — Как провести качественное исследование в социальных науках?
+        .flex-container.row
+          input(type="radio" value="Наталья Савельева" name="elective2" id="Наталья Савельева2")
+          label(for="Наталья Савельева2") Наталья Савельева — В поисках времени
+        .flex-container.row
+          input(type="radio" value="Максим Алюков" name="elective2" id="Максим Алюков2")
+          label(for="Максим Алюков2") Максим Алюков — Политическая коммуникация
+        .flex-container.row
+          input(type="radio" value="Денис Давыдов" name="elective2" id="Денис Давыдов2")
+          label(for="Денис Давыдов2") Денис Давыдов — Микроэкономика социальных отношений
+        .flex-container.row
+          input(type="radio" value="Zachary Reyna" name="elective2" id="Zachary Reyna2")
+          label(for="Zachary Reyna2") Zachary Reyna — Nietzsche: Beyond Good and Evil and the Death of God
+        .flex-container.row
+          input(type="radio" value="Fabio Grazioso" name="elective2" id="Fabio Grazioso2")
+          label(for="Fabio Grazioso2") Fabio Grazioso — The digital revolution and the hackers culture
+        .flex-container.row
+          input(type="radio" value="Duskin Drum" name="elective2" id="Duskin Drum2")
+          label(for="Duskin Drum2") Duskin Drum — Indigenous ecologies
+        .flex-container.row
+          input(type="radio" value="Louis Vervoort" name="elective2" id="Louis Vervoort2")
+          label(for="Louis Vervoort2") Louis Vervoort — Free Will
+        .flex-container.row
+          input(type="radio" value="Margret Grebowicz" name="elective2" id="Margret Grebowicz2")
+          label(for="Margret Grebowicz2") Margret Grebowicz — Critical Animal Studies
+        .flex-container.row
+          input(type="radio" value="David Dusseault" name="elective2" id="David Dusseault2")
+          label(for="David Dusseault2") David Dusseault — Power Profit and Sustainability
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective2" id="Juliette Colinas2")
+          label(for="Juliette Colinas2") Juliette Colinas — Topics in Genetics: The Strange World of the Nucleus and its Social Implications
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective2" id="Evgeny Grishin2")
+          label(for="Evgeny Grishin2") Evgeny Grishin — Bible and Contexts II: Introduction to the New Testament    
+      h3 3rd priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Светлана Ерпылева" name="elective3" id="Светлана Ерпылева3")
+          label(for="Светлана Ерпылева3") Светлана Ерпылева, Наталья Савельева — Как провести качественное исследование в социальных науках?
+        .flex-container.row
+          input(type="radio" value="Наталья Савельева" name="elective3" id="Наталья Савельева3")
+          label(for="Наталья Савельева3") Наталья Савельева — В поисках времени
+        .flex-container.row
+          input(type="radio" value="Максим Алюков" name="elective3" id="Максим Алюков3")
+          label(for="Максим Алюков3") Максим Алюков — Политическая коммуникация
+        .flex-container.row
+          input(type="radio" value="Денис Давыдов" name="elective3" id="Денис Давыдов3")
+          label(for="Денис Давыдов3") Денис Давыдов — Микроэкономика социальных отношений
+        .flex-container.row
+          input(type="radio" value="Zachary Reyna" name="elective3" id="Zachary Reyna3")
+          label(for="Zachary Reyna3") Zachary Reyna — Nietzsche: Beyond Good and Evil and the Death of God
+        .flex-container.row
+          input(type="radio" value="Fabio Grazioso" name="elective3" id="Fabio Grazioso3")
+          label(for="Fabio Grazioso3") Fabio Grazioso — The digital revolution and the hackers culture
+        .flex-container.row
+          input(type="radio" value="Duskin Drum" name="elective3" id="Duskin Drum3")
+          label(for="Duskin Drum3") Duskin Drum — Indigenous ecologies
+        .flex-container.row
+          input(type="radio" value="Louis Vervoort" name="elective3" id="Louis Vervoort3")
+          label(for="Louis Vervoort3") Louis Vervoort — Free Will
+        .flex-container.row
+          input(type="radio" value="Margret Grebowicz" name="elective3" id="Margret Grebowicz3")
+          label(for="Margret Grebowicz3") Margret Grebowicz — Critical Animal Studies
+        .flex-container.row
+          input(type="radio" value="David Dusseault" name="elective3" id="David Dusseault3")
+          label(for="David Dusseault3") David Dusseault — Power Profit and Sustainability
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective3" id="Juliette Colinas3")
+          label(for="Juliette Colinas3") Juliette Colinas — Topics in Genetics: The Strange World of the Nucleus and its Social Implications
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective3" id="Evgeny Grishin3")
+          label(for="Evgeny Grishin3") Evgeny Grishin — Bible and Contexts II: Introduction to the New Testament
+      h3 4th priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Светлана Ерпылева" name="elective4" id="Светлана Ерпылева4")
+          label(for="Светлана Ерпылева4") Светлана Ерпылева, Наталья Савельева — Как провести качественное исследование в социальных науках?
+        .flex-container.row
+          input(type="radio" value="Наталья Савельева" name="elective4" id="Наталья Савельева4")
+          label(for="Наталья Савельева4") Наталья Савельева — В поисках времени
+        .flex-container.row
+          input(type="radio" value="Максим Алюков" name="elective4" id="Максим Алюков4")
+          label(for="Максим Алюков4") Максим Алюков — Политическая коммуникация
+        .flex-container.row
+          input(type="radio" value="Денис Давыдов" name="elective4" id="Денис Давыдов4")
+          label(for="Денис Давыдов4") Денис Давыдов — Микроэкономика социальных отношений
+        .flex-container.row
+          input(type="radio" value="Zachary Reyna" name="elective4" id="Zachary Reyna4")
+          label(for="Zachary Reyna4") Zachary Reyna — Nietzsche: Beyond Good and Evil and the Death of God
+        .flex-container.row
+          input(type="radio" value="Fabio Grazioso" name="elective4" id="Fabio Grazioso4")
+          label(for="Fabio Grazioso4") Fabio Grazioso — The digital revolution and the hackers culture
+        .flex-container.row
+          input(type="radio" value="Duskin Drum" name="elective4" id="Duskin Drum4")
+          label(for="Duskin Drum4") Duskin Drum — Indigenous ecologies
+        .flex-container.row
+          input(type="radio" value="Louis Vervoort" name="elective4" id="Louis Vervoort4")
+          label(for="Louis Vervoort4") Louis Vervoort — Free Will
+        .flex-container.row
+          input(type="radio" value="Margret Grebowicz" name="elective4" id="Margret Grebowicz4")
+          label(for="Margret Grebowicz4") Margret Grebowicz — Critical Animal Studies
+        .flex-container.row
+          input(type="radio" value="David Dusseault" name="elective4" id="David Dusseault4")
+          label(for="David Dusseault4") David Dusseault — Power Profit and Sustainability
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective4" id="Juliette Colinas4")
+          label(for="Juliette Colinas4") Juliette Colinas — Topics in Genetics: The Strange World of the Nucleus and its Social Implications
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective4" id="Evgeny Grishin4")
+          label(for="Evgeny Grishin4") Evgeny Grishin — Bible and Contexts II: Introduction to the New Testament
+      h2 2nd elective
+      h3 1st priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Светлана Ерпылева" name="elective5" id="Светлана Ерпылева5")
+          label(for="Светлана Ерпылева5") Светлана Ерпылева, Наталья Савельева — Как провести качественное исследование в социальных науках?
+        .flex-container.row
+          input(type="radio" value="Наталья Савельева" name="elective5" id="Наталья Савельева5")
+          label(for="Наталья Савельева5") Наталья Савельева — В поисках времени
+        .flex-container.row
+          input(type="radio" value="Максим Алюков" name="elective5" id="Максим Алюков5")
+          label(for="Максим Алюков5") Максим Алюков — Политическая коммуникация
+        .flex-container.row
+          input(type="radio" value="Денис Давыдов" name="elective5" id="Денис Давыдов5")
+          label(for="Денис Давыдов5") Денис Давыдов — Микроэкономика социальных отношений
+        .flex-container.row
+          input(type="radio" value="Zachary Reyna" name="elective5" id="Zachary Reyna5")
+          label(for="Zachary Reyna5") Zachary Reyna — Nietzsche: Beyond Good and Evil and the Death of God
+        .flex-container.row
+          input(type="radio" value="Fabio Grazioso" name="elective5" id="Fabio Grazioso5")
+          label(for="Fabio Grazioso5") Fabio Grazioso — The digital revolution and the hackers culture
+        .flex-container.row
+          input(type="radio" value="Duskin Drum" name="elective5" id="Duskin Drum5")
+          label(for="Duskin Drum5") Duskin Drum — Indigenous ecologies
+        .flex-container.row
+          input(type="radio" value="Louis Vervoort" name="elective5" id="Louis Vervoort5")
+          label(for="Louis Vervoort5") Louis Vervoort — Free Will
+        .flex-container.row
+          input(type="radio" value="Margret Grebowicz" name="elective5" id="Margret Grebowicz5")
+          label(for="Margret Grebowicz5") Margret Grebowicz — Critical Animal Studies
+        .flex-container.row
+          input(type="radio" value="David Dusseault" name="elective5" id="David Dusseault5")
+          label(for="David Dusseault5") David Dusseault — Power Profit and Sustainability
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective5" id="Juliette Colinas5")
+          label(for="Juliette Colinas5") Juliette Colinas — Topics in Genetics: The Strange World of the Nucleus and its Social Implications
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective5" id="Evgeny Grishin5")
+          label(for="Evgeny Grishin5") Evgeny Grishin — Bible and Contexts II: Introduction to the New Testament
+      h3 2nd priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Светлана Ерпылева" name="elective6" id="Светлана Ерпылева6")
+          label(for="Светлана Ерпылева6") Светлана Ерпылева, Наталья Савельева — Как провести качественное исследование в социальных науках?
+        .flex-container.row
+          input(type="radio" value="Наталья Савельева" name="elective6" id="Наталья Савельева6")
+          label(for="Наталья Савельева6") Наталья Савельева — В поисках времени
+        .flex-container.row
+          input(type="radio" value="Максим Алюков" name="elective6" id="Максим Алюков6")
+          label(for="Максим Алюков6") Максим Алюков — Политическая коммуникация
+        .flex-container.row
+          input(type="radio" value="Денис Давыдов" name="elective6" id="Денис Давыдов6")
+          label(for="Денис Давыдов6") Денис Давыдов — Микроэкономика социальных отношений
+        .flex-container.row
+          input(type="radio" value="Zachary Reyna" name="elective6" id="Zachary Reyna6")
+          label(for="Zachary Reyna6") Zachary Reyna — Nietzsche: Beyond Good and Evil and the Death of God
+        .flex-container.row
+          input(type="radio" value="Fabio Grazioso" name="elective6" id="Fabio Grazioso6")
+          label(for="Fabio Grazioso6") Fabio Grazioso — The digital revolution and the hackers culture
+        .flex-container.row
+          input(type="radio" value="Duskin Drum" name="elective6" id="Duskin Drum6")
+          label(for="Duskin Drum6") Duskin Drum — Indigenous ecologies
+        .flex-container.row
+          input(type="radio" value="Louis Vervoort" name="elective6" id="Louis Vervoort6")
+          label(for="Louis Vervoort6") Louis Vervoort — Free Will
+        .flex-container.row
+          input(type="radio" value="Margret Grebowicz" name="elective6" id="Margret Grebowicz6")
+          label(for="Margret Grebowicz6") Margret Grebowicz — Critical Animal Studies
+        .flex-container.row
+          input(type="radio" value="David Dusseault" name="elective6" id="David Dusseault6")
+          label(for="David Dusseault6") David Dusseault — Power Profit and Sustainability
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective6" id="Juliette Colinas6")
+          label(for="Juliette Colinas6") Juliette Colinas — Topics in Genetics: The Strange World of the Nucleus and its Social Implications
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective6" id="Evgeny Grishin6")
+          label(for="Evgeny Grishin6") Evgeny Grishin — Bible and Contexts II: Introduction to the New Testament    
+      h3 3rd priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Светлана Ерпылева" name="elective7" id="Светлана Ерпылева7")
+          label(for="Светлана Ерпылева7") Светлана Ерпылева, Наталья Савельева — Как провести качественное исследование в социальных науках?
+        .flex-container.row
+          input(type="radio" value="Наталья Савельева" name="elective7" id="Наталья Савельева7")
+          label(for="Наталья Савельева7") Наталья Савельева — В поисках времени
+        .flex-container.row
+          input(type="radio" value="Максим Алюков" name="elective7" id="Максим Алюков7")
+          label(for="Максим Алюков7") Максим Алюков — Политическая коммуникация
+        .flex-container.row
+          input(type="radio" value="Денис Давыдов" name="elective7" id="Денис Давыдов7")
+          label(for="Денис Давыдов7") Денис Давыдов — Микроэкономика социальных отношений
+        .flex-container.row
+          input(type="radio" value="Zachary Reyna" name="elective7" id="Zachary Reyna7")
+          label(for="Zachary Reyna7") Zachary Reyna — Nietzsche: Beyond Good and Evil and the Death of God
+        .flex-container.row
+          input(type="radio" value="Fabio Grazioso" name="elective7" id="Fabio Grazioso7")
+          label(for="Fabio Grazioso7") Fabio Grazioso — The digital revolution and the hackers culture
+        .flex-container.row
+          input(type="radio" value="Duskin Drum" name="elective7" id="Duskin Drum7")
+          label(for="Duskin Drum7") Duskin Drum — Indigenous ecologies
+        .flex-container.row
+          input(type="radio" value="Louis Vervoort" name="elective7" id="Louis Vervoort7")
+          label(for="Louis Vervoort7") Louis Vervoort — Free Will
+        .flex-container.row
+          input(type="radio" value="Margret Grebowicz" name="elective7" id="Margret Grebowicz7")
+          label(for="Margret Grebowicz7") Margret Grebowicz — Critical Animal Studies
+        .flex-container.row
+          input(type="radio" value="David Dusseault" name="elective7" id="David Dusseault7")
+          label(for="David Dusseault7") David Dusseault — Power Profit and Sustainability
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective7" id="Juliette Colinas7")
+          label(for="Juliette Colinas7") Juliette Colinas — Topics in Genetics: The Strange World of the Nucleus and its Social Implications
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective7" id="Evgeny Grishin7")
+          label(for="Evgeny Grishin7") Evgeny Grishin — Bible and Contexts II: Introduction to the New Testament
+      h3 4th priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Светлана Ерпылева" name="elective8" id="Светлана Ерпылева8")
+          label(for="Светлана Ерпылева8") Светлана Ерпылева, Наталья Савельева — Как провести качественное исследование в социальных науках?
+        .flex-container.row
+          input(type="radio" value="Наталья Савельева" name="elective8" id="Наталья Савельева8")
+          label(for="Наталья Савельева8") Наталья Савельева — В поисках времени
+        .flex-container.row
+          input(type="radio" value="Максим Алюков" name="elective8" id="Максим Алюков8")
+          label(for="Максим Алюков8") Максим Алюков — Политическая коммуникация
+        .flex-container.row
+          input(type="radio" value="Денис Давыдов" name="elective8" id="Денис Давыдов8")
+          label(for="Денис Давыдов8") Денис Давыдов — Микроэкономика социальных отношений
+        .flex-container.row
+          input(type="radio" value="Zachary Reyna" name="elective8" id="Zachary Reyna8")
+          label(for="Zachary Reyna8") Zachary Reyna — Nietzsche: Beyond Good and Evil and the Death of God
+        .flex-container.row
+          input(type="radio" value="Fabio Grazioso" name="elective8" id="Fabio Grazioso8")
+          label(for="Fabio Grazioso8") Fabio Grazioso — The digital revolution and the hackers culture
+        .flex-container.row
+          input(type="radio" value="Duskin Drum" name="elective8" id="Duskin Drum8")
+          label(for="Duskin Drum8") Duskin Drum — Indigenous ecologies
+        .flex-container.row
+          input(type="radio" value="Louis Vervoort" name="elective8" id="Louis Vervoort8")
+          label(for="Louis Vervoort8") Louis Vervoort — Free Will
+        .flex-container.row
+          input(type="radio" value="Margret Grebowicz" name="elective8" id="Margret Grebowicz8")
+          label(for="Margret Grebowicz8") Margret Grebowicz — Critical Animal Studies
+        .flex-container.row
+          input(type="radio" value="David Dusseault" name="elective8" id="David Dusseault8")
+          label(for="David Dusseault8") David Dusseault — Power Profit and Sustainability
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective8" id="Juliette Colinas8")
+          label(for="Juliette Colinas8") Juliette Colinas — Topics in Genetics: The Strange World of the Nucleus and its Social Implications
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective8" id="Evgeny Grishin8")
+          label(for="Evgeny Grishin8") Evgeny Grishin — Bible and Contexts II: Introduction to the New Testament              
+      button(type="submit" class="btn btn-primary btn-lg") Submit
