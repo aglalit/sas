@@ -108,7 +108,7 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: '/polls/pds-2019-classes',
+  successRedirect: '/polls',
   failureRedirect: '/login'
 }));
 // passport.authenticate('google'),
