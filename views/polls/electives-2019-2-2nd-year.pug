@@ -63,9 +63,9 @@ head
     }
 
     input[type="checkbox"] {
-      -webkit-appearance: none;
+      /* -webkit-appearance: none;
       -moz-appearance: none;
-      appearance: none;
+      appearance: none; */
 
       border-radius: 50%;
       width: 38px;
@@ -512,38 +512,43 @@ head
       var inputs = document.querySelectorAll('input[type="checkbox"]');
       inputs.forEach(function(input) {
         input.addEventListener('mousedown', function() {
-          var id = event.target.id;
           var name = event.target.name;
           var targetClass = event.target.classList[0];
-
           if (!event.target.checked) {
-            var group = document.querySelectorAll('.targetClass');
+            event.target.classList.add("checked");
+            var slot = document.querySelectorAll('input[name="'+name+ '"]');
+              slot.forEach(function(el){
+                if(el.classList[1] !== 'checked'){
+                  el.disabled = true;
+                }
+              })
+            var group = document.querySelectorAll('.'+ targetClass);
             group.forEach(function(el){
-              if(el.classList[1] != 'checked'){
-                              el.disabled = true;
+              console.log(el.classList[1]);
+              if(el.classList[1] !== 'checked'){
+                console.log(el.classList[1])
+                el.disabled = true;
               }
             })
+          
             
-            if (document.querySelectorAll('.checked').length < 3) {
-              event.target.classList.add("checked");
-              inputs.forEach(function(input) {
-                if (input.name === name && input.id !== id) {
-                  input.disabled = true;
-                }
-              });
-            } else {
-              event.target.checked = false;
-              event.target.classList.remove("checked");
-              if (is_touch_device()) event.target.click();
-              alert('You can choose 3 classes only');
-            }
           } else {
-            event.target.classList.remove("checked");
-            inputs.forEach(function(input) {
-              if (input.name === name && input.id !== id) {
-                input.disabled = false;
+            var slot = document.querySelectorAll('input[name="'+name+ '"]');
+              slot.forEach(function(el){
+                if(el.classList[1] !== 'checked'){
+                  el.disabled = false;
+                }
+              })
+            var group = document.querySelectorAll('.'+ targetClass);
+            group.forEach(function(el){
+              console.log(el.classList[1]);
+              if(el.classList[1] !== 'checked'){
+                console.log(el.classList[1])
+                el.disabled = false;
               }
-            });
+            })
+            event.target.classList.remove("checked");            
+            
           }
 
         });
