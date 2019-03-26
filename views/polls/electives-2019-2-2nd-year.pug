@@ -518,15 +518,14 @@ head
             event.target.classList.add("checked");
             var slot = document.querySelectorAll('input[name="'+name+ '"]');
               slot.forEach(function(el){
-                if(el.classList[1] !== 'checked'){
+                if(!el.classList.contains('checked')){
                   el.disabled = true;
                 }
               })
             var group = document.querySelectorAll('.'+ targetClass);
             group.forEach(function(el){
-              console.log(el.classList[1]);
-              if(el.classList[1] !== 'checked'){
-                console.log(el.classList[1])
+              if(!el.classList.contains('checked')){
+                el.classList.add('groupChecked');
                 el.disabled = true;
               }
             })
@@ -535,7 +534,7 @@ head
           } else {
             var slot = document.querySelectorAll('input[name="'+name+ '"]');
               slot.forEach(function(el){
-                if(el.classList[1] !== 'checked'){
+                if(!el.classList.contains('checked') && !el.classList.contains('groupChecked')){
                   el.disabled = false;
                 }
               })
@@ -543,7 +542,8 @@ head
             group.forEach(function(el){
               console.log(el.classList[1]);
               if(el.classList[1] !== 'checked'){
-                console.log(el.classList[1])
+                console.log(el.classList[1]);
+                el.classList.remove('groupChecked');
                 el.disabled = false;
               }
             })
