@@ -77,6 +77,10 @@ head
 
       position: relative;
       top:0;
+      zoom:1.1;
+      }
+      input[type="checkbox"]:disabled {
+        opacity:0.7;
       }
       input:focus {
         outline: none !important;
@@ -546,8 +550,8 @@ head
                 el.disabled = false;
               }
             })
-            event.target.classList.remove("checked");            
-            
+            event.target.classList.remove("checked");   
+            if (is_touch_device()) event.target.click();         
           }
 
         });
