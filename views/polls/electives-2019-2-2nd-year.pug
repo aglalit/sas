@@ -355,7 +355,8 @@ head
                 if(!el.classList.contains('checked') && !el.classList.contains('groupChecked')){
                   el.disabled = false;
                 }
-              })
+              });
+            slot[0].parentNode.parentNode.classList.remove('parentChecked');
             var group = document.querySelectorAll('.'+ targetClass);
             group.forEach(function(el){
               if(!el.classList.contains('checked') && !el.parentNode.parentNode.classList.contains('parentChecked')){
