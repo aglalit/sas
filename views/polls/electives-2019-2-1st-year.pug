@@ -62,9 +62,12 @@ head
       font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     }
 
-    input[type="checkbox"] {
-      
+    input[type="radio"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
 
+      border-radius: 50%;
       width: 38px;
       height: 38px;
 
@@ -75,16 +78,12 @@ head
 
       position: relative;
       top:0;
-      zoom:1.1;
       }
       input:focus {
         outline: none !important;
       }
       input:checked {
-        border: 4px solid #00f;
-      }
-      input:disabled {
-        opacity:0.3;
+        border: 12px solid #00f;
       }
       button {
         background-color: #00f !important;
@@ -121,188 +120,188 @@ head
       div(class="input-group")
         .flex-container.row
           input(type="radio" value="Zachary Reyna" name="elective1" id="Zachary Reyna1")
-          label() Zachary Reyna — What is the Anthropocene?
+          label(for="Zachary Reyna1") Zachary Reyna — What is the Anthropocene?
         .flex-container.row
           input(type="radio" value="Giacomo Andreoletti" name="elective1" id="Giacomo Andreoletti1")
-          label() Giacomo Andreoletti — Formal Logic
+          label(for="Giacomo Andreoletti1") Giacomo Andreoletti — Formal Logic
         .flex-container.row
           input(type="radio" value="Tomasz Blusiewicz" name="elective1" id="Tomasz Blusiewicz1")
-          label() Tomasz Blusiewicz — History of Germany, 1701–1914
+          label(for="Tomasz Blusiewicz1") Tomasz Blusiewicz — History of Germany, 1701–1914
         .flex-container.row
           input(type="radio" value="Erika Wolf" name="elective1" id="Erika Wolf1")
-          label() Erika Wolf — Image Scavengers: Collage, Montage, and Appropriation in 20th Century Art
+          label(for="Erika Wolf1") Erika Wolf — Image Scavengers: Collage, Montage, and Appropriation in 20th Century Art
         .flex-container.row
           input(type="radio" value="Anne Mulhall" name="elective1" id="Anne Mulhall1")
-          label() Anne Mulhall — Contemporary Italian Political Philosophy
+          label(for="Anne Mulhall1") Anne Mulhall — Contemporary Italian Political Philosophy
         .flex-container.row
           input(type="radio" value="Duskin Drum" name="elective1" id="Duskin Drum1")
-          label() Duskin Drum — Ecology, Technology and Anime
+          label(for="Duskin Drum1") Duskin Drum — Ecology, Technology and Anime
         .flex-container.row
           input(type="radio" value="John Tangney" name="elective1" id="John Tangney1")
-          label() John Tangney — Modern American Poetry
+          label(for="John Tangney1") John Tangney — Modern American Poetry
         .flex-container.row
           input(type="radio" value="David Dusseault" name="elective1" id="David Dusseault1")
-          label() David Dusseault — Introduction to Post-Human Politics
+          label(for="David Dusseault1") David Dusseault — Introduction to Post-Human Politics
         .flex-container.row
           input(type="radio" value="Juliette Colinas" name="elective1" id="Juliette Colinas1")
-          label() Juliette Colinas — Evolution: History, Principles, Case-Studies
+          label(for="Juliette Colinas1") Juliette Colinas — Evolution: History, Principles, Case-Studies
         .flex-container.row
           input(type="radio" value="Арсений Столяров" name="elective1" id="Арсений Столяров1")
-          label() Арсений Столяров — Поведенческая экономика
+          label(for="Арсений Столяров1") Арсений Столяров — Поведенческая экономика
         .flex-container.row
           input(type="radio" value="Ольга Добровидова" name="elective1" id="Ольга Добровидова1")
-          label() Ольга Добровидова — Научная коммуникация
+          label(for="Ольга Добровидова1") Ольга Добровидова — Научная коммуникация
         .flex-container.row
           input(type="radio" value="Arne Dietrich" name="elective1" id="Arne Dietrich1")
-          label() Arne Dietrich — How Creativity Happens in the Brain
+          label(for="Arne Dietrich1") Arne Dietrich — How Creativity Happens in the Brain
         .flex-container.row
           input(type="radio" value="Denis Sharapov" name="elective1" id="Denis Sharapov1")
-          label() Denis Sharapov — Anthropological Archaeology
+          label(for="Denis Sharapov1") Denis Sharapov — Anthropological Archaeology
         .flex-container.row
           input(type="radio" value="Louis Vervoort" name="elective1" id="Louis Vervoort1")
-          label() Louis Vervoort — Introduction to Philosophy of Science
+          label(for="Louis Vervoort1") Louis Vervoort — Introduction to Philosophy of Science
         .flex-container.row
           input(type="radio" value="Evgeny Grishin" name="elective1" id="Evgeny Grishin1")
-          label() Evgeny Grishin, duskin drum, Peter Jones — Visions of the past, histories of the future in historical & sci-fi films
+          label(for="Evgeny Grishin1") Evgeny Grishin, duskin drum, Peter Jones — Visions of the past, histories of the future in historical & sci-fi films
       h3 2nd priority
       div(class="input-group")
         .flex-container.row
           input(type="radio" value="Zachary Reyna" name="elective2" id="Zachary Reyna2")
-          label() Zachary Reyna — What is the Anthropocene?
+          label(for="Zachary Reyna2") Zachary Reyna — What is the Anthropocene?
         .flex-container.row
           input(type="radio" value="Giacomo Andreoletti" name="elective2" id="Giacomo Andreoletti2")
-          label() Giacomo Andreoletti — Formal Logic
+          label(for="Giacomo Andreoletti2") Giacomo Andreoletti — Formal Logic
         .flex-container.row
           input(type="radio" value="Tomasz Blusiewicz" name="elective2" id="Tomasz Blusiewicz2")
-          label() Tomasz Blusiewicz — History of Germany, 1701–1914
+          label(for="Tomasz Blusiewicz2") Tomasz Blusiewicz — History of Germany, 1701–1914
         .flex-container.row
           input(type="radio" value="Erika Wolf" name="elective2" id="Erika Wolf2")
-          label() Erika Wolf — Image Scavengers: Collage, Montage, and Appropriation in 20th Century Art
+          label(for="Erika Wolf2") Erika Wolf — Image Scavengers: Collage, Montage, and Appropriation in 20th Century Art
         .flex-container.row
           input(type="radio" value="Anne Mulhall" name="elective2" id="Anne Mulhall2")
-          label() Anne Mulhall — Contemporary Italian Political Philosophy
+          label(for="Anne Mulhall2") Anne Mulhall — Contemporary Italian Political Philosophy
         .flex-container.row
           input(type="radio" value="Duskin Drum" name="elective2" id="Duskin Drum2")
-          label() Duskin Drum — Ecology, Technology and Anime
+          label(for="Duskin Drum2") Duskin Drum — Ecology, Technology and Anime
         .flex-container.row
           input(type="radio" value="John Tangney" name="elective2" id="John Tangney2")
-          label() John Tangney — Modern American Poetry
+          label(for="John Tangney2") John Tangney — Modern American Poetry
         .flex-container.row
           input(type="radio" value="David Dusseault" name="elective2" id="David Dusseault2")
-          label() David Dusseault — Introduction to Post-Human Politics
+          label(for="David Dusseault2") David Dusseault — Introduction to Post-Human Politics
         .flex-container.row
           input(type="radio" value="Juliette Colinas" name="elective2" id="Juliette Colinas2")
-          label() Juliette Colinas — Evolution: History, Principles, Case-Studies
+          label(for="Juliette Colinas2") Juliette Colinas — Evolution: History, Principles, Case-Studies
         .flex-container.row
           input(type="radio" value="Арсений Столяров" name="elective2" id="Арсений Столяров2")
-          label() Арсений Столяров — Поведенческая экономика
+          label(for="Арсений Столяров2") Арсений Столяров — Поведенческая экономика
         .flex-container.row
           input(type="radio" value="Ольга Добровидова" name="elective2" id="Ольга Добровидова2")
-          label() Ольга Добровидова — Научная коммуникация
+          label(for="Ольга Добровидова2") Ольга Добровидова — Научная коммуникация
         .flex-container.row
           input(type="radio" value="Arne Dietrich" name="elective2" id="Arne Dietrich2")
-          label() Arne Dietrich — How Creativity Happens in the Brain
+          label(for="Arne Dietrich2") Arne Dietrich — How Creativity Happens in the Brain
         .flex-container.row
           input(type="radio" value="Denis Sharapov" name="elective2" id="Denis Sharapov2")
-          label() Denis Sharapov — Anthropological Archaeology
+          label(for="Denis Sharapov2") Denis Sharapov — Anthropological Archaeology
         .flex-container.row
           input(type="radio" value="Louis Vervoort" name="elective2" id="Louis Vervoort2")
-          label() Louis Vervoort — Introduction to Philosophy of Science
+          label(for="Louis Vervoort2") Louis Vervoort — Introduction to Philosophy of Science
         .flex-container.row
           input(type="radio" value="Evgeny Grishin" name="elective2" id="Evgeny Grishin2")
-          label() Evgeny Grishin, duskin drum, Peter Jones — Visions of the past, histories of the future in historical & sci-fi films  
+          label(for="Evgeny Grishin2") Evgeny Grishin, duskin drum, Peter Jones — Visions of the past, histories of the future in historical & sci-fi films  
       h3 3rd priority
       div(class="input-group")
         .flex-container.row
           input(type="radio" value="Zachary Reyna" name="elective3" id="Zachary Reyna3")
-          label() Zachary Reyna — What is the Anthropocene?
+          label(for="Zachary Reyna3") Zachary Reyna — What is the Anthropocene?
         .flex-container.row
           input(type="radio" value="Giacomo Andreoletti" name="elective3" id="Giacomo Andreoletti3")
-          label() Giacomo Andreoletti — Formal Logic
+          label(for="Giacomo Andreoletti3") Giacomo Andreoletti — Formal Logic
         .flex-container.row
           input(type="radio" value="Tomasz Blusiewicz" name="elective3" id="Tomasz Blusiewicz3")
-          label() Tomasz Blusiewicz — History of Germany, 1701–1914
+          label(for="Tomasz Blusiewicz3") Tomasz Blusiewicz — History of Germany, 1701–1914
         .flex-container.row
           input(type="radio" value="Erika Wolf" name="elective3" id="Erika Wolf3")
-          label() Erika Wolf — Image Scavengers: Collage, Montage, and Appropriation in 20th Century Art
+          label(for="Erika Wolf3") Erika Wolf — Image Scavengers: Collage, Montage, and Appropriation in 20th Century Art
         .flex-container.row
           input(type="radio" value="Anne Mulhall" name="elective3" id="Anne Mulhall3")
-          label() Anne Mulhall — Contemporary Italian Political Philosophy
+          label(for="Anne Mulhall3") Anne Mulhall — Contemporary Italian Political Philosophy
         .flex-container.row
           input(type="radio" value="Duskin Drum" name="elective3" id="Duskin Drum3")
-          label() Duskin Drum — Ecology, Technology and Anime
+          label(for="Duskin Drum3") Duskin Drum — Ecology, Technology and Anime
         .flex-container.row
           input(type="radio" value="John Tangney" name="elective3" id="John Tangney3")
-          label() John Tangney — Modern American Poetry
+          label(for="John Tangney3") John Tangney — Modern American Poetry
         .flex-container.row
           input(type="radio" value="David Dusseault" name="elective3" id="David Dusseault3")
-          label() David Dusseault — Introduction to Post-Human Politics
+          label(for="David Dusseault3") David Dusseault — Introduction to Post-Human Politics
         .flex-container.row
           input(type="radio" value="Juliette Colinas" name="elective3" id="Juliette Colinas3")
-          label() Juliette Colinas — Evolution: History, Principles, Case-Studies
+          label(for="Juliette Colinas3") Juliette Colinas — Evolution: History, Principles, Case-Studies
         .flex-container.row
           input(type="radio" value="Арсений Столяров" name="elective3" id="Арсений Столяров3")
-          label() Арсений Столяров — Поведенческая экономика
+          label(for="Арсений Столяров3") Арсений Столяров — Поведенческая экономика
         .flex-container.row
           input(type="radio" value="Ольга Добровидова" name="elective3" id="Ольга Добровидова3")
-          label() Ольга Добровидова — Научная коммуникация
+          label(for="Ольга Добровидова3") Ольга Добровидова — Научная коммуникация
         .flex-container.row
           input(type="radio" value="Arne Dietrich" name="elective3" id="Arne Dietrich3")
-          label() Arne Dietrich — How Creativity Happens in the Brain
+          label(for="Arne Dietrich3") Arne Dietrich — How Creativity Happens in the Brain
         .flex-container.row
           input(type="radio" value="Denis Sharapov" name="elective3" id="Denis Sharapov3")
-          label() Denis Sharapov — Anthropological Archaeology
+          label(for="Denis Sharapov3") Denis Sharapov — Anthropological Archaeology
         .flex-container.row
           input(type="radio" value="Louis Vervoort" name="elective3" id="Louis Vervoort3")
-          label() Louis Vervoort — Introduction to Philosophy of Science
+          label(for="Louis Vervoort3") Louis Vervoort — Introduction to Philosophy of Science
         .flex-container.row
           input(type="radio" value="Evgeny Grishin" name="elective3" id="Evgeny Grishin3")
-          label() Evgeny Grishin, duskin drum, Peter Jones — Visions of the past, histories of the future in historical & sci-fi films
+          label(for="Evgeny Grishin3") Evgeny Grishin, duskin drum, Peter Jones — Visions of the past, histories of the future in historical & sci-fi films
       h3 4th priority
       div(class="input-group")
         .flex-container.row
           input(type="radio" value="Zachary Reyna" name="elective4" id="Zachary Reyna4")
-          label() Zachary Reyna — What is the Anthropocene?
+          label(for="Zachary Reyna4") Zachary Reyna — What is the Anthropocene?
         .flex-container.row
           input(type="radio" value="Giacomo Andreoletti" name="elective4" id="Giacomo Andreoletti4")
-          label() Giacomo Andreoletti — Formal Logic
+          label(for="Giacomo Andreoletti4") Giacomo Andreoletti — Formal Logic
         .flex-container.row
           input(type="radio" value="Tomasz Blusiewicz" name="elective4" id="Tomasz Blusiewicz4")
-          label() Tomasz Blusiewicz — History of Germany, 1701–1914
+          label(for="Tomasz Blusiewicz4") Tomasz Blusiewicz — History of Germany, 1701–1914
         .flex-container.row
           input(type="radio" value="Erika Wolf" name="elective4" id="Erika Wolf4")
-          label() Erika Wolf — Image Scavengers: Collage, Montage, and Appropriation in 20th Century Art
+          label(for="Erika Wolf4") Erika Wolf — Image Scavengers: Collage, Montage, and Appropriation in 20th Century Art
         .flex-container.row
           input(type="radio" value="Anne Mulhall" name="elective4" id="Anne Mulhall4")
-          label() Anne Mulhall — Contemporary Italian Political Philosophy
+          label(for="Anne Mulhall4") Anne Mulhall — Contemporary Italian Political Philosophy
         .flex-container.row
           input(type="radio" value="Duskin Drum" name="elective4" id="Duskin Drum4")
-          label() Duskin Drum — Ecology, Technology and Anime
+          label(for="Duskin Drum4") Duskin Drum — Ecology, Technology and Anime
         .flex-container.row
           input(type="radio" value="John Tangney" name="elective4" id="John Tangney4")
-          label() John Tangney — Modern American Poetry
+          label(for="John Tangney4") John Tangney — Modern American Poetry
         .flex-container.row
           input(type="radio" value="David Dusseault" name="elective4" id="David Dusseault4")
-          label() David Dusseault — Introduction to Post-Human Politics
+          label(for="David Dusseault4") David Dusseault — Introduction to Post-Human Politics
         .flex-container.row
           input(type="radio" value="Juliette Colinas" name="elective4" id="Juliette Colinas4")
-          label() Juliette Colinas — Evolution: History, Principles, Case-Studies
+          label(for="Juliette Colinas4") Juliette Colinas — Evolution: History, Principles, Case-Studies
         .flex-container.row
           input(type="radio" value="Арсений Столяров" name="elective4" id="Арсений Столяров4")
-          label() Арсений Столяров — Поведенческая экономика
+          label(for="Арсений Столяров4") Арсений Столяров — Поведенческая экономика
         .flex-container.row
           input(type="radio" value="Ольга Добровидова" name="elective4" id="Ольга Добровидова4")
-          label() Ольга Добровидова — Научная коммуникация
+          label(for="Ольга Добровидова4") Ольга Добровидова — Научная коммуникация
         .flex-container.row
           input(type="radio" value="Arne Dietrich" name="elective4" id="Arne Dietrich4")
-          label() Arne Dietrich — How Creativity Happens in the Brain
+          label(for="Arne Dietrich4") Arne Dietrich — How Creativity Happens in the Brain
         .flex-container.row
           input(type="radio" value="Denis Sharapov" name="elective4" id="Denis Sharapov4")
-          label() Denis Sharapov — Anthropological Archaeology
+          label(for="Denis Sharapov4") Denis Sharapov — Anthropological Archaeology
         .flex-container.row
           input(type="radio" value="Louis Vervoort" name="elective4" id="Louis Vervoort4")
-          label() Louis Vervoort — Introduction to Philosophy of Science
+          label(for="Louis Vervoort4") Louis Vervoort — Introduction to Philosophy of Science
         .flex-container.row
           input(type="radio" value="Evgeny Grishin" name="elective4" id="Evgeny Grishin4")
-          label() Evgeny Grishin, duskin drum, Peter Jones — Visions of the past, histories of the future in historical & sci-fi films 
+          label(for="Evgeny Grishin4") Evgeny Grishin, duskin drum, Peter Jones — Visions of the past, histories of the future in historical & sci-fi films 
       button(type="submit" class="btn btn-primary btn-lg") Submit
