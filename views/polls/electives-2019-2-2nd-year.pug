@@ -337,7 +337,9 @@ head
                 if(!el.classList.contains('checked')){
                   el.disabled = true;
                 }
-              })
+              });
+              var slotParent = slot[0].parentNode;
+              slotParent.classList.add('parentChecked');
             var group = document.querySelectorAll('.'+ targetClass);
             group.forEach(function(el){
               if(!el.classList.contains('checked')){
@@ -354,10 +356,9 @@ head
                   el.disabled = false;
                 }
               })
-            var group = document.querySelectorAll('.'+ targetClass + '[name="'+name+ '"]');
+            var group = document.querySelectorAll('.'+ targetClass);
             group.forEach(function(el){
-              console.log(el.classList[1]);
-              if(!el.classList.contains('checked')){
+              if(!el.classList.contains('checked') && !el.parentNode.classList.contains('parentChecked')){
                 el.classList.remove('groupChecked');
                 el.disabled = false;
               }
