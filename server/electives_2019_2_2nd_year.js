@@ -33,7 +33,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         console.log('There isn\'t such user in the database');
       }
     });
-    req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; ELECTIVE 2: 1st priority — ${req.body["elective3"]}; 2nd priority — ${req.body["elective4"]};). In case of mistake, you can make your choice again. Thanks for participation. ( ͡° ͜ʖ ͡°)`);
+    req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; 4th priority — ${req.body["elective4"]}; ELECTIVE 2: 1st priority — ${req.body["elective5"]}; 2nd priority — ${req.body["elective6"]}; 3rd priority — ${req.body["elective7"]}; 4th priority — ${req.body["elective8"]};). In case of mistake, you can make your choice again. Thanks for participation ( ͡° ͜ʖ ͡°)`);
     let emailBody = '';
     var bodyKeys = Object.keys(req.body);
     for (let i=0;i<bodyKeys.length;i++){
