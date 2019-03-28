@@ -29,7 +29,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         console.log('There isn\'t such user in the database');
       }
     });
-    req.flash('info', `Your choice is submitted (1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; 4th priority — ${req.body["elective4"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
+    req.flash('info', `Your choice is submitted (1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; 4th priority — ${req.body["elective4"]};). In case of mistake, you can make your choice again. Thanks for participation ( ͡° ͜ʖ ͡°)`);
     let emailBody = '';
     var bodyKeys = Object.keys(req.body);
     for (let i=0;i<bodyKeys.length;i++){
