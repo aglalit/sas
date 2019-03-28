@@ -338,7 +338,7 @@ head
                   el.disabled = true;
                 }
               });
-              var slotParent = slot[0].parentNode;
+              var slotParent = slot[0].parentNode.parentNode;
               slotParent.classList.add('parentChecked');
             var group = document.querySelectorAll('.'+ targetClass);
             group.forEach(function(el){
@@ -358,7 +358,7 @@ head
               })
             var group = document.querySelectorAll('.'+ targetClass);
             group.forEach(function(el){
-              if(!el.classList.contains('checked') && !el.parentNode.classList.contains('parentChecked')){
+              if(!el.classList.contains('checked') && !el.parentNode.parentNode.classList.contains('parentChecked')){
                 el.classList.remove('groupChecked');
                 el.disabled = false;
               }
