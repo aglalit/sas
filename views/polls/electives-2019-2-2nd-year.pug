@@ -523,6 +523,7 @@ head
       inputs.forEach(function(input) {
         var elective = input.parentNode.parentNode.classList[1];
         input.addEventListener(clickEvent, function(e) {
+          if (is_touch_device()) event.target.click();
            e.stopPropagation(); 
           var name = event.target.name;
           var targetClass = event.target.classList[0];
@@ -562,7 +563,8 @@ head
                 }
               }
             })
-            event.target.classList.remove("checked");   
+            event.target.classList.remove("checked"); 
+              
           }
 
         });
