@@ -524,7 +524,7 @@ head
         var elective = event.target.parentNode.parentNode.classList[1];
           var name = event.target.name;
           var targetClass = event.target.classList[0];
-          if (!event.target.checked) {
+          if (event.target.checked) {
             event.target.classList.add("checked");
             var slot = document.querySelectorAll('input[name="'+name+ '"]');
               slot.forEach(function(el){
