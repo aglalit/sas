@@ -354,7 +354,7 @@ head
                   el.disabled = false;
                 }
               })
-            var group = document.querySelectorAll('.'+ targetClass);
+            var group = document.querySelectorAll('.'+ targetClass + '[name="'+name+ '"]');
             group.forEach(function(el){
               console.log(el.classList[1]);
               if(!el.classList.contains('checked')){
