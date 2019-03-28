@@ -513,10 +513,17 @@ head
         var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
         return mq(query);
       }
+      
+      var clickEvent = (function() {
+      if ('ontouchstart' in document.documentElement === true)
+        return 'touchstart';
+      else
+        return 'click';
+      })();
       var inputs = document.querySelectorAll('input[type="checkbox"]');
       inputs.forEach(function(input) {
         var elective = input.parentNode.parentNode.classList[1];
-        input.addEventListener('mousedown', function() {
+        input.addEventListener(clickEvent, function() {
           var name = event.target.name;
           var targetClass = event.target.classList[0];
           if (!event.target.checked) {
