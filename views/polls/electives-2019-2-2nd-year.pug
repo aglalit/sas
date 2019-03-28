@@ -515,14 +515,14 @@ head
       }
       var clickEvent = (function() {
       if (is_touch_device())
-        return 'touchstart';
+        return;
       else
         return 'mousedown';
       })();
       var inputs = document.querySelectorAll('input[type="checkbox"]');
       inputs.forEach(function(input) {
         var elective = input.parentNode.parentNode.classList[1];
-        input.addEventListener(clickEvent, function(e) {
+        input.addEventListener('clickEvent', function(e) {
           if (is_touch_device()) event.target.click();
            e.stopPropagation(); 
           var name = event.target.name;
