@@ -359,9 +359,11 @@ head
             slot[0].parentNode.parentNode.classList.remove('parentChecked');
             var group = document.querySelectorAll('.'+ targetClass);
             group.forEach(function(el){
-              if(!el.classList.contains('checked') && !el.parentNode.parentNode.classList.contains('parentChecked')){
+              if(!el.classList.contains('checked')){
                 el.classList.remove('groupChecked');
-                el.disabled = false;
+                if(!el.parentNode.parentNode.classList.contains('parentChecked')){
+                                  el.disabled = false;
+                }
               }
             })
             event.target.classList.remove("checked");   
