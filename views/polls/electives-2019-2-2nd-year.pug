@@ -520,10 +520,8 @@ head
         return 'mousedown';
       })();
       /* var inputs = document.querySelectorAll('input[type="checkbox"]'); */
-      function checkboxHandler(input) {
-        var elective = input.parentNode.parentNode.classList[1];
-        input.addEventListener(clickEvent, function(e) {
-           e.stopPropagation(); 
+      function checkboxHandler() {
+        var elective = event.target.parentNode.parentNode.classList[1];
           var name = event.target.name;
           var targetClass = event.target.classList[0];
           if (!event.target.checked) {
@@ -565,6 +563,4 @@ head
             event.target.classList.remove("checked"); 
               
           }
-
-        });
       };
