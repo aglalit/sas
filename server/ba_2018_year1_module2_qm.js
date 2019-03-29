@@ -18,7 +18,7 @@ app.post('/polls/ba-2018-year1-module2-qm', function(req, res) {
       parseSession (newSession, req, transporter);
     }
   });
-  req.flash('info', 'Ответ принят. Благодарим за обратную связь.');
+  req.flash('info', 'Ответ принят. Благодарим за обратную связь ( ͡° ͜ʖ ͡°)');
   res.render('polls_anonymous', {messages: req.flash('info')})
 });
 

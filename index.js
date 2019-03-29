@@ -176,6 +176,9 @@ require('./server/ba_2018_year2_module6_electives.js')(app, Session, transporter
 require('./server/ba_2018_year1_module2_electives.js')(app, Session, transporter);
 require('./server/ba_2018_year1_module2_english.js')(app, Session, transporter);
 
+require('./server/ba_2019_year1_module3_qm.js')(app, Session, transporter);
+require('./server/ba_2019_year1_module3_history.js')(app, Session, transporter);
+
 
 
 

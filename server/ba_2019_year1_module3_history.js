@@ -1,10 +1,10 @@
 module.exports = function(app, Session, transporter){
 
-app.get('/polls/ba-2018-year1-module3-qm', function(req, res) {
-  res.render('ba-2018-year1-module3-qm', {user: req.user})
+app.get('/polls/ba-2019-year1-module3-history', function(req, res) {
+  res.render('ba-2019-year1-module3-history', {user: req.user})
 });
 
-app.post('/polls/ba-2018-year1-module3-qm', function(req, res) {
+app.post('/polls/ba-2019-year1-module3-history', function(req, res) {
   Session.findOne({
     'session_id': req.session.id
   }, function(err, session) {
@@ -29,7 +29,7 @@ function parseSession (sess, req, transporter){
 //   keyNames.forEach((el)=>{
 //     console.log(req.body[el]);
 //
-//       sess.polls.ba_2018_year1_the_city_as_text[el] = req.body[el];
+//       sess.polls.ba_2019_year1_the_city_as_text[el] = req.body[el];
 // });
   let emailBody = '';
   var bodyKeys = Object.keys(req.body);
@@ -39,7 +39,7 @@ function parseSession (sess, req, transporter){
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
     to: 'marat.goya@gmail.com,s.makhmudova@utmn.ru', // list of receivers
-    subject: 'QM — feedback', // Subject line
+    subject: 'History — feedback', // Subject line
     // text: JSON.stringify(req.user), // plain text body
     html: emailBody.toString() // html body
   };
@@ -49,7 +49,7 @@ function parseSession (sess, req, transporter){
     }
     console.log('Message %s sent: %s', info.messageId, info.response);
   });
-  sess.polls.ba_2018_year1_module3_qm = JSON.stringify(req.body);
+  sess.polls.ba_2019_year1_module3_history = JSON.stringify(req.body);
   sess.save(function(err) {
     if (err)
       return console.error(err);
