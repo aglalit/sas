@@ -115,17 +115,23 @@ body
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-01.svg")
-      h1 Feedback. Great Books. 3rd module.
-      form(action="/polls/ba-2019-year1-module3-gb" method="post")
+      h1 Feedback. Electives. 7th module. Elective 2.
+      form(action="/polls/ba-2019-year2-module7-electives2" method="post")
         fieldset
           div(class="input-group")
             .flex-container
               label(for="Who taught this course") Who taught this course?
               select(class="form-control" required="required" name="Who taught this course")
-                option(value="Evgeny Grishin") Evgeny Grishin 
+                option(value="Evgeny Grishin") Evgeny Grishin  
                 option(value="Maxim Alyukov") Maxim Alyukov
                 option(value="Zachary Reyna") Zachary Reyna 
-                option(value="Matvey Lomonosov") Matvey Lomonosov 
+                option(value="Duskin Drum") Duskin Drum
+                option(value="David Dusseault") David Dusseault 
+                option(value="Fabio Grazioso") Fabio Grazioso 
+                option(value="Svetlana Erpyleva") Svetlana Erpyleva 
+                option(value="Juliette Colinas") Juliette Colinas
+                option(value="Natalia Savelyeva") Natalia Savelyeva
+                option(value="Louis Vervoort") Louis Vervoort
             .flex-container
               label(for="Evaluate the impact of the course on your knowledge") Evaluate the impact of the course on your knowledge, skills, competencies, personal qualities and worldview, where 1 is no development has taken place, 6 is a generally satisfactory development has taken place in several of the parameters, 10 is I have become a different person.
               input(type="number" required="required" class="form-control" name="Evaluate the impact of the course on your knowledge" min="1" max="10")

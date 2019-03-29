@@ -377,10 +377,11 @@ var sessionSchema = mongoose.Schema({
       ba_2019_year1_module3_history: String,
       ba_2019_year1_module3_qm: String,
       ba_2019_year1_module3_gi: String,
-      ba_2019_year1_module3_gb_en: String,
-      ba_2019_year2_module2_gb: String,
+      ba_2019_year1_module3_gb: String,
+      ba_2019_year2_module7_gb: String,
       ba_2019_year1_module3_electives: String,
-      ba_2019_year2_module7_electives: String
+      ba_2019_year2_module7_electives: String,
+      ba_2019_year2_module7_electives2: String
   }
 });
 
