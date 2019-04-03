@@ -381,7 +381,12 @@ var sessionSchema = mongoose.Schema({
       ba_2019_year2_module7_gb: String,
       ba_2019_year1_module3_electives: String,
       ba_2019_year2_module7_electives: String,
-      ba_2019_year2_module7_electives2: String
+      ba_2019_year2_module7_electives2: String,
+
+      ma_2019_smirnov: String,
+      ma_2019_wolf: String,
+      ma_2019_manirko: String,
+      ma_2019_vetushinsky: String
   }
 });
 
