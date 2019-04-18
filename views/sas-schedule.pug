@@ -111,6 +111,7 @@ body
       img.announcement
     script(src="../sas-schedule.bundle.js")
     script.
+      document.getElementById('htmlVideo').play();
       document.getElementById('htmlVideo').onended = function(){
       this.load();
       this.play();
