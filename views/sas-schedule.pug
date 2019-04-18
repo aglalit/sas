@@ -112,6 +112,7 @@ body
     script(src="../sas-schedule.bundle.js")
     script.
       window.onload = function (){
+        document.getElementById('htmlVideo').load();
         document.getElementById('htmlVideo').play();
         document.getElementById('htmlVideo').onended = function(){
         this.load();
