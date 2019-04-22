@@ -5,40 +5,52 @@ html
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
     // load bootstrap css
     style.
-      body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+      body        { padding-top:20px;   font-family: 'Agipo-Bold'; 
+      
+      -moz-osx-font-smoothing: grayscale;   /* Firefox */
+     -webkit-font-smoothing: antialiased; /* WebKit  */
+      }
       @font-face {
         font-family: 'Agipo-Bold';
         src:url('../fonts/agipo/Agipo-Bold.woff');
       }
-      img {
-        width:100%;
+      @font-face {
+        font-family: 'Agipo-Regular';
+        src:url('../fonts/agipo/Agipo-Regular.woff');
       }
-      .logo {padding-bottom:30px}
-      h2 {font-weight:800; margin-bottom:20px;}
+      h2 {margin-bottom:20px;
+      font-family: 'Agipo-Bold',Arial,sans-serif;}
       .jumbotron h1 {
         font-size:36px;
         margin-bottom: 40px;
+        font-family: 'Agipo-Bold',Arial,sans-serif;
       }
       h3 {
         font-size: 1.5em;
         font-weight: 400;
+        margin-bottom:30px;
+        font-family: 'Agipo-Regular',Arial,sans-serif;;
       }
-      a {color:#00f}
       .jumbotron{
         font-size:18px;
         line-height: initial;
-        padding-top: 0px;
       }
+      img {
+        width:80%;
+        margin-top:10px;
+      }
+      .logo {padding-bottom:30px}
+      a {color:#f00}
       .container{
         width:98% !important;
       }
       .input-group{
         margin-bottom:20px;
       }
-      .input-group label {
-        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      .input-group label, h4 {
+        font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
         font-weight: 500;
-        margin: 10px 0;
+        margin: 18px 0;
         font-size:20px;
       }
       .input-group .label__description {
@@ -46,20 +58,25 @@ html
       }
       .input-group .form-control {
         margin: 20px 0 40px 0;
-        width:75%;
       }
       form {
         margin-top: 30px;
       }
-      label,legend {
+      fieldset {
+        margin-bottom:30px;
+      }
+      label,legend,h4 {
         text-align: left;
-            float: left;
+        width:94%
       }
       legend {font-size: 1.8em;}
       input, textarea, select {
         float:left;
         width:75%;
-        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
+      }
+      .label_width100 {
+        width:100%;
       }
 
       input[type="radio"] {
@@ -72,53 +89,67 @@ html
         height: 38px;
 
         border: 2px solid #999;
-        -webkit-transition: 0.2s all linear;
         transition: 0.2s all linear;
         outline: none;
         margin-right: 15px;
 
         position: relative;
-        top:0px;
+        top:0px
         }
-        input[type="checkbox"] {max-width: 50px;height: 35px;margin-top:6px}
         input:focus {
           outline: none !important;
         }
         input:checked {
-          border: 12px solid #00f;
+          border: 12px solid #f00;
         }
         button {
-          background-color: #00f !important;
-        }
-        .flex-container {display:-webkit-box;display:-ms-flexbox;display:flex; margin:10px 0;}
-        .column {-webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction:column;}
-        .row label {
-          padding-left: 15px;
+          background-color: #f00 !important;
+          border-color: #f00 !important;
         }
         
+        .checkbox {
+          width: 5% !important;
+          height: 30px;
+          margin-top: 14px !important;
+        }
+
+
         @media (max-width: 1024px) {
 
           body{padding-top:10px}
           .container{
           width:95%;
           }
-        .input-group  label {
-          font-size:30px ;
+          h3 {
+            font-size: 2.5em;
+          }
+          h2 {
+            font-size: 3em;
+          }
+          .jumbotron h1 {
+            font-size: 3.5em;
+          }
+        .input-group  label, h4 {
+          font-size:45px ;
           margin-bottom:20px;
+          width:90%;
           }
           input[type="radio"]{
-            top:6px;
-            min-width: 5%;
+            top:5px;
           }
           button.btn-lg {
-            font-size: 30px;
+            font-size: 45px;
           }
-          .small {
-            font-size:20px;
+          .label_width100 {
+            width:100% !important;
           }
-        }
-        .small {
-          font-size:15px;
+          .checkbox {margin-top: 13px !important;           
+            height: 50px;
+            }
+          .input-group label, h4 {
+            
+            margin: 11px 0;
+          }
         }
         
 body
@@ -126,7 +157,7 @@ body
     .jumbotron.text-center
       .logo
         a(href="https://sas.utmn.ru")
-          img(src="http://schoolofadvancedstudies.herokuapp.com/assets/Logo__blue.png")
+          img(src="/assets/logo_sas_ut_short-red.svg")
       h1 ОБЯЗАТЕЛЬНАЯ РЕГИСТРАЦИЯ
       h3 В силу вступили новые правила гостевого посещения зданий ТюмГУ, к которым относится и SAS. Теперь для прохода в учебные аудитории SAS на любые публичные мероприятия необходима: 
       
