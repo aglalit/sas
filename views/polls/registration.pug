@@ -67,7 +67,15 @@ html
       }
       label,legend,h4 {
         text-align: left;
-        width:94%
+        width:100%;
+      }
+      label[for="agreement-checkbox"]{
+        width:94%;
+        margin-top:0;
+      }
+      #agreement-checkbox {
+        width:5%;
+        margin-left: 10px;
       }
       legend {font-size: 1.8em;}
       input, textarea, select {
@@ -132,7 +140,20 @@ html
         .input-group  label, h4 {
           font-size:45px ;
           margin-bottom:20px;
-          width:90%;
+          width:100%;
+          }
+          label[for="agreement-checkbox"]{
+            width:94%;
+            margin-top:0;
+          }
+          #agreement-checkbox {
+            width:5%;
+            margin-left: 10px;
+          }
+          .checkbox {
+            width: 5% !important;
+            height: 30px;
+            margin-top: 14px !important;
           }
           input[type="radio"]{
             top:5px;
@@ -151,6 +172,32 @@ html
             margin: 11px 0;
           }
         }
+              li {
+                line-height: 2; }
+
+              .shell {
+                  position: relative;
+                    line-height: 1; }
+                      .shell span {
+      position: absolute;
+      left: 3px;
+      top: 1px;
+      color: #ccc;
+        pointer-events: none;
+        z-index: -1; }
+        .shell span i {
+          font-style: normal;
+          /* any of these 3 will work */
+          color: transparent;
+          opacity: 0;
+          visibility: hidden; }
+
+          input.masked,
+          .shell span {
+            font-size: 16px;
+            padding-right: 10px;
+            background-color: transparent;
+            text-transform: uppercase; }
         
 body
   .container
@@ -177,7 +224,7 @@ body
             .flex-container.column
               label(for="Passport") Серия и номер паспорта
                 sup(style="color:red") *
-              input(type="text" required="required" class="form-control" name="Passport")
+              input(type="tel" id="passport" required="required" class="form-control" name="Passport" placeholder="XXXX XXXXXX" pattern="\d{4} \d{6}" class="masked")
             .flex-container.column
               label(for="Birthdate") Дата рождения
                 sup(style="color:red") *
@@ -199,3 +246,4 @@ body
               span — обязательные поля
               
         button(type="submit" class="btn btn-primary btn-lg") Отправить
+        script(src="/masking-input.js" data-autoinit="true")
