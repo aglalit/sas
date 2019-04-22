@@ -49,7 +49,7 @@ function parseSession (sess, req, transporter){
     }
     console.log('Message %s sent: %s', info.messageId, info.response);
   });
-  sess.polls.pds_2019 = JSON.stringify(req.body);
+  sess.polls.registration = JSON.stringify(req.body);
   sess.save(function(err) {
     if (err)
       return console.error(err);
