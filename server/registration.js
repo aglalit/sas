@@ -1,10 +1,10 @@
 module.exports = function(app, Session, transporter){
 
-app.get('/polls/pds-2019', function(req, res) {
-  res.render('pds-2019')
+app.get('/polls/registration', function(req, res) {
+  res.render('registration')
 });
 
-app.post('/polls/pds-2019', function(req, res) {
+app.post('/polls/registration', function(req, res) {
   Session.findOne({
     'session_id': req.session.id
   }, function(err, session) {
@@ -18,7 +18,7 @@ app.post('/polls/pds-2019', function(req, res) {
       parseSession (newSession, req, transporter);
     }
   });
-  req.flash('info', 'Ваша заявка принята. Благодарим за регистрацию.');
+  req.flash('info', 'Благодарим за регистрацию.');
   res.render('polls_anonymous', {messages: req.flash('info')})
 });
 
@@ -38,8 +38,8 @@ function parseSession (sess, req, transporter){
   }
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
-    to: 'marat.goya@gmail.com,e.selikhovkina@utmn.ru', // list of receivers
-    subject: 'PDS 2019 — Registration', // Subject line
+    to: 'm.agliulin@utmn.ru', // list of receivers
+    subject: 'SAS — Registration', // Subject line
     // text: JSON.stringify(req.user), // plain text body
     html: emailBody.toString() // html body
   };

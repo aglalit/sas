@@ -29,7 +29,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
     req.flash('info', `Your choice is submitted (${req.body["video"]}). In case of mistake, you can make your choice again. Thanks for participation.`);
     let mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
-      to: 'marat.goya@gmail.com, s.makhmudova@utmn.ru', // list of receivers
+      to: 'm.agliulin@utmn.ru, s.makhmudova@utmn.ru', // list of receivers
       subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
       // text: JSON.stringify(req.user), // plain text body
       html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body

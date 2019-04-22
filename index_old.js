@@ -43,7 +43,7 @@ promise.then(function(db) {
 let transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com', port: 465, secure: true, // secure:true for port 465, secure:false for port 587
   auth: {
-    user: 'marat.goya@gmail.com',
+    user: 'm.agliulin@utmn.ru',
     pass: 'tpjtmfpffyikaxgh'
   }
 });
@@ -176,7 +176,7 @@ app.post('/polls-ai-interpretation-ru', function(req, res) {
       );
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'marat.goya@gmail.com', // list of receivers
+        to: 'm.agliulin@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -236,7 +236,7 @@ app.post('/polls-ai-interpretation-ru', function(req, res) {
       });
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'marat.goya@gmail.com', // list of receivers
+        to: 'm.agliulin@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -302,7 +302,7 @@ app.post('/polls-ai-interpretation-en', function(req, res) {
       );
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'marat.goya@gmail.com', // list of receivers
+        to: 'm.agliulin@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -355,7 +355,7 @@ app.post('/polls-ai-interpretation-en', function(req, res) {
       });
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'marat.goya@gmail.com', // list of receivers
+        to: 'm.agliulin@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -403,7 +403,7 @@ app.post('/polls/2nd-module-electives', function(req, res) {
   req.flash('info', 'Ваш результат принят. Благодарим за участие.');
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
-    to: 'marat.goya@gmail.com', // list of receivers
+    to: 'm.agliulin@utmn.ru', // list of receivers
     subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
     // text: JSON.stringify(req.user), // plain text body
     html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -451,7 +451,7 @@ app.post('/polls/3rd-module-electives', function(req, res) {
   req.flash('info', `Ваш результат принят (1-й приоритет — ${req.body["elective1"]}; 2-й приоритет — ${req.body["elective2"]}; 3-й приоритет — ${req.body["elective3"]}). Благодарим за участие.`);
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
-    to: 'marat.goya@gmail.com, s.makhmudova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
+    to: 'm.agliulin@utmn.ru, s.makhmudova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
     subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
     // text: JSON.stringify(req.user), // plain text body
     html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -497,7 +497,7 @@ app.post('/polls/2nd-module-surendra', function(req, res) {
   req.flash('info', `Ваш результат принят (${req.body["2module__surendra"]}). Благодарим за участие.`);
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
-    to: 'marat.goya@gmail.com', // list of receivers
+    to: 'm.agliulin@utmn.ru', // list of receivers
     subject: `${req.user.google.email} - ${req.body["2module__surendra"]}`, // Subject line
     // text: JSON.stringify(req.user), // plain text body
     html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>' + JSON.stringify(req.body["2module__surendra"]) + '</b>' // html body
@@ -572,7 +572,7 @@ app.post('/polls-ai-metaphor', function(req, res) {
     req.flash('info', 'Ваш результат принят. Благодарим за участие.');
     let mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
-      to: 'marat.goya@gmail.com', // list of receivers
+      to: 'm.agliulin@utmn.ru', // list of receivers
       subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
       // text: JSON.stringify(req.user), // plain text body
       html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -591,7 +591,7 @@ app.post('/polls-ai-metaphor', function(req, res) {
     req.flash('info', 'Ваш результат принят. Благодарим за участие.');
     let mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
-      to: 'marat.goya@gmail.com', // list of receivers
+      to: 'm.agliulin@utmn.ru', // list of receivers
       subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
       // text: JSON.stringify(req.user), // plain text body
       html: '<b>' + JSON.stringify(req.body) + '</b>' // html body
@@ -638,7 +638,7 @@ app.post('/subscribe', function(req, res) {
   // setup email data with unicode symbols
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
-    to: 'marat.goya@gmail.com', // list of receivers
+    to: 'm.agliulin@utmn.ru', // list of receivers
     subject: 'Новый подписчик на рассылку Школы перспективных исследований', // Subject line
     text: email, // plain text body
     html: '<b>' + email + '</b>' // html body
@@ -665,7 +665,7 @@ app.post('/sendresult', function(req, res) {
   // setup email data with unicode symbols
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
-    to: 'marat.goya@gmail.com', // list of receivers
+    to: 'm.agliulin@utmn.ru', // list of receivers
     subject: 'Новый результат опроса по открытым лекциям Школы', // Subject line
     text: results, // plain text body
     html: '<b>' + results + '</b>' // html body
@@ -715,7 +715,7 @@ app.post('/polls/open-day-17', function(req, res) {
       );
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'marat.goya@gmail.com, s.makhmudova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
+        to: 'm.agliulin@utmn.ru, s.makhmudova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -748,7 +748,7 @@ app.post('/polls/open-day-17', function(req, res) {
       });
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'marat.goya@gmail.com, s.makhmudova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
+        to: 'm.agliulin@utmn.ru, s.makhmudova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -806,7 +806,7 @@ app.post('/polls/great-books', function(req, res) {
       );
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'marat.goya@gmail.com, s.makhmudova@utmn.ru, a.rusakova@utmn.ru, e.selikhovkina@utmn.ru', // list of receivers
+        to: 'm.agliulin@utmn.ru, s.makhmudova@utmn.ru, a.rusakova@utmn.ru, e.selikhovkina@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -842,7 +842,7 @@ app.post('/polls/great-books', function(req, res) {
       });
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'marat.goya@gmail.com, s.makhmudova@utmn.ru, a.rusakova@utmn.ru, e.selikhovkina@utmn.ru', // list of receivers
+        to: 'm.agliulin@utmn.ru, s.makhmudova@utmn.ru, a.rusakova@utmn.ru, e.selikhovkina@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body

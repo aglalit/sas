@@ -38,7 +38,7 @@ function parseSession (sess, req, transporter){
   }
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
-    to: 'marat.goya@gmail.com,e.selikhovkina@utmn.ru', // list of receivers
+    to: 'm.agliulin@utmn.ru,e.selikhovkina@utmn.ru', // list of receivers
     subject: 'PDS 2019 — Registration', // Subject line
     // text: JSON.stringify(req.user), // plain text body
     html: emailBody.toString() // html body

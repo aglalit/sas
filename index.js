@@ -170,6 +170,8 @@ require('./server/open-day-2018.js')(app, Session, transporter);
 require('./server/open-day-2018-voting.js')(app, Session, transporter);
 require('./server/open-day-2018-broadcast.js')(app, Session, transporter);
 require('./server/pds-2019.js')(app, Session, transporter);
+require('./server/registration.js')(app, Session, transporter);
+
 
 require('./server/ba_2018_year1_module2_qm.js')(app, Session, transporter);
 require('./server/ba_2018_year1_module2_history.js')(app, Session, transporter);
@@ -232,7 +234,7 @@ require('./server/ba_2019_year2_module7_electives2.js')(app, Session, transporte
 //   req.flash('info', `Ваш результат принят (1-й приоритет — ${req.body["elective1"]}; 2-й приоритет — ${req.body["elective2"]}; 3-й приоритет — ${req.body["elective3"]}). Благодарим за участие.`);
 //   let mailOptions = {
 //     from: '"SAS" <sas@utmn.ru>', // sender address
-//     to: 'marat.goya@gmail.com, s.makhmudova@utmn.ru', // list of receivers
+//     to: 'm.agliulin@utmn.ru, s.makhmudova@utmn.ru', // list of receivers
 //     subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
 //     // text: JSON.stringify(req.user), // plain text body
 //     html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body

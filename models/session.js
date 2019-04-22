@@ -386,7 +386,9 @@ var sessionSchema = mongoose.Schema({
       ma_2019_smirnov: String,
       ma_2019_wolf: String,
       ma_2019_manirko: String,
-      ma_2019_vetushinsky: String
+      ma_2019_vetushinsky: String,
+
+      registration: String
   }
 });
 
