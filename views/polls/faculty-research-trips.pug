@@ -168,6 +168,10 @@ body
                 p.small Why is it necessary to go on this research trip/fieldwork?
               input(type="text" required="required" class="form-control" name="Need Statement")
             .flex-container.column
+              label(for="Invitation") Abstract For Your Paper:
+                p.small In case you will present a paper. 
+              input(type="file" class="form-control" name="Absract")
+            .flex-container.column
               label(for="Cost Estimates") Cost Estimates:
                 sup(style="color:red") *
               input(type="text" required="required" class="form-control" name="Cost Estimates")
@@ -184,10 +188,6 @@ body
             .flex-container.row
               input.form-check-input(type="checkbox" required="required"  name="I am aware that my research trip/fieldwork is officially approved only when it is signed by the UT Rector.")
               label.form-check-label(for="I am aware that my research trip/fieldwork is officially approved only when it is signed by the UT Rector.") I am aware that my research trip/fieldwork is officially approved only when it is signed by the UT Rector.
-                sup(style="color:red") *
-            .flex-container.row
-              input.form-check-input(type="checkbox" required="required"  name="I am aware that I need to sign an official order for my research trip/fieldwork when the HR Department prepares it.")
-              label.form-check-label(for="I am aware that I need to sign an official order for my research trip/fieldwork when the HR Department prepares it.") I am aware that I need to sign an official order for my research trip/fieldwork when the HR Department prepares it. 
                 sup(style="color:red") *
             .flex-container.row
               input.form-check-input(type="checkbox" required="required"  name="I am aware that I need to save all documents (such as boarding passes, invoices, receipts, etc.) to be reimbursed or be able to report on the money given in advance. I am aware that these documents can contain only my name and that no one except for me can be a payer.")

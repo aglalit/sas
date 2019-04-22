@@ -39,6 +39,7 @@ function parseSession (sess, req, transporter){
 // });
   let emailBody = '';
   var file = req.files["Invitation"];
+  var file2 = req.files["Absract"];
   var bodyKeys = Object.keys(req.body);
 
   for (let i=0;i<bodyKeys.length;i++){
@@ -51,10 +52,16 @@ function parseSession (sess, req, transporter){
     // text: JSON.stringify(req.user), // plain text body
     html: emailBody.toString(),
     attachments:
+    [
       {
         filename: file.name,
         content: file.data
-    }
+      },
+      {
+        filename: file2.name,
+        content: file2.data
+      },
+    ]
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
