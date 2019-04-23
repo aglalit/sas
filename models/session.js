@@ -388,7 +388,10 @@ var sessionSchema = mongoose.Schema({
       ma_2019_manirko: String,
       ma_2019_vetushinsky: String,
 
-      registration: String
+      registration: {
+        data: String,
+        time: String
+      }
   }
 });
 

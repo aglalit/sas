@@ -240,9 +240,9 @@ body
         tbody.tablebody
 script.
   var data = [!{data}];
-  var registrations = []
+  var registrations = [];
   data.forEach(function(el){
-    registrations.unshift(JSON.parse(el.polls.registration));
+    registrations.unshift(JSON.parse(el.polls.registration.data));
   });
   registrations.forEach(function(elem){
     var row = document.createElement('tr');
