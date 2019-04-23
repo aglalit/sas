@@ -192,6 +192,8 @@ require('./server/ba_2019_year1_module3_electives.js')(app, Session, transporter
 require('./server/ba_2019_year2_module7_electives.js')(app, Session, transporter);
 require('./server/ba_2019_year2_module7_electives2.js')(app, Session, transporter);
 
+require('./server/registration-list.js')(app, Session, transporter);
+
 
 
 
