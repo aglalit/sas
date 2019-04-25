@@ -137,65 +137,68 @@ body
             .flex-container.column
               label(for="Country") Country:
                 sup(style="color:red") *
-                p.small Where a conference/fieldwork will take place.
+                p.small Where the conference/fieldwork will take place.
               input(type="text" required="required" class="form-control" name="Country")
             .flex-container.column
               label(for="City") City:
                 sup(style="color:red") *
-                p.small Where a conference/fieldwork will take place.
+                p.small Where the conference/fieldwork will take place.
               input(type="text" required="required" class="form-control" name="City")
             .flex-container.column
               label(for="Organization") Organization:
                 sup(style="color:red") *
-                p.small Which is inviting you.
+                p.small Which invites you.
               input(type="text" required="required" class="form-control" name="Organization")
             .flex-container.column
-              label(for="Invitation") Invitation:
-                p.small You can upload the program of a conference in case you are acknowledged as a participant in it.
+              label(for="Invitation") Invitation/Conference Program: 
               input(type="file" class="form-control" name="Invitation")
             .flex-container.column
               label(for="Departure date") Departure Date:
                 sup(style="color:red") *
-                p.small Note that it is the date when you leave Tyumen (or another city if you are not in Tyumen when your research trip/fieldwork starts).
+                p.small Please note the date when you leave Tyumen (or another city if you are not in Tyumen when your research trip starts).
               input(type="date" required="required" class="form-control" name="Departure date")
               label(for="Return date") Return Date:
                 sup(style="color:red") *
-                p.small Note that it is the date when you arrive in Tyumen (or another city where your research trip/fieldwork ends). Please have a careful look to the second date in your itinerary. It may be so that your flight starts in the evening of one day but ends in the morning of already another day.
+                p.small Please note the date when you <span style="color:red">physically</span> arrive in Tyumen (or another city where your research trip ends). 
               input(type="date" required="required" class="form-control" name="Return date")
             .flex-container.column
-              label(for="Need Statement") Need Statement:
+              label(for="Need Statement") Statement Of Purpose:
                 sup(style="color:red") *
-                p.small Why is it necessary to go on this research trip/fieldwork?
+                p.small Briefly describe the goals of the research trip. 
               input(type="text" required="required" class="form-control" name="Need Statement")
             .flex-container.column
-              label(for="Invitation") Abstract For Your Paper:
-                p.small In case you will present a paper. 
+              label(for="Invitation") Abstract (Paper/Research/Presentation):
               input(type="file" class="form-control" name="Absract")
             .flex-container.column
-              label(for="Cost Estimates") Cost Estimates:
+              label(for="Cost Estimates") Estimated Costs:
                 sup(style="color:red") *
+                p.small Tickets, Lodging, Registration Fees, Additional Expenses.
               input(type="text" required="required" class="form-control" name="Cost Estimates")
             .flex-container.row
               input.form-check-input(type="checkbox" name="Do You Need To Get Money In Advance?")
-              label.form-check-label(for="Do you need to get money in advance?") Do you need to get money in advance? 
-                p.small Note that money can be requested only after your research trip/fieldwork is approved.
+              label.form-check-label(for="Do you need to get money in advance?") Do you need funding in advance? 
+                p.small Please note that money can be requested only after your research trip/fieldwork is approved.
             .flex-container.row
               input.form-check-input(type="checkbox" required="required"  name="I am aware that it takes up to three working* days until my request is processed and sent to the School and UT Boards for the approval process.")
-              label.form-check-label(for="I am aware that it takes up to three working&#185; days until my request is processed and sent to the School and UT Boards for the approval process.") I am aware that it takes up to three working* days until my request is processed and sent to the School and UT Boards for the approval process.
+              label.form-check-label(for="I am aware that it takes up to three working&#185; days until my request is processed and sent to the School and UT Boards for the approval process.") I am aware that processing of data will take up to three working days before the request is forwarded for approval by SAS and UT Boards
                 sup(style="color:red") *
                 p.small *see a list of public holidays 
                   a(href="https://docs.google.com/document/d/1327-uccnjowITwV1Nl6pTTauN3vqOoiZK0DT5QeemnY/edit") here
             .flex-container.row
               input.form-check-input(type="checkbox" required="required"  name="I am aware that my research trip/fieldwork is officially approved only when it is signed by the UT Rector.")
-              label.form-check-label(for="I am aware that my research trip/fieldwork is officially approved only when it is signed by the UT Rector.") I am aware that my research trip/fieldwork is officially approved only when it is signed by the UT Rector.
+              label.form-check-label(for="I am aware that my research trip/fieldwork is officially approved only when it is signed by the UT Rector.") I am aware that my research trip is officially approved only when it is signed by the UT Rector.
                 sup(style="color:red") *
             .flex-container.row
-              input.form-check-input(type="checkbox" required="required"  name="I am aware that I need to save all documents (such as boarding passes, invoices, receipts, etc.) to be reimbursed or be able to report on the money given in advance. I am aware that these documents can contain only my name and that no one except for me can be a payer.")
-              label.form-check-label(for="I am aware that I need to save all documents (such as boarding passes, invoices, receipts, etc.) to be reimbursed or be able to report on the money given in advance. I am aware that these documents can contain only my name and that no one except for me can be a payer.") I am aware that I need to save all documents (such as boarding passes, invoices, receipts, etc.) to be reimbursed or be able to report on the money given in advance. I am aware that these documents can contain only my name and that no one except for me can be a payer. 
+              input.form-check-input(type="checkbox" required="required"  name="I am aware that I need to save all documents (such as boarding passes, invoices, receipts, etc.) to be reimbursed or be able to report on the money given in advance.")
+              label.form-check-label(for="I am aware that I need to save all documents (such as boarding passes, invoices, receipts, etc.) to be reimbursed or be able to report on the money given in advance.") I am aware that I need to save all relevant documents (such as boarding passes, invoices, receipts, etc.) in order to either be reimbursed or to account for travel funds issued in advance.
+                sup(style="color:red") *
+            .flex-container.row
+              input.form-check-input(type="checkbox" required="required"  name="I am aware that all documents associated with the travel costs (including payments) must be in my name only.")
+              label.form-check-label(for="I am aware that all documents associated with the travel costs (including payments) must be in my name only.") I am aware that all documents associated with the travel costs (including payments) must be in my name only.
                 sup(style="color:red") *
             .flex-container.row
               input.form-check-input(type="checkbox" required="required"  name="I am aware that I need to notify the Faculty Support Specialist about any changes connected to the requested research trip/fieldwork.")
-              label.form-check-label(for="I am aware that I need to notify the Faculty Support Specialist about any changes connected to the requested research trip/fieldwork.") I am aware that I need to notify the Faculty Support Specialist about any changes connected to the requested research trip/fieldwork.
+              label.form-check-label(for="I am aware that I need to notify the Faculty Support Specialist about any changes connected to the requested research trip/fieldwork.") I am aware that I need to notify the Faculty Support Specialist about any changes related to my research trip request..
                 sup(style="color:red") *
             .flex-container.row
               input.form-check-input(type="checkbox" required="required"  name="I am aware of the registration rules.")
