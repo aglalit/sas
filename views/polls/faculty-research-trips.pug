@@ -146,9 +146,8 @@ body
               input(type="text" required="required" class="form-control" name="City")
             .flex-container.column
               label(for="Organization") Organization:
-                sup(style="color:red") *
                 p.small Which invites you.
-              input(type="text" required="required" class="form-control" name="Organization")
+              input(type="text" class="form-control" name="Organization")
             .flex-container.column
               label(for="Invitation") Invitation/Conference Program: 
               input(type="file" class="form-control" name="Invitation")
@@ -167,8 +166,9 @@ body
                 p.small Briefly describe the goals of the research trip. 
               input(type="text" required="required" class="form-control" name="Need Statement")
             .flex-container.column
-              label(for="Invitation") Abstract (Paper/Research/Presentation):
-              input(type="file" class="form-control" name="Absract")
+              label(for="Invitation") Abstract:
+              p.small Paper, Research, Presentation
+              input(type="file" class="form-control" name="Abstract")
             .flex-container.column
               label(for="Cost Estimates") Estimated Costs:
                 sup(style="color:red") *
@@ -180,7 +180,7 @@ body
                 p.small Please note that money can be requested only after your research trip/fieldwork is approved.
             .flex-container.row
               input.form-check-input(type="checkbox" required="required"  name="I am aware that it takes up to three working* days until my request is processed and sent to the School and UT Boards for the approval process.")
-              label.form-check-label(for="I am aware that it takes up to three working&#185; days until my request is processed and sent to the School and UT Boards for the approval process.") I am aware that processing of data will take up to three working days before the request is forwarded for approval by SAS and UT Boards
+              label.form-check-label(for="I am aware that it takes up to three working&#185; days until my request is processed and sent to the School and UT Boards for the approval process.") I am aware that processing of data will take up to three working days before the request is forwarded for approval by SAS and UT Boards.
                 sup(style="color:red") *
                 p.small *see a list of public holidays 
                   a(href="https://docs.google.com/document/d/1327-uccnjowITwV1Nl6pTTauN3vqOoiZK0DT5QeemnY/edit") here
