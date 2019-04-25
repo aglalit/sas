@@ -118,6 +118,7 @@ head
         img(src="/assets/logo_sas_ut_short-01.svg")
     h1 The choice of majors. The form is available until May 1, 12:00.
     form(action="/polls/majors" method="post")
+      h3 Majors
       div(class="input-group")
         .flex-container.row
           input(type="radio" required="required" value="Information Technology and Digital Society" name="major" id="Information Technology and Digital Society")
@@ -140,4 +141,12 @@ head
         .flex-container.row
           input(type="radio" required="required" value="Sociology and Anthropology" name="major" id="Sociology and Anthropology")
           label(for="Sociology and Anthropology") Sociology and Anthropology 
+        h3 Minors
+        div(class="input-group")
+          .flex-container.row
+            input(type="radio" required="required" value="Enviromental Humanities" name="minor" id="Enviromental Humanities")
+            label(for="Enviromental Humanities") Enviromental Humanities
+          .flex-container.row
+            input(type="radio" required="required" value="Philosophy" name="minor" id="Philosophy")
+            label(for="Philosophy") Philosophy
       button(type="submit" class="btn btn-primary btn-lg") Submit

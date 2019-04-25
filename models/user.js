@@ -103,6 +103,7 @@ var userSchema = mongoose.Schema({
     },
     "majors": {
       major: String,
+      minor: String,
       time : String
     }
   }

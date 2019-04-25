@@ -26,7 +26,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         console.log('There isn\'t such user in the database');
       }
     });
-    req.flash('info', `Your choice is submitted (${req.body["major"]}). In case of mistake, you can make your choice again. Thanks for participation ( ͡° ͜ʖ ͡°)`);
+    req.flash('info', `Your choice is submitted (Major: ${req.body["major"]}; Minor: ${req.body["minor"]}). In case of mistake, you can make your choice again. Thanks for participation ( ͡° ͜ʖ ͡°)`);
     let emailBody = '';
     var bodyKeys = Object.keys(req.body);
     for (let i=0;i<bodyKeys.length;i++){
