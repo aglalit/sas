@@ -13,6 +13,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
 
       if (user) {
         user.polls.majors.major = req.body["major"];
+        user.polls.majors.minor = req.body["minor"];
 
         var now = new Date();
         user.polls.majors.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
