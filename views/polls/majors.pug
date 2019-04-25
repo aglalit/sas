@@ -1,0 +1,143 @@
+doctype html
+head
+  title The choice of majors
+  link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+  // load bootstrap css
+  style.
+    body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+    @font-face {
+      font-family: 'Agipo-Bold';
+      src:url('../fonts/agipo/Agipo-Bold.woff');
+    }
+    img {
+      width:80%;
+      margin-top:10px;
+    }
+    .logo {padding-bottom:30px}
+    h2 {font-weight:800; margin-bottom:20px;}
+    .jumbotron h1 {
+      font-size:36px;
+      margin-bottom: 40px;
+    }
+    h3 {
+      font-size: 1.5em;
+      font-weight: 400;
+    }
+    .jumbotron{
+      font-size:18px;
+      line-height: initial;
+      padding-top: 0px;
+    }
+    .container{
+      width:98% !important;
+    }
+    .input-group{
+      margin-bottom:20px;
+    }
+    .input-group label {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight: 500;
+      margin: 10px 0;
+      font-size:20px;
+      width:93%;
+    }
+    .input-group .label__description {
+      font-family:initial;
+    }
+    .input-group .form-control {
+      margin: 20px 0 40px 0;
+      width:75%;
+    }
+    form {
+      margin-top: 30px;
+    }
+    label,legend {
+      text-align: left;
+          float: left;
+    }
+    legend {font-size: 1.8em;}
+    input, textarea, select {
+      float:left;
+      width:75%;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    input[type="radio"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+
+      border: 2px solid #999;
+      transition: 0.2s all linear;
+      outline: none;
+      margin-right: 15px;
+
+      position: relative;
+      top:0;
+      }
+      input:focus {
+        outline: none !important;
+      }
+      input:checked {
+        border: 12px solid #00f;
+      }
+      button {
+        background-color: #00f !important;
+        border: none !important;
+      }
+      .flex-container {display:flex; flex-direction:column; margin:10px 0;}
+      .flex-container.row {flex-direction:row;}
+
+      @media (max-width: 1024px) {
+
+        body{padding-top:10px}
+        .container{
+        width:95%;
+        }
+      h1,h3 {font-size:60px !important;}
+    .input-group  label {
+      font-size:40px ;
+      margin-bottom:20px;
+      }
+      input[type="checkbox"]{
+        top:6px;
+        zoom:1.1;
+      }
+      button.btn-lg {
+        font-size: 30px;
+      }
+      }
+.container
+  .jumbotron.text-center
+    .logo
+      a(href="https://sas.utmn.ru")
+        img(src="/assets/logo_sas_ut_short-01.svg")
+    h1 The choice of majors. The form is available until May 1, 12:00.
+    form(action="/polls/majors" method="post")
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" required="required" value="Information Technology and Digital Society" name="major" id="Information Technology and Digital Society")
+          label(for="Information Technology and Digital Society") Information Technology and Digital Society
+        .flex-container.row
+          input(type="radio" required="required" value="Cultural Studies" name="major" id="Cultural Studies")
+          label(for="Cultural Studies") Cultural Studies
+        .flex-container.row
+          input(type="radio" required="required" value="Life Sciences" name="major" id="Life Sciences")
+          label(for="Life Sciences") Life Sciences
+        .flex-container.row
+          input(type="radio" required="required" value="Economics" name="major" id="Economics")
+          label(for="Economics") Economics
+        .flex-container.row
+          input(type="radio" required="required" value="Film and Media Studies" name="major" id="Film and Media Studies")
+          label(for="Film and Media Studies") Film and Media Studies
+        .flex-container.row
+          input(type="radio" required="required" value="Historical Studies" name="major" id="Historical Studies")
+          label(for="Historical Studies") Historical Studies
+        .flex-container.row
+          input(type="radio" required="required" value="Sociology and Anthropology" name="major" id="Sociology and Anthropology")
+          label(for="Sociology and Anthropology") Sociology and Anthropology 
+      button(type="submit" class="btn btn-primary btn-lg") Submit

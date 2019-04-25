@@ -100,6 +100,10 @@ var userSchema = mongoose.Schema({
     },
     "THECITYASTEXT":{
       video: String
+    },
+    "majors": {
+      major: String,
+      time : String
     }
   }
 });
