@@ -43,7 +43,7 @@ function initClient() {
     // authorizeButton.onclick = handleAuthClick;
     // signoutButton.onclick = handleSignoutClick;
   }, function(error) {
-    appendPre(JSON.stringify(error, null, 2));
+    console.log(error);
   });
   console.log('init');
   console.log(gapi.client);
@@ -150,7 +150,7 @@ function generateSchedule(sheet){
     let row = document.createElement('tr');
     row.classList.add('row');
     let timeEntry = document.createElement('td');
-    
+
     timeEntry.innerHTML = data[1][k].replace(/-/g,'–').replace(/—/g,' – ').replace(/–/g,' – ');
     let timeEntryStart = data[1][k].split('–')[0];
     let classNumber = document.createElement('td');
