@@ -4657,7 +4657,7 @@ function generateSchedule(sheet){
   // console.log(sheet)
   let currentHalf;
   let indexOfDelimiter;
-  if (data) indexOfDelimiter = data[0].indexOf('changetime');
+  if (data[0]) indexOfDelimiter = data[0].indexOf('changetime');
 
   if (firstHalf){
     countStart = 0;
@@ -4736,21 +4736,21 @@ function generateSchedule(sheet){
 
   var announcementContainer = document.querySelector('.flex-container-img');
 
-  if((moment().format('mm')%10 === 5 && moment().format('ss')<=32) && headers[0].indexOf('changetime') > -1){
-    if (headers[0].indexOf('changetime') > -1) document.querySelector('.announcement').src = data['1'][k];
-    announcementContainer.style.opacity = '1';
-    firstHalfReverse = false;
-  }
-  else if((moment().format('mm')%10 === 0 && moment().format('ss')<=32) && data['2'][k].length > 1){
-    if (data['2'][k]) document.querySelector('.announcement').src = data['2'][k];
-    else if (data['1'][k]) document.querySelector('.announcement').src = data['1'][k];
-
-    announcementContainer.style.opacity = '1';
-    firstHalfReverse = true;
-  }
-  else {
-    announcementContainer.style.opacity = '0';
-  }
+  // // if((moment().format('mm')%10 === 5 && moment().format('ss')<=32) && headers[0].indexOf('changetime') > -1){
+  // //   if (headers[0].indexOf('changetime') > -1) document.querySelector('.announcement').src = data['1'][k];
+  // //   announcementContainer.style.opacity = '1';
+  // //   firstHalfReverse = false;
+  // // }
+  // // else if((moment().format('mm')%10 === 0 && moment().format('ss')<=32) && data['2'][k].length > 1){
+  // //   if (data['2'][k]) document.querySelector('.announcement').src = data['2'][k];
+  // //   else if (data['1'][k]) document.querySelector('.announcement').src = data['1'][k];
+  //
+  //   announcementContainer.style.opacity = '1';
+  //   firstHalfReverse = true;
+  // }
+  // else {
+  //   announcementContainer.style.opacity = '0';
+  // }
 
   if(moment().format('ss')<=30){
     !firstHalfReverse ? firstHalf = true : firstHalf = false;
