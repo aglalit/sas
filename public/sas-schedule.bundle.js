@@ -4626,6 +4626,7 @@ function listMajors() {
     range: 'A1:Z20',
     // majorDimension: "COLUMNS",
   }).then(function(response) {
+    console.log(response.result.values);
     sheet = response.result.values;
 
 
