@@ -45,8 +45,10 @@ function parseSession (sess, req, transporter){
   });
   let emailBody = '';
   var attachments = [];
-  if(req.files["Invitation"]) {attachments.push({filename: req.files["Invitation"].name, content:req.files["Invitation"].data});}
-  if(req.files["Abstract"]){attachments.push({filename: req.files["Abstract"].name, content:req.files["Abstract"].data});}
+  if (req.files){
+    if(req.files["Invitation"]) {attachments.push({filename: req.files["Invitation"].name, content:req.files["Invitation"].data});}
+    if(req.files["Abstract"]){attachments.push({filename: req.files["Abstract"].name, content:req.files["Abstract"].data});}
+  }
   var bodyKeys = Object.keys(req.body);
 
   for (let i=0;i<bodyKeys.length;i++){
