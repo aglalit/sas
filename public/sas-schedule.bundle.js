@@ -4858,7 +4858,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 },{}],4:[function(require,module,exports){
 const GetSheetDone = require('get-sheet-done');
 const moment = require('moment');
-GetSheetDone.labeledCols('1lvG1lGsKc2x5r1a5C9_sihymy9SGswBUoJElxjJpLP4').then(sheet => generateSchedule(sheet));
+GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
 const classNumbers = {
   "8:00":"1",
   "9:40":"2",
@@ -4998,7 +4998,7 @@ function generateSchedule(sheet){
   // }
 }
 setInterval(function(){
-  GetSheetDone.labeledCols('1lvG1lGsKc2x5r1a5C9_sihymy9SGswBUoJElxjJpLP4').then(sheet => generateSchedule(sheet));
+  GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
 }, 20000);
 
 // var justHidden = false;
