@@ -1,6 +1,6 @@
 const GetSheetDone = require('get-sheet-done');
 const moment = require('moment');
-GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
+GetSheetDone.labeledCols('1QXsJjU5uG2e63geGooEbrC2f89J2jGf6e3r9l5kteb8').then(sheet => generateSchedule(sheet));
 const classNumbers = {
   "8:00":"1",
   "9:40":"2",
@@ -140,8 +140,8 @@ function generateSchedule(sheet){
   // }
 }
 setInterval(function(){
-  GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
- }, 2000);
+  GetSheetDone.labeledCols('1QXsJjU5uG2e63geGooEbrC2f89J2jGf6e3r9l5kteb8').then(sheet => generateSchedule(sheet));
+}, 5000);
 
 // var justHidden = false;
 // var j;
