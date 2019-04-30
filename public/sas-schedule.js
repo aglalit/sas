@@ -1,6 +1,119 @@
-const GetSheetDone = require('get-sheet-done');
+// const GetSheetDone = require('get-sheet-done');
 const moment = require('moment');
-GetSheetDone.labeledCols('1lvG1lGsKc2x5r1a5C9_sihymy9SGswBUoJElxjJpLP4').then(sheet => generateSchedule(sheet));
+const api = require('./api.js');
+
+// Client ID and API key from the Developer Console
+var CLIENT_ID = '1007112818313-kmg9btri07fnska7gb6l16eiue9rffj0.apps.googleusercontent.com';
+var API_KEY = 'AIzaSyAAFj5VWy_C91CluJnVyMs8rmub9_v8dF8';
+
+// Array of API discovery doc URLs for APIs used by the quickstart
+var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
+
+// Authorization scopes required by the API; multiple scopes can be
+// included, separated by spaces.
+var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+
+var authorizeButton = document.getElementById('authorize_button');
+var signoutButton = document.getElementById('signout_button');
+
+var sheet = [];
+var headers = [];
+/**
+ *  On load, called to load the auth2 library and API client library.
+ */
+gapi.load('client:auth2', initClient);
+
+
+/**
+ *  Initializes the API client library and sets up sign-in state
+ *  listeners.
+ */
+function initClient() {
+  gapi.client.init({
+    apiKey: API_KEY,
+    clientId: CLIENT_ID,
+    discoveryDocs: DISCOVERY_DOCS,
+    scope: SCOPES
+  }).then(function () {
+    // Listen for sign-in state changes.
+    gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+    // Handle the initial sign-in state.
+    updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+    // authorizeButton.onclick = handleAuthClick;
+    // signoutButton.onclick = handleSignoutClick;
+  }, function(error) {
+    appendPre(JSON.stringify(error, null, 2));
+  });
+  console.log('init');
+  console.log(gapi.client);
+
+
+}
+
+
+
+/**
+ *  Called when the signed in status changes, to update the UI
+ *  appropriately. After a sign-in, the API is called.
+ */
+function updateSigninStatus(isSignedIn) {
+  if (isSignedIn) {
+    // authorizeButton.style.display = 'none';
+  //  signoutButton.style.display = 'block';
+    listMajors();
+  } else {
+    // authorizeButton.style.display = 'block';
+    // signoutButton.style.display = 'none';
+  }
+}
+
+/**
+ *  Sign in the user upon button click.
+ */
+// function handleAuthClick(event) {
+//   gapi.auth2.getAuthInstance().signIn();
+// }
+
+/**
+ *  Sign out the user upon button click.
+ */
+// function handleSignoutClick(event) {
+//   gapi.auth2.getAuthInstance().signOut();
+// }
+
+// /**
+//  * Append a pre element to the body containing the given message
+//  * as its text node. Used to display the results of the API call.
+//  *
+//  * @param {string} message Text to be placed in pre element.
+//  */
+// function appendPre(message) {
+//   var pre = document.getElementById('content');
+//   var textContent = document.createTextNode(message + '\n');
+//   pre.appendChild(textContent);
+// }
+
+/**
+ * Print the names and majors of students in a sample spreadsheet:
+ * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+ */
+function listMajors() {
+  gapi.client.sheets.spreadsheets.values.get({
+    spreadsheetId: '120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc',
+    range: 'A1:Z20',
+    // majorDimension: "COLUMNS",
+  }).then(function(response) {
+    sheet = response.result.values;
+
+
+  }, function(response) {
+    appendPre('Error: ' + response.result.error.message);
+  });
+
+}
+
+// GetSheetDone.labeledCols('1lvG1lGsKc2x5r1a5C9_sihymy9SGswBUoJElxjJpLP4').then(sheet => generateSchedule(sheet));
 const classNumbers = {
   "8:00":"1",
   "9:40":"2",
@@ -13,30 +126,33 @@ const classNumbers = {
 let firstHalf = true;
 let firstHalfReverse = false;
 
+
 document.querySelector('.date').innerHTML = moment().format('dddd DD/MM, H:mm');
 function generateSchedule(sheet){
-  let data = sheet.data;
-  console.log(data);
-  let delimiterPosition = data[0].indexOf
+  let data = sheet;
+  //let delimiterPosition = headers[0].indexOf
   // if(!moment().isBefore(moment(data[0].changetime, 'HH:mm'))){firstHalf = false;}
   // console.log(sheet)
-  let dataToArray = Object.getOwnPropertyNames(data[0]);
   let currentHalf;
-  let indexOfDelimiter = dataToArray.indexOf('changetime');
+  let indexOfDelimiter;
+  if (data) indexOfDelimiter = data[0].indexOf('changetime');
+
   if (firstHalf){
-    currentHalf = dataToArray.splice(0,indexOfDelimiter)
+    countStart = 0;
+    countEnd = indexOfDelimiter;
   }
-  else { currentHalf = dataToArray.splice(indexOfDelimiter+1) }
+  else { countStart = indexOfDelimiter + 1; countEnd = data[0].length}
   let rows = document.querySelectorAll('.row');
   for (let t=0;t<rows.length;t++){
     document.querySelector(".table").deleteRow(0);
   }
-  for (let k=0;k<currentHalf.length;k++){
+  for (let k=countStart;k<countEnd;k++){
     let row = document.createElement('tr');
     row.classList.add('row');
     let timeEntry = document.createElement('td');
-    timeEntry.innerHTML = data[0][currentHalf[k]].replace(/-/g,'–').replace(/—/g,' – ').replace(/–/g,' – ');;
-    let timeEntryStart = data[0][currentHalf[k]].split('–')[0];
+    
+    timeEntry.innerHTML = data[1][k].replace(/-/g,'–').replace(/—/g,' – ').replace(/–/g,' – ');
+    let timeEntryStart = data[1][k].split('–')[0];
     let classNumber = document.createElement('td');
     let classNumberSpan = document.createElement('span');
     classNumberSpan.classList.add('classNumberSpan');
@@ -61,8 +177,8 @@ function generateSchedule(sheet){
 
     let cell = document.createElement('td');
     cell.classList.add('classes');
-    for (let i=1;i<data.length;i++){
-      let entryText = data[i][currentHalf[k]];
+    for (let i=2;i<data.length;i++){
+      let entryText = data[i][k];
       if(entryText){
       entryText = entryText.split('(');
       let title = document.createElement('span');
@@ -98,14 +214,14 @@ function generateSchedule(sheet){
 
   var announcementContainer = document.querySelector('.flex-container-img');
 
-  if((moment().format('mm')%10 === 5 && moment().format('ss')<=32) && data['1'].changetime.length > 1){
-    if (data['1'].changetime) document.querySelector('.announcement').src = data['1'].changetime;
+  if((moment().format('mm')%10 === 5 && moment().format('ss')<=32) && headers[0].indexOf('changetime') > -1){
+    if (headers[0].indexOf('changetime') > -1) document.querySelector('.announcement').src = data['1'][k];
     announcementContainer.style.opacity = '1';
     firstHalfReverse = false;
   }
-  else if((moment().format('mm')%10 === 0 && moment().format('ss')<=32) && data['2'].changetime.length > 1){
-    if (data['2'].changetime) document.querySelector('.announcement').src = data['2'].changetime;
-    else if (data['1'].changetime) document.querySelector('.announcement').src = data['1'].changetime;
+  else if((moment().format('mm')%10 === 0 && moment().format('ss')<=32) && data['2'][k].length > 1){
+    if (data['2'][k]) document.querySelector('.announcement').src = data['2'][k];
+    else if (data['1'][k]) document.querySelector('.announcement').src = data['1'][k];
 
     announcementContainer.style.opacity = '1';
     firstHalfReverse = true;
@@ -120,6 +236,7 @@ function generateSchedule(sheet){
   else {
     !firstHalfReverse ? firstHalf = false : firstHalf = true;
   }
+
 
 
   // for (let i=1;i<data.length;i++){
@@ -139,9 +256,10 @@ function generateSchedule(sheet){
     // document.querySelectorAll('.row')[k].appendChild(cell);
   // }
 }
+
 setInterval(function(){
-  GetSheetDone.labeledCols('1lvG1lGsKc2x5r1a5C9_sihymy9SGswBUoJElxjJpLP4').then(sheet => generateSchedule(sheet));
-}, 20000);
+  generateSchedule(sheet);
+}, 2000);
 
 // var justHidden = false;
 // var j;

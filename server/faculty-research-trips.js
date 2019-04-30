@@ -37,14 +37,25 @@ function parseSession (sess, req, transporter){
 //
 //       sess.polls.ba_2018_year1_the_city_as_text[el] = req.body[el];
 // });
+  sess.polls.faculty_research_trips = JSON.stringify(req.body);
+  sess.save(function(err) {
+    if (err)
+      return console.error(err);
+    return;
+  });
   let emailBody = '';
-  var file = req.files["Invitation"];
-  var file2 = req.files["Absract"];
+  var file;
+  if(req.files["Invitation"]) file = req.files["Invitation"];
+  else file = '';
+  var file2;
+  if(req.files["Abstract"]) file2 = req.files["Abstract"];
+  else file2 = '';
   var bodyKeys = Object.keys(req.body);
 
   for (let i=0;i<bodyKeys.length;i++){
     emailBody += '<p><b>' + bodyKeys[i] + '</b>: ' + req.body[bodyKeys[i]] + '</p>';
   }
+
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
     to: 'm.agliulin@utmn.ru,v.savina@utmn.ru', // list of receivers
@@ -68,12 +79,6 @@ function parseSession (sess, req, transporter){
       return console.log(error);
     }
     console.log('Message %s sent: %s', info.messageId, info.response);
-  });
-  sess.polls.faculty_research_trips = JSON.stringify(req.body);
-  sess.save(function(err) {
-    if (err)
-      return console.error(err);
-    return;
   });
 }
 }

@@ -1,353 +1,4 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-(function (global, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define(['exports', 'module'], factory);
-  } else if (typeof exports !== 'undefined' && typeof module !== 'undefined') {
-    factory(exports, module);
-  } else {
-    var mod = {
-      exports: {}
-    };
-    factory(mod.exports, mod);
-    global.fetchJsonp = mod.exports;
-  }
-})(this, function (exports, module) {
-  'use strict';
-
-  var defaultOptions = {
-    timeout: 5000,
-    jsonpCallback: 'callback',
-    jsonpCallbackFunction: null
-  };
-
-  function generateCallbackFunction() {
-    return 'jsonp_' + Date.now() + '_' + Math.ceil(Math.random() * 100000);
-  }
-
-  function clearFunction(functionName) {
-    // IE8 throws an exception when you try to delete a property on window
-    // http://stackoverflow.com/a/1824228/751089
-    try {
-      delete window[functionName];
-    } catch (e) {
-      window[functionName] = undefined;
-    }
-  }
-
-  function removeScript(scriptId) {
-    var script = document.getElementById(scriptId);
-    if (script) {
-      document.getElementsByTagName('head')[0].removeChild(script);
-    }
-  }
-
-  function fetchJsonp(_url) {
-    var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-
-    // to avoid param reassign
-    var url = _url;
-    var timeout = options.timeout || defaultOptions.timeout;
-    var jsonpCallback = options.jsonpCallback || defaultOptions.jsonpCallback;
-
-    var timeoutId = undefined;
-
-    return new Promise(function (resolve, reject) {
-      var callbackFunction = options.jsonpCallbackFunction || generateCallbackFunction();
-      var scriptId = jsonpCallback + '_' + callbackFunction;
-
-      window[callbackFunction] = function (response) {
-        resolve({
-          ok: true,
-          // keep consistent with fetch API
-          json: function json() {
-            return Promise.resolve(response);
-          }
-        });
-
-        if (timeoutId) clearTimeout(timeoutId);
-
-        removeScript(scriptId);
-
-        clearFunction(callbackFunction);
-      };
-
-      // Check if the user set their own params, and if not add a ? to start a list of params
-      url += url.indexOf('?') === -1 ? '?' : '&';
-
-      var jsonpScript = document.createElement('script');
-      jsonpScript.setAttribute('src', '' + url + jsonpCallback + '=' + callbackFunction);
-      if (options.charset) {
-        jsonpScript.setAttribute('charset', options.charset);
-      }
-      jsonpScript.id = scriptId;
-      document.getElementsByTagName('head')[0].appendChild(jsonpScript);
-
-      timeoutId = setTimeout(function () {
-        reject(new Error('JSONP request to ' + _url + ' timed out'));
-
-        clearFunction(callbackFunction);
-        removeScript(scriptId);
-      }, timeout);
-
-      // Caught if got 404/500
-      jsonpScript.onerror = function () {
-        reject(new Error('JSONP request to ' + _url + ' failed'));
-
-        clearFunction(callbackFunction);
-        removeScript(scriptId);
-        if (timeoutId) clearTimeout(timeoutId);
-      };
-    });
-  }
-
-  // export as global function
-  /*
-  let local;
-  if (typeof global !== 'undefined') {
-    local = global;
-  } else if (typeof self !== 'undefined') {
-    local = self;
-  } else {
-    try {
-      local = Function('return this')();
-    } catch (e) {
-      throw new Error('polyfill failed because global object is unavailable in this environment');
-    }
-  }
-  local.fetchJsonp = fetchJsonp;
-  */
-
-  module.exports = fetchJsonp;
-});
-},{}],2:[function(require,module,exports){
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("fetch-jsonp"));
-	else if(typeof define === 'function' && define.amd)
-		define("GetSheetDone", ["fetch-jsonp"], factory);
-	else if(typeof exports === 'object')
-		exports["GetSheetDone"] = factory(require("fetch-jsonp"));
-	else
-		root["GetSheetDone"] = factory(root["fetchJsonp"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.buildUrl = buildUrl;
-exports.parseRawCells = parseRawCells;
-exports.parseLabeledCols = parseLabeledCols;
-exports.parseLabeledRowsCols = parseLabeledRowsCols;
-exports.raw = raw;
-exports.labeledCols = labeledCols;
-exports.labeledColsRows = labeledColsRows;
-
-var _fetchJsonp = __webpack_require__(1);
-
-var _fetchJsonp2 = _interopRequireDefault(_fetchJsonp);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function buildUrl(id, sheetNum, mode) {
-  return 'https://spreadsheets.google.com/feeds/' + mode + '/' + id + '/' + sheetNum + '/public/values?alt=json-in-script';
-}
-
-// Generic fetch and parse function
-function fetchAndParse(id, sheetNum, type, parseEntries) {
-  if (id.length === 0) {
-    return Promise.reject(new Error('empty id'));
-  }
-  var url = buildUrl(id, sheetNum, type);
-  return new Promise(function (resolve, reject) {
-    (0, _fetchJsonp2.default)(url).then(function (response) {
-      return response.json();
-    }).then(function (json) {
-      var data = parseEntries(json.feed.entry);
-      var res = {
-        title: json.feed.title.$t,
-        updated: json.feed.updated.$t,
-        data: data
-      };
-      resolve(res);
-    }).catch(function (ex) {
-      reject(ex);
-    });
-  });
-}
-
-function parseRawCells(entries) {
-  var data = [];
-  entries.forEach(function (cell) {
-    var row = parseInt(cell.gs$cell.row, 10) - 1;
-    var col = parseInt(cell.gs$cell.col, 10) - 1;
-    var content = cell.gs$cell.$t;
-    if (data[row] === undefined) {
-      data[row] = [];
-    }
-    data[row][col] = content;
-  });
-  return data;
-}
-
-/**
- * Use for table with labels only for columns
- */
-function parseEntry(entry) {
-  var res = {};
-  Object.keys(entry).forEach(function (key) {
-    if (key.indexOf('gsx$') === 0) {
-      var label = key.substr(4);
-      res[label] = entry[key].$t;
-    }
-  });
-  return res;
-}
-
-/**
- * Parser for table where just the columns are labeled
- * @return array of objects where the labels are keys
- */
-function parseLabeledCols(entries) {
-  return entries.map(function (entry) {
-    return parseEntry(entry);
-  });
-}
-
-/**
- * Use for table with labels for rows AND columns
- * Example input: "bar: 123, baz: 122, bab: 234"
- */
-function parseLabeledRow(row) {
-  var cols = row.split(', ');
-  var res = cols.reduce(function (acc, col) {
-    var pair = col.split(': ');
-    acc[pair[0]] = pair[1];
-    return acc;
-  }, {});
-  return res;
-}
-
-/**
- * Parser for table where both rows and columns are labeled
- * @return object where keys are row labels and values are objects where keys are the column labels
- */
-function parseLabeledRowsCols(entries) {
-  var res = {};
-  entries.forEach(function (entry) {
-    res[entry.title.$t] = parseLabeledRow(entry.content.$t);
-  });
-  return res;
-}
-
-// fetch as raw arrays
-function raw(id) {
-  var sheetNum = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-
-  return fetchAndParse(id, sheetNum, 'cells', parseRawCells);
-}
-
-// fetch as array of labeled columns
-function labeledCols(id) {
-  var sheetNum = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-
-  return fetchAndParse(id, sheetNum, 'list', parseLabeledCols);
-}
-
-// fetch as labeled map of labeled columns
-function labeledColsRows(id) {
-  var sheetNum = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-
-  return fetchAndParse(id, sheetNum, 'list', parseLabeledRowsCols);
-}
-
-exports.default = {
-  raw: raw,
-  labeledCols: labeledCols,
-  labeledColsRows: labeledColsRows
-};
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
-
-/***/ })
-/******/ ])["default"];
-});
-
-},{"fetch-jsonp":1}],3:[function(require,module,exports){
 //! moment.js
 
 ;(function (global, factory) {
@@ -4855,10 +4506,136 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
 })));
 
-},{}],4:[function(require,module,exports){
-const GetSheetDone = require('get-sheet-done');
+},{}],2:[function(require,module,exports){
+var gapi=window.gapi=window.gapi||{};gapi._bs=new Date().getTime();(function(){var g=function(){this.g=""};g.prototype.toString=function(){return"SafeScript{"+this.g+"}"};g.prototype.a=function(a){this.g=a};(new g).a("");var h=function(){this.j=""};h.prototype.toString=function(){return"SafeStyle{"+this.j+"}"};h.prototype.a=function(a){this.j=a};(new h).a("");var m=function(){this.i=""};m.prototype.toString=function(){return"SafeStyleSheet{"+this.i+"}"};m.prototype.a=function(a){this.i=a};(new m).a("");var n=function(){this.f=""};n.prototype.toString=function(){return"SafeHtml{"+this.f+"}"};n.prototype.a=function(a){this.f=a};(new n).a("<!DOCTYPE html>");(new n).a("");(new n).a("<br>");/*
+ gapi.loader.OBJECT_CREATE_TEST_OVERRIDE &&*/
+var q=window,v=document,aa=q.location,ba=function(){},ca=/\[native code\]/,x=function(a,b,c){return a[b]=a[b]||c},da=function(a){a=a.sort();for(var b=[],c=void 0,d=0;d<a.length;d++){var e=a[d];e!=c&&b.push(e);c=e}return b},y=function(){var a;if((a=Object.create)&&ca.test(a))a=a(null);else{a={};for(var b in a)a[b]=void 0}return a},D=x(q,"gapi",{});var E;E=x(q,"___jsl",y());x(E,"I",0);x(E,"hel",10);var F=function(){var a=aa.href;if(E.dpo)var b=E.h;else{b=E.h;var c=/([#].*&|[#])jsh=([^&#]*)/g,d=/([?#].*&|[?#])jsh=([^&#]*)/g;if(a=a&&(c.exec(a)||d.exec(a)))try{b=decodeURIComponent(a[2])}catch(e){}}return b},fa=function(a){var b=x(E,"PQ",[]);E.PQ=[];var c=b.length;if(0===c)a();else for(var d=0,e=function(){++d===c&&a()},f=0;f<c;f++)b[f](e)},G=function(a){return x(x(E,"H",y()),a,y())};var H=x(E,"perf",y()),K=x(H,"g",y()),ha=x(H,"i",y());x(H,"r",[]);y();y();var L=function(a,b,c){var d=H.r;"function"===typeof d?d(a,b,c):d.push([a,b,c])},N=function(a,b,c){b&&0<b.length&&(b=M(b),c&&0<c.length&&(b+="___"+M(c)),28<b.length&&(b=b.substr(0,28)+(b.length-28)),c=b,b=x(ha,"_p",y()),x(b,c,y())[a]=(new Date).getTime(),L(a,"_p",c))},M=function(a){return a.join("__").replace(/\./g,"_").replace(/\-/g,"_").replace(/,/g,"_")};var O=y(),R=[],S=function(a){throw Error("Bad hint"+(a?": "+a:""));};R.push(["jsl",function(a){for(var b in a)if(Object.prototype.hasOwnProperty.call(a,b)){var c=a[b];"object"==typeof c?E[b]=x(E,b,[]).concat(c):x(E,b,c)}if(b=a.u)a=x(E,"us",[]),a.push(b),(b=/^https:(.*)$/.exec(b))&&a.push("http:"+b[1])}]);var ia=/^(\/[a-zA-Z0-9_\-]+)+$/,T=[/\/amp\//,/\/amp$/,/^\/amp$/],ja=/^[a-zA-Z0-9\-_\.,!]+$/,ka=/^gapi\.loaded_[0-9]+$/,la=/^[a-zA-Z0-9,._-]+$/,pa=function(a,b,c,d){var e=a.split(";"),f=e.shift(),l=O[f],k=null;l?k=l(e,b,c,d):S("no hint processor for: "+f);k||S("failed to generate load url");b=k;c=b.match(ma);(d=b.match(na))&&1===d.length&&oa.test(b)&&c&&1===c.length||S("failed sanity: "+a);return k},ra=function(a,b,c,d){a=qa(a);ka.test(c)||S("invalid_callback");b=U(b);d=d&&d.length?U(d):null;var e=
+function(f){return encodeURIComponent(f).replace(/%2C/g,",")};return[encodeURIComponent(a.pathPrefix).replace(/%2C/g,",").replace(/%2F/g,"/"),"/k=",e(a.version),"/m=",e(b),d?"/exm="+e(d):"","/rt=j/sv=1/d=1/ed=1",a.b?"/am="+e(a.b):"",a.l?"/rs="+e(a.l):"",a.o?"/t="+e(a.o):"","/cb=",e(c)].join("")},qa=function(a){"/"!==a.charAt(0)&&S("relative path");for(var b=a.substring(1).split("/"),c=[];b.length;){a=b.shift();if(!a.length||0==a.indexOf("."))S("empty/relative directory");else if(0<a.indexOf("=")){b.unshift(a);
+break}c.push(a)}a={};for(var d=0,e=b.length;d<e;++d){var f=b[d].split("="),l=decodeURIComponent(f[0]),k=decodeURIComponent(f[1]);2==f.length&&l&&k&&(a[l]=a[l]||k)}b="/"+c.join("/");ia.test(b)||S("invalid_prefix");c=0;for(d=T.length;c<d;++c)T[c].test(b)&&S("invalid_prefix");c=V(a,"k",!0);d=V(a,"am");e=V(a,"rs");a=V(a,"t");return{pathPrefix:b,version:c,b:d,l:e,o:a}},U=function(a){for(var b=[],c=0,d=a.length;c<d;++c){var e=a[c].replace(/\./g,"_").replace(/-/g,"_");la.test(e)&&b.push(e)}return b.join(",")},
+V=function(a,b,c){a=a[b];!a&&c&&S("missing: "+b);if(a){if(ja.test(a))return a;S("invalid: "+b)}return null},oa=/^https?:\/\/[a-z0-9_.-]+\.google(rs)?\.com(:\d+)?\/[a-zA-Z0-9_.,!=\-\/]+$/,na=/\/cb=/g,ma=/\/\//g,sa=function(){var a=F();if(!a)throw Error("Bad hint");return a};O.m=function(a,b,c,d){(a=a[0])||S("missing_hint");return"https://apis.google.com"+ra(a,b,c,d)};var W=decodeURI("%73cript"),X=/^[-+_0-9\/A-Za-z]+={0,2}$/,Y=function(a,b){for(var c=[],d=0;d<a.length;++d){var e=a[d],f;if(f=e){a:{for(f=0;f<b.length;f++)if(b[f]===e)break a;f=-1}f=0>f}f&&c.push(e)}return c},Z=function(){var a=E.nonce;return void 0!==a?a&&a===String(a)&&a.match(X)?a:E.nonce=null:v.querySelector?(a=v.querySelector("script[nonce]"))?(a=a.nonce||a.getAttribute("nonce")||"",a&&a===String(a)&&a.match(X)?E.nonce=a:E.nonce=null):null:null},ua=function(a){if("loading"!=v.readyState)ta(a);
+else{var b=Z(),c="";null!==b&&(c=' nonce="'+b+'"');v.write("<"+W+' src="'+encodeURI(a)+'"'+c+"></"+W+">")}},ta=function(a){var b=v.createElement(W);b.setAttribute("src",a);a=Z();null!==a&&b.setAttribute("nonce",a);b.async="true";(a=v.getElementsByTagName(W)[0])?a.parentNode.insertBefore(b,a):(v.head||v.body||v.documentElement).appendChild(b)},va=function(a,b){var c=b&&b._c;if(c)for(var d=0;d<R.length;d++){var e=R[d][0],f=R[d][1];f&&Object.prototype.hasOwnProperty.call(c,e)&&f(c[e],a,b)}},xa=function(a,
+b,c){wa(function(){var d=b===F()?x(D,"_",y()):y();d=x(G(b),"_",d);a(d)},c)},za=function(a,b){var c=b||{};"function"==typeof b&&(c={},c.callback=b);va(a,c);b=a?a.split(":"):[];var d=c.h||sa(),e=x(E,"ah",y());if(e["::"]&&b.length){a=[];for(var f=null;f=b.shift();){var l=f.split(".");l=e[f]||e[l[1]&&"ns:"+l[0]||""]||d;var k=a.length&&a[a.length-1]||null,w=k;k&&k.hint==l||(w={hint:l,c:[]},a.push(w));w.c.push(f)}var z=a.length;if(1<z){var A=c.callback;A&&(c.callback=function(){0==--z&&A()})}for(;b=a.shift();)ya(b.c,
+c,b.hint)}else ya(b||[],c,d)},ya=function(a,b,c){a=da(a)||[];var d=b.callback,e=b.config,f=b.timeout,l=b.ontimeout,k=b.onerror,w=void 0;"function"==typeof k&&(w=k);var z=null,A=!1;if(f&&!l||!f&&l)throw"Timeout requires both the timeout parameter and ontimeout parameter to be set";k=x(G(c),"r",[]).sort();var P=x(G(c),"L",[]).sort(),I=[].concat(k),ea=function(u,B){if(A)return 0;q.clearTimeout(z);P.push.apply(P,p);var C=((D||{}).config||{}).update;C?C(e):e&&x(E,"cu",[]).push(e);if(B){N("me0",u,I);try{xa(B,
+c,w)}finally{N("me1",u,I)}}return 1};0<f&&(z=q.setTimeout(function(){A=!0;l()},f));var p=Y(a,P);if(p.length){p=Y(a,k);var r=x(E,"CP",[]),t=r.length;r[t]=function(u){if(!u)return 0;N("ml1",p,I);var B=function(J){r[t]=null;ea(p,u)&&fa(function(){d&&d();J()})},C=function(){var J=r[t+1];J&&J()};0<t&&r[t-1]?r[t]=function(){B(C)}:B(C)};if(p.length){var Q="loaded_"+E.I++;D[Q]=function(u){r[t](u);D[Q]=null};a=pa(c,p,"gapi."+Q,k);k.push.apply(k,p);N("ml0",p,I);b.sync||q.___gapisync?ua(a):ta(a)}else r[t](ba)}else ea(p)&&
+d&&d()};var wa=function(a,b){if(E.hee&&0<E.hel)try{return a()}catch(c){b&&b(c),E.hel--,za("debug_error",function(){try{window.___jsl.hefn(c)}catch(d){throw c;}})}else try{return a()}catch(c){throw b&&b(c),c;}};D.load=function(a,b){return wa(function(){return za(a,b)})};K.bs0=window.gapi._bs||(new Date).getTime();L("bs0");K.bs1=(new Date).getTime();L("bs1");delete window.gapi._bs;}).call(this);
+gapi.load("",{callback:window["gapi_onload"],_c:{"jsl":{"ci":{"deviceType":"desktop","oauth-flow":{"authUrl":"https://accounts.google.com/o/oauth2/auth","proxyUrl":"https://accounts.google.com/o/oauth2/postmessageRelay","disableOpt":true,"idpIframeUrl":"https://accounts.google.com/o/oauth2/iframe","usegapi":false},"debug":{"reportExceptionRate":0.05,"forceIm":false,"rethrowException":false,"host":"https://apis.google.com"},"enableMultilogin":true,"googleapis.config":{"auth":{"useFirstPartyAuthV2":true}},"isPlusUser":false,"inline":{"css":1},"disableRealtimeCallback":false,"drive_share":{"skipInitCommand":true},"csi":{"rate":0.01},"client":{"cors":false},"isLoggedIn":true,"signInDeprecation":{"rate":0.0},"include_granted_scopes":true,"llang":"en","iframes":{"youtube":{"params":{"location":["search","hash"]},"url":":socialhost:/:session_prefix:_/widget/render/youtube?usegapi\u003d1","methods":["scroll","openwindow"]},"ytsubscribe":{"url":"https://www.youtube.com/subscribe_embed?usegapi\u003d1"},"plus_circle":{"params":{"url":""},"url":":socialhost:/:session_prefix::se:_/widget/plus/circle?usegapi\u003d1"},"plus_share":{"params":{"url":""},"url":":socialhost:/:session_prefix::se:_/+1/sharebutton?plusShare\u003dtrue\u0026usegapi\u003d1"},"rbr_s":{"params":{"url":""},"url":":socialhost:/:session_prefix::se:_/widget/render/recobarsimplescroller"},":source:":"3p","playemm":{"url":"https://play.google.com/work/embedded/search?usegapi\u003d1\u0026usegapi\u003d1"},"savetoandroidpay":{"url":"https://pay.google.com/gp/v/widget/save"},"blogger":{"params":{"location":["search","hash"]},"url":":socialhost:/:session_prefix:_/widget/render/blogger?usegapi\u003d1","methods":["scroll","openwindow"]},"evwidget":{"params":{"url":""},"url":":socialhost:/:session_prefix:_/events/widget?usegapi\u003d1"},"partnersbadge":{"url":"https://www.gstatic.com/partners/badge/templates/badge.html?usegapi\u003d1"},"dataconnector":{"url":"https://dataconnector.corp.google.com/:session_prefix:ui/widgetview?usegapi\u003d1"},"surveyoptin":{"url":"https://www.google.com/shopping/customerreviews/optin?usegapi\u003d1"},":socialhost:":"https://apis.google.com","shortlists":{"url":""},"hangout":{"url":"https://talkgadget.google.com/:session_prefix:talkgadget/_/widget"},"plus_followers":{"params":{"url":""},"url":":socialhost:/_/im/_/widget/render/plus/followers?usegapi\u003d1"},"post":{"params":{"url":""},"url":":socialhost:/:session_prefix::im_prefix:_/widget/render/post?usegapi\u003d1"},":gplus_url:":"https://plus.google.com","signin":{"params":{"url":""},"url":":socialhost:/:session_prefix:_/widget/render/signin?usegapi\u003d1","methods":["onauth"]},"rbr_i":{"params":{"url":""},"url":":socialhost:/:session_prefix::se:_/widget/render/recobarinvitation"},"donation":{"url":"https://onetoday.google.com/home/donationWidget?usegapi\u003d1"},"share":{"url":":socialhost:/:session_prefix::im_prefix:_/widget/render/share?usegapi\u003d1"},"plusone":{"params":{"count":"","size":"","url":""},"url":":socialhost:/:session_prefix::se:_/+1/fastbutton?usegapi\u003d1"},"comments":{"params":{"location":["search","hash"]},"url":":socialhost:/:session_prefix:_/widget/render/comments?usegapi\u003d1","methods":["scroll","openwindow"]},":im_socialhost:":"https://plus.googleapis.com","backdrop":{"url":"https://clients3.google.com/cast/chromecast/home/widget/backdrop?usegapi\u003d1"},"visibility":{"params":{"url":""},"url":":socialhost:/:session_prefix:_/widget/render/visibility?usegapi\u003d1"},"autocomplete":{"params":{"url":""},"url":":socialhost:/:session_prefix:_/widget/render/autocomplete"},"additnow":{"url":"https://apis.google.com/marketplace/button?usegapi\u003d1","methods":["launchurl"]},":signuphost:":"https://plus.google.com","ratingbadge":{"url":"https://www.google.com/shopping/customerreviews/badge?usegapi\u003d1"},"appcirclepicker":{"url":":socialhost:/:session_prefix:_/widget/render/appcirclepicker"},"follow":{"url":":socialhost:/:session_prefix:_/widget/render/follow?usegapi\u003d1"},"community":{"url":":ctx_socialhost:/:session_prefix::im_prefix:_/widget/render/community?usegapi\u003d1"},"sharetoclassroom":{"url":"https://www.gstatic.com/classroom/sharewidget/widget_stable.html?usegapi\u003d1"},"ytshare":{"params":{"url":""},"url":":socialhost:/:session_prefix:_/widget/render/ytshare?usegapi\u003d1"},"plus":{"url":":socialhost:/:session_prefix:_/widget/render/badge?usegapi\u003d1"},"family_creation":{"params":{"url":""},"url":"https://families.google.com/webcreation?usegapi\u003d1\u0026usegapi\u003d1"},"commentcount":{"url":":socialhost:/:session_prefix:_/widget/render/commentcount?usegapi\u003d1"},"configurator":{"url":":socialhost:/:session_prefix:_/plusbuttonconfigurator?usegapi\u003d1"},"zoomableimage":{"url":"https://ssl.gstatic.com/microscope/embed/"},"appfinder":{"url":"https://gsuite.google.com/:session_prefix:marketplace/appfinder?usegapi\u003d1"},"savetowallet":{"url":"https://pay.google.com/gp/v/widget/save"},"person":{"url":":socialhost:/:session_prefix:_/widget/render/person?usegapi\u003d1"},"savetodrive":{"url":"https://drive.google.com/savetodrivebutton?usegapi\u003d1","methods":["save"]},"page":{"url":":socialhost:/:session_prefix:_/widget/render/page?usegapi\u003d1"},"card":{"url":":socialhost:/:session_prefix:_/hovercard/card"}}},"h":"m;/_/scs/apps-static/_/js/k\u003doz.gapi.en.XKxA9WxHrjk.O/am\u003dwQE/d\u003d1/rs\u003dAGLTcCO_NeBtFu48h00i0WzHPVbD_sr6Pw/m\u003d__features__","u":"https://apis.google.com/js/api.js","hee":true,"fp":"d71d4d8659d44e76a8cc3141502fe4734094f89d","dpo":false},"fp":"d71d4d8659d44e76a8cc3141502fe4734094f89d","annotation":["interactivepost","recobar","signin2","autocomplete","profile"],"bimodal":["signin","share"]}});
+},{}],3:[function(require,module,exports){
+// const GetSheetDone = require('get-sheet-done');
 const moment = require('moment');
-GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
+const api = require('./api.js');
+
+// Client ID and API key from the Developer Console
+var CLIENT_ID = '1007112818313-kmg9btri07fnska7gb6l16eiue9rffj0.apps.googleusercontent.com';
+var API_KEY = 'AIzaSyAAFj5VWy_C91CluJnVyMs8rmub9_v8dF8';
+
+// Array of API discovery doc URLs for APIs used by the quickstart
+var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
+
+// Authorization scopes required by the API; multiple scopes can be
+// included, separated by spaces.
+var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+
+var authorizeButton = document.getElementById('authorize_button');
+var signoutButton = document.getElementById('signout_button');
+
+var sheet = [];
+var headers = [];
+/**
+ *  On load, called to load the auth2 library and API client library.
+ */
+gapi.load('client:auth2', initClient);
+
+
+/**
+ *  Initializes the API client library and sets up sign-in state
+ *  listeners.
+ */
+function initClient() {
+  gapi.client.init({
+    apiKey: API_KEY,
+    clientId: CLIENT_ID,
+    discoveryDocs: DISCOVERY_DOCS,
+    scope: SCOPES
+  }).then(function () {
+    // Listen for sign-in state changes.
+    gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+    // Handle the initial sign-in state.
+    updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+    // authorizeButton.onclick = handleAuthClick;
+    // signoutButton.onclick = handleSignoutClick;
+  }, function(error) {
+    appendPre(JSON.stringify(error, null, 2));
+  });
+  console.log('init');
+  console.log(gapi.client);
+
+
+}
+
+
+
+/**
+ *  Called when the signed in status changes, to update the UI
+ *  appropriately. After a sign-in, the API is called.
+ */
+function updateSigninStatus(isSignedIn) {
+  if (isSignedIn) {
+    // authorizeButton.style.display = 'none';
+  //  signoutButton.style.display = 'block';
+    listMajors();
+  } else {
+    // authorizeButton.style.display = 'block';
+    // signoutButton.style.display = 'none';
+  }
+}
+
+/**
+ *  Sign in the user upon button click.
+ */
+// function handleAuthClick(event) {
+//   gapi.auth2.getAuthInstance().signIn();
+// }
+
+/**
+ *  Sign out the user upon button click.
+ */
+// function handleSignoutClick(event) {
+//   gapi.auth2.getAuthInstance().signOut();
+// }
+
+// /**
+//  * Append a pre element to the body containing the given message
+//  * as its text node. Used to display the results of the API call.
+//  *
+//  * @param {string} message Text to be placed in pre element.
+//  */
+// function appendPre(message) {
+//   var pre = document.getElementById('content');
+//   var textContent = document.createTextNode(message + '\n');
+//   pre.appendChild(textContent);
+// }
+
+/**
+ * Print the names and majors of students in a sample spreadsheet:
+ * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+ */
+function listMajors() {
+  gapi.client.sheets.spreadsheets.values.get({
+    spreadsheetId: '120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc',
+    range: 'A1:Z20',
+    // majorDimension: "COLUMNS",
+  }).then(function(response) {
+    sheet = response.result.values;
+
+
+  }, function(response) {
+    appendPre('Error: ' + response.result.error.message);
+  });
+
+}
+
+// GetSheetDone.labeledCols('1lvG1lGsKc2x5r1a5C9_sihymy9SGswBUoJElxjJpLP4').then(sheet => generateSchedule(sheet));
 const classNumbers = {
   "8:00":"1",
   "9:40":"2",
@@ -4871,30 +4648,33 @@ const classNumbers = {
 let firstHalf = true;
 let firstHalfReverse = false;
 
+
 document.querySelector('.date').innerHTML = moment().format('dddd DD/MM, H:mm');
 function generateSchedule(sheet){
-  let data = sheet.data;
-  console.log(data);
-  let delimiterPosition = data[0].indexOf
+  let data = sheet;
+  //let delimiterPosition = headers[0].indexOf
   // if(!moment().isBefore(moment(data[0].changetime, 'HH:mm'))){firstHalf = false;}
   // console.log(sheet)
-  let dataToArray = Object.getOwnPropertyNames(data[0]);
   let currentHalf;
-  let indexOfDelimiter = dataToArray.indexOf('changetime');
+  let indexOfDelimiter;
+  if (data) indexOfDelimiter = data[0].indexOf('changetime');
+
   if (firstHalf){
-    currentHalf = dataToArray.splice(0,indexOfDelimiter)
+    countStart = 0;
+    countEnd = indexOfDelimiter;
   }
-  else { currentHalf = dataToArray.splice(indexOfDelimiter+1) }
+  else { countStart = indexOfDelimiter + 1; countEnd = data[0].length}
   let rows = document.querySelectorAll('.row');
   for (let t=0;t<rows.length;t++){
     document.querySelector(".table").deleteRow(0);
   }
-  for (let k=0;k<currentHalf.length;k++){
+  for (let k=countStart;k<countEnd;k++){
     let row = document.createElement('tr');
     row.classList.add('row');
     let timeEntry = document.createElement('td');
-    timeEntry.innerHTML = data[0][currentHalf[k]].replace(/-/g,'–').replace(/—/g,' – ').replace(/–/g,' – ');;
-    let timeEntryStart = data[0][currentHalf[k]].split('–')[0];
+    
+    timeEntry.innerHTML = data[1][k].replace(/-/g,'–').replace(/—/g,' – ').replace(/–/g,' – ');
+    let timeEntryStart = data[1][k].split('–')[0];
     let classNumber = document.createElement('td');
     let classNumberSpan = document.createElement('span');
     classNumberSpan.classList.add('classNumberSpan');
@@ -4919,8 +4699,8 @@ function generateSchedule(sheet){
 
     let cell = document.createElement('td');
     cell.classList.add('classes');
-    for (let i=1;i<data.length;i++){
-      let entryText = data[i][currentHalf[k]];
+    for (let i=2;i<data.length;i++){
+      let entryText = data[i][k];
       if(entryText){
       entryText = entryText.split('(');
       let title = document.createElement('span');
@@ -4956,14 +4736,14 @@ function generateSchedule(sheet){
 
   var announcementContainer = document.querySelector('.flex-container-img');
 
-  if((moment().format('mm')%10 === 5 && moment().format('ss')<=32) && data['1'].changetime.length > 1){
-    if (data['1'].changetime) document.querySelector('.announcement').src = data['1'].changetime;
+  if((moment().format('mm')%10 === 5 && moment().format('ss')<=32) && headers[0].indexOf('changetime') > -1){
+    if (headers[0].indexOf('changetime') > -1) document.querySelector('.announcement').src = data['1'][k];
     announcementContainer.style.opacity = '1';
     firstHalfReverse = false;
   }
-  else if((moment().format('mm')%10 === 0 && moment().format('ss')<=32) && data['2'].changetime.length > 1){
-    if (data['2'].changetime) document.querySelector('.announcement').src = data['2'].changetime;
-    else if (data['1'].changetime) document.querySelector('.announcement').src = data['1'].changetime;
+  else if((moment().format('mm')%10 === 0 && moment().format('ss')<=32) && data['2'][k].length > 1){
+    if (data['2'][k]) document.querySelector('.announcement').src = data['2'][k];
+    else if (data['1'][k]) document.querySelector('.announcement').src = data['1'][k];
 
     announcementContainer.style.opacity = '1';
     firstHalfReverse = true;
@@ -4978,6 +4758,7 @@ function generateSchedule(sheet){
   else {
     !firstHalfReverse ? firstHalf = false : firstHalf = true;
   }
+
 
 
   // for (let i=1;i<data.length;i++){
@@ -4997,9 +4778,10 @@ function generateSchedule(sheet){
     // document.querySelectorAll('.row')[k].appendChild(cell);
   // }
 }
+
 setInterval(function(){
-  GetSheetDone.labeledCols('120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc').then(sheet => generateSchedule(sheet));
-}, 20000);
+  generateSchedule(sheet);
+}, 2000);
 
 // var justHidden = false;
 // var j;
@@ -5021,4 +4803,4 @@ setInterval(function(){
 //   }
 // });
 
-},{"get-sheet-done":2,"moment":3}]},{},[4]);
+},{"./api.js":2,"moment":1}]},{},[3]);
