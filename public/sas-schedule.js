@@ -47,10 +47,6 @@ function initClient() {
   }, function(error) {
     console.log(error);
   });
-  console.log('init');
-  console.log(gapi.client);
-
-
 }
 
 
@@ -106,7 +102,6 @@ function listMajors() {
     range: 'A1:Z20',
     // majorDimension: "COLUMNS",
   }).then(function(response) {
-    console.log(response.result.values);
     sheet = response.result.values;
 
 
@@ -217,21 +212,21 @@ function generateSchedule(sheet){
 
   var announcementContainer = document.querySelector('.flex-container-img');
 
-  // // if((moment().format('mm')%10 === 5 && moment().format('ss')<=32) && headers[0].indexOf('changetime') > -1){
-  // //   if (headers[0].indexOf('changetime') > -1) document.querySelector('.announcement').src = data['1'][k];
-  // //   announcementContainer.style.opacity = '1';
-  // //   firstHalfReverse = false;
-  // // }
-  // // else if((moment().format('mm')%10 === 0 && moment().format('ss')<=32) && data['2'][k].length > 1){
-  // //   if (data['2'][k]) document.querySelector('.announcement').src = data['2'][k];
-  // //   else if (data['1'][k]) document.querySelector('.announcement').src = data['1'][k];
-  //
-  //   announcementContainer.style.opacity = '1';
-  //   firstHalfReverse = true;
-  // }
-  // else {
-  //   announcementContainer.style.opacity = '0';
-  // }
+  if((moment().format('mm')%10 === 5 && moment().format('ss')<=32) && indexOfDelimiter > -1){
+    if (indexOfDelimiter > -1)  document.querySelector('.announcement').src = data['1'][indexOfDelimiter];
+    announcementContainer.style.opacity = '1';
+    firstHalfReverse = false;
+  }
+  else if((moment().format('mm')%10 === 0 && moment().format('ss')<=32) && data['2'][indexOfDelimiter].length > 1){
+    if (data['2'][indexOfDelimiter]) document.querySelector('.announcement').src = data['2'][indexOfDelimiter];
+    else if (data['1'][indexOfDelimiter]) document.querySelector('.announcement').src = data['1'][indexOfDelimiter];
+
+    announcementContainer.style.opacity = '1';
+    firstHalfReverse = true;
+  }
+  else {
+    announcementContainer.style.opacity = '0';
+  }
 
   if(moment().format('ss')<=30){
     !firstHalfReverse ? firstHalf = true : firstHalf = false;
@@ -262,7 +257,7 @@ function generateSchedule(sheet){
 
 setInterval(function(){
   generateSchedule(sheet);
-}, 2000);
+}, 5000);
 
 // var justHidden = false;
 // var j;
