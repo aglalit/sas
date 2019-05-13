@@ -212,8 +212,9 @@ function generateSchedule(sheet){
 
   var announcementContainer = document.querySelector('.flex-container-img');
 
-  if((moment().format('mm')%10 === 5 && moment().format('ss')<=32) && indexOfDelimiter > -1){
-    if (indexOfDelimiter > -1)  document.querySelector('.announcement').src = data['1'][indexOfDelimiter];
+  if((moment().format('mm')%10 === 5 && moment().format('ss')<=32) && data['1'][indexOfDelimiter].length > 1){
+    if (data['1'][indexOfDelimiter]) document.querySelector('.announcement').src = data['1'][indexOfDelimiter];
+    else if (data['2'][indexOfDelimiter]) document.querySelector('.announcement').src = data['2'][indexOfDelimiter];
     announcementContainer.style.opacity = '1';
     firstHalfReverse = false;
   }
