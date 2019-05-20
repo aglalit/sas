@@ -4649,6 +4649,7 @@ let firstHalfReverse = false;
 
 document.querySelector('.date').innerHTML = moment().format('dddd DD/MM, H:mm');
 function generateSchedule(sheet){
+  listMajors();
   let data = sheet;
   //let delimiterPosition = headers[0].indexOf
   // if(!moment().isBefore(moment(data[0].changetime, 'HH:mm'))){firstHalf = false;}
