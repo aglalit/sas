@@ -26,9 +26,9 @@ app.post('/polls/ba-2019-year2-module8-gb', function(req, res) {
 
       for (let i=0;i<bodyKeys.length;i++){
         emailBody += '<p><b>' + bodyKeys[i] + '</b>: ' + req.body[bodyKeys[i]] + '</p>';
-        user.polls.ba_2019_year2_module8_gb[bodyKeys[i]] = req.body[bodyKeys[i]];
+        // user.polls.ba_2019_year2_module8_gb[bodyKeys[i]] = req.body[bodyKeys[i]];
       }
-
+      user.polls.ba_2019_year2_module8_gb = JSON.stringify(req.body);
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
         to: 'm.agliulin@utmn.ru', // list of receivers
