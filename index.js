@@ -20,6 +20,7 @@ const flash = require('connect-flash');
 var index = require('./routes/index');
 var User = require('./models/user');
 var Session = require('./models/session');
+var UserAnonymous = require('./models/user_anonymous');
 
 var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", {useMongoClient: true});
 
@@ -196,6 +197,8 @@ require('./server/majors.js')(app, Session, transporter, isLoggedIn, User);
 
 require('./server/registration-list.js')(app, Session, transporter);
 
+// 4th MODULE ma_2019_wolf
+require('./server/ba_2019_year2_module8_electives2.js')(app, User, isLoggedIn, transporter);
 
 
 
