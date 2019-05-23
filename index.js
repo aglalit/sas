@@ -198,7 +198,7 @@ require('./server/majors.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/registration-list.js')(app, Session, transporter);
 
 // 4th MODULE ma_2019_wolf
-require('./server/ba_2019_year2_module8_gb.js')(app, User, isLoggedIn, transporter);
+require('./server/ba_2019_year2_module8_gb.js')(app, UserAnonymous, isLoggedIn, transporter);
 
 
 
