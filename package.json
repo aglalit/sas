@@ -23,7 +23,6 @@
     "express-fileupload": "^1.1.1-alpha.1",
     "express-session": "^1.15.6",
     "express-subdomain": "^1.0.5",
-    "get-sheet-done": "^0.1.4",
     "moment": "^2.22.2",
     "mongoose": "^4.11.14",
     "morgan": "~1.7.0",
@@ -34,6 +33,7 @@
     "passport-google-oauth20": "^1.0.0",
     "passport-local": "^1.0.0",
     "pug": "^2.0.0-rc.3",
+    "request": "^2.88.0",
     "serve-favicon": "~2.3.0",
     "x-frame-options": "^1.0.0"
   },

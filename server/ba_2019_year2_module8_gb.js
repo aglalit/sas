@@ -1,5 +1,7 @@
 module.exports = function(app, Session, transporter, isLoggedIn, UserAnonymous){
 
+const request = require('request');
+
 app.get('/polls/ba-2019-year2-module8-gb', isLoggedIn, function(req, res) {
   res.render('ba-2019-year2-module8-gb', {user: req.user})
 });
