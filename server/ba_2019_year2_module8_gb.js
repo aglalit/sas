@@ -4,7 +4,7 @@ app.get('/polls/ba-2019-year2-module8-gb', function(req, res) {
   res.render('ba-2019-year2-module8-gb', {user: req.user})
 });
 
-app.post('/polls/electives-2019-2-2nd-year', function(req, res) {
+app.post('/polls/ba-2019-year2-module8-gb', function(req, res) {
   UserAnonymous.findOne({
     '_id': req.user._id
   }, function(err, user) {
