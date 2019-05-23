@@ -5,7 +5,7 @@ app.get('/polls/ba-2019-year2-module8-gb', function(req, res) {
 });
 
 app.post('/polls/electives-2019-2-2nd-year', function(req, res) {
-  User.findOne({
+  UserAnonymous.findOne({
     '_id': req.user._id
   }, function(err, user) {
     if (err)
