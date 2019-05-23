@@ -58,5 +58,5 @@ app.post('/polls/electives-2019-2-2nd-year', function(req, res) {
       return;
     });
   }
-}
+});
 }
