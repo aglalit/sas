@@ -21,10 +21,14 @@ app.post('/polls/ba-2019-year2-module8-gb', function(req, res) {
     // });
       let emailBody = '';
       var bodyKeys = Object.keys(req.body);
+      console.log(user);
+      console.log(user.polls);
+      
       for (let i=0;i<bodyKeys.length;i++){
         emailBody += '<p><b>' + bodyKeys[i] + '</b>: ' + req.body[bodyKeys[i]] + '</p>';
         user.polls.ba_2019_year2_module8_gb[bodyKeys[i]] = req.body[bodyKeys[i]];
       }
+
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
         to: 'm.agliulin@utmn.ru', // list of receivers
@@ -38,6 +42,7 @@ app.post('/polls/ba-2019-year2-module8-gb', function(req, res) {
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
       });
+      user.markModified('polls.ba_2019_year2_module8_gb');
       user.save(function(err) {
         if (err)
           return console.error(err);
@@ -54,8 +59,6 @@ app.post('/polls/ba-2019-year2-module8-gb', function(req, res) {
     }
   });
   req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; 4th priority — ${req.body["elective4"]}; ELECTIVE 2: 1st priority — ${req.body["elective5"]}; 2nd priority — ${req.body["elective6"]}; 3rd priority — ${req.body["elective7"]}; 4th priority — ${req.body["elective8"]};). In case of mistake, you can make your choice again. Thanks for participation ( ͡° ͜ʖ ͡°)`);
-  function parseSession (sess, req, transporter){
 
-  }
 });
 }
