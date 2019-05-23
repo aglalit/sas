@@ -42,7 +42,6 @@ app.post('/polls/ba-2019-year2-module8-gb', function(req, res) {
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
       });
-      user.markModified('polls.ba_2019_year2_module8_gb');
       user.save(function(err) {
         if (err)
           return console.error(err);
@@ -58,7 +57,7 @@ app.post('/polls/ba-2019-year2-module8-gb', function(req, res) {
       console.log('There isn\'t such user in the database');
     }
   });
-  req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; 4th priority — ${req.body["elective4"]}; ELECTIVE 2: 1st priority — ${req.body["elective5"]}; 2nd priority — ${req.body["elective6"]}; 3rd priority — ${req.body["elective7"]}; 4th priority — ${req.body["elective8"]};). In case of mistake, you can make your choice again. Thanks for participation ( ͡° ͜ʖ ͡°)`);
+  req.flash('info', `${JSON.stringify(req.body))}. In case of mistake, you can make your choice again. Thanks for participation ( ͡° ͜ʖ ͡°)`);
 
 });
 }
