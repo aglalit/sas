@@ -1,4 +1,4 @@
-module.exports = function(app, Session, transporter){
+module.exports = function(app, Session, transporter, isLoggedIn, UserAnonymous){
 
 app.get('/polls/ba-2019-year2-module8-gb', function(req, res) {
   res.render('ba-2019-year2-module8-gb', {user: req.user})
