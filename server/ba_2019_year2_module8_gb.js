@@ -25,7 +25,7 @@ app.post('/polls/ba-2019-year2-module8-gb', function(req, res) {
     // });
       request('https://oauth2.googleapis.com/tokeninfo?id_token='+user.google.token, function (error, response, body) {
           if (!error && response.statusCode == 200) {
-            console.log('google response: ', body.name);
+            console.log('google response: ', JSON.stringify(body));
       }
       });
 
