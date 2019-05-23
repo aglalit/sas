@@ -12,15 +12,23 @@ app.post('/polls/ba-2019-year2-module8-gb', function(req, res) {
       return done(err);
 
     if (user) {
-      var now = new Date();
+      let now = new Date();
+      let name;
+      let email;
     //   var keyNames = Object.keys(req.body);
     //   keyNames.forEach((el)=>{
     //     console.log(req.body[el]);
     //
     //       sess.polls.ba_2018_year2_the_city_as_text[el] = req.body[el];
     // });
+      request('https://oauth2.googleapis.com/tokeninfo?id_token='+user.google.token, function (error, response, body) {
+          if (!error && response.statusCode == 200) {
+            console.log(body.name);
+      }
+      });
+
       let emailBody = '';
-      var bodyKeys = Object.keys(req.body);
+      let bodyKeys = Object.keys(req.body);
       console.log(user);
       console.log(user.polls);
 
