@@ -27,6 +27,10 @@ app.post('/polls/ba-2019-year2-module8-gb', function(req, res) {
           if (!error && response.statusCode == 200) {
             console.log('google response: ', JSON.stringify(body));
       }
+      else {
+          console.log(error);
+          console.log(response.statusCode);
+      }
       });
 
       let emailBody = '';
