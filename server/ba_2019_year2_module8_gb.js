@@ -57,7 +57,7 @@ app.post('/polls/ba-2019-year2-module8-gb', function(req, res) {
       console.log('There isn\'t such user in the database');
     }
   });
-  req.flash('info', `${JSON.stringify(req.body))}. In case of mistake, you can make your choice again. Thanks for participation ( ͡° ͜ʖ ͡°)`);
+  req.flash('info', `${JSON.stringify(req.body)}. In case of mistake, you can make your choice again. Thanks for participation ( ͡° ͜ʖ ͡°)`);
 
 });
 }
