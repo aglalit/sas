@@ -9,7 +9,7 @@ var userSchema = mongoose.Schema({
     token: String
   },
   polls: {
-      ba_2019_year2_module8_gb: String
+      ba_2019_year2_module8_gb: Schema.Types.Mixed
   }
 },{ strict: false });
 
