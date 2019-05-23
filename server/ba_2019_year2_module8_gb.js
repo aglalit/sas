@@ -1,6 +1,6 @@
 module.exports = function(app, Session, transporter, isLoggedIn, UserAnonymous){
 
-app.get('/polls/ba-2019-year2-module8-gb', function(req, res) {
+app.get('/polls/ba-2019-year2-module8-gb', isLoggedIn, function(req, res) {
   res.render('ba-2019-year2-module8-gb', {user: req.user})
 });
 
@@ -23,7 +23,7 @@ app.post('/polls/ba-2019-year2-module8-gb', function(req, res) {
       var bodyKeys = Object.keys(req.body);
       console.log(user);
       console.log(user.polls);
-      
+
       for (let i=0;i<bodyKeys.length;i++){
         emailBody += '<p><b>' + bodyKeys[i] + '</b>: ' + req.body[bodyKeys[i]] + '</p>';
         user.polls.ba_2019_year2_module8_gb[bodyKeys[i]] = req.body[bodyKeys[i]];
