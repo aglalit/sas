@@ -10,9 +10,8 @@ var userSchema = mongoose.Schema({
   },
   polls: {
       ba_2019_year2_module8_gb: String
-  },
-  { strict: false }
-});
+  }
+},{ strict: false });
 
 // methods ======================
 // generating a hash
