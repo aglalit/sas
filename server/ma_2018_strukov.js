@@ -4,6 +4,7 @@ app.get('/polls/ma-2018-strukov', function(req, res) {
   res.render('ma-2018-strukov', {user: req.user})
 });
 
+
 app.post('/polls/ma-2018-strukov', function(req, res) {
   Session.findOne({
     'session_id': req.session.id
