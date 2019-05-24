@@ -67,6 +67,8 @@ module.exports = function(app, Session, transporter, isLoggedIn, User, logger) {
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           logger.error(error);
+          logger.error(mailOptions.subject);
+          logger.error(mailOptions.html);
           return console.log(error);
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
@@ -81,6 +83,8 @@ module.exports = function(app, Session, transporter, isLoggedIn, User, logger) {
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           logger.error(error);
+          logger.error(mailOptions.subject);
+          logger.error(mailOptions.html);
           return console.log(error);
         }
         console.log('Message %s sent: %s', info.messageId, info.response);

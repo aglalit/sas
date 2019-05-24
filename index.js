@@ -40,7 +40,13 @@ const logger = winston.createLogger({
 });
 logger.error('Error log:');
 
-var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", {useMongoClient: true});
+var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", {useMongoClient: true}, function(err) {
+    if (err) {
+      logger.error(err);
+      console.log(err);
+
+    }
+});
 
 // Connection URL
 var url = "mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas";
@@ -50,8 +56,12 @@ const GOOGLE_CLIENT_SECRET = "wumdeuRozgysj238MJtBy5kg";
 var db = mongoose.connection;
 
 promise.then(function(db) {
-  db.on('error', console.error.bind(console, 'connection error:'));
+  db.on('error', function(error){
+    logger.error(error);
+    console.error.bind(console, 'connection error:')
+  });
   db.on('open', function() {
+    logger.error('Mongo is connected');
     console.log('Mongo is connected');
   });
 });
@@ -214,6 +224,8 @@ require('./server/ba_2019_year2_module7_electives2.js')(app, Session, transporte
 require('./server/majors.js')(app, Session, transporter, isLoggedIn, User);
 
 require('./server/registration-list.js')(app, Session, transporter);
+require('./server/feedback.js')(app, Session, transporter, logger);
+
 
 // 4th MODULE ma_2019_wolf
 require('./server/ba_2019_year2_module8_gb.js')(app, Session, transporter, isLoggedIn, User, logger);
