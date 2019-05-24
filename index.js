@@ -38,6 +38,7 @@ const logger = winston.createLogger({
     new winston.transports.File({ filename: './public/combined.log' })
   ]
 });
+logger.log('error', 'Error log:');
 
 var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", {useMongoClient: true});
 
