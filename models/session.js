@@ -383,6 +383,8 @@ var sessionSchema = mongoose.Schema({
       ba_2019_year2_module7_electives: String,
       ba_2019_year2_module7_electives2: String,
 
+      ba_2019_year2_module8_gb: String,
+
       ma_2019_smirnov: String,
       ma_2019_wolf: String,
       ma_2019_manirko: String,

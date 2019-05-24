@@ -25,7 +25,6 @@ var UserAnonymous = require('./models/user_anonymous');
 
 var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", {useMongoClient: true});
 
-
 // Connection URL
 var url = "mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas";
 const GOOGLE_CLIENT_ID = "118043106079-9di4ho7ofbpqq6de49t68dvbjm37kq83.apps.googleusercontent.com";
@@ -199,7 +198,7 @@ require('./server/majors.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/registration-list.js')(app, Session, transporter);
 
 // 4th MODULE ma_2019_wolf
-require('./server/ba_2019_year2_module8_gb.js')(app, Session, transporter, isLoggedIn, UserAnonymous);
+require('./server/ba_2019_year2_module8_gb.js')(app, Session, transporter, isLoggedIn, User);
 
 
 
