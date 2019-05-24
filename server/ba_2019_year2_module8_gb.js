@@ -1,4 +1,4 @@
-module.exports = function(app, Session, transporter, isLoggedIn, User) {
+module.exports = function(app, Session, transporter, isLoggedIn, User, logger) {
 
   let name;
   let email;
@@ -27,6 +27,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User) {
       'session_id': req.session.id
     }, function(err, session) {
       if (err)
+        logger.log(err);
         return done(err);
 
       if (session) {
@@ -64,6 +65,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User) {
       };
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
+          logger.log(error);
           return console.log(error);
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
@@ -71,12 +73,13 @@ module.exports = function(app, Session, transporter, isLoggedIn, User) {
       mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
         to: 'm.agliulin@utmn.ru', // list of receivers
-        subject: `${name}: ${email} — feedback`, // Subject line
+        subject: `${name}: ${email}`, // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html:  'GB Literature'
       };
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
+          logger.log(error);
           return console.log(error);
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
@@ -84,6 +87,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User) {
       sess.polls.ba_2019_year2_module8_gb = JSON.stringify(req.body);
       sess.save(function(err) {
         if (err)
+          logger.log(err);
           return console.error(err);
         return;
       });

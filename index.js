@@ -14,6 +14,8 @@ const nodemailer = require('nodemailer');
 const fs = require('fs');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const winston = require('winston');
+
 
 const session = require('express-session');
 const flash = require('connect-flash');
@@ -22,6 +24,20 @@ var index = require('./routes/index');
 var User = require('./models/user');
 var Session = require('./models/session');
 var UserAnonymous = require('./models/user_anonymous');
+
+const logger = winston.createLogger({
+  level: 'error',
+  format: winston.format.json(),
+  defaultMeta: { service: 'user-service' },
+  transports: [
+    //
+    // - Write to all logs with level `info` and below to `combined.log`
+    // - Write all logs error (and below) to `error.log`.
+    //
+    new winston.transports.File({ filename: './public/error.log', level: 'error' }),
+    new winston.transports.File({ filename: './public/combined.log' })
+  ]
+});
 
 var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", {useMongoClient: true});
 
@@ -51,6 +67,7 @@ let transporter = nodemailer.createTransport({
 transporter.verify(function(error, success) {
    if (error) {
         console.log(error);
+        logger.log(error);
    } else {
         console.log('Server is ready to take our messages');
    }
@@ -198,7 +215,7 @@ require('./server/majors.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/registration-list.js')(app, Session, transporter);
 
 // 4th MODULE ma_2019_wolf
-require('./server/ba_2019_year2_module8_gb.js')(app, Session, transporter, isLoggedIn, User);
+require('./server/ba_2019_year2_module8_gb.js')(app, Session, transporter, isLoggedIn, User, logger);
 
 
 
