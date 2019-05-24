@@ -38,7 +38,7 @@ const logger = winston.createLogger({
     new winston.transports.File({ filename: './public/combined.log' })
   ]
 });
-logger.log('error', 'Error log:');
+logger.error('Error log:');
 
 var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", {useMongoClient: true});
 
@@ -68,7 +68,7 @@ let transporter = nodemailer.createTransport({
 transporter.verify(function(error, success) {
    if (error) {
         console.log(error);
-        logger.log(error);
+        logger.error(error);
    } else {
         console.log('Server is ready to take our messages');
    }

@@ -14,7 +14,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User, logger) {
       '_id': req.user._id
     }, function(err, user) {
       if (err)
-        logger.log('error', err);
+        logger.error(err);
         return done(err);
 
       if (user) {
@@ -28,7 +28,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User, logger) {
       'session_id': req.session.id
     }, function(err, session) {
       if (err)
-        logger.log('error', err);
+        logger.error(err);
         return done(err);
 
       if (session) {
@@ -66,7 +66,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User, logger) {
       };
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-          logger.log('error', error);
+          logger.error(error);
           return console.log(error);
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
@@ -80,7 +80,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User, logger) {
       };
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-          logger.log('error', error);
+          logger.error(error);
           return console.log(error);
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
@@ -88,7 +88,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User, logger) {
       sess.polls.ba_2019_year2_module8_gb = JSON.stringify(req.body);
       sess.save(function(err) {
         if (err)
-          logger.log('error', err);
+          logger.error(err);
           return console.error(err);
         return;
       });
