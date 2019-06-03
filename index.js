@@ -227,8 +227,17 @@ require('./server/registration-list.js')(app, Session, transporter);
 require('./server/feedback.js')(app, Session, transporter, logger);
 
 
-// 4th MODULE ma_2019_wolf
+// 4th MODULE 2019
+require('./server/ba_2019_year1_module4_electives.js')(app, Session, transporter, isLoggedIn, User, logger);
+require('./server/ba_2019_year1_module4_tfy.js')(app, Session, transporter, isLoggedIn, User, logger);
+require('./server/ba_2019_year1_module4_it.js')(app, Session, transporter, isLoggedIn, User, logger);
+require('./server/ba_2019_year1_module4_gb.js')(app, Session, transporter, isLoggedIn, User, logger);
+require('./server/ba_2019_year1_module4_history.js')(app, Session, transporter, isLoggedIn, User, logger);
+
 require('./server/ba_2019_year2_module8_gb.js')(app, Session, transporter, isLoggedIn, User, logger);
+require('./server/ba_2019_year2_module8_electives.js')(app, Session, transporter, isLoggedIn, User, logger);
+require('./server/ba_2019_year2_module8_electives2.js')(app, Session, transporter, isLoggedIn, User, logger);
+require('./server/ba_2019_year2_module8_design_thinking.js')(app, Session, transporter, isLoggedIn, User, logger);
 
 
 

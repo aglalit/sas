@@ -1,0 +1,157 @@
+doctype html
+html
+  head
+    title Feedback
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    // load bootstrap css
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      img {
+        width:80%;
+        margin-top:10px;
+      }
+      .logo {padding-bottom:30px}
+      h2 {font-weight:800; margin-bottom:20px;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+      }
+      h3 {
+        font-size: 1.5em;
+        font-weight: 400;
+      }
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+        padding-top: 0px;
+      }
+      .container{
+        width:98% !important;
+      }
+      .input-group{
+        margin-bottom:20px;
+      }
+      .input-group label {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 10px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+      }
+      form {
+        margin-top: 30px;
+      }
+      label,legend {
+        text-align: left;
+            float: left;
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        float:left;
+        width:75%;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        top:23px;
+        }
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #00f;
+        }
+        button {
+          background-color: #00f !important;
+          border: none !important;
+        }
+        .flex-container {display:flex; flex-direction:column; margin:10px 0;}
+
+        @media (max-width: 1024px) {
+
+          body{padding-top:10px}
+          .container{
+          width:95%;
+          }
+        h1,h3 {font-size:60px !important;}
+      .input-group  label {
+        font-size:40px ;
+        margin-bottom:20px;
+        }
+        input[type="checkbox"]{
+          top:6px;
+        }
+        button.btn-lg {
+          font-size: 30px;
+        }
+        }
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/logo_sas_ut_short-01.svg")
+      h1 Обратная связь. Дизайн-мышление. 8 модуль.
+      form(action="/polls/ba-2019-year2-module8-design-thinking" method="post")
+        fieldset
+          div(class="input-group")
+            .flex-container
+              label(for="Использовали ли вы информацию, полученную на лекциях, в процессе написания эссе и письменных работ по курсу GB?") Использовали ли вы информацию, полученную на лекциях, в процессе написания эссе и письменных работ по курсу GB?
+              input(type="text" required="required" class="form-control" name="Использовали ли вы информацию, полученную на лекциях, в процессе написания эссе и письменных работ по курсу GB?")
+            .flex-container
+              label(for="Насколько хорошо преподаватель объясняет материал") Насколько хорошо преподаватель объясняет материал? (балл от 1 до 10)
+              input(type="number" required="required" class="form-control" name="Насколько хорошо преподаватель объясняет материал" min="1" max="10")
+            .flex-container
+              label(for="Оцените сложность курса для вашего понимания") Оцените сложность курса для вашего понимания. Оцените по шкале от 1 до 10, где 1 – я вообще ничего не понимал; 6 – я понимал 50%; 10 – я понимал все.
+              input(type="number" required="required" class="form-control" name="Оцените сложность курса для вашего понимания" min="1" max="10")
+            .flex-container
+              label(for="Насколько новым для вас было содержание курса") Насколько новым для вас было содержание курса? Оцените по шкале от 1 до 10, где 1 – я не узнал ничего нового; 6 – 50% материала было для меня новым; 10 – все, о чем говорилось, я слышал впервые.
+              input(type="number" required="required" class="form-control" name="Насколько новым для вас было содержание курса" min="1" max="10")
+            .flex-container
+              label(for="Насколько изменились ваше мышление, знания и умения") Оцените влияние курса на ваши знания, умения, компетенции, личные качества и мировоззрение, где 1 – никакого развития не произошло, 6 – произошло в целом удовлетворительное развитие по ряду параметров, 10 – я стал другим человеком. 
+              input(type="number" required="required" class="form-control" name="Насколько изменились ваше мышление, знания и умения" min="1" max="10")
+            .flex-container
+              label(for="Оцените уровень обратной связи от преподавателя") Оцените уровень обратной связи от преподавателя (комментарии к эссе и другим работам, ответы на вопросы во время занятий, индивидуальные консультации в офисные часы), где 1 – обратная связь от преподавателя отсутствовала, 6 – обратная связь присутствовала в половине случаев, когда она была необходима, и была среднего качества, 10 – преподаватель обеспечивал исчерпывающую обратную связь высокого уровня всегда, когда она требовалась). 
+              input(type="number" required="required" class="form-control" name="Оцените уровень обратной связи от преподавателя" min="1" max="10")
+            .flex-container
+              label(for="Оцените качество курса") Оцените качество курса, включая и дизайн курса, и его преподавание, по сравнению с другими курсами, которые вы проходили в SAS, где 1 – качество курса было ужасающим, не идет ни в какое сравнение с другими курсами, 6 – качество курса было средним, 10 – качество курса – лучшее в SAS с большим отрывом.
+              input(type="number" required="required" class="form-control" name="Оцените качество курса" min="1" max="10")
+            .flex-container
+              label(for="Чему вы научились в течение курса") Чему вы научились в течение курса? 
+              textarea(rows="4" required="required" class="form-control" name="Чему вы научились в течение курса")
+            .flex-container
+              label(for="Что вам больше всего понравилось в этом  курсе") Что вам больше всего понравилось в этом курсе? 
+              textarea(rows="4" required="required" class="form-control" name="Что вам больше всего понравилось в этом  курсе") 
+            .flex-container
+              label(for="Что вам больше всего не понравилось в этом  курсе") Что вам больше всего не понравилось в этом курсе?
+              textarea(rows="4" required="required" class="form-control" name="Что вам больше всего не понравилось в этом  курсе")
+            .flex-container
+              label(for="Что для вас было самым сложным в этом  курсе") Что для вас было самым сложным в этом курсе?
+              textarea(rows="4" required="required" class="form-control" name="Что для вас было самым сложным в этом  курсе")
+            .flex-container
+              label(for="Как бы вы порекомендовали улучшить этот  курс") Как бы вы порекомендовали улучшить этот курс?
+              textarea(rows="4" required="required" class="form-control" name="Как бы вы порекомендовали улучшить этот  курс") 
+        button(type="submit" class="btn btn-primary btn-lg") Отправить
