@@ -40,7 +40,7 @@ const logger = winston.createLogger({
 });
 logger.error('Error log:');
 
-var promise = mongoose.connect("mongodb://m.r.agliulin:mlabkoku8q651@ds147534.mlab.com:47534/sas", {useMongoClient: true}, function(err) {
+var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", {useMongoClient: true}, function(err) {
     if (err) {
       logger.error(err);
       console.log(err);
@@ -58,7 +58,7 @@ var db = mongoose.connection;
 promise.then(function(db) {
   db.on('error', function(error){
     console.error.bind(console, 'connection error:');
-            logger.error(error);
+        logger.error(error);
 
   });
   db.on('open', function() {
