@@ -38,9 +38,9 @@ const logger = winston.createLogger({
     new winston.transports.File({ filename: './public/combined.log' })
   ]
 });
-// logger.error('Error log:');
+logger.error('Error log:');
 
-var promise = mongoose.connect("mongodb://m.r.agliulin:mlabkoku8q651@ds147534.mlab.com:47534/sas", { useNewUrlParser: true }, function(err) {
+var promise = mongoose.connect("mongodb://m.r.agliulin:mlabkoku8q651@ds147534.mlab.com:47534/sas", {useMongoClient: true}, function(err) {
     if (err) {
       logger.error(err);
       console.log(err);
@@ -49,6 +49,7 @@ var promise = mongoose.connect("mongodb://m.r.agliulin:mlabkoku8q651@ds147534.ml
 });
 
 // Connection URL
+var url = "mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas";
 const GOOGLE_CLIENT_ID = "118043106079-9di4ho7ofbpqq6de49t68dvbjm37kq83.apps.googleusercontent.com";
 const GOOGLE_CLIENT_SECRET = "wumdeuRozgysj238MJtBy5kg";
 // Use connect method to connect to the server
