@@ -15,7 +15,8 @@ module.exports = function(app, Session, transporter, isLoggedIn, User, logger) {
     }, function(err, user) {
       if (err)
         //logger.error(err);
-        return done(err);
+        console.log(err);
+        return;
 
       if (user) {
         name = user.google.name;
@@ -29,7 +30,8 @@ module.exports = function(app, Session, transporter, isLoggedIn, User, logger) {
     }, function(err, session) {
       if (err)
         logger.error(err);
-        return done(err);
+        console.log(err);
+        return;
 
       if (session) {
         parseSession(session, req, transporter);
