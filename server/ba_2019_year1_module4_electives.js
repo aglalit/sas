@@ -14,8 +14,9 @@ module.exports = function(app, Session, transporter, isLoggedIn, User, logger) {
       '_id': req.user._id
     }, function(err, user) {
       if (err)
-        //logger.error(err);
-        return done(err);
+        logger.error(err);
+        console.log(err);
+        // return done(err);
 
       if (user) {
         name = user.google.name;
