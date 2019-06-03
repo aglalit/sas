@@ -13,3 +13,9 @@
 {"name":"MongoError","message":"read ECONNRESET","level":"error","service":"user-service"}
 {"message":"Error log:","level":"error","service":"user-service"}
 {"name":"MongoError","message":"read ECONNRESET","level":"error","service":"user-service"}
+{"message":"Error log:","level":"error","service":"user-service"}
+{"name":"MongoError","message":"read ECONNRESET","level":"error","service":"user-service"}
+{"message":"Error log:","level":"error","service":"user-service"}
+{"name":"MongoError","message":"read ECONNRESET","level":"error","service":"user-service"}
+{"message":"Error log:","level":"error","service":"user-service"}
+{"name":"MongoError","message":"read ECONNRESET","level":"error","service":"user-service"}

@@ -1,15 +1,17 @@
 module.exports = function(app, Session, transporter, logger){
 
 app.get('/feedback', function(req, res) {
-  Session.find({'polls': {$exists : true}}).select('polls').exec(function (err, docs){
-    if (err) res.send(err)
-    else {
-      res.render('feedback', {
-        data: docs
-      });
-    }
+  // Session.find({'polls': {$exists : true}}).select('polls').exec(function (err, docs){
+  //   if (err) res.send(err)
+  //   else {
+  //
+  //   }
+  // });
+  res.render('feedback', {
+    // data: docs
   });
 });
+
 
 // app.post('/polls/registration-list', function(req, res) {
 //   Session.findOne({
