@@ -30,7 +30,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User, logger) {
     }, function(err, session) {
       if (err)
         logger.error(err);
-        return done(err);
+        console.log(err);
 
       if (session) {
         parseSession(session, req, transporter);
