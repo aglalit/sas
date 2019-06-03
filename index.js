@@ -38,15 +38,12 @@ const logger = winston.createLogger({
     new winston.transports.File({ filename: './public/combined.log' })
   ]
 });
-logger.error('Error log:');
+//logger.error('Error log:');
 
-var promise = mongoose.connect("mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas", {useMongoClient: true}, function(err) {
-    if (err) {
-      logger.error(err);
-      console.log(err);
-
-    }
-});
+mongoose.connect('mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas', { useNewUrlParser: true }).then(
+  () => {console.log('Database is connected') },
+  err => { logger.error(err); console.log('Can not connect to the database'+ err)}
+);
 
 // Connection URL
 var url = "mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas";
