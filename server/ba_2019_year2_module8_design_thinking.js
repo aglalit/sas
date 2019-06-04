@@ -3,7 +3,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User, logger) {
   let name;
   let email;
 
-  app.get('/polls/ba-2019-year2-module8-electives', isLoggedIn, function(req, res) {
+  app.get('/polls/ba-2019-year2-module8-design-thinking', isLoggedIn, function(req, res) {
     res.render('ba-2019-year2-module8-design-thinking', {
       user: req.user
     })
