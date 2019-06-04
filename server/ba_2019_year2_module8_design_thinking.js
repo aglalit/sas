@@ -1,4 +1,4 @@
-module.exports = function(app, Session, transporter, isLoggedIn, User, logger) {
+module.exports = function(app, Session, transporter, officeTransporter, isLoggedIn, User, logger) {
 
   let name;
   let email;
@@ -64,7 +64,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User, logger) {
         // text: JSON.stringify(req.user), // plain text body
         html: emailBody.toString() // html body
       };
-      transporter.sendMail(mailOptions, (error, info) => {
+      officeTransporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           logger.error(error);
           logger.error(mailOptions.subject);
