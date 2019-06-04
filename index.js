@@ -24,6 +24,7 @@ var index = require('./routes/index');
 var User = require('./models/user');
 var Session = require('./models/session');
 var UserAnonymous = require('./models/user_anonymous');
+var passwords = require('./models/')
 
 const logger = winston.createLogger({
   level: 'error',
@@ -40,15 +41,14 @@ const logger = winston.createLogger({
 });
 //logger.error('Error log:');
 
-var promise = mongoose.connect('mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas', { useNewUrlParser: true }).then(
+var promise = mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(
   () => {console.log('Database is connected') },
   err => { logger.error(err); console.log('Can not connect to the database'+ err)}
 );
 
 // Connection URL
-var url = "mongodb://m.r.agliulin:m.r.agliulinsas2017@ds147534.mlab.com:47534/sas";
-const GOOGLE_CLIENT_ID = "118043106079-9di4ho7ofbpqq6de49t68dvbjm37kq83.apps.googleusercontent.com";
-const GOOGLE_CLIENT_SECRET = "wumdeuRozgysj238MJtBy5kg";
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 // Use connect method to connect to the server
 var db = mongoose.connection;
 
@@ -69,7 +69,7 @@ let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'm.agliulin@utmn.ru',
-    pass: 'zpV%k@b4'
+    pass: process.env.TRANSPORTER_PASSWORD
   },
   debug: true
 });
@@ -86,7 +86,7 @@ let officeTransporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'm.r.agliulin@gmail.com',
-    pass: 'liveural'
+    pass: process.env.OFFICETRANSPORTER_PASSWORD
   },
   debug: true
 });
