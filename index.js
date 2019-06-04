@@ -63,12 +63,13 @@ promise.then(function(db) {
   });
 });
 
+var pass = process.env.TRANSPORTER_PASSWORD;
 // create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'm.agliulin@utmn.ru',
-    pass: process.env.TRANSPORTER_PASSWORD
+    pass: pass
   },
   debug: true
 });
@@ -81,11 +82,13 @@ transporter.verify(function(error, success) {
    }
 });
 
+var officepass = process.env.OFFICETRANSPORTER_PASSWORD;
+
 let officeTransporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'm.r.agliulin@gmail.com',
-    pass: process.env.OFFICETRANSPORTER_PASSWORD
+    pass: officepass
   },
   debug: true
 });
