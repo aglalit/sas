@@ -24,7 +24,6 @@ var index = require('./routes/index');
 var User = require('./models/user');
 var Session = require('./models/session');
 var UserAnonymous = require('./models/user_anonymous');
-var passwords = require('./models/')
 
 const logger = winston.createLogger({
   level: 'error',
