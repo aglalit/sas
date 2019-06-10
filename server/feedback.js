@@ -12,6 +12,18 @@ app.get('/feedback', function(req, res) {
   });
 });
 
+app.get('/feedback-ba-2019-year1-module4-gb', function(req, res) {
+  Session.find({'polls': {$exists : true}}).select('polls').exec(function (err, docs){
+    if (err) res.send(err)
+    else {
+      res.render('feedback-ba-2019-year1-module4-gb', {
+        data: docs
+      });
+    }
+  });
+
+});
+
 
 // app.post('/polls/registration-list', function(req, res) {
 //   Session.findOne({
