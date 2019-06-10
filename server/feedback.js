@@ -17,7 +17,7 @@ app.get('/feedback-ba-2019-year1-module4-gb', function(req, res) {
     if (err) res.send(err)
     else {
       res.render('feedback-ba-2019-year1-module4-gb', {
-        data: docs
+        data:  JSON.stringify(docs)
       });
     }
   });
