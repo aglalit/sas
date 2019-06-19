@@ -1,26 +1,39 @@
 module.exports = function(app, Session, transporter, logger){
 
 app.get('/feedback', function(req, res) {
-  // Session.find({'polls': {$exists : true}}).select('polls').exec(function (err, docs){
-  //   if (err) res.send(err)
-  //   else {
-  //
-  //   }
-  // });
-  res.render('feedback', {
-    // data: docs
-  });
-});
+  var query = {};
 
-app.get('/feedback-ba-2019-year1-module4-gb', function(req, res) {
-  Session.find({'polls.ba_2019_year1_module4_gb': {$exists : true}}).select('polls.ba_2019_year1_module4_gb').exec(function (err, docs){
-    if (err) res.send(err)
-    else {
-      res.render('feedback-ba-2019-year1-module4-gb', {
-        data:  JSON.stringify(docs)
-      });
-    }
-  });
+  if (req.query.s === 'ba_2019_electives'){
+    Session.find({
+      $or: [
+        { "polls.ba_2019_year1_module4_electives": {$exists : true} },
+        { "polls.ba_2019_year2_module8_electives": {$exists : true} },
+        { "polls.ba_2019_year2_module8_electives2": {$exists : true} }
+      ]
+    },{ 'polls.ba_2019_year1_module4_electives': 1, 'polls.ba_2019_year2_module8_electives': 1,'polls.ba_2019_year2_module8_electives2': 1 }).exec(function (err, docs){
+      if (err) { res.send(err); console.log(err); }
+      else {
+        docs.map((el)=>{console.log(el._doc.polls)});
+        res.render('feedback', {
+          data:  JSON.stringify(docs)
+        });
+      }
+    });
+  }
+  else {
+    query['polls.' + req.query.s] = {$exists : true};
+    Session.find(query).select('polls.' + req.query.s).exec(function (err, docs){
+      if (err) { res.send(err); console.log(err); }
+      else {
+        console.log(docs);
+        res.render('feedback', {
+          data:  JSON.stringify(docs)
+        });
+      }
+    });
+  }
+
+
 
 });
 

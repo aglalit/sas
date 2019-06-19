@@ -5,7 +5,7 @@ html
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
     // load bootstrap css
     style.
-      body        { padding-top:20px;   font-family: 'Agipo-Bold'; 
+      body        { padding-top:20px;   font-family: 'Agipo-Regular'; 
       
       -moz-osx-font-smoothing: grayscale;   /* Firefox */
      -webkit-font-smoothing: antialiased; /* WebKit  */
@@ -18,7 +18,7 @@ html
         font-family: 'Agipo-Regular';
         src:url('../fonts/agipo/Agipo-Regular.woff');
       }
-      h2 {margin-bottom:20px;
+      h2 {margin-bottom:30px; margin-top:50px;
       font-family: 'Agipo-Bold',Arial,sans-serif;}
       .jumbotron h1 {
         font-size:36px;
@@ -26,19 +26,29 @@ html
         font-family: 'Agipo-Bold',Arial,sans-serif;
       }
       h3 {
+        margin-top:50px;
         font-size: 1.5em;
         font-weight: 400;
         margin-bottom:30px;
         font-family: 'Agipo-Regular',Arial,sans-serif;;
       }
+      .displayTeacher {display:none;}
+      .currentAnswerCounter {font-family: Agipo-Bold;}
       thead {
         font-size: 30px;
         border-bottom:3px red solid;
       }
+      td {text-align: left; padding-top:10px;vertical-align: top;}
       .jumbotron{
         font-size:18px;
         line-height: initial;
       }
+      td.key {
+        font-family: 'Agipo-Bold';
+        padding-right:30px;
+        width:70%;
+      }
+      
       img {
         width:80%;
         margin-top:10px;
@@ -117,6 +127,9 @@ html
         button {
           background-color: #f00 !important;
           border-color: #f00 !important;
+          margin: 0 25px 25px;
+          padding: 10px 15px;
+          border-radius:50px;
         }
         
         .checkbox {
@@ -198,30 +211,6 @@ html
         }
               li {
                 line-height: 2; }
-
-              .shell {
-                  position: relative;
-                    line-height: 1; }
-                      .shell span {
-      position: absolute;
-      left: 3px;
-      top: 1px;
-      color: #ccc;
-        pointer-events: none;
-        z-index: -1; }
-        .shell span i {
-          font-style: normal;
-          /* any of these 3 will work */
-          color: transparent;
-          opacity: 0;
-          visibility: hidden; }
-
-          input.masked,
-          .shell span {
-            font-size: 16px;
-            padding-right: 10px;
-            /* background-color: transparent; */
-            text-transform: uppercase; }
         
 body
   .container
@@ -230,36 +219,20 @@ body
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-red.svg")
       h1 SAS — Feedback
-      table.table 
-        thead
-          tr
-            td ФИО
-            td Паспорт
-            td Дата рождения
-            td Email
+      h2.displayTeacher Full answers
+      button(class="prev displayTeacher" onclick="allPrev()") < Previous answer
+      span.currentAnswerCounter
+      button(class="next displayTeacher" onclick="allNext()") Next answer >
+      table#all
         tbody.tablebody
+      h2 Rating scale answers (histograms)
+      div.graphs
+      h2.displayTeacher Text answers
+      div.comments
+script(src="/plotly-latest.min.js")
 script.
-  var data = [!{data}];
-  var registrations = [];
-  data.forEach(function(el){
-    registrations.unshift(JSON.parse(el.polls.registration.data));
-  });
-  registrations.forEach(function(elem){
-    var row = document.createElement('tr');
-    var table = document.querySelector('.tablebody');
-    table.appendChild(row);
-    var td1 = document.createElement('td');
-    td1.innerHTML = elem["ФИО"];
-    row.appendChild(td1);
-    var td2 = document.createElement('td');
-    td2.innerHTML = elem["Passport"];
-    row.appendChild(td2);
-    var td3 = document.createElement('td');
-    td3.innerHTML = elem["Birthdate"];
-    row.appendChild(td3);
-    var td4 = document.createElement('td');
-    td4.innerHTML = elem["Email"];
-    row.appendChild(td4);
-  });
+  const data = [!{data}];
+script(src="/feedback.js")
+  
   
   
