@@ -1,8 +1,9 @@
-let dataParsed = [];
-let currentEntry = 0;
-let color;
+var dataParsed = [];
+var currentEntry = 0;
+var color;
 const urlParams = new URLSearchParams(window.location.search);
 const subject = urlParams.get('s');
+var currentAnswerCounter = document.querySelector('.currentAnswerCounter');
 
 // DISPLAY ALL LINKS
 if (subject === 'all') {
@@ -35,9 +36,8 @@ if (teacher || subject === 'ba_2019_year1_module4_history' || subject === 'ba_20
     el.style.display = 'block';
   })
 
-  let currentAnswerCounter = document.querySelector('.currentAnswerCounter');
-  let dataParsedFiltered = [];
-  let teacherHeader = document.querySelector('.teacher');
+  var dataParsedFiltered = [];
+  var teacherHeader = document.querySelector('.teacher');
 
   if (subject === 'ba_2019_year1_module4_history'){
     teacherHeader.innerHTML = 'History';
@@ -50,14 +50,14 @@ if (teacher || subject === 'ba_2019_year1_module4_history' || subject === 'ba_20
 
 
   if (subject !== 'ba_2019_year1_module4_history' && subject !== 'ba_2019_year2_module8_design_thinking' && subject !== 'ba_2019_year2_module8_gb') {
-    let regex = new RegExp(teacher, 'i');
+    var regex = new RegExp(teacher, 'i');
     if (teacher === 'duskin') regex = 'Duskin Drum';
     dataParsedFiltered = dataParsed.filter((entry) => {
       return entry["Who taught this course"].match(regex)
     });
     teacherHeader.innerHTML = dataParsedFiltered[0]["Who taught this course"];
   } else if (subject === 'ba_2019_year2_module8_gb'){
-    let allowed;
+    var allowed;
     if (teacher === 'щербенок') {
       allowed = Object.keys(dataParsed[0]).filter(function(key) {
         return /1/.test(key);
@@ -96,17 +96,17 @@ if (teacher || subject === 'ba_2019_year1_module4_history' || subject === 'ba_20
       //   })
   }
   dataParsed = dataParsedFiltered;
-  let answersNumber = dataParsed.length;
+  var answersNumber = dataParsed.length;
   currentAnswerCounter.innerHTML = (currentEntry + 1) + "/" + answersNumber;
 
   function allAnswers(currentEntry) {
     var table = document.querySelector('#all');
     table.innerHTML = '';
-    for (let key in dataParsed[currentEntry]) {
+    for (var key in dataParsed[currentEntry]) {
       if (key == "Who taught this course") continue;
       var row = document.createElement('tr');
       table.appendChild(row);
-      let td1 = document.createElement('td');
+      var td1 = document.createElement('td');
       td1.innerHTML = key;
       td1.classList.add('key');
       var td2 = document.createElement('td');
@@ -146,45 +146,45 @@ if (teacher || subject === 'ba_2019_year1_module4_history' || subject === 'ba_20
     }
   });
 
-  for (let key in dataParsed[0]) {
+  for (var key in dataParsed[0]) {
     if (isNaN(dataParsed[0][key])) {
-      for (let k in dataComments) {
+      for (var k in dataComments) {
         dataComments[k][key] = []
       }
     }
   }
 
   dataParsed.forEach(function(el) {
-    let teacher = el['Who taught this course'];
+    var teacher = el['Who taught this course'];
 
-    for (let key in dataComments[teacher]) {
+    for (var key in dataComments[teacher]) {
       dataComments[teacher][key].push(el[key])
     }
     delete dataComments[teacher]['Who taught this course'];
   });
 
 
-  let commentsDiv = document.querySelector('.comments');
-  for (let key in dataComments) {
-    for (let k in dataComments[key]) {
-      let question = document.getElementById(k);
+  var commentsDiv = document.querySelector('.comments');
+  for (var key in dataComments) {
+    for (var k in dataComments[key]) {
+      var question = document.getElementById(k);
       if (!question) {
         question = document.createElement('div');
         question.id = k;
-        let header = document.createElement('h3');
+        var header = document.createElement('h3');
         header.innerHTML = k;
         question.appendChild(header);
         commentsDiv.appendChild(question);
       }
       if (subject === 'ba_2019_year2_module8_gb' && k == 'Стоит ли предлагать этому преподавателю вести блок в рамках этого курса в следующем году'){
-        let yesNoCounter = document.createElement('p');
+        var yesNoCounter = document.createElement('p');
         question.appendChild(yesNoCounter);
         yesNoCounter.innerHTML = `Да: ${dataComments[key][k].filter(function(value){ return value === 'Да';}).length}/${dataComments[key][k].length} (${Math.round(dataComments[key][k].filter(function(value){ return value === 'Да';}).length/dataComments[key][k].length*100)}%)`
       }
       else {
         dataComments[key][k].forEach(function(el) {
           if (el.length > 2 || el === 'Да') {
-            let comment = document.createElement('p');
+            var comment = document.createElement('p');
             comment.innerHTML = el;
             question.appendChild(comment);
           }
@@ -205,9 +205,9 @@ dataParsed.forEach(function(el) {
   }
 });
 
-for (let key in dataParsed[1]) {
+for (var key in dataParsed[1]) {
   if (!isNaN(dataParsed[1][key])) {
-    for (let k in dataNumbers) {
+    for (var k in dataNumbers) {
       dataNumbers[k][key] = []
     }
   }
@@ -215,9 +215,9 @@ for (let key in dataParsed[1]) {
 
 
 dataParsed.forEach(function(el) {
-  let teacher = el['Who taught this course'];
+  var teacher = el['Who taught this course'];
 
-  for (let key in dataNumbers[teacher]) {
+  for (var key in dataNumbers[teacher]) {
     if (key == 'What percentage of the mandatory readings were you able to do during the course') {
       el[key] = Math.round(el[key] / 10);
     }
@@ -226,18 +226,18 @@ dataParsed.forEach(function(el) {
 });
 
 
-for (let key in dataNumbers[Object.keys(dataNumbers)[0]]) {
-  let graph = document.createElement('div');
+for (var key in dataNumbers[Object.keys(dataNumbers)[0]]) {
+  var graph = document.createElement('div');
   graph.style.width = "100%";
   graph.height = "70vw";
   document.querySelector('.graphs').appendChild(graph);
 
-  let data = [];
-  for (let i = 0; i < Object.keys(dataNumbers).length; i++) {
+  var data = [];
+  for (var i = 0; i < Object.keys(dataNumbers).length; i++) {
     var sum, avg = 0;
 
     if (dataNumbers[Object.keys(dataNumbers)[i]][key].length) {
-      let dataNumbersToReduce = dataNumbers;
+      var dataNumbersToReduce = dataNumbers;
       sum = dataNumbersToReduce[Object.keys(dataNumbersToReduce)[i]][key].reduce(function(a, b) {
         if (!b) return a;
         else return parseInt(a) + parseInt(b);
