@@ -3,7 +3,14 @@ let currentEntry = 0;
 let color;
 const urlParams = new URLSearchParams(window.location.search);
 const subject = urlParams.get('s');
-// console.log(data);
+
+// DISPLAY ALL LINKS
+if (subject === 'all') {
+  document.querySelector('.allLinks').style.display = 'block';
+  document.querySelectorAll('h2').forEach((el) => {
+    el.style.display = 'none';
+  })
+}
 
 
 if (subject === 'ba_2019_electives') {
@@ -27,8 +34,20 @@ if (teacher || subject === 'ba_2019_year1_module4_history' || subject === 'ba_20
   document.querySelectorAll('h2').forEach((el) => {
     el.style.display = 'block';
   })
+
   let currentAnswerCounter = document.querySelector('.currentAnswerCounter');
   let dataParsedFiltered = [];
+  let teacherHeader = document.querySelector('.teacher');
+
+  if (subject === 'ba_2019_year1_module4_history'){
+    teacherHeader.innerHTML = 'History';
+    dataParsedFiltered = dataParsed;
+  }
+  if (subject === 'ba_2019_year2_module8_design_thinking'){
+    teacherHeader.innerHTML = 'Design Thinking';
+    dataParsedFiltered = dataParsed;
+  }
+
 
   if (subject !== 'ba_2019_year1_module4_history' && subject !== 'ba_2019_year2_module8_design_thinking' && subject !== 'ba_2019_year2_module8_gb') {
     let regex = new RegExp(teacher, 'i');
@@ -36,27 +55,32 @@ if (teacher || subject === 'ba_2019_year1_module4_history' || subject === 'ba_20
     dataParsedFiltered = dataParsed.filter((entry) => {
       return entry["Who taught this course"].match(regex)
     });
-  } else {
+    teacherHeader.innerHTML = dataParsedFiltered[0]["Who taught this course"];
+  } else if (subject === 'ba_2019_year2_module8_gb'){
     let allowed;
     if (teacher === 'щербенок') {
       allowed = Object.keys(dataParsed[0]).filter(function(key) {
         return /1/.test(key);
       });
+      teacherHeader.innerHTML = 'Andrey Shcherbenok';
     }
     else if (teacher === 'ушакова') {
       allowed = Object.keys(dataParsed[0]).filter(function(key) {
         return /2/.test(key);
       });
+      teacherHeader.innerHTML = 'Olga Ushakova';
     }
     else if (teacher === 'tangney') {
       allowed = Object.keys(dataParsed[0]).filter(function(key) {
         return /3/.test(key);
       });
+      teacherHeader.innerHTML = 'John Tangney';
     }
     else if (teacher === 'mulhall') {
       allowed = Object.keys(dataParsed[0]).filter(function(key) {
         return /4/.test(key);
       });
+      teacherHeader.innerHTML = 'Anne Mulhall';
     }
       dataParsed.forEach((entry) => {
         dataParsedFiltered.push(Object.keys(entry)
@@ -67,13 +91,11 @@ if (teacher || subject === 'ba_2019_year1_module4_history' || subject === 'ba_20
           }, {})
         );
       })
-
       // dataParsedFiltered = dataParsed.map((entry) => {
       //   return entry["Who taught this course"].match(regex)
       //   })
-    dataParsed = dataParsedFiltered;
-    console.log(dataParsed);
   }
+  dataParsed = dataParsedFiltered;
   let answersNumber = dataParsed.length;
   currentAnswerCounter.innerHTML = (currentEntry + 1) + "/" + answersNumber;
 
@@ -154,13 +176,20 @@ if (teacher || subject === 'ba_2019_year1_module4_history' || subject === 'ba_20
         question.appendChild(header);
         commentsDiv.appendChild(question);
       }
-      dataComments[key][k].forEach(function(el) {
-        if (el.length > 2 || el === 'Да') {
-          let comment = document.createElement('p');
-          comment.innerHTML = el;
-          question.appendChild(comment);
-        }
-      })
+      if (subject === 'ba_2019_year2_module8_gb' && k == 'Стоит ли предлагать этому преподавателю вести блок в рамках этого курса в следующем году'){
+        let yesNoCounter = document.createElement('p');
+        question.appendChild(yesNoCounter);
+        yesNoCounter.innerHTML = `Да: ${dataComments[key][k].filter(function(value){ return value === 'Да';}).length}/${dataComments[key][k].length} (${Math.round(dataComments[key][k].filter(function(value){ return value === 'Да';}).length/dataComments[key][k].length*100)}%)`
+      }
+      else {
+        dataComments[key][k].forEach(function(el) {
+          if (el.length > 2 || el === 'Да') {
+            let comment = document.createElement('p');
+            comment.innerHTML = el;
+            question.appendChild(comment);
+          }
+        });
+      }
     }
   }
 
