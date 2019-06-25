@@ -20,6 +20,20 @@ app.get('/feedback', function(req, res) {
       }
     });
   }
+  else if (req.query.s === 'all'){
+    Session.find({$and: [
+      {'polls':{$exists : true}},
+      {'polls.registration':{$exists : false}},
+      {'polls.faculty_research_trips':{$exists : false}}
+    ]}).select('polls').select('polls').sort({ _id: -1 }).limit(150).exec(function (err, docs){
+      if (err) { res.send(err); console.log(err); }
+      else {
+        res.render('feedback', {
+          data:  JSON.stringify(docs)
+        });
+      }
+    });
+  }
   else {
     query['polls.' + req.query.s] = {$exists : true};
     Session.find(query).select('polls.' + req.query.s).exec(function (err, docs){

@@ -35,11 +35,25 @@ html
       .displayTeacher {display:none;}
       .currentAnswerCounter {font-family: Agipo-Bold;}
       .allLinks {display:none;}
+      table {max-width:100%;}
+      
       thead {
-        font-size: 30px;
-        border-bottom:3px red solid;
+        font-size: 12px;
+        border-bottom:1px red solid;
+        hyphens: auto;
       }
-      td {text-align: left; padding-top:10px;vertical-align: top;}
+      td {
+        text-align: left; 
+        padding-top:10px;
+        vertical-align: top;
+      padding: 5px;
+      }
+      .all td {
+        border-right: 1px red solid;
+      }
+      .all td:last-child {
+        border-right: none;
+      }
       .jumbotron{
         font-size:18px;
         line-height: initial;
@@ -224,68 +238,75 @@ body
       div.allLinks
         ul(class="list-unstyled")
           li
-            h3 Electives
-            p
-              a(target="_blank" href="/feedback?s=ba_2019_electives&t=giacomo")  Giacomo Andreoletti
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_electives&t=tomasz") Tomasz Blusiewicz
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_electives&t=wolf") Erika Wolf	
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_electives&t=duskin") Duskin Drum
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_electives&t=mulhall") Anne Mulhall	
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_electives&t=david") David Dusseault 
-            p  
-              a(target="_blank" href="/feedback?s=ba_2019_electives&t=juliette") Juliette Colinas
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_electives&t=john") John Tangney
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_electives&t=столяров") Арсений Столяров
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_electives&t=добровидова") Ольга Добровидова             
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_electives&t=arne") Arne Dietrich 
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_electives&t=vervoort") Louis Vervoort
-            p 
+            h3.ba_2019_electives Electives
+            span Links: 
+            span
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=giacomo")  Giacomo Andreoletti, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=tomasz") Tomasz Blusiewicz, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=wolf") Erika Wolf, 	
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=duskin") Duskin Drum, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=mulhall") Anne Mulhall, 	
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=david") David Dusseault,  
+            span  
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=juliette") Juliette Colinas, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=john") John Tangney, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=столяров") Арсений Столяров, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=добровидова") Ольга Добровидова,              
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=arne") Arne Dietrich,  
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=vervoort") Louis Vervoort, 
+            span 
               a(target="_blank" href="/feedback?s=ba_2019_electives&t=jones") Evgeny Grishin, duskin drum, Peter Jones
           li
-            h3 TFY
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_tfy&t=giacomo") Giacomo Andreoletti
-            p 
+            h3.ba_2019_year1_module4_tfy TFY
+            span Links: 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_tfy&t=giacomo") Giacomo Andreoletti, 
+            span 
               a(target="_blank" href="/feedback?s=ba_2019_year1_module4_tfy&t=margret") Margret Grebowicz
           li
-            h3 IT
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_it&t=fabio") Fabio Grazioso
-            p 
+            h3.ba_2019_year1_module4_it IT
+            span Links: 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_it&t=fabio") Fabio Grazioso, 
+            span 
               a(target="_blank" href="/feedback?s=ba_2019_year1_module4_it&t=николаев") Виталий Николаев
           li
-            h3
+            h3.ba_2019_year1_module4_history
+            span Links: 
               a(target="_blank" href="/feedback?s=ba_2019_year1_module4_history") History
           li
-            h3 Great Books: Philosophy
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_gb&t=lomonosov") Matvey Lomonosov
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_gb&t=vervoort") Louis Vervoort             
-            p 
+            h3.ba_2019_year1_module4_gb Great Books: Philosophy
+            span Links: 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_gb&t=lomonosov") Matvey Lomonosov, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_gb&t=vervoort") Louis Vervoort,              
+            span 
               a(target="_blank" href="/feedback?s=ba_2019_year1_module4_gb&t=Mulhall") Anne Mulhall 
           li
-            h3 Great Books: Literature
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_year2_module8_gb&t=щербенок") Андрей Щербенок          
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_year2_module8_gb&t=ушакова") Ольга Ушакова 
-            p 
-              a(target="_blank" href="/feedback?s=ba_2019_year2_module8_gb&t=tangney") John Tangney
-            p 
+            h3.ba_2019_year2_module8_gb Great Books: Literature
+            span Links: 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year2_module8_gb&t=щербенок") Андрей Щербенок,          
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year2_module8_gb&t=ушакова") Ольга Ушакова,  
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year2_module8_gb&t=tangney") John Tangney, 
+            span 
               a(target="_blank" href="/feedback?s=ba_2019_year2_module8_gb&t=mulhall") Anne Mulhall
           li
-            h3 
+            h3.ba_2019_year2_module8_design_thinking 
+            span Links: 
               a(target="_blank" href="/feedback?s=ba_2019_year2_module8_design_thinking") Design Thinking
       h2.displayTeacher Full answers
       button(class="prev displayTeacher" onclick="allPrev()") < Previous answer
