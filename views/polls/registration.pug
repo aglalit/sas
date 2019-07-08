@@ -256,6 +256,7 @@ body
             .flex-container.column
               label(for="About") О себе
               input(type="text" class="form-control" name="About")
+              input(type="hidden" id="event" value="default" name="event")
             p &nbsp;              
             .flex-container.row
               input.form-check-input(id="agreement-checkbox" type="checkbox" name="agreement" required)                         
@@ -266,4 +267,11 @@ body
               span — обязательные поля
               
         button(type="submit" class="btn btn-primary btn-lg") Отправить
-        script(src="/masking-input.js" data-autoinit="true")
+        script.
+          const urlParams = new URLSearchParams(window.location.search);
+          var eventUrl = urlParams.get('event');
+          if(eventUrl){
+            var input = document.getElementById('event');
+            input.value = eventUrl;
+          }
+          

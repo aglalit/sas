@@ -237,6 +237,7 @@ body
             td Паспорт
             td Дата рождения
             td Email
+            td Мероприятие
         tbody.tablebody
 script.
   var data = [!{data}];
@@ -260,6 +261,9 @@ script.
     var td4 = document.createElement('td');
     td4.innerHTML = elem["Email"];
     row.appendChild(td4);
+    var td5 = document.createElement('td');
+    td5.innerHTML = elem["event"];
+    row.appendChild(td5);
   });
   
   
