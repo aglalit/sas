@@ -237,6 +237,7 @@ body
             td Паспорт
             td Дата рождения
             td Email
+            td О себе
             td Мероприятие
         tbody.tablebody
 script.
@@ -262,8 +263,11 @@ script.
     td4.innerHTML = elem["Email"];
     row.appendChild(td4);
     var td5 = document.createElement('td');
-    td5.innerHTML = elem["event"];
+    td5.innerHTML = elem["About"];
     row.appendChild(td5);
+    var td6 = document.createElement('td');
+    td6.innerHTML = elem["event"];
+    row.appendChild(td6);
   });
   
   
