@@ -90,7 +90,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
       to: 'm.agliulin@utmn.ru, a.bunkova@utmn.ru', // list of receivers
       subject: 'The choice of electives' , // Subject line
       // text:  // plain text body
-      html: '<p>' + JSON.stringify(req.user) + ', ' + JSON.stringify(req.user.google.name) + ', ' + JSON.stringify(req.user.google.email) + '</p>' + emailBody.toString() // html body
+      html: '<p>' + JSON.stringify(req.user.google.name) + ', ' + JSON.stringify(req.user.google.email) + '</p>' + emailBody.toString() // html body
     };
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
