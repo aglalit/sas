@@ -47,10 +47,10 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
     }
     let mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
-      to: 'm.agliulin@utmn.ru, a.bunkova@utmn.ru, ' + req.user.google.email, // list of receivers
+      to: 'm.agliulin@utmn.ru, a.bunkova@utmn.ru', // list of receivers
       subject: 'The choice of electives' , // Subject line
-      text: JSON.stringify(req.user) + ', ' + JSON.stringify(req.user.google.name) + ', ' + JSON.stringify(req.user.google.email), // plain text body
-      html: emailBody.toString() // html body
+      // text:  // plain text body
+      html: '<p>' + JSON.stringify(req.user) + ', ' + JSON.stringify(req.user.google.name) + ', ' + JSON.stringify(req.user.google.email) + '</p>' + emailBody.toString() // html body
     };
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
