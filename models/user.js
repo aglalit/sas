@@ -82,6 +82,22 @@ var userSchema = mongoose.Schema({
         elective3: String,
         elective4: String
       },
+      "2019_3": {
+        time: String,
+        major: String,
+        elective1: String,
+        elective2: String,
+        elective3: String,
+        elective4: String,
+        elective5: String,
+        elective6: String,
+        elective7: String,
+        elective8: String,
+        elective9: String,
+        elective10: String,
+        elective11: String,
+        elective12: String
+      },
       "pds_2019_classes": {
         time: String,
         "9:40": String,

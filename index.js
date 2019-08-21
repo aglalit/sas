@@ -165,6 +165,9 @@ require('./server/electives_2019_1_1st_year.js')(app, Session, transporter, isLo
 require('./server/electives_2019_1_2nd_year.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/electives_2019_2_1st_year.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/electives_2019_2_2nd_year.js')(app, Session, transporter, isLoggedIn, User);
+
+require('./server/electives_2019_3.js')(app, Session, transporter, isLoggedIn, User);
+
 require('./server/ba_2018_quantitative_methods.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/ba_2018_history.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/pds_2019_classes.js')(app, Session, transporter, isLoggedIn, User);
