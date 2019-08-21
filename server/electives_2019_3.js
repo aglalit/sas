@@ -4,6 +4,38 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
     res.render('electives-2019-3-year2', {user: req.user})
   });
 
+  app.get('/polls/electives-2019-3-biology', isLoggedIn, function(req, res) {
+    res.render('electives-2019-3-biology', {user: req.user})
+  });
+
+  app.get('/polls/electives-2019-3-history', isLoggedIn, function(req, res) {
+    res.render('electives-2019-3-history', {user: req.user})
+  });
+
+  app.get('/polls/electives-2019-3-art', isLoggedIn, function(req, res) {
+    res.render('electives-2019-3-art', {user: req.user})
+  });
+
+  app.get('/polls/electives-2019-3-media', isLoggedIn, function(req, res) {
+    res.render('electives-2019-3-media', {user: req.user})
+  });
+
+  app.get('/polls/electives-2019-3-sociology', isLoggedIn, function(req, res) {
+    res.render('electives-2019-3-sociology', {user: req.user})
+  });
+
+  app.get('/polls/electives-2019-3-sociology-alt', isLoggedIn, function(req, res) {
+    res.render('electives-2019-3-sociology-alt', {user: req.user})
+  });
+
+  app.get('/polls/electives-2019-3-it', isLoggedIn, function(req, res) {
+    res.render('electives-2019-3-it', {user: req.user})
+  });
+
+  app.get('/polls/electives-2019-3-economics', isLoggedIn, function(req, res) {
+    res.render('electives-2019-3-economics', {user: req.user})
+  });
+
   app.post('/polls/electives-2019-3', function(req, res) {
     User.findOne({
       '_id': req.user._id
@@ -38,8 +70,16 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         console.log('There isn\'t such user in the database');
       }
     });
-    req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; 4th priority — ${req.body["elective4"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
-    // ELECTIVE 2: 1st priority — ${req.body["elective5"]}; 2nd priority — ${req.body["elective6"]}; 3rd priority — ${req.body["elective7"]}; 4th priority — ${req.body["elective8"]};
+    if (req.body["major"] == 'year2' || req.body["major"] == 'it' || req.body["major"] == 'biology' || req.body["major"] == 'sociology'){
+          req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; 4th priority — ${req.body["elective4"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
+    }
+    else if (req.body["major"] == 'history' || req.body["major"] == 'art' || req.body["major"] == 'media' || req.body["major"] == 'soc-alt'){
+          req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; 4th priority — ${req.body["elective4"]}; ELECTIVE 2: 1st priority — ${req.body["elective5"]}; 2nd priority — ${req.body["elective6"]}; 3rd priority — ${req.body["elective7"]}; 4th priority — ${req.body["elective8"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
+    }
+    else {
+      req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; ELECTIVE 2: 1st priority — ${req.body["elective5"]}; 2nd priority — ${req.body["elective6"]}; 3rd priority — ${req.body["elective7"]}; ELECTIVE 3: 1st priority — ${req.body["elective9"]}; 2nd priority — ${req.body["elective10"]}; 3rd priority — ${req.body["elective11"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
+    }
+    //
     let emailBody = '';
     var bodyKeys = Object.keys(req.body);
     for (let i=0;i<bodyKeys.length;i++){

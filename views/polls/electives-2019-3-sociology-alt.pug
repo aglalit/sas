@@ -116,15 +116,14 @@ head
         img(src="/assets/logo_sas_ut_short-01.svg")
     h1 The choice of electives for the next module. The form is available until August 23, 11:00.
     form(action="/polls/electives-2019-3" method="post")
+      h3 ELECTIVE 1
       h3 1st priority
-      input(type="hidden" value="year2" name="major")    
+      input(type="hidden" value="soc-alt" name="major")    
       div(class="input-group")
         .flex-container.row
           input(type="radio" value="David Melbye" name="elective1" id="David Melbye1")
           label(for="David Melbye1") Film History and Form I — David Melbye
-        .flex-container.row
-          input(type="radio" value="Матвей Ломоносов" name="elective1" id="Матвей Ломоносов1")
-          label(for="Матвей Ломоносов1") Социологические перспективы — Матвей Ломоносов
+        
         .flex-container.row
           input(type="radio" value="Vitaly Nikolaev" name="elective1" id="Vitaly Nikolaev1")
           label(for="Vitaly Nikolaev1") Math Tools for IT — Vitaly Nikolaev
@@ -149,17 +148,13 @@ head
         .flex-container.row
           input(type="radio" value="Brain and Behavior" name="elective1" id="Brain and Behavior1")
           label(for="Brain and Behavior1") Brain and Behavior — Krishna K
-        .flex-container.row
-          input(type="radio" value="Jay Silverstein" name="elective1" id="Jay Silverstein1")
-          label(for="Jay Silverstein1") Introduction to Culture — Jay Silverstein
+        
       h3 2nd priority
       div(class="input-group")
         .flex-container.row
           input(type="radio" value="David Melbye" name="elective2" id="David Melbye2")
           label(for="David Melbye2") Film History and Form I — David Melbye
-        .flex-container.row
-          input(type="radio" value="Матвей Ломоносов" name="elective2" id="Матвей Ломоносов2")
-          label(for="Матвей Ломоносов2") Социологические перспективы — Матвей Ломоносов
+        
         .flex-container.row
           input(type="radio" value="Vitaly Nikolaev" name="elective2" id="Vitaly Nikolaev2")
           label(for="Vitaly Nikolaev2") Math Tools for IT — Vitaly Nikolaev
@@ -184,17 +179,13 @@ head
         .flex-container.row
           input(type="radio" value="Brain and Behavior" name="elective2" id="Brain and Behavior2")
           label(for="Brain and Behavior2") Brain and Behavior — Krishna K
-        .flex-container.row
-          input(type="radio" value="Jay Silverstein" name="elective2" id="Jay Silverstein2")
-          label(for="Jay Silverstein2") Introduction to Culture — Jay Silverstein
+        
       h3 3rd priority
       div(class="input-group")
         .flex-container.row
           input(type="radio" value="David Melbye" name="elective3" id="David Melbye3")
           label(for="David Melbye3") Film History and Form I — David Melbye
-        .flex-container.row
-          input(type="radio" value="Матвей Ломоносов" name="elective3" id="Матвей Ломоносов3")
-          label(for="Матвей Ломоносов3") Социологические перспективы — Матвей Ломоносов
+        
         .flex-container.row
           input(type="radio" value="Vitaly Nikolaev" name="elective3" id="Vitaly Nikolaev3")
           label(for="Vitaly Nikolaev3") Math Tools for IT — Vitaly Nikolaev
@@ -219,17 +210,13 @@ head
         .flex-container.row
           input(type="radio" value="Brain and Behavior" name="elective3" id="Brain and Behavior3")
           label(for="Brain and Behavior3") Brain and Behavior — Krishna K
-        .flex-container.row
-          input(type="radio" value="Jay Silverstein" name="elective3" id="Jay Silverstein3")
-          label(for="Jay Silverstein3") Introduction to Culture — Jay Silverstein
+        
       h3 4th priority
       div(class="input-group")
         .flex-container.row
           input(type="radio" value="David Melbye" name="elective4" id="David Melbye4")
           label(for="David Melbye4") Film History and Form I — David Melbye
-        .flex-container.row
-          input(type="radio" value="Матвей Ломоносов" name="elective4" id="Матвей Ломоносов4")
-          label(for="Матвей Ломоносов4") Социологические перспективы — Матвей Ломоносов
+        
         .flex-container.row
           input(type="radio" value="Vitaly Nikolaev" name="elective4" id="Vitaly Nikolaev4")
           label(for="Vitaly Nikolaev4") Math Tools for IT — Vitaly Nikolaev
@@ -254,7 +241,130 @@ head
         .flex-container.row
           input(type="radio" value="Brain and Behavior" name="elective4" id="Brain and Behavior4")
           label(for="Brain and Behavior4") Brain and Behavior — Krishna K
+        
+      h3 ELECTIVE 2
+      h3 1st priority
+      div(class="input-group")
         .flex-container.row
-          input(type="radio" value="Jay Silverstein" name="elective4" id="Jay Silverstein4")
-          label(for="Jay Silverstein4") Introduction to Culture — Jay Silverstein  
+          input(type="radio" value="David Melbye" name="elective5" id="David Melbye5")
+          label(for="David Melbye5") Film History and Form I — David Melbye
+        
+        .flex-container.row
+          input(type="radio" value="Vitaly Nikolaev" name="elective5" id="Vitaly Nikolaev5")
+          label(for="Vitaly Nikolaev5") Math Tools for IT — Vitaly Nikolaev
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective5" id="Juliette Colinas5")
+          label(for="Juliette Colinas5") Cell Biology — Juliette Colinas
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective5" id="Anne Mulhall5")
+          label(for="Anne Mulhall5") Foundations of the Humanities — Anne Mulhall
+        .flex-container.row
+          input(type="radio" value="David Dussealt" name="elective5" id="David Dussealt5")
+          label(for="David Dussealt5") Emerging from the Shadows: Africa in the 21st Century — David Dussealt
+        .flex-container.row
+          input(type="radio" value="Corinne Doria" name="elective5" id="Corinne Doria5")
+          label(for="Corinne Doria5") Medical Humanities: Interdisciplinary Approaches to Medicine and Society — Corinne Doria
+        .flex-container.row
+          input(type="radio" value="Peter Jones" name="elective5" id="Peter Jones5")
+          label(for="Peter Jones5") Essentials of Global History — Peter Jones
+        .flex-container.row
+          input(type="radio" value="Munesh Chauhan" name="elective5" id="Munesh Chauhan5")
+          label(for="Munesh Chauhan5") Computer Hardware and Operating Systems — Munesh Singh Chauhan
+        .flex-container.row
+          input(type="radio" value="Brain and Behavior" name="elective5" id="Brain and Behavior5")
+          label(for="Brain and Behavior5") Brain and Behavior — Krishna K
+        
+      h3 2nd priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="David Melbye" name="elective6" id="David Melbye6")
+          label(for="David Melbye6") Film History and Form I — David Melbye
+        
+        .flex-container.row
+          input(type="radio" value="Vitaly Nikolaev" name="elective6" id="Vitaly Nikolaev6")
+          label(for="Vitaly Nikolaev6") Math Tools for IT — Vitaly Nikolaev
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective6" id="Juliette Colinas6")
+          label(for="Juliette Colinas6") Cell Biology — Juliette Colinas
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective6" id="Anne Mulhall6")
+          label(for="Anne Mulhall6") Foundations of the Humanities — Anne Mulhall
+        .flex-container.row
+          input(type="radio" value="David Dussealt" name="elective6" id="David Dussealt6")
+          label(for="David Dussealt6") Emerging from the Shadows: Africa in the 21st Century — David Dussealt
+        .flex-container.row
+          input(type="radio" value="Corinne Doria" name="elective6" id="Corinne Doria6")
+          label(for="Corinne Doria6") Medical Humanities: Interdisciplinary Approaches to Medicine and Society — Corinne Doria
+        .flex-container.row
+          input(type="radio" value="Peter Jones" name="elective6" id="Peter Jones6")
+          label(for="Peter Jones6") Essentials of Global History — Peter Jones
+        .flex-container.row
+          input(type="radio" value="Munesh Chauhan" name="elective6" id="Munesh Chauhan6")
+          label(for="Munesh Chauhan6") Computer Hardware and Operating Systems — Munesh Singh Chauhan
+        .flex-container.row
+          input(type="radio" value="Brain and Behavior" name="elective6" id="Brain and Behavior6")
+          label(for="Brain and Behavior6") Brain and Behavior — Krishna K
+        
+      h3 3rd priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="David Melbye" name="elective7" id="David Melbye7")
+          label(for="David Melbye7") Film History and Form I — David Melbye
+        
+        .flex-container.row
+          input(type="radio" value="Vitaly Nikolaev" name="elective7" id="Vitaly Nikolaev7")
+          label(for="Vitaly Nikolaev7") Math Tools for IT — Vitaly Nikolaev
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective7" id="Juliette Colinas7")
+          label(for="Juliette Colinas7") Cell Biology — Juliette Colinas
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective7" id="Anne Mulhall7")
+          label(for="Anne Mulhall7") Foundations of the Humanities — Anne Mulhall
+        .flex-container.row
+          input(type="radio" value="David Dussealt" name="elective7" id="David Dussealt7")
+          label(for="David Dussealt7") Emerging from the Shadows: Africa in the 21st Century — David Dussealt
+        .flex-container.row
+          input(type="radio" value="Corinne Doria" name="elective7" id="Corinne Doria7")
+          label(for="Corinne Doria7") Medical Humanities: Interdisciplinary Approaches to Medicine and Society — Corinne Doria
+        .flex-container.row
+          input(type="radio" value="Peter Jones" name="elective7" id="Peter Jones7")
+          label(for="Peter Jones7") Essentials of Global History — Peter Jones
+        .flex-container.row
+          input(type="radio" value="Munesh Chauhan" name="elective7" id="Munesh Chauhan7")
+          label(for="Munesh Chauhan7") Computer Hardware and Operating Systems — Munesh Singh Chauhan
+        .flex-container.row
+          input(type="radio" value="Brain and Behavior" name="elective7" id="Brain and Behavior7")
+          label(for="Brain and Behavior7") Brain and Behavior — Krishna K
+        
+      h3 4th priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="David Melbye" name="elective8" id="David Melbye8")
+          label(for="David Melbye8") Film History and Form I — David Melbye
+        
+        .flex-container.row
+          input(type="radio" value="Vitaly Nikolaev" name="elective8" id="Vitaly Nikolaev8")
+          label(for="Vitaly Nikolaev8") Math Tools for IT — Vitaly Nikolaev
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective8" id="Juliette Colinas8")
+          label(for="Juliette Colinas8") Cell Biology — Juliette Colinas
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective8" id="Anne Mulhall8")
+          label(for="Anne Mulhall8") Foundations of the Humanities — Anne Mulhall
+        .flex-container.row
+          input(type="radio" value="David Dussealt" name="elective8" id="David Dussealt8")
+          label(for="David Dussealt8") Emerging from the Shadows: Africa in the 21st Century — David Dussealt
+        .flex-container.row
+          input(type="radio" value="Corinne Doria" name="elective8" id="Corinne Doria8")
+          label(for="Corinne Doria8") Medical Humanities: Interdisciplinary Approaches to Medicine and Society — Corinne Doria
+        .flex-container.row
+          input(type="radio" value="Peter Jones" name="elective8" id="Peter Jones8")
+          label(for="Peter Jones8") Essentials of Global History — Peter Jones
+        .flex-container.row
+          input(type="radio" value="Munesh Chauhan" name="elective8" id="Munesh Chauhan8")
+          label(for="Munesh Chauhan8") Computer Hardware and Operating Systems — Munesh Singh Chauhan
+        .flex-container.row
+          input(type="radio" value="Brain and Behavior" name="elective8" id="Brain and Behavior8")
+          label(for="Brain and Behavior8") Brain and Behavior — Krishna K
+        
       button(type="submit" class="btn btn-primary btn-lg") Submit
