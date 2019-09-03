@@ -21,6 +21,7 @@ var headers = [];
 /**
  *  On load, called to load the auth2 library and API client library.
  */
+
 gapi.load('client:auth2', initClient);
 
 
@@ -99,7 +100,7 @@ function updateSigninStatus(isSignedIn) {
 function listMajors() {
   gapi.client.sheets.spreadsheets.values.get({
     spreadsheetId: '120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc',
-    range: 'A1:Z20',
+    range: '\'' + moment().format('DD.MM ddd') + '\'!A1:Z20',
     // majorDimension: "COLUMNS",
   }).then(function(response) {
     sheet = response.result.values;
