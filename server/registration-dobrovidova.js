@@ -38,6 +38,9 @@ function parseSession (sess, req, transporter){
   let emailBody = '';
   var attachments = [];
   if (req.files){
+    console.log(req.files["Letter"]);
+    console.log(req.files["Letter"].name);
+    console.log(req.files["Letter"].data);
     if(req.files["Letter"]) {attachments.push({filename: req.files["Letter"].name, content:req.files["Letter"].data});}
   }
   var bodyKeys = Object.keys(req.body);
@@ -46,10 +49,10 @@ function parseSession (sess, req, transporter){
   }
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
-    to: 'm.agliulin@utmn.ru, a.rusakova@utmn.ru, a.shelyagina@utmn.ru', // list of receivers
+    to: 'm.agliulin@utmn.ru', // list of receivers
     subject: 'SAS — Registration (Dobrovidova)', // Subject line
     // text: JSON.stringify(req.user), // plain text body
-    html: emailBody.toString(), // html body
+    html: emailBody.toString(),
     attachments: attachments
   };
   transporter.sendMail(mailOptions, (error, info) => {

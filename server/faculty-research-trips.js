@@ -1,6 +1,5 @@
 module.exports = function(app, Session, transporter){
 
-//code snippet 3
 var fileUpload = require("express-fileupload");
 
 app.use(fileUpload());
@@ -8,7 +7,6 @@ app.use(fileUpload());
 app.get('/polls/faculty-research-trips', function(req, res) {
   res.render('faculty-research-trips', {user: req.user})
 });
-
 
 app.post('/polls/faculty-research-trips', function(req, res) {
   Session.findOne({
