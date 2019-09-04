@@ -234,15 +234,15 @@ body
         a(href="https://sas.utmn.ru/wp-content/uploads/2019/09/ДПОП-ПК-Научная-коммуникация-SAS.pdf" target="_blank") Ссылка на силлабус
         span .
       p &nbsp;
-      form(action="/polls/registration-dobrovidova" method="post")
+      form(action="/polls/registration-dobrovidova" method="post" enctype="multipart/form-data" )
         fieldset
           div(class="input-group")
             .flex-container.column
-              label(for="ФИО") ФИО
-              input(type="text" required="required" class="form-control" name="ФИО")
+              label(for="Name") ФИО
+              input(type="text" required="required" class="form-control" name="Name")
             .flex-container.column
-              label(for="ФИО") Должность (с указанием подразделения) 
-              input(type="text" required="required" class="form-control" name="ФИО")
+              label(for="Position") Должность (с указанием подразделения) 
+              input(type="text" required="required" class="form-control" name="Position")
             .flex-container.column
               label(for="Email") Email
               input(type="email" required="required" class="form-control" name="Email")
@@ -252,7 +252,6 @@ body
             .flex-container.column
               label(for="About") Опишите, чем вы занимаетесь сейчас и есть ли у вас опыт в научной журналистике.
               input(type="text" class="form-control" name="About")
-              input(type="hidden" id="event" value="default" name="event")
             .flex-container.column
               label(for="Letter") Мотивационное письмо (до 2000 знаков)
               input(type="file" class="form-control" name="Letter")
