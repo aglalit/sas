@@ -37,12 +37,12 @@ function parseSession (sess, req, transporter){
 // });
   let emailBody = '';
   var attachments = [];
-  
+  console.log(req);
   if (req.files){
-    console.log(req.files["Letter"]);
-    console.log(req.files["Letter"].name);
-    console.log(req.files["Letter"].data);
-    if(req.files["Letter"]) {attachments.push({filename: req.files["Letter"].name, content:req.files["Letter"].data});}
+    console.log(req.files["letter"]);
+    console.log(req.files["letter"].name);
+    console.log(req.files["letter"].data);
+    if(req.files["letter"]) {attachments.push({filename: req.files["letter"].name, content:req.files["letter"].data});}
   }
   var bodyKeys = Object.keys(req.body);
   for (let i=0;i<bodyKeys.length;i++){
