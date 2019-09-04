@@ -22,7 +22,7 @@ app.post('/polls/registration-dobrovidova', function(req, res) {
       parseSession (newSession, req, transporter);
     }
   });
-  req.flash('info', 'Благодарим ща регистрацию.');
+  req.flash('info', 'Благодарим за регистрацию.');
   res.render('polls_anonymous', {messages: req.flash('info')})
 });
 
