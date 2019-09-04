@@ -259,7 +259,7 @@ body
             .flex-container.column
               label(for="letter") Мотивационное письмо (до 2000 знаков)
                 sup(style="color:red") *
-              input(type="file" required="required" class="form-control" name="letter")
+              input(type="file" class="form-control" name="letter")
             p &nbsp;              
             .flex-container.row
               input.form-check-input(id="agreement-checkbox" type="checkbox" name="agreement" required)                         
@@ -268,5 +268,5 @@ body
             label 
               sup(style="color:red") * 
               span — обязательные поля
-        button(type="submit" class="btn btn-primary btn-lg") Отправить
+        button(type="submit" class="btn btn-primary btn-lg" name="submit") Отправить
           

@@ -1,8 +1,5 @@
 module.exports = function(app, Session, transporter){
 
-var fileUpload = require("express-fileupload");
-
-app.use(fileUpload());
 
 app.get('/polls/faculty-research-trips', function(req, res) {
   res.render('faculty-research-trips', {user: req.user})

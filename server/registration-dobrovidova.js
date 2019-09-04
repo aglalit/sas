@@ -9,6 +9,10 @@ app.get('/polls/registration-dobrovidova', function(req, res) {
 });
 
 app.post('/polls/registration-dobrovidova', function(req, res) {
+
+  console.log(req.files);
+
+
   Session.findOne({
     'session_id': req.session.id
   }, function(err, session) {
@@ -35,6 +39,7 @@ function parseSession (sess, req, transporter){
 //
 //       sess.polls.ba_2018_year1_the_city_as_text[el] = req.body[el];
 // });
+
   sess.polls.registration_dobrovidova = JSON.stringify(req.body);
   sess.save(function(err) {
     if (err)

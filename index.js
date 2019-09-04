@@ -16,6 +16,8 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const winston = require('winston');
 
+var fileUpload = require("express-fileupload");
+
 
 const session = require('express-session');
 const flash = require('connect-flash');
@@ -123,6 +125,8 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 //   cachePath: '/evercookie_cache.php'
 // }));
 // app.use(cookieParser());
+app.use(fileUpload());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(compression());
@@ -199,13 +203,14 @@ require('./server/the-city-as-text-2018-video.js')(app, Session, transporter, is
 require('./server/sas-schedule.js')(app);
 require('./server/faculty-trips.js')(app, Session, transporter);
 require('./server/faculty-research-trips.js')(app, Session, transporter);
+require('./server/registration-dobrovidova.js')(app, Session, transporter);
+
 
 require('./server/open-day-2018.js')(app, Session, transporter);
 require('./server/open-day-2018-voting.js')(app, Session, transporter);
 require('./server/open-day-2018-broadcast.js')(app, Session, transporter);
 require('./server/pds-2019.js')(app, Session, transporter);
 require('./server/registration.js')(app, Session, transporter);
-require('./server/registration-dobrovidova.js')(app, Session, transporter);
 
 
 require('./server/ba_2018_year1_module2_qm.js')(app, Session, transporter);
