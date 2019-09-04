@@ -402,10 +402,7 @@ var sessionSchema = mongoose.Schema({
         data: String,
         time: String
       },
-      registration_dobrovidova: {
-        data: String,
-        time: String
-      }
+      registration_dobrovidova: String
   }
 });
 
