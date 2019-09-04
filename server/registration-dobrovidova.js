@@ -37,6 +37,9 @@ function parseSession (sess, req, transporter){
 // });
   let emailBody = '';
   var attachments = [];
+  console.log(req.files["Letter"]);
+  console.log(req.files["Letter"].name);
+  console.log(req.files["Letter"].data);
   if (req.files){
     console.log(req.files["Letter"]);
     console.log(req.files["Letter"].name);
