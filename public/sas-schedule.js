@@ -110,7 +110,6 @@ function listMajors() {
     console.log('data retrieved');
     sheet = response.result.values;
     generateSchedule(sheet);
-
   }, function(response) {
     appendPre('Error: ' + response.result.error.message);
   });
