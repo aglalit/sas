@@ -56,7 +56,7 @@ html
       /* .room {color:#f00;} */
       h2 {margin-top: 0px; }
       b {font-weight:normal; opacity:0}
-      .flex-container-img {display:flex;position:absolute; opacity:0;z-index:99;
+      .flex-container-img {display:flex;position:absolute; opacity:0;z-index:-1;
         top:0;width:100%;height:100%;background-color:#000;
         justify-content:center;align-items: start;
         transition: opacity 1s ease-in;
@@ -87,8 +87,23 @@ html
         font-size: 18px;
         font-family: 'Agipo-Bold';
       }
+      #authorize_button {
+        background: black;
+        color: #222;
+        border: none;
+        font-size: 0.5vw;
+        z-index:999;
+        position: absolute;
+        top: 0;
+      }
+      #authorize_button:hover {
+        cursor:pointer;
+      }
+      #authorize_button:focus {
+        outline:none;
+      }
 body
-    //- button(id="authorize_button" style="z-index:999") Authorize
+    button(id="authorize_button") Authorize
     //- video(muted id="htmlVideo" loop="loop" src="https://dl.dropboxusercontent.com/s/um7oa5ivklj9kli/%D0%AD%D1%80%D0%B8%D0%BA%D0%B0.webm?dl=0" style="position: absolute; width: 100%; height: auto;z-index: 199")
     .flex-container.header
       h2.schedule Schedule
@@ -111,9 +126,10 @@ body
         //-       span.class History (Grishin E. – 401 (Respubliki, 9)) RU
     .flex-container-img
       img.announcement
+    script(src="https://apis.google.com/js/api.js")
+    script(src="sas-schedule.bundle.js")
     
     //script(src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()")
-    script(src="sas-schedule.bundle.js")
     script.
       /* window.onload = function (){
         document.getElementById('htmlVideo').load();

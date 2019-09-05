@@ -1,6 +1,5 @@
 // const GetSheetDone = require('get-sheet-done');
 const moment = require('moment');
-const api = require('./api.js');
 
 // Client ID and API key from the Developer Console
 var CLIENT_ID = '1007112818313-kmg9btri07fnska7gb6l16eiue9rffj0.apps.googleusercontent.com';
@@ -22,7 +21,11 @@ var headers = [];
  *  On load, called to load the auth2 library and API client library.
  */
 
-gapi.load('client:auth2', initClient);
+window.onload = handleClientLoad();
+
+function handleClientLoad() {
+        gapi.load('client:auth2', initClient);
+      }
 
 
 /**
@@ -43,7 +46,7 @@ function initClient() {
 
     // Handle the initial sign-in state.
     updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-    // authorizeButton.onclick = handleAuthClick;
+    authorizeButton.onclick = handleAuthClick;
     // signoutButton.onclick = handleSignoutClick;
   }, function(error) {
     console.log(error);
@@ -58,11 +61,11 @@ function initClient() {
  */
 function updateSigninStatus(isSignedIn) {
   if (isSignedIn) {
-    // authorizeButton.style.display = 'none';
+    authorizeButton.style.display = 'none';
   //  signoutButton.style.display = 'block';
     listMajors();
   } else {
-    // authorizeButton.style.display = 'block';
+    authorizeButton.style.display = 'block';
     // signoutButton.style.display = 'none';
   }
 }
@@ -70,9 +73,10 @@ function updateSigninStatus(isSignedIn) {
 /**
  *  Sign in the user upon button click.
  */
-// function handleAuthClick(event) {
-//   gapi.auth2.getAuthInstance().signIn();
-// }
+function handleAuthClick(event) {
+  console.log('obj');
+  gapi.auth2.getAuthInstance().signIn();
+}
 
 /**
  *  Sign out the user upon button click.
@@ -217,6 +221,7 @@ function generateSchedule(sheet){
     if (data['2'][indexOfDelimiter]) document.querySelector('.announcement').src = data['2'][indexOfDelimiter];
     else if (data['3'][indexOfDelimiter]) document.querySelector('.announcement').src = data['3'][indexOfDelimiter];
     announcementContainer.style.opacity = '1';
+    announcementContainer.style.zIndex = '99';
     firstHalfReverse = false;
   }
   else if((moment().format('mm')%10 === 0 && moment().format('ss')<=32) && data['3'][indexOfDelimiter].length > 1){
@@ -224,10 +229,12 @@ function generateSchedule(sheet){
     else if (data['2'][indexOfDelimiter]) document.querySelector('.announcement').src = data['2'][indexOfDelimiter];
 
     announcementContainer.style.opacity = '1';
+    announcementContainer.style.zIndex = '99';
     firstHalfReverse = true;
   }
   else {
     announcementContainer.style.opacity = '0';
+    announcementContainer.style.zIndex = '-1';
   }
 
   if(moment().format('ss')<=30){
