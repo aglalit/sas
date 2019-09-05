@@ -107,6 +107,7 @@ function listMajors() {
     range: '\'' + moment().format('DD.MM ddd') + '\'!A1:Z20',
     // majorDimension: "COLUMNS",
   }).then(function(response) {
+    console.log('data retrieved');
     sheet = response.result.values;
     generateSchedule(sheet);
 
