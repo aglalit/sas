@@ -108,7 +108,7 @@ function listMajors() {
     // majorDimension: "COLUMNS",
   }).then(function(response) {
     sheet = response.result.values;
-
+    generateSchedule(sheet);
 
   }, function(response) {
     appendPre('Error: ' + response.result.error.message);
@@ -265,7 +265,7 @@ function generateSchedule(sheet){
 }
 
 setInterval(function(){
-  generateSchedule(sheet);
+  listMajors();
 }, 5000);
 
 // var justHidden = false;
