@@ -232,6 +232,12 @@ function generateSchedule(sheet){
     announcementContainer.style.zIndex = '99';
     firstHalfReverse = true;
   }
+  else if(((moment().format('mm')%10 === 2 || moment().format('mm')%10 === 4 || moment().format('mm')%10 === 6 || moment().format('mm')%10 === 8) && moment().format('ss')<=32) && data['4'][indexOfDelimiter].length > 1){
+    if (data['4'][indexOfDelimiter]) document.querySelector('.announcement').src = data['4'][indexOfDelimiter];
+    announcementContainer.style.opacity = '1';
+    announcementContainer.style.zIndex = '99';
+    firstHalfReverse = true;
+  }
   else {
     announcementContainer.style.opacity = '0';
     announcementContainer.style.zIndex = '-1';

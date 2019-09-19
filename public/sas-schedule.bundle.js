@@ -4712,6 +4712,7 @@ function listMajors() {
     range: '\'' + moment().format('DD.MM ddd') + '\'!A1:Z20',
     // majorDimension: "COLUMNS",
   }).then(function(response) {
+    console.log('data retrieved');
     sheet = response.result.values;
     generateSchedule(sheet);
   }, function(response) {
@@ -4832,6 +4833,12 @@ function generateSchedule(sheet){
     if (data['3'][indexOfDelimiter]) document.querySelector('.announcement').src = data['3'][indexOfDelimiter];
     else if (data['2'][indexOfDelimiter]) document.querySelector('.announcement').src = data['2'][indexOfDelimiter];
 
+    announcementContainer.style.opacity = '1';
+    announcementContainer.style.zIndex = '99';
+    firstHalfReverse = true;
+  }
+  else if(((moment().format('mm')%10 === 2 || moment().format('mm')%10 === 4 || moment().format('mm')%10 === 6 || moment().format('mm')%10 === 8) && moment().format('ss')<=32) && data['4'][indexOfDelimiter].length > 1){
+    if (data['4'][indexOfDelimiter]) document.querySelector('.announcement').src = data['4'][indexOfDelimiter];
     announcementContainer.style.opacity = '1';
     announcementContainer.style.zIndex = '99';
     firstHalfReverse = true;
