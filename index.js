@@ -236,6 +236,8 @@ require('./server/majors.js')(app, Session, transporter, isLoggedIn, User);
 
 require('./server/registration-list.js')(app, Session, transporter);
 require('./server/feedback.js')(app, Session, transporter, logger);
+require('./server/db_export.js')(app, Session, User);
+
 
 
 // 4th MODULE 2019
