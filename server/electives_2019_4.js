@@ -1,7 +1,15 @@
 module.exports = function(app, Session, transporter, isLoggedIn, User){
 
-  app.get('/polls/electives-2019-4-year2', isLoggedIn, function(req, res) {
-    res.render('electives-2019-4-year2', {user: req.user})
+  app.get('/polls/electives-2019-4-year2-2', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-year2-2', {user: req.user})
+  });
+
+  app.get('/polls/electives-2019-4-year2-1', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-year2-1', {user: req.user})
+  });
+
+  app.get('/polls/electives-2019-4-year1', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-year1', {user: req.user})
   });
 
   app.get('/polls/electives-2019-4-biology', isLoggedIn, function(req, res) {
