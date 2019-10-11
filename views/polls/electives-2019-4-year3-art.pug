@@ -1,0 +1,652 @@
+doctype html
+head
+  title The choice of electives
+  link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+  // load bootstrap css
+  style.
+    body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+    @font-face {
+      font-family: 'Agipo-Bold';
+      src:url('../fonts/agipo/Agipo-Bold.woff');
+    }
+    img {
+      width:80%;
+      margin-top:10px;
+    }
+    .logo {padding-bottom:30px}
+    h2 {font-weight:800; margin-bottom:20px;}
+    .jumbotron h1 {
+      font-size:36px;
+      margin-bottom: 40px;
+    }
+    h3 {
+      font-size: 1.5em;
+      font-weight: 400;
+    }
+    .jumbotron{
+      font-size:18px;
+      line-height: initial;
+      padding-top: 0px;
+    }
+    .container{
+      width:98% !important;
+    }
+    .input-group{
+      margin-bottom:20px;
+    }
+    .input-group label {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight: 500;
+      margin: 10px 0;
+      font-size:20px;
+      width:93%;
+    }
+    .input-group .label__description {
+      font-family:initial;
+    }
+    .input-group .form-control {
+      margin: 20px 0 40px 0;
+      width:75%;
+    }
+    form {
+      margin-top: 30px;
+    }
+    label,legend {
+      text-align: left;
+          float: left;
+    }
+    legend {font-size: 1.8em;}
+    input, textarea, select {
+      float:left;
+      width:75%;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    input[type="radio"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+
+      border: 2px solid #999;
+      transition: 0.2s all linear;
+      outline: none;
+      margin-right: 15px;
+
+      position: relative;
+      top:0;
+      }
+      input:focus {
+        outline: none !important;
+      }
+      input:checked {
+        border: 12px solid #00f;
+      }
+      button {
+        background-color: #00f !important;
+        border: none !important;
+      }
+      .flex-container {display:flex; flex-direction:column; margin:10px 0;}
+      .flex-container.row {flex-direction:row;}
+
+      @media (max-width: 1024px) {
+
+        body{padding-top:10px}
+        .container{
+        width:95%;
+        }
+      .input-group  label {
+        font-size:30px ;
+        margin-bottom:20px;
+        }
+        input[type="radio"]{
+          top:6px;
+        }
+        button.btn-lg {
+          font-size: 30px;
+        }
+      }
+.container
+  .jumbotron.text-center
+    .logo
+      a(href="https://sas.utmn.ru")
+        img(src="/assets/logo_sas_ut_short-01.svg")
+    h1 The choice of electives for the next module. The form is available until October 14, 12:00.
+    form(action="/polls/electives-2019-4" method="post")
+      h3 ELECTIVE 1
+      h3 1st priority
+      input(type="hidden" value="year3-art" name="major")    
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Munesh Chauchan" name="elective1" id="Munesh Chauchan1")
+          label(for="Munesh Chauchan1") AI — Munesh Chauchan
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Business" name="elective1" id="Gordana Pesakovic Business1")
+          label(for="Gordana Pesakovic Business1") International Business — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Erika Wolf" name="elective1" id="Erika Wolf1")
+          label(for="Erika Wolf1") Sovprop — Erika Wolf
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective1" id="Anne Mulhall1")
+          label(for="Anne Mulhall1") Fragility and Resilience — Anne Mulhall
+        .flex-container.row
+          input(type="radio" value="Dmitry Andreyev" name="elective1" id="Dmitry Andreyev1")
+          label(for="Dmitry Andreyev1") TLS — Dmitry Andreyev
+        .flex-container.row
+          input(type="radio" value="Matthew McGinnis" name="elective1" id="Matthew McGinnis1")
+          label(for="Matthew McGinnis1") ESL — Matthew McGinnis
+        .flex-container.row
+          input(type="radio" value="Svetlana Erpyleva" name="elective1" id="Svetlana Erpyleva1")
+          label(for="Svetlana Erpyleva1") Qualitative Methods — Svetlana Erpyleva
+        .flex-container.row
+          input(type="radio" value="Matvey Lomonosov" name="elective1" id="Matvey Lomonosov1")
+          label(for="Matvey Lomonosov1") Design and Methods — Matvey Lomonosov
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Economics" name="elective1" id="Gordana Pesakovic Economics1")
+          label(for="Gordana Pesakovic Economics1") International Economics — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Tomasz Blusiewicz" name="elective1" id="Tomasz Blusiewicz1")
+          label(for="Tomasz Blusiewicz1") Economic History — Tomasz Blusiewicz
+        .flex-container.row
+          input(type="radio" value="Olga Ufukova" name="elective1" id="Olga Ufukova1")
+          label(for="Olga Ufukova1") Probability Theory — Olga Ufukova
+        .flex-container.row
+          input(type="radio" value="David Melbye" name="elective1" id="David Melbye1")
+          label(for="David Melbye1") Film Media and Form 2 — David Melbye
+        .flex-container.row
+          input(type="radio" value="Jan Krasni" name="elective1" id="Jan Krasni1")
+          label(for="Jan Krasni1") New Media 1 — Jan Krasni
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective1" id="Evgeny Grishin1")
+          label(for="Evgeny Grishin1") Historiography — Evgeny Grishin
+        .flex-container.row
+          input(type="radio" value="Vitaly Nikolaev" name="elective1" id="Vitaly Nikolaev1")
+          label(for="Vitaly Nikolaev1") Python — Vitaly Nikolaev
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective1" id="Juliette Colinas1")
+          label(for="Juliette Colinas1") Biology: History & Philosophy — Juliette Colinas
+        .flex-container.row
+          input(type="radio" value="Krishna K" name="elective1" id="Krishna K1")
+          label(for="Krishna K1") Physiology — Krishna K
+      h3 2nd priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Munesh Chauchan" name="elective2" id="Munesh Chauchan2")
+          label(for="Munesh Chauchan2") AI — Munesh Chauchan
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Business" name="elective2" id="Gordana Pesakovic Business2")
+          label(for="Gordana Pesakovic Business2") International Business — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Erika Wolf" name="elective2" id="Erika Wolf2")
+          label(for="Erika Wolf2") Sovprop — Erika Wolf
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective2" id="Anne Mulhall2")
+          label(for="Anne Mulhall2") Fragility and Resilience — Anne Mulhall
+        .flex-container.row
+          input(type="radio" value="Dmitry Andreyev" name="elective2" id="Dmitry Andreyev2")
+          label(for="Dmitry Andreyev2") TLS — Dmitry Andreyev
+        .flex-container.row
+          input(type="radio" value="Matthew McGinnis" name="elective2" id="Matthew McGinnis2")
+          label(for="Matthew McGinnis2") ESL — Matthew McGinnis
+        .flex-container.row
+          input(type="radio" value="Svetlana Erpyleva" name="elective2" id="Svetlana Erpyleva2")
+          label(for="Svetlana Erpyleva2") Qualitative Methods — Svetlana Erpyleva
+        .flex-container.row
+          input(type="radio" value="Matvey Lomonosov" name="elective2" id="Matvey Lomonosov2")
+          label(for="Matvey Lomonosov2") Design and Methods — Matvey Lomonosov
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Economics" name="elective2" id="Gordana Pesakovic Economics2")
+          label(for="Gordana Pesakovic Economics2") International Economics — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Tomasz Blusiewicz" name="elective2" id="Tomasz Blusiewicz2")
+          label(for="Tomasz Blusiewicz2") Economic History — Tomasz Blusiewicz
+        .flex-container.row
+          input(type="radio" value="Olga Ufukova" name="elective2" id="Olga Ufukova2")
+          label(for="Olga Ufukova2") Probability Theory — Olga Ufukova
+        .flex-container.row
+          input(type="radio" value="David Melbye" name="elective2" id="David Melbye2")
+          label(for="David Melbye2") Film Media and Form 2 — David Melbye
+        .flex-container.row
+          input(type="radio" value="Jan Krasni" name="elective2" id="Jan Krasni2")
+          label(for="Jan Krasni2") New Media 1 — Jan Krasni
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective2" id="Evgeny Grishin2")
+          label(for="Evgeny Grishin2") Historiography — Evgeny Grishin
+        .flex-container.row
+          input(type="radio" value="Vitaly Nikolaev" name="elective2" id="Vitaly Nikolaev2")
+          label(for="Vitaly Nikolaev2") Python — Vitaly Nikolaev
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective2" id="Juliette Colinas2")
+          label(for="Juliette Colinas2") Biology: History & Philosophy — Juliette Colinas
+        .flex-container.row
+          input(type="radio" value="Krishna K" name="elective2" id="Krishna K2")
+          label(for="Krishna K2") Physiology — Krishna K
+      h3 3rd priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Munesh Chauchan" name="elective3" id="Munesh Chauchan3")
+          label(for="Munesh Chauchan3") AI — Munesh Chauchan
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Business" name="elective3" id="Gordana Pesakovic Business3")
+          label(for="Gordana Pesakovic Business3") International Business — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Erika Wolf" name="elective3" id="Erika Wolf3")
+          label(for="Erika Wolf3") Sovprop — Erika Wolf
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective3" id="Anne Mulhall3")
+          label(for="Anne Mulhall3") Fragility and Resilience — Anne Mulhall
+        .flex-container.row
+          input(type="radio" value="Dmitry Andreyev" name="elective3" id="Dmitry Andreyev3")
+          label(for="Dmitry Andreyev3") TLS — Dmitry Andreyev
+        .flex-container.row
+          input(type="radio" value="Matthew McGinnis" name="elective3" id="Matthew McGinnis3")
+          label(for="Matthew McGinnis3") ESL — Matthew McGinnis
+        .flex-container.row
+          input(type="radio" value="Svetlana Erpyleva" name="elective3" id="Svetlana Erpyleva3")
+          label(for="Svetlana Erpyleva3") Qualitative Methods — Svetlana Erpyleva
+        .flex-container.row
+          input(type="radio" value="Matvey Lomonosov" name="elective3" id="Matvey Lomonosov3")
+          label(for="Matvey Lomonosov3") Design and Methods — Matvey Lomonosov
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Economics" name="elective3" id="Gordana Pesakovic Economics3")
+          label(for="Gordana Pesakovic Economics3") International Economics — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Tomasz Blusiewicz" name="elective3" id="Tomasz Blusiewicz3")
+          label(for="Tomasz Blusiewicz3") Economic History — Tomasz Blusiewicz
+        .flex-container.row
+          input(type="radio" value="Olga Ufukova" name="elective3" id="Olga Ufukova3")
+          label(for="Olga Ufukova3") Probability Theory — Olga Ufukova
+        .flex-container.row
+          input(type="radio" value="David Melbye" name="elective3" id="David Melbye3")
+          label(for="David Melbye3") Film Media and Form 2 — David Melbye
+        .flex-container.row
+          input(type="radio" value="Jan Krasni" name="elective3" id="Jan Krasni3")
+          label(for="Jan Krasni3") New Media 1 — Jan Krasni
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective3" id="Evgeny Grishin3")
+          label(for="Evgeny Grishin3") Historiography — Evgeny Grishin
+        .flex-container.row
+          input(type="radio" value="Vitaly Nikolaev" name="elective3" id="Vitaly Nikolaev3")
+          label(for="Vitaly Nikolaev3") Python — Vitaly Nikolaev
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective3" id="Juliette Colinas3")
+          label(for="Juliette Colinas3") Biology: History & Philosophy — Juliette Colinas
+        .flex-container.row
+          input(type="radio" value="Krishna K" name="elective3" id="Krishna K3")
+          label(for="Krishna K3") Physiology — Krishna K
+      h3 4th priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Munesh Chauchan" name="elective4" id="Munesh Chauchan4")
+          label(for="Munesh Chauchan4") AI — Munesh Chauchan
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Business" name="elective4" id="Gordana Pesakovic Business4")
+          label(for="Gordana Pesakovic Business4") International Business — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Erika Wolf" name="elective4" id="Erika Wolf4")
+          label(for="Erika Wolf4") Sovprop — Erika Wolf
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective4" id="Anne Mulhall4")
+          label(for="Anne Mulhall4") Fragility and Resilience — Anne Mulhall
+        .flex-container.row
+          input(type="radio" value="Dmitry Andreyev" name="elective4" id="Dmitry Andreyev4")
+          label(for="Dmitry Andreyev4") TLS — Dmitry Andreyev
+        .flex-container.row
+          input(type="radio" value="Matthew McGinnis" name="elective4" id="Matthew McGinnis4")
+          label(for="Matthew McGinnis4") ESL — Matthew McGinnis
+        .flex-container.row
+          input(type="radio" value="Svetlana Erpyleva" name="elective4" id="Svetlana Erpyleva4")
+          label(for="Svetlana Erpyleva4") Qualitative Methods — Svetlana Erpyleva
+        .flex-container.row
+          input(type="radio" value="Matvey Lomonosov" name="elective4" id="Matvey Lomonosov4")
+          label(for="Matvey Lomonosov4") Design and Methods — Matvey Lomonosov
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Economics" name="elective4" id="Gordana Pesakovic Economics4")
+          label(for="Gordana Pesakovic Economics4") International Economics — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Tomasz Blusiewicz" name="elective4" id="Tomasz Blusiewicz4")
+          label(for="Tomasz Blusiewicz4") Economic History — Tomasz Blusiewicz
+        .flex-container.row
+          input(type="radio" value="Olga Ufukova" name="elective4" id="Olga Ufukova4")
+          label(for="Olga Ufukova4") Probability Theory — Olga Ufukova
+        .flex-container.row
+          input(type="radio" value="David Melbye" name="elective4" id="David Melbye4")
+          label(for="David Melbye4") Film Media and Form 2 — David Melbye
+        .flex-container.row
+          input(type="radio" value="Jan Krasni" name="elective4" id="Jan Krasni4")
+          label(for="Jan Krasni4") New Media 1 — Jan Krasni
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective4" id="Evgeny Grishin4")
+          label(for="Evgeny Grishin4") Historiography — Evgeny Grishin
+        .flex-container.row
+          input(type="radio" value="Vitaly Nikolaev" name="elective4" id="Vitaly Nikolaev4")
+          label(for="Vitaly Nikolaev4") Python — Vitaly Nikolaev
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective4" id="Juliette Colinas4")
+          label(for="Juliette Colinas4") Biology: History & Philosophy — Juliette Colinas
+        .flex-container.row
+          input(type="radio" value="Krishna K" name="elective4" id="Krishna K4")
+          label(for="Krishna K4") Physiology — Krishna K  
+      h3 5th priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Munesh Chauchan" name="elective5" id="Munesh Chauchan5")
+          label(for="Munesh Chauchan5") AI — Munesh Chauchan
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Business" name="elective5" id="Gordana Pesakovic Business5")
+          label(for="Gordana Pesakovic Business5") International Business — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Erika Wolf" name="elective5" id="Erika Wolf5")
+          label(for="Erika Wolf5") Sovprop — Erika Wolf
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective5" id="Anne Mulhall5")
+          label(for="Anne Mulhall5") Fragility and Resilience — Anne Mulhall
+        .flex-container.row
+          input(type="radio" value="Dmitry Andreyev" name="elective5" id="Dmitry Andreyev5")
+          label(for="Dmitry Andreyev5") TLS — Dmitry Andreyev
+        .flex-container.row
+          input(type="radio" value="Matthew McGinnis" name="elective5" id="Matthew McGinnis5")
+          label(for="Matthew McGinnis5") ESL — Matthew McGinnis
+        .flex-container.row
+          input(type="radio" value="Svetlana Erpyleva" name="elective5" id="Svetlana Erpyleva5")
+          label(for="Svetlana Erpyleva5") Qualitative Methods — Svetlana Erpyleva
+        .flex-container.row
+          input(type="radio" value="Matvey Lomonosov" name="elective5" id="Matvey Lomonosov5")
+          label(for="Matvey Lomonosov5") Design and Methods — Matvey Lomonosov
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Economics" name="elective5" id="Gordana Pesakovic Economics5")
+          label(for="Gordana Pesakovic Economics5") International Economics — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Tomasz Blusiewicz" name="elective5" id="Tomasz Blusiewicz5")
+          label(for="Tomasz Blusiewicz5") Economic History — Tomasz Blusiewicz
+        .flex-container.row
+          input(type="radio" value="Olga Ufukova" name="elective5" id="Olga Ufukova5")
+          label(for="Olga Ufukova5") Probability Theory — Olga Ufukova
+        .flex-container.row
+          input(type="radio" value="David Melbye" name="elective5" id="David Melbye5")
+          label(for="David Melbye5") Film Media and Form 2 — David Melbye
+        .flex-container.row
+          input(type="radio" value="Jan Krasni" name="elective5" id="Jan Krasni5")
+          label(for="Jan Krasni5") New Media 1 — Jan Krasni
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective5" id="Evgeny Grishin5")
+          label(for="Evgeny Grishin5") Historiography — Evgeny Grishin
+        .flex-container.row
+          input(type="radio" value="Vitaly Nikolaev" name="elective5" id="Vitaly Nikolaev5")
+          label(for="Vitaly Nikolaev5") Python — Vitaly Nikolaev
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective5" id="Juliette Colinas5")
+          label(for="Juliette Colinas5") Biology: History & Philosophy — Juliette Colinas
+        .flex-container.row
+          input(type="radio" value="Krishna K" name="elective5" id="Krishna K5")
+          label(for="Krishna K5") Physiology — Krishna K  
+      h3 ELECTIVE 2
+      h3 1st priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Munesh Chauchan" name="elective6" id="Munesh Chauchan6")
+          label(for="Munesh Chauchan6") AI — Munesh Chauchan
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Business" name="elective6" id="Gordana Pesakovic Business6")
+          label(for="Gordana Pesakovic Business6") International Business — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Erika Wolf" name="elective6" id="Erika Wolf6")
+          label(for="Erika Wolf6") Sovprop — Erika Wolf
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective6" id="Anne Mulhall6")
+          label(for="Anne Mulhall6") Fragility and Resilience — Anne Mulhall
+        .flex-container.row
+          input(type="radio" value="Dmitry Andreyev" name="elective6" id="Dmitry Andreyev6")
+          label(for="Dmitry Andreyev6") TLS — Dmitry Andreyev
+        .flex-container.row
+          input(type="radio" value="Matthew McGinnis" name="elective6" id="Matthew McGinnis6")
+          label(for="Matthew McGinnis6") ESL — Matthew McGinnis
+        .flex-container.row
+          input(type="radio" value="Svetlana Erpyleva" name="elective6" id="Svetlana Erpyleva6")
+          label(for="Svetlana Erpyleva6") Qualitative Methods — Svetlana Erpyleva
+        .flex-container.row
+          input(type="radio" value="Matvey Lomonosov" name="elective6" id="Matvey Lomonosov6")
+          label(for="Matvey Lomonosov6") Design and Methods — Matvey Lomonosov
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Economics" name="elective6" id="Gordana Pesakovic Economics6")
+          label(for="Gordana Pesakovic Economics6") International Economics — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Tomasz Blusiewicz" name="elective6" id="Tomasz Blusiewicz6")
+          label(for="Tomasz Blusiewicz6") Economic History — Tomasz Blusiewicz
+        .flex-container.row
+          input(type="radio" value="Olga Ufukova" name="elective6" id="Olga Ufukova6")
+          label(for="Olga Ufukova6") Probability Theory — Olga Ufukova
+        .flex-container.row
+          input(type="radio" value="David Melbye" name="elective6" id="David Melbye6")
+          label(for="David Melbye6") Film Media and Form 2 — David Melbye
+        .flex-container.row
+          input(type="radio" value="Jan Krasni" name="elective6" id="Jan Krasni6")
+          label(for="Jan Krasni6") New Media 1 — Jan Krasni
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective6" id="Evgeny Grishin6")
+          label(for="Evgeny Grishin6") Historiography — Evgeny Grishin
+        .flex-container.row
+          input(type="radio" value="Vitaly Nikolaev" name="elective6" id="Vitaly Nikolaev6")
+          label(for="Vitaly Nikolaev6") Python — Vitaly Nikolaev
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective6" id="Juliette Colinas6")
+          label(for="Juliette Colinas6") Biology: History & Philosophy — Juliette Colinas
+        .flex-container.row
+          input(type="radio" value="Krishna K" name="elective6" id="Krishna K6")
+          label(for="Krishna K6") Physiology — Krishna K
+      h3 2nd priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Munesh Chauchan" name="elective7" id="Munesh Chauchan7")
+          label(for="Munesh Chauchan7") AI — Munesh Chauchan
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Business" name="elective7" id="Gordana Pesakovic Business7")
+          label(for="Gordana Pesakovic Business7") International Business — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Erika Wolf" name="elective7" id="Erika Wolf7")
+          label(for="Erika Wolf7") Sovprop — Erika Wolf
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective7" id="Anne Mulhall7")
+          label(for="Anne Mulhall7") Fragility and Resilience — Anne Mulhall
+        .flex-container.row
+          input(type="radio" value="Dmitry Andreyev" name="elective7" id="Dmitry Andreyev7")
+          label(for="Dmitry Andreyev7") TLS — Dmitry Andreyev
+        .flex-container.row
+          input(type="radio" value="Matthew McGinnis" name="elective7" id="Matthew McGinnis7")
+          label(for="Matthew McGinnis7") ESL — Matthew McGinnis
+        .flex-container.row
+          input(type="radio" value="Svetlana Erpyleva" name="elective7" id="Svetlana Erpyleva7")
+          label(for="Svetlana Erpyleva7") Qualitative Methods — Svetlana Erpyleva
+        .flex-container.row
+          input(type="radio" value="Matvey Lomonosov" name="elective7" id="Matvey Lomonosov7")
+          label(for="Matvey Lomonosov7") Design and Methods — Matvey Lomonosov
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Economics" name="elective7" id="Gordana Pesakovic Economics7")
+          label(for="Gordana Pesakovic Economics7") International Economics — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Tomasz Blusiewicz" name="elective7" id="Tomasz Blusiewicz7")
+          label(for="Tomasz Blusiewicz7") Economic History — Tomasz Blusiewicz
+        .flex-container.row
+          input(type="radio" value="Olga Ufukova" name="elective7" id="Olga Ufukova7")
+          label(for="Olga Ufukova7") Probability Theory — Olga Ufukova
+        .flex-container.row
+          input(type="radio" value="David Melbye" name="elective7" id="David Melbye7")
+          label(for="David Melbye7") Film Media and Form 2 — David Melbye
+        .flex-container.row
+          input(type="radio" value="Jan Krasni" name="elective7" id="Jan Krasni7")
+          label(for="Jan Krasni7") New Media 1 — Jan Krasni
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective7" id="Evgeny Grishin7")
+          label(for="Evgeny Grishin7") Historiography — Evgeny Grishin
+        .flex-container.row
+          input(type="radio" value="Vitaly Nikolaev" name="elective7" id="Vitaly Nikolaev7")
+          label(for="Vitaly Nikolaev7") Python — Vitaly Nikolaev
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective7" id="Juliette Colinas7")
+          label(for="Juliette Colinas7") Biology: History & Philosophy — Juliette Colinas
+        .flex-container.row
+          input(type="radio" value="Krishna K" name="elective7" id="Krishna K7")
+          label(for="Krishna K7") Physiology — Krishna K
+      h3 3rd priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Munesh Chauchan" name="elective8" id="Munesh Chauchan8")
+          label(for="Munesh Chauchan8") AI — Munesh Chauchan
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Business" name="elective8" id="Gordana Pesakovic Business8")
+          label(for="Gordana Pesakovic Business8") International Business — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Erika Wolf" name="elective8" id="Erika Wolf8")
+          label(for="Erika Wolf8") Sovprop — Erika Wolf
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective8" id="Anne Mulhall8")
+          label(for="Anne Mulhall8") Fragility and Resilience — Anne Mulhall
+        .flex-container.row
+          input(type="radio" value="Dmitry Andreyev" name="elective8" id="Dmitry Andreyev8")
+          label(for="Dmitry Andreyev8") TLS — Dmitry Andreyev
+        .flex-container.row
+          input(type="radio" value="Matthew McGinnis" name="elective8" id="Matthew McGinnis8")
+          label(for="Matthew McGinnis8") ESL — Matthew McGinnis
+        .flex-container.row
+          input(type="radio" value="Svetlana Erpyleva" name="elective8" id="Svetlana Erpyleva8")
+          label(for="Svetlana Erpyleva8") Qualitative Methods — Svetlana Erpyleva
+        .flex-container.row
+          input(type="radio" value="Matvey Lomonosov" name="elective8" id="Matvey Lomonosov8")
+          label(for="Matvey Lomonosov8") Design and Methods — Matvey Lomonosov
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Economics" name="elective8" id="Gordana Pesakovic Economics8")
+          label(for="Gordana Pesakovic Economics8") International Economics — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Tomasz Blusiewicz" name="elective8" id="Tomasz Blusiewicz8")
+          label(for="Tomasz Blusiewicz8") Economic History — Tomasz Blusiewicz
+        .flex-container.row
+          input(type="radio" value="Olga Ufukova" name="elective8" id="Olga Ufukova8")
+          label(for="Olga Ufukova8") Probability Theory — Olga Ufukova
+        .flex-container.row
+          input(type="radio" value="David Melbye" name="elective8" id="David Melbye8")
+          label(for="David Melbye8") Film Media and Form 2 — David Melbye
+        .flex-container.row
+          input(type="radio" value="Jan Krasni" name="elective8" id="Jan Krasni8")
+          label(for="Jan Krasni8") New Media 1 — Jan Krasni
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective8" id="Evgeny Grishin8")
+          label(for="Evgeny Grishin8") Historiography — Evgeny Grishin
+        .flex-container.row
+          input(type="radio" value="Vitaly Nikolaev" name="elective8" id="Vitaly Nikolaev8")
+          label(for="Vitaly Nikolaev8") Python — Vitaly Nikolaev
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective8" id="Juliette Colinas8")
+          label(for="Juliette Colinas8") Biology: History & Philosophy — Juliette Colinas
+        .flex-container.row
+          input(type="radio" value="Krishna K" name="elective8" id="Krishna K8")
+          label(for="Krishna K8") Physiology — Krishna K
+      h3 4th priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Munesh Chauchan" name="elective9" id="Munesh Chauchan9")
+          label(for="Munesh Chauchan9") AI — Munesh Chauchan
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Business" name="elective9" id="Gordana Pesakovic Business9")
+          label(for="Gordana Pesakovic Business9") International Business — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Erika Wolf" name="elective9" id="Erika Wolf9")
+          label(for="Erika Wolf9") Sovprop — Erika Wolf
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective9" id="Anne Mulhall9")
+          label(for="Anne Mulhall9") Fragility and Resilience — Anne Mulhall
+        .flex-container.row
+          input(type="radio" value="Dmitry Andreyev" name="elective9" id="Dmitry Andreyev9")
+          label(for="Dmitry Andreyev9") TLS — Dmitry Andreyev
+        .flex-container.row
+          input(type="radio" value="Matthew McGinnis" name="elective9" id="Matthew McGinnis9")
+          label(for="Matthew McGinnis9") ESL — Matthew McGinnis
+        .flex-container.row
+          input(type="radio" value="Svetlana Erpyleva" name="elective9" id="Svetlana Erpyleva9")
+          label(for="Svetlana Erpyleva9") Qualitative Methods — Svetlana Erpyleva
+        .flex-container.row
+          input(type="radio" value="Matvey Lomonosov" name="elective9" id="Matvey Lomonosov9")
+          label(for="Matvey Lomonosov9") Design and Methods — Matvey Lomonosov
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Economics" name="elective9" id="Gordana Pesakovic Economics9")
+          label(for="Gordana Pesakovic Economics9") International Economics — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Tomasz Blusiewicz" name="elective9" id="Tomasz Blusiewicz9")
+          label(for="Tomasz Blusiewicz9") Economic History — Tomasz Blusiewicz
+        .flex-container.row
+          input(type="radio" value="Olga Ufukova" name="elective9" id="Olga Ufukova9")
+          label(for="Olga Ufukova9") Probability Theory — Olga Ufukova
+        .flex-container.row
+          input(type="radio" value="David Melbye" name="elective9" id="David Melbye9")
+          label(for="David Melbye9") Film Media and Form 2 — David Melbye
+        .flex-container.row
+          input(type="radio" value="Jan Krasni" name="elective9" id="Jan Krasni9")
+          label(for="Jan Krasni9") New Media 1 — Jan Krasni
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective9" id="Evgeny Grishin9")
+          label(for="Evgeny Grishin9") Historiography — Evgeny Grishin
+        .flex-container.row
+          input(type="radio" value="Vitaly Nikolaev" name="elective9" id="Vitaly Nikolaev9")
+          label(for="Vitaly Nikolaev9") Python — Vitaly Nikolaev
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective9" id="Juliette Colinas9")
+          label(for="Juliette Colinas9") Biology: History & Philosophy — Juliette Colinas
+        .flex-container.row
+          input(type="radio" value="Krishna K" name="elective9" id="Krishna K9")
+          label(for="Krishna K9") Physiology — Krishna K  
+      h3 5th priority
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" value="Munesh Chauchan" name="elective10" id="Munesh Chauchan10")
+          label(for="Munesh Chauchan10") AI — Munesh Chauchan
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Business" name="elective10" id="Gordana Pesakovic Business10")
+          label(for="Gordana Pesakovic Business10") International Business — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Erika Wolf" name="elective10" id="Erika Wolf10")
+          label(for="Erika Wolf10") Sovprop — Erika Wolf
+        .flex-container.row
+          input(type="radio" value="Anne Mulhall" name="elective10" id="Anne Mulhall10")
+          label(for="Anne Mulhall10") Fragility and Resilience — Anne Mulhall
+        .flex-container.row
+          input(type="radio" value="Dmitry Andreyev" name="elective10" id="Dmitry Andreyev10")
+          label(for="Dmitry Andreyev10") TLS — Dmitry Andreyev
+        .flex-container.row
+          input(type="radio" value="Matthew McGinnis" name="elective10" id="Matthew McGinnis10")
+          label(for="Matthew McGinnis10") ESL — Matthew McGinnis
+        .flex-container.row
+          input(type="radio" value="Svetlana Erpyleva" name="elective10" id="Svetlana Erpyleva10")
+          label(for="Svetlana Erpyleva10") Qualitative Methods — Svetlana Erpyleva
+        .flex-container.row
+          input(type="radio" value="Matvey Lomonosov" name="elective10" id="Matvey Lomonosov10")
+          label(for="Matvey Lomonosov10") Design and Methods — Matvey Lomonosov
+        .flex-container.row
+          input(type="radio" value="Gordana Pesakovic Economics" name="elective10" id="Gordana Pesakovic Economics10")
+          label(for="Gordana Pesakovic Economics10") International Economics — Gordana Pesakovic
+        .flex-container.row
+          input(type="radio" value="Tomasz Blusiewicz" name="elective10" id="Tomasz Blusiewicz10")
+          label(for="Tomasz Blusiewicz10") Economic History — Tomasz Blusiewicz
+        .flex-container.row
+          input(type="radio" value="Olga Ufukova" name="elective10" id="Olga Ufukova10")
+          label(for="Olga Ufukova10") Probability Theory — Olga Ufukova
+        .flex-container.row
+          input(type="radio" value="David Melbye" name="elective10" id="David Melbye10")
+          label(for="David Melbye10") Film Media and Form 2 — David Melbye
+        .flex-container.row
+          input(type="radio" value="Jan Krasni" name="elective10" id="Jan Krasni10")
+          label(for="Jan Krasni10") New Media 1 — Jan Krasni
+        .flex-container.row
+          input(type="radio" value="Evgeny Grishin" name="elective10" id="Evgeny Grishin10")
+          label(for="Evgeny Grishin10") Historiography — Evgeny Grishin
+        .flex-container.row
+          input(type="radio" value="Vitaly Nikolaev" name="elective10" id="Vitaly Nikolaev10")
+          label(for="Vitaly Nikolaev10") Python — Vitaly Nikolaev
+        .flex-container.row
+          input(type="radio" value="Juliette Colinas" name="elective10" id="Juliette Colinas10")
+          label(for="Juliette Colinas10") Biology: History & Philosophy — Juliette Colinas
+        .flex-container.row
+          input(type="radio" value="Krishna K" name="elective10" id="Krishna K10")
+          label(for="Krishna K10") Physiology — Krishna K 
+      button(type="submit" class="btn btn-primary btn-lg") Submit

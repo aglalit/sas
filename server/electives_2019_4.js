@@ -1,42 +1,42 @@
 module.exports = function(app, Session, transporter, isLoggedIn, User){
 
-  app.get('/polls/electives-2019-3-year2', isLoggedIn, function(req, res) {
-    res.render('electives-2019-3-year2', {user: req.user})
+  app.get('/polls/electives-2019-4-year2', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-year2', {user: req.user})
   });
 
-  app.get('/polls/electives-2019-3-biology', isLoggedIn, function(req, res) {
-    res.render('electives-2019-3-biology', {user: req.user})
+  app.get('/polls/electives-2019-4-biology', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-biology', {user: req.user})
   });
 
-  app.get('/polls/electives-2019-3-history', isLoggedIn, function(req, res) {
-    res.render('electives-2019-3-history', {user: req.user})
+  app.get('/polls/electives-2019-4-history', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-history', {user: req.user})
   });
 
-  app.get('/polls/electives-2019-3-art', isLoggedIn, function(req, res) {
-    res.render('electives-2019-3-art', {user: req.user})
+  app.get('/polls/electives-2019-4-art', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-art', {user: req.user})
   });
 
-  app.get('/polls/electives-2019-3-media', isLoggedIn, function(req, res) {
-    res.render('electives-2019-3-media', {user: req.user})
+  app.get('/polls/electives-2019-4-media', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-media', {user: req.user})
   });
 
-  app.get('/polls/electives-2019-3-sociology', isLoggedIn, function(req, res) {
-    res.render('electives-2019-3-sociology', {user: req.user})
+  app.get('/polls/electives-2019-4-sociology', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-sociology', {user: req.user})
   });
 
-  app.get('/polls/electives-2019-3-sociology-alt', isLoggedIn, function(req, res) {
-    res.render('electives-2019-3-sociology-alt', {user: req.user})
+  app.get('/polls/electives-2019-4-sociology-alt', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-sociology-alt', {user: req.user})
   });
 
-  app.get('/polls/electives-2019-3-it', isLoggedIn, function(req, res) {
-    res.render('electives-2019-3-it', {user: req.user})
+  app.get('/polls/electives-2019-4-it', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-it', {user: req.user})
   });
 
-  app.get('/polls/electives-2019-3-economics', isLoggedIn, function(req, res) {
-    res.render('electives-2019-3-economics', {user: req.user})
+  app.get('/polls/electives-2019-4-economics', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-economics', {user: req.user})
   });
 
-  app.post('/polls/electives-2019-3', function(req, res) {
+  app.post('/polls/electives-2019-4', function(req, res) {
     User.findOne({
       '_id': req.user._id
     }, function(err, user) {
@@ -44,22 +44,20 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         return done(err);
 
       if (user) {
-        user.polls.ELECTIVES["2019_3"].elective1 = req.body["elective1"];
-        user.polls.ELECTIVES["2019_3"].elective2 = req.body["elective2"];
-        user.polls.ELECTIVES["2019_3"].elective3 = req.body["elective3"];
-        user.polls.ELECTIVES["2019_3"].elective4 = req.body["elective4"];
-        user.polls.ELECTIVES["2019_3"].elective5 = req.body["elective5"];
-        user.polls.ELECTIVES["2019_3"].elective6 = req.body["elective6"];
-        user.polls.ELECTIVES["2019_3"].elective7 = req.body["elective7"];
-        user.polls.ELECTIVES["2019_3"].elective8 = req.body["elective8"];
-        user.polls.ELECTIVES["2019_3"].elective9 = req.body["elective9"];
-        user.polls.ELECTIVES["2019_3"].elective10 = req.body["elective10"];
-        user.polls.ELECTIVES["2019_3"].elective11 = req.body["elective11"];
-        user.polls.ELECTIVES["2019_3"].elective12 = req.body["elective12"];
+        user.polls.ELECTIVES["2019_4"].elective1 = req.body["elective1"];
+        user.polls.ELECTIVES["2019_4"].elective2 = req.body["elective2"];
+        user.polls.ELECTIVES["2019_4"].elective3 = req.body["elective3"];
+        user.polls.ELECTIVES["2019_4"].elective4 = req.body["elective4"];
+        user.polls.ELECTIVES["2019_4"].elective5 = req.body["elective5"];
+        user.polls.ELECTIVES["2019_4"].elective6 = req.body["elective6"];
+        user.polls.ELECTIVES["2019_4"].elective7 = req.body["elective7"];
+        user.polls.ELECTIVES["2019_4"].elective8 = req.body["elective8"];
+        user.polls.ELECTIVES["2019_4"].elective9 = req.body["elective9"];
+        user.polls.ELECTIVES["2019_4"].elective10 = req.body["elective10"];
 
         var now = new Date();
-        user.polls.ELECTIVES["2019_3"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
-        user.polls.ELECTIVES["2019_3"].major = req.body["major"];
+        user.polls.ELECTIVES["2019_4"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+        user.polls.ELECTIVES["2019_4"].major = req.body["major"];
 
         user.save(function(err, user) {
           if (err)

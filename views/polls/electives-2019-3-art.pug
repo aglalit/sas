@@ -379,24 +379,4 @@ head
           input(type="radio" value="Jay Silverstein" name="elective8" id="Jay Silverstein8")
           label(for="Jay Silverstein8") Introduction to Culture — Jay Silverstein    
       button(type="submit" class="btn btn-primary btn-lg") Submit
-  script.
-    var inputs = document.querySelectorAll('input[type="radio"]');
-    inputs.forEach(function(input){
-      input.addEventListener('click', function(){
-        var inp = input;
-        inputs.forEach(function(i){
-          if (inp.value === i.value){
-            i.disabled = true;
-          }
-          else {
-            i.disabled = false;
-            }
-        });
-        inputs.forEach(function(i){
-        if (i.checked) {
-          var checked = document.querySelectorAll('input[value="'+i.value+'"]');
-          checked.forEach(function(el){el.disabled = true;});
-      }
-      });
-      });
-    });
+  script(src="electives-blocking.js")
