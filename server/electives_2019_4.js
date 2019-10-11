@@ -12,32 +12,28 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
     res.render('electives-2019-4-year1', {user: req.user})
   });
 
-  app.get('/polls/electives-2019-4-biology', isLoggedIn, function(req, res) {
-    res.render('electives-2019-4-biology', {user: req.user})
+  app.get('/polls/electives-2019-4-year3-biology', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-year3-biology', {user: req.user})
   });
 
-  app.get('/polls/electives-2019-4-history', isLoggedIn, function(req, res) {
-    res.render('electives-2019-4-history', {user: req.user})
+  app.get('/polls/electives-2019-4-year3-history', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-year3-history', {user: req.user})
   });
 
-  app.get('/polls/electives-2019-4-art', isLoggedIn, function(req, res) {
-    res.render('electives-2019-4-art', {user: req.user})
+  app.get('/polls/electives-2019-4-year3-art', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-year3-art', {user: req.user})
   });
 
-  app.get('/polls/electives-2019-4-media', isLoggedIn, function(req, res) {
-    res.render('electives-2019-4-media', {user: req.user})
+  app.get('/polls/electives-2019-4-year3-media', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-year3-media', {user: req.user})
   });
 
-  app.get('/polls/electives-2019-4-sociology', isLoggedIn, function(req, res) {
-    res.render('electives-2019-4-sociology', {user: req.user})
+  app.get('/polls/electives-2019-4-year3-sociology', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-year3-sociology', {user: req.user})
   });
 
-  app.get('/polls/electives-2019-4-sociology-alt', isLoggedIn, function(req, res) {
-    res.render('electives-2019-4-sociology-alt', {user: req.user})
-  });
-
-  app.get('/polls/electives-2019-4-it', isLoggedIn, function(req, res) {
-    res.render('electives-2019-4-it', {user: req.user})
+  app.get('/polls/electives-2019-4-year3-it', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-year3-it', {user: req.user})
   });
 
   app.get('/polls/electives-2019-4-economics', isLoggedIn, function(req, res) {
