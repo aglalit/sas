@@ -14,7 +14,8 @@ inputs.forEach(function(input){
     if (i.checked) {
       var checked = document.querySelectorAll('input[value="'+i.value+'"]');
       checked.forEach(function(el){el.disabled = true;});
-  }
+      i.disabled = false;
+    }
   });
   });
 });
