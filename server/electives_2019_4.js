@@ -28,8 +28,8 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
     res.render('electives-2019-4-year3-media', {user: req.user})
   });
 
-  app.get('/polls/electives-2019-4-year3-sociology', isLoggedIn, function(req, res) {
-    res.render('electives-2019-4-year3-sociology', {user: req.user})
+  app.get('/polls/electives-2019-4-year3-soc', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-year3-soc', {user: req.user})
   });
 
   app.get('/polls/electives-2019-4-year3-it', isLoggedIn, function(req, res) {
