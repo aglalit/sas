@@ -76,11 +76,11 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         console.log('There isn\'t such user in the database');
       }
     });
-    if (req.body["major"] == 'year1' || req.body["major"] == 'year2-1' || req.body["major"] == 'bio' || req.body["major"] == 'soc' || req.body["major"] == 'media'){
+    if (req.body["major"] == 'year1' || req.body["major"] == 'year2-1' || req.body["major"] == 'year3-bio' || req.body["major"] == 'year3-soc' || req.body["major"] == 'year3-media'){
           req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; 4th priority — ${req.body["elective4"]}; 5th priority — ${req.body["elective5"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
     }
     else {
-          req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; 4th priority — ${req.body["elective4"]}; 5th priority — ${req.body["elective5"]}; ELECTIVE 2: 1st priority — ${req.body["elective6"]}; 2nd priority — ${req.body["elective7"]}; 3rd priority — ${req.body["elective8"]}; 4th priority — ${req.body["elective9"]}; 10th priority — ${req.body["elective10"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
+          req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; 4th priority — ${req.body["elective4"]}; 5th priority — ${req.body["elective5"]}; ELECTIVE 2: 1st priority — ${req.body["elective6"]}; 2nd priority — ${req.body["elective7"]}; 3rd priority — ${req.body["elective8"]}; 4th priority — ${req.body["elective9"]}; 5th priority — ${req.body["elective10"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
     }
     //
     let emailBody = '';
