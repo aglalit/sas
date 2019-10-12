@@ -12,8 +12,8 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
     res.render('electives-2019-4-year1', {user: req.user})
   });
 
-  app.get('/polls/electives-2019-4-year3-biology', isLoggedIn, function(req, res) {
-    res.render('electives-2019-4-year3-biology', {user: req.user})
+  app.get('/polls/electives-2019-4-year3-bio', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-year3-bio', {user: req.user})
   });
 
   app.get('/polls/electives-2019-4-year3-history', isLoggedIn, function(req, res) {
