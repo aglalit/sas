@@ -40,6 +40,10 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
     res.render('electives-2019-4-economics', {user: req.user})
   });
 
+  app.get('/polls/electives-2019-4-foreign', isLoggedIn, function(req, res) {
+    res.render('electives-2019-4-foreign', {user: req.user})
+  });
+
   app.post('/polls/electives-2019-4', function(req, res) {
     User.findOne({
       '_id': req.user._id
@@ -72,14 +76,11 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         console.log('There isn\'t such user in the database');
       }
     });
-    if (req.body["major"] == 'year2' || req.body["major"] == 'it' || req.body["major"] == 'biology' || req.body["major"] == 'sociology'){
-          req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; 4th priority — ${req.body["elective4"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
-    }
-    else if (req.body["major"] == 'history' || req.body["major"] == 'art' || req.body["major"] == 'media' || req.body["major"] == 'soc-alt'){
-          req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; 4th priority — ${req.body["elective4"]}; ELECTIVE 2: 1st priority — ${req.body["elective5"]}; 2nd priority — ${req.body["elective6"]}; 3rd priority — ${req.body["elective7"]}; 4th priority — ${req.body["elective8"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
+    if (req.body["major"] == 'year1' || req.body["major"] == 'year2-1' || req.body["major"] == 'bio' || req.body["major"] == 'soc' || req.body["major"] == 'media'){
+          req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; 4th priority — ${req.body["elective4"]}; 5th priority — ${req.body["elective5"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
     }
     else {
-      req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; ELECTIVE 2: 1st priority — ${req.body["elective5"]}; 2nd priority — ${req.body["elective6"]}; 3rd priority — ${req.body["elective7"]}; ELECTIVE 3: 1st priority — ${req.body["elective9"]}; 2nd priority — ${req.body["elective10"]}; 3rd priority — ${req.body["elective11"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
+          req.flash('info', `Your choice is submitted (ELECTIVE 1: 1st priority — ${req.body["elective1"]}; 2nd priority — ${req.body["elective2"]}; 3rd priority — ${req.body["elective3"]}; 4th priority — ${req.body["elective4"]}; 5th priority — ${req.body["elective5"]}; ELECTIVE 2: 1st priority — ${req.body["elective6"]}; 2nd priority — ${req.body["elective7"]}; 3rd priority — ${req.body["elective8"]}; 4th priority — ${req.body["elective9"]}; 10th priority — ${req.body["elective10"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
     }
     //
     let emailBody = '';
