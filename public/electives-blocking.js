@@ -1,4 +1,4 @@
-var inputGroups = document.querySelectorAll('.input-group');
+var inputGroups = document.querySelectorAll('.elective-group');
 inputGroups.forEach(function(group){
   var inputs = group.querySelectorAll('input[type="radio"]');
   inputs.forEach(function(input){
