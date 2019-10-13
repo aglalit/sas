@@ -119,246 +119,247 @@ head
         img(src="/assets/logo_sas_ut_short-01.svg")
     h1 The choice of electives for the next module. The form is available until October 14, 12:00.
     form(action="/polls/electives-2019-4" method="post")
-      h3 1st priority
-      input(type="hidden" value="year3-bio" name="major")    
-      div(class="input-group")
-        .flex-container.row
-          input(type="radio" value="Munesh Chauchan" name="elective1" id="Munesh Chauchan1")
-          label(for="Munesh Chauchan1") Introduction to Artificial Intelligence — Munesh Chauchan
-        .flex-container.row
-          input(type="radio" value="Gordana Pesakovic Business" name="elective1" id="Gordana Pesakovic Business1")
-          label(for="Gordana Pesakovic Business1") International Business — Gordana Pesakovic
-        .flex-container.row
-          input(type="radio" value="Erika Wolf" name="elective1" id="Erika Wolf1")
-          label(for="Erika Wolf1") Soviet Visual Propaganda — Erika Wolf
-        .flex-container.row
-          input(type="radio" value="Anne Mulhall" name="elective1" id="Anne Mulhall1")
-          label(for="Anne Mulhall1") Fragility and Resilience — Anne Mulhall
-        .flex-container.row
-          input(type="radio" value="Dmitry Andreyev" name="elective1" id="Dmitry Andreyev1")
-          label(for="Dmitry Andreyev1") Topics in Life Sciences — Dmitry Andreyev (As well as 28 instructors from X-Bio)
-        
-        .flex-container.row
-          input(type="radio" value="Svetlana Erpyleva" name="elective1" id="Svetlana Erpyleva1")
-          label(for="Svetlana Erpyleva1") Qualitative Methods — Svetlana Erpyleva
-        .flex-container.row
-          input(type="radio" value="Matvey Lomonosov" name="elective1" id="Matvey Lomonosov1")
-          label(for="Matvey Lomonosov1") Introduction to Research Design and Methods — Matvey Lomonosov
-        .flex-container.row
-          input(type="radio" value="Zachary Reyna" name="elective1" id="Zachary Reyna1")
-          label(for="Zachary Reyna1") Critical Theory — Zachary Reyna, Julie Reshe
-        .flex-container.row
-          input(type="radio" value="Gordana Pesakovic Economics" name="elective1" id="Gordana Pesakovic Economics1")
-          label(for="Gordana Pesakovic Economics1") International Economics — Gordana Pesakovic
-        .flex-container.row
-          input(type="radio" value="Tomasz Blusiewicz" name="elective1" id="Tomasz Blusiewicz1")
-          label(for="Tomasz Blusiewicz1") Economic History and Economic Thought — Tomasz Blusiewicz
-        .flex-container.row
-          input(type="radio" value="Olga Ufukova" name="elective1" id="Olga Ufukova1")
-          label(for="Olga Ufukova1") Probability Theory and Statistics — Olga Ufukova
-        .flex-container.row
-          input(type="radio" value="David Melbye" name="elective1" id="David Melbye1")
-          label(for="David Melbye1") Film Media and Form 2 — David Melbye
-        .flex-container.row
-          input(type="radio" value="Jan Krasni" name="elective1" id="Jan Krasni1")
-          label(for="Jan Krasni1") New Media Analysis 1 — Jan Krasni
-        .flex-container.row
-          input(type="radio" value="Evgeny Grishin" name="elective1" id="Evgeny Grishin1")
-          label(for="Evgeny Grishin1") Historiography of History — Evgeny Grishin
-        .flex-container.row
-          input(type="radio" value="Vitaly Nikolaev" name="elective1" id="Vitaly Nikolaev1")
-          label(for="Vitaly Nikolaev1") Programming Data Structures Using Python — Vitaly Nikolaev
-      h3 2nd priority
-      div(class="input-group")
-        .flex-container.row
-          input(type="radio" value="Munesh Chauchan" name="elective2" id="Munesh Chauchan2")
-          label(for="Munesh Chauchan2") Introduction to Artificial Intelligence — Munesh Chauchan
-        .flex-container.row
-          input(type="radio" value="Gordana Pesakovic Business" name="elective2" id="Gordana Pesakovic Business2")
-          label(for="Gordana Pesakovic Business2") International Business — Gordana Pesakovic
-        .flex-container.row
-          input(type="radio" value="Erika Wolf" name="elective2" id="Erika Wolf2")
-          label(for="Erika Wolf2") Soviet Visual Propaganda — Erika Wolf
-        .flex-container.row
-          input(type="radio" value="Anne Mulhall" name="elective2" id="Anne Mulhall2")
-          label(for="Anne Mulhall2") Fragility and Resilience — Anne Mulhall
-        .flex-container.row
-          input(type="radio" value="Dmitry Andreyev" name="elective2" id="Dmitry Andreyev2")
-          label(for="Dmitry Andreyev2") Topics in Life Sciences — Dmitry Andreyev (As well as 28 instructors from X-Bio)
-        
-        .flex-container.row
-          input(type="radio" value="Svetlana Erpyleva" name="elective2" id="Svetlana Erpyleva2")
-          label(for="Svetlana Erpyleva2") Qualitative Methods — Svetlana Erpyleva
-        .flex-container.row
-          input(type="radio" value="Matvey Lomonosov" name="elective2" id="Matvey Lomonosov2")
-          label(for="Matvey Lomonosov2") Introduction to Research Design and Methods — Matvey Lomonosov
-        .flex-container.row
-          input(type="radio" value="Zachary Reyna" name="elective2" id="Zachary Reyna2")
-          label(for="Zachary Reyna2") Critical Theory — Zachary Reyna, Julie Reshe
-        .flex-container.row
-          input(type="radio" value="Gordana Pesakovic Economics" name="elective2" id="Gordana Pesakovic Economics2")
-          label(for="Gordana Pesakovic Economics2") International Economics — Gordana Pesakovic
-        .flex-container.row
-          input(type="radio" value="Tomasz Blusiewicz" name="elective2" id="Tomasz Blusiewicz2")
-          label(for="Tomasz Blusiewicz2") Economic History and Economic Thought — Tomasz Blusiewicz
-        .flex-container.row
-          input(type="radio" value="Olga Ufukova" name="elective2" id="Olga Ufukova2")
-          label(for="Olga Ufukova2") Probability Theory and Statistics — Olga Ufukova
-        .flex-container.row
-          input(type="radio" value="David Melbye" name="elective2" id="David Melbye2")
-          label(for="David Melbye2") Film Media and Form 2 — David Melbye
-        .flex-container.row
-          input(type="radio" value="Jan Krasni" name="elective2" id="Jan Krasni2")
-          label(for="Jan Krasni2") New Media Analysis 1 — Jan Krasni
-        .flex-container.row
-          input(type="radio" value="Evgeny Grishin" name="elective2" id="Evgeny Grishin2")
-          label(for="Evgeny Grishin2") Historiography of History — Evgeny Grishin
-        .flex-container.row
-          input(type="radio" value="Vitaly Nikolaev" name="elective2" id="Vitaly Nikolaev2")
-          label(for="Vitaly Nikolaev2") Programming Data Structures Using Python — Vitaly Nikolaev
-      h3 3rd priority
-      div(class="input-group")
-        .flex-container.row
-          input(type="radio" value="Munesh Chauchan" name="elective3" id="Munesh Chauchan3")
-          label(for="Munesh Chauchan3") Introduction to Artificial Intelligence — Munesh Chauchan
-        .flex-container.row
-          input(type="radio" value="Gordana Pesakovic Business" name="elective3" id="Gordana Pesakovic Business3")
-          label(for="Gordana Pesakovic Business3") International Business — Gordana Pesakovic
-        .flex-container.row
-          input(type="radio" value="Erika Wolf" name="elective3" id="Erika Wolf3")
-          label(for="Erika Wolf3") Soviet Visual Propaganda — Erika Wolf
-        .flex-container.row
-          input(type="radio" value="Anne Mulhall" name="elective3" id="Anne Mulhall3")
-          label(for="Anne Mulhall3") Fragility and Resilience — Anne Mulhall
-        .flex-container.row
-          input(type="radio" value="Dmitry Andreyev" name="elective3" id="Dmitry Andreyev3")
-          label(for="Dmitry Andreyev3") Topics in Life Sciences — Dmitry Andreyev (As well as 28 instructors from X-Bio)
-        
-        .flex-container.row
-          input(type="radio" value="Svetlana Erpyleva" name="elective3" id="Svetlana Erpyleva3")
-          label(for="Svetlana Erpyleva3") Qualitative Methods — Svetlana Erpyleva
-        .flex-container.row
-          input(type="radio" value="Matvey Lomonosov" name="elective3" id="Matvey Lomonosov3")
-          label(for="Matvey Lomonosov3") Introduction to Research Design and Methods — Matvey Lomonosov
-        .flex-container.row
-          input(type="radio" value="Zachary Reyna" name="elective3" id="Zachary Reyna3")
-          label(for="Zachary Reyna3") Critical Theory — Zachary Reyna, Julie Reshe
-        .flex-container.row
-          input(type="radio" value="Gordana Pesakovic Economics" name="elective3" id="Gordana Pesakovic Economics3")
-          label(for="Gordana Pesakovic Economics3") International Economics — Gordana Pesakovic
-        .flex-container.row
-          input(type="radio" value="Tomasz Blusiewicz" name="elective3" id="Tomasz Blusiewicz3")
-          label(for="Tomasz Blusiewicz3") Economic History and Economic Thought — Tomasz Blusiewicz
-        .flex-container.row
-          input(type="radio" value="Olga Ufukova" name="elective3" id="Olga Ufukova3")
-          label(for="Olga Ufukova3") Probability Theory and Statistics — Olga Ufukova
-        .flex-container.row
-          input(type="radio" value="David Melbye" name="elective3" id="David Melbye3")
-          label(for="David Melbye3") Film Media and Form 2 — David Melbye
-        .flex-container.row
-          input(type="radio" value="Jan Krasni" name="elective3" id="Jan Krasni3")
-          label(for="Jan Krasni3") New Media Analysis 1 — Jan Krasni
-        .flex-container.row
-          input(type="radio" value="Evgeny Grishin" name="elective3" id="Evgeny Grishin3")
-          label(for="Evgeny Grishin3") Historiography of History — Evgeny Grishin
-        .flex-container.row
-          input(type="radio" value="Vitaly Nikolaev" name="elective3" id="Vitaly Nikolaev3")
-          label(for="Vitaly Nikolaev3") Programming Data Structures Using Python — Vitaly Nikolaev
-      h3 4th priority
-      div(class="input-group")
-        .flex-container.row
-          input(type="radio" value="Munesh Chauchan" name="elective4" id="Munesh Chauchan4")
-          label(for="Munesh Chauchan4") Introduction to Artificial Intelligence — Munesh Chauchan
-        .flex-container.row
-          input(type="radio" value="Gordana Pesakovic Business" name="elective4" id="Gordana Pesakovic Business4")
-          label(for="Gordana Pesakovic Business4") International Business — Gordana Pesakovic
-        .flex-container.row
-          input(type="radio" value="Erika Wolf" name="elective4" id="Erika Wolf4")
-          label(for="Erika Wolf4") Soviet Visual Propaganda — Erika Wolf
-        .flex-container.row
-          input(type="radio" value="Anne Mulhall" name="elective4" id="Anne Mulhall4")
-          label(for="Anne Mulhall4") Fragility and Resilience — Anne Mulhall
-        .flex-container.row
-          input(type="radio" value="Dmitry Andreyev" name="elective4" id="Dmitry Andreyev4")
-          label(for="Dmitry Andreyev4") Topics in Life Sciences — Dmitry Andreyev (As well as 28 instructors from X-Bio)
-        
-        .flex-container.row
-          input(type="radio" value="Svetlana Erpyleva" name="elective4" id="Svetlana Erpyleva4")
-          label(for="Svetlana Erpyleva4") Qualitative Methods — Svetlana Erpyleva
-        .flex-container.row
-          input(type="radio" value="Matvey Lomonosov" name="elective4" id="Matvey Lomonosov4")
-          label(for="Matvey Lomonosov4") Introduction to Research Design and Methods — Matvey Lomonosov
-        .flex-container.row
-          input(type="radio" value="Zachary Reyna" name="elective4" id="Zachary Reyna4")
-          label(for="Zachary Reyna4") Critical Theory — Zachary Reyna, Julie Reshe
-        .flex-container.row
-          input(type="radio" value="Gordana Pesakovic Economics" name="elective4" id="Gordana Pesakovic Economics4")
-          label(for="Gordana Pesakovic Economics4") International Economics — Gordana Pesakovic
-        .flex-container.row
-          input(type="radio" value="Tomasz Blusiewicz" name="elective4" id="Tomasz Blusiewicz4")
-          label(for="Tomasz Blusiewicz4") Economic History and Economic Thought — Tomasz Blusiewicz
-        .flex-container.row
-          input(type="radio" value="Olga Ufukova" name="elective4" id="Olga Ufukova4")
-          label(for="Olga Ufukova4") Probability Theory and Statistics — Olga Ufukova
-        .flex-container.row
-          input(type="radio" value="David Melbye" name="elective4" id="David Melbye4")
-          label(for="David Melbye4") Film Media and Form 2 — David Melbye
-        .flex-container.row
-          input(type="radio" value="Jan Krasni" name="elective4" id="Jan Krasni4")
-          label(for="Jan Krasni4") New Media Analysis 1 — Jan Krasni
-        .flex-container.row
-          input(type="radio" value="Evgeny Grishin" name="elective4" id="Evgeny Grishin4")
-          label(for="Evgeny Grishin4") Historiography of History — Evgeny Grishin
-        .flex-container.row
-          input(type="radio" value="Vitaly Nikolaev" name="elective4" id="Vitaly Nikolaev4")
-          label(for="Vitaly Nikolaev4") Programming Data Structures Using Python — Vitaly Nikolaev
-      h3 5th priority
-      div(class="input-group")
-        .flex-container.row
-          input(type="radio" value="Munesh Chauchan" name="elective5" id="Munesh Chauchan5")
-          label(for="Munesh Chauchan5") Introduction to Artificial Intelligence — Munesh Chauchan
-        .flex-container.row
-          input(type="radio" value="Gordana Pesakovic Business" name="elective5" id="Gordana Pesakovic Business5")
-          label(for="Gordana Pesakovic Business5") International Business — Gordana Pesakovic
-        .flex-container.row
-          input(type="radio" value="Erika Wolf" name="elective5" id="Erika Wolf5")
-          label(for="Erika Wolf5") Soviet Visual Propaganda — Erika Wolf
-        .flex-container.row
-          input(type="radio" value="Anne Mulhall" name="elective5" id="Anne Mulhall5")
-          label(for="Anne Mulhall5") Fragility and Resilience — Anne Mulhall
-        .flex-container.row
-          input(type="radio" value="Dmitry Andreyev" name="elective5" id="Dmitry Andreyev5")
-          label(for="Dmitry Andreyev5") Topics in Life Sciences — Dmitry Andreyev (As well as 28 instructors from X-Bio)
-        
-        .flex-container.row
-          input(type="radio" value="Svetlana Erpyleva" name="elective5" id="Svetlana Erpyleva5")
-          label(for="Svetlana Erpyleva5") Qualitative Methods — Svetlana Erpyleva
-        .flex-container.row
-          input(type="radio" value="Matvey Lomonosov" name="elective5" id="Matvey Lomonosov5")
-          label(for="Matvey Lomonosov5") Introduction to Research Design and Methods — Matvey Lomonosov
-        .flex-container.row
-          input(type="radio" value="Zachary Reyna" name="elective5" id="Zachary Reyna5")
-          label(for="Zachary Reyna5") Critical Theory — Zachary Reyna, Julie Reshe
-        .flex-container.row
-          input(type="radio" value="Gordana Pesakovic Economics" name="elective5" id="Gordana Pesakovic Economics5")
-          label(for="Gordana Pesakovic Economics5") International Economics — Gordana Pesakovic
-        .flex-container.row
-          input(type="radio" value="Tomasz Blusiewicz" name="elective5" id="Tomasz Blusiewicz5")
-          label(for="Tomasz Blusiewicz5") Economic History and Economic Thought — Tomasz Blusiewicz
-        .flex-container.row
-          input(type="radio" value="Olga Ufukova" name="elective5" id="Olga Ufukova5")
-          label(for="Olga Ufukova5") Probability Theory and Statistics — Olga Ufukova
-        .flex-container.row
-          input(type="radio" value="David Melbye" name="elective5" id="David Melbye5")
-          label(for="David Melbye5") Film Media and Form 2 — David Melbye
-        .flex-container.row
-          input(type="radio" value="Jan Krasni" name="elective5" id="Jan Krasni5")
-          label(for="Jan Krasni5") New Media Analysis 1 — Jan Krasni
-        .flex-container.row
-          input(type="radio" value="Evgeny Grishin" name="elective5" id="Evgeny Grishin5")
-          label(for="Evgeny Grishin5") Historiography of History — Evgeny Grishin
-        .flex-container.row
-          input(type="radio" value="Vitaly Nikolaev" name="elective5" id="Vitaly Nikolaev5")
-          label(for="Vitaly Nikolaev5") Programming Data Structures Using Python — Vitaly Nikolaev
+      div.elective1.elective-group
+        h3 1st priority
+        input(type="hidden" value="year3-bio" name="major")    
+        div(class="input-group")
+          .flex-container.row
+            input(type="radio" value="Munesh Chauchan" name="elective1" id="Munesh Chauchan1")
+            label(for="Munesh Chauchan1") Introduction to Artificial Intelligence — Munesh Chauchan
+          .flex-container.row
+            input(type="radio" value="Gordana Pesakovic Business" name="elective1" id="Gordana Pesakovic Business1")
+            label(for="Gordana Pesakovic Business1") International Business — Gordana Pesakovic
+          .flex-container.row
+            input(type="radio" value="Erika Wolf" name="elective1" id="Erika Wolf1")
+            label(for="Erika Wolf1") Soviet Visual Propaganda — Erika Wolf
+          .flex-container.row
+            input(type="radio" value="Anne Mulhall" name="elective1" id="Anne Mulhall1")
+            label(for="Anne Mulhall1") Fragility and Resilience — Anne Mulhall
+          .flex-container.row
+            input(type="radio" value="Dmitry Andreyev" name="elective1" id="Dmitry Andreyev1")
+            label(for="Dmitry Andreyev1") Topics in Life Sciences — Dmitry Andreyev (As well as 28 instructors from X-Bio)
+          
+          .flex-container.row
+            input(type="radio" value="Svetlana Erpyleva" name="elective1" id="Svetlana Erpyleva1")
+            label(for="Svetlana Erpyleva1") Qualitative Methods — Svetlana Erpyleva
+          .flex-container.row
+            input(type="radio" value="Matvey Lomonosov" name="elective1" id="Matvey Lomonosov1")
+            label(for="Matvey Lomonosov1") Introduction to Research Design and Methods — Matvey Lomonosov
+          .flex-container.row
+            input(type="radio" value="Zachary Reyna" name="elective1" id="Zachary Reyna1")
+            label(for="Zachary Reyna1") Critical Theory — Zachary Reyna, Julie Reshe
+          .flex-container.row
+            input(type="radio" value="Gordana Pesakovic Economics" name="elective1" id="Gordana Pesakovic Economics1")
+            label(for="Gordana Pesakovic Economics1") International Economics — Gordana Pesakovic
+          .flex-container.row
+            input(type="radio" value="Tomasz Blusiewicz" name="elective1" id="Tomasz Blusiewicz1")
+            label(for="Tomasz Blusiewicz1") Economic History and Economic Thought — Tomasz Blusiewicz
+          .flex-container.row
+            input(type="radio" value="Olga Ufukova" name="elective1" id="Olga Ufukova1")
+            label(for="Olga Ufukova1") Probability Theory and Statistics — Olga Ufukova
+          .flex-container.row
+            input(type="radio" value="David Melbye" name="elective1" id="David Melbye1")
+            label(for="David Melbye1") Film Media and Form 2 — David Melbye
+          .flex-container.row
+            input(type="radio" value="Jan Krasni" name="elective1" id="Jan Krasni1")
+            label(for="Jan Krasni1") New Media Analysis 1 — Jan Krasni
+          .flex-container.row
+            input(type="radio" value="Evgeny Grishin" name="elective1" id="Evgeny Grishin1")
+            label(for="Evgeny Grishin1") Historiography of History — Evgeny Grishin
+          .flex-container.row
+            input(type="radio" value="Vitaly Nikolaev" name="elective1" id="Vitaly Nikolaev1")
+            label(for="Vitaly Nikolaev1") Programming Data Structures Using Python — Vitaly Nikolaev
+        h3 2nd priority
+        div(class="input-group")
+          .flex-container.row
+            input(type="radio" value="Munesh Chauchan" name="elective2" id="Munesh Chauchan2")
+            label(for="Munesh Chauchan2") Introduction to Artificial Intelligence — Munesh Chauchan
+          .flex-container.row
+            input(type="radio" value="Gordana Pesakovic Business" name="elective2" id="Gordana Pesakovic Business2")
+            label(for="Gordana Pesakovic Business2") International Business — Gordana Pesakovic
+          .flex-container.row
+            input(type="radio" value="Erika Wolf" name="elective2" id="Erika Wolf2")
+            label(for="Erika Wolf2") Soviet Visual Propaganda — Erika Wolf
+          .flex-container.row
+            input(type="radio" value="Anne Mulhall" name="elective2" id="Anne Mulhall2")
+            label(for="Anne Mulhall2") Fragility and Resilience — Anne Mulhall
+          .flex-container.row
+            input(type="radio" value="Dmitry Andreyev" name="elective2" id="Dmitry Andreyev2")
+            label(for="Dmitry Andreyev2") Topics in Life Sciences — Dmitry Andreyev (As well as 28 instructors from X-Bio)
+          
+          .flex-container.row
+            input(type="radio" value="Svetlana Erpyleva" name="elective2" id="Svetlana Erpyleva2")
+            label(for="Svetlana Erpyleva2") Qualitative Methods — Svetlana Erpyleva
+          .flex-container.row
+            input(type="radio" value="Matvey Lomonosov" name="elective2" id="Matvey Lomonosov2")
+            label(for="Matvey Lomonosov2") Introduction to Research Design and Methods — Matvey Lomonosov
+          .flex-container.row
+            input(type="radio" value="Zachary Reyna" name="elective2" id="Zachary Reyna2")
+            label(for="Zachary Reyna2") Critical Theory — Zachary Reyna, Julie Reshe
+          .flex-container.row
+            input(type="radio" value="Gordana Pesakovic Economics" name="elective2" id="Gordana Pesakovic Economics2")
+            label(for="Gordana Pesakovic Economics2") International Economics — Gordana Pesakovic
+          .flex-container.row
+            input(type="radio" value="Tomasz Blusiewicz" name="elective2" id="Tomasz Blusiewicz2")
+            label(for="Tomasz Blusiewicz2") Economic History and Economic Thought — Tomasz Blusiewicz
+          .flex-container.row
+            input(type="radio" value="Olga Ufukova" name="elective2" id="Olga Ufukova2")
+            label(for="Olga Ufukova2") Probability Theory and Statistics — Olga Ufukova
+          .flex-container.row
+            input(type="radio" value="David Melbye" name="elective2" id="David Melbye2")
+            label(for="David Melbye2") Film Media and Form 2 — David Melbye
+          .flex-container.row
+            input(type="radio" value="Jan Krasni" name="elective2" id="Jan Krasni2")
+            label(for="Jan Krasni2") New Media Analysis 1 — Jan Krasni
+          .flex-container.row
+            input(type="radio" value="Evgeny Grishin" name="elective2" id="Evgeny Grishin2")
+            label(for="Evgeny Grishin2") Historiography of History — Evgeny Grishin
+          .flex-container.row
+            input(type="radio" value="Vitaly Nikolaev" name="elective2" id="Vitaly Nikolaev2")
+            label(for="Vitaly Nikolaev2") Programming Data Structures Using Python — Vitaly Nikolaev
+        h3 3rd priority
+        div(class="input-group")
+          .flex-container.row
+            input(type="radio" value="Munesh Chauchan" name="elective3" id="Munesh Chauchan3")
+            label(for="Munesh Chauchan3") Introduction to Artificial Intelligence — Munesh Chauchan
+          .flex-container.row
+            input(type="radio" value="Gordana Pesakovic Business" name="elective3" id="Gordana Pesakovic Business3")
+            label(for="Gordana Pesakovic Business3") International Business — Gordana Pesakovic
+          .flex-container.row
+            input(type="radio" value="Erika Wolf" name="elective3" id="Erika Wolf3")
+            label(for="Erika Wolf3") Soviet Visual Propaganda — Erika Wolf
+          .flex-container.row
+            input(type="radio" value="Anne Mulhall" name="elective3" id="Anne Mulhall3")
+            label(for="Anne Mulhall3") Fragility and Resilience — Anne Mulhall
+          .flex-container.row
+            input(type="radio" value="Dmitry Andreyev" name="elective3" id="Dmitry Andreyev3")
+            label(for="Dmitry Andreyev3") Topics in Life Sciences — Dmitry Andreyev (As well as 28 instructors from X-Bio)
+          
+          .flex-container.row
+            input(type="radio" value="Svetlana Erpyleva" name="elective3" id="Svetlana Erpyleva3")
+            label(for="Svetlana Erpyleva3") Qualitative Methods — Svetlana Erpyleva
+          .flex-container.row
+            input(type="radio" value="Matvey Lomonosov" name="elective3" id="Matvey Lomonosov3")
+            label(for="Matvey Lomonosov3") Introduction to Research Design and Methods — Matvey Lomonosov
+          .flex-container.row
+            input(type="radio" value="Zachary Reyna" name="elective3" id="Zachary Reyna3")
+            label(for="Zachary Reyna3") Critical Theory — Zachary Reyna, Julie Reshe
+          .flex-container.row
+            input(type="radio" value="Gordana Pesakovic Economics" name="elective3" id="Gordana Pesakovic Economics3")
+            label(for="Gordana Pesakovic Economics3") International Economics — Gordana Pesakovic
+          .flex-container.row
+            input(type="radio" value="Tomasz Blusiewicz" name="elective3" id="Tomasz Blusiewicz3")
+            label(for="Tomasz Blusiewicz3") Economic History and Economic Thought — Tomasz Blusiewicz
+          .flex-container.row
+            input(type="radio" value="Olga Ufukova" name="elective3" id="Olga Ufukova3")
+            label(for="Olga Ufukova3") Probability Theory and Statistics — Olga Ufukova
+          .flex-container.row
+            input(type="radio" value="David Melbye" name="elective3" id="David Melbye3")
+            label(for="David Melbye3") Film Media and Form 2 — David Melbye
+          .flex-container.row
+            input(type="radio" value="Jan Krasni" name="elective3" id="Jan Krasni3")
+            label(for="Jan Krasni3") New Media Analysis 1 — Jan Krasni
+          .flex-container.row
+            input(type="radio" value="Evgeny Grishin" name="elective3" id="Evgeny Grishin3")
+            label(for="Evgeny Grishin3") Historiography of History — Evgeny Grishin
+          .flex-container.row
+            input(type="radio" value="Vitaly Nikolaev" name="elective3" id="Vitaly Nikolaev3")
+            label(for="Vitaly Nikolaev3") Programming Data Structures Using Python — Vitaly Nikolaev
+        h3 4th priority
+        div(class="input-group")
+          .flex-container.row
+            input(type="radio" value="Munesh Chauchan" name="elective4" id="Munesh Chauchan4")
+            label(for="Munesh Chauchan4") Introduction to Artificial Intelligence — Munesh Chauchan
+          .flex-container.row
+            input(type="radio" value="Gordana Pesakovic Business" name="elective4" id="Gordana Pesakovic Business4")
+            label(for="Gordana Pesakovic Business4") International Business — Gordana Pesakovic
+          .flex-container.row
+            input(type="radio" value="Erika Wolf" name="elective4" id="Erika Wolf4")
+            label(for="Erika Wolf4") Soviet Visual Propaganda — Erika Wolf
+          .flex-container.row
+            input(type="radio" value="Anne Mulhall" name="elective4" id="Anne Mulhall4")
+            label(for="Anne Mulhall4") Fragility and Resilience — Anne Mulhall
+          .flex-container.row
+            input(type="radio" value="Dmitry Andreyev" name="elective4" id="Dmitry Andreyev4")
+            label(for="Dmitry Andreyev4") Topics in Life Sciences — Dmitry Andreyev (As well as 28 instructors from X-Bio)
+          
+          .flex-container.row
+            input(type="radio" value="Svetlana Erpyleva" name="elective4" id="Svetlana Erpyleva4")
+            label(for="Svetlana Erpyleva4") Qualitative Methods — Svetlana Erpyleva
+          .flex-container.row
+            input(type="radio" value="Matvey Lomonosov" name="elective4" id="Matvey Lomonosov4")
+            label(for="Matvey Lomonosov4") Introduction to Research Design and Methods — Matvey Lomonosov
+          .flex-container.row
+            input(type="radio" value="Zachary Reyna" name="elective4" id="Zachary Reyna4")
+            label(for="Zachary Reyna4") Critical Theory — Zachary Reyna, Julie Reshe
+          .flex-container.row
+            input(type="radio" value="Gordana Pesakovic Economics" name="elective4" id="Gordana Pesakovic Economics4")
+            label(for="Gordana Pesakovic Economics4") International Economics — Gordana Pesakovic
+          .flex-container.row
+            input(type="radio" value="Tomasz Blusiewicz" name="elective4" id="Tomasz Blusiewicz4")
+            label(for="Tomasz Blusiewicz4") Economic History and Economic Thought — Tomasz Blusiewicz
+          .flex-container.row
+            input(type="radio" value="Olga Ufukova" name="elective4" id="Olga Ufukova4")
+            label(for="Olga Ufukova4") Probability Theory and Statistics — Olga Ufukova
+          .flex-container.row
+            input(type="radio" value="David Melbye" name="elective4" id="David Melbye4")
+            label(for="David Melbye4") Film Media and Form 2 — David Melbye
+          .flex-container.row
+            input(type="radio" value="Jan Krasni" name="elective4" id="Jan Krasni4")
+            label(for="Jan Krasni4") New Media Analysis 1 — Jan Krasni
+          .flex-container.row
+            input(type="radio" value="Evgeny Grishin" name="elective4" id="Evgeny Grishin4")
+            label(for="Evgeny Grishin4") Historiography of History — Evgeny Grishin
+          .flex-container.row
+            input(type="radio" value="Vitaly Nikolaev" name="elective4" id="Vitaly Nikolaev4")
+            label(for="Vitaly Nikolaev4") Programming Data Structures Using Python — Vitaly Nikolaev
+        h3 5th priority
+        div(class="input-group")
+          .flex-container.row
+            input(type="radio" value="Munesh Chauchan" name="elective5" id="Munesh Chauchan5")
+            label(for="Munesh Chauchan5") Introduction to Artificial Intelligence — Munesh Chauchan
+          .flex-container.row
+            input(type="radio" value="Gordana Pesakovic Business" name="elective5" id="Gordana Pesakovic Business5")
+            label(for="Gordana Pesakovic Business5") International Business — Gordana Pesakovic
+          .flex-container.row
+            input(type="radio" value="Erika Wolf" name="elective5" id="Erika Wolf5")
+            label(for="Erika Wolf5") Soviet Visual Propaganda — Erika Wolf
+          .flex-container.row
+            input(type="radio" value="Anne Mulhall" name="elective5" id="Anne Mulhall5")
+            label(for="Anne Mulhall5") Fragility and Resilience — Anne Mulhall
+          .flex-container.row
+            input(type="radio" value="Dmitry Andreyev" name="elective5" id="Dmitry Andreyev5")
+            label(for="Dmitry Andreyev5") Topics in Life Sciences — Dmitry Andreyev (As well as 28 instructors from X-Bio)
+          
+          .flex-container.row
+            input(type="radio" value="Svetlana Erpyleva" name="elective5" id="Svetlana Erpyleva5")
+            label(for="Svetlana Erpyleva5") Qualitative Methods — Svetlana Erpyleva
+          .flex-container.row
+            input(type="radio" value="Matvey Lomonosov" name="elective5" id="Matvey Lomonosov5")
+            label(for="Matvey Lomonosov5") Introduction to Research Design and Methods — Matvey Lomonosov
+          .flex-container.row
+            input(type="radio" value="Zachary Reyna" name="elective5" id="Zachary Reyna5")
+            label(for="Zachary Reyna5") Critical Theory — Zachary Reyna, Julie Reshe
+          .flex-container.row
+            input(type="radio" value="Gordana Pesakovic Economics" name="elective5" id="Gordana Pesakovic Economics5")
+            label(for="Gordana Pesakovic Economics5") International Economics — Gordana Pesakovic
+          .flex-container.row
+            input(type="radio" value="Tomasz Blusiewicz" name="elective5" id="Tomasz Blusiewicz5")
+            label(for="Tomasz Blusiewicz5") Economic History and Economic Thought — Tomasz Blusiewicz
+          .flex-container.row
+            input(type="radio" value="Olga Ufukova" name="elective5" id="Olga Ufukova5")
+            label(for="Olga Ufukova5") Probability Theory and Statistics — Olga Ufukova
+          .flex-container.row
+            input(type="radio" value="David Melbye" name="elective5" id="David Melbye5")
+            label(for="David Melbye5") Film Media and Form 2 — David Melbye
+          .flex-container.row
+            input(type="radio" value="Jan Krasni" name="elective5" id="Jan Krasni5")
+            label(for="Jan Krasni5") New Media Analysis 1 — Jan Krasni
+          .flex-container.row
+            input(type="radio" value="Evgeny Grishin" name="elective5" id="Evgeny Grishin5")
+            label(for="Evgeny Grishin5") Historiography of History — Evgeny Grishin
+          .flex-container.row
+            input(type="radio" value="Vitaly Nikolaev" name="elective5" id="Vitaly Nikolaev5")
+            label(for="Vitaly Nikolaev5") Programming Data Structures Using Python — Vitaly Nikolaev
       button(type="submit" class="btn btn-primary btn-lg") Submit
   script(src="../electives-blocking.js")
