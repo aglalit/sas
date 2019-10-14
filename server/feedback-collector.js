@@ -133,9 +133,9 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
         from: '"SAS" <sas@utmn.ru>', // sender address
         to: 'walerieorlova@gmail.com', // list of receivers
         // to: 'marat.goya@gmail.com', // list of receivers
-        subject: req.body.subject.replace(/-/g, '_'), // Subject line
+        subject: `${name}: ${email}`, // Subject line
         // text: JSON.stringify(req.user), // plain text body
-        html:  `${name}: ${email}`
+        html:  req.body.subject.replace(/-/g, '_')
       };
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
