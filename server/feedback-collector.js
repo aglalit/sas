@@ -9,8 +9,20 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
     })
   });
 
-  app.get('/polls/ba-2019-year2-module5-poms', isLoggedIn, function(req, res) {
-    res.render('ba-2019-year2-module5-poms', {
+  app.get('/polls/ba-2019-year2-module5-poms-juliette', isLoggedIn, function(req, res) {
+    res.render('ba-2019-year2-module5-poms-juliette', {
+      user: req.user
+    })
+  });
+
+  app.get('/polls/ba-2019-year2-module5-poms-krishna', isLoggedIn, function(req, res) {
+    res.render('ba-2019-year2-module5-poms-krishna', {
+      user: req.user
+    })
+  });
+
+  app.get('/polls/ba-2019-year2-module5-poms-louis', isLoggedIn, function(req, res) {
+    res.render('ba-2019-year2-module5-poms-louis', {
       user: req.user
     })
   });
@@ -81,8 +93,8 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
       });
       mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        // to: 'walerieorlova@gmail.com', // list of receivers
-        to: 'marat.goya@gmail.com', // list of receivers
+        to: 'walerieorlova@gmail.com', // list of receivers
+        // to: 'marat.goya@gmail.com', // list of receivers
         subject: `${name}: ${email}`, // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html:  'Feedback'
