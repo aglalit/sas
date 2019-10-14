@@ -26,6 +26,41 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
       user: req.user
     })
   });
+  app.get('/polls/ba-2019-module1-elective1', isLoggedIn, function(req, res) {
+    res.render('ba-2019-module1-elective1', {
+      user: req.user
+    })
+  });
+  app.get('/polls/ba-2019-module1-elective2', isLoggedIn, function(req, res) {
+    res.render('ba-2019-module1-elective2', {
+      user: req.user
+    })
+  });
+  app.get('/polls/ba-2019-module1-elective3', isLoggedIn, function(req, res) {
+    res.render('ba-2019-module1-elective3', {
+      user: req.user
+    })
+  });
+  app.get('/polls/ba-2019-module1-major1', isLoggedIn, function(req, res) {
+    res.render('ba-2019-module1-major1', {
+      user: req.user
+    })
+  });
+  app.get('/polls/ba-2019-module1-major2', isLoggedIn, function(req, res) {
+    res.render('ba-2019-module1-major2', {
+      user: req.user
+    })
+  });
+  app.get('/polls/ba-2019-year2-module5-art', isLoggedIn, function(req, res) {
+    res.render('/polls/ba-2019-year2-module5-art', {
+      user: req.user
+    })
+  });
+  app.get('/polls/ba-2019-year2-module5-aw', isLoggedIn, function(req, res) {
+    res.render('/polls/ba-2019-year2-module5-aw', {
+      user: req.user
+    })
+  });
 
   app.post('/polls/feedback-collector', function(req, res) {
     User.findOne({
