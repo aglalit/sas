@@ -52,12 +52,12 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
     })
   });
   app.get('/polls/ba-2019-year2-module5-art', isLoggedIn, function(req, res) {
-    res.render('/polls/ba-2019-year2-module5-art', {
+    res.render('ba-2019-year2-module5-art', {
       user: req.user
     })
   });
   app.get('/polls/ba-2019-year2-module5-aw', isLoggedIn, function(req, res) {
-    res.render('/polls/ba-2019-year2-module5-aw', {
+    res.render('ba-2019-year2-module5-aw', {
       user: req.user
     })
   });
