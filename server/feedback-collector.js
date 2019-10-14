@@ -132,7 +132,7 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
         // to: 'marat.goya@gmail.com', // list of receivers
         subject: req.body.subject.replace(/-/g, '_'), // Subject line
         // text: JSON.stringify(req.user), // plain text body
-        html:  `${user.google.name}: ${user.google.email}`
+        html:  `${name}: ${email}`
       };
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
