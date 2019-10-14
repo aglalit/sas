@@ -15,7 +15,7 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
     })
   });
 
-  app.post('/polls/feedback-2019-1', function(req, res) {
+  app.post('/polls/feedback-collector', function(req, res) {
     User.findOne({
       '_id': req.user._id
     }, function(err, user) {
