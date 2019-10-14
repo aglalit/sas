@@ -1,7 +1,7 @@
 module.exports = function(app, Session, transporter, officeTransporter, isLoggedIn, User, logger) {
 
-  let name;
-  let email;
+  var name;
+  var email;
 
   app.get('/polls/ba-2019-year1-module1-wtai', isLoggedIn, function(req, res) {
     res.render('ba-2019-year1-module1-wtai', {
@@ -76,21 +76,24 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
       } else {
         console.log('There isn\'t such user in the database');
       }
-    });
-    Session.findOne({
-      'session_id': req.session.id
-    }, function(err, session) {
-      if (err)
-        logger.error(err);
-        console.log(err);
 
-      if (session) {
-        parseSession(session, req, transporter);
-      } else {
-        var newSession = new Session();
-        parseSession(newSession, req, transporter);
-      }
+      Session.findOne({
+        'session_id': req.session.id
+      }, function(err, session) {
+        if (err)
+          logger.error(err);
+          console.log(err);
+
+        if (session) {
+          parseSession(session, req, transporter);
+        } else {
+          var newSession = new Session();
+          parseSession(newSession, req, transporter);
+        }
+      });
+
     });
+
     req.flash('info', 'Ответ принят. Благодарим за обратную связь ( ͡° ͜ʖ ͡°)');
     res.render('polls_anonymous', {
       messages: req.flash('info')
