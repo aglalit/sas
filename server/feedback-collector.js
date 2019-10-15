@@ -61,6 +61,11 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
       user: req.user
     })
   });
+  app.get('/polls/ba-2019-year1-module1-english', isLoggedIn, function(req, res) {
+    res.render('ba-2019-year1-module1-english', {
+      user: req.user
+    })
+  });
 
   app.post('/polls/feedback-collector', function(req, res) {
     User.findOne({
