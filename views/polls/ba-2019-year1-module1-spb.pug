@@ -1,0 +1,218 @@
+doctype html
+html
+  head
+    title Feedback
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    // load bootstrap css
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      img {
+        width:100%;
+      }
+      .logo {padding-bottom:30px}
+      h2 {font-weight:800; margin-bottom:20px;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+      }
+      h3 {
+        font-size: 1.5em;
+        font-weight: 400;
+      }
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+        padding-top: 0px;
+      }
+      .container{
+        width:98% !important;
+      }
+      .input-group{
+        margin-bottom:20px;
+      }
+      .input-group label {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 10px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+        width:75%;
+      }
+      form {
+        margin-top: 30px;
+      }
+      label,legend {
+        text-align: left;
+            float: left;
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        float:left;
+        width:75%;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        -webkit-transition: 0.2s all linear;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        }
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #00f;
+        }
+        button {
+          background-color: #00f !important;
+        }
+        .flex-container {display:-webkit-box;display:-ms-flexbox;display:flex; -webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction:column; margin:10px 0;}
+        .flex-row {-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+
+        @media (max-width: 1024px) {
+
+          body{padding-top:10px}
+          .container{
+          width:95%;
+          }
+        .input-group  label {
+          font-size:30px ;
+          margin-bottom:20px;
+          }
+          input[type="radio"]{
+            top:23px;
+          }
+          button.btn-lg {
+            font-size: 30px;
+          }
+        }
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="../assets/Logo__blue.png")
+      h1 Обратная связь по модулю «Город как текст», Санкт-Петербург
+      h3 Оцените по 10-балльной шкале следующие блоки образовательного модуля, где 0 – наименее информативно, содержательно и полезно, а 10 – наиболее информативно, содержательно и полезно.
+      form(action="/polls/feedback-collector" method="post")
+        input(type="hidden" value="ba-2019-year1-module1-spb" name="subject")    
+        fieldset
+          div(class="input-group")
+            .flex-container
+              label(for="Установка на работу курса «Город как текст», Катерина Селиховкина (SAS), 05.10") Установка на работу курса «Город как текст», Катерина Селиховкина (SAS), 05.10
+              input(type="number" required="required" class="form-control" name="Установка на работу курса «Город как текст», Катерина Селиховкина (SAS), 05.10" min="1" max="10")    
+            .flex-container
+              label(for="Экскурсия по каналам Санкт-Петербурга, Наталья Галеткина (ЕУСПб), Дмитрий Козлов (ЕУСПб), 10.10") Экскурсия по каналам Санкт-Петербурга, Наталья Галеткина (ЕУСПб), Дмитрий Козлов (ЕУСПб), 10.10
+              input(type="number" required="required" class="form-control" name="Экскурсия по каналам Санкт-Петербурга, Наталья Галеткина (ЕУСПб), Дмитрий Козлов (ЕУСПб), 10.10" min="1" max="10")    
+            h3 Лекции:
+            .flex-container
+              label(for="Евгений Анисимов (ЕУСПб): «Санкт-Петербург – воплощенная мечта Петра Великого (идеи, люди, архитектура)» и «Петр Великий: благо или зло для России?», 09.10") Евгений Анисимов (ЕУСПб): «Санкт-Петербург – воплощенная мечта Петра Великого (идеи, люди, архитектура)» и «Петр Великий: благо или зло для России?», 09.10
+              input(type="number" required="required" class="form-control" name="Евгений Анисимов (ЕУСПб): «Санкт-Петербург – воплощенная мечта Петра Великого (идеи, люди, архитектура)» и «Петр Великий: благо или зло для России?», 09.10" min="1" max="10")    
+            .flex-container
+              label(for="Эрика Вульф (SAS): «Музейные коллекции Санкт-Петербурга: раритеты, искусство и империя», 10.10") Эрика Вульф (SAS): «Музейные коллекции Санкт-Петербурга: раритеты, искусство и империя», 10.10
+              input(type="number" required="required" class="form-control" name="Эрика Вульф (SAS): «Музейные коллекции Санкт-Петербурга: раритеты, искусство и империя», 10.10" min="1" max="10")    
+            .flex-container
+              label(for="Елена Григорьева (СПбГУ): «„Петербургский текст“ русской литературы: Пушкин, Гоголь», 11.10") Елена Григорьева (СПбГУ): «„Петербургский текст“ русской литературы: Пушкин, Гоголь», 11.10
+              input(type="number" required="required" class="form-control" name="Елена Григорьева (СПбГУ): «„Петербургский текст“ русской литературы: Пушкин, Гоголь», 11.10" min="1" max="10")    
+            .flex-container
+              label(for="Денис Ахапкин (СПбГУ): «Образы Петербурга в поэзии XX века», 12.10") Денис Ахапкин (СПбГУ): «Образы Петербурга в поэзии XX века», 12.10
+              input(type="number" required="required" class="form-control" name="Денис Ахапкин (СПбГУ): «Образы Петербурга в поэзии XX века», 12.10" min="1" max="10")    
+            .flex-container
+              label(for="Сережа Клещев (НИУ ВШЭ): «Найденное искусство улиц Санкт-Петербурга», 12.10") Сережа Клещев (НИУ ВШЭ): «Найденное искусство улиц Санкт-Петербурга», 12.10
+              input(type="number" required="required" class="form-control" name="Сережа Клещев (НИУ ВШЭ): «Найденное искусство улиц Санкт-Петербурга», 12.10" min="1" max="10")    
+            .flex-container
+              label(for="Мария Элькина, архитектурный критик: «Градостроительная история Санкт-Петербурга. Краткое содержание» и «Логика стиля. История и предыстория архитектурных стилей Санкт-Петербурга», 14.10") Мария Элькина, архитектурный критик: «Градостроительная история Санкт-Петербурга. Краткое содержание» и «Логика стиля. История и предыстория архитектурных стилей Санкт-Петербурга», 14.10
+              input(type="number" required="required" class="form-control" name="Мария Элькина, архитектурный критик: «Градостроительная история Санкт-Петербурга. Краткое содержание» и «Логика стиля. История и предыстория архитектурных стилей Санкт-Петербурга», 14.10" min="1" max="10")    
+            .flex-container
+              label(for="Леонид Лимонов (НИУ ВШЭ): «Санкт-Петербургская агломерация: исследования, планирование и координация развития», 15.10") Леонид Лимонов (НИУ ВШЭ): «Санкт-Петербургская агломерация: исследования, планирование и координация развития», 15.10
+              input(type="number" required="required" class="form-control" name="Леонид Лимонов (НИУ ВШЭ): «Санкт-Петербургская агломерация: исследования, планирование и координация развития», 15.10" min="1" max="10")    
+            .flex-container
+              label(for="Александра Ненько (ИТМО): «Цифровой след: поведение горожан через призму онлайн данных» и «Урбанист в поле: как организовать социологическое исследование городской среды», 16.10") Александра Ненько (ИТМО): «Цифровой след: поведение горожан через призму онлайн данных» и «Урбанист в поле: как организовать социологическое исследование городской среды», 16.10
+              input(type="number" required="required" class="form-control" name="Александра Ненько (ИТМО): «Цифровой след: поведение горожан через призму онлайн данных» и «Урбанист в поле: как организовать социологическое исследование городской среды», 16.10" min="1" max="10")    
+            .flex-container
+              label(for="Андрей Щербенок (SAS): «Город как текст: Санкт-Петербург», 17.10") Андрей Щербенок (SAS): «Город как текст: Санкт-Петербург», 17.10
+              input(type="number" required="required" class="form-control" name="Андрей Щербенок (SAS): «Город как текст: Санкт-Петербург», 17.10" min="1" max="10")    
+            h3 Творческие задания:
+            .flex-container
+              label(for="«Музейные коллекции Санкт-Петербурга: раритеты, искусство и империя», 10.10") «Музейные коллекции Санкт-Петербурга: раритеты, искусство и империя», 10.10
+              input(type="number" required="required" class="form-control" name="«Музейные коллекции Санкт-Петербурга: раритеты, искусство и империя», 10.10" min="1" max="10")    
+            .flex-container
+              label(for="«Найденное искусство улиц Санкт-Петербурга», 12.10") «Найденное искусство улиц Санкт-Петербурга», 12.10
+              input(type="number" required="required" class="form-control" name="«Найденное искусство улиц Санкт-Петербурга», 12.10" min="1" max="10")    
+            h3 Полевые исследования:
+            .flex-container
+              label(for="Какое задание для полевых исследований оказалось для вас наиболее полезным и интересным? Почему?") Какое задание для полевых исследований оказалось для вас наиболее полезным и интересным? Почему?
+              textarea(rows="4" required="required" class="form-control" name="Какое задание для полевых исследований оказалось для вас наиболее полезным и интересным? Почему?")
+            .flex-container
+              label(for="Какое задание для полевых исследований оказалось для вас наиболее бессмысленным и скучным? Почему?") Какое задание для полевых исследований оказалось для вас наиболее бессмысленным и скучным? Почему?
+              textarea(rows="4" required="required" class="form-control" name="Какое задание для полевых исследований оказалось для вас наиболее бессмысленным и скучным? Почему?") 
+            h3 Пленарные заседания:
+            .flex-container
+              label(for="Какое пленарное заседание оказалось для вас наиболее полезным и интересным? Почему?") Какое пленарное заседание оказалось для вас наиболее полезным и интересным? Почему?
+              textarea(rows="4" required="required" class="form-control" name="Какое пленарное заседание оказалось для вас наиболее полезным и интересным? Почему?")
+            .flex-container
+              label(for="Какое пленарное заседание оказалось для вас наиболее бессмысленным и скучным? Почему?") Какое пленарное заседание оказалось для вас наиболее бессмысленным и скучным? Почему?
+              textarea(rows="4" required="required" class="form-control" name="Какое пленарное заседание оказалось для вас наиболее бессмысленным и скучным? Почему?") 
+            h3 Работа кураторов:
+            
+            .flex-container
+              label(for="Кто был основным куратором вашей группы?") Кто был основным куратором вашей группы?
+              select(class="form-control" required="required" name="Кто был основным куратором вашей группы?")
+                option(value="Ahmed Elghandour") Ahmed Elghandour
+                option(value="Арина Ускова") Арина Ускова
+                option(value="Ася Будагян") Ася Будагян 
+                option(value="Валерия Орлова") Валерия Орлова  
+                option(value="Владимир Кибукевич") Владимир Кибукевич  
+                option(value="Юлия Хабибулина") Юлия Хабибулина 
+                option(value="Софья Брудкова") Софья Брудкова       
+            .flex-container
+              label(for="Насколько хорошо куратор организовывал коммуникацию в группе?") Насколько хорошо куратор организовывал коммуникацию в группе?
+              input(type="number" required="required" class="form-control" name="Насколько хорошо куратор организовывал коммуникацию в группе?" min="1" max="10")
+            .flex-container
+              label(for="Кто был «куратором на один день»?") Кто был «куратором на один день»? 
+              select(class="form-control" required="required" name="Кто был «куратором на один день»? ")
+                option(value="Владислав Сиюткин") Владислав Сиюткин
+                option(value="Денис Турунов") Денис Турунов
+                option(value="Ася Будагян") Ася Будагян 
+                option(value="Валерия Орлова") Валерия Орлова  
+                option(value="Диана Колисниченко") Диана Колисниченко  
+                option(value="Юлия Хабибулина") Юлия Хабибулина 
+                option(value="Софья Брудкова") Софья Брудкова       
+            .flex-container
+              label(for="Насколько хорошо «куратор на один день» организовывал коммуникацию в группе?") Насколько хорошо «куратор на один день» организовывал коммуникацию в группе?
+              input(type="number" required="required" class="form-control" name="Насколько хорошо «куратор на один день» организовывал коммуникацию в группе?" min="1" max="10")
+            h3 Работа организационной группы пленарных заседаний:
+            .flex-container
+              label(for="Оцените работу ведущего") Оцените работу ведущего 
+              input(type="number" required="required" class="form-control" name="Оцените работу ведущего" min="1" max="10")    
+            .flex-container
+              label(for="Оцените качество сборки пленара") Оцените качество сборки пленара
+              input(type="number" required="required" class="form-control" name="Оцените качество сборки пленара" min="1" max="10")    
+            .flex-container
+              label(for="Что вам понравилось в образовательном модуле больше всего?") Что вам понравилось в образовательном модуле больше всего?
+              textarea(rows="4" required="required" class="form-control" name="Что вам понравилось в образовательном модуле больше всего?")
+            .flex-container
+              label(for="Что можно было бы улучшить в образовательном модуле в следующий раз?") Что можно было бы улучшить в образовательном модуле в следующий раз?
+              textarea(rows="4" required="required" class="form-control" name="Что можно было бы улучшить в образовательном модуле в следующий раз?")                                         
+        button(type="submit" class="btn btn-primary btn-lg") Submit
