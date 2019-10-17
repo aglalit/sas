@@ -9,6 +9,12 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
     })
   });
 
+  app.get('/polls/ba-2019-year1-module1-spb', isLoggedIn, function(req, res) {
+    res.render('ba-2019-year1-module1-spb', {
+      user: req.user
+    })
+  });
+
   app.get('/polls/ba-2019-year2-module5-poms-juliette', isLoggedIn, function(req, res) {
     res.render('ba-2019-year2-module5-poms-juliette', {
       user: req.user

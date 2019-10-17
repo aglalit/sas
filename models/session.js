@@ -395,6 +395,7 @@ var sessionSchema = mongoose.Schema({
 
       ba_2019_year1_module1_wtai: String,
       ba_2019_year1_module1_english: String,
+      ba_2019_year1_module1_spb: String,
       ba_2019_year2_module5_poms_louis: String,
       ba_2019_year2_module5_poms_juliette: String,
       ba_2019_year2_module5_poms_krishna: String,
