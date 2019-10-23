@@ -25,7 +25,7 @@ app.get('/feedback', function(req, res) {
       {'polls':{$exists : true}},
       {'polls.registration':{$exists : false}},
       {'polls.faculty_research_trips':{$exists : false}}
-    ]}).select('polls').select('polls').sort({ _id: -1 }).limit(150).exec(function (err, docs){
+    ]}).select('polls').select('polls').sort({ _id: -1 }).limit(1500).exec(function (err, docs){
       if (err) { res.send(err); console.log(err); }
       else {
         res.render('feedback', {
@@ -41,6 +41,59 @@ app.get('/feedback', function(req, res) {
       else {
         console.log(docs);
         res.render('feedback', {
+          data:  JSON.stringify(docs)
+        });
+      }
+    });
+  }
+
+
+
+});
+
+app.get('/feedback2', function(req, res) {
+  var query = {};
+
+  if (req.query.s === 'ba_2019_electives'){
+    Session.find({
+      $or: [
+        { "polls.ba_2019_module1_elective1": {$exists : true} },
+        { "polls.ba_2019_module1_elective2": {$exists : true} },
+        { "polls.ba_2019_module1_elective3": {$exists : true} },
+        { "polls.ba_2019_module1_major1": {$exists : true} },
+        { "polls.ba_2019_module1_major2": {$exists : true} }
+      ]
+    },{ 'polls.ba_2019_module1_elective1': 1, 'polls.ba_2019_module1_elective2': 1,'polls.ba_2019_module1_elective3': 1,'polls.ba_2019_module1_major1': 1,'polls.ba_2019_module1_major2': 1 }).exec(function (err, docs){
+      if (err) { res.send(err); console.log(err); }
+      else {
+        docs.map((el)=>{console.log(el._doc.polls)});
+        res.render('feedback2', {
+          data:  JSON.stringify(docs)
+        });
+      }
+    });
+  }
+  else if (req.query.s === 'all'){
+    Session.find({$and: [
+      {'polls':{$exists : true}},
+      {'polls.registration':{$exists : false}},
+      {'polls.faculty_research_trips':{$exists : false}}
+    ]}).select('polls').select('polls').sort({ _id: -1 }).limit(750).exec(function (err, docs){
+      if (err) { res.send(err); console.log(err); }
+      else {
+        res.render('feedback2', {
+          data:  JSON.stringify(docs)
+        });
+      }
+    });
+  }
+  else {
+    query['polls.' + req.query.s] = {$exists : true};
+    Session.find(query).select('polls.' + req.query.s).exec(function (err, docs){
+      if (err) { res.send(err); console.log(err); }
+      else {
+        console.log(docs);
+        res.render('feedback2', {
           data:  JSON.stringify(docs)
         });
       }

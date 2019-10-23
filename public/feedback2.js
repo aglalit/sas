@@ -11,12 +11,13 @@ if (subjectUrl === 'all') {
   data[0].forEach(function(el) {
     for (var i in el.polls) {
       var i_inner = i;
-      if (i === 'ba_2019_year1_module4_electives' || i === 'ba_2019_year2_module8_electives' || i === 'ba_2019_year2_module8_electives2') {
+      if (i === 'ba_2019_module1_elective1' || i === 'ba_2019_module1_elective2' || i === 'ba_2019_module1_elective3' || i === 'ba_2019_module1_major1' || i === 'ba_2019_module1_major2') {
         i_inner = 'ba_2019_electives';
       }
-
+      if (i === 'ba_2019_year2_module5_poms_louis' || i === 'ba_2019_year2_module5_poms_krishna' || i === 'ba_2019_year2_module5_poms_juliette') {
+        i_inner = 'ba_2019_year2_module5_poms';
+      }
       if (dataParsedAll[i_inner]) {
-        // console.log(el.polls[i]);
 
         dataParsedAll[i_inner].unshift({
           'polls': {
@@ -26,6 +27,7 @@ if (subjectUrl === 'all') {
       } else {
         dataParsedAll[i_inner] = [];
       }
+
     }
   });
   for (var s in dataParsedAll) {
@@ -36,7 +38,9 @@ if (subjectUrl === 'all') {
 }
 
 
+
 function displaySubject(data, subject) {
+
   // console.log(data[0]);
   var dataParsed = [];
   var currentEntry = 0;
@@ -47,15 +51,27 @@ function displaySubject(data, subject) {
 
   if (subject === 'ba_2019_electives') {
     data[0].forEach(function(el) {
-      if (el.polls.ba_2019_year1_module4_electives) dataParsed.unshift(JSON.parse(el.polls.ba_2019_year1_module4_electives));
-      if (el.polls.ba_2019_year2_module8_electives) dataParsed.unshift(JSON.parse(el.polls.ba_2019_year2_module8_electives));
-      if (el.polls.ba_2019_year2_module8_electives2) dataParsed.unshift(JSON.parse(el.polls.ba_2019_year2_module8_electives2));
+      if (el.polls.ba_2019_module1_elective1) dataParsed.unshift(JSON.parse(el.polls.ba_2019_module1_elective1));
+      if (el.polls.ba_2019_module1_elective2) dataParsed.unshift(JSON.parse(el.polls.ba_2019_module1_elective2));
+      if (el.polls.ba_2019_module1_elective3) dataParsed.unshift(JSON.parse(el.polls.ba_2019_module1_elective3));
+      if (el.polls.ba_2019_module1_major1) dataParsed.unshift(JSON.parse(el.polls.ba_2019_module1_major1));
+      if (el.polls.ba_2019_module1_major2) dataParsed.unshift(JSON.parse(el.polls.ba_2019_module1_major2));
     });
-  } else {
+  }
+  else if (subject === 'ba_2019_year2_module5_poms') {
+    data[0].forEach(function(el) {
+      if (el.polls.ba_2019_year2_module5_poms_krishna) dataParsed.unshift(JSON.parse(el.polls.ba_2019_year2_module5_poms_krishna));
+      if (el.polls.ba_2019_year2_module5_poms_louis) dataParsed.unshift(JSON.parse(el.polls.ba_2019_year2_module5_poms_louis));
+      if (el.polls.ba_2019_year2_module5_poms_juliette) dataParsed.unshift(JSON.parse(el.polls.ba_2019_year2_module5_poms_juliette));
+    });
+  }
+  else {
     data[0].forEach(function(el) {
       dataParsed.unshift(JSON.parse(el.polls[subject]));
     });
   }
+
+
 
   var teacher = urlParams.get('t');
   if (teacher){
@@ -71,6 +87,12 @@ function displaySubject(data, subject) {
     var dataParsedFiltered = [];
     var teacherHeader = document.querySelector('.teacher');
 
+    dataParsed.forEach((el) => {
+      if(el["Who taught this course"] === 'Svetlana Erpyleva'){
+        console.log(el);
+      }
+    })
+
     if (subject === 'ba_2019_year1_module4_history') {
       teacher = 'Tomasz Blusiewisz';
       dataParsed.forEach((el) => {
@@ -84,6 +106,27 @@ function displaySubject(data, subject) {
       dataParsed.forEach((el) => {
         el["Who taught this course"] = teacher
       });
+    }
+    if (subject === 'ba_2019_year2_module5_poms') {
+      dataParsed.forEach((el) => {
+        if (el.subject == 'ba-2019-year2-module5-poms-louis'){
+          el["Who taught this course"] = 'Louis Vervoort';
+        }
+        else if (el.subject == 'ba-2019-year2-module5-poms-juliette'){
+          el["Who taught this course"] = 'Juliette Colinas';
+        }
+        else if (el.subject == 'ba-2019-year2-module5-poms-krishna'){
+          el["Who taught this course"] = 'Krishna K';
+        }
+      })
+      teacherHeader.innerHTML = 'History';
+    }
+    if (subject === 'ba_2019_year2_module5_art') {
+      teacher = 'Erika Wolf';
+      dataParsed.forEach((el) => {
+        el["Who taught this course"] = teacher
+      })
+      teacherHeader.innerHTML = 'History';
     }
     if (subject === 'ba_2019_year2_module8_gb') {
       dataParsedFiltered = [];
@@ -116,7 +159,6 @@ function displaySubject(data, subject) {
         teacherHeader.innerHTML = dataParsedFiltered[0]["Who taught this course"];
       }
       dataParsed = dataParsedFiltered;
-      console.log(dataParsed);
     } else {
       if (teacher){
         var regex = new RegExp(teacher, 'i');
@@ -137,7 +179,8 @@ function displaySubject(data, subject) {
       var table = document.querySelector('#all');
       table.innerHTML = '';
       for (var key in dataParsed[currentEntry]) {
-        if (key == "Who taught this course") continue;
+        if (key == "Who taught this course" && !dataParsed[currentEntry][key]) continue;
+        if (key == "subject") continue;
         var row = document.createElement('tr');
         table.appendChild(row);
         var td1 = document.createElement('td');
@@ -183,10 +226,12 @@ function displaySubject(data, subject) {
       });
 
       for (var key in dataParsed[0]) {
-        if (isNaN(dataParsed[0][key])) {
-          for (var k in dataComments) {
-            dataComments[k][key] = []
-          }
+        if (key !== 'subject'){
+            if (isNaN(dataParsed[0][key])) {
+              for (var k in dataComments) {
+                dataComments[k][key] = []
+              }
+            }
         }
       }
 
@@ -240,14 +285,13 @@ function displaySubject(data, subject) {
     }
   });
 
-  for (var key in dataParsed[2]) {
-    if (!isNaN(dataParsed[2][key])) {
+  for (var key in dataParsed[31]) {
+    if (!isNaN(dataParsed[31][key])) {
       for (var k in dataNumbers) {
         dataNumbers[k][key] = []
       }
     }
   }
-
 
   dataParsed.forEach(function(el) {
     var teacher = el['Who taught this course'];
@@ -261,54 +305,55 @@ function displaySubject(data, subject) {
   });
 
   for (var key in dataNumbers[Object.keys(dataNumbers)[0]]) {
-    var graph = document.createElement('div');
-    graph.style.width = "100%";
-    graph.height = "70vw";
-    document.querySelector('.graphs').appendChild(graph);
+    if (key !== 'Who taught this course'){
+      var graph = document.createElement('div');
+      graph.style.width = "100%";
+      graph.height = "70vw";
+      document.querySelector('.graphs').appendChild(graph);
 
-    var data = [];
-    for (var i = 0; i < Object.keys(dataNumbers).length; i++) {
-      var sum, avg = 0;
+      var data = [];
+      for (var i = 0; i < Object.keys(dataNumbers).length; i++) {
+        var sum, avg = 0;
 
-      if (dataNumbers[Object.keys(dataNumbers)[i]][key].length) {
-        var dataNumbersToReduce = dataNumbers;
-        sum = dataNumbersToReduce[Object.keys(dataNumbersToReduce)[i]][key].reduce(function(a, b) {
-          if (!b) return a;
-          else return parseInt(a) + parseInt(b);
-        });
-        avg = (sum / dataNumbersToReduce[Object.keys(dataNumbersToReduce)[i]][key].length).toPrecision(2);
-      }
-      data.push({
-        histfunc: 'count',
-        //x: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
-        x: dataNumbers[Object.keys(dataNumbers)[i]][key],
-        type: 'histogram',
-        name: Object.keys(dataNumbers)[i],
-        marker: {
-          color: color
-        },
-        xbins: {
-          start: 1,
-          end: 10,
-          size: 1,
+        if (dataNumbers[Object.keys(dataNumbers)[i]][key].length) {
+          var dataNumbersToReduce = dataNumbers;
+          sum = dataNumbersToReduce[Object.keys(dataNumbersToReduce)[i]][key].reduce(function(a, b) {
+            if (!b) return parseInt(a);
+            else return parseInt(a) + parseInt(b);
+          });
+          avg = (sum / dataNumbersToReduce[Object.keys(dataNumbersToReduce)[i]][key].length).toPrecision(2);
         }
-      })
-    }
+        data.push({
+          histfunc: 'count',
+          //x: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+          x: dataNumbers[Object.keys(dataNumbers)[i]][key],
+          type: 'histogram',
+          name: Object.keys(dataNumbers)[i],
+          marker: {
+            color: color
+          },
+          xbins: {
+            start: 1,
+            end: 10,
+            size: 1,
+          }
+        })
+      }
 
-    var layout = {
-      title: key + '<br>(average: ' + avg + ')',
-      barmode: 'group',
-      font: {
-        family: 'Agipo-Bold',
-        size: 16
-      },
-    }
-    if (subjectUrl !== 'all') {
-      Plotly.newPlot(graph, data, layout);
+      var layout = {
+        title: key + '<br>(average: ' + avg + ')',
+        barmode: 'group',
+        font: {
+          family: 'Agipo-Bold',
+          size: 16
+        },
+      }
+      if (subjectUrl !== 'all') {
+        Plotly.newPlot(graph, data, layout);
+      }
     }
   }
   if (subjectUrl === 'all') {
-    // console.log(dataNumbers);
 
     for (var t in dataNumbers) {
       var table = document.createElement('table');
@@ -331,9 +376,10 @@ function displaySubject(data, subject) {
         }) / dataNumbers[t][q].length).toPrecision(2);
         tableBody.appendChild(answer);
       }
-      console.log(subject);
-      document.querySelector(`.${subject}`).appendChild(tableHeader);
-      document.querySelector(`.${subject}`).appendChild(table);
+      if(subject !== 'ba_2019_year1_module1_spb'){
+        document.querySelector(`.${subject}`).appendChild(tableHeader);
+        document.querySelector(`.${subject}`).appendChild(table);
+      }
     }
     document.querySelectorAll('.displayTeacher').forEach((el) => {
       el.style.display = 'none';
