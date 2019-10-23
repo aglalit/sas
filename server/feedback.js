@@ -73,6 +73,23 @@ app.get('/feedback2', function(req, res) {
       }
     });
   }
+  else if (req.query.s === 'ba_2019_year2_module5_poms'){
+    Session.find({
+      $or: [
+        { "polls.ba_2019_year2_module5_poms_louis": {$exists : true} },
+        { "polls.ba_2019_year2_module5_poms_krishna": {$exists : true} },
+        { "polls.ba_2019_year2_module5_poms_juliette": {$exists : true} }
+      ]
+    },{ 'polls.ba_2019_year2_module5_poms_louis': 1, 'polls.ba_2019_year2_module5_poms_krishna': 1,'polls.ba_2019_year2_module5_poms_juliette': 1 }).exec(function (err, docs){
+      if (err) { res.send(err); console.log(err); }
+      else {
+        docs.map((el)=>{console.log(el._doc.polls)});
+        res.render('feedback2', {
+          data:  JSON.stringify(docs)
+        });
+      }
+    });
+  }
   else if (req.query.s === 'all'){
     Session.find({$and: [
       {'polls':{$exists : true}},

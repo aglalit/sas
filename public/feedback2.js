@@ -17,6 +17,7 @@ if (subjectUrl === 'all') {
       if (i === 'ba_2019_year2_module5_poms_louis' || i === 'ba_2019_year2_module5_poms_krishna' || i === 'ba_2019_year2_module5_poms_juliette') {
         i_inner = 'ba_2019_year2_module5_poms';
       }
+
       if (dataParsedAll[i_inner]) {
 
         dataParsedAll[i_inner].unshift({
@@ -64,6 +65,7 @@ function displaySubject(data, subject) {
       if (el.polls.ba_2019_year2_module5_poms_louis) dataParsed.unshift(JSON.parse(el.polls.ba_2019_year2_module5_poms_louis));
       if (el.polls.ba_2019_year2_module5_poms_juliette) dataParsed.unshift(JSON.parse(el.polls.ba_2019_year2_module5_poms_juliette));
     });
+
   }
   else {
     data[0].forEach(function(el) {
@@ -71,6 +73,7 @@ function displaySubject(data, subject) {
     });
   }
 
+  console.log(dataParsed);
 
 
   var teacher = urlParams.get('t');
@@ -86,12 +89,6 @@ function displaySubject(data, subject) {
 
     var dataParsedFiltered = [];
     var teacherHeader = document.querySelector('.teacher');
-
-    dataParsed.forEach((el) => {
-      if(el["Who taught this course"] === 'Svetlana Erpyleva'){
-        console.log(el);
-      }
-    })
 
     if (subject === 'ba_2019_year1_module4_history') {
       teacher = 'Tomasz Blusiewisz';
@@ -111,22 +108,33 @@ function displaySubject(data, subject) {
       dataParsed.forEach((el) => {
         if (el.subject == 'ba-2019-year2-module5-poms-louis'){
           el["Who taught this course"] = 'Louis Vervoort';
+          // teacher = 'Louis Vervoort';
         }
         else if (el.subject == 'ba-2019-year2-module5-poms-juliette'){
           el["Who taught this course"] = 'Juliette Colinas';
+          // teacher = 'Juliette Colinas';
         }
         else if (el.subject == 'ba-2019-year2-module5-poms-krishna'){
           el["Who taught this course"] = 'Krishna K';
+          // teacher = 'Krishna K';
         }
       })
-      teacherHeader.innerHTML = 'History';
+      teacherHeader.innerHTML = 'Problems of Modern Sciences';
+      console.log(dataParsed);
     }
+
+    dataParsed.forEach((el) => {
+      if(el["Who taught this course"] === 'Louis Vervoort'){
+        console.log(el);
+      }
+    })
+
     if (subject === 'ba_2019_year2_module5_art') {
       teacher = 'Erika Wolf';
       dataParsed.forEach((el) => {
         el["Who taught this course"] = teacher
       })
-      teacherHeader.innerHTML = 'History';
+      teacherHeader.innerHTML = 'Interpreting Artworks';
     }
     if (subject === 'ba_2019_year2_module8_gb') {
       dataParsedFiltered = [];
@@ -285,8 +293,8 @@ function displaySubject(data, subject) {
     }
   });
 
-  for (var key in dataParsed[31]) {
-    if (!isNaN(dataParsed[31][key])) {
+  for (var key in dataParsed[4]) {
+    if (!isNaN(dataParsed[4][key]) && key !== 'What course readings did you find the most useful' && key !== 'What course readings did you find the least useful') {
       for (var k in dataNumbers) {
         dataNumbers[k][key] = []
       }
