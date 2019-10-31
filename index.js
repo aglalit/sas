@@ -203,6 +203,9 @@ require('./server/the-city-as-text-2018-video.js')(app, Session, transporter, is
 require('./server/sas-schedule.js')(app);
 require('./server/faculty-trips.js')(app, Session, transporter);
 require('./server/faculty-research-trips.js')(app, Session, transporter);
+require('./server/planned-absences-professors.js')(app, Session, transporter, isLoggedIn, User, logger);
+require('./server/planned-absences-students.js')(app, Session, transporter, isLoggedIn, User, logger);
+
 require('./server/registration-dobrovidova.js')(app, Session, transporter);
 
 
