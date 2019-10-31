@@ -134,15 +134,24 @@ body
               label(for="Start") Absence Date:
                 sup(style="color:red") *
               input(type="date" required="required" class="form-control" name="Start")
-            .flex-container.column
+            .flex-container.row
               label Professor's Name and Subject:
                 sup(style="color:red") *
-              input(type="checkbox" class="form-control" name="Professor1") Tomasz Blusiewisz
-              input(type="checkbox" class="form-control" name="Professor2") Zachary Reyna
-              input(type="checkbox" class="form-control" name="Professor3") Zachary Reyna
-              input(type="checkbox" class="form-control" name="Professor4") Zachary Reyna
-              input(type="checkbox" class="form-control" name="Professor5") Zachary Reyna
-              input(type="checkbox" class="form-control" name="Professor6") Zachary Reyna
+            .flex-container.row
+              input(type="checkbox" class="form-control" name="Tomasz Blusiewisz") 
+              label(for="Tomasz Blusiewisz") Tomasz Blusiewisz
+            .flex-container.row
+              input(type="checkbox" class="form-control" name="Zachary Reyna") 
+              label(for="Zachary Reyna") Zachary Reyna
+            .flex-container.row
+              input(type="checkbox" class="form-control" name="") 
+              label(for="") Tomasz Blusiewisz
+            .flex-container.row
+              input(type="checkbox" class="form-control" name="") 
+              label(for="") Tomasz Blusiewisz
+            .flex-container.row
+              input(type="checkbox" class="form-control" name="") 
+              label(for="") Tomasz Blusiewisz
             .flex-container.column
               label(for="Documentation") Supporting Documentation:
               input(type="file" class="form-control" name="Documentation")
