@@ -1,7 +1,7 @@
 module.exports = function(app, Session, transporter, logger){
 
 app.get('/registration-list', function(req, res) {
-  Session.find({'polls.registration': {$exists : true}}).select('polls.registration -_id').exec(function (err, docs){
+  Session.find({'polls.registration': {$exists : true}}).select('polls.registration -_id').limit(200).exec(function (err, docs){
     if (err) {
       res.send(err);
       logger.error(err);

@@ -245,8 +245,9 @@ script.
   var data = [!{data}];
   var registrations = [];
   data.forEach(function(el){
-    el.polls.registration.data.time = el.polls.registration.time;
-    registrations.unshift(JSON.parse(el.polls.registration.data));
+    var parsed = JSON.parse(el.polls.registration.data)
+    parsed.time = el.polls.registration.time;    
+    registrations.unshift(parsed);
   });
   registrations.forEach(function(elem){
     var row = document.createElement('tr');
