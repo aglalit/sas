@@ -2,6 +2,8 @@ const urlParams = new URLSearchParams(window.location.search);
 var subjectUrl = urlParams.get('s');
 var allAnswers, allNext, allPrev;
 
+var dataToExportCSV = [];
+
 if (subjectUrl === 'all') {
   document.querySelector('.allLinks').style.display = 'block';
   document.querySelectorAll('h2').forEach((el) => {
@@ -38,8 +40,6 @@ if (subjectUrl === 'all') {
   displaySubject(data, subjectUrl);
 }
 
-
-
 function displaySubject(data, subject) {
 
   // console.log(data[0]);
@@ -73,7 +73,7 @@ function displaySubject(data, subject) {
     });
   }
 
-  console.log(dataParsed);
+  // console.log(dataParsed);
 
 
   var teacher = urlParams.get('t');
@@ -300,6 +300,7 @@ function displaySubject(data, subject) {
       }
     }
   }
+  console.log(JSON.stringify(dataParsed));
 
   dataParsed.forEach(function(el) {
     var teacher = el['Who taught this course'];
@@ -364,6 +365,15 @@ function displaySubject(data, subject) {
   if (subjectUrl === 'all') {
 
     for (var t in dataNumbers) {
+
+      var dataNumbersToExport = iterationCopy(dataNumbers[t]);
+
+
+      dataNumbersToExport['teacher'] = t;
+      dataNumbersToExport['subject'] = subject;
+
+      dataToExportCSV.push(dataNumbersToExport);
+
       var table = document.createElement('table');
       table.classList.add('all');
       var tableHead = document.createElement('thead');
@@ -396,5 +406,76 @@ function displaySubject(data, subject) {
       el.style.display = 'none';
     })
     document.querySelector('.currentAnswerCounter').style.display = 'none';
+
   }
 };
+
+function convertToCSV(objArray) {
+    var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+    var str = '';
+    var keys = [];
+    for(var k in objArray[0]) keys.push(k);
+     for (var i = 0; i < keys.length; i++)
+     {
+         if(i==keys.length-1){str=str+keys[i]+'\r\n'}
+             else {str=str+keys[i]+','}
+         }
+     for (var i = 0; i < array.length; i++) {
+        var line = '';
+        for (var index in array[i]) {
+            if (line != '') line += ','
+               if(array[i][index].toString().includes(",") && typeof array[i][index] === 'string'){array[i][index]="\""+array[i][index]+"\""}
+                   line += array[i][index];
+           }
+           str += line + '\r\n';
+       }
+       return str;
+   }
+
+function exportCSVFile(items, fileTitle) {
+
+    // Convert Object to JSON
+    // var itemsStripped = [];
+    // items.forEach(function(item){itemsStripped.push(item.polls)})
+    var jsonObject = JSON.stringify(items);
+
+    var csv = this.convertToCSV(jsonObject);
+
+    var exportedFilenmae = fileTitle + '.csv' || 'export.csv';
+
+    var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    if (navigator.msSaveBlob) { // IE 10+
+        navigator.msSaveBlob(blob, exportedFilenmae);
+    } else {
+        var link = document.createElement("a");
+        if (link.download !== undefined) { // feature detection
+            // Browsers that support HTML5 download attribute
+            var url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute("download", exportedFilenmae);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    }
+}
+
+function isObject(obj) {
+  var type = typeof obj;
+  return type === 'function' || type === 'object' && !!obj;
+};
+function iterationCopy(src) {
+  let target = {};
+  for (let prop in src) {
+    if (src.hasOwnProperty(prop)) {
+      // if the value is a nested object, recursively copy all it's properties
+      if (isObject(src[prop])) {
+        target[prop] = iterationCopy(src[prop]);
+      } else {
+        target[prop] = src[prop];
+      }
+    }
+  }
+  return target;
+}

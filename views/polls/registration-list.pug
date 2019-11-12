@@ -32,7 +32,7 @@ html
         font-family: 'Agipo-Regular',Arial,sans-serif;;
       }
       thead {
-        font-size: 30px;
+        font-size: 25px;
         border-bottom:3px red solid;
       }
       .jumbotron{
@@ -239,11 +239,13 @@ body
             td Email
             //- td О себе
             td Мероприятие
+            td Время регистрации
         tbody.tablebody
 script.
   var data = [!{data}];
   var registrations = [];
   data.forEach(function(el){
+    el.polls.registration.data.time = el.polls.registration.time;
     registrations.unshift(JSON.parse(el.polls.registration.data));
   });
   registrations.forEach(function(elem){
@@ -268,6 +270,9 @@ script.
     var td6 = document.createElement('td');
     td6.innerHTML = elem["event"];
     row.appendChild(td6);
+    var td7 = document.createElement('td');
+    td7.innerHTML = elem["time"];
+    row.appendChild(td7);
   });
   
   

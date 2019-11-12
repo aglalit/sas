@@ -236,6 +236,7 @@ body
       h1 SAS — Feedback
       h2.teacher
       div.allLinks
+        button(class="exportCSV" onclick="exportCSVFile(dataToExportCSV, 'feedback-2019-module1-5-9')") Download in CSV
         ul(class="list-unstyled")
           li
             h3.ba_2019_electives Electives and Major Courses
@@ -334,6 +335,7 @@ script(src="/plotly-latest.min.js")
 script.
   var data = [!{data}];
 script(src="/feedback2.js")
+script(src="/papaparse.min.js")
   
   
   
