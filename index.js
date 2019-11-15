@@ -237,7 +237,7 @@ require('./server/ba_2019_year2_module7_electives2.js')(app, Session, transporte
 
 require('./server/majors.js')(app, Session, transporter, isLoggedIn, User);
 
-require('./server/registration-list.js')(app, Session, transporter);
+// require('./server/registration-list.js')(app, Session, transporter);
 require('./server/feedback.js')(app, Session, transporter, logger);
 require('./server/feedback-collector.js')(app, Session, transporter, officeTransporter, isLoggedIn, User, logger);
 require('./server/db_export.js')(app, Session, User);
