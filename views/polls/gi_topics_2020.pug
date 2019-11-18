@@ -121,37 +121,38 @@ head
     .logo
       a(href="https://sas.utmn.ru")
         img(src="/assets/logo_sas_ut_short-red.svg")
-    h1 The choice of majors. The form is available until May 1, 12:00.
-    form(action="/polls/majors" method="post")
-      h3 Majors
+    h1 Global Issues Topic Poll.
+    form(action="/polls/gi_topics_2020" method="post")
+      h3 What top 10 issues do you feel are the most pressing for humanity to address over the next 5-10 years? Please prioritize your answers from the most important to the least.
       div(class="input-group")
-        .flex-container.row
-          input(type="radio" required="required" value="Information Technology and Digital Society" name="major" id="Information Technology and Digital Society")
-          label(for="Information Technology and Digital Society") Information Technology and Digital Society
-        .flex-container.row
-          input(type="radio" required="required" value="Cultural Studies" name="major" id="Cultural Studies")
-          label(for="Cultural Studies") Cultural Studies
-        .flex-container.row
-          input(type="radio" required="required" value="Life Sciences" name="major" id="Life Sciences")
-          label(for="Life Sciences") Life Sciences
-        .flex-container.row
-          input(type="radio" required="required" value="Economics" name="major" id="Economics")
-          label(for="Economics") Economics
-        .flex-container.row
-          input(type="radio" required="required" value="Film and Media Studies" name="major" id="Film and Media Studies")
-          label(for="Film and Media Studies") Film and Media Studies
-        .flex-container.row
-          input(type="radio" required="required" value="Historical Studies" name="major" id="Historical Studies")
-          label(for="Historical Studies") Historical Studies
-        .flex-container.row
-          input(type="radio" required="required" value="Sociology and Anthropology" name="major" id="Sociology and Anthropology")
-          label(for="Sociology and Anthropology") Sociology and Anthropology 
-      h3 Minors
-      div(class="input-group")
-        .flex-container.row
-          input(type="radio" required="required" value="Enviromental Humanities" name="minor" id="Enviromental Humanities")
-          label(for="Enviromental Humanities") Enviromental Humanities
-        .flex-container.row
-          input(type="radio" required="required" value="Philosophy" name="minor" id="Philosophy")
-          label(for="Philosophy") Philosophy
+        .flex-container.column
+          input(type="text" required="required" name="1" id="1")
+          label(for="1") Issue #1
+        .flex-container.column
+          input(type="text" required="required" name="2" id="2")
+          label(for="2") Issue #2
+        .flex-container.column
+          input(type="text" required="required" name="3" id="3")
+          label(for="3") Issue #3
+        .flex-container.column
+          input(type="text" required="required" name="4" id="4")
+          label(for="4") Issue #4
+        .flex-container.column
+          input(type="text" required="required" name="5" id="5")
+          label(for="5") Issue #5
+        .flex-container.column
+          input(type="text" required="required" name="6" id="6")
+          label(for="6") Issue #6
+        .flex-container.column
+          input(type="text" required="required" name="7" id="7")
+          label(for="7") Issue #7
+        .flex-container.column
+          input(type="text" required="required" name="8" id="8")
+          label(for="8") Issue #8
+        .flex-container.column
+          input(type="text" required="required" name="9" id="9")
+          label(for="9") Issue #9
+        .flex-container.column
+          input(type="text" required="required" name="10" id="10")
+          label(for="10") Issue #10
       button(type="submit" class="btn btn-primary btn-lg") Submit

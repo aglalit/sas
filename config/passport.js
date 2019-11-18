@@ -50,6 +50,7 @@ module.exports = function(passport) {
                 if (user) {
 
                     // if a user is found, log them in
+                    console.log(user)
                     return done(null, user);
                 } else {
                     // if the user isnt in our database, create a new user
