@@ -34,7 +34,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         console.log('There isn\'t such user in the database');
       }
     });
-    req.flash('info', `Your choice is submitted (Major: ${req.body["major"]}; Minor: ${req.body["minor"]}). In case of mistake, you can make your choice again. Thanks for participation ( ͡° ͜ʖ ͡°)`);
+    req.flash('info', `Your choice is submitted. In case of mistake, you can make your choice again. Thanks for participation ( ͡° ͜ʖ ͡°)`);
     let emailBody = '';
     var bodyKeys = Object.keys(req.body);
     for (let i=0;i<bodyKeys.length;i++){
@@ -42,8 +42,8 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
     }
     let mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
-      to: 'm.agliulin@utmn.ru, s.makhmudova@utmn.ru', // list of receivers
-      subject: 'Majors',  // Subject line
+      to: 'm.agliulin@utmn.ru, // list of receivers
+      subject: 'gi_topics_2020',  // Subject line
       // text: JSON.stringify(req.user), // plain text body
       html: JSON.stringify(req.user.google.name) + ', ' + JSON.stringify(req.user.google.email) + ': ' + emailBody.toString() // html body
     };
