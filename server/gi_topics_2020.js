@@ -12,16 +12,16 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         return done(err);
 
       if (user) {
-        user.polls.gi_topics_2020.["1"] = req.body["1"];
-        user.polls.gi_topics_2020.["2"] = req.body["2"];
-        user.polls.gi_topics_2020.["3"] = req.body["3"];
-        user.polls.gi_topics_2020.["4"] = req.body["4"];
-        user.polls.gi_topics_2020.["5"] = req.body["5"];
-        user.polls.gi_topics_2020.["6"] = req.body["6"];
-        user.polls.gi_topics_2020.["7"] = req.body["7"];
-        user.polls.gi_topics_2020.["8"] = req.body["8"];
-        user.polls.gi_topics_2020.["9"] = req.body["9"];
-        user.polls.gi_topics_2020.["10"] = req.body["10"];
+        user.polls.gi_topics_2020["1"] = req.body["1"];
+        user.polls.gi_topics_2020["2"] = req.body["2"];
+        user.polls.gi_topics_2020["3"] = req.body["3"];
+        user.polls.gi_topics_2020["4"] = req.body["4"];
+        user.polls.gi_topics_2020["5"] = req.body["5"];
+        user.polls.gi_topics_2020["6"] = req.body["6"];
+        user.polls.gi_topics_2020["7"] = req.body["7"];
+        user.polls.gi_topics_2020["8"] = req.body["8"];
+        user.polls.gi_topics_2020["9"] = req.body["9"];
+        user.polls.gi_topics_2020["10"] = req.body["10"];
         var now = new Date();
         user.polls.gi_topics_2020.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
 
