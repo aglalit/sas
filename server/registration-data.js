@@ -1,49 +1,49 @@
 module.exports = function(app, Session, transporter, isLoggedIn, logger){
 
-var passport = require('passport')
-  , LocalStrategy = require('passport-local').Strategy;
+// var passport = require('passport')
+//   , LocalStrategy = require('passport-local').Strategy;
+//
+// passport.use(new LocalStrategy(
+//   function(username, password, done) {
+//       var user = {
+//           "_id": {
+//             "$oid": "5ce67440b9527900048faca4"
+//         }
+//       }
+//       passport.serializeUser(function(user, done) {
+//         done(null, user);
+//       });
+//
+//       passport.deserializeUser(function(user, done) {
+//           done(null, user);
+//       });
+//       if (username !== 'admin') {
+//         return done(null, false, { message: 'Incorrect username.' });
+//       }
+//       if (password !== 'P@ssw0rd') {
+//         return done(null, false, { message: 'Incorrect password.' });
+//       }
+//       return done(null, user);
+//   }
+// ));
+//
+// app.post('/login-local',
+//   passport.authenticate('local', { successRedirect: '/registration-list',
+//                                    failureRedirect: '/login-local',
+//                                    failureFlash: true })
+// );
+//
+// app.get('/login-local', function(req, res) {
+//   res.render('login-local')
+// });
 
-passport.use(new LocalStrategy(
-  function(username, password, done) {
-      var user = {
-          "_id": {
-            "$oid": "5ce67440b9527900048faca4"
-        }
-      }
-      passport.serializeUser(function(user, done) {
-        done(null, user);
-      });
-
-      passport.deserializeUser(function(user, done) {
-          done(null, user);
-      });
-      if (username !== 'admin') {
-        return done(null, false, { message: 'Incorrect username.' });
-      }
-      if (password !== 'P@ssw0rd') {
-        return done(null, false, { message: 'Incorrect password.' });
-      }
-      return done(null, user);
-  }
-));
-
-app.post('/login-local',
-  passport.authenticate('local', { successRedirect: '/registration-list',
-                                   failureRedirect: '/login-local',
-                                   failureFlash: true })
-);
-
-app.get('/login-local', function(req, res) {
-  res.render('login-local')
-});
-
-app.get('/registration-list', isLoggedIn, function(req, res) {
+app.get('/registration-data', isLoggedIn, function(req, res) {
   Session.find({'polls.registration': {$exists : true}}).select('polls.registration -_id').exec(function (err, docs){
     if (err) {
       res.send(err);
       logger.error(err);
     }
-    res.render('registration-list', {
+    res.render('registration-data', {
       data: docs
     });
   });
