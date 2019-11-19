@@ -37,7 +37,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, logger){
 //   res.render('login-local')
 // });
 
-app.get('/registration-data', isLoggedIn, function(req, res) {
+app.get('/registration-data', function(req, res) {
   Session.find({'polls.registration': {$exists : true}}).select('polls.registration -_id').exec(function (err, docs){
     if (err) {
       res.send(err);
