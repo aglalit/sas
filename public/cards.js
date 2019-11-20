@@ -1,3 +1,8 @@
+$( ".portlet-header" ).each(function(index){
+    var input = $("<input>", {type: "hidden", name: index+1, value: $(this).text()})
+    $('form').append(input);
+});
+
 $( ".cards" ).sortable({
     connectWith: ".column",
     handle: ".portlet-header",
