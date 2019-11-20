@@ -7,6 +7,10 @@ module.exports = function(app, Session, transporter, officeTransporter, logger) 
     res.render('ba-2019-year1-module1-english')
   });
 
+  app.get('/polls/generic-anonymous', function(req, res) {
+    res.render('generic-anonymous')
+  });
+
   app.post('/polls/feedback-collector-anonymous', function(req, res) {
 
       Session.findOne({
@@ -24,7 +28,7 @@ module.exports = function(app, Session, transporter, officeTransporter, logger) 
         }
       });
 
-    req.flash('info', 'Ответ принят. Благодарим за обратную связь ( ͡° ͜ʖ ͡°)');
+    req.flash('info', 'The form is submitted. Thanks for the feedback ( ͡° ͜ʖ ͡°)');
     res.render('polls_anonymous', {
       messages: req.flash('info')
     })

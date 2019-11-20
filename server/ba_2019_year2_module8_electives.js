@@ -38,7 +38,7 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
         parseSession(newSession, req, transporter);
       }
     });
-    req.flash('info', 'Ответ принят. Благодарим за обратную связь ( ͡° ͜ʖ ͡°)');
+    req.flash('info', 'The form is submitted. Thanks for the feedback ( ͡° ͜ʖ ͡°)');
     res.render('polls_anonymous', {
       messages: req.flash('info')
     })

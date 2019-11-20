@@ -18,7 +18,7 @@ app.post('/polls/ba-2019-year1-module3-electives', function(req, res) {
       parseSession (newSession, req, transporter);
     }
   });
-  req.flash('info', 'Ответ принят. Благодарим за обратную связь ( ͡° ͜ʖ ͡°)');
+  req.flash('info', 'The form is submitted. Thanks for the feedback ( ͡° ͜ʖ ͡°)');
   res.render('polls_anonymous', {messages: req.flash('info')})
 });
 

@@ -18,7 +18,7 @@ app.post('/polls/ma-2019-wolf', function(req, res) {
       parseSession (newSession, req, transporter);
     }
   });
-  req.flash('info', 'Ответ принят. Благодарим за обратную связь ( ͡° ͜ʖ ͡°)');
+  req.flash('info', 'The form is submitted. Thanks for the feedback ( ͡° ͜ʖ ͡°)');
   res.render('polls_anonymous', {messages: req.flash('info')})
 });
 

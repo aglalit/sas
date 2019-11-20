@@ -424,6 +424,8 @@ var sessionSchema = mongoose.Schema({
       ma_2019_manirko: String,
       ma_2019_vetushinsky: String,
 
+      generic_anonymous: String,
+
       registration: {
         data: String,
         time: String

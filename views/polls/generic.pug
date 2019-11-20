@@ -113,9 +113,10 @@ body
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-red.svg")
-      h1 Feedback. 2nd quarter. English as a second language.
-      form(action="/polls/feedback-collector-anonymous" method="post")
-        input(type="hidden" value="ba-2019-year1-module2-english" name="subject")    
+      h1 Feedback. 3rd quarter. History.
+      h3 Please select 
+      form(action="/polls/feedback-collector" method="post")
+        input(type="hidden" value="history_corinne" name="subject")    
         fieldset
           div(class="input-group")
             .flex-container

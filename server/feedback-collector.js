@@ -72,6 +72,12 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
   //     user: req.user
   //   })
   // });
+  app.get('/polls/generic', isLoggedIn, function(req, res) {
+    res.render('generic', {
+      user: req.user
+    })
+  });
+
 
   app.post('/polls/feedback-collector', function(req, res) {
     User.findOne({
@@ -105,7 +111,7 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
 
     });
 
-    req.flash('info', 'Ответ принят. Благодарим за обратную связь ( ͡° ͜ʖ ͡°)');
+    req.flash('info', 'The form is submitted. Thanks for the feedback ( ͡° ͜ʖ ͡°)');
     res.render('polls_anonymous', {
       messages: req.flash('info')
     })
