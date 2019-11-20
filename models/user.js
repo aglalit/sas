@@ -133,9 +133,9 @@ var userSchema = mongoose.Schema({
       10: String,
       time : String
     },
-    generic: String
   }
-});
+},
+{ strict: false });
 
 // methods ======================
 // generating a hash
