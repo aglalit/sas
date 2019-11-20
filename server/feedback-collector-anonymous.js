@@ -17,10 +17,10 @@ module.exports = function(app, Session, transporter, officeTransporter, logger) 
           console.log(err);
 
         if (session) {
-          parseSession(session, req, transporter);
+          parseSession(session, req);
         } else {
           var newSession = new Session();
-          parseSession(newSession, req, transporter);
+          parseSession(newSession, req);
         }
       });
 
@@ -29,7 +29,7 @@ module.exports = function(app, Session, transporter, officeTransporter, logger) 
       messages: req.flash('info')
     })
 
-    function parseSession(sess, req, transporter) {
+    function parseSession(sess, req) {
       var now = new Date();
       sess.session_id = req.session.id;
       //   var keyNames = Object.keys(req.body);
@@ -51,7 +51,7 @@ module.exports = function(app, Session, transporter, officeTransporter, logger) 
         // text: JSON.stringify(req.user), // plain text body
         html: emailBody.toString() // html body
       };
-      officeTransporter.sendMail(mailOptions, (error, info) => {
+      transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           logger.error(error);
           logger.error(mailOptions.subject);
@@ -60,23 +60,6 @@ module.exports = function(app, Session, transporter, officeTransporter, logger) 
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
       });
-      mailOptions = {
-        from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'walerieorlova@gmail.com', // list of receivers
-        // to: 'marat.goya@gmail.com', // list of receivers
-        subject: `${name}: ${email}`, // Subject line
-        // text: JSON.stringify(req.user), // plain text body
-        html:  req.body.subject.replace(/-/g, '_')
-      };
-      // transporter.sendMail(mailOptions, (error, info) => {
-      //   if (error) {
-      //     logger.error(error);
-      //     logger.error(mailOptions.subject);
-      //     logger.error(mailOptions.html);
-      //     return console.log(error);
-      //   }
-      //   console.log('Message %s sent: %s', info.messageId, info.response);
-      // });
       sess.polls[req.body.subject.replace(/-/g, '_')] = JSON.stringify(req.body);
       sess.save(function(err) {
         if (err)
