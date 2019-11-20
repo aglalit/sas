@@ -28,6 +28,7 @@
     top: 50%;
     right: 0;
     margin-top: -8px;
+    background-image: none !important;
 }
 .portlet-content {
     padding: 0.4em;
