@@ -394,10 +394,11 @@ function displaySubject(data, subject) {
         }) / dataNumbers[t][q].length).toPrecision(2);
         tableBody.appendChild(answer);
       }
-      if(subject !== 'ba_2019_year1_module1_spb'){
-        document.querySelector(`.${subject}`).appendChild(tableHeader);
-        document.querySelector(`.${subject}`).appendChild(table);
-      }
+        var elementToAppend = document.querySelector(`.${subject}`);
+        if (elementToAppend) {
+            elementToAppend.appendChild(tableHeader);
+            elementToAppend.appendChild(table);
+        }
     }
     document.querySelectorAll('.displayTeacher').forEach((el) => {
       el.style.display = 'none';

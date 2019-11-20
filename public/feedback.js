@@ -331,7 +331,7 @@ function displaySubject(data, subject) {
         }) / dataNumbers[t][q].length).toPrecision(2);
         tableBody.appendChild(answer);
       }
-      console.log(subject);
+      // console.log(subject);
       var elementToAppend = document.querySelector(`.${subject}`);
       if (elementToAppend) {
           elementToAppend.appendChild(tableHeader);
