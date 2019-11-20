@@ -75,7 +75,7 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
 
   app.post('/polls/feedback-collector', function(req, res) {
     User.findOne({
-      '_id': req.user._id
+      '_id': 'fsfs' //req.user._id
     }, function(err, user) {
       if (err)
         logger.error(err);

@@ -109,3 +109,8 @@
 {"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials w11sm4290466lji.45 - gsmtp","responseCode":535,"command":"AUTH PLAIN","level":"error","service":"user-service"}
 {"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials f24sm3955599lfk.74 - gsmtp","responseCode":535,"command":"AUTH PLAIN","level":"error","service":"user-service"}
 {"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials u5sm3956204lfu.4 - gsmtp","responseCode":535,"command":"AUTH PLAIN","level":"error","service":"user-service"}
+{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials 9sm11176605ljf.21 - gsmtp","responseCode":535,"command":"AUTH PLAIN","level":"error","service":"user-service"}
+{"message":"Cast to ObjectId failed for value \"fsdfsdf\" at path \"_id\" for model \"User\"","name":"CastError","stringValue":"\"fsdfsdf\"","kind":"ObjectId","value":"fsdfsdf","path":"_id","level":"error","service":"user-service"}
+{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials x16sm11134151ljd.69 - gsmtp","responseCode":535,"command":"AUTH PLAIN","level":"error","service":"user-service"}
+{"message":"anonymous: anonymous@gmail.com","level":"error","service":"user-service"}
+{"message":"ba_2019_year1_module2_english","level":"error","service":"user-service"}
