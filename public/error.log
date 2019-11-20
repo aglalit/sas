@@ -114,3 +114,14 @@
 {"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials x16sm11134151ljd.69 - gsmtp","responseCode":535,"command":"AUTH PLAIN","level":"error","service":"user-service"}
 {"message":"anonymous: anonymous@gmail.com","level":"error","service":"user-service"}
 {"message":"ba_2019_year1_module2_english","level":"error","service":"user-service"}
+{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials w6sm10978111ljo.50 - gsmtp","responseCode":535,"command":"AUTH PLAIN","level":"error","service":"user-service"}
+{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials e10sm11078128ljp.23 - gsmtp","responseCode":535,"command":"AUTH PLAIN","level":"error","service":"user-service"}
+{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials w20sm11779224lff.46 - gsmtp","responseCode":535,"command":"AUTH PLAIN","level":"error","service":"user-service"}
+{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials e25sm6787323lfj.26 - gsmtp","responseCode":535,"command":"AUTH PLAIN","level":"error","service":"user-service"}
+{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials i30sm12347741lfp.39 - gsmtp","responseCode":535,"command":"AUTH PLAIN","level":"error","service":"user-service"}
+{"message":"anonymous: anonymous@gmail.com","level":"error","service":"user-service"}
+{"message":"ba_2019_year1_module2_english","level":"error","service":"user-service"}
+{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials k25sm11038005ljg.22 - gsmtp","responseCode":535,"command":"AUTH PLAIN","level":"error","service":"user-service"}
+{"code":"EAUTH","response":"535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials n21sm11049824ljc.67 - gsmtp","responseCode":535,"command":"AUTH PLAIN","level":"error","service":"user-service"}
+{"message":"anonymous: anonymous@gmail.com","level":"error","service":"user-service"}
+{"message":"ba_2019_year1_module2_english","level":"error","service":"user-service"}
