@@ -72,7 +72,9 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
   //     user: req.user
   //   })
   // });
-  app.get('/polls/generic', isLoggedIn, function(req, res) {
+  app.get('/polls/generic',
+  // isLoggedIn, 
+  function(req, res) {
     res.render('generic', {
       user: req.user
     })

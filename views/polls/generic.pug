@@ -2,111 +2,12 @@ doctype html
 html
   head
     title Feedback
+    link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
-    // load bootstrap css
-    style.
-      body        { padding-top:20px;   font-family: 'Agipo-Bold';}
-      @font-face {
-        font-family: 'Agipo-Bold';
-        src:url('../fonts/agipo/Agipo-Bold.woff');
-      }
-      img {
-        width:100%;
-      }
-      .logo {padding-bottom:30px}
-      h2 {font-weight:800; margin-bottom:20px;}
-      .jumbotron h1 {
-        font-size:36px;
-        margin-bottom: 40px;
-      }
-      h3 {
-        font-size: 1.5em;
-        font-weight: 400;
-      }
-      .jumbotron{
-        font-size:18px;
-        line-height: initial;
-        padding-top: 0px;
-      }
-      .container{
-        width:98% !important;
-      }
-      .input-group{
-        margin-bottom:20px;
-      }
-      .input-group label {
-        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-weight: 500;
-        margin: 10px 0;
-        font-size:20px;
-      }
-      .input-group .label__description {
-        font-family:initial;
-      }
-      .input-group .form-control {
-        margin: 20px 0 40px 0;
-        width:75%;
-      }
-      form {
-        margin-top: 30px;
-      }
-      label,legend {
-        text-align: left;
-            float: left;
-      }
-      legend {font-size: 1.8em;}
-      input, textarea, select {
-        float:left;
-        width:75%;
-        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-      }
-
-      input[type="radio"] {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-
-        border-radius: 50%;
-        width: 38px;
-        height: 38px;
-
-        border: 2px solid #999;
-        -webkit-transition: 0.2s all linear;
-        transition: 0.2s all linear;
-        outline: none;
-        margin-right: 15px;
-
-        position: relative;
-        top:23px;
-        }
-        input:focus {
-          outline: none !important;
-        }
-        input:checked {
-          border: 12px solid #00f;
-        }
-        button {
-          background-color: #00f !important;
-        }
-        .flex-container {display:-webkit-box;display:-ms-flexbox;display:flex; -webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction:column; margin:10px 0;}
-
-        @media (max-width: 1024px) {
-
-          body{padding-top:10px}
-          .container{
-          width:95%;
-          }
-        .input-group  label {
-          font-size:30px ;
-          margin-bottom:20px;
-          }
-          input[type="radio"]{
-            top:23px;
-          }
-          button.btn-lg {
-            font-size: 30px;
-          }
-        }
+    link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/cards.css')
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
 body
   .container
     .jumbotron.text-center
@@ -114,36 +15,18 @@ body
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-red.svg")
       h1 Feedback. 3rd quarter. History.
-      h3 Please select 
-      form(action="/polls/feedback-collector" method="post")
+      h3 Please sort the following topics in the order from the most interesting to the least interesting (from the top to the bottom).
+      .cards
+        .portlet
+          .portlet-header Europe in the Age of the Revolution 1789-1829
+        .portlet
+          .portlet-header The Long 19th Century
+        .portlet
+          .portlet-header What if? Counter-factual and Alternative History
+        .portlet
+          .portlet-header Public History
+      form(id="form" action="/polls/feedback-collector" method="post")
         input(type="hidden" value="history_corinne" name="subject")    
-        fieldset
-          div(class="input-group")
-            .flex-container
-              label(for="To what extent was this course an improvement over English language courses you have had previously") To what extent was this course an improvement over English language courses you have had previously? Give a score from 1 to 10, where 1 = It did not help at all and 10 = It helped significantly.
-              input(type="number" required="required" class="form-control" name="To what extent was this course an improvement over English language courses you have had previously" min="1" max="10")
-            .flex-container
-              label(for="In what ways was this course useful in terms of improving your English language skills") In what ways was this course useful in terms of improving your English language skills? Put your thoughts. 
-              textarea(required="required" class="form-control" name="In what ways was this course useful in terms of improving your English language skills" rows="4")  
-            .flex-container
-              label(for="If you had the chance to change some aspects of the course what would they be?") If you had the chance to change some aspects of the course what would they be? Put your thoughts. 
-              textarea(required="required" class="form-control" name="If you had the chance to change some aspects of the course what would they be?" rows="4")  
-            .flex-container
-              label(for="Who taught this course (speaking)") Who was the instructor for this course (speaking)?
-              select(class="form-control" required="required" name="Who taught this course (speaking)")
-                option(value="Jeff Bain") Jeffery Bain
-                option(value="Steven Kaye") Steven Kaye
-            .flex-container
-              label(for="Who taught this course (grammar)") Who was the instructor for this course (grammar)?
-              select(class="form-control" required="required" name="Who taught this course (grammar)")
-                option(value="I. Parakhina") Irina Parakhina
-                option(value="Zh. Vasileva") Zhanna Vasileva
-                option(value="E. Novokreshhennykh") Ekaterina Novokreshhennykh
-                option(value="D. Glovatskaya") Diana Glovatskaya
-            .flex-container
-              label(for="To what extent did the instructor focus on speaking skills?") To what extent did the instructor focus on speaking skills? Put your thoughts. 
-              textarea(required="required" class="form-control" name="To what extent did the instructor focus on speaking skills?" rows="4")  
-            .flex-container
-              label(for="To what extent did the instructor focus on grammar skills?") To what extent did the instructor focus on grammar skills? Put your thoughts. 
-              textarea(required="required" class="form-control" name="To what extent did the instructor focus on grammar skills?" rows="4")    
+        fieldset   
         button(type="submit" class="btn btn-primary btn-lg") Submit
+    script(src="/cards.js")

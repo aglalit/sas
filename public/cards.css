@@ -1,0 +1,37 @@
+.tilt.right {
+    transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+}
+.tilt.left {
+    transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+}
+.cards {
+    width: 100%;
+    padding-top: 20px;
+}
+.portlet {
+    margin: 0 1em 1em 0;
+    padding: 0.3em;
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+}
+.portlet-header {
+    padding: 0.4em 0.3em;
+    position: relative;
+}
+.portlet-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+}
+.portlet-content {
+    padding: 0.4em;
+}
+.portlet-placeholder {
+
+}
