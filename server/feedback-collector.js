@@ -1,7 +1,7 @@
 module.exports = function(app, Session, transporter, officeTransporter, isLoggedIn, User, logger) {
 
-  var name;
-  var email;
+  var name = 'anonymous';
+  var email = 'anonymous@gmail.com';
 
   app.get('/polls/ba-2019-year1-module1-wtai', isLoggedIn, function(req, res) {
     res.render('ba-2019-year1-module1-wtai', {
@@ -67,7 +67,7 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
       user: req.user
     })
   });
-  app.get('/polls/ba-2019-year1-module1-english', isLoggedIn, function(req, res) {
+  app.get('/polls/ba-2019-year1-module1-english', function(req, res) {
     res.render('ba-2019-year1-module1-english', {
       user: req.user
     })
@@ -148,15 +148,15 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
         // text: JSON.stringify(req.user), // plain text body
         html:  req.body.subject.replace(/-/g, '_')
       };
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          logger.error(error);
-          logger.error(mailOptions.subject);
-          logger.error(mailOptions.html);
-          return console.log(error);
-        }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-      });
+      // transporter.sendMail(mailOptions, (error, info) => {
+      //   if (error) {
+      //     logger.error(error);
+      //     logger.error(mailOptions.subject);
+      //     logger.error(mailOptions.html);
+      //     return console.log(error);
+      //   }
+      //   console.log('Message %s sent: %s', info.messageId, info.response);
+      // });
       sess.polls[req.body.subject.replace(/-/g, '_')] = JSON.stringify(req.body);
       sess.save(function(err) {
         if (err)
