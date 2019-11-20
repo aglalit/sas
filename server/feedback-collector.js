@@ -73,7 +73,7 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
   //   })
   // });
   app.get('/polls/generic',
-  isLoggedIn, 
+  isLoggedIn,
   function(req, res) {
     res.render('generic', {
       user: req.user
@@ -148,23 +148,23 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
       });
-      mailOptions = {
-        from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'walerieorlova@gmail.com', // list of receivers
-        // to: 'marat.goya@gmail.com', // list of receivers
-        subject: `${name}: ${email}`, // Subject line
-        // text: JSON.stringify(req.user), // plain text body
-        html:  req.body.subject.replace(/-/g, '_')
-      };
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          logger.error(error);
-          logger.error(mailOptions.subject);
-          logger.error(mailOptions.html);
-          return console.log(error);
-        }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-      });
+      // mailOptions = {
+      //   from: '"SAS" <sas@utmn.ru>', // sender address
+      //   to: 'walerieorlova@gmail.com', // list of receivers
+      //   // to: 'marat.goya@gmail.com', // list of receivers
+      //   subject: `${name}: ${email}`, // Subject line
+      //   // text: JSON.stringify(req.user), // plain text body
+      //   html:  req.body.subject.replace(/-/g, '_')
+      // };
+      // transporter.sendMail(mailOptions, (error, info) => {
+      //   if (error) {
+      //     logger.error(error);
+      //     logger.error(mailOptions.subject);
+      //     logger.error(mailOptions.html);
+      //     return console.log(error);
+      //   }
+      //   console.log('Message %s sent: %s', info.messageId, info.response);
+      // });
       sess.polls[req.body.subject.replace(/-/g, '_')] = JSON.stringify(req.body);
       sess.save(function(err) {
         if (err)

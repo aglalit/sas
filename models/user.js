@@ -135,8 +135,7 @@ var userSchema = mongoose.Schema({
     },
     generic: String
   }
-},
-{ strict: false });
+});
 
 // methods ======================
 // generating a hash
