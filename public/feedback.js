@@ -332,8 +332,11 @@ function displaySubject(data, subject) {
         tableBody.appendChild(answer);
       }
       console.log(subject);
-      document.querySelector(`.${subject}`).appendChild(tableHeader);
-      document.querySelector(`.${subject}`).appendChild(table);
+      var elementToAppend = document.querySelector(`.${subject}`);
+      if (elementToAppend) {
+          elementToAppend.appendChild(tableHeader);
+          elementToAppend.appendChild(table);
+      }
     }
     document.querySelectorAll('.displayTeacher').forEach((el) => {
       el.style.display = 'none';
