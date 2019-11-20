@@ -4,7 +4,7 @@ body        { padding-top:20px;   font-family: 'Agipo-Bold';}
   src:url('../fonts/agipo/Agipo-Bold.woff');
 }
 img {
-  width:100%;
+  width:80%;
 }
 .logo {padding-bottom:30px}
 h2 {font-weight:800; margin-bottom:20px;}
@@ -75,10 +75,10 @@ input[type="radio"] {
     outline: none !important;
   }
   input:checked {
-    border: 12px solid #00f;
+    border: 12px solid #f00;
   }
   button {
-    background-color: #00f !important;
+    background-color: #f00 !important;
   }
   .flex-container {display:-webkit-box;display:-ms-flexbox;display:flex; -webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction:column; margin:10px 0;}
   .flex-row {-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
