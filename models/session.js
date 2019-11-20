@@ -430,11 +430,10 @@ var sessionSchema = mongoose.Schema({
         data: String,
         time: String
       },
-      registration_dobrovidova: String
+      registration_dobrovidova: String,
+      generic: String,
   }
-},
-{ strict: false }
-);
+});
 
 // create the model for users and expose it to our app
 module.exports = mongoose.model('Session', sessionSchema);
