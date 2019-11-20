@@ -17,7 +17,7 @@
     padding: 0.3em;
     border: 1px dotted black;
     margin: 0 1em 1em 0;
-    height: 50px;
+    /* height: 50px; */
 }
 .portlet-header {
     padding: 0.4em 0.3em;

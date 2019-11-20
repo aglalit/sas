@@ -98,6 +98,19 @@ input[type="radio"] {
       top:23px;
     }
     button.btn-lg {
-      font-size: 30px;
+      font-size: 40px;
+    }
+    .jumbotron h1 {
+      font-size:3em;
+      margin-bottom: 40px;
+    }
+    h3 {
+      font-size: 2em;
+      font-weight: 400;
+    }
+    .jumbotron{
+      font-size:40px;
+      line-height: initial;
+      padding-top: 0px;
     }
   }
