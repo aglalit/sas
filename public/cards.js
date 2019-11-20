@@ -11,8 +11,13 @@ $( ".cards" ).sortable({
         $("html").unbind('mousemove', ui.item.data("move_handler"));
         ui.item.removeData("move_handler");
         $('button[type="submit"]').attr('disabled','disabled');
+        $('form input[type="hidden"]').each(function(index){
+            if (index>0){
+                $(this).remove();
+            }
+        })
         $( ".portlet-header" ).each(function(index){
-            var input = $("<input>", {type: "hidden", name: index+1, value: $( this ).text()})
+            var input = $("<input>", {type: "hidden", name: index+1, value: $(this).text()})
             $('form').append(input);
         });
         $('button[type="submit"]').removeAttr('disabled');
