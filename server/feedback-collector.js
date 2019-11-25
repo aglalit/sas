@@ -80,6 +80,14 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
     })
   });
 
+  app.get('/polls/generic2',
+  isLoggedIn,
+  function(req, res) {
+    res.render('generic2', {
+      user: req.user
+    })
+  });
+
 
   app.post('/polls/feedback-collector', function(req, res) {
     User.findOne({

@@ -134,6 +134,7 @@ var userSchema = mongoose.Schema({
       time : String
     },
     generic: String,
+    generic2: String,
   }
 });
 
