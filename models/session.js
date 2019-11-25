@@ -432,6 +432,7 @@ var sessionSchema = mongoose.Schema({
       },
       registration_dobrovidova: String,
       generic: String,
+      generic2: String,
   }
 });
 
