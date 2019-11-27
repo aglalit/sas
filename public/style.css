@@ -32,6 +32,7 @@ h3 {
   font-weight: 500;
   margin: 10px 0;
   font-size:20px;
+  max-width: 90%;
 }
 .input-group .label__description {
   font-family:initial;
