@@ -6,6 +6,7 @@ body        { padding-top:20px;   font-family: 'Agipo-Bold';}
 img {
   width:80%;
 }
+a {color:red;}
 .logo {padding-bottom:30px;padding-top:20px}
 h2 {font-weight:800; margin-bottom:20px;}
 .jumbotron h1 {
@@ -30,7 +31,7 @@ h3 {
 .input-group label {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 500;
-  margin: 10px 0;
+  margin: 15px 0;
   font-size:20px;
   max-width: 90%;
 }
@@ -38,7 +39,7 @@ h3 {
   font-family:initial;
 }
 .input-group .form-control {
-  margin: 20px 0 40px 0;
+  margin: 20px 0 30px 0;
   width:75%;
 }
 form {
@@ -80,11 +81,35 @@ input[type="radio"] {
     width: 38px;
     height: 37.5px;
   }
+
+  .checkbox {
+    width: 5% !important;
+    height: 30px;
+    margin-top: 14px !important;
+  }
+
+  input[type="checkbox"] {
+    /* -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; */
+
+    width: 38px;
+    height: 38px;
+
+    border: 2px solid #999;
+    transition: 0.2s all linear;
+    outline: none;
+    margin-right: 15px;
+
+    position: relative;
+    top:0;
+    zoom:1.1;
+    }
   button {
     background-color: #f00 !important;
     border: none !important;
   }
-  .flex-container {display:flex; flex-direction:column; margin:10px 0;}
+  .flex-container {display:flex; flex-direction:column; margin:20px 0;}
   .flex-container.row {flex-direction:row;}
 
   @media (max-width: 1024px) {
