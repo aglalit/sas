@@ -3,10 +3,15 @@ body        { padding-top:20px;   font-family: 'Agipo-Bold';}
   font-family: 'Agipo-Bold';
   src:url('../fonts/agipo/Agipo-Bold.woff');
 }
+@font-face {
+  font-family: 'Agipo-Regular';
+  src:url('../fonts/agipo/Agipo-Regular.woff');
+}
 img {
   width:80%;
 }
 a {color:red;}
+p {font-family: 'Agipo-Regular'; margin: 20px 0;}
 .logo {padding-bottom:30px;padding-top:20px}
 h2 {font-weight:800; margin-bottom:20px;}
 .jumbotron h1 {

@@ -27,6 +27,7 @@ body
       //- h4 9.45–10.30 (МСК): Светлана Ерпылева — Занимательная история: как в XIX веке мы изобрели подростковость (VK)
       h3
         a(href="https://sas.utmn.ru/ru/open-day-2019") Полная программа Дня открытых дверей
+      p Не забывайте паспорт, он понадобится для входа в учебные пространства здания. Зона кафе, столовой и книжного магазина на первом этаже здания остаётся свободной для посещения без регистрации. Студентам и сотрудникам Тюменского государственного университета регистрироваться не нужно, но для входа необходим электронный пропуск.
       form(action="/polls/open-day-2018-broadcast" method="post")
         fieldset
           div(class="input-group")
@@ -38,6 +39,14 @@ body
               label(for="Город") Город
                 sup(style="color:red") *
               input(type="text" required="required" class="form-control" name="Город")
+            .flex-container.column
+              label(for="Passport") Серия и номер паспорта
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="Passport")
+            .flex-container.column
+              label(for="Birthdate") Дата рождения
+                sup(style="color:red") *
+              input(type="date" required="required" class="form-control" name="Birthdate")
             .flex-container.column
               label(for="Класс") Кем вы являетесь? (школьник / студент / родитель)
                 sup(style="color:red") *
