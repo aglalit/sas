@@ -1,10 +1,10 @@
 module.exports = function(app, Session, transporter){
 
-app.get('/polls/open-day-2018-broadcast', function(req, res) {
-  res.render('open-day-2018-broadcast', {user: req.user})
+app.get('/polls/open-day-2019', function(req, res) {
+  res.render('open-day-2019', {user: req.user})
 });
 
-app.post('/polls/open-day-2018-broadcast', function(req, res) {
+app.post('/polls/open-day-2019', function(req, res) {
   Session.findOne({
     'session_id': req.session.id
   }, function(err, session) {
@@ -38,8 +38,8 @@ function parseSession (sess, req, transporter){
   }
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
-    to: 'm.agliulin@utmn.ru,s.makhmudova@utmn.ru,e.selikhovkina@utmn.ru', // list of receivers
-    subject: 'SAS — Open Day 2018 Registration (broadcast)', // Subject line
+    to: 'm.agliulin@utmn.ru', // list of receivers
+    subject: 'SAS — Open Day 2019 Registration', // Subject line
     // text: JSON.stringify(req.user), // plain text body
     html: emailBody.toString() // html body
   };
@@ -49,7 +49,7 @@ function parseSession (sess, req, transporter){
     }
     console.log('Message %s sent: %s', info.messageId, info.response);
   });
-  sess.polls.open_day_2018_broadcast = JSON.stringify(req.body);
+  sess.polls.open_day_2019 = JSON.stringify(req.body);
   sess.save(function(err) {
     if (err)
       return console.error(err);

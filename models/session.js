@@ -361,7 +361,7 @@ var sessionSchema = mongoose.Schema({
       planned_absences_students: String,
       open_day_2018: String,
       open_day_2018_voting: String,
-      open_day_2018_broadcast: String,
+      open_day_2019: String,
       pds_2019: String,
       pds_2019_classes: String,
 
