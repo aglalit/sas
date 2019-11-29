@@ -5,25 +5,53 @@ html
     link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
     link(rel='stylesheet', href='/style.css')
-    link(rel='stylesheet', href='/cards.css')
-    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
-    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
-    script(src="/touch_sortable.js")
+    //- link(rel='stylesheet', href='/cards.css')
+    //- script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    //- script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    //- script(src="/touch_sortable.js")
 body
   .container
     .jumbotron.text-center
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-red.svg")
-      h1 Feedback. 3rd quarter. Electives.
+      h1 Feedback. Minors.
       h3 Please sort the following topics in the order from the most interesting to the least (from the top to the bottom).
-      .cards
-        .portlet
-          .portlet-header Introduction to Philosophy of Science
-        .portlet
-          .portlet-header The Ecological Disaster: What To Do?
       form(id="form" action="/polls/feedback-collector" method="post")
         input(type="hidden" value="generic2" name="subject")    
         fieldset   
+          div(class="input-group")
+            h3 Do you plan to do a minor?
+            .flex-container.row
+              input(type="radio"  value="Information Technology and Digital Society" name="Do you plan to do a minor?")
+              label() Information Technology and Digital Society
+            .flex-container.row
+              input(type="radio"  value="Cultural Studies" name="Do you plan to do a minor?")
+              label() Cultural Studies
+            .flex-container.row
+              input(type="radio"  value="Life Sciences" name="Do you plan to do a minor?")
+              label() Life Sciences
+            .flex-container.row
+              input(type="radio"  value="Economics" name="Do you plan to do a minor?")
+              label() Economics
+            .flex-container.row
+              input(type="radio"  value="Film and Media Studies" name="Do you plan to do a minor?")
+              label() Film and Media Studies
+            .flex-container.row
+              input(type="radio"  value="Historical Studies" name="Do you plan to do a minor?")
+              label() Historical Studies
+            .flex-container.row
+              input(type="radio"  value="Sociology and Anthropology" name="Do you plan to do a minor?")
+              label() Sociology and Anthropology
+            .flex-container.row
+              input(type="radio"  value="Environmental Humanities" name="Do you plan to do a minor?")
+              label() Environmental Humanities
+            .flex-container.row
+              input(type="radio"  value="Philosophy" name="Do you plan to do a minor?")
+              label() Philosophy
+          div(class="input-group")  
+            .flex-container.column
+              label() If SAS were to introduce a new minor, which one should it be?
+              textarea(rows="4" name="If SAS were to introduce a new minor, which one should it be?")
         button(type="submit" class="btn btn-primary btn-lg") Submit
     script(src="/cards.js")

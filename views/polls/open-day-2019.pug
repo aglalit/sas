@@ -6,7 +6,7 @@ html
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
     link(rel='stylesheet', href='/style.css')
     //- link(rel='stylesheet', href='/cards.css')
-    //- script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
     //- script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
     //- script(src="/touch_sortable.js")
         
@@ -31,26 +31,21 @@ body
       form(action="/polls/open-day-2018-broadcast" method="post")
         fieldset
           div(class="input-group")
+            .flex-container.row
+              input.checkbox(id="broadcast" type="checkbox" name="Broadcast")                         
+              label(for="Broadcast") Хочу присоединиться к открытому дню в SAS онлайн
             .flex-container.column
-              label(for="ФИО") ФИО
+              label(for="Name") ФИО
                 sup(style="color:red") *
-              input(type="text" required="required" class="form-control" name="ФИО")
+              input(type="text" required="required" class="form-control" name="Name")
             .flex-container.column
-              label(for="Город") Город
+              label(for="City") Город
                 sup(style="color:red") *
-              input(type="text" required="required" class="form-control" name="Город")
+              input(type="text" required="required" class="form-control" name="City")
             .flex-container.column
-              label(for="Passport") Серия и номер паспорта
+              label(for="Grade" class="Grade") Кем вы являетесь? (школьник / студент / родитель)
                 sup(style="color:red") *
-              input(type="text" required="required" class="form-control" name="Passport")
-            .flex-container.column
-              label(for="Birthdate") Дата рождения
-                sup(style="color:red") *
-              input(type="date" required="required" class="form-control" name="Birthdate")
-            .flex-container.column
-              label(for="Класс") Кем вы являетесь? (школьник / студент / родитель)
-                sup(style="color:red") *
-              select(name="Класс" required="required")
+              select(name="Grade" required="required" class="Grade")
                 option(value="Не выбрано") Не выбрано
                 option(value="Школьник (8–10 класс)") Школьник (8–10 класс)
                 option(value="Школьник (11 класс)") Школьник (11 класс)
@@ -64,10 +59,7 @@ body
             .flex-container.column
               label(for="Email") Email
                 sup(style="color:red") *
-              input(type="email" required="required" class="form-control" name="Email")  
-            .flex-container.row
-              input.checkbox(id="Broadcast" type="checkbox" name="Broadcast") 
-              label(for="Broadcast") Хотите ли вы получить рассылку о начале трансляции?            
+              input(type="email" required="required" class="form-control" name="Email")             
             .flex-container.row
               input.checkbox(id="agreement-checkbox" type="checkbox" name="agreement" required="required")                         
               label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
@@ -78,3 +70,12 @@ body
               span — обязательные поля
               
         button(type="submit" class="btn btn-primary btn-lg") Отправить
+  script.
+    $('#broadcast').click(function(){
+      if ($(this).is(':checked')){
+          $('.Grade').each(function(){$( this ).removeAttr('required'); $( this ).css('display','none')});
+      }
+      else {
+          $('.Grade').each(function(){$( this ).attr('required'); $( this ).css('display','block')});
+        }
+    })
