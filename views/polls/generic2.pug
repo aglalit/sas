@@ -23,35 +23,44 @@ body
           div(class="input-group")
             h3 Do you plan to do a minor?
             .flex-container.row
-              input(type="radio"  value="Information Technology and Digital Society" name="Do you plan to do a minor?")
+              input(type="radio"  value="Information Technology and Digital Society" name="Do you plan to do a minor?" required="required")
               label() Information Technology and Digital Society
             .flex-container.row
-              input(type="radio"  value="Cultural Studies" name="Do you plan to do a minor?")
+              input(type="radio"  value="Cultural Studies" name="Do you plan to do a minor?" required="required")
               label() Cultural Studies
             .flex-container.row
-              input(type="radio"  value="Life Sciences" name="Do you plan to do a minor?")
+              input(type="radio"  value="Life Sciences" name="Do you plan to do a minor?" required="required")
               label() Life Sciences
             .flex-container.row
-              input(type="radio"  value="Economics" name="Do you plan to do a minor?")
+              input(type="radio"  value="Economics" name="Do you plan to do a minor?" required="required")
               label() Economics
             .flex-container.row
-              input(type="radio"  value="Film and Media Studies" name="Do you plan to do a minor?")
+              input(type="radio"  value="Film and Media Studies" name="Do you plan to do a minor?" required="required")
               label() Film and Media Studies
             .flex-container.row
-              input(type="radio"  value="Historical Studies" name="Do you plan to do a minor?")
+              input(type="radio"  value="Historical Studies" name="Do you plan to do a minor?" required="required")
               label() Historical Studies
             .flex-container.row
-              input(type="radio"  value="Sociology and Anthropology" name="Do you plan to do a minor?")
+              input(type="radio"  value="Sociology and Anthropology" name="Do you plan to do a minor?" required="required")
               label() Sociology and Anthropology
             .flex-container.row
-              input(type="radio"  value="Environmental Humanities" name="Do you plan to do a minor?")
+              input(type="radio"  value="Environmental Humanities" name="Do you plan to do a minor?" required="required")
               label() Environmental Humanities
             .flex-container.row
-              input(type="radio"  value="Philosophy" name="Do you plan to do a minor?")
+              input(type="radio"  value="Philosophy" name="Do you plan to do a minor?" required="required")
               label() Philosophy
-          div(class="input-group")  
+          div(class="input-group") 
+            .flex-container.column
+              label() What courses have you taken so far in your minor? (NOTE: This question is for the 2nd and 3rd years only)
+              textarea(rows="6" name="What courses have you taken so far in your minor?")
             .flex-container.column
               label() If SAS were to introduce a new minor, which one should it be?
-              textarea(rows="4" name="If SAS were to introduce a new minor, which one should it be?")
+              textarea(rows="4" name="If SAS were to introduce a new minor, which one should it be?" required="required")
+            .flex-container.column
+              label(for="How important to you is a minor as compared to a major") How important to you is a minor as compared to a major (1 - not important at all, 5 - as important as the major, 10 - much more important than the major)
+              input(type="number" required="required" class="form-control" name="How important to you is a minor as compared to a major" min="1" max="10" required="required")
+            .flex-container.column
+              label() Comments:
+              textarea(rows="8" name="Comments")
         button(type="submit" class="btn btn-primary btn-lg") Submit
     script(src="/cards.js")
