@@ -90,6 +90,7 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
 
 
   app.post('/polls/feedback-collector', function(req, res) {
+    if (req.user){
     User.findOne({
       '_id': req.user._id
     }, function(err, user) {
@@ -120,6 +121,23 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
       });
 
     });
+  }
+  else {
+      Session.findOne({
+        'session_id': req.session.id
+      }, function(err, session) {
+        if (err)
+          logger.error(err);
+          console.log(err);
+
+        if (session) {
+          parseSession(session, req, transporter);
+        } else {
+          var newSession = new Session();
+          parseSession(newSession, req, transporter);
+        }
+      });
+  }
 
     req.flash('info', 'The form is submitted. Thanks for the feedback ( ͡° ͜ʖ ͡°)');
     res.render('polls_anonymous', {
