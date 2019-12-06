@@ -5,10 +5,10 @@ html
     link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
     link(rel='stylesheet', href='/style.css')
-    //- link(rel='stylesheet', href='/cards.css')
-    //- script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
-    //- script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
-    //- script(src="/touch_sortable.js")
+    link(rel='stylesheet', href='/cards.css')
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    script(src="/touch_sortable.js")
 body
   .container
     .jumbotron.text-center
@@ -22,52 +22,57 @@ body
         fieldset   
           div(class="input-group")
             .flex-container.column
-              label Do you plan to do a minor?
+              label Which major do you plan to choose?
             .flex-container.row
-              input(type="radio"  value="Information Technology and Digital Society" name="Do you plan to do a minor?" required="required" )
+              input(type="radio"  value="Information Technology and Digital Society" name="Which major do you plan to choose?" required="required" )
               label() Information Technology and Digital Society
             .flex-container.row
-              input(type="radio"  value="Cultural Studies" name="Do you plan to do a minor?" required="required" )
+              input(type="radio"  value="Cultural Studies" name="Which major do you plan to choose?" required="required" )
               label() Cultural Studies
             .flex-container.row
-              input(type="radio"  value="Life Sciences" name="Do you plan to do a minor?" required="required" )
+              input(type="radio"  value="Life Sciences" name="Which major do you plan to choose?" required="required" )
               label() Life Sciences
             .flex-container.row
-              input(type="radio"  value="Economics" name="Do you plan to do a minor?" required="required" )
+              input(type="radio"  value="Economics" name="Which major do you plan to choose?" required="required" )
               label() Economics
             .flex-container.row
-              input(type="radio"  value="Film and Media Studies" name="Do you plan to do a minor?" required="required" )
+              input(type="radio"  value="Film and Media Studies" name="Which major do you plan to choose?" required="required" )
               label() Film and Media Studies
             .flex-container.row
-              input(type="radio"  value="Historical Studies" name="Do you plan to do a minor?" required="required" )
+              input(type="radio"  value="Historical Studies" name="Which major do you plan to choose?" required="required" )
               label() Historical Studies
             .flex-container.row
-              input(type="radio"  value="Sociology and Anthropology" name="Do you plan to do a minor?" required="required" )
+              input(type="radio"  value="Sociology and Anthropology" name="Which major do you plan to choose?" required="required" )
               label() Sociology and Anthropology
             .flex-container.row
-              input(type="radio"  value="Environmental Humanities" name="Do you plan to do a minor?" required="required" )
-              label() Environmental Humanities
-            .flex-container.row
-              input(type="radio"  value="Philosophy" name="Do you plan to do a minor?" required="required" )
-              label() Philosophy
-            .flex-container.row
-              input(type="radio"  value="No" name="Do you plan to do a minor?" required="required" )
-              label() No
-            .flex-container.row
-              input(type="radio"  value="I don't know yet" name="Do you plan to do a minor?" required="required" )
+              input(type="radio"  value="I don't know yet" name="Which major do you plan to choose?" required="required" id="dontknow")
               label() I don't know yet
-          div(class="input-group") 
+          div(class="input-group" id="cards" style="display:none") 
             .flex-container.column
-              label() What courses have you taken so far in your minor? (NOTE: This question is for the 2nd and 3rd years only)
-              textarea(rows="6" name="What courses have you taken so far in your minor?")
-            .flex-container.column
-              label() If SAS were to introduce a new minor, which one should it be?
-              textarea(rows="4" name="If SAS were to introduce a new minor, which one should it be?" required="required")
-            .flex-container.column
-              label(for="How important to you is a minor as compared to a major") How important to you is a minor as compared to a major (1 - not important at all, 5 - as important as the major, 10 - much more important than the major)
-              input(type="number" class="form-control" name="How important to you is a minor as compared to a major" min="1" max="10" required="required")
-            .flex-container.column
-              label() Comments:
-              textarea(rows="8" name="Comments")
+              label() Please sort the following topics in the order from the most interesting to the least (from the top to the bottom).
+            .cards
+              .portlet
+                .portlet-header(id="Information Technology and Digital Society") Information Technology and Digital Society
+              .portlet
+                .portlet-header(id="Cultural Studies") Cultural Studies
+              .portlet
+                .portlet-header(id="Life Sciences") Life Sciences
+              .portlet
+                .portlet-header(id="Economics") Economics
+              .portlet
+                .portlet-header(id="Film and Media Studies") Film and Media Studies
+              .portlet
+                .portlet-header(id="Historical Studies") Historical Studies
+              .portlet
+                .portlet-header(id="Sociology and Anthropology") Sociology and Anthropology
         button(type="submit" class="btn btn-primary btn-lg") Submit
     script(src="/cards.js")
+    script.
+      $('input[type="radio"]).click(function(){
+        if ($('#dontknow').is(':checked')){
+            $('#cards').css('display','block');
+        }
+        else {
+            $('#cards').css('display','none');
+          }
+      })
