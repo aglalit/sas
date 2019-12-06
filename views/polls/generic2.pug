@@ -15,7 +15,7 @@ body
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-red.svg")
-      h1 Feedback. Minors.
+      h1 Feedback. Majors.
       //- h3 Please sort the following topics in the order from the most interesting to the least (from the top to the bottom).
       form(id="form" action="/polls/feedback-collector" method="post")
         input(type="hidden" value="generic2" name="subject")    
@@ -68,7 +68,7 @@ body
         button(type="submit" class="btn btn-primary btn-lg") Submit
     script(src="/cards.js")
     script.
-      $('input[type="radio"]).click(function(){
+      $('input[type="radio"]').click(function(){
         if ($('#dontknow').is(':checked')){
             $('#cards').css('display','block');
         }
