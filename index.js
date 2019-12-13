@@ -116,7 +116,7 @@ app.use(cookieParser());
 app.use(session({
   secret: 'schoolofadvancedstudiessecret',
   cookie: { maxAge: 60000000 },
-  store: new MongoStore({db : mongoose.connection.db})
+  store: new MongoStore({db : 'sas', url: 'process.env.MONGODB_URI', collection: 'session'})
 })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
