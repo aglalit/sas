@@ -30,6 +30,8 @@ head
     h1 {font-size:40px}
     h2 {font-size:40px}}
 .container
+  -if(messages)
+    div(class="alert alert-error") #{messages}
   .jumbotron.text-center
     h1 School of advanced studies: polls and feedback
     h2
