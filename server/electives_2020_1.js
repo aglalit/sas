@@ -10,7 +10,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
     }, function(err, user) {
       if (err) {
         req.flash('error', `There is an error, please try again`);
-        return done(err);
+        // return done(err);
       }
 
       if (user) {
