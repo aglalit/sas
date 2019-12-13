@@ -29,7 +29,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         user.polls.ELECTIVES["2020_1"].elective13 = req.body["13"];
 
         var now = new Date();
-        user.polls.ELECTIVES["2019_4"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+        user.polls.ELECTIVES["2020_1"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
 
         user.save(function(err, user) {
           if (err)
