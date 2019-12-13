@@ -113,7 +113,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
 // required for passport
-app.use(session({secret: 'schoolofadvancedstudiessecret'})); // session secret
+app.use(session({secret: 'schoolofadvancedstudiessecret', cookie: { maxAge: 60000000 }})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 require('./config/passport')(passport);
