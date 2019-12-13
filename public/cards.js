@@ -1,3 +1,7 @@
+var localCards = localStorage.getItem('cards');
+if (localCards){
+    $('.cards').html(localCards);
+}
 $( ".portlet-header" ).each(function(index){
     var input = $("<input>", {type: "hidden", name: index+1, value: $(this).text()})
     $('form').append(input);
@@ -25,6 +29,7 @@ $( ".cards" ).sortable({
             var input = $("<input>", {type: "hidden", name: index+1, value: $(this).id || $(this).text()})
             $('form').append(input);
         });
+        localStorage.setItem('cards', $('.cards').html());
         $('button[type="submit"]').removeAttr('disabled');
 
     }
