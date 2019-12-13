@@ -42,34 +42,33 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
           console.log('There isn\'t such user in the database');
         }
       });
+      req.flash('info', `Your choice is submitted (1: ${req.body["1"]}; 2: ${req.body["2"]}; 3: ${req.body["3"]}; 4: ${req.body["4"]}; 5: ${req.body["5"]}; 6: ${req.body["6"]}; 7: ${req.body["7"]}; 8: ${req.body["8"]}; 9: ${req.body["9"]}; 10: ${req.body["10"]}; 11: ${req.body["11"]}; 12: ${req.body["12"]}; 13: ${req.body["13"]}; 14: ${req.body["14"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
+      //
+      let emailBody = '';
+      var bodyKeys = Object.keys(req.body);
+      for (let i=0;i<bodyKeys.length;i++){
+        emailBody += '<p><b>' + bodyKeys[i] + '</b>: ' + req.body[bodyKeys[i]] + '</p>';
+      }
+      let mailOptions = {
+        from: '"SAS" <sas@utmn.ru>', // sender address
+        to: 'm.agliulin@utmn.ru', // list of receivers
+        subject: 'The choice of electives' , // Subject line
+        // text:  // plain text body
+        html: '<p>' + JSON.stringify(req.user.google.name) + ', ' + JSON.stringify(req.user.google.email) + '</p>' + emailBody.toString() // html body
+      };
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+      });
+      res.render('polls', {
+        user: req.user,
+        messages: req.flash('info')
+      });
     }
     else {
       req.flash('error', `An error occurred, please try again`);
     }
-
-          req.flash('info', `Your choice is submitted (1: ${req.body["1"]}; 2: ${req.body["2"]}; 3: ${req.body["3"]}; 4: ${req.body["4"]}; 5: ${req.body["5"]}; 6: ${req.body["6"]}; 7: ${req.body["7"]}; 8: ${req.body["8"]}; 9: ${req.body["9"]}; 10: ${req.body["10"]}; 11: ${req.body["11"]}; 12: ${req.body["12"]}; 13: ${req.body["13"]}; 14: ${req.body["14"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
-    //
-    let emailBody = '';
-    var bodyKeys = Object.keys(req.body);
-    for (let i=0;i<bodyKeys.length;i++){
-      emailBody += '<p><b>' + bodyKeys[i] + '</b>: ' + req.body[bodyKeys[i]] + '</p>';
-    }
-    let mailOptions = {
-      from: '"SAS" <sas@utmn.ru>', // sender address
-      to: 'm.agliulin@utmn.ru', // list of receivers
-      subject: 'The choice of electives' , // Subject line
-      // text:  // plain text body
-      html: '<p>' + JSON.stringify(req.user.google.name) + ', ' + JSON.stringify(req.user.google.email) + '</p>' + emailBody.toString() // html body
-    };
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        return console.log(error);
-      }
-      console.log('Message %s sent: %s', info.messageId, info.response);
-    });
-    res.render('polls', {
-      user: req.user,
-      messages: req.flash('info')
-    });
   });
 };
