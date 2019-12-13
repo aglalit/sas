@@ -15,13 +15,12 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const winston = require('winston');
-var MongoStore  = require('connect-mongo')(session);
 
 var fileUpload = require("express-fileupload");
 
-
 const session = require('express-session');
 const flash = require('connect-flash');
+var MongoStore  = require('connect-mongo')(session);
 
 var index = require('./routes/index');
 var User = require('./models/user');
