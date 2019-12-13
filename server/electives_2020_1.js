@@ -27,6 +27,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         user.polls.ELECTIVES["2020_1"].elective11 = req.body["11"];
         user.polls.ELECTIVES["2020_1"].elective12 = req.body["12"];
         user.polls.ELECTIVES["2020_1"].elective13 = req.body["13"];
+        user.polls.ELECTIVES["2020_1"].elective14 = req.body["14"];
 
         var now = new Date();
         user.polls.ELECTIVES["2020_1"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
@@ -40,7 +41,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         console.log('There isn\'t such user in the database');
       }
     });
-          req.flash('info', `Your choice is submitted (1: ${req.body["1"]}; 2: ${req.body["2"]}; 3: ${req.body["3"]}; 4: ${req.body["4"]}; 5: ${req.body["5"]}; 6: ${req.body["6"]}; 7: ${req.body["7"]}; 8: ${req.body["8"]}; 9: ${req.body["9"]}; 10: ${req.body["10"]}; 11: ${req.body["11"]}; 12: ${req.body["12"]}; 13: ${req.body["13"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
+          req.flash('info', `Your choice is submitted (1: ${req.body["1"]}; 2: ${req.body["2"]}; 3: ${req.body["3"]}; 4: ${req.body["4"]}; 5: ${req.body["5"]}; 6: ${req.body["6"]}; 7: ${req.body["7"]}; 8: ${req.body["8"]}; 9: ${req.body["9"]}; 10: ${req.body["10"]}; 11: ${req.body["11"]}; 12: ${req.body["12"]}; 13: ${req.body["13"]}; 14: ${req.body["14"]};). In case of mistake, you can make your choice again. Thanks for participation.`);
     //
     let emailBody = '';
     var bodyKeys = Object.keys(req.body);
