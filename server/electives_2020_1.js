@@ -5,7 +5,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
   });
 
   app.post('/polls/electives_2020_1', function(req, res) {
-    if (user){
+    if (req.user){
       User.findOne({
         '_id': req.user._id
       }, function(err, user) {
