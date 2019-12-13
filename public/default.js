@@ -4,7 +4,6 @@
  * Website: https://sarkhanrajabov.com/
  * Author: Sarkhan Rajabov
 **/
-$('#form').saveStorage();
 
 (function($){
     $.fn.saveStorage = function(){
@@ -45,3 +44,5 @@ $('#form').saveStorage();
         }
     };
 })(jQuery);
+
+$('#form').saveStorage();
