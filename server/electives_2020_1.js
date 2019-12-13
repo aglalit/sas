@@ -68,6 +68,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
       });
     }
     else {
+      console.log('req.user doesnt exist');
       req.flash('error', `An error occurred, please try again`);
     }
   });
