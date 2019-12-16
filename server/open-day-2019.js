@@ -11,12 +11,9 @@ app.post('/polls/open-day-2019', function(req, res) {
     if (err)
       return done(err);
 
-    if (session) {
-      parseSession (session, req, transporter);
-    } else {
       var newSession = new Session();
       parseSession (newSession, req, transporter);
-    }
+
   });
   req.flash('info', 'Ваша заявка принята. Благодарим за регистрацию.');
   res.render('polls_anonymous', {messages: req.flash('info')})
