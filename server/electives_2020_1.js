@@ -28,7 +28,6 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
           user.polls.ELECTIVES["2020_1"].elective11 = req.body["11"];
           user.polls.ELECTIVES["2020_1"].elective12 = req.body["12"];
           user.polls.ELECTIVES["2020_1"].elective13 = req.body["13"];
-          user.polls.ELECTIVES["2020_1"].elective14 = req.body["14"];
 
           var now = new Date();
           user.polls.ELECTIVES["2020_1"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
