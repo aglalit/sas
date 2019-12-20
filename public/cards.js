@@ -26,7 +26,7 @@ $( ".cards" ).sortable({
             }
         })
         $( ".portlet-header" ).each(function(index){
-            var input = $("<input>", {type: "hidden", name: index+1, value: $(this).id || $(this).text()})
+            var input = $("<input>", {type: "hidden", name: index+1, value: $(this).id})
             $('form').append(input);
         });
         localStorage.setItem('cards', $('.cards').html());

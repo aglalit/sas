@@ -147,7 +147,7 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: '/polls/electives_2020_1',
+  successRedirect: '/polls',
   failureRedirect: '/login'
 }));
 // passport.authenticate('google'),

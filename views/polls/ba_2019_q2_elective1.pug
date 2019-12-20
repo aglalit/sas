@@ -1,0 +1,54 @@
+doctype html
+html
+  head
+    title Feedback
+    //- link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/cards.css')
+    //- script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    //- script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    //- script(src="/touch_sortable.js")
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/logo_sas_ut_short-red.svg")
+      h1 Feedback. Year 2019–2020. Quarter 2. Elective 1.
+      h3 Course evaluations are to be filled in ENGLISH only. 
+      h3 Please note that the use of the scoring system 0, 5 and 10 is only a recommendation, you can use any indicator from 0 to 10.     
+      form(id="form" action="/polls/feedback-collector" method="post")
+        input(type="hidden" value="ba_2019_q2_elective1" name="subject")    
+        fieldset   
+          div(class="input-group")
+            .flex-container
+              label(for="Evaluate the overall quality of the course") Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS, [where 1 is “The quality of the course was terrible, incomparably worse than other SAS courses I have taken,' 6 is “The quality of the course was average,” 10 is “The quality of the course is the best I have seen at SAS by a large margin”].
+              input(type="number" required="required" class="form-control" name="Evaluate the overall quality of the course" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the impact of the course on your knowledge") Evaluate the impact of the course on your knowledge, skills, competencies, personal qualities and worldview, [where 1 is no development has taken place, 6 is a generally satisfactory development has taken place in several of the parameters, 10 is “I have become a different person”].
+              input(type="number" required="required" class="form-control" name="Evaluate the impact of the course on your knowledge" min="1" max="10")    
+            .flex-container
+              label(for="How well did your teacher integrate interactive communication within the course seminars?") How well did your teacher integrate interactive communication within the course seminars?
+              input(type="number" required="required" class="form-control" name="How well did your teacher integrate interactive communication within the course seminars?" min="1" max="10")    
+            .flex-container
+              label(for="Evaluate the level of feedback from the professor") Evaluate the level of feedback from the professor (comments on essays and other works, answers to questions during classes, individual consultations during office hours), [where 1 is “There was no feedback from the professor at all”, 6 is “Feedback was present in half of   the cases when it was necessary and was of average quality”, 10 is “The professor provided a comprehensive high-level feedback whenever it was needed"']
+              input(type="number" required="required" class="form-control" name="Evaluate the level of feedback from the professor" min="1" max="10")    
+            .flex-container
+              label(for="Was the course syllabus followed (and if not, what changed and why)?") Was the course syllabus followed (and if not, what changed and why)?
+              textarea(rows="4" required="required" class="form-control" name="Was the course syllabus followed (and if not, what changed and why)?")    
+            .flex-container
+              label(for="Did group work sessions help you with the course material, teamwork skills, neither, or both? Elaborate.") Did group work sessions help you with the course material, teamwork skills, neither, or both? Elaborate.
+              textarea(rows="8" required="required" class="form-control" name="Did group work sessions help you with the course material, teamwork skills, neither, or both? Elaborate.")   
+            .flex-container
+              label(for="What did you find  most instructive / informative / useful? Consider both course content and teaching style.") What did you find  most instructive / informative / useful? Consider both course content and teaching style.
+              textarea(rows="4" required="required" class="form-control" name="What did you find  most instructive / informative / useful? Consider both course content and teaching style.")   
+            .flex-container
+              label(for="Do you have any specific recommendations for improving the course? Consider both course content and teaching style.") Do you have any specific recommendations for improving the course? Consider both course content and teaching style.
+              textarea(rows="4" required="required" class="form-control" name="Do you have any specific recommendations for improving the course? Consider both course content and teaching style.")  
+            .flex-container
+              label(for="Please leave any other comments, suggestions, or feedback on the course you might have.") Please leave any other comments, suggestions, or feedback on the course you might have.
+              textarea(rows="8" required="required" class="form-control" name="Please leave any other comments, suggestions, or feedback on the course you might have.")  
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    //- script(src="/cards.js")
+    script(src="/default.js")

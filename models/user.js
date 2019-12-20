@@ -45,6 +45,22 @@ var userSchema = mongoose.Schema({
         "Как бы вы порекомендовали улучшить этот семинар": String
       }
     },
+    "FEEDBACK":{
+      ba_2019_q2_elective1: Boolean,
+      ba_2019_q2_elective2: Boolean,
+      ba_2019_q2_elective3: Boolean,
+      ba_2019_q2_major1: Boolean,
+      ba_2019_q2_major2: Boolean,
+      ba_2019_q2_major3: Boolean,
+      ba_2019_year1_q2_aw: Boolean,
+      ba_2019_year1_q2_qm: Boolean,
+      ba_2019_year1_q2_history: Boolean,
+      ba_2019_year1_q2_gb: Boolean,
+      ba_2019_year2_q2_poms_louis: Boolean,
+      ba_2019_year2_q2_poms_krishna: Boolean,
+      ba_2019_year2_q2_poms_juliette: Boolean,
+      ba_2019_year2_q2_aw: Boolean,
+    }
     "ELECTIVES":{
       "2019_2_2nd_year": {
         time: String,

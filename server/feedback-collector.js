@@ -67,6 +67,11 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
       user: req.user
     })
   });
+  app.get('/polls/ba_2019_q2_elective1', isLoggedIn, function(req, res) {
+    res.render('ba_2019_q2_elective1', {
+      user: req.user
+    })
+  });
   // app.get('/polls/ba-2019-year1-module1-english', isLoggedIn, function(req, res) {
   //   res.render('ba-2019-year1-module1-english', {
   //     user: req.user
@@ -101,6 +106,13 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
       if (user) {
         name = user.google.name;
         email = user.google.email;
+        user.polls.FEEDBACK.[req.body.subject] = true;
+
+        user.save(function(err, user) {
+          if (err)
+            return console.error(err);
+          }
+        );
       } else {
         console.log('There isn\'t such user in the database');
       }
