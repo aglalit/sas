@@ -106,7 +106,7 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
       if (user) {
         name = user.google.name;
         email = user.google.email;
-        user.polls.FEEDBACK.[req.body.subject] = true;
+        user.polls.FEEDBACK[req.body.subject] = true;
 
         user.save(function(err, user) {
           if (err)
