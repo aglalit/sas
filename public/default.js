@@ -21,7 +21,7 @@
             var data = JSON.parse(localStorage.getItem(key));
 
             $(data).each(function(k,v){
-                form.find(':input[name='+v.name+']').not('input[type=radio], input[type=checkbox], input[type=hidden]').val(v.value);
+                form.find(':input[name="'+v.name+'"]').not('input[type=radio], input[type=checkbox], input[type=hidden]').val(v.value);
 
                 $(form.find('input[type=radio]')).each(function () {
                     if($(this).attr('name') === v.name && $(this).attr('value') === v.value){
