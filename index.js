@@ -25,6 +25,7 @@ var MongoStore  = require('connect-mongo')(session);
 var index = require('./routes/index');
 var User = require('./models/user');
 var Session = require('./models/session');
+var SessionsStorage = require('./models/sessions_storage');
 var UserAnonymous = require('./models/user_anonymous');
 
 const logger = winston.createLogger({
@@ -116,7 +117,7 @@ app.use(cookieParser());
 app.use(session({
   secret: 'schoolofadvancedstudiessecret',
   cookie: { maxAge: 60000000 },
-  store: new MongoStore({mongooseConnection: mongoose.connection})
+  store: new MongoStore({mongooseConnection: mongoose.connection, collection: 'sessions_storage'})
 })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
