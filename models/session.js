@@ -409,6 +409,21 @@ var sessionSchema = mongoose.Schema({
       ba_2019_module1_major1: String,
       ba_2019_module1_major2: String,
 
+      ba_2019_q2_elective1: String,
+      ba_2019_q2_elective2: String,
+      ba_2019_q2_elective3: String,
+      ba_2019_q2_major1: String,
+      ba_2019_q2_major2: String,
+      ba_2019_q2_major3: String,
+      ba_2019_year1_q2_aw: String,
+      ba_2019_year1_q2_qm: String,
+      ba_2019_year1_q2_history: String,
+      ba_2019_year1_q2_gb: String,
+      ba_2019_year2_q2_poms_louis: String,
+      ba_2019_year2_q2_poms_krishna: String,
+      ba_2019_year2_q2_poms_juliette: String,
+      ba_2019_year2_q2_aw: String,
+
       ba_2019_year1_module2_english: String,
 
       ba_2019_year1_module4_tfy: String,
