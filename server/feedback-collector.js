@@ -152,7 +152,7 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
   }
 
     req.flash('info', 'The form is submitted. Thanks for the feedback ( ͡° ͜ʖ ͡°)');
-    res.render('polls_anonymous', {
+    res.render('polls', {
       messages: req.flash('info')
     })
 
