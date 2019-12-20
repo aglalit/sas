@@ -153,6 +153,7 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
 
     req.flash('info', 'The form is submitted. Thanks for the feedback ( ͡° ͜ʖ ͡°)');
     res.render('polls', {
+      user: req.user,
       messages: req.flash('info')
     })
 
