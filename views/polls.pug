@@ -37,6 +37,19 @@ html
           div(class="row" style="font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;")
             -if(messages)
               div(class="alert alert-success") #{messages}
+          .row
+            div(class="col-xs-12")
+              div(class="well")
+                h3.text-danger
+                  span.fa.fa-google-plus Google
+                p
+                  br
+                  -if(user)
+                    span Email: #{user.google.email}
+                  br
+                  -if(user)
+                    span Name: #{user.google.name}
+                a.btn.btn-default.btn-lg(href='/logout') Log out
             div(class="col-xs-12")
                 //- h1  
                 //-   a(target="_blank" href="https://schoolofadvancedstudies.herokuapp.com/polls/generic") SAS Psychologist
@@ -134,16 +147,4 @@ html
                 h1
                   a(target="_blank" href="/polls/ba_2019_year2_q2_aw") Academic Writing
                 
-          .row
-            div(class="col-xs-12")
-              div(class="well")
-                h3.text-danger
-                  span.fa.fa-google-plus Google
-                p
-                  br
-                  -if(user)
-                    span Email: #{user.google.email}
-                  br
-                  -if(user)
-                    span Name: #{user.google.name}
-                a.btn.btn-default.btn-lg(href='/logout') Log out
+          
