@@ -52,6 +52,8 @@ var userSchema = mongoose.Schema({
       ba_2019_q2_major1: Boolean,
       ba_2019_q2_major2: Boolean,
       ba_2019_q2_major3: Boolean,
+      ba_2019_q2_esl_speaking: Boolean,
+      ba_2019_q2_esl_grammar: Boolean,
       ba_2019_year1_q2_aw: Boolean,
       ba_2019_year1_q2_qm: Boolean,
       ba_2019_year1_q2_history: Boolean,

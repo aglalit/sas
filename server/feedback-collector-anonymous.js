@@ -62,6 +62,9 @@ module.exports = function(app, Session, transporter, officeTransporter, logger) 
           logger.error(mailOptions.html);
           return console.log(error);
         }
+        if (info) {
+          logger.info(mailOptions.html);
+        }
         console.log('Message %s sent: %s', info.messageId, info.response);
       });
       sess.polls[req.body.subject.replace(/-/g, '_')] = JSON.stringify(req.body);

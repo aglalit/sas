@@ -15,31 +15,20 @@ body
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-red.svg")
-      h1 Feedback. Year 2019–2020. Quarter 2. Elective 1.
+      h1 Feedback. Year 2019–2020. Quarter 2. Quantitative Methods.
       h3 Course evaluations are to be filled in ENGLISH only. 
       h3 Please note that the use of the scoring system 0, 5 and 10 is only a recommendation, you can use any indicator from 0 to 10.     
       form(id="form" action="/polls/feedback-collector" method="post")
-        input(type="hidden" value="ba_2019_q2_elective1" name="subject")    
+        input(type="hidden" value="ba_2019_year1_q2_qm" name="subject")    
         fieldset   
           div(class="input-group")
             .flex-container
               label(for="Who taught this course") Who taught this course?
               select(class="form-control" required="required" name="Who taught this course")
-                option(value="Anne Mulhall") Anne Mulhall
-                option(value="Erika Wolf") Erika Wolf
-                option(value="Gordana Pesakovic (International Business)") Gordana Pesakovic (International Business)
-                option(value="Gordana Pesakovic (International Economics)") Gordana Pesakovic (International Economics)
-                option(value="Juliette Colinas, Krishna K (History and Philosophy of Biology)") Juliette Colinas, Krishna K (History and Philosophy of Biology)
-                option(value="Krishna K (Development and physiology)") Krishna K (Development and physiology)
-                option(value="Vitaly Nikolaev") Vitaly Nikolaev
-                option(value="Tomasz Blusiewicz") Tomasz Blusiewicz
-                option(value="Olga Ufukova") Olga Ufukova
-                option(value="Evgeny Grishin") Evgeny Grishin
-                option(value="David Melbye") David Melbye
-                option(value="Jan Krasni") Jan Krasni
-                option(value="Zachary Reyna, Julie Reshe") Zachary Reyna, Julie Reshe
-                option(value="Matvey Lomonosov") Matvey Lomonosov
-                option(value="Dmitry Andreev") Dmitry Andreev
+                option(value="O. Berdiugina") O. Berdiugina
+                option(value="M. Platonov") M. Platonov
+                option(value="D. Sharmin") D. Sharmin
+                option(value="O. Ufukova") O. Ufukova
             .flex-container
               label(for="Evaluate the overall quality of the course") Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS, [where 1 is “The quality of the course was terrible, incomparably worse than other SAS courses I have taken,' 6 is “The quality of the course was average,” 10 is “The quality of the course is the best I have seen at SAS by a large margin”].
               input(type="number" required="required" class="form-control" name="Evaluate the overall quality of the course" min="1" max="10")

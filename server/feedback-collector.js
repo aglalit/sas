@@ -72,6 +72,76 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
       user: req.user
     })
   });
+  app.get('/polls/ba_2019_q2_elective2', isLoggedIn, function(req, res) {
+    res.render('ba_2019_q2_elective2', {
+      user: req.user
+    })
+  });
+  app.get('/polls/ba_2019_q2_major1', isLoggedIn, function(req, res) {
+    res.render('ba_2019_q2_major1', {
+      user: req.user
+    })
+  });
+  app.get('/polls/ba_2019_q2_major2', isLoggedIn, function(req, res) {
+    res.render('ba_2019_q2_major2', {
+      user: req.user
+    })
+  });
+  app.get('/polls/ba_2019_q2_major3', isLoggedIn, function(req, res) {
+    res.render('ba_2019_q2_major3', {
+      user: req.use
+    })
+  });
+  app.get('/polls/ba_2019_q2_esl_grammar', isLoggedIn, function(req, res) {
+    res.render('ba_2019_q2_esl_grammar', {
+      user: req.use
+    })
+  });
+  app.get('/polls/ba_2019_q2_esl_speaking', isLoggedIn, function(req, res) {
+    res.render('ba_2019_q2_esl_speaking', {
+      user: req.use
+    })
+  });
+  app.get('/polls/ba_2019_year1_q2_aw', isLoggedIn, function(req, res) {
+    res.render('ba_2019_year1_q2_aw', {
+      user: req.use
+    })
+  });
+  app.get('/polls/ba_2019_year1_q2_qm', isLoggedIn, function(req, res) {
+    res.render('ba_2019_year1_q2_qm', {
+      user: req.use
+    })
+  });
+  app.get('/polls/ba_2019_year1_q2_history', isLoggedIn, function(req, res) {
+    res.render('ba_2019_year1_q2_history', {
+      user: req.use
+    })
+  });
+  app.get('/polls/ba_2019_year1_q2_gb', isLoggedIn, function(req, res) {
+    res.render('ba_2019_year1_q2_gb', {
+      user: req.use
+    })
+  });
+  app.get('/polls/ba_2019_year2_q2_poms_louis', isLoggedIn, function(req, res) {
+    res.render('ba_2019_year2_q2_poms_louis', {
+      user: req.use
+    })
+  });
+  app.get('/polls/ba_2019_year2_q2_poms_krishna', isLoggedIn, function(req, res) {
+    res.render('ba_2019_year2_q2_poms_krishna', {
+      user: req.use
+    })
+  });
+  app.get('/polls/ba_2019_year2_q2_poms_juliette', isLoggedIn, function(req, res) {
+    res.render('ba_2019_year2_q2_poms_juliette', {
+      user: req.use
+    })
+  });
+  app.get('/polls/ba_2019_year2_q2_aw', isLoggedIn, function(req, res) {
+    res.render('ba_2019_year2_q2_aw', {
+      user: req.use
+    })
+  });
   // app.get('/polls/ba-2019-year1-module1-english', isLoggedIn, function(req, res) {
   //   res.render('ba-2019-year1-module1-english', {
   //     user: req.user
@@ -184,6 +254,9 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
           logger.error(mailOptions.subject);
           logger.error(mailOptions.html);
           return console.log(error);
+        }
+        if (info) {
+          logger.info(mailOptions.html);
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
       });
