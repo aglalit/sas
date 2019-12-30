@@ -78,9 +78,9 @@ app.post('/office/mailing', function(req, res) {
     console.log('Message %s sent: %s', info.messageId, info.response);
   });
 
-});
+  req.flash('info', 'Ваш запрос принят');
+  res.render('mailing', {messages: req.flash('info')});
 
-req.flash('info', 'Ваш запрос принят');
-res.render('mailing', {messages: req.flash('info')})
+});
 
 }
