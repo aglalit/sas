@@ -30,23 +30,35 @@ app.post('/office/mailing', function(req, res) {
     allMails += addresses[i] + ' ' + names[i] + '<br/>' + letter + '<br/>';
 
     promises.push(new Promise(function(resolve, reject) {
-    let letter = letter_template.replace('{{{1}}}', names[i]).replace('{{{2}}}', grades[i]);
 
-    let mailOptions = {
+    // let mailOptions = {
+    //   from: '"SAS" <a.bunkova@utmn.ru>', // sender address
+    //   to: addresses[i], // list of receivers
+    //   cc: 'a.bunkova@utmn.ru',
+    //   subject: req.body.letter_topic, // Subject line
+    //   // text: JSON.stringify(req.user), // plain text body
+    //   html: '<p>' + letter_template.replace('{{{1}}}', names[i]).replace('{{{2}}}', grades[i]) + '</p>', // html body
+    // //   dsn: {
+    // //     id: 'some random message specific id',
+    // //     return: 'headers',
+    // //     notify: ['success','failure', 'delay'],
+    // //     recipient: 'a.bunkova@utmn.ru, m.agliulin@utmn.ru'
+    // // }
+    // };
+    transporter.sendMail({
       from: '"SAS" <a.bunkova@utmn.ru>', // sender address
       to: addresses[i], // list of receivers
       cc: 'a.bunkova@utmn.ru',
       subject: req.body.letter_topic, // Subject line
       // text: JSON.stringify(req.user), // plain text body
-      html: '<p>' + letter + '</p>', // html body
+      html: '<p>' + letter_template.replace('{{{1}}}', names[i]).replace('{{{2}}}', grades[i]) + '</p>', // html body
     //   dsn: {
     //     id: 'some random message specific id',
     //     return: 'headers',
     //     notify: ['success','failure', 'delay'],
     //     recipient: 'a.bunkova@utmn.ru, m.agliulin@utmn.ru'
     // }
-    };
-    transporter.sendMail(mailOptions, (error, info) => {
+    }, (error, info) => {
       if (error) {
         return console.log(error);
       }
