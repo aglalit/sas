@@ -1,4 +1,4 @@
-module.exports = function(app, Session, transporter){
+module.exports = function(app, Session, transporter, logger){
 
 app.get('/office/mailing', function(req, res) {
   res.render('mailing', {user: req.user})
@@ -26,9 +26,14 @@ app.post('/office/mailing', function(req, res) {
   let grades = req.body.grades.split('\n');
   let letter_template = req.body.letter_template;
   let allMails = '';
+  var promises = [];
   for (let i=0;i<addresses.length;i++){
-    let letter = letter_template.replace('{{{1}}}', names[i]).replace('{{{2}}}', grades[i]);
+
     allMails += addresses[i] + ' ' + names[i] + '<br/>' + letter + '<br/>';
+
+    promises.push(new Promise(function(resolve, reject) {
+    let letter = letter_template.replace('{{{1}}}', names[i]).replace('{{{2}}}', grades[i]);
+
     let mailOptions = {
       from: '"SAS" <a.bunkova@utmn.ru>', // sender address
       to: addresses[i], // list of receivers
@@ -49,7 +54,11 @@ app.post('/office/mailing', function(req, res) {
       }
       console.log('Message %s sent: %s', info.messageId, info.response);
     });
+    }));
   }
+
+  Promise.all(promises).then(function(info) { logger.info(info); }, function(error) { logger.error(error); });
+
   let mailOptions = {
     from: '"SAS" <a.bunkova@utmn.ru>', // sender address
     to: 'a.bunkova@utmn.ru', // list of receivers

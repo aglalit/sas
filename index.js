@@ -169,7 +169,7 @@ require('./server/feminism.js')(app, Session, transporter);
 require('./server/great-books.js')(app, Session, transporter);
 require('./server/electives.js')(app, Session, transporter);
 require('./server/tfy.js')(app, Session, transporter);
-require('./server/mailing.js')(app, Session, officeTransporter);
+require('./server/mailing.js')(app, Session, officeTransporter, logger);
 require('./server/electives_2019_1_1st_year.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/electives_2019_1_2nd_year.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/electives_2019_2_1st_year.js')(app, Session, transporter, isLoggedIn, User);
