@@ -1,0 +1,191 @@
+doctype html
+html
+  head
+    title Feedback
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    // load bootstrap css
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      img {
+        width:100%;
+      }
+      .logo {padding-bottom:30px}
+      h2 {font-weight:800; margin-bottom:20px;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+      }
+      h3 {
+        font-size: 1.5em;
+        font-weight: 400;
+      }
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+        padding-top: 0px;
+      }
+      .container{
+        width:98% !important;
+      }
+      .input-group{
+        margin-bottom:20px;
+      }
+      .input-group label {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 10px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+        width:75%;
+      }
+      form {
+        margin-top: 30px;
+      }
+      label,legend {
+        text-align: left;
+            float: left;
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        float:left;
+        width:75%;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        -webkit-transition: 0.2s all linear;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        }
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #00f;
+        }
+        button {
+          background-color: #00f !important;
+        }
+        .flex-container {display:-webkit-box;display:-ms-flexbox;display:flex; -webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction:column; margin:10px 0;}
+        .flex-row {-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+
+        @media (max-width: 1024px) {
+
+          body{padding-top:10px}
+          .container{
+          width:95%;
+          }
+        .input-group  label {
+          font-size:30px ;
+          margin-bottom:20px;
+          }
+          input[type="radio"]{
+            top:23px;
+          }
+          button.btn-lg {
+            font-size: 30px;
+          }
+        }
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="../assets/Logo__blue.png")
+      h1 Feedback. Research Seminar.
+      h3 Please note that the use of the scoring system 0, 5 and 10 is only a recommendation, you can use any indicator from 0 to 10.
+      form(action="/polls/feedback-collector" method="post")
+        input(type="hidden" value="ba_2019_year3_q2_rs" name="subject")    
+        fieldset
+          div(class="input-group")
+            .flex-container
+              label(for="Who taught this course") Who taught this course?
+              select(class="form-control" required="required" name="Who taught this course")
+                option(value="Taisya Pogodaeva") Taisya Pogodaeva
+                option(value="Munesh Chauhan") Munesh Chauhan           
+                option(value="Andrey Shcherbenok") Andrey Shcherbenok
+                option(value="Anna Varfolomeeva") Anna Varfolomeeva
+                option(value="Juliette Colinas") Juliette Colinas
+                option(value="Erika Wolf") Erika Wolf
+            .flex-container
+              label(for="Evaluate the impact of the course on your knowledge") Evaluate the impact of the course on your knowledge, skills, competencies, personal qualities and worldview, where 1 is no development has taken place, 6 is a generally satisfactory development has taken place in several of the parameters, 10 is I have become a different person.
+              input(type="number" required="required" class="form-control" name="Evaluate the impact of the course on your knowledge" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the level of feedback from the professor") Evaluate the level of feedback from the professor (comments on essays and other works, answers to questions during classes, individual consultations during office hours), where 1 is There was no feedback from the professor at all, 6 is Feedback was present in half of the cases when it was necessary and was of average quality, 10 is The professor provided a comprehensive high-level feedback whenever it was needed.
+              input(type="number" required="required" class="form-control" name="Evaluate the level of feedback from the professor" min="1" max="10")    
+            .flex-container
+              label(for="Evaluate the overall quality of the course") Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS, where 1 is The quality of the course was terrible, incomparably worse than in other SAS courses I have taken, 6 is The quality of the course was average, 10 is The quality of the course is the best I have seen at SAS by a large margin.
+              input(type="number" required="required" class="form-control" name="Evaluate the overall quality of the course" min="1" max="10")    
+            .flex-container
+              label(for="How well were the course materials organized") How well were the course materials organized (syllabus, readers, books, e- books, audio-visual materials, e-mail, social media, website, etc.)? Give a score on a scale of 1 to 10, where 1 = most of the materials were very pure organized; 6 = the materials were substandard or difficult to use; 10 = there were plenty of materials which were easily accessible and implemented usefully.
+              input(type="number" required="required" class="form-control" name="How well were the course materials organized" min="1" max="10")    
+            .flex-container
+              label(for="What percentage of the mandatory readings were you able to do during the course") What percentage of the mandatory readings were you able to do during the course? (10 to 100%)
+              input(type="number" required="required" class="form-control" name="What percentage of the mandatory readings were you able to do during the course" min="10" max="100")    
+            .flex-container
+              label(for="What course readings did you find the most useful") What course readings did you find the most useful?
+              input(type="text" required="required" class="form-control" name="What course readings did you find the most useful")    
+            .flex-container
+              label(for="What course readings did you find the least useful") What course readings did you find the least useful?
+              input(type="text" required="required" class="form-control" name="What course readings did you find the least useful") 
+            .flex-container
+              label(for="How closely did the teacher follow the course syllabus") How closely did the teacher follow the course syllabus? Give a score from 1 to 10, where 1 = didn’t follow it at all; 6 = followed half of it; 10 = followed it fully (100%).
+              input(type="number" required="required" class="form-control" name="How closely did the teacher follow the course syllabus" min="1" max="10")    
+            .flex-container
+              label(for="How well did your teacher organize interactive communication in your course") How well did your teacher organize interactive communication in your course? Score from 1 to 10, where 1 = the communication was pure organized, almost no interactive formats were used; 10 = the work during the seminar included all kinds of well-organized interactive formats (discussions, group work, individual and team presentations, debates, etc.)
+              input(type="number" required="required" class="form-control" name="How well did your teacher organize interactive communication in your course" min="1" max="10")    
+            .flex-container
+              label(for="Did the teacher create the right conditions for speaking up in the classroom") Did the teacher create the right conditions for speaking up in the classroom?
+              input(type="number" required="required" class="form-control" name="Did the teacher create the right conditions for speaking up in the classroom" min="1" max="10")    
+            .flex-container
+              label(for="How challenging was the course for you") How challenging was the course for you? Give a score from 1 to 10 where 1 = the course was not challenging at all; 6 = the course was moderately challenging and complex; 10 = the course was extremely challenging and complex.
+              input(type="number" required="required" class="form-control" name="How challenging was the course for you" min="1" max="10")
+            .flex-container
+              label(for="How often did you made your best effort to be attentive and engaged in this class") How often did you made your best effort to be attentive and engaged in this class? Give a score from 1 to 10.
+              input(type="number" required="required" class="form-control" name="How often did you made your best effort to be attentive and engaged in this class" min="1" max="10")    
+            .flex-container
+              label(for="Did you understand the expectations for preparing for class") Did you understand the expectations for preparing for class? Give a score from 1 to 10, where 1 = not at all, 10 = everything was very clear.
+              input(type="number" required="required" class="form-control" name="Did you understand the expectations for preparing for class" min="1" max="10")    
+            .flex-container
+              label(for="Did you meet the expectations for preparing for class") Did you meet the expectations for preparing for class (e.g. completing readings, submitting assignments)? Give a score from 1 to 10, where 1 = not at all, 10 = yes, I did.
+              input(type="number" required="required" class="form-control" name="Did you meet the expectations for preparing for class" min="1" max="10")    
+            .flex-container
+              label(for="How strongly would you recommend this course to your peers") How strongly would you recommend this course to your peers? (score from 1 tо 10).
+              input(type="number" required="required" class="form-control" name="How strongly would you recommend this course to your peers" min="1" max="10")    
+            .flex-container
+              label(for="What did you find the most instructive/informative/useful") What did you find the most instructive/informative/useful?
+              textarea(rows="4" required="required" class="form-control" name="What did you find the most instructive/informative/useful") 
+            .flex-container
+              label(for="What did you find the least instructive/informative/useful") What did you find the least instructive/informative/useful?
+              textarea(rows="4" required="required" class="form-control" name="What did you find the least instructive/informative/useful") 
+            .flex-container
+              label(for="What should the teacher start doing") What should the teacher start doing?
+              textarea(rows="4" required="required" class="form-control" name="What should the teacher start doing")
+            .flex-container
+              label(for="What should the teacher keep doing") What should the teacher keep doing?
+              textarea(rows="4" required="required" class="form-control" name="What should the teacher keep doing")
+            .flex-container
+              label(for="What should the teacher stop doing") What should the teacher stop doing?
+              textarea(rows="4" required="required" class="form-control" name="What should the teacher stop doing")                                         
+        button(type="submit" class="btn btn-primary btn-lg") Submit

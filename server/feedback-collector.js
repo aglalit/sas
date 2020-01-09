@@ -142,6 +142,11 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
       user: req.use
     })
   });
+  app.get('/polls/ba_2019_year3_q2_rs', isLoggedIn, function(req, res) {
+    res.render('ba_2019_year3_q2_rs', {
+      user: req.use
+    })
+  });
   // app.get('/polls/ba-2019-year1-module1-english', isLoggedIn, function(req, res) {
   //   res.render('ba-2019-year1-module1-english', {
   //     user: req.user

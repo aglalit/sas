@@ -148,7 +148,7 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: '/polls',
+  successRedirect: '/polls/ba_2019_year3_q2_rs',
   failureRedirect: '/login'
 }));
 // passport.authenticate('google'),
