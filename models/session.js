@@ -423,7 +423,7 @@ var sessionSchema = mongoose.Schema({
       ba_2019_year2_q2_poms_krishna: String,
       ba_2019_year2_q2_poms_juliette: String,
       ba_2019_year2_q2_aw: String,
-      ba_2019_year3_q2_rs: String
+      ba_2019_year3_q2_rs: String,
 
       ba_2019_year1_module2_english: String,
 
