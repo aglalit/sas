@@ -167,7 +167,7 @@ function displaySubject(data, subject) {
         dataParsedFiltered = dataParsed.filter((entry) => {
           return entry["Who taught this course"].match(regex)
         });
-        teacherHeader.innerHTML = dataParsedFiltered[0]["Who taught this course"];
+        teacherHeader.innerHTML = dataParsedFiltered[1]["Who taught this course"];
 
         dataParsed = dataParsedFiltered;
       }

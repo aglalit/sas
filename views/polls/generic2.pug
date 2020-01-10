@@ -15,64 +15,59 @@ body
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-red.svg")
-      h1 Feedback. Majors.
+      h1 Feedback. Major course as elective.
       //- h3 Please sort the following topics in the order from the most interesting to the least (from the top to the bottom).
-      form(id="form" action="/polls/feedback-collector" method="post")
+      form(id="form" action="/polls/generic2" method="post")
         input(type="hidden" value="generic2" name="subject")    
         fieldset   
           div(class="input-group")
             .flex-container.column
               label Which major do you plan to choose?
             .flex-container.row
-              input(type="radio"  value="Information Technology and Digital Society" name="Which major do you plan to choose?" required="required" )
-              label() Information Technology and Digital Society
+              input(type="radio"  value="ANSO Anthropological and Sociological Theory: the Classics" name="Which major do you plan to choose?" required="required" )
+              label() ANSO Anthropological and Sociological Theory: the Classics
             .flex-container.row
-              input(type="radio"  value="Cultural Studies" name="Which major do you plan to choose?" required="required" )
-              label() Cultural Studies
+              input(type="radio"  value="ECON Probability Theory and Statistics" name="Which major do you plan to choose?" required="required" )
+              label() ECON Probability Theory and Statistics
             .flex-container.row
-              input(type="radio"  value="Life Sciences" name="Which major do you plan to choose?" required="required" )
-              label() Life Sciences
+              input(type="radio"  value="ECON Econometrics" name="Which major do you plan to choose?" required="required" )
+              label() ECON Econometrics
             .flex-container.row
-              input(type="radio"  value="Economics" name="Which major do you plan to choose?" required="required" )
-              label() Economics
+              input(type="radio"  value="CULT Modernism and Modernity" name="Which major do you plan to choose?" required="required" )
+              label() CULT Modernism and Modernity
             .flex-container.row
-              input(type="radio"  value="Film and Media Studies" name="Which major do you plan to choose?" required="required" )
-              label() Film and Media Studies
+              input(type="radio"  value="LIFE Ecology" name="Which major do you plan to choose?" required="required" )
+              label() LIFE Ecology
             .flex-container.row
-              input(type="radio"  value="Historical Studies" name="Which major do you plan to choose?" required="required" )
-              label() Historical Studies
+              input(type="radio"  value="FIME Media and Society" name="Which major do you plan to choose?" required="required" )
+              label() FIME Media and Society
             .flex-container.row
-              input(type="radio"  value="Sociology and Anthropology" name="Which major do you plan to choose?" required="required" )
-              label() Sociology and Anthropology
+              input(type="radio"  value="FIME New Media" name="Which major do you plan to choose?" required="required" )
+              label() FIME New Media
             .flex-container.row
-              input(type="radio"  value="I don't know yet" name="Which major do you plan to choose?" required="required" id="dontknow")
-              label() I don't know yet
-          div(class="input-group" id="cards" style="display:none") 
-            .flex-container.column
-              label() Please sort the following topics in the order from the most interesting to the least (from the top to the bottom).
-            .cards
-              .portlet
-                .portlet-header(id="Information Technology and Digital Society") Information Technology and Digital Society
-              .portlet
-                .portlet-header(id="Cultural Studies") Cultural Studies
-              .portlet
-                .portlet-header(id="Life Sciences") Life Sciences
-              .portlet
-                .portlet-header(id="Economics") Economics
-              .portlet
-                .portlet-header(id="Film and Media Studies") Film and Media Studies
-              .portlet
-                .portlet-header(id="Historical Studies") Historical Studies
-              .portlet
-                .portlet-header(id="Sociology and Anthropology") Sociology and Anthropology
+              input(type="radio"  value="Film History III" name="Which major do you plan to choose?" required="required" )
+              label() Film History III
+            .flex-container.row
+              input(type="radio"  value="IT Information Systems Architecture and Parallel Computing" name="Which major do you plan to choose?" required="required" )
+              label() IT Information Systems Architecture and Parallel Computing
+
+          //- div(class="input-group" id="cards" style="display:none") 
+          //-   .flex-container.column
+          //-     label() Please sort the following topics in the order from the most interesting to the least (from the top to the bottom).
+          //-   .cards
+          //-     .portlet
+          //-       .portlet-header(id="Information Technology and Digital Society") Information Technology and Digital Society
+          //-     .portlet
+          //-       .portlet-header(id="Cultural Studies") Cultural Studies
+          //-     .portlet
+          //-       .portlet-header(id="Life Sciences") Life Sciences
+          //-     .portlet
+          //-       .portlet-header(id="Economics") Economics
+          //-     .portlet
+          //-       .portlet-header(id="Film and Media Studies") Film and Media Studies
+          //-     .portlet
+          //-       .portlet-header(id="Historical Studies") Historical Studies
+          //-     .portlet
+          //-       .portlet-header(id="Sociology and Anthropology") Sociology and Anthropology
         button(type="submit" class="btn btn-primary btn-lg") Submit
-    script(src="/cards.js")
-    script.
-      $('input[type="radio"]').click(function(){
-        if ($('#dontknow').is(':checked')){
-            $('#cards').css('display','block');
-        }
-        else {
-            $('#cards').css('display','none');
-          }
-      })
+    // script(src="/cards.js")
