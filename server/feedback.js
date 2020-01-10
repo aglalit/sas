@@ -95,7 +95,7 @@ app.get('/feedback2', function(req, res) {
       {'polls':{$exists : true}},
       {'polls.registration':{$exists : false}},
       {'polls.faculty_research_trips':{$exists : false}}
-    ]}).select('polls').select('polls').sort({ _id: -1 }).limit(750).exec(function (err, docs){
+    ]}).select('polls').select('polls').sort({ _id: -1 }).limit(2500).exec(function (err, docs){
       if (err) { res.send(err); console.log(err); }
       else {
         res.render('feedback2', {
@@ -111,6 +111,76 @@ app.get('/feedback2', function(req, res) {
       else {
         console.log(docs);
         res.render('feedback2', {
+          data:  JSON.stringify(docs)
+        });
+      }
+    });
+  }
+
+
+
+});
+
+app.get('/feedback3', function(req, res) {
+  var query = {};
+
+  if (req.query.s === 'ba_2019_q2_electives'){
+    Session.find({
+      $or: [
+        { "polls.ba_2019_q2_elective1": {$exists : true} },
+        { "polls.ba_2019_q2_elective2": {$exists : true} },
+        { "polls.ba_2019_q2_elective3": {$exists : true} },
+        { "polls.ba_2019_q2_major1": {$exists : true} },
+        { "polls.ba_2019_q2_major2": {$exists : true} }
+      ]
+    },{ 'polls.ba_2019_q2_elective1': 1, 'polls.ba_2019_q2_elective2': 1,'polls.ba_2019_q2_elective3': 1,'polls.ba_2019_q2_major1': 1,'polls.ba_2019_q2_major2': 1 }).exec(function (err, docs){
+      if (err) { res.send(err); console.log(err); }
+      else {
+        docs.map((el)=>{console.log(el._doc.polls)});
+        res.render('feedback3', {
+          data:  JSON.stringify(docs)
+        });
+      }
+    });
+  }
+  else if (req.query.s === 'ba_2019_year2_q2_poms'){
+    Session.find({
+      $or: [
+        { "polls.ba_2019_year2_q2_poms_louis": {$exists : true} },
+        { "polls.ba_2019_year2_q2_poms_krishna": {$exists : true} },
+        { "polls.ba_2019_year2_q2_poms_juliette": {$exists : true} }
+      ]
+    },{ 'polls.ba_2019_year2_q2_poms_louis': 1, 'polls.ba_2019_year2_q2_poms_krishna': 1,'polls.ba_2019_year2_q2_poms_juliette': 1 }).exec(function (err, docs){
+      if (err) { res.send(err); console.log(err); }
+      else {
+        docs.map((el)=>{console.log(el._doc.polls)});
+        res.render('feedback3', {
+          data:  JSON.stringify(docs)
+        });
+      }
+    });
+  }
+  else if (req.query.s === 'all'){
+    Session.find({$and: [
+      {'polls':{$exists : true}},
+      {'polls.registration':{$exists : false}},
+      {'polls.faculty_research_trips':{$exists : false}}
+    ]}).select('polls').select('polls').sort({ _id: -1 }).limit(750).exec(function (err, docs){
+      if (err) { res.send(err); console.log(err); }
+      else {
+        res.render('feedback3', {
+          data:  JSON.stringify(docs)
+        });
+      }
+    });
+  }
+  else {
+    query['polls.' + req.query.s] = {$exists : true};
+    Session.find(query).select('polls.' + req.query.s).exec(function (err, docs){
+      if (err) { res.send(err); console.log(err); }
+      else {
+        console.log(docs);
+        res.render('feedback3', {
           data:  JSON.stringify(docs)
         });
       }

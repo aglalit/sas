@@ -42,6 +42,13 @@ html
         border-bottom:1px red solid;
         hyphens: auto;
       }
+      .all tr td:first-child {
+        font-size: 12px;
+        vertical-align: middle;
+      }
+      .all tr {
+        border-top: 1px red solid;
+      }
       td {
         text-align: left; 
         padding-top:10px;
@@ -239,88 +246,133 @@ body
         //- button(class="exportCSV" onclick="exportCSVFile(dataToExportCSV, 'feedback-2019-module1-5-9')") Download in CSV
         ul(class="list-unstyled")
           li
-            h3.ba_2019_electives Electives and Major Courses
+            h3.ba_2019_q2_electives Electives and Major Courses
             span Links: 
             span
-              a(target="_blank" href="/feedback2?s=ba_2019_electives") All, 
-            span
-              a(target="_blank" href="/feedback2?s=ba_2019_electives&t=Jones")  Peter Jones, 
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives") All, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_electives&t=Melbye") David Melbye, 
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Wolf") Erika Wolf, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_electives&t=Doria") Corinne Doria, 	
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Business") Gordana Pesakovic (International Business), 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_electives&t=Silverstein") Jay Silverstein, 
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Economics") Gordana Pesakovic (International Economics), 	
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_electives&t=Dussealt") David Dussealt, 	
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Colinas") Juliette Colinas, Krishna K, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_electives&t=Lomonosov") Matvey Lomonosov,  
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Krishna") Krishna K, 	
+            span 
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Lomonosov") Matvey Lomonosov,  
             span  
-              a(target="_blank" href="/feedback2?s=ba_2019_electives&t=Chauhan") Munesh Chauhan, 
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Chauhan") Munesh Chauhan, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_electives&t=Nikolaev") Vitaly Nikolaev, 
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Nikolaev") Vitaly Nikolaev, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_electives&t=Mulhall") Anne Mulhall, 
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Mulhall") Anne Mulhall, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_electives&t=Colinas") Juliette Colinas,              
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Ufukova") Olga Ufukova,              
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_electives&t=Krishna") Krishna K,  
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Blusiewicz") Tomasz Blusiewicz,  
+            span 
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Grishin") Evgeny Grishin,  
+            span 
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Melbye") David Melbye,  
+            span 
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Krasni") Jan Krasni,  
+            span 
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Erpyleva") Svetlana Erpyleva,  
+            span 
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Reyna") Zachary Reyna, Julie Reshe,
+            span 
+              a(target="_blank" href="/feedback3?s=ba_2019_q2_electives&t=Andreev") Dmitry Andreev   
+          //- li
+          //-   h3.ba_2019_q2_esl_speaking English as a Second Language (SPEAKING)
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback3?s=ba_2019_q2_esl_speaking") All, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback3?s=ba_2019_q2_esl_speaking&t=Kaye") Steven Kaye, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback3?s=ba_2019_q2_esl_speaking&t=Bain") Jeff Bain
+          //- li
+          //-   h3.ba_2019_q2_esl_grammar English as a Second Language (GRAMMAR)
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback3?s=ba_2019_q2_esl_grammar") All, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback3?s=ba_2019_q2_esl_grammar&t=Glovatskaya") Diana Glovatskaya, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback3?s=ba_2019_q2_esl_grammar&t=Vasileva") Zhanna Vasileva, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback3?s=ba_2019_q2_esl_grammar&t=Parakhina") Irina Parakhina, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback3?s=ba_2019_q2_esl_grammar&t=Novokreshchennyh") Ekaterina Novokreshchennyh
           li
-            h3.ba_2019_year1_module1_wtai Writing, Thinking, Analysis, Interpretation
+            h3.ba_2019_year1_q2_aw Academic Writing (year 1)
             span Links: 
             span
-              a(target="_blank" href="/feedback2?s=ba_2019_year1_module1_wtai") All, 
+              a(target="_blank" href="/feedback3?s=ba_2019_year1_q2_aw") All, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_year1_module1_wtai&t=Reyna") Zachary Reyna, 
+              a(target="_blank" href="/feedback3?s=ba_2019_year1_q2_aw&t=Dusseault") David Dusseault, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_year1_module1_wtai&t=Blusiewisz") Tomasz Blusiewisz, 
+              a(target="_blank" href="/feedback3?s=ba_2019_year1_q2_aw&t=Erpyleva") Svetlana Erpyleva, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_year1_module1_wtai&t=Reshe") Julie Reshe, 
+              a(target="_blank" href="/feedback3?s=ba_2019_year1_q2_aw&t=Schapira") Michael Schapira, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_year1_module1_wtai&t=Varfolomeeva") Anna Varfolomeeva, 
-            span 
-              a(target="_blank" href="/feedback2?s=ba_2019_year1_module1_wtai&t=Alyukov") Maxim Alyukov, 
-            span 
-              a(target="_blank" href="/feedback2?s=ba_2019_year1_module1_wtai&t=Erpyleva") Svetlana Erpyleva
+              a(target="_blank" href="/feedback3?s=ba_2019_year1_q2_aw&t=Varfolomeeva") Anna Varfolomeeva
           li
-            h3.ba_2019_year2_module5_aw Academic Writing
+            h3.ba_2019_year2_q2_aw Academic Writing (year 2)
             span Links: 
             span
-              a(target="_blank" href="/feedback2?s=ba_2019_year2_module5_aw") All, 
+              a(target="_blank" href="/feedback3?s=ba_2019_year2_q2_aw") All, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_year2_module5_aw&t=Andreoletti") Giacomo Andreoletti, 
+              a(target="_blank" href="/feedback3?s=ba_2019_year2_q2_aw&t=Mulhall") Anne Mulhall, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_year2_module5_aw&t=Schapira") Michael Schapira
+              a(target="_blank" href="/feedback3?s=ba_2019_year2_q2_aw&t=Reyna") Zachary Reyna, 
+            span 
+              a(target="_blank" href="/feedback3?s=ba_2019_year2_q2_aw&t=Schapira") Michael Schapira, 
+            span 
+              a(target="_blank" href="/feedback3?s=ba_2019_year2_q2_aw&t=Doria") Corinne Doria
           li
-            h3.ba_2019_year1_module1_english English
+            h3.ba_2019_year1_q2_qm Quantitative Methods
             span Links: 
-              a(target="_blank" href="/feedback2?s=ba_2019_year1_module1_english") All, 
-            span 
-              a(target="_blank" href="/feedback2?s=ba_2019_year1_module1_english&t=Glovatsky") D. Glovatsky, 
             span
-              a(target="_blank" href="/feedback2?s=ba_2019_year1_module1_english&t=Yarkova") E. Yarkova, 
+              a(target="_blank" href="/feedback3?s=ba_2019_year1_q2_qm") All, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_year1_module1_english&t=Vasileva") Zh. Vasileva, 
+              a(target="_blank" href="/feedback3?s=ba_2019_year1_q2_qm&t=Berdiugina") O. Berdiugina, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_year1_module1_english&t=Novokreshhennykh") E. Novokreshhennykh, 
+              a(target="_blank" href="/feedback3?s=ba_2019_year1_q2_qm&t=Platonov") M. Platonov, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_year1_module1_english&t=Ulyanova") O. Ulyanova, 
+              a(target="_blank" href="/feedback3?s=ba_2019_year1_q2_qm&t=Sharmin") D. Sharmin, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_year1_module1_english&t=Parahina") I. Parahina, 
+              a(target="_blank" href="/feedback3?s=ba_2019_year1_q2_qm&t=Ufukova") O. Ufukova
           li
-            h3.ba_2019_year2_module5_poms Problems of Modern Sciences
+            h3.ba_2019_year1_q2_gb Great Books: Philosophy and Social Thought
             span Links: 
-              a(target="_blank" href="/feedback2?s=ba_2019_year2_module5_poms") All, 
             span
-              a(target="_blank" href="/feedback2?s=ba_2019_year2_module5_poms&t=louis") Louis Vervoort, 
+              a(target="_blank" href="/feedback3?s=ba_2019_year1_q2_gb") All, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_year2_module5_poms&t=juliette") Juliette Colinas, 
+              a(target="_blank" href="/feedback3?s=ba_2019_year1_q2_gb&t=Jones") Peter Jones, 
             span 
-              a(target="_blank" href="/feedback2?s=ba_2019_year2_module5_poms&t=krishna") Krishna K
+              a(target="_blank" href="/feedback3?s=ba_2019_year1_q2_gb&t=Lomonosov") Matvey Lomonosov, 
+            span 
+              a(target="_blank" href="/feedback3?s=ba_2019_year1_q2_gb&t=Grishin") Evgeny Grishin, 
+            span 
+              a(target="_blank" href="/feedback3?s=ba_2019_year1_q2_gb&t=Alyukov") Maxim Alyukov
           li
-            h3.ba_2019_year2_module5_art Interpreting Artworks
+            h3.ba_2019_year1_q2_history History
             span Links: 
-              a(target="_blank" href="/feedback2?s=ba_2019_year2_module5_art") Erika Wolf
+            span
+              a(target="_blank" href="/feedback3?s=ba_2019_year1_q2_history") History
+          li
+            h3.ba_2019_year2_q2_poms Problems of Modern Sciences
+            span Links: 
+              a(target="_blank" href="/feedback3?s=ba_2019_year2_q2_poms") All, 
+            span
+              a(target="_blank" href="/feedback3?s=ba_2019_year2_q2_poms_&t=louis") Louis Vervoort, 
+            span 
+              a(target="_blank" href="/feedback3?s=ba_2019_year2_q2_poms&t=juliette") Juliette Colinas, 
+            span 
+              a(target="_blank" href="/feedback3?s=ba_2019_year2_q2_poms&t=krishna") Krishna K
       h2.displayTeacher Full answers
       button(class="prev displayTeacher" onclick="allPrev()") < Previous answer
       span.currentAnswerCounter
@@ -334,7 +386,7 @@ body
 script(src="/plotly-latest.min.js")
 script.
   var data = [!{data}];
-script(src="/feedback2.js")
+script(src="/feedback3.js")
 // script(src="/papaparse.min.js")
   
   

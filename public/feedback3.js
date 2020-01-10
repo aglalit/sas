@@ -13,11 +13,11 @@ if (subjectUrl === 'all') {
   data[0].forEach(function(el) {
     for (var i in el.polls) {
       var i_inner = i;
-      if (i === 'ba_2019_module1_elective1' || i === 'ba_2019_module1_elective2' || i === 'ba_2019_module1_elective3' || i === 'ba_2019_module1_major1' || i === 'ba_2019_module1_major2') {
-        i_inner = 'ba_2019_electives';
+      if (i === 'ba_2019_q2_elective1' || i === 'ba_2019_q2_elective2' || i === 'ba_2019_q2_elective3' || i === 'ba_2019_q2_major1' || i === 'ba_2019_q2_major2') {
+        i_inner = 'ba_2019_q2_electives';
       }
-      if (i === 'ba_2019_year2_module5_poms_louis' || i === 'ba_2019_year2_module5_poms_krishna' || i === 'ba_2019_year2_module5_poms_juliette') {
-        i_inner = 'ba_2019_year2_module5_poms';
+      if (i === 'ba_2019_year2_q2_poms_louis' || i === 'ba_2019_year2_q2_poms_krishna' || i === 'ba_2019_year2_q2_poms_juliette') {
+        i_inner = 'ba_2019_year2_q2_poms';
       }
 
       if (dataParsedAll[i_inner]) {
@@ -50,20 +50,20 @@ function displaySubject(data, subject) {
 
   // DISPLAY ALL LINKS
 
-  if (subject === 'ba_2019_electives') {
+  if (subject === 'ba_2019_q2_electives') {
     data[0].forEach(function(el) {
-      if (el.polls.ba_2019_module1_elective1) dataParsed.unshift(JSON.parse(el.polls.ba_2019_module1_elective1));
-      if (el.polls.ba_2019_module1_elective2) dataParsed.unshift(JSON.parse(el.polls.ba_2019_module1_elective2));
-      if (el.polls.ba_2019_module1_elective3) dataParsed.unshift(JSON.parse(el.polls.ba_2019_module1_elective3));
-      if (el.polls.ba_2019_module1_major1) dataParsed.unshift(JSON.parse(el.polls.ba_2019_module1_major1));
-      if (el.polls.ba_2019_module1_major2) dataParsed.unshift(JSON.parse(el.polls.ba_2019_module1_major2));
+      if (el.polls.ba_2019_q2_elective1) dataParsed.unshift(JSON.parse(el.polls.ba_2019_q2_elective1));
+      if (el.polls.ba_2019_q2_elective2) dataParsed.unshift(JSON.parse(el.polls.ba_2019_q2_elective2));
+      if (el.polls.ba_2019_q2_elective3) dataParsed.unshift(JSON.parse(el.polls.ba_2019_q2_elective3));
+      if (el.polls.ba_2019_q2_major1) dataParsed.unshift(JSON.parse(el.polls.ba_2019_q2_major1));
+      if (el.polls.ba_2019_q2_major2) dataParsed.unshift(JSON.parse(el.polls.ba_2019_q2_major2));
     });
   }
-  else if (subject === 'ba_2019_year2_module5_poms') {
+  else if (subject === 'ba_2019_year2_q2_poms') {
     data[0].forEach(function(el) {
-      if (el.polls.ba_2019_year2_module5_poms_krishna) dataParsed.unshift(JSON.parse(el.polls.ba_2019_year2_module5_poms_krishna));
-      if (el.polls.ba_2019_year2_module5_poms_louis) dataParsed.unshift(JSON.parse(el.polls.ba_2019_year2_module5_poms_louis));
-      if (el.polls.ba_2019_year2_module5_poms_juliette) dataParsed.unshift(JSON.parse(el.polls.ba_2019_year2_module5_poms_juliette));
+      if (el.polls.ba_2019_year2_q2_poms_krishna) dataParsed.unshift(JSON.parse(el.polls.ba_2019_year2_q2_poms_krishna));
+      if (el.polls.ba_2019_year2_q2_poms_louis) dataParsed.unshift(JSON.parse(el.polls.ba_2019_year2_q2_poms_louis));
+      if (el.polls.ba_2019_year2_q2_poms_juliette) dataParsed.unshift(JSON.parse(el.polls.ba_2019_year2_q2_poms_juliette));
     });
 
   }
@@ -90,52 +90,41 @@ function displaySubject(data, subject) {
     var dataParsedFiltered = [];
     var teacherHeader = document.querySelector('.teacher');
 
-    if (subject === 'ba_2019_year1_module4_history') {
-      teacher = 'Tomasz Blusiewisz';
+    if (subject === 'ba_2019_year2_q2_poms') {
       dataParsed.forEach((el) => {
-        el["Who taught this course"] = teacher
-      })
-      teacherHeader.innerHTML = 'History';
-    }
-    if (subject === 'ba_2019_year2_module8_design_thinking') {
-      teacherHeader.innerHTML = 'Design Thinking';
-      teacher = 'Sergey Lukas';
-      dataParsed.forEach((el) => {
-        el["Who taught this course"] = teacher
-      });
-    }
-    if (subject === 'ba_2019_year2_module5_poms') {
-      dataParsed.forEach((el) => {
-        if (el.subject == 'ba-2019-year2-module5-poms-louis'){
+        if (el.subject == 'ba_2019_year2_q2_poms_louis'){
+          el.subject = 'ba_2019_year2_q2_poms';
           el["Who taught this course"] = 'Louis Vervoort';
           // teacher = 'Louis Vervoort';
         }
-        else if (el.subject == 'ba-2019-year2-module5-poms-juliette'){
+        else if (el.subject == 'ba_2019_year2_q2_poms_juliette'){
+          el.subject = 'ba_2019_year2_q2_poms';
           el["Who taught this course"] = 'Juliette Colinas';
           // teacher = 'Juliette Colinas';
         }
-        else if (el.subject == 'ba-2019-year2-module5-poms-krishna'){
+        else if (el.subject == 'ba_2019_year2_q2_poms_krishna'){
+          el.subject = 'ba_2019_year2_q2_poms';
           el["Who taught this course"] = 'Krishna K';
           // teacher = 'Krishna K';
         }
       })
       teacherHeader.innerHTML = 'Problems of Modern Sciences';
-      // console.log(dataParsed);
+      console.log(dataParsed);
     }
 
-    dataParsed.forEach((el) => {
-      if(el["Who taught this course"] === 'Louis Vervoort'){
-        // console.log(el);
-      }
-    })
+    // dataParsed.forEach((el) => {
+    //   if(el["Who taught this course"] === 'Louis Vervoort'){
+    //     console.log(el);
+    //   }
+    // })
 
-    if (subject === 'ba_2019_year2_module5_art') {
-      teacher = 'Erika Wolf';
-      dataParsed.forEach((el) => {
-        el["Who taught this course"] = teacher
-      })
-      teacherHeader.innerHTML = 'Interpreting Artworks';
-    }
+    // if (subject === 'ba_2019_year2_module5_art') {
+    //   teacher = 'Erika Wolf';
+    //   dataParsed.forEach((el) => {
+    //     el["Who taught this course"] = teacher
+    //   })
+    //   teacherHeader.innerHTML = 'Interpreting Artworks';
+    // }
     if (subject === 'ba_2019_year2_module8_gb') {
       dataParsedFiltered = [];
       dataParsedTeachers = ['Андрей Щербенок', 'Ольга Ушакова', 'John Tangney', 'Anne Mulhall'];
@@ -233,9 +222,9 @@ function displaySubject(data, subject) {
         }
       });
 
-      for (var key in dataParsed[0]) {
+      for (var key in dataParsed[1]) {
         if (key !== 'subject'){
-            if (isNaN(dataParsed[0][key])) {
+            if (isNaN(dataParsed[1][key])) {
               for (var k in dataComments) {
                 dataComments[k][key] = []
               }
@@ -293,8 +282,11 @@ function displaySubject(data, subject) {
     }
   });
 
-  for (var key in dataParsed[4]) {
-    if (!isNaN(dataParsed[4][key]) && key !== 'What course readings did you find the most useful' && key !== 'What course readings did you find the least useful') {
+  for (var key in dataParsed[0]) {
+    if (key === "Evaluate the overall quality of the course" ||
+        key === "Evaluate the impact of the course on your knowledge" ||
+        key === "How well did your teacher integrate interactive communication within the course seminars?" ||
+        key === "Evaluate the level of feedback from the professor") {
       for (var k in dataNumbers) {
         dataNumbers[k][key] = []
       }
@@ -342,10 +334,11 @@ function displaySubject(data, subject) {
             color: color
           },
           xbins: {
-            start: 1,
-            end: 10,
+            start: 0.5,
+            end: 10.5,
             size: 1,
-          }
+          },
+
         })
       }
 
@@ -356,6 +349,17 @@ function displaySubject(data, subject) {
           family: 'Agipo-Bold',
           size: 16
         },
+        xaxis: {
+          'range': [0, 11],
+          tick0: 1,
+          dtick: 1,
+          ticklen: 8,
+        },
+        yaxis: {
+          tick0: 0,
+          dtick: 1,
+          ticklen: 8,
+        }
       }
       if (subjectUrl !== 'all') {
         Plotly.newPlot(graph, data, layout);
@@ -378,30 +382,57 @@ function displaySubject(data, subject) {
       table.classList.add('all');
       var tableHead = document.createElement('thead');
       var tableBody = document.createElement('tbody');
+      var averageRow = document.createElement('tr');
+      var medianRow = document.createElement('tr');
+      tableBody.appendChild(averageRow);
+      tableBody.appendChild(medianRow);
+      var averageTd = document.createElement('td');
+      averageTd.innerHTML = "Average:";
+      var medianTd = document.createElement('td');
+      medianTd.innerHTML = "Median:";
+      tableHead.appendChild(document.createElement('td'));
+      averageRow.appendChild(averageTd);
+      medianRow.appendChild(medianTd);
       table.appendChild(tableHead);
       table.appendChild(tableBody);
 
       var tableHeader = document.createElement('h4');
-      tableHeader.innerHTML = t;
+      var responses;
+
       for (var q in dataNumbers[t]) {
+
         var question = document.createElement('td');
+        responses = dataNumbers[t][q].length;
         question.innerHTML = q;
         tableHead.appendChild(question);
-        var answer = document.createElement('td');
-        answer.innerHTML = (dataNumbers[t][q].reduce(function(a, b) {
+        var average = document.createElement('td');
+        average.innerHTML = (dataNumbers[t][q].reduce(function(a, b) {
           if (!b) return a;
           else return parseInt(a) + parseInt(b);
         }) / dataNumbers[t][q].length).toPrecision(2);
-        tableBody.appendChild(answer);
+        averageRow.appendChild(average);
+        var median = document.createElement('td');
+        median.innerHTML = medianFunc(dataNumbers[t][q]);
+
+        medianRow.appendChild(median);
+
+              function medianFunc(arr){
+  arr.sort(function(a, b){ return a - b; });
+  var m = arr.length / 2;
+  console.log(arr);
+  console.log(m % 1 == 0 ? (parseInt(arr[m - 1]) + parseInt(arr[m])) / 2 : arr[Math.floor(m)]);
+  return m % 1 == 0 ? (parseInt(arr[m - 1]) + parseInt(arr[m])) / 2 : arr[Math.floor(m)];
+
+}
       }
+
+        tableHeader.innerHTML = `${t}, response rate — ${responses}`;
         var elementToAppend = document.querySelector(`.${subject}`);
-        console.log(`.${subject}`);
+        // console.log(subject);
         if (elementToAppend) {
             elementToAppend.appendChild(tableHeader);
             elementToAppend.appendChild(table);
-
         }
-
     }
     document.querySelectorAll('.displayTeacher').forEach((el) => {
       el.style.display = 'none';
@@ -435,7 +466,7 @@ function displaySubject(data, subject) {
 //        }
 //        return str;
 //    }
-//
+
 // function exportCSVFile(items, fileTitle) {
 //
 //     // Convert Object to JSON
