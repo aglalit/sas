@@ -167,7 +167,7 @@ function displaySubject(data, subject) {
         dataParsedFiltered = dataParsed.filter((entry) => {
           return entry["Who taught this course"].match(regex)
         });
-        teacherHeader.innerHTML = dataParsedFiltered[1]["Who taught this course"];
+        teacherHeader.innerHTML = dataParsedFiltered[0]["Who taught this course"];
 
         dataParsed = dataParsedFiltered;
       }
@@ -328,6 +328,22 @@ function displaySubject(data, subject) {
           });
           avg = (sum / dataNumbersToReduce[Object.keys(dataNumbersToReduce)[i]][key].length).toPrecision(2);
         }
+        data.push({
+          histfunc: 'count',
+          //x: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+          x: dataNumbers[Object.keys(dataNumbers)[i]][key],
+          type: 'histogram',
+          name: Object.keys(dataNumbers)[i],
+          marker: {
+            color: color
+          },
+          xbins: {
+            start: 0.5,
+            end: 10.5,
+            size: 1,
+          },
+
+        })
       }
 
       var layout = {
