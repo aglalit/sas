@@ -168,6 +168,61 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
     })
   });
 
+app.post('/polls/generic', function(req, res) {
+  if (req.user){
+    User.findOne({
+      '_id': req.user._id
+    }, function(err, user) {
+      if (err) {
+        req.flash('error', `There is an error, please try again`);
+        return done(err);
+      }
+
+      if (user) {
+        user.polls.generic = JSON.stringify(req.body);
+
+        user.save(function(err, user) {
+          if (err)
+            return console.error(err);
+          }
+        );
+      } else {
+        console.log('There isn\'t such user in the database');
+      }
+    });
+    req.flash('info', `Your choice is submitted. In case of mistake, you can make your choice again. Thanks for participation.`);
+    //
+    let emailBody = '';
+    var bodyKeys = Object.keys(req.body);
+    for (let i=0;i<bodyKeys.length;i++){
+      emailBody += '<p><b>' + bodyKeys[i] + '</b>: ' + req.body[bodyKeys[i]] + '</p>';
+    }
+    let mailOptions = {
+      from: '"SAS" <sas@utmn.ru>', // sender address
+      to: 'm.agliulin@utmn.ru', // list of receivers
+      subject: 'The choice of electives' , // Subject line
+      // text:  // plain text body
+      html: '<p>' + JSON.stringify(req.user.google.name) + ', ' + JSON.stringify(req.user.google.email) + '</p>' + emailBody.toString() // html body
+    };
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log('Message %s sent: %s', info.messageId, info.response);
+    });
+    res.render('polls', {
+      user: req.user,
+      messages: req.flash('info')
+    });
+  }
+  else {
+    console.log('req.user doesnt exist');
+    req.flash('error', `An error occurred, please try again`)
+    res.render('login', {
+      messages: req.flash('error')
+    });
+  }
+});
 
   app.post('/polls/feedback-collector', function(req, res) {
     if (req.user){

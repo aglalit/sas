@@ -15,9 +15,7 @@ body
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-red.svg")
-      //- h1 Опрос. Психолог для SAS.
-      //- h3 Мы ищем нового психолога для SAS, и нам важно понимать, какого человека, с какой квалификацией и специализацией студенты SAS хотели бы видеть на этой должности. В связи с этим просим вас ответить на следующие вопросы: 
-      form(id="form" action="/polls/feedback-collector" method="post")
+      form(id="form" action="/polls/generic" method="post")
         input(type="hidden" value="generic" name="subject")    
         fieldset   
           div(class="input-group")
@@ -25,4 +23,5 @@ body
               input(type="checkbox"  value="Yes" name="ESL")
               label() Do you want to choose ESL as your 1st priority elective?
         button(type="submit" class="btn btn-primary btn-lg") Submit
-    // script(src="/cards.js")
+    //- script(src="/cards.js")
+    script(src="/default.js")
