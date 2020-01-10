@@ -2,6 +2,10 @@ const urlParams = new URLSearchParams(window.location.search);
 var subjectUrl = urlParams.get('s');
 var allAnswers, allNext, allPrev;
 
+const classSizes = {
+
+}
+
 var dataToExportCSV = [];
 
 if (subjectUrl === 'all') {
@@ -419,15 +423,28 @@ function displaySubject(data, subject) {
               function medianFunc(arr){
   arr.sort(function(a, b){ return a - b; });
   var m = arr.length / 2;
-  console.log(arr);
-  console.log(m % 1 == 0 ? (parseInt(arr[m - 1]) + parseInt(arr[m])) / 2 : arr[Math.floor(m)]);
+  // console.log(arr);
+  // console.log(m % 1 == 0 ? (parseInt(arr[m - 1]) + parseInt(arr[m])) / 2 : arr[Math.floor(m)]);
   return m % 1 == 0 ? (parseInt(arr[m - 1]) + parseInt(arr[m])) / 2 : arr[Math.floor(m)];
 
 }
       }
 
-        tableHeader.innerHTML = `${t}, response rate — ${responses}`;
+
+        console.log(subject);
+        console.log(t);
+
+
         var elementToAppend = document.querySelector(`.${subject}`);
+        var size;
+        if (elementToAppend) {
+        var teachersArray = elementToAppend.parentNode.querySelectorAll('a');
+        teachersArray.forEach(function(el){
+          if (el.innerHTML.includes(t)) size = el.dataset.size;
+
+        })
+        }
+        tableHeader.innerHTML = `${t}, response rate — <strong>${ Math.round((responses/size)*100) } %</strong> (${responses} / ${size})`;
         // console.log(subject);
         if (elementToAppend) {
             elementToAppend.appendChild(tableHeader);
