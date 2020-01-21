@@ -15,6 +15,7 @@ body
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-red.svg")
+      h3 Feedback. January. English as a Second Language Intensive.
       form(id="form" action="/polls/generic" method="post")
         input(type="hidden" value="generic" name="subject")    
         fieldset
@@ -31,8 +32,8 @@ body
             .flex-container
               label(for="Who taught this course") Who were the instructors for this course?
               select(class="form-control" required="required" name="Who taught this course")
-                option(value="Jeff Bain") Jeffery Bain / Irina Parakhina
-                option(value="Steven Kaye") Steven Kaye / Anna Sirchyna
+                option(value="Jeffery Bain / Irina Parakhina") Jeffery Bain / Irina Parakhina
+                option(value="Steven Kaye / Anna Sirchyna") Steven Kaye / Anna Sirchyna
             //- .flex-container
             //-   label(for="Who taught this course (grammar)") Who was the instructor for this course (grammar)?
             //-   select(class="form-control" required="required" name="Who taught this course (grammar)")
@@ -41,10 +42,10 @@ body
             //-     option(value="E. Novokreshhennykh") Ekaterina Novokreshhennykh
             //-     option(value="D. Glovatskaya") Diana Glovatskaya
             .flex-container
-              label(for="To what extent did the instructor focus on speaking skills?") To what extent did the instructor focus on speaking skills? Put your thoughts. 
+              label(for="To what extent did the instructors focus on speaking skills?") To what extent did the instructors focus on speaking skills? Put your thoughts. 
               textarea(required="required" class="form-control" name="To what extent did the instructor focus on speaking skills?" rows="4")  
             .flex-container
-              label(for="To what extent did the instructor focus on grammar skills?") To what extent did the instructor focus on grammar skills? Put your thoughts. 
+              label(for="To what extent did the instructors focus on grammar skills?") To what extent did the instructors focus on grammar skills? Put your thoughts. 
               textarea(required="required" class="form-control" name="To what extent did the instructor focus on grammar skills?" rows="4")   
         button(type="submit" class="btn btn-primary btn-lg") Submit
     //- script(src="/cards.js")
