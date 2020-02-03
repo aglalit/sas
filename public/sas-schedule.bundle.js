@@ -4723,13 +4723,13 @@ function listMajors() {
 
 // GetSheetDone.labeledCols('1lvG1lGsKc2x5r1a5C9_sihymy9SGswBUoJElxjJpLP4').then(sheet => generateSchedule(sheet));
 const classNumbers = {
-  "8:00":"1",
-  "9:40":"2",
-  "11:30":"3",
-  "14:00":"4",
-  "15:45":"5",
-  "17:30":"6",
-  "19:10":"7"
+  "9:00":"1",
+  "10:40":"2",
+  "12:30":"3",
+  "14:20":"4",
+  "16:00":"5",
+  "17:40":"6",
+  "19:15":"7"
 };
 let firstHalf = true;
 let firstHalfReverse = false;
