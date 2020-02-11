@@ -15,6 +15,7 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const winston = require('winston');
+require('dotenv').config();
 
 var fileUpload = require("express-fileupload");
 
@@ -43,7 +44,8 @@ const logger = winston.createLogger({
 });
 //logger.error('Error log:');
 
-var promise = mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(
+var promise = mongoose.connect(process.env.MONGODB_URI
+, { useNewUrlParser: true }).then(
   () => {console.log('Database is connected') },
   err => { logger.error(err); console.log('Can not connect to the database'+ err)}
 );

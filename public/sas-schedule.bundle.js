@@ -4621,6 +4621,9 @@ var authorizeButton = document.getElementById('authorize_button');
 var signoutButton = document.getElementById('signout_button');
 
 var sheet = [];
+
+var sheetPitB = [];
+
 var headers = [];
 /**
  *  On load, called to load the auth2 library and API client library.
@@ -4718,7 +4721,20 @@ function listMajors() {
   }, function(response) {
     appendPre('Error: ' + response.result.error.message);
   });
+  listPitB();
+}
 
+function listPitB(){
+  gapi.client.sheets.spreadsheets.values.get({
+    spreadsheetId: '120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc',
+    range: '\'' + 'P in the Box' + '\'!A1:Z20',
+  }).then(function(response) {
+    console.log('data retrieved');
+    sheetPitB = response.result.values;
+    generatePitB(sheetPitB);
+  }, function(response) {
+    appendPre('Error: ' + response.result.error.message);
+  });
 }
 
 // GetSheetDone.labeledCols('1lvG1lGsKc2x5r1a5C9_sihymy9SGswBUoJElxjJpLP4').then(sheet => generateSchedule(sheet));
@@ -4734,9 +4750,33 @@ const classNumbers = {
 let firstHalf = true;
 let firstHalfReverse = false;
 
+function generatePitB(sheetPitB){
+
+  let tableBody = document.querySelector('.flex-container-pitb .tbody');
+  let rows = tableBody.querySelectorAll('.tr_pitb');
+  for (let t=0;t<rows.length;t++){
+    tableBody.deleteRow(0);
+  }
+  for (let i=1; i<sheetPitB.length;i++){
+     let tr = document.createElement('tr');
+     tr.classList.add('tr_pitb');
+     let tdTime = document.createElement('td');
+     tdTime.innerHTML = sheetPitB[i][0];
+     tr.appendChild(tdTime);
+     for (let l=1; l<sheetPitB[i].length;l++){
+       let td = document.createElement('td');
+       if (sheetPitB[i][l].length < 2) td.innerHTML = '&nbsp;';
+       else td.innerHTML = sheetPitB[i][l];
+       tr.appendChild(td);
+     }
+     tableBody.appendChild(tr);
+  }
+}
+
 
 document.querySelector('.date').innerHTML = moment().format('dddd DD/MM, H:mm');
 function generateSchedule(sheet){
+  document.querySelector('.schedule').innerHTML = 'Schedule';
   let data = sheet;
   //let delimiterPosition = headers[0].indexOf
   // if(!moment().isBefore(moment(data[0].changetime, 'HH:mm'))){firstHalf = false;}
@@ -4821,6 +4861,7 @@ function generateSchedule(sheet){
   document.querySelector('.date').innerHTML = '<span class="red">' + moment().format('dddd') + "</span> " + moment().format('DD/MM, H:mm');
 
   var announcementContainer = document.querySelector('.flex-container-img');
+  var pitbContainer = document.querySelector('.flex-container-pitb');
 
   if((moment().format('mm')%10 === 5 && moment().format('ss')<=32) && data['2'][indexOfDelimiter].length > 1){
     if (data['2'][indexOfDelimiter]) document.querySelector('.announcement').src = data['2'][indexOfDelimiter];
@@ -4835,6 +4876,14 @@ function generateSchedule(sheet){
 
     announcementContainer.style.opacity = '1';
     announcementContainer.style.zIndex = '99';
+    firstHalfReverse = true;
+  }
+  else if((moment().format('mm')%10 === 0 && moment().format('ss')<=32) && data['3'][indexOfDelimiter].length < 1){
+    if (data['3'][indexOfDelimiter]) document.querySelector('.announcement').src = data['3'][indexOfDelimiter];
+    else if (data['2'][indexOfDelimiter]) document.querySelector('.announcement').src = data['2'][indexOfDelimiter];
+    pitbContainer.style.opacity = '1';
+    pitbContainer.style.zIndex = '99';
+    document.querySelector('.schedule').innerHTML = 'Professor in the Box';
     firstHalfReverse = true;
   }
   else if(((moment().format('mm')%10 === 2 || moment().format('mm')%10 === 4 || moment().format('mm')%10 === 6 || moment().format('mm')%10 === 8) && moment().format('ss')<=32) && data['4'][indexOfDelimiter].length > 1){
