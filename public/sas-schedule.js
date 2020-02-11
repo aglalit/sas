@@ -171,7 +171,6 @@ function generatePitB(sheetPitB){
 
 document.querySelector('.date').innerHTML = moment().format('dddd DD/MM, H:mm');
 function generateSchedule(sheet){
-  document.querySelector('.schedule').innerHTML = 'Schedule';
   let data = sheet;
   //let delimiterPosition = headers[0].indexOf
   // if(!moment().isBefore(moment(data[0].changetime, 'HH:mm'))){firstHalf = false;}
@@ -290,6 +289,9 @@ function generateSchedule(sheet){
   else {
     announcementContainer.style.opacity = '0';
     announcementContainer.style.zIndex = '-1';
+    document.querySelector('.schedule').innerHTML = 'Schedule';
+    pitbContainer.style.opacity = '0';
+    pitbContainer.style.zIndex = '-1';
   }
 
   if(moment().format('ss')<=30){
