@@ -110,7 +110,7 @@ function listMajors() {
     range: '\'' + moment().format('DD.MM ddd') + '\'!A1:Z20',
     // majorDimension: "COLUMNS",
   }).then(function(response) {
-    console.log('data retrieved');
+    // console.log('data retrieved');
     sheet = response.result.values;
     generateSchedule(sheet);
   }, function(response) {
@@ -124,7 +124,7 @@ function listPitB(){
     spreadsheetId: '120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc',
     range: '\'' + 'P in the Box' + '\'!A1:Z20',
   }).then(function(response) {
-    console.log('data retrieved');
+    // console.log('data retrieved');
     sheetPitB = response.result.values;
     generatePitB(sheetPitB);
   }, function(response) {
