@@ -20,9 +20,9 @@ body
         input(type="hidden" value="generic" name="subject")    
         fieldset
           div(class="input-group")
-            .flex-container.row
-              input(type="checkbox" class="form-control" name="Воспользовались ли вы возможностью встречи с психологом?")
-              label(for="Воспользовались ли вы возможностью встречи с психологом?") Воспользовались ли вы возможностью встречи с психологом?  
+            .flex-container
+              label(for="Воспользовались ли вы возможностью встречи с психологом?") Воспользовались ли вы возможностью встречи с психологом? Если нет, то почему? 
+              textarea(required="required" class="form-control" name="Воспользовались ли вы возможностью встречи с психологом?" rows="4")
             .flex-container
               label(for="Почему предпочли индивидуальный формат встречи?") Почему вы предпочли индивидуальный формат встречи?
               textarea(required="required" class="form-control" name="Почему предпочли индивидуальный формат встречи?" rows="4") 
