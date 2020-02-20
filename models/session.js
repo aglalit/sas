@@ -449,6 +449,11 @@ var sessionSchema = mongoose.Schema({
       registration_dobrovidova: String,
       generic: String,
       generic2: String,
+      poetry: {
+        answer: Boolean,
+        time: String,
+        ip: String
+      }
   }
 });
 

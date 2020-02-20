@@ -223,6 +223,7 @@ require('./server/open-day-2018-voting.js')(app, Session, transporter);
 require('./server/open-day-2019.js')(app, Session, transporter);
 require('./server/pds-2019.js')(app, Session, transporter);
 require('./server/registration.js')(app, Session, transporter);
+require('./server/poetry.js')(app, Session, transporter);
 
 
 require('./server/ba_2018_year1_module2_qm.js')(app, Session, transporter);

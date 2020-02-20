@@ -110,7 +110,7 @@ input[type="radio"] {
     top:0;
     zoom:1.1;
     }
-  button {
+  button(not:.button_vote) {
     background-color: #f00 !important;
     border: none !important;
   }
