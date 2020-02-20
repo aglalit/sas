@@ -64,6 +64,7 @@ function parseSession (sess, req, transporter){
     console.log('Message %s sent: %s', info.messageId, info.response);
   });
   sess.polls.poetry.answer = (req.body.answer == "TRUE");
+  sess.polls.poetry.comments = req.body.comments;
   sess.polls.poetry.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
   sess.polls.poetry.ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
   sess.save(function(err) {

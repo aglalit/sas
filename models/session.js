@@ -451,6 +451,7 @@ var sessionSchema = mongoose.Schema({
       generic2: String,
       poetry: {
         answer: Boolean,
+        comments: String,
         time: String,
         ip: String
       }

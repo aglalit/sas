@@ -234,6 +234,7 @@ body
         thead
           tr
             td.answer Answer
+            td.comments Comments
             td Time
         tbody.tablebody
 script.
@@ -250,6 +251,7 @@ script.
     var parsed = {};
     parsed.answer = el.polls.poetry.answer ? 'YES' : 'NO';
     parsed.time = el.polls.poetry.time;    
+    parsed.comments = el.polls.poetry.comments;   
     if (!dateUrl || Date.parse(parsed.time) > startDate){
           if (el.polls.poetry.answer) percentage++;
           registrations.unshift(parsed);
@@ -271,9 +273,12 @@ script.
     td1.innerHTML = elem["answer"];
     row.appendChild(td1);
     var td2 = document.createElement('td');
-    var timeParsed = new Date(Date.parse(elem["time"]));
-    td2.innerHTML = weekday[timeParsed.getDay()] + ', ' + elem["time"];
+    td2.innerHTML = elem["comments"] === undefined ? '' : elem["comments"];
     row.appendChild(td2);
+    var td3 = document.createElement('td');
+    var timeParsed = new Date(Date.parse(elem["time"]));
+    td3.innerHTML = weekday[timeParsed.getDay()] + ', ' + elem["time"];
+    row.appendChild(td3);
   });
   
   document.querySelector('.answer').innerHTML += ` (${(percentage*100)/registrations.length} % positive)`;

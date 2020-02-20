@@ -24,6 +24,9 @@ body
           div(class="input-group" style="display: flex; justify-content: center;")
             button(onclick="submitForm('TRUE')" style="border-radius: 12px; margin: 80px; font-size: 100px; padding: 70px;" class="button_vote btn btn-default btn-lg dropdown-toggle btn-success" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 👍🏻
             button(onclick="submitForm('FALSE')" style="border-radius: 12px; margin: 80px; font-size: 100px; padding: 70px; background-color:red;" class="button_vote btn btn-default btn-lg dropdown-toggle btn-danger" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 👎🏻
+          .flex-container(style="display: flex; align-items: center; margin-top: 40px;")
+            label(for="comments" style="margin-bottom: 20px;") Comments (optional)
+            textarea(rows="2" name="comments" id="comments")
     //- script(src="/cards.js")
     //- script(src="/default.js")
     script.
