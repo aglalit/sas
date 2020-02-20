@@ -233,7 +233,7 @@ body
       table.table 
         thead
           tr
-            td Result
+            td.answer Answer
             td Time
         tbody.tablebody
 script.
@@ -241,6 +241,7 @@ script.
   var registrations = [];
   
   var startDate = '';
+  var percentage = 0;
   const urlParams = new URLSearchParams(window.location.search);
   var dateUrl = urlParams.get('date');
   if(dateUrl){ startDate = Date.parse(dateUrl); }
@@ -250,6 +251,7 @@ script.
     parsed.answer = el.polls.poetry.answer ? 'YES' : 'NO';
     parsed.time = el.polls.poetry.time;    
     if (!dateUrl || Date.parse(parsed.time) > startDate){
+          if (el.polls.poetry.answer) percentage++;
           registrations.unshift(parsed);
       }
   });
@@ -273,6 +275,8 @@ script.
     td2.innerHTML = weekday[timeParsed.getDay()] + ', ' + elem["time"];
     row.appendChild(td2);
   });
+  
+  document.querySelector('.answer').innerHTML += ` (${(percentage*100)/registrations.length} % positive)`;
   
   
   
