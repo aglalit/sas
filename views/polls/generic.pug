@@ -20,51 +20,51 @@ body
         input(type="hidden" value="generic" name="subject")    
         fieldset
           div(class="input-group")
+            //.flex-container
+            //  label(for="Воспользовались ли вы возможностью встречи с психологом?") Воспользовались ли вы возможностью встречи с психологом? Если нет, то почему?
+            //  textarea(required="required" class="form-control" name="Воспользовались ли вы возможностью встречи с психологом?" rows="4")
+            //.flex-container
+            //  label(for="Почему предпочли индивидуальный формат встречи?") Почему вы предпочли индивидуальный формат встречи?
+            //  textarea(required="required" class="form-control" name="Почему предпочли индивидуальный формат встречи?" rows="4")
+            //.flex-container
+            //  label(for="Как оцениваете эффективность встреч?") Как вы оцениваете эффективность встреч? (Баллы от 1 до 10)
+            //  input(type="number" required="required" class="form-control" name="Как оцениваете эффективность встреч?" min="1" max="10")
+            //.flex-container
+            //  label(for="Есть ли потребность в дальнейших консультациях? И какой формат предпочтете? Индивидуальные консультации или групповая работа.") Есть ли у вас потребность в дальнейших консультациях? И какой формат вы предпочтете: индивидуальные консультации или групповую работу?
+            //  textarea(required="required" class="form-control" name="Есть ли потребность в дальнейших консультациях? И какой формат предпочтете? Индивидуальные консультации или групповая работа." rows="4")
+            //.flex-container
+            //  label(for="Устраивают ли вас время и место проведения встреч?") Устраивают ли вас время и место проведения встреч?
+            //  textarea(required="required" class="form-control" name="Устраивают ли вас время и место проведения встреч?" rows="2")
             .flex-container
-              label(for="Воспользовались ли вы возможностью встречи с психологом?") Воспользовались ли вы возможностью встречи с психологом? Если нет, то почему? 
-              textarea(required="required" class="form-control" name="Воспользовались ли вы возможностью встречи с психологом?" rows="4")
-            .flex-container
-              label(for="Почему предпочли индивидуальный формат встречи?") Почему вы предпочли индивидуальный формат встречи?
-              textarea(required="required" class="form-control" name="Почему предпочли индивидуальный формат встречи?" rows="4") 
-            .flex-container
-              label(for="Как оцениваете эффективность встреч?") Как вы оцениваете эффективность встреч? (Баллы от 1 до 10)
-              input(type="number" required="required" class="form-control" name="Как оцениваете эффективность встреч?" min="1" max="10")
-            .flex-container
-              label(for="Есть ли потребность в дальнейших консультациях? И какой формат предпочтете? Индивидуальные консультации или групповая работа.") Есть ли у вас потребность в дальнейших консультациях? И какой формат вы предпочтете: индивидуальные консультации или групповую работу?
-              textarea(required="required" class="form-control" name="Есть ли потребность в дальнейших консультациях? И какой формат предпочтете? Индивидуальные консультации или групповая работа." rows="4")  
-            .flex-container
-              label(for="Устраивают ли вас время и место проведения встреч?") Устраивают ли вас время и место проведения встреч?
-              textarea(required="required" class="form-control" name="Устраивают ли вас время и место проведения встреч?" rows="2")  
-            //- .flex-container
-            //-   label(for="Who taught this course") Who is the instructor for this course?
-            //-   select(class="form-control" required="required" name="Who taught this course")
-            //-     option(value="Irina Parakhina") Irina Parakhina
-            //-     option(value="Anna Syrchina") Anna Syrchina
-            //-     option(value="Valeria Evdash") Valeria Evdash
-            //-     option(value="Tatyana Kovaleva") Tatyana Kovaleva
-            //- .flex-container
-            //-   label(for="To what extent was this course an improvement over English language courses you have had previously") To what extent is this course an improvement over English language courses you have had previously? Give a score from 1 to 10, where 1 = It is not helping at all and 10 = It is helping significantly.
-            //-   input(type="number" required="required" class="form-control" name="To what extent was this course an improvement over English language courses you have had previously" min="1" max="10")
-            //- .flex-container
-            //-   label(for="In what ways was this course useful in terms of improving your English language skills") In what ways is this course useful in terms of improving your English language skills? Put your thoughts. 
-            //-   textarea(required="required" class="form-control" name="In what ways was this course useful in terms of improving your English language skills" rows="4")  
-            //- .flex-container
-            //-   label(for="If you had the chance to change some aspects of the course what would they be?") If you had the chance to change some aspects of the course what would they be? Put your thoughts. 
-            //-   textarea(required="required" class="form-control" name="If you had the chance to change some aspects of the course what would they be?" rows="4")  
-            //- 
-            //- //- .flex-container
-            //- //-   label(for="Who taught this course (grammar)") Who was the instructor for this course (grammar)?
-            //- //-   select(class="form-control" required="required" name="Who taught this course (grammar)")
-            //- //-     option(value="I. Parakhina") Irina Parakhina
-            //- //-     option(value="Zh. Vasileva") Zhanna Vasileva
-            //- //-     option(value="E. Novokreshhennykh") Ekaterina Novokreshhennykh
-            //- //-     option(value="D. Glovatskaya") Diana Glovatskaya
-            //- .flex-container
-            //-   label(for="To what extent did the instructors focus on speaking skills?") To what extent do the instructor focus on speaking skills? Put your thoughts. 
-            //-   textarea(required="required" class="form-control" name="To what extent did the instructor focus on speaking skills?" rows="4")  
-            //- .flex-container
-            //-   label(for="To what extent did the instructors focus on grammar skills?") To what extent do the instructor focus on grammar skills? Put your thoughts. 
-              //- textarea(required="required" class="form-control" name="To what extent did the instructor focus on grammar skills?" rows="4")   
+               label(for="Who taught this course") Who is the instructor for this course?
+               select(class="form-control" required="required" name="Who taught this course")
+                 option(value="Irina Parakhina") Irina Parakhina
+                 option(value="Anna Syrchina") Anna Syrchina
+                 option(value="Valeria Evdash") Valeria Evdash
+                 option(value="Tatyana Kovaleva") Tatyana Kovaleva
+             .flex-container
+               label(for="To what extent was this course an improvement over English language courses you have had previously") To what extent is this course an improvement over English language courses you have had previously? Give a score from 1 to 10, where 1 = It is not helping at all and 10 = It is helping significantly.
+               input(type="number" required="required" class="form-control" name="To what extent was this course an improvement over English language courses you have had previously" min="1" max="10")
+             .flex-container
+               label(for="In what ways was this course useful in terms of improving your English language skills") In what ways is this course useful in terms of improving your English language skills? Put your thoughts.
+               textarea(required="required" class="form-control" name="In what ways was this course useful in terms of improving your English language skills" rows="4")
+             .flex-container
+               label(for="If you had the chance to change some aspects of the course what would they be?") If you had the chance to change some aspects of the course what would they be? Put your thoughts.
+               textarea(required="required" class="form-control" name="If you had the chance to change some aspects of the course what would they be?" rows="4")
+
+             // .flex-container
+             //   label(for="Who taught this course (grammar)") Who was the instructor for this course (grammar)?
+             //   select(class="form-control" required="required" name="Who taught this course (grammar)")
+             //     option(value="I. Parakhina") Irina Parakhina
+             //     option(value="Zh. Vasileva") Zhanna Vasileva
+             //     option(value="E. Novokreshhennykh") Ekaterina Novokreshhennykh
+             //     option(value="D. Glovatskaya") Diana Glovatskaya
+             .flex-container
+               label(for="To what extent did the instructors focus on speaking skills?") To what extent do the instructor focus on speaking skills? Put your thoughts.
+               textarea(required="required" class="form-control" name="To what extent did the instructor focus on speaking skills?" rows="4")
+             .flex-container
+               label(for="To what extent did the instructors focus on grammar skills?") To what extent do the instructor focus on grammar skills? Put your thoughts.
+               textarea(required="required" class="form-control" name="To what extent did the instructor focus on grammar skills?" rows="4")
         button(type="submit" class="btn btn-primary btn-lg") Submit
     //- script(src="/cards.js")
     script(src="/default.js")
