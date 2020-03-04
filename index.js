@@ -220,7 +220,7 @@ require('./server/registration-dobrovidova.js')(app, Session, transporter);
 
 require('./server/open-day-2018.js')(app, Session, transporter);
 require('./server/open-day-2018-voting.js')(app, Session, transporter);
-require('./server/open-day-2019.js')(app, Session, transporter);
+require('./server/open-day-03-2020.js')(app, Session, transporter);
 require('./server/pds-2019.js')(app, Session, transporter);
 require('./server/registration.js')(app, Session, transporter);
 require('./server/poetry.js')(app, Session, transporter);
