@@ -140,7 +140,7 @@ const classNumbers = {
   "14:20":"4",
   "16:00":"5",
   "17:40":"6",
-  "19:15":"7"
+  "19:20":"7"
 };
 let firstHalf = true;
 let firstHalfReverse = false;
