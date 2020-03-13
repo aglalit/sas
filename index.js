@@ -224,6 +224,8 @@ require('./server/open-day-03-2020.js')(app, Session, transporter);
 require('./server/pds-2019.js')(app, Session, transporter);
 require('./server/registration.js')(app, Session, transporter);
 require('./server/poetry.js')(app, Session, transporter);
+require('./server/unsubscribe.js')(app, Session, transporter);
+
 
 
 require('./server/ba_2018_year1_module2_qm.js')(app, Session, transporter);

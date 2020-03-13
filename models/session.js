@@ -454,6 +454,10 @@ var sessionSchema = mongoose.Schema({
         comments: String,
         time: String,
         ip: String
+      },
+      unsubscribe: {
+        time: String,
+        email_to_unsubscribe: String
       }
   }
 });
