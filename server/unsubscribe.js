@@ -40,7 +40,7 @@ function parseSession (sess, req, transporter){
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
     to: 'm.agliulin@utmn.ru', // list of receivers
-    subject: 'SAS — Unsubscribe', // Subject line
+    subject: 'SAS — Unsubscribe: ' + req.body.email_to_unsubscribe, // Subject line
     // text: JSON.stringify(req.user), // plain text body
     html: emailBody.toString() // html body
   };

@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Unsubscribe from SAS emails
+    title Unsubscribe from the SAS newsletter
     link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
     link(rel='stylesheet', href='/style.css')
@@ -22,7 +22,7 @@ body
         input(type="hidden" value="unsubscribe" name="subject")    
         fieldset
           div(class="input-group")
-            .flex-container
+            .flex-container.flex-container_center
                label(for="email_to_unsubscribe") Email:
                input(type="email" required="required" class="form-control" name="email_to_unsubscribe")
         button(type="submit" class="btn btn-primary btn-lg") Unsubscribe

@@ -110,12 +110,14 @@ input[type="radio"] {
     top:0;
     zoom:1.1;
     }
-  button(not:.button_vote) {
+
+button:not(.button_vote) {
     background-color: #f00 !important;
     border: none !important;
   }
   .flex-container {display:flex; flex-direction:column; margin:20px 0;}
   .flex-container.row {flex-direction:row;}
+  .flex-container_center {align-items: center;}
 
   @media (max-width: 1024px) {
 
