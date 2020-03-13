@@ -21,7 +21,7 @@ body
       form(id="form" action="/polls/unsubscribe" method="post")
         input(type="hidden" value="unsubscribe" name="subject")    
         fieldset
-          div(class="input-group")
+          div(class="input-group" style="width:100%")
             .flex-container.flex-container_center
                label(for="email_to_unsubscribe") Email:
                input(type="email" required="required" class="form-control" name="email_to_unsubscribe")
