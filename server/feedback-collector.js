@@ -377,6 +377,13 @@ app.post('/polls/generic2', function(req, res) {
       for (let i = 0; i < bodyKeys.length; i++) {
         emailBody += '<p><b>' + bodyKeys[i] + '</b>: ' + req.body[bodyKeys[i]] + '</p>';
       }
+      sess.polls[req.body.subject.replace(/-/g, '_')] = JSON.stringify(req.body);
+      sess.save(function(err) {
+        if (err)
+          logger.error(err);
+        return console.error(err);
+        return;
+      });
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
         to: 'm.agliulin@utmn.ru', // list of receivers
@@ -412,13 +419,6 @@ app.post('/polls/generic2', function(req, res) {
           return console.log(error);
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
-      });
-      sess.polls[req.body.subject.replace(/-/g, '_')] = JSON.stringify(req.body);
-      sess.save(function(err) {
-        if (err)
-          logger.error(err);
-          return console.error(err);
-        return;
       });
     }
   });
