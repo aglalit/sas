@@ -24,7 +24,7 @@ body
           div(class="input-group")
             .flex-container
               label(for="Who taught this course") Who taught this course?
-              select(class="form-control" required="required" name="Who taught this course" onchange="openQuestion(event)")
+              select(class="form-control" required="required" name="Who taught this course" onchange="openQuestion(event)" id="selectTeacher")
                 option(value="Anna Varfolomeeva") Anna Varfolomeeva
                 option(value="Erika Wolf") Erika Wolf
                 option(value="Alexander Didenko (ECON_Probability and Stats 2)") Alexander Didenko (ECON_Probability and Stats 2)
@@ -77,6 +77,11 @@ body
     //- script(src="/cards.js")
     script(src="/default.js")
     script.
+      var selectTeacher = document.getElementById('selectTeacher');
+      if (selectTeacher.value === "Maxim Alyukov" || selectTeacher.value === "David Melbye" || selectTeacher.value === "Erika Wolf") {
+        el.style.display = "block";
+        el.value = "";
+      }
       function openQuestion(event){
         var event=event || window.event;
         var groupworkFields = document.querySelectorAll(".groupwork");
