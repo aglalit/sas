@@ -3,97 +3,97 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
   var name;
   var email;
 
-  app.get('/polls/ba-2019-year1-module1-wtai', isLoggedIn, function(req, res) {
-    res.render('ba-2019-year1-module1-wtai', {
+  // app.get('/polls/ba-2019-year1-module1-wtai', isLoggedIn, function(req, res) {
+  //   res.render('ba-2019-year1-module1-wtai', {
+  //     user: req.user
+  //   })
+  // });
+  //
+  // app.get('/polls/ba-2019-year1-module1-spb', isLoggedIn, function(req, res) {
+  //   res.render('ba-2019-year1-module1-spb', {
+  //     user: req.user
+  //   })
+  // });
+  //
+  // app.get('/polls/ba-2019-year2-module5-poms-juliette', isLoggedIn, function(req, res) {
+  //   res.render('ba-2019-year2-module5-poms-juliette', {
+  //     user: req.user
+  //   })
+  // });
+  //
+  // app.get('/polls/ba-2019-year2-module5-poms-krishna', isLoggedIn, function(req, res) {
+  //   res.render('ba-2019-year2-module5-poms-krishna', {
+  //     user: req.user
+  //   })
+  // });
+  //
+  // app.get('/polls/ba-2019-year2-module5-poms-louis', isLoggedIn, function(req, res) {
+  //   res.render('ba-2019-year2-module5-poms-louis', {
+  //     user: req.user
+  //   })
+  // });
+  // app.get('/polls/ba-2019-module1-elective1', isLoggedIn, function(req, res) {
+  //   res.render('ba-2019-module1-elective1', {
+  //     user: req.user
+  //   })
+  // });
+  // app.get('/polls/ba-2019-module1-elective2', isLoggedIn, function(req, res) {
+  //   res.render('ba-2019-module1-elective2', {
+  //     user: req.user
+  //   })
+  // });
+  // app.get('/polls/ba-2019-module1-elective3', isLoggedIn, function(req, res) {
+  //   res.render('ba-2019-module1-elective3', {
+  //     user: req.user
+  //   })
+  // });
+  // app.get('/polls/ba-2019-module1-major1', isLoggedIn, function(req, res) {
+  //   res.render('ba-2019-module1-major1', {
+  //     user: req.user
+  //   })
+  // });
+  // app.get('/polls/ba-2019-module1-major2', isLoggedIn, function(req, res) {
+  //   res.render('ba-2019-module1-major2', {
+  //     user: req.user
+  //   })
+  // });
+  // app.get('/polls/ba-2019-year2-module5-art', isLoggedIn, function(req, res) {
+  //   res.render('ba-2019-year2-module5-art', {
+  //     user: req.user
+  //   })
+  // });
+  // app.get('/polls/ba-2019-year2-module5-aw', isLoggedIn, function(req, res) {
+  //   res.render('ba-2019-year2-module5-aw', {
+  //     user: req.user
+  //   })
+  // });
+  app.get('/polls/ba_2019_q3_elective1', isLoggedIn, function(req, res) {
+    res.render('ba_2019_q3_elective1', {
       user: req.user
     })
   });
-
-  app.get('/polls/ba-2019-year1-module1-spb', isLoggedIn, function(req, res) {
-    res.render('ba-2019-year1-module1-spb', {
+  app.get('/polls/ba_2019_q3_elective2', isLoggedIn, function(req, res) {
+    res.render('ba_2019_q3_elective2', {
       user: req.user
     })
   });
-
-  app.get('/polls/ba-2019-year2-module5-poms-juliette', isLoggedIn, function(req, res) {
-    res.render('ba-2019-year2-module5-poms-juliette', {
+  app.get('/polls/ba_2019_q3_major1', isLoggedIn, function(req, res) {
+    res.render('ba_2019_q3_major1', {
       user: req.user
     })
   });
-
-  app.get('/polls/ba-2019-year2-module5-poms-krishna', isLoggedIn, function(req, res) {
-    res.render('ba-2019-year2-module5-poms-krishna', {
+  app.get('/polls/ba_2019_q3_major2', isLoggedIn, function(req, res) {
+    res.render('ba_2019_q3_major2', {
       user: req.user
     })
   });
-
-  app.get('/polls/ba-2019-year2-module5-poms-louis', isLoggedIn, function(req, res) {
-    res.render('ba-2019-year2-module5-poms-louis', {
-      user: req.user
-    })
-  });
-  app.get('/polls/ba-2019-module1-elective1', isLoggedIn, function(req, res) {
-    res.render('ba-2019-module1-elective1', {
-      user: req.user
-    })
-  });
-  app.get('/polls/ba-2019-module1-elective2', isLoggedIn, function(req, res) {
-    res.render('ba-2019-module1-elective2', {
-      user: req.user
-    })
-  });
-  app.get('/polls/ba-2019-module1-elective3', isLoggedIn, function(req, res) {
-    res.render('ba-2019-module1-elective3', {
-      user: req.user
-    })
-  });
-  app.get('/polls/ba-2019-module1-major1', isLoggedIn, function(req, res) {
-    res.render('ba-2019-module1-major1', {
-      user: req.user
-    })
-  });
-  app.get('/polls/ba-2019-module1-major2', isLoggedIn, function(req, res) {
-    res.render('ba-2019-module1-major2', {
-      user: req.user
-    })
-  });
-  app.get('/polls/ba-2019-year2-module5-art', isLoggedIn, function(req, res) {
-    res.render('ba-2019-year2-module5-art', {
-      user: req.user
-    })
-  });
-  app.get('/polls/ba-2019-year2-module5-aw', isLoggedIn, function(req, res) {
-    res.render('ba-2019-year2-module5-aw', {
-      user: req.user
-    })
-  });
-  app.get('/polls/ba_2019_q2_elective1', isLoggedIn, function(req, res) {
-    res.render('ba_2019_q2_elective1', {
-      user: req.user
-    })
-  });
-  app.get('/polls/ba_2019_q2_elective2', isLoggedIn, function(req, res) {
-    res.render('ba_2019_q2_elective2', {
-      user: req.user
-    })
-  });
-  app.get('/polls/ba_2019_q2_major1', isLoggedIn, function(req, res) {
-    res.render('ba_2019_q2_major1', {
-      user: req.user
-    })
-  });
-  app.get('/polls/ba_2019_q2_major2', isLoggedIn, function(req, res) {
-    res.render('ba_2019_q2_major2', {
-      user: req.user
-    })
-  });
-  app.get('/polls/ba_2019_q2_major3', isLoggedIn, function(req, res) {
-    res.render('ba_2019_q2_major3', {
+  app.get('/polls/ba_2019_q3_major3', isLoggedIn, function(req, res) {
+    res.render('ba_2019_q3_major3', {
       user: req.use
     })
   });
-  app.get('/polls/ba_2019_q2_esl_grammar', isLoggedIn, function(req, res) {
-    res.render('ba_2019_q2_esl_grammar', {
+  app.get('/polls/ba_2019_q3_esl_grammar', isLoggedIn, function(req, res) {
+    res.render('ba_2019_q3_esl_grammar', {
       user: req.use
     })
   });
@@ -107,18 +107,18 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
       user: req.use
     })
   });
-  app.get('/polls/ba_2019_year1_q2_qm', isLoggedIn, function(req, res) {
-    res.render('ba_2019_year1_q2_qm', {
+  app.get('/polls/ba_2019_year1_q3_qm', isLoggedIn, function(req, res) {
+    res.render('ba_2019_year1_q3_qm', {
       user: req.use
     })
   });
-  app.get('/polls/ba_2019_year1_q2_history', isLoggedIn, function(req, res) {
-    res.render('ba_2019_year1_q2_history', {
+  app.get('/polls/ba_2019_year1_q3_history', isLoggedIn, function(req, res) {
+    res.render('ba_2019_year1_q3_history', {
       user: req.use
     })
   });
-  app.get('/polls/ba_2019_year1_q2_gb', isLoggedIn, function(req, res) {
-    res.render('ba_2019_year1_q2_gb', {
+  app.get('/polls/ba_2019_year1_q3_gb', isLoggedIn, function(req, res) {
+    res.render('ba_2019_year1_q3_gb', {
       user: req.use
     })
   });
