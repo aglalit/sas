@@ -92,6 +92,11 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
       user: req.use
     })
   });
+  app.get('/polls/ba_2019_q3_esl', isLoggedIn, function(req, res) {
+    res.render('ba_2019_q3_esl', {
+      user: req.use
+    })
+  });
   app.get('/polls/ba_2019_q3_esl_grammar', isLoggedIn, function(req, res) {
     res.render('ba_2019_q3_esl_grammar', {
       user: req.use
@@ -122,6 +127,16 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
       user: req.use
     })
   });
+  app.get('/polls/ba_2019_year1_q3_gi', isLoggedIn, function(req, res) {
+    res.render('ba_2019_year1_q3_gi', {
+      user: req.use
+    })
+  });
+  app.get('/polls/ba_2019_year2_q3_dt', isLoggedIn, function(req, res) {
+    res.render('ba_2019_year2_q3_dt', {
+      user: req.use
+    })
+  });
   app.get('/polls/ba_2019_year2_q2_poms_louis', isLoggedIn, function(req, res) {
     res.render('ba_2019_year2_q2_poms_louis', {
       user: req.use
@@ -142,8 +157,8 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
       user: req.use
     })
   });
-  app.get('/polls/ba_2019_year3_q2_rs', isLoggedIn, function(req, res) {
-    res.render('ba_2019_year3_q2_rs', {
+  app.get('/polls/ba_2019_year3_q3_rs', isLoggedIn, function(req, res) {
+    res.render('ba_2019_year3_q3_rs', {
       user: req.use
     })
   });

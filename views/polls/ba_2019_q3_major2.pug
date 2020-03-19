@@ -15,41 +15,37 @@ body
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-red.svg")
-      h1 Feedback. Year 2019–2020. Quarter 3. Elective 1.
-      h3 Course evaluations are to be filled in ENGLISH only. 
-      h3 Please note that the use of the scoring system 0, 5 and 10 is only a recommendation, you can use any indicator from 0 to 10.     
+      h1 Feedback. Year 2019–2020. Quarter 3. Major 2.
+      h3 Course evaluations are to be filled in ENGLISH only.
+      h3 Please note that the use of the scoring system 0, 5 and 10 is only a recommendation, you can use any indicator from 0 to 10.
       form(id="form" action="/polls/feedback-collector" method="post")
-        input(type="hidden" value="ba_2019_q3_elective1" name="subject")
-        fieldset   
+        input(type="hidden" value="ba_2019_q3_major2" name="subject")
+        fieldset
           div(class="input-group")
             .flex-container
               label(for="Who taught this course") Who taught this course?
               select(class="form-control" required="required" name="Who taught this course" onchange="openQuestion(event)")
-                option(value="Louis Vervoort") Louis Vervoort
-                option(value="Julie Reshe") Julie Reshe
-                option(value="Svetlana Erpyleva") Svetlana Erpyleva
-                option(value="Vitaly Nikolaev") Vitaly Nikolaev
-                option(value="Mike Shapira") Mike Shapira
-                option(value="Daniel Kontowski") Daniel Kontowski
-                option(value="Corinne Doria") Corinne Doria
-                option(value="Henry Davidson (Curating Contemporary Art)") Henry Davidson (Curating Contemporary Art)
-                option(value="Henry Davidson (Identity and Performance)") Henry Davidson (Identity and Performance)
-                option(value="Melina Aarnikoivu (Thinking on Paper)") Melina Aarnikoivu (Thinking on Paper)
-                option(value="Melina Aarnikoivu (Public Speaking)") Melina Aarnikoivu (Public Speaking)
-                option(value="Dmitry Kurnosov") Dmitry Kurnosov
-                option(value="Alexander Didenko") Alexander Didenko
+                option(value="Anna Varfolomeeva") Anna Varfolomeeva
+                option(value="Erika Wolf") Erika Wolf
+                option(value="Alexander Didenko (ECON_Probability and Stats 2)") Alexander Didenko (ECON_Probability and Stats 2)
+                option(value="Alexander Didenko (ECON_Econometrics)") Alexander Didenko (ECON_Econometrics)
+                option(value="David Melbye") David Melbye
+                option(value="Maxim Alyukov") Maxim Alyukov
+                option(value="Jan Krasni") Jan Krasni
+                option(value="Munesh Chauhan") Munesh Chauhan
+                option(value="Juliette Colinas") Juliette Colinas
             .flex-container
               label(for="Evaluate the overall quality of the course") Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS, [where 1 is “The quality of the course was terrible, incomparably worse than other SAS courses I have taken,' 6 is “The quality of the course was average,” 10 is “The quality of the course is the best I have seen at SAS by a large margin”].
               input(type="number" required="required" class="form-control" name="Evaluate the overall quality of the course" min="1" max="10")
             .flex-container
               label(for="Evaluate the impact of the course on your knowledge") Evaluate the impact of the course on your knowledge, skills, competencies, personal qualities and worldview, [where 1 is no development has taken place, 6 is a generally satisfactory development has taken place in several of the parameters, 10 is “I have become a different person”].
-              input(type="number" required="required" class="form-control" name="Evaluate the impact of the course on your knowledge" min="1" max="10")    
+              input(type="number" required="required" class="form-control" name="Evaluate the impact of the course on your knowledge" min="1" max="10")
             .flex-container
               label(for="How well did your teacher integrate interactive communication within the course seminars?") How well did your teacher integrate interactive communication within the course seminars?
-              input(type="number" required="required" class="form-control" name="How well did your teacher integrate interactive communication within the course seminars?" min="1" max="10")    
+              input(type="number" required="required" class="form-control" name="How well did your teacher integrate interactive communication within the course seminars?" min="1" max="10")
             .flex-container
               label(for="Evaluate the level of feedback from the professor") Evaluate the level of feedback from the professor (comments on essays and other works, answers to questions during classes, individual consultations during office hours), [where 1 is “There was no feedback from the professor at all”, 6 is “Feedback was present in half of   the cases when it was necessary and was of average quality”, 10 is “The professor provided a comprehensive high-level feedback whenever it was needed"']
-              input(type="number" required="required" class="form-control" name="Evaluate the level of feedback from the professor" min="1" max="10")    
+              input(type="number" required="required" class="form-control" name="Evaluate the level of feedback from the professor" min="1" max="10")
             .flex-container
               label(for="Was the course syllabus followed (and if not, what changed and why)?") Was the course syllabus followed (and if not, what changed and why)?
               textarea(rows="4" required="required" class="form-control" name="Was the course syllabus followed (and if not, what changed and why)?")
@@ -76,7 +72,7 @@ body
               textarea(rows="4"  class="form-control" name="Do you have any specific recommendations for improving the course? Consider course teaching / delivery (optional)")
             .flex-container
               label(for="Please leave any other comments, suggestions, or feedback on the course you might have.") Please leave any other comments, suggestions, or feedback on the course you might have.
-              textarea(rows="8" required="required" class="form-control" name="Please leave any other comments, suggestions, or feedback on the course you might have.")  
+              textarea(rows="8" required="required" class="form-control" name="Please leave any other comments, suggestions, or feedback on the course you might have.")
         button(type="submit" class="btn btn-primary btn-lg") Submit
     //- script(src="/cards.js")
     script(src="/default.js")
@@ -84,7 +80,7 @@ body
       function openQuestion(event){
         var event=event || window.event;
         var groupworkFields = document.querySelectorAll(".groupwork");
-        if (event.target.value === "Julie Reshe" || event.target.value === "Daniel Kontowski" || event.target.value === "Corinne Doria" || event.target.value === "Mike Shapira") {
+        if (event.target.value === "Maxim Alyukov" || event.target.value === "David Melbye" || event.target.value === "Erika Wolf") {
           groupworkFields.forEach(function (el) {
             el.style.display = "block";
             el.value = "";

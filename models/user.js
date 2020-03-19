@@ -46,23 +46,27 @@ var userSchema = mongoose.Schema({
       }
     },
     "FEEDBACK":{
-      ba_2019_q2_elective1: Boolean,
-      ba_2019_q2_elective2: Boolean,
-      ba_2019_q2_elective3: Boolean,
-      ba_2019_q2_major1: Boolean,
-      ba_2019_q2_major2: Boolean,
-      ba_2019_q2_major3: Boolean,
-      ba_2019_q2_esl_speaking: Boolean,
+      ba_2019_q3_elective1: Boolean,
+      ba_2019_q3_elective2: Boolean,
+      ba_2019_q3_elective3: Boolean,
+      ba_2019_q3_major1: Boolean,
+      ba_2019_q3_major2: Boolean,
+      ba_2019_q3_major3: Boolean,
+      ba_2019_q3_esl: Boolean,
+      ba_2019_q3_esl_speaking: Boolean,
       ba_2019_q2_esl_grammar: Boolean,
       ba_2019_year1_q2_aw: Boolean,
-      ba_2019_year1_q2_qm: Boolean,
-      ba_2019_year1_q2_history: Boolean,
-      ba_2019_year1_q2_gb: Boolean,
+      ba_2019_year1_q3_qm: Boolean,
+      ba_2019_year1_q3_history: Boolean,
+      ba_2019_year1_q3_gb: Boolean,
+      ba_2019_year2_q3_gb: Boolean,
+      ba_2019_year1_q3_gi: Boolean,
+      ba_2019_year2_q3_dt: Boolean,
       ba_2019_year2_q2_poms_louis: Boolean,
       ba_2019_year2_q2_poms_krishna: Boolean,
       ba_2019_year2_q2_poms_juliette: Boolean,
       ba_2019_year2_q2_aw: Boolean,
-      ba_2019_year3_q2_rs: Boolean
+      ba_2019_year3_q3_rs: Boolean
     },
     "ELECTIVES":{
       "2019_2_2nd_year": {
