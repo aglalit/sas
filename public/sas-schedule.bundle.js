@@ -4739,7 +4739,7 @@ function listPitB(){
 
 // GetSheetDone.labeledCols('1lvG1lGsKc2x5r1a5C9_sihymy9SGswBUoJElxjJpLP4').then(sheet => generateSchedule(sheet));
 const classNumbers = {
-  "9:10":"1",
+  "9:00":"1",
   "10:40":"2",
   "12:30":"3",
   "14:20":"4",
