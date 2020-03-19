@@ -132,6 +132,11 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
       user: req.use
     })
   });
+  app.get('/polls/ba_2019_year2_q3_gb', isLoggedIn, function(req, res) {
+    res.render('ba_2019_year2_q3_gb', {
+      user: req.use
+    })
+  });
   app.get('/polls/ba_2019_year2_q3_dt', isLoggedIn, function(req, res) {
     res.render('ba_2019_year2_q3_dt', {
       user: req.use
