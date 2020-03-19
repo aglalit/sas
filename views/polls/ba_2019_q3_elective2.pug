@@ -82,9 +82,13 @@ body
     script(src="/default.js")
     script.
       var selectTeacher = document.getElementById('selectTeacher');
+      var groupworkFields = document.querySelectorAll(".groupwork");
+
       if (selectTeacher.value === "Julie Reshe" || selectTeacher.value === "Daniel Kontowski" || selectTeacher.value === "Corinne Doria" || selectTeacher.value === "Mike Shapira") {
-        el.style.display = "block";
-        el.value = "";
+        groupworkFields.forEach(function (el) {
+          el.style.display = "block";
+          el.value = "";
+        });
       }
       function openQuestion(event){
         var event=event || window.event;
