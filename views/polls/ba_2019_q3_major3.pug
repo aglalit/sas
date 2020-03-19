@@ -77,14 +77,17 @@ body
     //- script(src="/cards.js")
     script(src="/default.js")
     script.
+      var groupworkFields = document.querySelectorAll(".groupwork");
       var selectTeacher = document.getElementById('selectTeacher');
       if (selectTeacher.value === "Maxim Alyukov" || selectTeacher.value === "David Melbye" || selectTeacher.value === "Erika Wolf") {
-        el.style.display = "block";
-        el.value = "";
+        groupworkFields.forEach(function (el) {
+          el.style.display = "block";
+          el.value = "";
+        });
       }
       function openQuestion(event){
         var event=event || window.event;
-        var groupworkFields = document.querySelectorAll(".groupwork");
+
         if (event.target.value === "Maxim Alyukov" || event.target.value === "David Melbye" || event.target.value === "Erika Wolf") {
           groupworkFields.forEach(function (el) {
             el.style.display = "block";
