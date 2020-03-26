@@ -95,12 +95,14 @@ body
         if (event.target.value === "Julie Reshe" || event.target.value === "Daniel Kontowski" || event.target.value === "Corinne Doria" || event.target.value === "Mike Shapira") {
           groupworkFields.forEach(function (el) {
             el.style.display = "block";
+            el.required = true;
             el.value = "";
           });
         } else {
           groupworkFields.forEach(function (el) {
             el.style.display = "none";
             el.value = "-";
+            el.required = false;
           });
         }
       }
