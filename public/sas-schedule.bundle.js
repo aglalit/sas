@@ -4880,9 +4880,9 @@ function generateSchedule(sheet){
   else if((moment().format('mm')%10 === 0 && moment().format('ss')<=32) && data['3'][indexOfDelimiter].length < 1){
     if (data['3'][indexOfDelimiter]) document.querySelector('.announcement').src = data['3'][indexOfDelimiter];
     else if (data['2'][indexOfDelimiter]) document.querySelector('.announcement').src = data['2'][indexOfDelimiter];
-    pitbContainer.style.opacity = '1';
-    pitbContainer.style.zIndex = '99';
-    document.querySelector('.schedule').innerHTML = 'Professor in the Box';
+    // pitbContainer.style.opacity = '1';
+    // pitbContainer.style.zIndex = '99';
+    // document.querySelector('.schedule').innerHTML = 'Professor in the Box';
     firstHalfReverse = true;
   }
   else if(((moment().format('mm')%10 === 2 || moment().format('mm')%10 === 4 || moment().format('mm')%10 === 6 || moment().format('mm')%10 === 8) && moment().format('ss')<=32) && data['4'][indexOfDelimiter].length > 1){
@@ -4894,9 +4894,9 @@ function generateSchedule(sheet){
   else {
     announcementContainer.style.opacity = '0';
     announcementContainer.style.zIndex = '-1';
-    document.querySelector('.schedule').innerHTML = 'Schedule';
-    pitbContainer.style.opacity = '0';
-    pitbContainer.style.zIndex = '-1';
+    // document.querySelector('.schedule').innerHTML = 'Schedule';
+    // pitbContainer.style.opacity = '0';
+    // pitbContainer.style.zIndex = '-1';
   }
 
   if(moment().format('ss')<=30){
