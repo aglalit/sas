@@ -4928,7 +4928,7 @@ function generateSchedule(sheet){
 
 setInterval(function(){
   listMajors();
-}, 10000);
+}, 100000);
 
 // var justHidden = false;
 // var j;
