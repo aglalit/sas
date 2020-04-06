@@ -4717,7 +4717,7 @@ function listMajors() {
   }).then(function(response) {
     // console.log('data retrieved');
     sheet = response.result.values;
-    console.log(response.result.values);
+    console.log(response.result);
     generateSchedule(sheet);
   }, function(response) {
     appendPre('Error: ' + response.result.error.message);
