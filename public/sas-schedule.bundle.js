@@ -4677,7 +4677,7 @@ function updateSigninStatus(isSignedIn) {
     // signoutButton.style.display = 'none';
   }
 }
-
+listMajors();
 /**
  *  Sign in the user upon button click.
  */
@@ -4710,19 +4710,20 @@ function handleAuthClick(event) {
  * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
  */
 function listMajors() {
-  gapi.client.sheets.spreadsheets.values.get({
-    spreadsheetId: '120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc',
-    range: '\'' + moment().format('DD.MM ddd') + '\'!A1:Z20',
-    // majorDimension: "COLUMNS",
-  }).then(function(response) {
-    // console.log('data retrieved');
-    sheet = response.result.values;
-    console.log(response.result);
+  // gapi.client.sheets.spreadsheets.values.get({
+  //   spreadsheetId: '120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc',
+  //   range: '\'' + moment().format('DD.MM ddd') + '\'!A1:Z20',
+  //   // majorDimension: "COLUMNS",
+  // }).then(function(response) {
+  //   // console.log('data retrieved');
+  //   sheet = response.result.values;
+  //   console.log(response.result);
+  sheet = [["1 пара","2 пара","3 пара","4 пара","5 пара","6 пара","7 пара","changetime","1 пара","2 пара","3 пара","4 пара","5 пара","6 пара","7 пара"],["9:00–10:30","10:40–12:10","12:30–14:00","14:20–15:50","16:00–17:30","17:40–19:10","19:20–20:50","14:30","9:00–10:30","10:40–12:10","12:30–14:00","14:20–15:50","16:00–17:30","17:40–19:10","19:20–20:50"],["Physical Education","Physical Education","Economics: Brain, Behaviour and Institutions (A. Didenko)","Children and Politics (S. Erpyleva)","The Ecological Disaster: What to do? (L. Vervoort)","Great Books: Philosophy and Social Thought (Giacomo Andreoletti, group №2, Jay Silverstein, group №1)","Public Speaking: Engaging your Audience in English (M.Aarnikoivu)","","Physical Education","Physical Education","Economics: Brain, Behaviour and Institutions (A. Didenko)","Children and Politics (S. Erpyleva)","The Ecological Disaster: What to do? (L. Vervoort)","Great Books: Philosophy and Social Thought (Giacomo Andreoletti, group №2, Jay Silverstein, group №1)","Public Speaking: Engaging your Audience in English (M.Aarnikoivu)"],["","History (C.Doria)","Psychoanalysis and the Pursuit of Happiness (J. Reshe)","Thinking on Paper: Efficient and Elegant Professional English (M.Aarnikoivu)","Liberal Arts: Vision, Design, Experience (D. Kontowski)","English as a Second Language (I. Parakhina, A2 — 3, V. Evdash, A2 — 4)","","","","History (C.Doria)","Psychoanalysis and the Pursuit of Happiness (J. Reshe)","Thinking on Paper: Efficient and Elegant Professional English (M.Aarnikoivu)","Liberal Arts: Vision, Design, Experience (D. Kontowski)","English as a Second Language (I. Parakhina, A2 — 3, V. Evdash, A2 — 4)"],["","","","Curating Contemporary Art (H.Davidson)","Public Speaking: Engaging your Audience in English (M.Aarnikoivu)","Economics Society and Law (D. Kurnosov)","","","","","","Curating Contemporary Art (H.Davidson)","Public Speaking: Engaging your Audience in English (M.Aarnikoivu)","Economics Society and Law (D. Kurnosov)"],["","","","University in Crisis (M. Schapira)","English as a Second Language (I. Parakhina, A2 — 3, V. Evdash, A2 — 4)","","","","","","","University in Crisis (M. Schapira)","English as a Second Language (I. Parakhina, A2 — 3, V. Evdash, A2 — 4)"]];
     generateSchedule(sheet);
   }, function(response) {
     appendPre('Error: ' + response.result.error.message);
   });
-  listPitB();
+  // listPitB();
 }
 
 function listPitB(){
