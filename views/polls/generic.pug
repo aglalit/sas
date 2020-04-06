@@ -138,7 +138,7 @@ body
               input(type="radio" id="city" value="Other city (which - for Time Zones)" name="Location" required="required" )
               label() Other city
             .flex-container.column
-              label() Which - for Time Zones
+              label(id="cityLabel" style="display:none") Which - for Time Zones
               input(type="text" id="cityField" name="City" style="display:none")
             .flex-container.column
               label Year
@@ -163,5 +163,6 @@ body
     script.
       $('#city').click(function(){
          $('#cityField').css('display','block')
+         $('#cityLabel').css('display','block')
          });
       
