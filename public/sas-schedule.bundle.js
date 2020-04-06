@@ -4629,7 +4629,7 @@ var headers = [];
  *  On load, called to load the auth2 library and API client library.
  */
 
-// window.onload = handleClientLoad();
+window.onload = handleClientLoad();
 
 function handleClientLoad() {
         gapi.load('client:auth2', initClient);
@@ -4717,7 +4717,6 @@ function listMajors() {
   }).then(function(response) {
     // console.log('data retrieved');
     sheet = response.result.values;
-    console.log(response.result);
     generateSchedule(sheet);
   }, function(response) {
     appendPre('Error: ' + response.result.error.message);
@@ -4774,9 +4773,6 @@ function generatePitB(sheetPitB){
   }
 }
 
-
-var sheet = [["1 пара","2 пара","3 пара","4 пара","5 пара","6 пара","7 пара","changetime","1 пара","2 пара","3 пара","4 пара","5 пара","6 пара","7 пара"],["9:00–10:30","10:40–12:10","12:30–14:00","14:20–15:50","16:00–17:30","17:40–19:10","19:20–20:50","14:30","9:00–10:30","10:40–12:10","12:30–14:00","14:20–15:50","16:00–17:30","17:40–19:10","19:20–20:50"],["Physical Education","Physical Education","Economics: Brain, Behaviour and Institutions (A. Didenko)","Children and Politics (S. Erpyleva)","The Ecological Disaster: What to do? (L. Vervoort)","Great Books: Philosophy and Social Thought (Giacomo Andreoletti, group №2, Jay Silverstein, group №1)","Public Speaking: Engaging your Audience in English (M.Aarnikoivu)","","Physical Education","Physical Education","Economics: Brain, Behaviour and Institutions (A. Didenko)","Children and Politics (S. Erpyleva)","The Ecological Disaster: What to do? (L. Vervoort)","Great Books: Philosophy and Social Thought (Giacomo Andreoletti, group №2, Jay Silverstein, group №1)","Public Speaking: Engaging your Audience in English (M.Aarnikoivu)"],["","History (C.Doria)","Psychoanalysis and the Pursuit of Happiness (J. Reshe)","Thinking on Paper: Efficient and Elegant Professional English (M.Aarnikoivu)","Liberal Arts: Vision, Design, Experience (D. Kontowski)","English as a Second Language (I. Parakhina, A2 — 3, V. Evdash, A2 — 4)","","","","History (C.Doria)","Psychoanalysis and the Pursuit of Happiness (J. Reshe)","Thinking on Paper: Efficient and Elegant Professional English (M.Aarnikoivu)","Liberal Arts: Vision, Design, Experience (D. Kontowski)","English as a Second Language (I. Parakhina, A2 — 3, V. Evdash, A2 — 4)"],["","","","Curating Contemporary Art (H.Davidson)","Public Speaking: Engaging your Audience in English (M.Aarnikoivu)","Economics Society and Law (D. Kurnosov)","","","","","","Curating Contemporary Art (H.Davidson)","Public Speaking: Engaging your Audience in English (M.Aarnikoivu)","Economics Society and Law (D. Kurnosov)"],["","","","University in Crisis (M. Schapira)","English as a Second Language (I. Parakhina, A2 — 3, V. Evdash, A2 — 4)","","","","","","","University in Crisis (M. Schapira)","English as a Second Language (I. Parakhina, A2 — 3, V. Evdash, A2 — 4)"]];
-generateSchedule(sheet);
 
 document.querySelector('.date').innerHTML = moment().format('dddd DD/MM, H:mm');
 function generateSchedule(sheet){
@@ -4884,9 +4880,9 @@ function generateSchedule(sheet){
   else if((moment().format('mm')%10 === 0 && moment().format('ss')<=32) && data['3'][indexOfDelimiter].length < 1){
     if (data['3'][indexOfDelimiter]) document.querySelector('.announcement').src = data['3'][indexOfDelimiter];
     else if (data['2'][indexOfDelimiter]) document.querySelector('.announcement').src = data['2'][indexOfDelimiter];
-    // pitbContainer.style.opacity = '1';
-    // pitbContainer.style.zIndex = '99';
-    // document.querySelector('.schedule').innerHTML = 'Professor in the Box';
+    pitbContainer.style.opacity = '1';
+    pitbContainer.style.zIndex = '99';
+    document.querySelector('.schedule').innerHTML = 'Professor in the Box';
     firstHalfReverse = true;
   }
   else if(((moment().format('mm')%10 === 2 || moment().format('mm')%10 === 4 || moment().format('mm')%10 === 6 || moment().format('mm')%10 === 8) && moment().format('ss')<=32) && data['4'][indexOfDelimiter].length > 1){
@@ -4898,9 +4894,9 @@ function generateSchedule(sheet){
   else {
     announcementContainer.style.opacity = '0';
     announcementContainer.style.zIndex = '-1';
-    // document.querySelector('.schedule').innerHTML = 'Schedule';
-    // pitbContainer.style.opacity = '0';
-    // pitbContainer.style.zIndex = '-1';
+    document.querySelector('.schedule').innerHTML = 'Schedule';
+    pitbContainer.style.opacity = '0';
+    pitbContainer.style.zIndex = '-1';
   }
 
   if(moment().format('ss')<=30){
@@ -4930,9 +4926,9 @@ function generateSchedule(sheet){
   // }
 }
 
-// setInterval(function(){
-//   listMajors();
-// }, 100000);
+setInterval(function(){
+  listMajors();
+}, 100000);
 
 // var justHidden = false;
 // var j;
