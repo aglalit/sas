@@ -135,8 +135,11 @@ body
               input(type="radio"  value="Tyumen - own/shared apartment" name="Location" required="required" )
               label() Tyumen - own/shared apartment
             .flex-container.row
-              input(type="radio"  value="Other city (which - for Time Zones)" name="Location" required="required" )
-              label() Other city (which - for Time Zones)
+              input(type="radio" id="city" value="Other city (which - for Time Zones)" name="Location" required="required" )
+              label() Other city
+            .flex-container.column
+              label() Which - for Time Zones
+              input(type="text" id="cityField" name="City" style="display:none")
             .flex-container.column
               label Year
             .flex-container.row
@@ -157,3 +160,8 @@ body
         button(type="submit" class="btn btn-primary btn-lg") Submit
     //- script(src="/cards.js")
     script(src="/default.js")
+    script.
+      $('#city').click(function(){
+         $('#cityField').css('display','block')
+         });
+      
