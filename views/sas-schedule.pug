@@ -31,122 +31,6 @@ html
         src:url('../fonts/kazimir/KazimirText-Regular.ttf');
       }
       
-      @media (max-width:576px){
-        p {margin-bottom:0; font-size:3vw;}
-        .flex-container {
-          display:-webkit-box;display:-ms-flexbox;display:flex; 
-          /* margin:10px 0;  */
-          -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between;align-items: flex-start;
-        /* padding:0 20px; */
-        /* margin-left: 10px; */
-        margin-bottom:10px;
-        }
-        .time {        
-              
-          font-size:6vw;
-        
-        }
-        .schedule {font-family: 'Agipo-Regular'; line-height: 0.9;}
-        .date {font-family: 'Kazimir-Text-Regular';}
-        /* td {border-top: none !important; padding: 16px 8px 0px !important;} */
-        .schedule,.date {font-size:6vw;}
-        /* .classes {padding-left: 25px !important} */
-        
-        /* .professor {display:inline-block;} */
-        
-        img {width:10%;margin-top: 15px;}
-        /* .table{width:90% !important} */
-        .title {   font-family: 'Agipo-Bold';} 
-        /* .room {color:#f00;} */
-        h2 {margin-top: 0px; }
-        b {font-weight:normal; opacity:0}
-        .flex-container-img {display:flex;position:absolute; opacity:0;z-index:-1;
-          top:0;width:100%;height:100%;background-color:rgb(20, 20, 20);
-          justify-content:center;align-items: start;
-          transition: opacity 1s ease-in;
-        }
-        .flex-container-pitb {
-          display:flex;position:absolute; 
-          opacity:0;
-            top:11vh;width:100%;height:89%;background-color:rgb(20, 20, 20);
-            justify-content:center;align-items: start;
-            transition: opacity 1s ease-in;
-        }
-        .tr_pitb {
-          height:8vh;
-          font-size: 22px;
-          vertical-align :baseline;
-        }
-        .flex-container-pitb .thead, .tr_pitb:not(:last-child) {
-          border-bottom:1px rgba(255,255,255,0.5) solid;
-        }
-        .tr_pitb td {
-            line-height:24px;  
-        }
-        .tr_pitb td:first-child {
-              padding-right: 40px !important;
-              min-width:150px;
-              vertical-align :baseline;
-              font-size:22px;
-              font-family: 'Agipo-Regular';width: 17%;
-        }
-        
-        .tr_pitb td:not(:first-child) {
-            width:12vw; 
-        }
-        
-        .flex-container-pitb .thead {
-          font-size:22px;
-          font-family: 'Agipo-Regular';
-          
-        }
-          .flex-container-pitb .thead td {
-            padding-bottom:10px !important;
-          }
-        
-        .announcement {width:95%;margin:auto; background: rgb(20, 20, 20) solid}
-        .red {color:#f00; border-color:#f00 !important;}
-        .red_highlight {
-          color:#f00; 
-          border-color:#f00 !important;
-          background-repeat: no-repeat;
-          background-image: url('/highlighting.svg');
-          background-position: 0px 0px;
-          height: 70px;
-        }
-
-        .classNumber {
-          padding-top: 19px !important;
-          padding-left:0px !important;
-        }
-        .classNumberSpan {
-          text-align: center;
-          display: inline-block;
-          width: 30px;
-          height: 30px;
-          border: 2px #fff solid;
-          border-radius: 50%;
-          vertical-align: text-bottom;
-          font-size: 18px;
-          font-family: 'Agipo-Bold';
-        }
-        #authorize_button {
-          background: rgb(20, 20, 20);
-          color: rgb(20, 20, 20);
-          border: none;
-          font-size: 0.5vw;
-          z-index:999;
-          position: absolute;
-          top: 0;
-        }
-        #authorize_button:hover {
-          cursor:pointer;
-        }
-        #authorize_button:focus {
-          outline:none;
-        }
-      }
-      
       p {margin-bottom:0; font-size:1.875vw;}
       .flex-container {
         display:-webkit-box;display:-ms-flexbox;display:flex; 
@@ -263,6 +147,122 @@ html
       }
       #authorize_button:focus {
         outline:none;
+      }
+      
+      @media (max-width:576px){
+        p {margin-bottom:0; font-size:3vw;}
+        .flex-container {
+          display:-webkit-box;display:-ms-flexbox;display:flex; 
+          /* margin:10px 0;  */
+          -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between;align-items: flex-start;
+        /* padding:0 20px; */
+        /* margin-left: 10px; */
+        margin-bottom:10px;
+        }
+        .time {        
+              
+          font-size:6vw;
+        
+        }
+        .schedule {font-family: 'Agipo-Regular'; line-height: 0.9;}
+        .date {font-family: 'Kazimir-Text-Regular';}
+        /* td {border-top: none !important; padding: 16px 8px 0px !important;} */
+        .schedule,.date {font-size:6vw;}
+        /* .classes {padding-left: 25px !important} */
+        
+        /* .professor {display:inline-block;} */
+        
+        img {width:10%;margin-top: 15px;}
+        /* .table{width:90% !important} */
+        .title {   font-family: 'Agipo-Bold';} 
+        /* .room {color:#f00;} */
+        h2 {margin-top: 0px; }
+        b {font-weight:normal; opacity:0}
+        .flex-container-img {display:flex;position:absolute; opacity:0;z-index:-1;
+          top:0;width:100%;height:100%;background-color:rgb(20, 20, 20);
+          justify-content:center;align-items: start;
+          transition: opacity 1s ease-in;
+        }
+        .flex-container-pitb {
+          display:flex;position:absolute; 
+          opacity:0;
+            top:11vh;width:100%;height:89%;background-color:rgb(20, 20, 20);
+            justify-content:center;align-items: start;
+            transition: opacity 1s ease-in;
+        }
+        .tr_pitb {
+          height:8vh;
+          font-size: 22px;
+          vertical-align :baseline;
+        }
+        .flex-container-pitb .thead, .tr_pitb:not(:last-child) {
+          border-bottom:1px rgba(255,255,255,0.5) solid;
+        }
+        .tr_pitb td {
+            line-height:24px;  
+        }
+        .tr_pitb td:first-child {
+              padding-right: 40px !important;
+              min-width:150px;
+              vertical-align :baseline;
+              font-size:22px;
+              font-family: 'Agipo-Regular';width: 17%;
+        }
+        
+        .tr_pitb td:not(:first-child) {
+            width:12vw; 
+        }
+        
+        .flex-container-pitb .thead {
+          font-size:22px;
+          font-family: 'Agipo-Regular';
+          
+        }
+          .flex-container-pitb .thead td {
+            padding-bottom:10px !important;
+          }
+        
+        .announcement {width:95%;margin:auto; background: rgb(20, 20, 20) solid}
+        .red {color:#f00; border-color:#f00 !important;}
+        .red_highlight {
+          color:#f00; 
+          border-color:#f00 !important;
+          background-repeat: no-repeat;
+          background-image: url('/highlighting.svg');
+          background-position: 0px 0px;
+          height: 70px;
+        }
+
+        .classNumber {
+          padding-top: 19px !important;
+          padding-left:0px !important;
+        }
+        .classNumberSpan {
+          text-align: center;
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          border: 2px #fff solid;
+          border-radius: 50%;
+          vertical-align: text-bottom;
+          font-size: 18px;
+          font-family: 'Agipo-Bold';
+        }
+        #authorize_button {
+          background: rgb(20, 20, 20);
+          color: rgb(20, 20, 20);
+          border: none;
+          font-size: 0.5vw;
+          z-index:999;
+          position: absolute;
+          top: 0;
+        }
+        #authorize_button:hover {
+          cursor:pointer;
+        }
+        #authorize_button:focus {
+          outline:none;
+        }
       }
 body
     button(id="authorize_button") Auth
