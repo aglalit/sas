@@ -4930,9 +4930,9 @@ function generateSchedule(sheet){
   // }
 }
 
-setInterval(function(){
-  listMajors();
-}, 100000);
+// setInterval(function(){
+//   listMajors();
+// }, 100000);
 
 // var justHidden = false;
 // var j;
