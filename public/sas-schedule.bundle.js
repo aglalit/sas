@@ -4629,37 +4629,37 @@ var headers = [];
  *  On load, called to load the auth2 library and API client library.
  */
 
-window.onload = handleClientLoad();
-
-function handleClientLoad() {
-        gapi.load('client:auth2', initClient);
-      }
+// window.onload = handleClientLoad();
+//
+// function handleClientLoad() {
+//         gapi.load('client:auth2', initClient);
+//       }
 
 
 /**
  *  Initializes the API client library and sets up sign-in state
  *  listeners.
  */
-function initClient() {
-  gapi.client.init({
-    apiKey: API_KEY,
-    clientId: CLIENT_ID,
-    discoveryDocs: DISCOVERY_DOCS,
-    scope: SCOPES
-  }).then(function () {
-  //  if (!gapi.auth2.getAuthInstance().isSignedIn.get()) gapi.auth2.getAuthInstance().signIn();
-
-    // Listen for sign-in state changes.
-    gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-
-    // Handle the initial sign-in state.
-    updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-    authorizeButton.onclick = handleAuthClick;
-    // signoutButton.onclick = handleSignoutClick;
-  }, function(error) {
-    console.log(error);
-  });
-}
+// function initClient() {
+//   gapi.client.init({
+//     apiKey: API_KEY,
+//     clientId: CLIENT_ID,
+//     discoveryDocs: DISCOVERY_DOCS,
+//     scope: SCOPES
+//   }).then(function () {
+//   //  if (!gapi.auth2.getAuthInstance().isSignedIn.get()) gapi.auth2.getAuthInstance().signIn();
+//
+//     // Listen for sign-in state changes.
+//     gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+//
+//     // Handle the initial sign-in state.
+//     updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+//     authorizeButton.onclick = handleAuthClick;
+//     // signoutButton.onclick = handleSignoutClick;
+//   }, function(error) {
+//     console.log(error);
+//   });
+// }
 
 
 
