@@ -15,7 +15,8 @@ body
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-red.svg")
-      h3 Feedback. ESL. Quarter 3.
+      h3 Online Teaching Survey
+      h4 To better understand conditions for online teaching in Q4, we are running a short survey (filling it will take you 3 mins max). Please do so by Monday, 6.04, 8pm.
       form(id="form" action="/polls/generic" method="post")
         input(type="hidden" value="generic" name="subject")    
         fieldset
@@ -35,28 +36,47 @@ body
             //.flex-container
             //  label(for="Устраивают ли вас время и место проведения встреч?") Устраивают ли вас время и место проведения встреч?
             //  textarea(required="required" class="form-control" name="Устраивают ли вас время и место проведения встреч?" rows="2")
-            .flex-container
-               label(for="Who taught this course") Who was the instructor for this course?
-               select(class="form-control" required="required" name="Who taught this course")
-                 option(value="Irina Parakhina") Irina Parakhina
-                 option(value="Anna Syrchina") Anna Syrchina
-                 option(value="Valeria Evdash") Valeria Evdash
-                 option(value="Tatyana Kovaleva") Tatyana Kovaleva
-            .flex-container
-               label(for="To what extent was this course an improvement over English language courses you have had previously") To what extent was this course an improvement over English language courses you have had previously? Give a score from 1 to 10, where 1 = It is not helping at all and 10 = It is helping significantly.
-               input(type="number" required="required" class="form-control" name="To what extent was this course an improvement over English language courses you have had previously" min="1" max="10")
-            .flex-container
-               label(for="In what ways was this course useful in terms of improving your English language skills") In what ways was this course useful in terms of improving your English language skills? Put your thoughts.
-               textarea(required="required" class="form-control" name="In what ways was this course useful in terms of improving your English language skills" rows="4")
-            .flex-container
-               label(for="If you had the chance to change some aspects of the course what would they be?") If you had the chance to change some aspects of the course what would they be? Put your thoughts.
-               textarea(required="required" class="form-control" name="If you had the chance to change some aspects of the course what would they be?" rows="4")
-            .flex-container
-               label(for="To what extent did the instructors focus on speaking skills?") To what extent did the instructor focus on speaking skills? Put your thoughts.
-               textarea(required="required" class="form-control" name="To what extent did the instructor focus on speaking skills?" rows="4")
-            .flex-container
-               label(for="To what extent did the instructors focus on grammar skills?") To what extent did the instructor focus on grammar skills? Put your thoughts.
-               textarea(required="required" class="form-control" name="To what extent did the instructor focus on grammar skills?" rows="4")
+            //- .flex-container
+            //-    label(for="Who taught this course") Who was the instructor for this course?
+            //-    select(class="form-control" required="required" name="Who taught this course")
+            //-      option(value="Irina Parakhina") Irina Parakhina
+            //-      option(value="Anna Syrchina") Anna Syrchina
+            //-      option(value="Valeria Evdash") Valeria Evdash
+            //-      option(value="Tatyana Kovaleva") Tatyana Kovaleva
+            //- .flex-container
+            //-    label(for="To what extent was this course an improvement over English language courses you have had previously") To what extent was this course an improvement over English language courses you have had previously? Give a score from 1 to 10, where 1 = It is not helping at all and 10 = It is helping significantly.
+            //-    input(type="number" required="required" class="form-control" name="To what extent was this course an improvement over English language courses you have had previously" min="1" max="10")
+            //- .flex-container
+            //-    label(for="In what ways was this course useful in terms of improving your English language skills") In what ways was this course useful in terms of improving your English language skills? Put your thoughts.
+            //-    textarea(required="required" class="form-control" name="In what ways was this course useful in terms of improving your English language skills" rows="4")
+            //- .flex-container
+            //-    label(for="If you had the chance to change some aspects of the course what would they be?") If you had the chance to change some aspects of the course what would they be? Put your thoughts.
+            //-    textarea(required="required" class="form-control" name="If you had the chance to change some aspects of the course what would they be?" rows="4")
+            //- .flex-container
+            //-    label(for="To what extent did the instructors focus on speaking skills?") To what extent did the instructor focus on speaking skills? Put your thoughts.
+            //-    textarea(required="required" class="form-control" name="To what extent did the instructor focus on speaking skills?" rows="4")
+            //- .flex-container
+            //-    label(for="To what extent did the instructors focus on grammar skills?") To what extent did the instructor focus on grammar skills? Put your thoughts.
+            //-    textarea(required="required" class="form-control" name="To what extent did the instructor focus on grammar skills?" rows="4")
+            .flex-container.column
+              label Do you have access to a computer or a laptop?
+            .flex-container.row
+              input(type="radio"  value="Yes, my own" name="Do you have access to a computer or a laptop" required="required" )
+              label() Yes, my own
+            .flex-container.row
+              input(type="radio"  value="Yes, shared with other members of the household" name="Do you have access to a computer or a laptop" required="required" )
+              label() Yes, shared with other members of the household
+            .flex-container.row
+              input(type="radio"  value="No" name="Do you have access to a computer or a laptop" required="required" )
+              label() No
+            .flex-container.column
+              label If yes, does this computer have a webcam and a microphone?
+            .flex-container.row
+              input(type="radio"  value="Yes" name="If yes, does this computer have a webcam and a microphone?" )
+              label() Yes
+            .flex-container.row
+              input(type="radio"  value="No" name="If yes, does this computer have a webcam and a microphone?" )
+              label() No
         button(type="submit" class="btn btn-primary btn-lg") Submit
     //- script(src="/cards.js")
     script(src="/default.js")
