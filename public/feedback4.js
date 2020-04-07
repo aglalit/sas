@@ -255,10 +255,7 @@ function displaySubject(data, subject) {
   });
 
   for (var key in dataParsed[0]) {
-    if (key === "Evaluate the overall quality of the course" ||
-        key === "Evaluate the impact of the course on your knowledge" ||
-        key === "How well did your teacher integrate interactive communication within the course seminars?" ||
-        key === "Evaluate the level of feedback from the professor") {
+    if (!isNaN(dataParsed[0][key])) {
       for (var k in dataNumbers) {
         dataNumbers[k][key] = []
       }
@@ -408,7 +405,7 @@ function displaySubject(data, subject) {
         if (elementToAppend) {
         var teachersArray = elementToAppend.parentNode.querySelectorAll('a');
         teachersArray.forEach(function(el){
-          if (/* el.innerHTML.includes(t)*/ el.dataset.size) size = el.dataset.size;
+          if (el.innerHTML.includes(t)) size = el.dataset.size;
 
         })
         }
