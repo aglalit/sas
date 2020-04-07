@@ -254,8 +254,8 @@ function displaySubject(data, subject) {
     }
   });
 
-  for (var key in dataParsed[0]) {
-    if (!isNaN(dataParsed[0][key])) {
+  for (var key in dataParsed[1]) {
+    if (!isNaN(dataParsed[1][key])) {
       for (var k in dataNumbers) {
         dataNumbers[k][key] = []
       }
