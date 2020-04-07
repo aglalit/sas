@@ -194,16 +194,16 @@ app.get('/feedback3', function(req, res) {
 app.get('/feedback4', function(req, res) {
   var query = {};
 
-  if (req.query.s === 'ba_2019_q2_electives'){
+  if (req.query.s === 'ba_2019_q3_electives'){
     Session.find({
       $or: [
-        { "polls.ba_2019_q2_elective1": {$exists : true} },
-        { "polls.ba_2019_q2_elective2": {$exists : true} },
-        { "polls.ba_2019_q2_major3": {$exists : true} },
-        { "polls.ba_2019_q2_major1": {$exists : true} },
-        { "polls.ba_2019_q2_major2": {$exists : true} }
+        { "polls.ba_2019_q3_elective1": {$exists : true} },
+        { "polls.ba_2019_q3_elective2": {$exists : true} },
+        { "polls.ba_2019_q3_major3": {$exists : true} },
+        { "polls.ba_2019_q3_major1": {$exists : true} },
+        { "polls.ba_2019_q3_major2": {$exists : true} }
       ]
-    },{ 'polls.ba_2019_q2_elective1': 1, 'polls.ba_2019_q2_elective2': 1,'polls.ba_2019_q2_major3': 1,'polls.ba_2019_q2_major1': 1,'polls.ba_2019_q2_major2': 1 }).exec(function (err, docs){
+    },{ 'polls.ba_2019_q3_elective1': 1, 'polls.ba_2019_q3_elective2': 1,'polls.ba_2019_q3_major3': 1,'polls.ba_2019_q3_major1': 1,'polls.ba_2019_q3_major2': 1 }).exec(function (err, docs){
       if (err) { res.send(err); console.log(err); }
       else {
         docs.map((el)=>{console.log(el._doc.polls)});

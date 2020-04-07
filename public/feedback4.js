@@ -97,49 +97,17 @@ function displaySubject(data, subject) {
     //   })
     //   teacherHeader.innerHTML = 'Interpreting Artworks';
     // }
-    if (subject === 'ba_2019_year2_module8_gb') {
-      dataParsedFiltered = [];
-      dataParsedTeachers = ['Андрей Щербенок', 'Ольга Ушакова', 'John Tangney', 'Anne Mulhall'];
-      var allowed;
-      for (var k = 1; k < 5; k++) {
-          allowed = Object.keys(dataParsed[0]).filter(function(key) {
-          var reg = new RegExp(k)
-          return reg.test(key);
-        });
-        allowed.push('Who taught this course' + k);
-        dataParsed.forEach((entry) => {
-          // console.log(entry);
-          entry['Who taught this course' + k] = dataParsedTeachers[k - 1];
-          dataParsedFiltered.push(Object.keys(entry)
-            .filter(key => allowed.includes(key))
-            .reduce((obj, key) => {
-              obj[key.slice(0, -1)] = entry[key];
-              return obj;
-            }, {})
-          );
-        });
-      }
       if (teacher){
         var regex = new RegExp(teacher, 'i');
-        if (teacher === 'duskin') regex = 'Duskin Drum';
-        dataParsedFiltered = dataParsedFiltered.filter((entry) => {
-          return entry["Who taught this course"].match(regex)
-        });
-        teacherHeader.innerHTML = dataParsedFiltered[0]["Who taught this course"];
-      }
-      dataParsed = dataParsedFiltered;
-    } else {
-      if (teacher){
-        var regex = new RegExp(teacher, 'i');
-        if (teacher === 'duskin') regex = 'Duskin Drum';
         dataParsedFiltered = dataParsed.filter((entry) => {
           return entry["Who taught this course"].match(regex)
         });
+        console.log(dataParsedFiltered[0]);
         teacherHeader.innerHTML = dataParsedFiltered[0]["Who taught this course"];
 
         dataParsed = dataParsedFiltered;
       }
-    }
+
 
     var answersNumber = dataParsed.length;
     currentAnswerCounter.innerHTML = (currentEntry + 1) + "/" + answersNumber;
