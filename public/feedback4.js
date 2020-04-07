@@ -196,7 +196,7 @@ function displaySubject(data, subject) {
 
       for (var key in dataParsed[1]) {
         if (key !== 'subject'){
-            if (isNaN(dataParsed[1][key])) {
+            if (isNaN(dataParsed[1][key]) || !dataParsed[1][key]) {
               for (var k in dataComments) {
                 dataComments[k][key] = []
               }
