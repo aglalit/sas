@@ -61,8 +61,6 @@ function displaySubject(data, subject) {
       if (el.polls.ba_2019_q3_major3) dataParsed.unshift(JSON.parse(el.polls.ba_2019_q3_major3));
     });
   }
-
-  }
   else {
     data[0].forEach(function(el) {
       dataParsed.unshift(JSON.parse(el.polls[subject]));
