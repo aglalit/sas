@@ -408,7 +408,7 @@ function displaySubject(data, subject) {
         if (elementToAppend) {
         var teachersArray = elementToAppend.parentNode.querySelectorAll('a');
         teachersArray.forEach(function(el){
-          if (el.innerHTML.includes(t)) size = el.dataset.size;
+          if (/* el.innerHTML.includes(t)*/ el.dataset.size) size = el.dataset.size;
 
         })
         }
