@@ -166,7 +166,7 @@ app.get('/polls-anonymous', function(req, res) {
   res.render('polls_anonymous', {messages: req.flash('info')})
 });
 
-app.get('/feedback4'), function(req, res) {
+app.get('/feedback4', function(req, res) {
   res.send('The website is temporarily down for privacy issues. You will receive a new link with the evaluations later. Sorry for inconvenience.')
 });
 
