@@ -191,6 +191,59 @@ app.get('/feedback3', function(req, res) {
 
 });
 
+app.get('/feedback4', function(req, res) {
+  var query = {};
+
+  if (req.query.s === 'ba_2019_q2_electives'){
+    Session.find({
+      $or: [
+        { "polls.ba_2019_q2_elective1": {$exists : true} },
+        { "polls.ba_2019_q2_elective2": {$exists : true} },
+        { "polls.ba_2019_q2_major3": {$exists : true} },
+        { "polls.ba_2019_q2_major1": {$exists : true} },
+        { "polls.ba_2019_q2_major2": {$exists : true} }
+      ]
+    },{ 'polls.ba_2019_q2_elective1': 1, 'polls.ba_2019_q2_elective2': 1,'polls.ba_2019_q2_major3': 1,'polls.ba_2019_q2_major1': 1,'polls.ba_2019_q2_major2': 1 }).exec(function (err, docs){
+      if (err) { res.send(err); console.log(err); }
+      else {
+        docs.map((el)=>{console.log(el._doc.polls)});
+        res.render('feedback4', {
+          data:  JSON.stringify(docs)
+        });
+      }
+    });
+  }
+  else if (req.query.s === 'all'){
+    Session.find({$and: [
+      {'polls':{$exists : true}},
+      {'polls.registration':{$exists : false}},
+      {'polls.faculty_research_trips':{$exists : false}}
+    ]}).select('polls').select('polls').sort({ _id: -1 }).limit(750).exec(function (err, docs){
+      if (err) { res.send(err); console.log(err); }
+      else {
+        res.render('feedback4', {
+          data:  JSON.stringify(docs)
+        });
+      }
+    });
+  }
+  else {
+    query['polls.' + req.query.s] = {$exists : true};
+    Session.find(query).select('polls.' + req.query.s).exec(function (err, docs){
+      if (err) { res.send(err); console.log(err); }
+      else {
+        console.log(docs);
+        res.render('feedback4', {
+          data:  JSON.stringify(docs)
+        });
+      }
+    });
+  }
+
+
+
+});
+
 
 // app.post('/polls/registration-list', function(req, res) {
 //   Session.findOne({
