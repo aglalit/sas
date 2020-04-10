@@ -1,3 +1,13 @@
+window.onload=function(){
+  var urlParams = new URLSearchParams(window.location.search);
+  var yearUrl = urlParams.get('year3');
+  if (!yearUrl) {
+      var cardsToDelete = document.querySelectorAll('.major');
+      cardsToDelete.forEach(function(card){
+        card.parentNode.removeChild(card);
+      })
+    }
+
 var localCards = localStorage.getItem('cards');
 if (localCards){
     $('.cards').html(localCards);
@@ -62,3 +72,5 @@ $( ".portlet-toggle" ).click(function() {
     icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
     icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
 });
+
+};

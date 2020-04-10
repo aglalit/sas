@@ -53,15 +53,4 @@ body
                 .portlet-header(id="Film and Transmedia Storytelling — David Melbye") Film and Transmedia Storytelling — David Melbye
         button(type="submit" class="btn btn-primary btn-lg") Submit
     script(src="/cards.js")
-    script(src="/default.js")
-    script.
-      window.onload=function(){
-        var urlParams = new URLSearchParams(window.location.search);
-        var yearUrl = urlParams.get('year3');
-        if (!yearUrl) {
-            var cardsToDelete = document.querySelectorAll('.major');
-            cardsToDelete.forEach(function(card){
-              card.parentNode.removeChild(card);
-            })
-          }
-      };
+    script(src="/default.js")      
