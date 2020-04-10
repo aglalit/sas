@@ -150,7 +150,7 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: '/polls/generic',
+  successRedirect: '/polls',
   failureRedirect: '/login'
 }));
 // passport.authenticate('google'),

@@ -15,40 +15,53 @@ body
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-red.svg")
-      h1 Electives. Year 2019–2020. 3rd quarter. 
+      h1 Electives. Year 2019–2020. 4th quarter. 
       h3 Sort the following electives in the order from the most preferable to the least (from the top to the bottom).
-      h3 NOTE: Please make your choice carefully, because lower priorities may matter.
+      h3 NOTE: Please make your choice carefully because lower priorities may matter.
       form(id="form" action="/polls/electives_2020_1" method="post")
         // DON'T REMOVE THIS INPUT!!!
         input(type="hidden") 
         fieldset   
             .cards
               .portlet
-                .portlet-header(id="Psychoanalysis and Happiness") Psychoanalysis and Happiness — Julie Reshe
+                .portlet-header(id="Anthropological Archaeology — Denis Sharapov") Anthropological Archaeology — Denis Sharapov
               .portlet
-                .portlet-header(id="The Ecological Crisis") The Ecological Crisis — Louis Vervoort
+                .portlet-header(id="What is the Anthropocene? — Zachary Reyna") What is the Anthropocene? — Zachary Reyna
               .portlet
-                .portlet-header(id="Childhood and Politics") Childhood and Politics — Svetlana Erpyleva
+                .portlet-header(id="Arctic Encounters — Anna Varfolomeeva") Arctic Encounters — Anna Varfolomeeva
               .portlet
-                .portlet-header(id="Python Data Analysis & Visualization") Python Data Analysis & Visualization — Vitaly Nikolaev
+                .portlet-header(id="Formal Logic — Giacomo Andreoletti") Formal Logic — Giacomo Andreoletti
               .portlet
-                .portlet-header(id="University in Crisis") University in Crisis — Mike Shapira
+                .portlet-header(id="Diasporas — Matvey Lomonosov") Diasporas — Matvey Lomonosov
               .portlet
-                .portlet-header(id="Liberal Arts") Liberal Arts — Daniel Kontowski
+                .portlet-header(id="Complex Societies — Jay Silverstein") Complex Societies — Jay Silverstein
               .portlet
-                .portlet-header(id="Alternate Histories") Alternate Histories — Corinne Doria
+                .portlet-header(id="Sense of Humor — Peter Jones") Sense of Humor — Peter Jones
               .portlet
-                .portlet-header(id="Curating Contemporary Art") Curating Contemporary Art — Henry Davidson
+                .portlet-header(id="Russian Literature (RU) — Elena Grigoryeva") Russian Literature (RU) — Elena Grigoryeva
               .portlet
-                .portlet-header(id="Identity and Performance") Identity and Performance — Henry Davidson
+                .portlet-header(id="The Structure of a Literary Text (RU) — Elena Grigoryeva") The Structure of a Literary Text (RU) — Elena Grigoryeva
               .portlet
-                .portlet-header(id="Thinking on Paper") Thinking on Paper — Melina Aarnikoivu
-              .portlet
-                .portlet-header(id="Public Speaking") Public Speaking — Melina Aarnikoivu
-              .portlet
-                .portlet-header(id="Economics, Society, and Law") Economics, Society, and Law — Dmitry Kurnosov
-              .portlet
-                .portlet-header(id="Economics and behavior") Economics and behavior — Alexander Didenko
+                .portlet-header(id="English as a Second Language — Daniel Williamson") English as a Second Language — Daniel Williamson
+              .portlet.major
+                .portlet-header(id="Gender, Sexuality and Biopolitics — Julie Reshe") Gender, Sexuality and Biopolitics — Julie Reshe
+              .portlet.major
+                .portlet-header(id="Macroeconomics — Ekaterina Svirina") Macroeconomics — Ekaterina Svirina
+              .portlet.major
+                .portlet-header(id="Project Management in IT — Munesh Chauhan") Project Management in IT — Munesh Chauhan
+              .portlet.major
+                .portlet-header(id="Film and Transmedia Storytelling — David Melbye") Film and Transmedia Storytelling — David Melbye
         button(type="submit" class="btn btn-primary btn-lg") Submit
     script(src="/cards.js")
     script(src="/default.js")
+    script.
+      window.onload=function(){
+        var urlParams = new URLSearchParams(window.location.search);
+        var yearUrl = urlParams.get('year3');
+        if (yearUrl) {
+            var cardsToDelete = document.querySelectorAll('.major');
+            cardsToDelete.forEach(function(card){
+              card.parentNode.removeChild(card);
+            })
+          }
+      };
