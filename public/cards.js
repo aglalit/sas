@@ -12,10 +12,16 @@ var localCards = localStorage.getItem('cards');
 if (localCards){
     $('.cards').html(localCards);
 }
-$( ".portlet-header" ).each(function(index){
-    var input = $("<input>", {type: "hidden", name: index+1, value: $(this).text()})
-    $('form').append(input);
-});
+
+createForm();
+
+function createForm(){
+  $( ".portlet-header" ).each(function(index){
+      var input = $("<input>", {type: "hidden", name: index+1, value: $(this).id})
+      $('form').append(input);
+  });
+}
+
 
 $( ".cards" ).sortable({
     connectWith: ".column",
@@ -35,10 +41,7 @@ $( ".cards" ).sortable({
                 $(this).remove();
             }
         })
-        $( ".portlet-header" ).each(function(index){
-            var input = $("<input>", {type: "hidden", name: index+1, value: $(this).id})
-            $('form').append(input);
-        });
+        createForm();
         localStorage.setItem('cards', $('.cards').html());
         $('button[type="submit"]').removeAttr('disabled');
 
