@@ -8,7 +8,7 @@ window.onload=function(){
       })
     }
 
-var localCards = localStorage.getItem('cards');
+var localCards = localStorage.getItem('cards' + (yearUrl ? '14':'10'));
 if (localCards){
     $('.cards').html(localCards);
 }
@@ -42,7 +42,7 @@ $( ".cards" ).sortable({
             }
         })
         createForm();
-        localStorage.setItem('cards', $('.cards').html());
+        localStorage.setItem('cards'+(yearUrl ? '14':'10'), $('.cards').html());
         $('button[type="submit"]').removeAttr('disabled');
 
     }
