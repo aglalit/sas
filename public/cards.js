@@ -17,7 +17,7 @@ createForm();
 
 function createForm(){
   $( ".portlet-header" ).each(function(index){
-      var input = $("<input>", {type: "hidden", name: index+1, value: $(this).id})
+      var input = $("<input>", {type: "hidden", name: index+1, value: $(this).attr('id')})
       $('form').append(input);
   });
 }
