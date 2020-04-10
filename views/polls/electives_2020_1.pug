@@ -58,7 +58,7 @@ body
       window.onload=function(){
         var urlParams = new URLSearchParams(window.location.search);
         var yearUrl = urlParams.get('year3');
-        if (yearUrl) {
+        if (!yearUrl) {
             var cardsToDelete = document.querySelectorAll('.major');
             cardsToDelete.forEach(function(card){
               card.parentNode.removeChild(card);
