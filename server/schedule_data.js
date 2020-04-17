@@ -1,7 +1,8 @@
 module.exports = function(app, Schedule, logger){
 
 app.post('/schedule_data_0382473723', function(req, res) {
-  Schedule.find({_id: 1}, function(err, entry) {
+  console.log(req.body);
+  Schedule.findOne({_id: 1}, function(err, entry) {
   if (err)
     return done(err);
   entry.schedule = req.body;
@@ -11,6 +12,7 @@ app.post('/schedule_data_0382473723', function(req, res) {
     return;
   });
 });
+  res.send('done')
 });
 
   app.get('/schedule_data', function(req, res) {
