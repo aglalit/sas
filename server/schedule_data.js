@@ -4,7 +4,7 @@ app.post('/schedule_data_0382473723', function(req, res) {
   Schedule.findOne({}, function(err, data) {
     if (err) { res.send(err); console.log(err); }
     else {
-      data.schedule = req.body;
+      data.schedule = JSON.stringify(req.body);
       data.save(function(err) {
         if (err)
           return console.error(err);
