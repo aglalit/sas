@@ -1,7 +1,7 @@
 module.exports = function(app, Schedule, logger){
 
 app.post('/schedule_data_0382473723', function(req, res) {
-  Schedule.find({_id: 1}}, function(err, entry) {
+  Schedule.find({_id: 1}, function(err, entry) {
   if (err)
     return done(err);
   entry.schedule = req.body;
