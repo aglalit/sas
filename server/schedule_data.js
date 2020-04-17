@@ -4,7 +4,7 @@ app.post('/schedule_data_0382473723', function(req, res) {
   Schedule.find({_id: 1}}, function(err, entry) {
   if (err)
     return done(err);
-  entry.schedule = req;
+  entry.schedule = req.body;
   entry.save(function(err) {
     if (err)
       return console.error(err);
