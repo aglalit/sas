@@ -2,7 +2,7 @@ module.exports = function(app, Schedule, logger){
 
 app.post('/schedule_data_0382473723', function(req, res) {
   console.log(req.body);
-  Schedule.findOne({_id: 1}, function(err, entry) {
+  Schedule.findOne({}, function(err, entry) {
   if (err)
     return done(err);
   entry.schedule = req.body;
@@ -16,7 +16,7 @@ app.post('/schedule_data_0382473723', function(req, res) {
 });
 
   app.get('/schedule_data', function(req, res) {
-    Schedule.findOne({_id: 1}, function(err, entry) {
+    Schedule.findOne({}, function(err, entry) {
       if (err)
         return done(err);
       res.send(entry.schedule)
