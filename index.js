@@ -26,6 +26,7 @@ var MongoStore  = require('connect-mongo')(session);
 var index = require('./routes/index');
 var User = require('./models/user');
 var Session = require('./models/session');
+var Schedule = require('./models/schedule');
 var SessionsStorage = require('./models/sessions_storage');
 var UserAnonymous = require('./models/user_anonymous');
 
@@ -261,6 +262,8 @@ require('./server/feedback-collector.js')(app, Session, transporter, officeTrans
 require('./server/feedback-collector-anonymous.js')(app, Session, transporter, officeTransporter, logger);
 
 require('./server/db_export.js')(app, Session, User);
+require('./server/schedule_data.js')(app, Schedule, logger);
+
 
 
 

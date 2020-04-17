@@ -47,6 +47,6 @@
 
 $('#form').saveStorage();
 
-$('button[type="submit"]').click(function(){
-    localStorage.clear();
-})
+// $('button[type="submit"]').click(function(){
+//     localStorage.clear();
+// })
