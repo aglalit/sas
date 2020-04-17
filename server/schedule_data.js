@@ -21,6 +21,7 @@ app.post('/schedule_data_0382473723', function(req, res) {
     Schedule.find().exec(function(err, data) {
       if (err) { res.send(err); console.log(err); }
       else {
+        res.setHeader('Access-Control-Allow-Origin', 'https://sas.utmn.ru');
         res.send(JSON.stringify(data[0].schedule))
       }
       });
