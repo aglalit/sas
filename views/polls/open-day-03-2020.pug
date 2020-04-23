@@ -55,7 +55,10 @@ body
                 option(value="Школьник (11 класс)") Школьник (11 класс)
                 option(value="Студент") Студент  
                 option(value="Родитель") Родитель
-                option(value="Другое") Другое  
+                option(value="Другое") Другое 
+            .flex-container.column
+              label(for="Question") Задайте свой вопрос
+              input(type="text" class="form-control" name="Question")   
             .flex-container.column
               label(for="Source") Откуда вы узнали о мероприятии
                 sup(style="color:red") *
@@ -63,7 +66,7 @@ body
             .flex-container.column
               label(for="Email") Email
                 sup(style="color:red") *
-              input(type="email" required="required" class="form-control" name="Email")             
+              input(type="email" required="required" class="form-control" name="Email")                
             .flex-container.row
               input.checkbox(id="agreement-checkbox" type="checkbox" name="agreement" required="required")                         
               label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
