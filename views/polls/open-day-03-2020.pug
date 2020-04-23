@@ -31,9 +31,9 @@ body
       form(action="/polls/open-day-03-2020" method="post")
         fieldset
           div(class="input-group")
-            .flex-container.row
-              input.checkbox(id="broadcast" type="checkbox" name="Broadcast")                         
-              label(for="Broadcast") Хочу присоединиться к открытому дню в SAS онлайн
+            //- .flex-container.row
+            //-   input.checkbox(id="broadcast" type="checkbox" name="Broadcast")                         
+            //-   label(for="Broadcast") Хочу присоединиться к открытому дню в SAS онлайн
             .flex-container.column
               label(for="Name") ФИО
                 sup(style="color:red") *
@@ -75,11 +75,11 @@ body
               
         button(type="submit" class="btn btn-primary btn-lg") Отправить
   script.
-    $('#broadcast').click(function(){
+    /* $('#broadcast').click(function(){
       if ($(this).is(':checked')){
           $('.Grade').each(function(){$( this ).removeAttr('required'); $( this ).css('display','none')});
       }
       else {
           $('.Grade').each(function(){$( this ).attr('required'); $( this ).css('display','block')});
         }
-    })
+    }) */
