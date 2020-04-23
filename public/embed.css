@@ -121,7 +121,7 @@ button:not(.button_vote) {
   .flex-container.row {flex-direction:row;}
   .flex-container_center {align-items: center;}
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
 
     body{padding-top:0px}
     .container{
