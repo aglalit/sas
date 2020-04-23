@@ -132,6 +132,7 @@ button:not(.button_vote) {
     margin-bottom: 10px;
 }
     input[type="checkbox"]{
+      width: 20% !important;
       top:14px;
       zoom:1.1;
     }
