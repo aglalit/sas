@@ -156,7 +156,8 @@ button:not(.button_vote) {
       padding-top: 0px;
     }
   }
-  @media (max-width: 1024px)
-button.btn-lg {
+  @media (max-width: 1024px) {
+    button.btn-lg {
     font-size: 20px;
-}
+  }
+  }
