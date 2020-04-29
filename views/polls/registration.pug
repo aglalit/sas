@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title SAS — регистрация
+    title SAS — Registration
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
     // load bootstrap css
     style.
@@ -225,49 +225,49 @@ body
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-red.svg")
-      h1 ОБЯЗАТЕЛЬНАЯ РЕГИСТРАЦИЯ
-      h3 В силу вступили новые правила гостевого посещения зданий ТюмГУ, к которым относится и SAS. Теперь для прохода в учебные аудитории SAS на любые публичные мероприятия необходима: 
-      
-      h3 — регистрация
-      
-      h3 — наличие паспорта при проходе в здание
-      
-      h3 Не забывайте паспорт, он понадобится для входа в учебные пространства здания. Зона кафе, столовой и книжного магазина на первом этаже здания остаётся свободной для посещения без регистрации. Студентам и сотрудникам Тюменского государственного университета регистрироваться не нужно, но для входа необходим электронный пропуск.
+      h1 <!-- ОБЯЗАТЕЛЬНАЯ РЕГИСТРАЦИЯ -->SAS — Registration
+      //- h3 В силу вступили новые правила гостевого посещения зданий ТюмГУ, к которым относится и SAS. Теперь для прохода в учебные аудитории SAS на любые публичные мероприятия необходима: 
+      //- 
+      //- h3 — регистрация
+      //- 
+      //- h3 — наличие паспорта при проходе в здание
+      //- 
+      //- h3 Не забывайте паспорт, он понадобится для входа в учебные пространства здания. Зона кафе, столовой и книжного магазина на первом этаже здания остаётся свободной для посещения без регистрации. Студентам и сотрудникам Тюменского государственного университета регистрироваться не нужно, но для входа необходим электронный пропуск.
       p &nbsp;
       form(action="/polls/registration" method="post")
         fieldset
           div(class="input-group")
             .flex-container.column
-              label(for="ФИО") ФИО
+              label(for="ФИО") Name
                 sup(style="color:red") *
               input(type="text" required="required" class="form-control" name="ФИО")
-            .flex-container.column
-              label(for="Passport") Серия и номер паспорта
-                sup(style="color:red") *
-              input(type="text" id="passport" required="required" class="form-control" name="Passport" )
-            .flex-container.column
-              label(for="Birthdate") Дата рождения
-                sup(style="color:red") *
-              input(type="date" required="required" class="form-control" name="Birthdate")
+            //- .flex-container.column
+            //-   label(for="Passport") Серия и номер паспорта
+            //-     sup(style="color:red") *
+            //-   input(type="text" id="passport" required="required" class="form-control" name="Passport" )
+            //- .flex-container.column
+            //-   label(for="Birthdate") Дата рождения
+            //-     sup(style="color:red") *
+            //-   input(type="date" required="required" class="form-control" name="Birthdate")
             .flex-container.column
               label(for="Email") Email
                 sup(style="color:red") *
               input(type="email" required="required" class="form-control" name="Email")
             .flex-container.column
-              label(for="About") О себе
+              label(for="About") Tell about yourself
               input(type="text" class="form-control" name="About")
               input(type="hidden" id="event" value="default" name="event")
             p &nbsp;              
             .flex-container.row
               input.form-check-input(id="agreement-checkbox" type="checkbox" name="agreement" required)                         
-              label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
-                a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") Политики конфиденциальности
+              label(for="agreement-checkbox") I agree to the processing of my personal data<!-- Я даю согласие на обработку своих персональных данных на основании -->
+                //- a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") <!-- Политики конфиденциальности -->
                 sup(style="color:red") *
             label 
               sup(style="color:red") * 
-              span — обязательные поля
+              span — <!-- обязательные поля -->required fields
               
-        button(type="submit" class="btn btn-primary btn-lg") Отправить
+        button(type="submit" class="btn btn-primary btn-lg") Submit
         script.
           const urlParams = new URLSearchParams(window.location.search);
           var eventUrl = urlParams.get('event');
