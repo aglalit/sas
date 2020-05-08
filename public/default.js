@@ -35,9 +35,9 @@
                 });
             });
 
-            // form.submit(function () {
-            //     localStorage.removeItem(key);
-            // })
+            form.submit(function () {
+                localStorage.removeItem(key);
+            })
         }
         else {
             console.error('Sorry! No web storage support.')
