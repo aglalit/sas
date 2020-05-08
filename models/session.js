@@ -441,7 +441,7 @@ var sessionSchema = mongoose.Schema({
       ba_2019_year2_module8_design_thinking: String,
       ba_2019_year2_module8_gb: String,
 
-      ma_2019_smirnov: String,
+      ma_2019_manovich: String,
       ma_2019_wolf: String,
       ma_2019_manirko: String,
       ma_2019_vetushinsky: String,

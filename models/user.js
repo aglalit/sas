@@ -66,7 +66,9 @@ var userSchema = mongoose.Schema({
       ba_2019_year2_q2_poms_krishna: Boolean,
       ba_2019_year2_q2_poms_juliette: Boolean,
       ba_2019_year2_q2_aw: Boolean,
-      ba_2019_year3_q3_rs: Boolean
+      ba_2019_year3_q3_rs: Boolean,
+      ma_2019_wolf:Boolean,
+      ma_2019_manovich:Boolean
     },
     "ELECTIVES":{
       "2019_2_2nd_year": {
