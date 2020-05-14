@@ -151,7 +151,7 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: 'back',
+  successReturnToOrRedirect: '/polls',
   failureRedirect: '/login'
 }));
 // passport.authenticate('google'),
