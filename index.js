@@ -175,7 +175,7 @@ function checkReturnTo(req, res, next) {
     req.session = req.session || {};
 
     // Set returnTo to the absolute path you want to be redirect to after the authentication succeeds.
-    req.session.returnTo = request.baseUrl + querystring.unescape(returnTo);
+    req.session.returnTo = req.baseUrl + querystring.unescape(returnTo);
   }
   next();
 }
