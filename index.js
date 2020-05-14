@@ -151,7 +151,7 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google', {
-  successReturnToOrRedirect: '/polls',
+  successRedirect: req.session.returnTo || '/polls',
   failureRedirect: '/login'
 }));
 
@@ -350,6 +350,7 @@ function isLoggedIn(req, res, next) {
 
   // if they aren't redirect them to the home page
   console.log(req.isAuthenticated());
+  req.session.returnTo = req.path;
   res.redirect('/login');
 }
 
