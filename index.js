@@ -11,6 +11,7 @@ var compression = require('compression');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+var querystring = require('querystring');
 const fs = require('fs');
 const mongoose = require('mongoose');
 const passport = require('passport');
@@ -146,7 +147,7 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
-app.get('/auth/google', passport.authenticate('google', {
+app.get('/auth/google', checkReturnTo, passport.authenticate('google', {
   scope: ['profile', 'email']
 }));
 
@@ -166,6 +167,18 @@ app.get('/polls-anonymous', function(req, res) {
 app.get('/feedback4', function(req, res) {
   res.send('The website is temporarily down for privacy issues. You will receive a new link with the evaluations later. Sorry for inconvenience.')
 });
+
+function checkReturnTo(req, res, next) {
+  var returnTo = req.query['returnTo'];
+  if (returnTo) {
+    // Maybe unnecessary, but just to be sure.
+    req.session = req.session || {};
+
+    // Set returnTo to the absolute path you want to be redirect to after the authentication succeeds.
+    req.session.returnTo = getFullUrl(querystring.unescape(returnTo));
+  }
+  next();
+}
 
 require('./server/gi_part6.js')(app, Session, transporter);
 require('./server/feminism.js')(app, Session, transporter);
@@ -350,7 +363,7 @@ function isLoggedIn(req, res, next) {
 
   // if they aren't redirect them to the home page
   console.log(req.isAuthenticated());
-  res.redirect('/login');
+  res.redirect('/login?returnTo=' + querystring.escape(req.url));
 }
 
 // catch 404 and forward to error handler

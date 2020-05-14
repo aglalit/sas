@@ -14,7 +14,6 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.19.0",
     "compression": "^1.7.0",
-    "connect-ensure-login": "^0.1.1",
     "connect-flash": "^0.1.1",
     "connect-form": "^0.2.1",
     "connect-mongo": "^3.2.0",
@@ -36,6 +35,7 @@
     "passport-google-oauth20": "^1.0.0",
     "passport-local": "^1.0.0",
     "pug": "^2.0.4",
+    "querystring": "^0.2.0",
     "serve-favicon": "^2.5.0",
     "winston": "^3.2.1",
     "x-frame-options": "^1.0.0"
