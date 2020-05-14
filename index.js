@@ -147,13 +147,14 @@ app.listen(app.get('port'), function() {
 });
 
 app.get('/auth/google', passport.authenticate('google', {
-  scope: ['profile', 'email']
-}));
-
-app.get('/auth/google/callback', passport.authenticate('google', {
+  scope: ['profile', 'email'],
   successReturnToOrRedirect: '/polls',
   failureRedirect: '/login'
 }));
+
+// app.get('/auth/google/callback', passport.authenticate('google', {
+//
+// }));
 // passport.authenticate('google'),
 // function(req, res) {
 //   res.render('polls_ai_metaphor',{user:req.user})
