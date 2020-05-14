@@ -40,7 +40,7 @@ head
     p To participate in polls, log in using your student Google account:
     a.auth-button.btn.btn-danger.btn-lg.btn-xl(href='/auth/google')
       span.fa.fa-google Google
-  .script
+  script.
     const urlParams = new URLSearchParams(window.location.search);
     var returnTo = urlParams.get('returnTo');
     document.querySelector('.auth-button').href = '/auth/google?returnTo=' + returnTo;
