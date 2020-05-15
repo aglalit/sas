@@ -47,8 +47,8 @@ function parseSession (sess, req, transporter){
     }
     console.log('Message %s sent: %s', info.messageId, info.response);
   });
-  sess.polls.registration.data = JSON.stringify(req.body);
-  sess.polls.registration.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+  sess.polls.registration_xhe.data = JSON.stringify(req.body);
+  sess.polls.registration_xhe.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
   sess.save(function(err) {
     if (err)
       return console.error(err);
