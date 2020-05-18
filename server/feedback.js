@@ -201,7 +201,6 @@ app.get('/feedback4', function(req, res) {
 
     if (user) {
       userEmail = user.google.email;
-      );
     } else {
       console.log('There isn\'t such user in the database');
     }
