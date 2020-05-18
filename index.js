@@ -164,10 +164,6 @@ app.get('/polls-anonymous', function(req, res) {
   res.render('polls_anonymous', {messages: req.flash('info')})
 });
 
-app.get('/feedback4', function(req, res) {
-  res.send('The website is temporarily down for privacy issues. You will receive a new link with the evaluations later. Sorry for inconvenience.')
-});
-
 function checkReturnTo(req, res, next) {
   var returnTo = req.query['returnTo'];
   if (returnTo) {
@@ -238,6 +234,8 @@ require('./server/open-day-03-2020.js')(app, Session, transporter);
 require('./server/pds-2019.js')(app, Session, transporter);
 require('./server/registration.js')(app, Session, transporter);
 require('./server/registration-xhe.js')(app, Session, transporter);
+require('./server/registration-media.js')(app, Session, transporter);
+
 
 require('./server/poetry.js')(app, Session, transporter);
 require('./server/unsubscribe.js')(app, Session, transporter);
@@ -268,7 +266,7 @@ require('./server/gi_topics_2020.js')(app, Session, transporter, isLoggedIn, Use
 
 
 require('./server/registration-data.js')(app, Session, transporter, isLoggedIn, logger);
-// require('./server/feedback.js')(app, Session, transporter, logger);
+require('./server/feedback.js')(app, Session, User, transporter, isLoggedIn, logger);
 require('./server/feedback-collector.js')(app, Session, transporter, officeTransporter, isLoggedIn, User, logger);
 require('./server/feedback-collector-anonymous.js')(app, Session, transporter, officeTransporter, logger);
 
