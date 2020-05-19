@@ -148,6 +148,14 @@ var userSchema = mongoose.Schema({
       minor: String,
       time : String
     },
+    "erpyleva": {
+      major: String,
+      time : String
+    },
+    "kontowski": {
+      major: String,
+      time : String
+    },
     "gi_topics_2020": {
       1: String,
       2: String,

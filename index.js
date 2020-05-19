@@ -262,6 +262,9 @@ require('./server/ba_2019_year2_module7_electives.js')(app, Session, transporter
 require('./server/ba_2019_year2_module7_electives2.js')(app, Session, transporter);
 
 require('./server/majors.js')(app, Session, transporter, isLoggedIn, User);
+require('./server/kontowski.js')(app, Session, transporter, isLoggedIn, User);
+require('./server/erpyleva.js')(app, Session, transporter, isLoggedIn, User);
+
 require('./server/gi_topics_2020.js')(app, Session, transporter, isLoggedIn, User);
 
 
