@@ -506,27 +506,27 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
           if (req.query.t && (userEmail === dict[req.query.t]['email'] || userEmail === 'm.agliulin@utmn.ru')){
             Session.find({
               $or: [{
-                  "polls.ba_2019_q3_elective1['Who taught this course']": {
+                  "polls.ba_2019_q3_elective1": {
                     $regex: `${dict[req.query.t]['name']}`
                   }
                 },
                 {
-                  "polls.ba_2019_q3_elective2['Who taught this course']": {
+                  "polls.ba_2019_q3_elective2": {
                     $regex: `${dict[req.query.t]['name']}`
                   }
                 },
                 {
-                  "polls.ba_2019_q3_major3['Who taught this course']": {
+                  "polls.ba_2019_q3_major3": {
                     $regex: `${dict[req.query.t]['name']}`
                   }
                 },
                 {
-                  "polls.ba_2019_q3_major1['Who taught this course']": {
+                  "polls.ba_2019_q3_major1": {
                     $regex: `${dict[req.query.t]['name']}`
                   }
                 },
                 {
-                  "polls.ba_2019_q3_major2['Who taught this course']": {
+                  "polls.ba_2019_q3_major2": {
                     $regex: `${dict[req.query.t]['name']}`
                   }
                 }
