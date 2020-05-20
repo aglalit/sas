@@ -507,7 +507,7 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
         }
 
         if (req.query.s === 'ba_2019_q3_electives') {
-          if (req.query.t && (userEmail === dict[req.query.t][email] || userEmail === 'm.agliulin@utmn.ru')) {
+          if (req.query.t && (userEmail === dict[req.query.t][email] || userEmail === 'm.agliulin@utmn.ru')){
             Session.find({
               $or: [{
                   "polls.ba_2019_q3_elective1['Who taught this course']": {
@@ -554,8 +554,7 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
                 });
               }
             });
-          } else if {
-            if (userEmail === 'm.agliulin@utmn.ru') {
+          } else if (userEmail === 'm.agliulin@utmn.ru') {
               Session.find({
                 $or: [{
                     "polls.ba_2019_q3_elective1": {
@@ -602,7 +601,6 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
                   });
                 }
               });
-            }
           } else {
             res.render('Access denied');
           }
@@ -661,8 +659,7 @@ else if (req.query.s === 'all') {
         });
       }
     });
-  } else if {
-    if (userEmail === 'm.agliulin@utmn.ru') {
+  } else if (userEmail === 'm.agliulin@utmn.ru') {
       query['polls.' + req.query.s] = {
         $exists: true
       };
@@ -677,9 +674,7 @@ else if (req.query.s === 'all') {
           });
         }
       });
-    }
-
-  } else {
+    } else {
     res.render('Access denied');
   }
 }
