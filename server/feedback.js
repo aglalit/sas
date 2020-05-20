@@ -507,27 +507,27 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
             Session.find({
               $or: [{
                   "polls.ba_2019_q3_elective1['Who taught this course']": {
-                    $regex: `${dict[req.query.t][name]}`
+                    $regex: `${dict[req.query.t]['name']}`
                   }
                 },
                 {
                   "polls.ba_2019_q3_elective2['Who taught this course']": {
-                    $regex: `${dict[req.query.t][name]}`
+                    $regex: `${dict[req.query.t]['name']}`
                   }
                 },
                 {
                   "polls.ba_2019_q3_major3['Who taught this course']": {
-                    $regex: `${dict[req.query.t][name]}`
+                    $regex: `${dict[req.query.t]['name']}`
                   }
                 },
                 {
                   "polls.ba_2019_q3_major1['Who taught this course']": {
-                    $regex: `${dict[req.query.t][name]}`
+                    $regex: `${dict[req.query.t]['name']}`
                   }
                 },
                 {
                   "polls.ba_2019_q3_major2['Who taught this course']": {
-                    $regex: `${dict[req.query.t][name]}`
+                    $regex: `${dict[req.query.t]['name']}`
                   }
                 }
               ]
@@ -639,7 +639,7 @@ else if (req.query.s === 'all') {
 } else {
   if (req.query.t && (userEmail === dict[req.query.t]['email'] || userEmail === 'm.agliulin@utmn.ru')) {
     query['polls.' + req.query.s] = {
-      $regex: `${dict[req.query.t][name]}`
+      $regex: `${dict[req.query.t]['name']}`
     };
     Session.find(query).select('polls.' + req.query.s).exec(function(err, docs) {
       if (err) {
