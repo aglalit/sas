@@ -620,7 +620,7 @@ else if (req.query.s === 'all') {
           }
         }
       ]
-    }).select('polls').select('polls').sort({
+    }).select('polls').sort({
       _id: -1
     }).limit(1500).exec(function(err, docs) {
       if (err) {
