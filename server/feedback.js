@@ -379,123 +379,123 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
 
       function getResponse() {
         var dict = {
-          'Louis': {
+          Louis: {
             name: 'Louis Vervoort',
             email: 'l.vervoort@utmn.ru'
           },
-          'Reshe': {
+          Reshe: {
             name: 'Julie Reshe',
             email: 'j.reshe@utmn.ru'
           },
-          'Svetlana': {
+          Svetlana: {
             name: 'Svetlana Erpyleva',
             email: 's.erpyleva@utmn.ru'
           },
-          'Vitaly': {
+          Vitaly: {
             name: 'Vitaly Nikolaev',
             email: 'v.nikolaev@utmn.ru'
           },
-          'Mike': {
+          Mike: {
             name: 'Mike Shapira',
             email: 'm.schapira@utmn.ru'
           },
-          'Daniel': {
+          Daniel: {
             name: 'Daniel Kontowski',
             email: 'd.kontowski@utmn.ru'
           },
-          'Corinne': {
+          Corinne: {
             name: 'Corinne Doria',
             email: 'c.doria@utmn.ru'
           },
-          'Curating': {
+          Curating: {
             name: 'Henry Davidson (Curating Contemporary Art)',
             email: 'henrywdavidson@gmail.com '
           },
-          'Performance': {
+          Performance: {
             name: 'Henry Davidson (Identity and Performance)',
             email: 'henrywdavidson@gmail.com '
           },
-          'Thinking': {
+          Thinking: {
             name: 'Melina Aarnikoivu (Thinking on Paper)',
             email: 'melina.aarnikoivu@gmail.com'
           },
-          'Speaking': {
+          Speaking: {
             name: 'Melina Aarnikoivu (Public Speaking)',
             email: 'melina.aarnikoivu@gmail.com'
           },
-          'Dmitry': {
+          Dmitry: {
             name: 'Dmitry Kurnosov',
             email: 'dd.kurnosov@gmail.com'
           },
-          'Alexander': {
+          Alexander: {
             name: 'Alexander Didenko',
             email: 'alexander.didenko@gmail.com'
           },
-          'Anna': {
+          Anna: {
             name: 'Anna Varfolomeeva',
             email: 'a.varfolomeeva@utmn.ru'
           },
-          'Erika': {
+          Erika: {
             name: 'Erika Wolf',
             email: 'e.wolf@utmn.ru'
           },
-          'ECON_Probability': {
+          ECON_Probability: {
             name: 'Alexander Didenko (ECON_Probability and Stats 2)',
             email: 'alexander.didenko@gmail.com'
           },
-          'ECON_Econometrics': {
+          ECON_Econometrics: {
             name: 'Alexander Didenko (ECON_Econometrics)',
             email: 'alexander.didenko@gmail.com'
           },
-          'David': {
+          David: {
             name: 'David Melbye',
             email: 'd.melbye@utmn.ru'
           },
-          'Maxim': {
+          Maxim: {
             name: 'Maxim Alyukov',
             email: 'm.alyukov@utmn.ru'
           },
-          'Jan': {
+          Jan: {
             name: 'Jan Krasni',
             email: 'j.krasni@utmn.ru'
           },
-          'Munesh': {
+          Munesh: {
             name: 'Munesh Chauhan',
             email: 'm.chauhan@utmn.ru'
           },
-          'Juliette': {
+          Juliette: {
             name: 'Juliette Colinas',
             email: 'j.colinas@utmn.ru'
           },
-          'Berdiugina': {
+          Berdiugina: {
             name: 'O. Berdiugina',
             email: 'o.n.berdyugina@utmn.ru'
           },
-          'Platonov': {
+          Platonov: {
             name: 'M. Platonov',
             email: 'm.l.platonov@utmn.ru'
           },
-          'Sharmin': {
+          Sharmin: {
             name: 'D. Sharmin',
             email: 'd.v.sharmin@utmn.ru'
           },
-          'Ufukova': {
+          Ufukova: {
             name: 'O. Ufukova',
             email: 'o.n.berdyugina@utmn.ru'
           },
-          'Giacomo': {
+          Giacomo: {
             name: 'Giacomo Andreoletti',
             email: 'g.andreoletti@utmn.ru'
           },
-          'Jay': {
+          Jay: {
             name: 'Jay Silverstein',
             email: 'j.silverstein@utmn.ru'
           },
-          'Taisya': {
+          Taisya: {
             name: 'Taisya Pogodaeva',
             email: 't.v.pogodaeva@utmn.ru'
           },
-          'Andrey': {
+          Andrey: {
             name: 'Andrey Shcherbenok',
             email: 'a.shcherbenok@utmn.ru'
           }
@@ -503,7 +503,7 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
         var query = {};
 
         if (req.query.s === 'ba_2019_q3_electives') {
-          if (req.query.t && (userEmail === dict[req.query.t][email] || userEmail === 'm.agliulin@utmn.ru')){
+          if (req.query.t && (userEmail === dict[req.query.t]['email'] || userEmail === 'm.agliulin@utmn.ru')){
             Session.find({
               $or: [{
                   "polls.ba_2019_q3_elective1['Who taught this course']": {
@@ -637,7 +637,7 @@ else if (req.query.s === 'all') {
   }
 
 } else {
-  if (req.query.t && (userEmail === dict[req.query.t][email] || userEmail === 'm.agliulin@utmn.ru')) {
+  if (req.query.t && (userEmail === dict[req.query.t]['email'] || userEmail === 'm.agliulin@utmn.ru')) {
     query['polls.' + req.query.s] = {
       $regex: `${dict[req.query.t][name]}`
     };
