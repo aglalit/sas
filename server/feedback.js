@@ -598,7 +598,7 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
                 }
               });
           } else {
-            res.render('Access denied');
+            res.send('Access denied');
           }
     }
 else if (req.query.s === 'all') {
@@ -668,7 +668,7 @@ else if (req.query.s === 'all') {
         }
       });
     } else {
-    res.render('Access denied');
+    res.send('Access denied');
   }
 }
 }
