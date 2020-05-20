@@ -236,37 +236,14 @@ html
             margin: 11px 0;
           }
         }
-        @media (max-width:768px){
+      
+        @media (max-width: 768px){
           [class^="icon-"]:before, [class*=" icon-"]:before {
               font-size:100px;
             }
         }
-              li {
-                line-height: 2; }
 
-              .shell {
-                  position: relative;
-                    line-height: 1; }
-                      .shell span {
-      position: absolute;
-      left: 3px;
-      top: 1px;
-      color: #ccc;
-        pointer-events: none;
-        z-index: -1; }
-        .shell span i {
-          font-style: normal;
-          /* any of these 3 will work */
-          color: transparent;
-          opacity: 0;
-          visibility: hidden; }
-
-          input.masked,
-          .shell span {
-            font-size: 16px;
-            padding-right: 10px;
-            /* background-color: transparent; */
-            text-transform: uppercase; }
+              
         
 body
   .container
@@ -277,8 +254,9 @@ body
       h1 SAS Creative Lab ‘imMEDIAte’, проект “Память против новостей” — форма регистрации
       .col-xs-12
         ul(class="social")
-          li(class="fb" a href="https://www.facebook.com/sas.utmn.ru/" target="_blank")
-            i(class="icon-facebook")
+          li(class="fb")
+            a(href="https://www.facebook.com/sas.utmn.ru/" target="_blank")
+              i(class="icon-facebook")
           li(class="vk")
             a(href="https://vk.com/sas_tmn" target="_blank")
               i(class="icon-vkontakte")
