@@ -502,10 +502,6 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
         }
         var query = {};
 
-        if (req.query.t) {
-
-        }
-
         if (req.query.s === 'ba_2019_q3_electives') {
           if (req.query.t && (userEmail === dict[req.query.t][email] || userEmail === 'm.agliulin@utmn.ru')){
             Session.find({
@@ -604,10 +600,7 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
           } else {
             res.render('Access denied');
           }
-        });
     }
-  }
-}
 else if (req.query.s === 'all') {
   if (userEmail === 'm.agliulin@utmn.ru') {
     Session.find({
