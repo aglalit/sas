@@ -160,6 +160,7 @@ html
               text-transform: none;
               line-height: 1em;
               margin-left: .2em;
+              font-size:50px;
             }
             .icon-facebook:before {
                 content: '\f30c';
@@ -235,6 +236,11 @@ html
             margin: 11px 0;
           }
         }
+        @media (max-width:768px){
+          [class^="icon-"]:before, [class*=" icon-"]:before {
+              font-size:100px;
+            }
+        }
               li {
                 line-height: 2; }
 
@@ -272,7 +278,7 @@ body
       .col-xs-12
         ul(class="social")
           li(class="fb" a href="https://www.facebook.com/sas.utmn.ru/" target="_blank")
-            i class="icon-facebook"
+            i(class="icon-facebook")
           li(class="vk")
             a(href="https://vk.com/sas_tmn" target="_blank")
               i(class="icon-vkontakte")
