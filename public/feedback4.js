@@ -63,7 +63,8 @@ function displaySubject(data, subject) {
   }
   else {
     data[0].forEach(function(el) {
-      dataParsed.unshift(JSON.parse(el.polls[subject]));
+      if (typeof el.polls[subject] === 'object' && el.polls[subject] !== null) dataParsed.unshift(el.polls[subject]);
+      else dataParsed.unshift(JSON.parse(el.polls[subject]));
     });
   }
 
