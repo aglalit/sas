@@ -201,167 +201,150 @@ app.get('/feedback4', isLoggedIn, function(req, res) {
 
     if (user) {
       userEmail = user.google.email;
+      getResponse();
     } else {
       console.log('There isn\'t such user in the database');
     }
   });
-  var dict = {
-    Louis:{
-      name:'Louis Vervoort',
-      email:'l.vervoort@utmn.ru'
-    },
-    Reshe:{
-      name:'Julie Reshe',
-      email:'j.reshe@utmn.ru'
-    },
-    Svetlana:{
-      name:'Svetlana Erpyleva',
-      email:'s.erpyleva@utmn.ru'
-    },
-    Vitaly:{
-      name:'Vitaly Nikolaev',
-      email:'v.nikolaev@utmn.ru'
-    },
-    Mike:{
-      name:'Mike Shapira',
-      email:'m.schapira@utmn.ru'
-    },
-    Daniel:{
-      name:'Daniel Kontowski',
-      email:'d.kontowski@utmn.ru'
-    },
-    Corinne:{
-      name:'Corinne Doria',
-      email:'c.doria@utmn.ru'
-    },
-    Curating:{
-      name:'Henry Davidson (Curating Contemporary Art)',
-      email:'henrywdavidson@gmail.com '
-    },
-    Performance:{
-      name:'Henry Davidson (Identity and Performance)',
-      email:'henrywdavidson@gmail.com '
-    },
-    Thinking:{
-      name:'Melina Aarnikoivu (Thinking on Paper)',
-      email:'melina.aarnikoivu@gmail.com'
-    },
-    Speaking:{
-      name:'Melina Aarnikoivu (Public Speaking)',
-      email:'melina.aarnikoivu@gmail.com'
-    },
-    Dmitry:{
-      name:'Dmitry Kurnosov',
-      email:'dd.kurnosov@gmail.com'
-    },
-    Alexander:{
-      name:'Alexander Didenko',
-      email:'alexander.didenko@gmail.com'
-    },
-    Anna:{
-      name:'Anna Varfolomeeva',
-      email:'a.varfolomeeva@utmn.ru'
-    },
-    Erika:{
-      name:'Erika Wolf',
-      email:'e.wolf@utmn.ru'
-    },
-    ECON_Probability:{
-      name:'Alexander Didenko (ECON_Probability and Stats 2)',
-      email:'alexander.didenko@gmail.com'
-    },
-    ECON_Econometrics:{
-      name:'Alexander Didenko (ECON_Econometrics)',
-      email:'alexander.didenko@gmail.com'
-    },
-    David:{
-      name:'David Melbye',
-      email:'d.melbye@utmn.ru'
-    },
-    Maxim:{
-      name:'Maxim Alyukov',
-      email:'m.alyukov@utmn.ru'
-    },
-    Jan:{
-      name:'Jan Krasni',
-      email:'j.krasni@utmn.ru'
-    },
-    Munesh:{
-      name:'Munesh Chauhan',
-      email:'m.chauhan@utmn.ru'
-    },
-    Juliette:{
-      name:'Juliette Colinas',
-      email:'j.colinas@utmn.ru'
-    },
-    Berdiugina:{
-      name:'O. Berdiugina',
-      email:'o.n.berdyugina@utmn.ru'
-    },
-    Platonov:{
-      name:'M. Platonov',
-      email:'m.l.platonov@utmn.ru'
-    },
-    Sharmin:{
-      name:'D. Sharmin',
-      email:'d.v.sharmin@utmn.ru'
-    },
-    Ufukova:{
-      name:'O. Ufukova',
-      email:'o.n.berdyugina@utmn.ru'
-    },
-    Giacomo:{
-      name:'Giacomo Andreoletti',
-      email:'g.andreoletti@utmn.ru'
-    },
-    Jay:{
-      name:'Jay Silverstein',
-      email:'j.silverstein@utmn.ru'
-    },
-    Taisya:{
-      name:'Taisya Pogodaeva',
-      email:'t.v.pogodaeva@utmn.ru'
-    },
-    Andrey:{
-      name:'Andrey Shcherbenok',
-      email:'a.shcherbenok@utmn.ru'
+
+  function getResponse(){
+    var dict = {
+      Louis:{
+        name:'Louis Vervoort',
+        email:'l.vervoort@utmn.ru'
+      },
+      Reshe:{
+        name:'Julie Reshe',
+        email:'j.reshe@utmn.ru'
+      },
+      Svetlana:{
+        name:'Svetlana Erpyleva',
+        email:'s.erpyleva@utmn.ru'
+      },
+      Vitaly:{
+        name:'Vitaly Nikolaev',
+        email:'v.nikolaev@utmn.ru'
+      },
+      Mike:{
+        name:'Mike Shapira',
+        email:'m.schapira@utmn.ru'
+      },
+      Daniel:{
+        name:'Daniel Kontowski',
+        email:'d.kontowski@utmn.ru'
+      },
+      Corinne:{
+        name:'Corinne Doria',
+        email:'c.doria@utmn.ru'
+      },
+      Curating:{
+        name:'Henry Davidson (Curating Contemporary Art)',
+        email:'henrywdavidson@gmail.com '
+      },
+      Performance:{
+        name:'Henry Davidson (Identity and Performance)',
+        email:'henrywdavidson@gmail.com '
+      },
+      Thinking:{
+        name:'Melina Aarnikoivu (Thinking on Paper)',
+        email:'melina.aarnikoivu@gmail.com'
+      },
+      Speaking:{
+        name:'Melina Aarnikoivu (Public Speaking)',
+        email:'melina.aarnikoivu@gmail.com'
+      },
+      Dmitry:{
+        name:'Dmitry Kurnosov',
+        email:'dd.kurnosov@gmail.com'
+      },
+      Alexander:{
+        name:'Alexander Didenko',
+        email:'alexander.didenko@gmail.com'
+      },
+      Anna:{
+        name:'Anna Varfolomeeva',
+        email:'a.varfolomeeva@utmn.ru'
+      },
+      Erika:{
+        name:'Erika Wolf',
+        email:'e.wolf@utmn.ru'
+      },
+      ECON_Probability:{
+        name:'Alexander Didenko (ECON_Probability and Stats 2)',
+        email:'alexander.didenko@gmail.com'
+      },
+      ECON_Econometrics:{
+        name:'Alexander Didenko (ECON_Econometrics)',
+        email:'alexander.didenko@gmail.com'
+      },
+      David:{
+        name:'David Melbye',
+        email:'d.melbye@utmn.ru'
+      },
+      Maxim:{
+        name:'Maxim Alyukov',
+        email:'m.alyukov@utmn.ru'
+      },
+      Jan:{
+        name:'Jan Krasni',
+        email:'j.krasni@utmn.ru'
+      },
+      Munesh:{
+        name:'Munesh Chauhan',
+        email:'m.chauhan@utmn.ru'
+      },
+      Juliette:{
+        name:'Juliette Colinas',
+        email:'j.colinas@utmn.ru'
+      },
+      Berdiugina:{
+        name:'O. Berdiugina',
+        email:'o.n.berdyugina@utmn.ru'
+      },
+      Platonov:{
+        name:'M. Platonov',
+        email:'m.l.platonov@utmn.ru'
+      },
+      Sharmin:{
+        name:'D. Sharmin',
+        email:'d.v.sharmin@utmn.ru'
+      },
+      Ufukova:{
+        name:'O. Ufukova',
+        email:'o.n.berdyugina@utmn.ru'
+      },
+      Giacomo:{
+        name:'Giacomo Andreoletti',
+        email:'g.andreoletti@utmn.ru'
+      },
+      Jay:{
+        name:'Jay Silverstein',
+        email:'j.silverstein@utmn.ru'
+      },
+      Taisya:{
+        name:'Taisya Pogodaeva',
+        email:'t.v.pogodaeva@utmn.ru'
+      },
+      Andrey:{
+        name:'Andrey Shcherbenok',
+        email:'a.shcherbenok@utmn.ru'
+      }
     }
-  }
-  var query = {};
+    var query = {};
 
-  if (req.query.t){
+    if (req.query.t){
 
-  }
-
-  if (req.query.s === 'ba_2019_q3_electives'){
-    if (req.query.t && (userEmail === dict[req.query.t][email] || userEmail === 'm.agliulin@utmn.ru')){
-      Session.find({
-        $or: [
-          { "polls.ba_2019_q3_elective1['Who taught this course']": {$regex : `${dict[req.query.t][name]}`} },
-          { "polls.ba_2019_q3_elective2['Who taught this course']": {$regex : `${dict[req.query.t][name]}`} },
-          { "polls.ba_2019_q3_major3['Who taught this course']": {$regex : `${dict[req.query.t][name]}`} },
-          { "polls.ba_2019_q3_major1['Who taught this course']": {$regex : `${dict[req.query.t][name]}`} },
-          { "polls.ba_2019_q3_major2['Who taught this course']": {$regex : `${dict[req.query.t][name]}`} }
-        ]
-      },{ 'polls.ba_2019_q3_elective1': 1, 'polls.ba_2019_q3_elective2': 1,'polls.ba_2019_q3_major3': 1,'polls.ba_2019_q3_major1': 1,'polls.ba_2019_q3_major2': 1 }).exec(function (err, docs){
-        if (err) { res.send(err); console.log(err); }
-        else {
-          docs.map((el)=>{console.log(el._doc.polls)});
-          res.render('feedback4', {
-            data:  JSON.stringify(docs)
-          });
-        }
-      });
     }
-    else {
-      if (userEmail === 'm.agliulin@utmn.ru'){
+
+    if (req.query.s === 'ba_2019_q3_electives'){
+      if (req.query.t && (userEmail === dict[req.query.t][email] || userEmail === 'm.agliulin@utmn.ru')){
         Session.find({
           $or: [
-            { "polls.ba_2019_q3_elective1": {$exists : true} },
-            { "polls.ba_2019_q3_elective2": {$exists : true} },
-            { "polls.ba_2019_q3_major3": {$exists : true} },
-            { "polls.ba_2019_q3_major1": {$exists : true} },
-            { "polls.ba_2019_q3_major2": {$exists : true} }
+            { "polls.ba_2019_q3_elective1['Who taught this course']": {$regex : `${dict[req.query.t][name]}`} },
+            { "polls.ba_2019_q3_elective2['Who taught this course']": {$regex : `${dict[req.query.t][name]}`} },
+            { "polls.ba_2019_q3_major3['Who taught this course']": {$regex : `${dict[req.query.t][name]}`} },
+            { "polls.ba_2019_q3_major1['Who taught this course']": {$regex : `${dict[req.query.t][name]}`} },
+            { "polls.ba_2019_q3_major2['Who taught this course']": {$regex : `${dict[req.query.t][name]}`} }
           ]
         },{ 'polls.ba_2019_q3_elective1': 1, 'polls.ba_2019_q3_elective2': 1,'polls.ba_2019_q3_major3': 1,'polls.ba_2019_q3_major1': 1,'polls.ba_2019_q3_major2': 1 }).exec(function (err, docs){
           if (err) { res.send(err); console.log(err); }
@@ -373,19 +356,57 @@ app.get('/feedback4', isLoggedIn, function(req, res) {
           }
         });
       }
+      else {
+        if (userEmail === 'm.agliulin@utmn.ru'){
+          Session.find({
+            $or: [
+              { "polls.ba_2019_q3_elective1": {$exists : true} },
+              { "polls.ba_2019_q3_elective2": {$exists : true} },
+              { "polls.ba_2019_q3_major3": {$exists : true} },
+              { "polls.ba_2019_q3_major1": {$exists : true} },
+              { "polls.ba_2019_q3_major2": {$exists : true} }
+            ]
+          },{ 'polls.ba_2019_q3_elective1': 1, 'polls.ba_2019_q3_elective2': 1,'polls.ba_2019_q3_major3': 1,'polls.ba_2019_q3_major1': 1,'polls.ba_2019_q3_major2': 1 }).exec(function (err, docs){
+            if (err) { res.send(err); console.log(err); }
+            else {
+              docs.map((el)=>{console.log(el._doc.polls)});
+              res.render('feedback4', {
+                data:  JSON.stringify(docs)
+              });
+            }
+          });
+        }
+      }
+
+
     }
+    else if (req.query.s === 'all'){
+      if (userEmail === 'm.agliulin@utmn.ru'){
+        Session.find({$and: [
+          {'polls':{$exists : true}},
+          {'polls.registration':{$exists : false}},
+          {'polls.faculty_research_trips':{$exists : false}}
+        ]}).select('polls').select('polls').sort({ _id: -1 }).limit(1500).exec(function (err, docs){
+          if (err) { res.send(err); console.log(err); }
+          else {
+            res.render('feedback4', {
+              data:  JSON.stringify(docs)
+            });
+          }
+        });
+      }
+      else {
+        res.render('feedback4', {});
+      }
 
-
-  }
-  else if (req.query.s === 'all'){
-    if (userEmail === 'm.agliulin@utmn.ru'){
-      Session.find({$and: [
-        {'polls':{$exists : true}},
-        {'polls.registration':{$exists : false}},
-        {'polls.faculty_research_trips':{$exists : false}}
-      ]}).select('polls').select('polls').sort({ _id: -1 }).limit(750).exec(function (err, docs){
+    }
+    else {
+      if (req.query.t && (userEmail === dict[req.query.t][email] || userEmail === 'm.agliulin@utmn.ru')){
+      query['polls.' + req.query.s] = {$regex : `${dict[req.query.t][name]}`};
+      Session.find(query).select('polls.' + req.query.s).exec(function (err, docs){
         if (err) { res.send(err); console.log(err); }
         else {
+          console.log(docs);
           res.render('feedback4', {
             data:  JSON.stringify(docs)
           });
@@ -393,39 +414,23 @@ app.get('/feedback4', isLoggedIn, function(req, res) {
       });
     }
     else {
-      res.render('feedback4', {});
+      if (userEmail === 'm.agliulin@utmn.ru'){
+      query['polls.' + req.query.s] = {$exists : true};
+      Session.find(query).select('polls.' + req.query.s).exec(function (err, docs){
+        if (err) { res.send(err); console.log(err); }
+        else {
+          console.log(docs);
+          res.render('feedback4', {
+            data:  JSON.stringify(docs)
+          });
+        }
+      });
     }
 
   }
-  else {
-    if (req.query.t && (userEmail === dict[req.query.t][email] || userEmail === 'm.agliulin@utmn.ru')){
-    query['polls.' + req.query.s] = {$regex : `${dict[req.query.t][name]}`};
-    Session.find(query).select('polls.' + req.query.s).exec(function (err, docs){
-      if (err) { res.send(err); console.log(err); }
-      else {
-        console.log(docs);
-        res.render('feedback4', {
-          data:  JSON.stringify(docs)
-        });
-      }
-    });
   }
-  else {
-    if (userEmail === 'm.agliulin@utmn.ru'){
-    query['polls.' + req.query.s] = {$exists : true};
-    Session.find(query).select('polls.' + req.query.s).exec(function (err, docs){
-      if (err) { res.send(err); console.log(err); }
-      else {
-        console.log(docs);
-        res.render('feedback4', {
-          data:  JSON.stringify(docs)
-        });
-      }
-    });
   }
 
-}
-}
 
 });
 
