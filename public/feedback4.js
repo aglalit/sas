@@ -63,7 +63,7 @@ function displaySubject(data, subject) {
   }
   else {
     data[0].forEach(function(el) {
-      dataParsed.unshift(el.polls[subject]);
+      dataParsed.unshift(JSON.parse(JSON.stringify(el.polls[subject])));
     });
   }
 
