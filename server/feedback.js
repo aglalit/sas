@@ -542,6 +542,7 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
                 res.send(err);
                 console.log(err);
               } else {
+                console.log(docs)
                 docs.map((el) => {
                   console.log(el._doc.polls)
                 });
