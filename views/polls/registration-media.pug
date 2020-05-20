@@ -151,7 +151,7 @@ html
             display:inline-block;
           }
           
-          [class^="icon-"]:before, [class*=" icon-"]:before {
+          [class^="icon-"]::before, [class*=" icon-"]::before {
               font-family: "fontello";
               font-style: normal;
               font-weight: normal;
@@ -243,9 +243,9 @@ html
         }
       
         @media (max-width: 768px){
-          [class^="icon-"]:before, [class*=" icon-"]:before {
+          [class^="icon-"]::before, [class*=" icon-"]::before {
               font-size:90px;
-              line-height:2
+              line-height:2;
             }
             p {
               font-size: 40px;
