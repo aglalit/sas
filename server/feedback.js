@@ -408,19 +408,19 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
             email: 'c.doria@utmn.ru'
           },
           Curating: {
-            name: 'Henry Davidson (Curating Contemporary Art)',
+            name: 'Curating Contemporary Art',
             email: 'henrywdavidson@gmail.com '
           },
           Performance: {
-            name: 'Henry Davidson (Identity and Performance)',
+            name: 'Identity and Performance',
             email: 'henrywdavidson@gmail.com '
           },
           Thinking: {
-            name: 'Melina Aarnikoivu (Thinking on Paper)',
+            name: 'Thinking on Paper',
             email: 'melina.aarnikoivu@gmail.com'
           },
           Speaking: {
-            name: 'Melina Aarnikoivu (Public Speaking)',
+            name: 'Public Speaking',
             email: 'melina.aarnikoivu@gmail.com'
           },
           Dmitry: {
