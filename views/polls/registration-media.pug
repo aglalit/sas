@@ -180,6 +180,16 @@ html
                 content: '\f167';
               }
 
+              
+        @media (max-width: 768px) {
+          [class^="icon-"]::before, [class*=" icon-"]::before {
+              font-size:90px;
+              line-height:2;
+            }
+            p {
+              font-size: 40px;
+            }
+        }
 
         @media (max-width: 1024px) {
 
@@ -241,18 +251,6 @@ html
             margin: 11px 0;
           }
         }
-      
-        @media (max-width: 768px){
-          [class^="icon-"]::before, [class*=" icon-"]::before {
-              font-size:90px;
-              line-height:2;
-            }
-            p {
-              font-size: 40px;
-            }
-        }
-
-              
         
 body
   .container
