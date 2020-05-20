@@ -41,7 +41,12 @@ html
         margin-top:10px;
       }
       .logo {padding-bottom:30px}
-      a {color:#f00}
+      a {color:#f00;
+       border-bottom: 1px red solid;
+      }
+      a:hover {color:#f00;
+       border-bottom: none;
+      }
       .container{
         width:98% !important;
       }
@@ -149,6 +154,10 @@ html
           
           .social li {
             display:inline-block;
+          }
+          
+          .social li a {
+            border:none;
           }
           
           [class^="icon-"]::before, [class*=" icon-"]::before {
