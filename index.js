@@ -357,6 +357,9 @@ app.get('/logout', function(req, res) {
 
 function isLoggedIn(req, res, next) {
 
+  //dev
+  // return next();
+
   // if user is authenticated in the session, carry on
   if (req.isAuthenticated()) {
     console.log(req.isAuthenticated());
