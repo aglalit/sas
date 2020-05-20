@@ -2,7 +2,8 @@ doctype html
 html
   head
     title SAS Creative Lab ‘imMEDIAte’, проект “Память против новостей” — форма регистрации
-    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel="stylesheet" href="https://sastest.utmn.ru/wp-content/themes/sasutmn/css/fontello-embedded.min.css")
     // load bootstrap css
     style.
       body        { padding-top:20px;   font-family: 'Agipo-Bold'; 
@@ -140,6 +141,38 @@ html
           top:0;
           zoom:1.1;
           }
+          
+          .social li {
+            display:inline-block;
+          }
+          
+          [class^="icon-"]:before, [class*=" icon-"]:before {
+              font-family: "fontello";
+              font-style: normal;
+              font-weight: normal;
+              speak: none;
+              display: inline-block;
+              text-decoration: inherit;
+              width: 1em;
+              margin-right: .2em;
+              text-align: center;
+              font-variant: normal;
+              text-transform: none;
+              line-height: 1em;
+              margin-left: .2em;
+            }
+            .icon-facebook:before {
+                content: '\f30c';
+              }
+              .icon-vkontakte:before {
+                content: '\f189';
+              }
+              .icon-instagram:before {
+                content: '\f32d';
+              }
+              .icon-youtube:before {
+                content: '\f167';
+              }
 
 
         @media (max-width: 1024px) {
@@ -231,11 +264,24 @@ html
         
 body
   .container
-    .jumbotron.text-center
+    .jumbotron.text-center(style="background:white")
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-red.svg")
       h1 SAS Creative Lab ‘imMEDIAte’, проект “Память против новостей” — форма регистрации
+      .col-xs-12
+        ul(class="social")
+          li(class="fb" a href="https://www.facebook.com/sas.utmn.ru/" target="_blank")
+            i class="icon-facebook"
+          li(class="vk")
+            a(href="https://vk.com/sas_tmn" target="_blank")
+              i(class="icon-vkontakte")
+          li(class="insta")
+            a(href="https://www.instagram.com/sas_utmn/" target="_blank")
+              i(class="icon-instagram")
+          li(class="youtube")
+            a(href="https://www.youtube.com/channel/UCTOl5FTiDD-n61Xiu0e_Uvg" target="_blank")
+              i(class="icon-youtube")
       form(action="/polls/registration-media" method="post")
         fieldset
           div(class="input-group")
