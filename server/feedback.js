@@ -191,7 +191,7 @@ app.get('/feedback3', function(req, res) {
 
 });
 
-app.get('/feedback4', function(req, res) {
+app.get('/feedback4', isLoggedIn, function(req, res) {
   var userEmail = '';
   User.findOne({
     '_id': req.user._id
