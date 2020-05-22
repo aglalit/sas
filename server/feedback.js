@@ -551,7 +551,8 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
                   console.log(el._doc.polls)
                 });
                 res.render('feedback4', {
-                  data: JSON.stringify(docs)
+                  data: JSON.stringify(docs),
+                  user: req.user
                 });
               }
             });
@@ -598,7 +599,8 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
                     console.log(el._doc.polls)
                   });
                   res.render('feedback4', {
-                    data: JSON.stringify(docs)
+                    data: JSON.stringify(docs),
+                    user: req.user
                   });
                 }
               });
@@ -633,12 +635,13 @@ else if (req.query.s === 'all') {
         console.log(err);
       } else {
         res.render('feedback4', {
-          data: JSON.stringify(docs)
+          data: JSON.stringify(docs),
+          user: req.user
         });
       }
     });
   } else {
-    res.render('feedback4', {});
+    res.render('feedback4', {user: req.user});
   }
 
 } else {
@@ -652,7 +655,8 @@ else if (req.query.s === 'all') {
         console.log(err);
       } else {
         res.render('feedback4', {
-          data: JSON.stringify(docs)
+          data: JSON.stringify(docs),
+          user: req.user
         });
       }
     });
@@ -673,7 +677,8 @@ else if (req.query.s === 'all') {
         } else {
           console.log(docs);
           res.render('feedback4', {
-            data: JSON.stringify(docs)
+            data: JSON.stringify(docs),
+            user: req.user
           });
         }
       });
