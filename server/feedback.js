@@ -501,9 +501,13 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
           }
         }
         var query = {};
+        var isAdmin = false;
+        if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'a.shcherbenok@utmn.ru'){
+          isAdmin = true;
+        }
 
         if (req.query.s === 'ba_2019_q3_electives') {
-          if (req.query.t && (userEmail === dict[req.query.t]['email'] || userEmail === 'm.agliulin@utmn.ru')){
+          if (req.query.t && (userEmail === dict[req.query.t]['email'] || isAdmin)){
             Session.find({
               $or: [{
                   "polls.ba_2019_q3_elective1": {
@@ -551,7 +555,7 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
                 });
               }
             });
-          } else if (userEmail === 'm.agliulin@utmn.ru') {
+          } else if (isAdmin) {
               Session.find({
                 $or: [{
                     "polls.ba_2019_q3_elective1": {
@@ -603,7 +607,7 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
           }
     }
 else if (req.query.s === 'all') {
-  if (userEmail === 'm.agliulin@utmn.ru') {
+  if (isAdmin) {
     Session.find({
       $and: [{
           'polls': {
@@ -638,7 +642,7 @@ else if (req.query.s === 'all') {
   }
 
 } else {
-  if (req.query.t && (userEmail === dict[req.query.t]['email'] || userEmail === 'm.agliulin@utmn.ru')) {
+  if (req.query.t && (userEmail === dict[req.query.t]['email'] || isAdmin)) {
     query['polls.' + req.query.s] = {
       $regex: `${dict[req.query.t]['name']}`
     };
@@ -647,13 +651,18 @@ else if (req.query.s === 'all') {
         res.send(err);
         console.log(err);
       } else {
-        console.log(docs);
         res.render('feedback4', {
           data: JSON.stringify(docs)
         });
       }
     });
-  } else if (userEmail === 'm.agliulin@utmn.ru') {
+  } else if (isAdmin ||
+      (req.query.s === 'ba_2019_year1_q3_gi' && (userEmail === 'j.silverstein@utmn.ru' || userEmail === 'd.dusseault@utmn.ru')) ||
+      (req.query.s === 'ba_2019_year2_q3_dt' && (userEmail === 'e.selikhovkina@utmn.ru' || userEmail === 'd.dusseault@utmn.ru')) ||
+      (req.query.s === 'ba_2019_year2_q3_gb') ||
+      (req.query.s === 'ba_2019_year1_q3_history' && (userEmail === 'c.doria@utmn.ru' || userEmail === 'marat.goya@gmail.com'))
+
+            ) {
       query['polls.' + req.query.s] = {
         $exists: true
       };
