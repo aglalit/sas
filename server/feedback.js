@@ -449,7 +449,7 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
           },
           David: {
             name: 'David Melbye',
-            email: 'd.melbye@utmn.ru'
+            email: 'd.melbyue@utmn.ru'
           },
           Maxim: {
             name: 'Maxim Alyukov',
