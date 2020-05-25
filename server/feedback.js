@@ -409,11 +409,11 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
           },
           Curating: {
             name: 'Curating Contemporary Art',
-            email: 'henrywdavidson@gmail.com '
+            email: 'henrywdavidson@gmail.com'
           },
           Performance: {
             name: 'Identity and Performance',
-            email: 'henrywdavidson@gmail.com '
+            email: 'henrywdavidson@gmail.com'
           },
           Thinking: {
             name: 'Thinking on Paper',
