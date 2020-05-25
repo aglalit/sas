@@ -457,7 +457,7 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
           },
           Jan: {
             name: 'Jan Krasni',
-            email: 'j.krasni@utmn.ru'
+            email: 'y.krasni@utmn.ru'
           },
           Munesh: {
             name: 'Munesh Chauhan',
