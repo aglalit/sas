@@ -481,7 +481,7 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger) {
           },
           Ufukova: {
             name: 'O. Ufukova',
-            email: 'o.n.berdyugina@utmn.ru'
+            email: 'a.bunkova@utmn.ru'
           },
           Giacomo: {
             name: 'Giacomo Andreoletti',
