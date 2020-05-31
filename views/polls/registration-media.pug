@@ -285,37 +285,38 @@ body
           li(class="youtube")
             a(href="https://www.youtube.com/channel/UCTOl5FTiDD-n61Xiu0e_Uvg" target="_blank")
               i(class="icon-youtube")
+      h3 Регистрация окончена
       form(action="/polls/registration-media" method="post")
         fieldset
-          div(class="input-group")
-            .flex-container.column
-              label(for="ФИО") ФИО
-                sup(style="color:red") *
-              input(type="text" required="required" class="form-control" name="Name")
-            .flex-container.column
-              label(for="Email") Email
-                sup(style="color:red") *
-              input(type="email" required="required" class="form-control" name="Email")
-            .flex-container.column
-              label(for="City") Город
-                sup(style="color:red") *
-              input(type="text" required="required" class="form-control" name="City")
-            .flex-container.column
-              label(for="About") Место учёбы (Университет, направление, курс) / Место работы и должность
-                sup(style="color:red") *
-              input(type="text" required="required" class="form-control" name="About")
-            .flex-container.column
-              label(for="Links") Ссылки на социальные сети
-                sup(style="color:red") *
-              textarea(rows="2" required="required" class="form-control" name="Links")
-            p &nbsp;              
-            .flex-container.row
-              input.form-check-input(id="agreement-checkbox" type="checkbox" name="agreement" required)                         
-              label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании <!-- Я даю согласие на обработку своих персональных данных на основании -->
-                a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") Политики конфиденциальности
-                sup(style="color:red") *
-            label 
-              sup(style="color:red") * 
-              span — обязательные поля      
-        button(type="submit" class="btn btn-primary btn-lg") Отправить
+        //-   div(class="input-group")
+        //-     .flex-container.column
+        //-       label(for="ФИО") ФИО
+        //-         sup(style="color:red") *
+        //-       input(type="text" required="required" class="form-control" name="Name")
+        //-     .flex-container.column
+        //-       label(for="Email") Email
+        //-         sup(style="color:red") *
+        //-       input(type="email" required="required" class="form-control" name="Email")
+        //-     .flex-container.column
+        //-       label(for="City") Город
+        //-         sup(style="color:red") *
+        //-       input(type="text" required="required" class="form-control" name="City")
+        //-     .flex-container.column
+        //-       label(for="About") Место учёбы (Университет, направление, курс) / Место работы и должность
+        //-         sup(style="color:red") *
+        //-       input(type="text" required="required" class="form-control" name="About")
+        //-     .flex-container.column
+        //-       label(for="Links") Ссылки на социальные сети
+        //-         sup(style="color:red") *
+        //-       textarea(rows="2" required="required" class="form-control" name="Links")
+        //-     p &nbsp;              
+        //-     .flex-container.row
+        //-       input.form-check-input(id="agreement-checkbox" type="checkbox" name="agreement" required)                         
+        //-       label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании <!-- Я даю согласие на обработку своих персональных данных на основании -->
+        //-         a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") Политики конфиденциальности
+        //-         sup(style="color:red") *
+        //-     label 
+        //-       sup(style="color:red") * 
+        //-       span — обязательные поля      
+        //- button(type="submit" class="btn btn-primary btn-lg") Отправить
           
