@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var cors = require('cors')
 var router = express.Router();
 var xFrameOptions = require('x-frame-options');
 var subdomain = require('express-subdomain');
@@ -117,6 +118,13 @@ app.use(loggerMorgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
+
+var corsOptions = {
+  origin: 'https://sas.utmn.ru',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.use(cors(corsOptions))
 
 // required for passport
 app.use(session({
