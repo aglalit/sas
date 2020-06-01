@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    link(rel="stylesheet" type = "text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+  body
+    main.app-wrapper
+      div(id="app") {{ message }}    
+      div(id="app-2")
+        span(v-bind:title="message")  Hover your mouse over me for a few seconds to see my dynamically bound title!
+      div(id="app-3")
+        span(v-if="seen") Now you see me
+    script(src="/vue-app.js")
