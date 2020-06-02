@@ -281,49 +281,50 @@ body
               i(class="icon-youtube")
       form(action="/polls/registration-prospective-students" method="post")
         fieldset
-        .flex-container.column
-          label(for="Name") ФИО
-            sup(style="color:red") *
-          input(type="text" required="required" class="form-control" name="Name")
-        .flex-container.column
-          label(for="City") Город
-            sup(style="color:red") *
-          input(type="text" required="required" class="form-control" name="City")
-        //- .flex-container.column
-        //-   label(for="Birthdate" class="Grade") Дата рождения
-        //-     sup(style="color:red") *
-        //-   input(type="date" required="required" class="form-control Grade" name="Birthdate")
-        .flex-container.column
-          label(for="Grade" ) Кем вы являетесь? (школьник / студент / родитель)
-            sup(style="color:red") *
-          select(name="Grade" required="required" )
-            option(value="Не выбрано") Не выбрано
-            option(value="Школьник (8–10 класс)") Школьник (8–10 класс)
-            option(value="Школьник (11 класс)") Школьник (11 класс)
-            option(value="Студент") Студент  
-            option(value="Родитель") Родитель
-            option(value="Другое") Другое 
-        .flex-container.column
-          label(for="Question") Задайте свой вопрос
-          input(type="text" class="form-control" name="Question")   
-        //- .flex-container.column
-        //-   label(for="Source") Откуда вы узнали о мероприятии
-        //-     sup(style="color:red") *
-        //-   input(type="text" required="required" class="form-control" name="Source")     
-        .flex-container.column
-          label(for="Email") Email
-            sup(style="color:red") *
-          input(type="email" required="required" class="form-control" name="Email") 
-        .flex-container.column
-          label(for="VK") Если вы хотите, чтобы вас добавили в беседу "Поступление в SAS", оставьте ссылку на свой аккаунт в VK
-            input(type="text" class="form-control" name="VK")                
-        .flex-container.row
-          input.checkbox(id="agreement-checkbox" type="checkbox" name="agreement" required="required")                         
-          label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
-            a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") Политики конфиденциальности
-            sup(style="color:red") *
-        label 
-          sup(style="color:red") * 
-          span — обязательные поля   
+          div(class="input-group")
+            .flex-container.column
+              label(for="Name") ФИО
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="Name")
+            .flex-container.column
+              label(for="City") Город
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="City")
+            //- .flex-container.column
+            //-   label(for="Birthdate" class="Grade") Дата рождения
+            //-     sup(style="color:red") *
+            //-   input(type="date" required="required" class="form-control Grade" name="Birthdate")
+            .flex-container.column
+              label(for="Grade" ) Кем вы являетесь? (школьник / студент / родитель)
+                sup(style="color:red") *
+              select(name="Grade" required="required" )
+                option(value="Не выбрано") Не выбрано
+                option(value="Школьник (8–10 класс)") Школьник (8–10 класс)
+                option(value="Школьник (11 класс)") Школьник (11 класс)
+                option(value="Студент") Студент  
+                option(value="Родитель") Родитель
+                option(value="Другое") Другое 
+            .flex-container.column
+              label(for="Question") Задайте свой вопрос
+              input(type="text" class="form-control" name="Question")   
+            //- .flex-container.column
+            //-   label(for="Source") Откуда вы узнали о мероприятии
+            //-     sup(style="color:red") *
+            //-   input(type="text" required="required" class="form-control" name="Source")     
+            .flex-container.column
+              label(for="Email") Email
+                sup(style="color:red") *
+              input(type="email" required="required" class="form-control" name="Email") 
+            .flex-container.column
+              label(for="VK") Если вы хотите, чтобы вас добавили в беседу "Поступление в SAS", оставьте ссылку на свой аккаунт в VK
+                input(type="text" class="form-control" name="VK")                
+            .flex-container.row
+              input.checkbox(id="agreement-checkbox" type="checkbox" name="agreement" required="required")                         
+              label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
+                a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") Политики конфиденциальности
+                sup(style="color:red") *
+            label 
+              sup(style="color:red") * 
+              span — обязательные поля   
         button(type="submit" class="btn btn-primary btn-lg") Отправить
           
