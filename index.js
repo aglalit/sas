@@ -244,6 +244,8 @@ require('./server/pds-2019.js')(app, Session, transporter);
 require('./server/registration.js')(app, Session, transporter);
 require('./server/registration-xhe.js')(app, Session, transporter);
 require('./server/registration-media.js')(app, Session, transporter);
+require('./server/registration-prospective-students.js')(app, Session, transporter);
+
 require('./server/vue_test.js')(app, Session, transporter);
 
 

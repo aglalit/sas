@@ -460,6 +460,10 @@ var sessionSchema = mongoose.Schema({
         data: String,
         time: String
       },
+      registration_prospective_students: {
+        data: String,
+        time: String
+      },
       registration_dobrovidova: String,
       generic: String,
       generic2: String,
