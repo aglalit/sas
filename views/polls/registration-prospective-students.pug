@@ -265,6 +265,10 @@ body
         a(href="https://sas.utmn.ru" style="border:none")
           img(src="/assets/logo_sas_ut_short-red.svg")
       h1 ЗАПИСЬ НА ОНЛАЙН-КОНСУЛЬТАЦИЮ ДЛЯ АБИТУРИЕНТОВ
+      h2 В этой форме можно оставить свой вопрос, на который мы постараемся оперативно ответить. Также на электронную почту вы получите от нас оповещение об онлайн-консультациях в Zoom, которые мы будем проводить во время приёмной кампании. Если вы хотите быть в нами на связи в течение всей приёмной кампании, вступайте в беседу в VK 
+        a(href="https://vk.me/join/AJQ1dzsAwReYjpsDaHXc2XS4" target="_blank") «Поступление в SAS»
+        span . 
+
       .col-xs-12
         ul(class="social")
           li(class="fb")
@@ -282,6 +286,11 @@ body
       form(action="/polls/registration-prospective-students" method="post")
         fieldset
           div(class="input-group")
+            .flex-container.column
+              label(for="Question") Задайте свой вопрос про SAS (Если вы хотите получить ответ от руководителя учебного офиса 
+              a(href="http://sas.utmn.ru/ru/daniel-kontowski" target="_blank") Даниэла Контовски
+              span , пожалуйста, напишите вопрос на английском языке)
+              input(type="text" class="form-control" name="Question")
             .flex-container.column
               label(for="Name") ФИО
                 sup(style="color:red") *
@@ -303,10 +312,7 @@ body
                 option(value="Школьник (11 класс)") Школьник (11 класс)
                 option(value="Студент") Студент  
                 option(value="Родитель") Родитель
-                option(value="Другое") Другое 
-            .flex-container.column
-              label(for="Question") Задайте свой вопрос про SAS (Если вы хотите получить ответ от руководителя учебного офиса Даниэла Контовски, пожалуйста, напишите вопрос на английском языке)
-              input(type="text" class="form-control" name="Question")   
+                option(value="Другое") Другое    
             //- .flex-container.column
             //-   label(for="Source") Откуда вы узнали о мероприятии
             //-     sup(style="color:red") *
@@ -314,10 +320,7 @@ body
             .flex-container.column
               label(for="Email") Email
                 sup(style="color:red") *
-              input(type="email" required="required" class="form-control" name="Email") 
-            .flex-container.column
-              label(for="VK") Если вы хотите, чтобы вас добавили в беседу "Поступление в SAS", оставьте ссылку на свой аккаунт в VK
-                input(type="text" class="form-control" name="VK")                
+              input(type="email" required="required" class="form-control" name="Email")         
             .flex-container.row
               input.checkbox(id="agreement-checkbox" type="checkbox" name="agreement" required="required")                         
               label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
