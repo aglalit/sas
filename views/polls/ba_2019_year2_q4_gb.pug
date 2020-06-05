@@ -1,0 +1,137 @@
+doctype html
+html
+  head
+    title Feedback
+    //- link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/style.css')
+    //- link(rel='stylesheet', href='/cards.css')
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    //- script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    //- script(src="/touch_sortable.js")
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/logo_sas_ut_short-red.svg")
+      h1 Feedback. Year 2019–2020. Quarters 3 & 4. Great Books: Literature.
+      h3 Course evaluations are to be filled in ENGLISH only. 
+      h3 Please note that the use of the scoring system 0, 5 and 10 is only a recommendation, you can use any indicator from 0 to 10.     
+      form(id="form" action="/polls/feedback-collector" method="post")
+        input(type="hidden" value="ba_2019_year2_q4_gb" name="subject")
+        input(type="hidden" value="Alla Kononova, Andrey Shcherbenok, Joanna Longden, Ilya Kalinin, Elena Grigorieva, Anne Mulhall, Olga Ushakova, Caroline Wintersgill" name="Who taught this course")
+        fieldset   
+          div(class="input-group")
+            h3 Alla Kononova
+            .flex-container
+              label(for="Evaluate the overall quality of the course — Alla Kononova") Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS — Alla Kononova, [where 1 is “The quality of the course was terrible, incomparably worse than other SAS courses I have taken,' 6 is “The quality of the course was average,” 10 is “The quality of the course is the best I have seen at SAS by a large margin”].
+              input(type="number" required="required" class="form-control" name="Evaluate the overall quality of the course — Alla Kononova" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the impact of the course on your knowledge — Alla Kononova") Evaluate the impact of the course on your knowledge, skills, competencies, personal qualities and worldview — Alla Kononova, [where 1 is no development has taken place, 6 is a generally satisfactory development has taken place in several of the parameters, 10 is “I have become a different person”].
+              input(type="number" required="required" class="form-control" name="Evaluate the impact of the course on your knowledge — Alla Kononova" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the level of feedback from the professor — Alla Kononova") Evaluate the level of feedback from the professor — Alla Kononova (comments on essays and other works, answers to questions during classes, individual consultations during office hours), [where 1 is “There was no feedback from the professor at all”, 6 is “Feedback was present in half of   the cases when it was necessary and was of average quality”, 10 is “The professor provided a comprehensive high-level feedback whenever it was needed"']
+              input(type="number" required="required" class="form-control" name="Evaluate the level of feedback from the professor — Alla Kononova" min="1" max="10")
+                
+            h3 Andrey Shcherbenok
+            .flex-container
+              label(for="Evaluate the overall quality of the course — Andrey Shcherbenok") Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS — Andrey Shcherbenok, [where 1 is “The quality of the course was terrible, incomparably worse than other SAS courses I have taken,' 6 is “The quality of the course was average,” 10 is “The quality of the course is the best I have seen at SAS by a large margin”].
+              input(type="number" required="required" class="form-control" name="Evaluate the overall quality of the course — Andrey Shcherbenok" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the impact of the course on your knowledge — Andrey Shcherbenok") Evaluate the impact of the course on your knowledge, skills, competencies, personal qualities and worldview — Andrey Shcherbenok, [where 1 is no development has taken place, 6 is a generally satisfactory development has taken place in several of the parameters, 10 is “I have become a different person”].
+              input(type="number" required="required" class="form-control" name="Evaluate the impact of the course on your knowledge — Andrey Shcherbenok" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the level of feedback from the professor — Andrey Shcherbenok") Evaluate the level of feedback from the professor — Andrey Shcherbenok (comments on essays and other works, answers to questions during classes, individual consultations during office hours), [where 1 is “There was no feedback from the professor at all”, 6 is “Feedback was present in half of   the cases when it was necessary and was of average quality”, 10 is “The professor provided a comprehensive high-level feedback whenever it was needed"']
+              input(type="number" required="required" class="form-control" name="Evaluate the level of feedback from the professor — Andrey Shcherbenok" min="1" max="10")
+            
+            h3 Joanna Longden
+            .flex-container
+              label(for="Evaluate the overall quality of the course — Joanna Longden") Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS — Joanna Longden, [where 1 is “The quality of the course was terrible, incomparably worse than other SAS courses I have taken,' 6 is “The quality of the course was average,” 10 is “The quality of the course is the best I have seen at SAS by a large margin”].
+              input(type="number" required="required" class="form-control" name="Evaluate the overall quality of the course — Joanna Longden" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the impact of the course on your knowledge — Joanna Longden") Evaluate the impact of the course on your knowledge, skills, competencies, personal qualities and worldview — Joanna Longden, [where 1 is no development has taken place, 6 is a generally satisfactory development has taken place in several of the parameters, 10 is “I have become a different person”].
+              input(type="number" required="required" class="form-control" name="Evaluate the impact of the course on your knowledge — Joanna Longden" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the level of feedback from the professor — Joanna Longden") Evaluate the level of feedback from the professor — Joanna Longden (comments on essays and other works, answers to questions during classes, individual consultations during office hours), [where 1 is “There was no feedback from the professor at all”, 6 is “Feedback was present in half of   the cases when it was necessary and was of average quality”, 10 is “The professor provided a comprehensive high-level feedback whenever it was needed"']
+              input(type="number" required="required" class="form-control" name="Evaluate the level of feedback from the professor — Joanna Longden" min="1" max="10")
+            
+            h3 Ilya Kalinin
+            .flex-container
+              label(for="Evaluate the overall quality of the course — Ilya Kalinin") Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS — Ilya Kalinin, [where 1 is “The quality of the course was terrible, incomparably worse than other SAS courses I have taken,' 6 is “The quality of the course was average,” 10 is “The quality of the course is the best I have seen at SAS by a large margin”].
+              input(type="number" required="required" class="form-control" name="Evaluate the overall quality of the course — Ilya Kalinin" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the impact of the course on your knowledge — Ilya Kalinin") Evaluate the impact of the course on your knowledge, skills, competencies, personal qualities and worldview — Ilya Kalinin, [where 1 is no development has taken place, 6 is a generally satisfactory development has taken place in several of the parameters, 10 is “I have become a different person”].
+              input(type="number" required="required" class="form-control" name="Evaluate the impact of the course on your knowledge — Ilya Kalinin" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the level of feedback from the professor — Ilya Kalinin") Evaluate the level of feedback from the professor — Ilya Kalinin (comments on essays and other works, answers to questions during classes, individual consultations during office hours), [where 1 is “There was no feedback from the professor at all”, 6 is “Feedback was present in half of   the cases when it was necessary and was of average quality”, 10 is “The professor provided a comprehensive high-level feedback whenever it was needed"']
+              input(type="number" required="required" class="form-control" name="Evaluate the level of feedback from the professor — Ilya Kalinin" min="1" max="10")
+              
+            h3 Elena Grigorieva
+            .flex-container
+              label(for="Evaluate the overall quality of the course — Elena Grigorieva") Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS — Elena Grigorieva, [where 1 is “The quality of the course was terrible, incomparably worse than other SAS courses I have taken,' 6 is “The quality of the course was average,” 10 is “The quality of the course is the best I have seen at SAS by a large margin”].
+              input(type="number" required="required" class="form-control" name="Evaluate the overall quality of the course — Elena Grigorieva" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the impact of the course on your knowledge — Elena Grigorieva") Evaluate the impact of the course on your knowledge, skills, competencies, personal qualities and worldview — Elena Grigorieva, [where 1 is no development has taken place, 6 is a generally satisfactory development has taken place in several of the parameters, 10 is “I have become a different person”].
+              input(type="number" required="required" class="form-control" name="Evaluate the impact of the course on your knowledge — Elena Grigorieva" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the level of feedback from the professor — Elena Grigorieva") Evaluate the level of feedback from the professor — Elena Grigorieva (comments on essays and other works, answers to questions during classes, individual consultations during office hours), [where 1 is “There was no feedback from the professor at all”, 6 is “Feedback was present in half of   the cases when it was necessary and was of average quality”, 10 is “The professor provided a comprehensive high-level feedback whenever it was needed"']
+              input(type="number" required="required" class="form-control" name="Evaluate the level of feedback from the professor — Elena Grigorieva" min="1" max="10")
+            
+            h3 Anne Mulhall
+            .flex-container
+              label(for="Evaluate the overall quality of the course — Anne Mulhall") Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS — Anne Mulhall, [where 1 is “The quality of the course was terrible, incomparably worse than other SAS courses I have taken,' 6 is “The quality of the course was average,” 10 is “The quality of the course is the best I have seen at SAS by a large margin”].
+              input(type="number" required="required" class="form-control" name="Evaluate the overall quality of the course — Anne Mulhall" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the impact of the course on your knowledge — Anne Mulhall") Evaluate the impact of the course on your knowledge, skills, competencies, personal qualities and worldview — Anne Mulhall, [where 1 is no development has taken place, 6 is a generally satisfactory development has taken place in several of the parameters, 10 is “I have become a different person”].
+              input(type="number" required="required" class="form-control" name="Evaluate the impact of the course on your knowledge — Anne Mulhall" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the level of feedback from the professor — Anne Mulhall") Evaluate the level of feedback from the professor — Anne Mulhall (comments on essays and other works, answers to questions during classes, individual consultations during office hours), [where 1 is “There was no feedback from the professor at all”, 6 is “Feedback was present in half of   the cases when it was necessary and was of average quality”, 10 is “The professor provided a comprehensive high-level feedback whenever it was needed"']
+              input(type="number" required="required" class="form-control" name="Evaluate the level of feedback from the professor — Anne Mulhall" min="1" max="10")
+            
+            h3 Olga Ushakova
+            .flex-container
+              label(for="Evaluate the overall quality of the course — Olga Ushakova") Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS — Olga Ushakova, [where 1 is “The quality of the course was terrible, incomparably worse than other SAS courses I have taken,' 6 is “The quality of the course was average,” 10 is “The quality of the course is the best I have seen at SAS by a large margin”].
+              input(type="number" required="required" class="form-control" name="Evaluate the overall quality of the course — Olga Ushakova" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the impact of the course on your knowledge — Olga Ushakova") Evaluate the impact of the course on your knowledge, skills, competencies, personal qualities and worldview — Olga Ushakova, [where 1 is no development has taken place, 6 is a generally satisfactory development has taken place in several of the parameters, 10 is “I have become a different person”].
+              input(type="number" required="required" class="form-control" name="Evaluate the impact of the course on your knowledge — Olga Ushakova" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the level of feedback from the professor — Olga Ushakova") Evaluate the level of feedback from the professor — Olga Ushakova (comments on essays and other works, answers to questions during classes, individual consultations during office hours), [where 1 is “There was no feedback from the professor at all”, 6 is “Feedback was present in half of   the cases when it was necessary and was of average quality”, 10 is “The professor provided a comprehensive high-level feedback whenever it was needed"']
+              input(type="number" required="required" class="form-control" name="Evaluate the level of feedback from the professor — Olga Ushakova" min="1" max="10")
+            
+            h3 Caroline Wintersgill
+            .flex-container
+              label(for="Evaluate the overall quality of the course — Caroline Wintersgill") Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS — Caroline Wintersgill, [where 1 is “The quality of the course was terrible, incomparably worse than other SAS courses I have taken,' 6 is “The quality of the course was average,” 10 is “The quality of the course is the best I have seen at SAS by a large margin”].
+              input(type="number" required="required" class="form-control" name="Evaluate the overall quality of the course — Caroline Wintersgill" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the impact of the course on your knowledge — Caroline Wintersgill") Evaluate the impact of the course on your knowledge, skills, competencies, personal qualities and worldview — Caroline Wintersgill, [where 1 is no development has taken place, 6 is a generally satisfactory development has taken place in several of the parameters, 10 is “I have become a different person”].
+              input(type="number" required="required" class="form-control" name="Evaluate the impact of the course on your knowledge — Caroline Wintersgill" min="1" max="10")
+            .flex-container
+              label(for="Evaluate the level of feedback from the professor — Caroline Wintersgill") Evaluate the level of feedback from the professor — Caroline Wintersgill (comments on essays and other works, answers to questions during classes, individual consultations during office hours), [where 1 is “There was no feedback from the professor at all”, 6 is “Feedback was present in half of   the cases when it was necessary and was of average quality”, 10 is “The professor provided a comprehensive high-level feedback whenever it was needed"']
+              input(type="number" required="required" class="form-control" name="Evaluate the level of feedback from the professor — Caroline Wintersgill" min="1" max="10")
+            
+            .flex-container
+              label(for="What did you find  most instructive / informative / useful? Consider the course organisation (optional)") What did you find  most instructive / informative / useful? Consider the course organisation (optional).
+              textarea(rows="4"  class="form-control" name="What did you find  most instructive / informative / useful? Consider the course organisation (optional)")
+            .flex-container
+              label(for="Do you have any specific recommendations for improving the course? Consider the course organisation (optional)") Do you have any specific recommendations for improving the course? Consider the course organisation (optional).
+              textarea(rows="4"  class="form-control" name="Do you have any specific recommendations for improving the course? Consider the course organisation (optional)")
+            .flex-container
+              label(for="What did you find  most instructive / informative / useful? Consider the course content (optional)") What did you find  most instructive / informative / useful? Consider the course content (optional).
+              textarea(rows="4"  class="form-control" name="What did you find  most instructive / informative / useful? Consider the course content (optional)")
+            .flex-container
+              label(for="Do you have any specific recommendations for improving the course? Consider the course content (optional)") Do you have any specific recommendations for improving the course? Consider the course content (optional).
+              textarea(rows="4"  class="form-control" name="Do you have any specific recommendations for improving the course? Consider the course content (optional)")
+            .flex-container
+              label(for="What did you find  most instructive / informative / useful? Consider the course teaching / delivery (optional)") What did you find  most instructive / informative / useful? Consider the course teaching / delivery (optional).
+              textarea(rows="4"  class="form-control" name="What did you find  most instructive / informative / useful? Consider the course teaching / delivery (optional)")
+            .flex-container
+              label(for="Do you have any specific recommendations for improving the course? Consider the course teaching / delivery (optional)") Do you have any specific recommendations for improving the course? Consider the course teaching / delivery (optional).
+              textarea(rows="4"  class="form-control" name="Do you have any specific recommendations for improving the course? Consider the course teaching / delivery (optional)")
+            .flex-container
+              label(for="Please leave any other comments, suggestions, or feedback on the course you might have.") Please leave any other comments, suggestions, or feedback on the course you might have.
+              textarea(rows="8" required="required" class="form-control" name="Please leave any other comments, suggestions, or feedback on the course you might have.")  
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    //- script(src="/cards.js")
+    script(src="/default.js")

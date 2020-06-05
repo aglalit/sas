@@ -67,6 +67,22 @@ var userSchema = mongoose.Schema({
       ba_2019_year2_q2_poms_juliette: Boolean,
       ba_2019_year2_q2_aw: Boolean,
       ba_2019_year3_q3_rs: Boolean,
+
+      ba_2019_q4_elective1: Boolean,
+      ba_2019_q4_elective2: Boolean,
+      ba_2019_q4_elective3: Boolean,
+      ba_2019_q4_major1: Boolean,
+      ba_2019_q4_major2: Boolean,
+      ba_2019_q4_major3: Boolean,
+
+      ba_2019_year1_q4_tfy: Boolean,
+      ba_2019_year1_q4_history: Boolean,
+      ba_2019_year1_q4_gb: Boolean,
+      ba_2019_year2_q4_gb: Boolean,
+      ba_2019_year1_q4_it: Boolean,
+      ba_2019_year2_q4_dt: Boolean,
+      ba_2019_year3_q4_rs: Boolean,
+      
       ma_2019_wolf:Boolean,
       ma_2019_manovich:Boolean
     },
