@@ -3,8 +3,9 @@ module.exports = function(app, Session, transporter, officeTransporter, isLogged
 var name
 var email
 
-app.get(/^\/polls\/(.*)/, isLoggedIn, function (req, res) {
-    res.render(req.params[1], {
+app.get('polls/:path(/.*/)', isLoggedIn, function (req, res) {
+  console.log(req.params, req.params.path)
+    res.render(req.params.path, {
       user: req.user
     })
   })
