@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Feedback
+    title Course Evaluations
     //- link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
     link(rel='stylesheet', href='/style.css')
@@ -15,7 +15,7 @@ body
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-red.svg")
-      h1 Feedback. Year 2019–2020. Quarter 4. Great Books.
+      h1 Course Evaluations. Year 2019–2020. Quarter 4. Great Books.
       h3 Course evaluations are to be filled in ENGLISH only. 
       h3 Please note that the use of the scoring system 0, 5 and 10 is only a recommendation, you can use any indicator from 0 to 10.     
       form(id="form" action="/polls/feedback-collector" method="post")
@@ -25,9 +25,10 @@ body
             .flex-container
               label(for="Who taught this course") Who taught this course?
               select(class="form-control" required="required" name="Who taught this course")
-                option(value="Giacomo Andreoletti") Anne Mulhall
-                option(value="Jay Silverstein") Julie Reshe
-                option(value="Louis Vervoort") Louis Vervoort
+                option(value="Anne Mulhall") Anne Mulhall
+                option(value="Julie Reshe") Julie Reshe
+                option(value="Louis Vervoort (group 3)") Louis Vervoort (group 3)
+                option(value="Louis Vervoort (group 4)") Louis Vervoort (group 4)
             .flex-container
               label(for="Evaluate the overall quality of the course") Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS, [where 1 is “The quality of the course was terrible, incomparably worse than other SAS courses I have taken,' 6 is “The quality of the course was average,” 10 is “The quality of the course is the best I have seen at SAS by a large margin”].
               input(type="number" required="required" class="form-control" name="Evaluate the overall quality of the course" min="1" max="10")
