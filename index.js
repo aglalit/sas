@@ -1,30 +1,29 @@
-var express = require('express')
-var app = express()
-var cors = require('cors')
-var router = express.Router()
-var xFrameOptions = require('x-frame-options')
-var subdomain = require('express-subdomain')
-var path = require('path')
-var env = process.env
-var favicon = require('serve-favicon')
-var loggerMorgan = require('morgan')
-var compression = require('compression')
-var cookieParser = require('cookie-parser')
-var bodyParser = require('body-parser')
-const nodemailer = require('nodemailer')
-var querystring = require('querystring')
+var express = require('express');
+var app = express();
+var cors = require('cors');
+var router = express.Router();
+var xFrameOptions = require('x-frame-options');
+var subdomain = require('express-subdomain');
+var path = require('path');
+var env = process.env;
+var favicon = require('serve-favicon');
+var loggerMorgan = require('morgan');
+var compression = require('compression');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
+var querystring = require('querystring');
 const fs = require('fs');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const winston = require('winston');
 require('dotenv').config();
 
-
-var fileUpload = require("express-fileupload");
+var fileUpload = require('express-fileupload');
 
 const session = require('express-session');
 const flash = require('connect-flash');
-var MongoStore  = require('connect-mongo')(session);
+var MongoStore = require('connect-mongo')(session);
 
 var index = require('./routes/index');
 var User = require('./models/user');
@@ -46,12 +45,12 @@ const logger = winston.createLogger({
     new winston.transports.File({ filename: './public/combined.log' })
   ]
 });
-//logger.error('Error log:');
+// logger.error('Error log:');
 
 var promise = mongoose.connect(process.env.MONGODB_URI
-, { useNewUrlParser: true }).then(
-  () => {console.log('Database is connected') },
-  err => { logger.error(err); console.log('Can not connect to the database'+ err)}
+  , { useNewUrlParser: true }).then(
+  () => { console.log('Database is connected'); },
+  err => { logger.error(err); console.log('Can not connect to the database' + err); }
 );
 
 // Connection URL
@@ -60,13 +59,12 @@ const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 // Use connect method to connect to the server
 var db = mongoose.connection;
 
-promise.then(function(db) {
-  db.on('error', function(error){
+promise.then(function (db) {
+  db.on('error', function (error) {
     console.error.bind(console, 'connection error:');
-        logger.error(error);
-
+    logger.error(error);
   });
-  db.on('open', function() {
+  db.on('open', function () {
     logger.error('Mongo is connected');
     console.log('Mongo is connected');
   });
@@ -75,7 +73,7 @@ promise.then(function(db) {
 var user = process.env.TRANSPORTER;
 var pass = process.env.TRANSPORTER_PASSWORD;
 // create reusable transporter object using the default SMTP transport
-let transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: user,
@@ -83,19 +81,19 @@ let transporter = nodemailer.createTransport({
   },
   debug: true
 });
-transporter.verify(function(error, success) {
-   if (error) {
-        console.log(error);
-        logger.error(error);
-   } else {
-        console.log('Server is ready to take our messages');
-   }
+transporter.verify(function (error, success) {
+  if (error) {
+    console.log(error);
+    logger.error(error);
+  } else {
+    console.log('Server is ready to take our messages');
+  }
 });
 
 var officeuser = process.env.OFFICETRANSPORTER;
 var officepass = process.env.OFFICETRANSPORTER_PASSWORD;
 
-let officeTransporter = nodemailer.createTransport({
+const officeTransporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: officeuser,
@@ -116,21 +114,21 @@ app.set('view engine', 'pug');
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(loggerMorgan('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 var corsOptions = {
   origin: 'https://sas.utmn.ru',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
+};
 
-app.use(cors(corsOptions))
+app.use(cors(corsOptions));
 
 // required for passport
 app.use(session({
   secret: 'schoolofadvancedstudiessecret',
   cookie: { maxAge: 60000000 },
-  store: new MongoStore({mongooseConnection: mongoose.connection, collection: 'sessions_storage'})
+  store: new MongoStore({ mongooseConnection: mongoose.connection, collection: 'sessions_storage' })
 })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
@@ -152,7 +150,7 @@ app.use(compression());
 app.use('/', index);
 app.use(subdomain('advanced', router));
 
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
 });
 
@@ -165,16 +163,16 @@ app.get('/auth/google/callback', passport.authenticate('google', {
   failureRedirect: '/login'
 }));
 
-app.get('/polls', isLoggedIn, function(req, res) {
-  res.render('polls', {user: req.user})
+app.get('/polls', isLoggedIn, function (req, res) {
+  res.render('polls', { user: req.user });
 });
 
-app.get('/polls-anonymous', function(req, res) {
-  res.render('polls_anonymous', {messages: req.flash('info')})
+app.get('/polls-anonymous', function (req, res) {
+  res.render('polls_anonymous', { messages: req.flash('info') });
 });
 
-function checkReturnTo(req, res, next) {
-  var returnTo = req.query['returnTo'];
+function checkReturnTo (req, res, next) {
+  var returnTo = req.query.returnTo;
   if (returnTo) {
     // Maybe unnecessary, but just to be sure.
     req.session = req.session || {};
@@ -199,11 +197,9 @@ require('./server/electives_2019_2_2nd_year.js')(app, Session, transporter, isLo
 require('./server/electives_2019_4.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/electives_2020_1.js')(app, Session, transporter, isLoggedIn, User);
 
-
 require('./server/ba_2018_quantitative_methods.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/ba_2018_history.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/pds_2019_classes.js')(app, Session, transporter, isLoggedIn, User);
-
 
 require('./server/ma_2018_fedorova.js')(app, Session, transporter);
 require('./server/ma_2018_chubarov.js')(app, Session, transporter);
@@ -215,7 +211,6 @@ require('./server/ma_2019_smirnov.js')(app, Session, transporter);
 require('./server/ma_2019_manirko.js')(app, Session, transporter);
 require('./server/ma_2019_vetushinsky.js')(app, Session, transporter);
 require('./server/ma_2019_wolf.js')(app, Session, transporter);
-
 
 require('./server/ma_2018_dobrovidova.js')(app, Session, transporter);
 require('./server/ba_2018_year1_module1_wtai.js')(app, Session, transporter);
@@ -236,7 +231,6 @@ require('./server/planned-absences-students.js')(app, Session, transporter, isLo
 
 require('./server/registration-dobrovidova.js')(app, Session, transporter);
 
-
 require('./server/open-day-2018.js')(app, Session, transporter);
 require('./server/open-day-2018-voting.js')(app, Session, transporter);
 require('./server/open-day-03-2020.js')(app, Session, transporter);
@@ -248,11 +242,8 @@ require('./server/registration-prospective-students.js')(app, Session, transport
 
 require('./server/vue_test.js')(app, Session, transporter);
 
-
 require('./server/poetry.js')(app, Session, transporter);
 require('./server/unsubscribe.js')(app, Session, transporter);
-
-
 
 require('./server/ba_2018_year1_module2_qm.js')(app, Session, transporter);
 require('./server/ba_2018_year1_module2_history.js')(app, Session, transporter);
@@ -279,7 +270,6 @@ require('./server/erpyleva.js')(app, Session, transporter, isLoggedIn, User);
 
 require('./server/gi_topics_2020.js')(app, Session, transporter, isLoggedIn, User);
 
-
 require('./server/registration-data.js')(app, Session, transporter, isLoggedIn, logger);
 require('./server/feedback.js')(app, Session, User, transporter, isLoggedIn, logger);
 require('./server/feedback-collector.js')(app, Session, transporter, officeTransporter, isLoggedIn, User, logger);
@@ -287,9 +277,6 @@ require('./server/feedback-collector-anonymous.js')(app, Session, transporter, o
 
 require('./server/db_export.js')(app, Session, User);
 require('./server/schedule_data.js')(app, Schedule, logger);
-
-
-
 
 // 4th MODULE 2019
 require('./server/ba_2019_year1_module4_electives.js')(app, Session, transporter, officeTransporter, isLoggedIn, User, logger);
@@ -302,14 +289,6 @@ require('./server/ba_2019_year2_module8_gb.js')(app, Session, transporter, offic
 require('./server/ba_2019_year2_module8_electives.js')(app, Session, transporter, officeTransporter, isLoggedIn, User, logger);
 require('./server/ba_2019_year2_module8_electives2.js')(app, Session, transporter, officeTransporter, isLoggedIn, User, logger);
 require('./server/ba_2019_year2_module8_design_thinking.js')(app, Session, transporter, officeTransporter, isLoggedIn, User, logger);
-
-
-
-
-
-
-
-
 
 // require('./server/4th-module-electives.js')(app, Session, transporter, isLoggedIn);
 
@@ -361,15 +340,13 @@ require('./server/ba_2019_year2_module8_design_thinking.js')(app, Session, trans
 //   });
 // });
 
-
-app.get('/logout', function(req, res) {
+app.get('/logout', function (req, res) {
   req.logout();
   res.redirect('/polls');
 });
 
-function isLoggedIn(req, res, next) {
-
-  //dev
+function isLoggedIn (req, res, next) {
+  // dev
   // return next();
 
   // if user is authenticated in the session, carry on
@@ -385,14 +362,14 @@ function isLoggedIn(req, res, next) {
 }
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = err;

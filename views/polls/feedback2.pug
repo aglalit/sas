@@ -18,6 +18,9 @@ html
         font-family: 'Agipo-Regular';
         src:url('../fonts/agipo/Agipo-Regular.woff');
       }
+      .btn.btn-default.btn-lg {
+        background: lightgray;
+      }
       h2 {margin-bottom:30px; margin-top:50px;
       font-family: 'Agipo-Bold',Arial,sans-serif;}
       .jumbotron h1 {
@@ -41,6 +44,13 @@ html
         font-size: 12px;
         border-bottom:1px red solid;
         hyphens: auto;
+      }
+      .all tr td:first-child {
+        font-size: 12px;
+        vertical-align: middle;
+      }
+      .all tr {
+        border-top: 1px red solid;
       }
       td {
         text-align: left; 
@@ -233,7 +243,17 @@ body
       .logo
         a(target="_blank" href="https://sas.utmn.ru")
           img(src="/assets/logo_sas_ut_short-red.svg")
-      h1 SAS — Feedback
+      h1 SAS — Course Evaluations — Q1 2020
+      .row
+        div(class="col-xs-12" style="display: flex; justify-content: center; flex-direction:column; align-items:center; width: 100%;")
+            p
+              br
+              -if(user)
+                span Email: #{user.google.email}
+              br
+              -if(user)
+                span Name: #{user.google.name}
+            a.btn.btn-default.btn-lg(href='/logout') Log out
       h2.teacher
       div.allLinks
         //- button(class="exportCSV" onclick="exportCSVFile(dataToExportCSV, 'feedback-2019-module1-5-9')") Download in CSV
