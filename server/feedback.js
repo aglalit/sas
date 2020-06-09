@@ -151,7 +151,8 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               console.log(el._doc.polls);
             });
             res.render('feedback2', {
-              data: JSON.stringify(docs)
+              data: JSON.stringify(docs),
+              user: req.user
             });
           }
         });
@@ -186,7 +187,8 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               console.log(el._doc.polls);
             });
             res.render('feedback2', {
-              data: JSON.stringify(docs)
+              data: JSON.stringify(docs),
+              user: req.user
             });
           }
         });
@@ -216,7 +218,8 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
             console.log(err);
           } else {
             res.render('feedback2', {
-              data: JSON.stringify(docs)
+              data: JSON.stringify(docs),
+              user: req.user
             });
           }
         });
@@ -231,7 +234,8 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
           } else {
             console.log(docs);
             res.render('feedback2', {
-              data: JSON.stringify(docs)
+              data: JSON.stringify(docs),
+              user: req.user
             });
           }
         });
@@ -305,7 +309,8 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               console.log(el._doc.polls);
             });
             res.render('feedback3', {
-              data: JSON.stringify(docs)
+              data: JSON.stringify(docs),
+              user: req.user
             });
           }
         });
@@ -340,7 +345,8 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               console.log(el._doc.polls);
             });
             res.render('feedback3', {
-              data: JSON.stringify(docs)
+              data: JSON.stringify(docs),
+              user: req.user
             });
           }
         });
@@ -370,7 +376,8 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
             console.log(err);
           } else {
             res.render('feedback3', {
-              data: JSON.stringify(docs)
+              data: JSON.stringify(docs),
+              user: req.user
             });
           }
         });
@@ -385,7 +392,8 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
           } else {
             console.log(docs);
             res.render('feedback3', {
-              data: JSON.stringify(docs)
+              data: JSON.stringify(docs),
+              user: req.user
             });
           }
         });
