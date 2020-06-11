@@ -458,6 +458,10 @@ var sessionSchema = mongoose.Schema({
 
       ma_2019_manovich: String,
       ma_2019_wolf: String,
+      ma_2019_kleshchev: String,
+      ma_2019_krasni: String,
+      ma_2019_manirko: String,
+      ma_2019_chubarov: String,
       ma_2019_manirko: String,
       ma_2019_vetushinsky: String,
 
