@@ -4,14 +4,6 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       name: 'Louis Vervoort',
       email: 'l.vervoort@utmn.ru'
     },
-    'Louis Vervoort (group 3)': {
-      name: 'Louis Vervoort (group 3)',
-      email: 'l.vervoort@utmn.ru'
-    },
-    'Louis Vervoort (group 4)': {
-      name: 'Louis Vervoort (group 4)',
-      email: 'l.vervoort@utmn.ru'
-    },
     Zachary: {
       name: 'Zachary Reyna',
       email: 'z.reyna@utmn.ru'
@@ -792,7 +784,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
 
     function getResponse () {
       var query = {};
-      var isAdmin = true;
+      var isAdmin = false;
       if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' ||
         userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru') {
         isAdmin = true;
