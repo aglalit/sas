@@ -946,14 +946,12 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       } else {
         if (req.query.t && (userEmail === dict[req.query.t].email || isAdmin)) {
           query['polls.' + req.query.s] = {
-            $regex: `${dict[req.query.t].name.replace(/\(/g,"\\(").replace(/\)/g,"\\)")}`
+            $regex: `${dict[req.query.t].name}`
           };
           Session.find(query).select('polls.' + req.query.s).exec(function (err, docs) {
             if (err) {
               res.send(err);
               console.log(err);
-
-                        console.log(JSON.stringify(query))
 
               res.render('feedback5', {
                 data: JSON.stringify(docs),
