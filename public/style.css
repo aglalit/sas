@@ -111,7 +111,7 @@ input[type="radio"] {
     zoom:1.1;
     }
 
-button:not(.button_vote) {
+button[type="submit"] {
     background-color: #f00 !important;
     border: none !important;
   }

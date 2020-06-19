@@ -15,19 +15,9 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         }
 
         if (user) {
-          user.polls.ELECTIVES["2020_1"].elective1 = req.body["1"];
-          user.polls.ELECTIVES["2020_1"].elective2 = req.body["2"];
-          user.polls.ELECTIVES["2020_1"].elective3 = req.body["3"];
-          user.polls.ELECTIVES["2020_1"].elective4 = req.body["4"];
-          user.polls.ELECTIVES["2020_1"].elective5 = req.body["5"];
-          user.polls.ELECTIVES["2020_1"].elective6 = req.body["6"];
-          user.polls.ELECTIVES["2020_1"].elective7 = req.body["7"];
-          user.polls.ELECTIVES["2020_1"].elective8 = req.body["8"];
-          user.polls.ELECTIVES["2020_1"].elective9 = req.body["9"];
-          user.polls.ELECTIVES["2020_1"].elective10 = req.body["10"];
-          user.polls.ELECTIVES["2020_1"].elective11 = req.body["11"];
-          user.polls.ELECTIVES["2020_1"].elective12 = req.body["12"];
-          user.polls.ELECTIVES["2020_1"].elective13 = req.body["13"];
+          for (let i=0;i<14;i++){
+            user.polls.ELECTIVES["2020_1"][`elective{i}`] = req.body[parseString(i)];
+          }
 
           var now = new Date();
           user.polls.ELECTIVES["2020_1"].time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});

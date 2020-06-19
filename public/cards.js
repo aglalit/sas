@@ -8,20 +8,23 @@ window.onload=function(){
       })
     }
 
-var localCards = localStorage.getItem('cards' + (yearUrl ? '14':'10'));
-if (localCards){
-    $('.cards').html(localCards);
-}
+// var localCards = localStorage.getItem('cards' + (yearUrl ? '14':'10'));
+// if (localCards){
+//     $('.cards').html(localCards);
+// }
 
 createForm();
 
 function createForm(){
   $( ".portlet-header" ).each(function(index){
-      var input = $("<input>", {type: "hidden", name: index+1, value: $(this).attr('id')})
+      var input;
+      if ($(this).hasClass('excluded')) {
+        input = $("<input>", {type: "hidden", name: index+1, value: `EXCLUDED: ${$(this).attr('id')}`})
+      }
+      else input = $("<input>", {type: "hidden", name: index+1, value: $(this).attr('id')})
       $('form').append(input);
   });
 }
-
 
 $( ".cards" ).sortable({
     connectWith: ".column",
@@ -77,3 +80,9 @@ $( ".portlet-toggle" ).click(function() {
 });
 
 };
+
+function excludeCard(event){
+  var event = event || window.event;
+  var excluded = $(event.target.parentNode.parentNode.parentNode.parentNode).addClass('excluded');
+  excluded.parent().hide();
+}
