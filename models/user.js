@@ -82,7 +82,7 @@ var userSchema = mongoose.Schema({
       ba_2019_year1_q4_it: Boolean,
       ba_2019_year2_q4_dt: Boolean,
       ba_2019_year3_q4_rs: Boolean,
-      
+
       ma_2019_wolf:Boolean,
       ma_2019_manovich:Boolean
     },
@@ -123,6 +123,7 @@ var userSchema = mongoose.Schema({
         elective3: String,
         elective4: String
       },
+      electives_pre_2020: String,
       "2020_1": {
         time: String,
         elective1: String,
