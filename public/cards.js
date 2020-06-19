@@ -83,6 +83,6 @@ $( ".portlet-toggle" ).click(function() {
 
 function excludeCard(event){
   var event = event || window.event;
-  var excluded = $(event.target.parentNode.parentNode.parentNode.parentNode).addClass('excluded');
+  var excluded = $(event.target.parentNode.parentNode.parentNode).addClass('excluded');
   excluded.parent().hide();
 }
