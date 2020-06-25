@@ -5,6 +5,10 @@ html
     link(rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
     link(rel="stylesheet" href="https://sastest.utmn.ru/wp-content/themes/sasutmn/css/fontello-embedded.min.css")
     // load bootstrap css
+    script.
+      !function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?168",t.onload=function(){VK.Retargeting.Init("VK-RTRG-501131-8ENu7"),VK.Retargeting.Hit()},document.head.appendChild(t)}();
+    noscript
+      img(src="https://vk.com/rtrg?p=VK-RTRG-501131-8ENu7" style="position:fixed; left:-999px;" alt="")
     style.
       body        { padding-top:20px;   font-family: 'Agipo-Bold'; 
       
@@ -257,6 +261,7 @@ html
                       font-size: 40px;
                     }
                   }
+                  
         
 body
   .container
@@ -283,7 +288,7 @@ body
           li(class="youtube")
             a(href="https://www.youtube.com/channel/UCTOl5FTiDD-n61Xiu0e_Uvg" target="_blank")
               i(class="icon-youtube")
-      form(action="/polls/registration-prospective-students" method="post")
+      form(action="/polls/registration-prospective-students" method="post" onsubmit="VK.Goal('conversion')")
         fieldset
           div(class="input-group")
             .flex-container.column
