@@ -13,10 +13,10 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const winston = require('winston');
 const config = require("dotenv").config;
+config();
 const flash = require("connect-flash");
 const index = require("./routes/index");
 const connect_mongo = require("connect-mongo");
-config();
 let app = express();
 let router = express.Router();
 
