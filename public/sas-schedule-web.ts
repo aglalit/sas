@@ -1,32 +1,36 @@
 fetch('https://schoolofadvancedstudies.herokuapp.com/schedule_data')
-    .then(function (response) {
-    return response.json();
-})
-    .then(function (data) {
-    generateSchedule(JSON.parse(data));
-});
-function generateSchedule(data) {
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        generateSchedule(JSON.parse(data))
+    });
+
+function generateSchedule(data: object) {
     var postWrapper = document.querySelector('.post-wrapper');
     var index = 0;
     var currentWeek = data[Object.keys(data)[0]];
     var dates = Object.keys(data)[0].split(' ')[1];
-    for (var dayProp in currentWeek) {
+
+    for (const dayProp in currentWeek) {
         var day = currentWeek[dayProp];
         index++;
+
         var tableWrapper = document.createElement('div');
         var flexContainer = document.createElement('div');
         var scheduleHeader = document.createElement('h2');
+
         scheduleHeader.classList.add('schedule');
         flexContainer.appendChild(scheduleHeader);
         if (index === 1) {
-            scheduleHeader.innerHTML = "Schedule, <span class=\"red\">" + dates + "</span>";
+            scheduleHeader.innerHTML = `Schedule, <span class="red">${dates}</span>`;
         }
         var dateHeader = document.createElement('h2');
         dateHeader.classList.add('date');
         dateHeader.innerHTML = dayProp;
         flexContainer.appendChild(dateHeader);
         flexContainer.classList.add('flex-container');
-        tableWrapper.classList.add('schedule-wrapper');
+        tableWrapper.classList.add('schedule-wrapper')
         tableWrapper.appendChild(flexContainer);
         postWrapper.appendChild(tableWrapper);
         var tableContainer = document.createElement('div');
@@ -38,28 +42,31 @@ function generateSchedule(data) {
         var tbody = document.createElement('tbody');
         table.appendChild(tbody);
         var rowIndex = 0;
-        for (var timeProp in day) {
+
+        for (const timeProp in day) {
             var timeEntry = day[timeProp];
             rowIndex++;
             if (Object.keys(timeEntry).length) {
-                var row = document.createElement('tr');
-                row.classList.add('row');
-                tbody.appendChild(row);
-                var classNumber = document.createElement('td');
-                classNumber.classList.add('classNumber');
-                var classNumberSpan = document.createElement('span');
-                classNumberSpan.classList.add('classNumberSpan');
-                classNumberSpan.innerHTML = rowIndex.toString();
-                row.appendChild(classNumber);
-                classNumber.appendChild(classNumberSpan);
-                var time = document.createElement('td');
-                time.classList.add('time');
-                time.innerHTML = timeProp;
-                var classes = document.createElement('td');
-                classes.classList.add('classes');
-                row.appendChild(time);
-                row.appendChild(classes);
-                for (var classEntry in timeEntry) {
+            var row = document.createElement('tr');
+            row.classList.add('row');
+            tbody.appendChild(row);
+            var classNumber = document.createElement('td');
+            classNumber.classList.add('classNumber')
+            var classNumberSpan = document.createElement('span');
+            classNumberSpan.classList.add('classNumberSpan')
+            classNumberSpan.innerHTML = rowIndex.toString();
+            row.appendChild(classNumber);
+            classNumber.appendChild(classNumberSpan);
+            var time = document.createElement('td');
+            time.classList.add('time');
+            time.innerHTML = timeProp;
+            var classes = document.createElement('td');
+            classes.classList.add('classes')
+            row.appendChild(time);
+            row.appendChild(classes);
+
+
+                for (const classEntry in timeEntry) {
                     var teacher = timeEntry[classEntry]['teacher'];
                     var room = timeEntry[classEntry]['room'];
                     var classParagraph = document.createElement('p');
@@ -70,16 +77,13 @@ function generateSchedule(data) {
                     var professor = document.createElement('span');
                     professor.classList.add('professor');
                     classParagraph.appendChild(professor);
-                    if (room && teacher)
-                        professor.innerHTML = " (" + timeEntry[classEntry]['teacher'] + " \u2014 " + timeEntry[classEntry]['room'] + ")";
-                    else if (room)
-                        professor.innerHTML = " (" + timeEntry[classEntry]['room'] + ")";
-                    else if (teacher)
-                        professor.innerHTML = " (" + timeEntry[classEntry]['teacher'] + ")";
+
+                    if (room && teacher) professor.innerHTML = ` (${timeEntry[classEntry]['teacher']} — ${timeEntry[classEntry]['room']})`;
+                    else if (room) professor.innerHTML = ` (${timeEntry[classEntry]['room']})`;
+                    else if (teacher) professor.innerHTML = ` (${timeEntry[classEntry]['teacher']})`;
                     classes.appendChild(classParagraph);
                 }
             }
         }
     }
 }
-//# sourceMappingURL=sas-schedule-web.js.map
