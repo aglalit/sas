@@ -1,33 +1,33 @@
-import express from 'express';
-import cors from 'cors';
-import subdomain from 'express-subdomain';
-import path from 'path';
-import favicon from 'serve-favicon';
-import loggerMorgan from 'morgan';
-import compression from 'compression';
-import cookieParser from 'cookie-parser';
-import bodyParser from 'body-parser';
-import nodemailer from 'nodemailer';
-import querystring from 'querystring';
-import mongoose from 'mongoose';
-import passport from 'passport';
-import winston from 'winston';
-import {config} from "dotenv";
-import flash from "connect-flash";
-import index from "./routes/index";
-import connect_mongo from "connect-mongo";
+import * as express from 'express';
+import * as cors from 'cors';
+import * as subdomain from 'express-subdomain';
+import * as path from 'path';
+import * as favicon from 'serve-favicon';
+import * as loggerMorgan from 'morgan';
+import * as compression from 'compression';
+import * as cookieParser from 'cookie-parser';
+import * as bodyParser from 'body-parser';
+import * as nodemailer from 'nodemailer';
+import * as querystring from 'querystring';
+import * as mongoose from 'mongoose';
+import * as passport from 'passport';
+import * as winston from 'winston';
+import * as {config} from "dotenv";
+import * as flash from "connect-flash";
+import * as index from "./routes/index";
+import * as connect_mongo from "connect-mongo";
 config();
 let app = express();
 let router = express.Router();
 
-import fileUpload from 'express-fileupload';
+import * as fileUpload from 'express-fileupload';
 
-import session from 'express-session';
+import * as session from 'express-session';
 
 const MongoStore = connect_mongo(session);
-import User from './models/user';
-import Session from './models/session';
-import Schedule from './models/schedule';
+import * as User from './models/user';
+import * as Session from './models/session';
+import * as Schedule from './models/schedule';
 
 let logger = winston.createLogger({
  level: 'error',
