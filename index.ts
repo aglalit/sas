@@ -1,58 +1,58 @@
-import * as express from 'express';
-import * as cors from 'cors';
-import * as subdomain from 'express-subdomain';
-import * as path from 'path';
-import * as favicon from 'serve-favicon';
-import * as loggerMorgan from 'morgan';
-import * as compression from 'compression';
-import * as cookieParser from 'cookie-parser';
-import * as bodyParser from 'body-parser';
-import * as nodemailer from 'nodemailer';
-import * as querystring from 'querystring';
-import * as mongoose from 'mongoose';
-import * as passport from 'passport';
-import * as winston from 'winston';
-import * as {config} from "dotenv";
-import * as flash from "connect-flash";
-import * as index from "./routes/index";
-import * as connect_mongo from "connect-mongo";
+const express = require('express');
+const cors = require('cors');
+const subdomain = require('express-subdomain');
+const path = require('path');
+const favicon = require('serve-favicon');
+const loggerMorgan = require('morgan');
+const compression = require('compression');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
+const querystring = require('querystring');
+const mongoose = require('mongoose');
+const passport = require('passport');
+const winston = require('winston');
+const config = require("dotenv").config;
+const flash = require("connect-flash");
+const index = require("./routes/index");
+const connect_mongo = require("connect-mongo");
 config();
 let app = express();
 let router = express.Router();
 
-import * as fileUpload from 'express-fileupload';
+const fileUpload = require('express-fileupload');
 
-import * as session from 'express-session';
+const session = require('express-session');
 
 const MongoStore = connect_mongo(session);
-import * as User from './models/user';
-import * as Session from './models/session';
-import * as Schedule from './models/schedule';
+const User = require('./models/user');
+const Session = require('./models/session');
+const Schedule = require('./models/schedule');
 
 let logger = winston.createLogger({
  level: 'error',
  format: winston.format.json(),
  defaultMeta: { service: 'user-service' },
  transports: [
-  //
-  // - Write to all logs with level `info` and below to `combined.log`
-  // - Write all logs error (and below) to `error.log`.
-  //
-  new winston.transports.File({ filename: './public/error.log', level: 'error' }),
-  new winston.transports.File({ filename: './public/combined.log' })
+ //
+ // - Write to all logs with level `info` and below to `combined.log`
+ // - Write all logs error (and below) to `error.log`.
+ //
+ new winston.transports.File({ filename: './public/error.log', level: 'error' }),
+ new winston.transports.File({ filename: './public/combined.log' })
  ]
 });
 // logger.error('Error log:');
 
 const promise = mongoose.connect(process.env.MONGODB_URI
-  , {useNewUrlParser: true}).then(
-  () => {
-   console.log('Database is connected');
-  },
-  err => {
-   logger.error(err);
-   console.log('Can not connect to the database' + err);
-  }
+ , {useNewUrlParser: true}).then(
+ () => {
+ console.log('Database is connected');
+ },
+ err => {
+ logger.error(err);
+ console.log('Can not connect to the database' + err);
+ }
 );
 
 // Connection URL
@@ -63,12 +63,12 @@ const db = mongoose.connection;
 
 promise.then(function (db) {
  db.on('error', function (error) {
-  console.error.bind(console, 'connection error:');
-  logger.error(error);
+ console.error.bind(console, 'connection error:');
+ logger.error(error);
  });
  db.on('open', function () {
-  logger.error('Mongo is connected');
-  console.log('Mongo is connected');
+ logger.error('Mongo is connected');
+ console.log('Mongo is connected');
  });
 });
 
@@ -78,17 +78,17 @@ const pass = process.env.TRANSPORTER_PASSWORD;
 const transporter = nodemailer.createTransport({
  service: 'gmail',
  auth: {
-  user: user,
-  pass: pass
+ user: user,
+ pass: pass
  },
  debug: true
 });
 transporter.verify(function (error, success) {
  if (error) {
-  console.log(error);
-  logger.error(error);
+ console.log(error);
+ logger.error(error);
  } else {
-  console.log('Server is ready to take our messages');
+ console.log('Server is ready to take our messages');
  }
 });
 
@@ -98,8 +98,8 @@ const officepass = process.env.OFFICETRANSPORTER_PASSWORD;
 const officeTransporter = nodemailer.createTransport({
  service: 'gmail',
  auth: {
-  user: officeuser,
-  pass: officepass
+ user: officeuser,
+ pass: officepass
  },
  debug: true
 });
@@ -170,11 +170,11 @@ app.get('/polls-anonymous', function (req, res) {
 function checkReturnTo (req, res, next) {
  let returnTo = req.query.returnTo;
  if (returnTo) {
-  // Maybe unnecessary, but just to be sure.
-  req.session = req.session || {};
+ // Maybe unnecessary, but just to be sure.
+ req.session = req.session || {};
 
-  // Set returnTo to the absolute path you want to be redirect to after the authentication succeeds.
-  req.session.returnTo = req.baseUrl + querystring.unescape(returnTo);
+ // Set returnTo to the absolute path you want to be redirect to after the authentication succeeds.
+ req.session.returnTo = req.baseUrl + querystring.unescape(returnTo);
  }
  next();
 }
@@ -297,9 +297,9 @@ function isLoggedIn (req, res, next) {
 
  // if user is authenticated in the session, carry on
  if (req.isAuthenticated()) {
-  console.log(req.isAuthenticated());
-  console.log('isAuthenticated');
-  return next();
+ console.log(req.isAuthenticated());
+ console.log('isAuthenticated');
+ return next();
  }
 
  // if they aren't redirect them to the home page
@@ -321,8 +321,8 @@ app.use(function (err, req, res, next) {
  res.locals.message = err.message;
  res.locals.error = err;
  // = req.app.get('env') === 'development'
- //  ? err
- //  : {};
+ // ? err
+ // : {};
 
  // render the error page
  res.status(err.status || 500);
