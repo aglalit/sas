@@ -13,6 +13,8 @@ module.exports = function (app, Session, transporter) {
         return console.log(error);
       }
       console.log('Message %s sent: %s', info.messageId, info.response);
+      req.flash('info', 'Благодарим за регистрацию.');
+      res.render('registration-xhe-open-day', { messages: req.flash('info') });
     });
 
     Session.findOne({
@@ -23,9 +25,6 @@ module.exports = function (app, Session, transporter) {
       var newSession = new Session();
       parseSession(newSession, req, transporter);
     });
-
-    req.flash('info', 'Благодарим за регистрацию.');
-    res.render('registration-xhe-open-day', { messages: req.flash('info') });
   });
 
   app.get('/polls/registration-xhe', function (req, res) {
