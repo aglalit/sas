@@ -1,6 +1,8 @@
 module.exports = function (app, Session, transporter) {
 // REGISTRATION ON THE SAS.UTMN.RU WEBSITE — CONFIRMATION EMAIL
-
+  app.get('/polls/registration-xhe-open-day', function (req, res) {
+    res.render('registration-xhe-open-day');
+  });
   app.post('/polls/registration-xhe-open-day', function (req, res) {
     const mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
