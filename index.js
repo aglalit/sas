@@ -243,16 +243,16 @@ app.get('/logout', function (req, res) {
 });
 function isLoggedIn(req, res, next) {
     // DEV
-    return next();
+    //return next();
     // if user is authenticated in the session, carry on
-    // if (req.isAuthenticated()) {
-    //     console.log(req.isAuthenticated());
-    //     console.log('isAuthenticated');
-    //     return next();
-    // }
-    // // if they aren't redirect them to the home page
-    // console.log(req.isAuthenticated());
-    // res.redirect('/login?returnTo=' + querystring.escape(req.url));
+    if (req.isAuthenticated()) {
+        console.log(req.isAuthenticated());
+        console.log('isAuthenticated');
+        return next();
+    }
+    // if they aren't redirect them to the home page
+    console.log(req.isAuthenticated());
+    res.redirect('/login?returnTo=' + querystring.escape(req.url));
 }
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
