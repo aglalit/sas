@@ -139,6 +139,10 @@ app.get('/polls', isLoggedIn, function (req, res) {
 app.get('/polls-anonymous', function (req, res) {
     res.render('polls_anonymous', { messages: req.flash('info') });
 });
+app.get('/sas-folder-tree', isLoggedIn, function(req, res, next) {
+  res.sendFile('views/sas-folder-tree.html', {root: __dirname });
+});
+
 function checkReturnTo(req, res, next) {
     var returnTo = req.query.returnTo;
     if (returnTo) {
