@@ -33,32 +33,32 @@ labus.
             {
                 "instructors": "Jay Silverstein",
                 "title": "Finding Bodies",
-                "syllabus": "TBA"
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/Finding-Bodies_2020-21_syllabus-Silverstein-July-2020.pdf"
             },
             {
                 "instructors": "Matvey Lomonosov, Juliette Colinas",
                 "title": "Ecological Citizenship",
-                "syllabus": "TBA"
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/Environmental-Citizenship_2020-21_syllabus.pdf"
             },
             {
                 "instructors": "David Dusseault",
                 "title": "The Street: Photography in the Public Realm",
-                "syllabus": "TBA"
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/The-Street_2020-21_syllabus.pdf"
             },
             {
                 "instructors": "Juliette Colinas",
                 "title": "Nutrition, Health, Environment",
-                "syllabus": "TBA"
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/Nutrition-Health-Environment_2020-21_syllabus.pdf"
             },
             {
                 "instructors": "Munesh Chauhan",
                 "title": "Challenges in Social Robotics",
-                "syllabus": "TBA"
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/Challenges-in-Social-Robotics_2020-21_syllabus.pdf"
             },
             {
                 "instructors": "Valerie Sartor, Velemira Ivanova",
                 "title": "English as a Second Language",
-                "syllabus": "TBA"
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
             }
           ]
             var urlParams = new URLSearchParams(window.location.search);
@@ -170,6 +170,6 @@ labus.
             var card = document.createElement('div');
             card.classList.add('portlet', 'ui-widget', 'ui-widget-content', 'ui-helper-clearfix', 'ui-corner-all');
             card.innerHTML = `<div class="portlet-header ui-sortable-handle ui-widget-header ui-corner-all" id="${entry["title"]} — ${entry["instructors"]}"><div class="row"><div class="col-12 col-md-12"><a data-toggle="collapse" role="button" href="#collapse${index}">${entry["title"]} — ${entry["instructors"]}</a><div class="collapse" id="collapse${index}"> 
-            <p><a target="_blank" href="${entry["syllabus"]}">Syllabus link</a></p></div></div></div></div>`
+            <p><a target="_blank" href="${entry["syllabus"]}">Syllabus</a></p></div></div></div></div>`
             cards.appendChild(card);
           })
