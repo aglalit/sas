@@ -227,7 +227,6 @@ require('./server/erpyleva.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/gi_topics_2020.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/registration-data.js')(app, Session, transporter, isLoggedIn, logger);
 require('./server/feedback.js')(app, Session, User, transporter, isLoggedIn, logger);
-require('./server/feedback-collector.js')(app, Session, transporter, officeTransporter, isLoggedIn, User, logger);
 require('./server/feedback-collector-anonymous.js')(app, Session, transporter, officeTransporter, logger);
 require('./server/db_export.js')(app, Session, User);
 require('./server/schedule_data.js')(app, Schedule, logger);
@@ -241,6 +240,9 @@ require('./server/ba_2019_year2_module8_gb.js')(app, Session, transporter, offic
 require('./server/ba_2019_year2_module8_electives.js')(app, Session, transporter, officeTransporter, isLoggedIn, User, logger);
 require('./server/ba_2019_year2_module8_electives2.js')(app, Session, transporter, officeTransporter, isLoggedIn, User, logger);
 require('./server/ba_2019_year2_module8_design_thinking.js')(app, Session, transporter, officeTransporter, isLoggedIn, User, logger);
+require('./server/feedback-collector.js')(app, Session, transporter, officeTransporter, isLoggedIn, User, logger);
+
+
 app.get('/logout', function (req, res) {
     req.logout();
     res.redirect('/polls');
