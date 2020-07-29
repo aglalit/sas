@@ -1,27 +1,22 @@
-module.exports = function(app, Session, transporter, officeTransporter, logger) {
-
-  var name = 'anonymous';
-  var email = 'anonymous@gmail.com';
-
-  app.get('/polls/ba-2019-year1-module1-english', function(req, res) {
-    res.render('ba-2019-year1-module1-english')
+module.exports = function (app, Session, transporter, officeTransporter, logger) {
+  app.get('/polls/ba-2019-year1-module1-english', function (req, res) {
+    res.render('ba-2019-year1-module1-english');
   });
 
-  app.get('/polls/generic-anonymous', function(req, res) {
-    res.render('generic-anonymous')
+  app.get('/polls/generic-anonymous', function (req, res) {
+    res.render('generic-anonymous');
   });
 
-  app.post('/polls/feedback-collector-anonymous', function(req, res) {
-          var newSession = new Session();
-          parseSession(newSession, req);
-      });
+  app.post('/polls/feedback-collector-anonymous', function (req, res) {
+    var newSession = new Session();
+    parseSession(newSession, req);
 
     req.flash('info', 'The form is submitted. Thanks for the feedback ( ͡° ͜ʖ ͡°)');
     res.render('polls_anonymous', {
       messages: req.flash('info')
-    })
+    });
 
-    function parseSession(sess, req) {
+    function parseSession (sess, req) {
       var now = new Date();
       sess.session_id = req.session.id;
       //   var keyNames = Object.keys(req.body);
@@ -36,7 +31,7 @@ module.exports = function(app, Session, transporter, officeTransporter, logger) 
       for (let i = 0; i < bodyKeys.length; i++) {
         emailBody += '<p><b>' + bodyKeys[i] + '</b>: ' + req.body[bodyKeys[i]] + '</p>';
       }
-      let mailOptions = {
+      const mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
         to: 'm.agliulin@utmn.ru', // list of receivers
         subject: 'Feedback', // Subject line
@@ -56,12 +51,10 @@ module.exports = function(app, Session, transporter, officeTransporter, logger) 
         console.log('Message %s sent: %s', info.messageId, info.response);
       });
       sess.polls[req.body.subject.replace(/-/g, '_')] = JSON.stringify(req.body);
-      sess.save(function(err) {
-        if (err)
-          logger.error(err);
-          return console.error(err);
-        return;
+      sess.save(function (err) {
+        if (err) { logger.error(err); }
+        return console.error(err);
       });
     }
   });
-}
+};
