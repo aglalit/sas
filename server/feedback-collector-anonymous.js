@@ -12,20 +12,8 @@ module.exports = function(app, Session, transporter, officeTransporter, logger) 
   });
 
   app.post('/polls/feedback-collector-anonymous', function(req, res) {
-
-      Session.findOne({
-        'session_id': req.session.id
-      }, function(err, session) {
-        if (err)
-          logger.error(err);
-          console.log(err);
-
-        if (session) {
-          parseSession(session, req);
-        } else {
           var newSession = new Session();
           parseSession(newSession, req);
-        }
       });
 
     req.flash('info', 'The form is submitted. Thanks for the feedback ( ͡° ͜ʖ ͡°)');
