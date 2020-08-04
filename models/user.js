@@ -166,11 +166,11 @@ var userSchema = mongoose.Schema({
       minor: String,
       time : String
     },
-    "erpyleva": {
+    "lesnik": {
       major: String,
       time : String
     },
-    "kontowski": {
+    "turk": {
       major: String,
       time : String
     },
