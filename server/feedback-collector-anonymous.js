@@ -15,7 +15,7 @@ module.exports = function (app, Session, transporter, officeTransporter, logger)
     var newSession = new Session();
     parseSession(newSession, req);
 
-    req.flash('info', 'The form is submitted. Thanks for the feedback ( ͡° ͜ʖ ͡°)');
+    req.flash('info', 'Ваша форма отправлена. Благодарим за участие.');
     res.render('polls_anonymous', {
       messages: req.flash('info')
     });
