@@ -2,12 +2,12 @@ module.exports = function (app, Session, transporter, officeTransporter, isLogge
   var name;
   var email;
 
-  app.get('/polls/:path', isLoggedIn, function (req, res) {
-    console.log(req.params, req.params.path);
-    res.render(req.params.path, {
-      user: req.user
-    });
-  });
+  // app.get('/polls/:path', isLoggedIn, function (req, res) {
+  //   console.log(req.params, req.params.path);
+  //   res.render(req.params.path, {
+  //     user: req.user
+  //   });
+  // });
 
   // app.get('/polls/generic',
   // isLoggedIn,
