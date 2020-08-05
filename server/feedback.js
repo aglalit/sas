@@ -264,7 +264,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       var isAdmin = false;
       if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' ||
         userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'a.rusakova@utmn.ru' ||
-      userEmail === 'e.selikhovkina@utmn.ru') {
+      userEmail === 'e.selikhovkina@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
         isAdmin = true;
       }
 
@@ -423,7 +423,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       var isAdmin = false;
       if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' ||
         userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'a.rusakova@utmn.ru' ||
-      userEmail === 'e.selikhovkina@utmn.ru') {
+      userEmail === 'e.selikhovkina@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
         isAdmin = true;
       }
 
@@ -582,7 +582,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       var isAdmin = false;
       if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' ||
         userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'a.rusakova@utmn.ru' ||
-      userEmail === 'e.selikhovkina@utmn.ru') {
+      userEmail === 'e.selikhovkina@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
         isAdmin = true;
       }
 
@@ -789,7 +789,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       var isAdmin = false;
       if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' ||
         userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'a.rusakova@utmn.ru' ||
-      userEmail === 'e.selikhovkina@utmn.ru') {
+      userEmail === 'e.selikhovkina@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
         isAdmin = true;
       }
 
