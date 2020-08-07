@@ -19,16 +19,15 @@ body
       h1 Electives. Year 2020–2021. Module 1. 
       h3 Sort the following electives in the order from the most preferable to the least preferable one (from the top to the bottom)
       h3 Click on a course title to see its syllabus. Please make your choice carefully because lower priorities may matter.
-      h1 Выбор элективов временно приостановлен.
-    //-   form(id="form" action="/polls/electives_2020_2021_1" method="post")
-    //-     // DON'T REMOVE THIS INPUT!!!
-    //-     input(type="hidden") 
-    //-     fieldset   
-    //-         .cards.offset-sm-1.col-sm-11                
-    //-     button(type="submit" class="btn btn-primary btn-lg") Submit
-    //- script(src="/cards.js")
-    //- script(src="/default.js") 
-    //- script.
+      form(id="form" action="/polls/electives_2020_2021_1" method="post")
+        // DON'T REMOVE THIS INPUT!!!
+        input(type="hidden") 
+        fieldset   
+            .cards.offset-sm-1.col-sm-11                
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    script(src="/cards.js")
+    script(src="/default.js") 
+    script.
             var cards = document.querySelector('.cards');
             var dict = [
             {
@@ -163,10 +162,10 @@ body
                 }
               ]
             }
-            
-          
-              
-          
+    
+    
+    
+    
           dict.forEach(function(entry, index){
             var card = document.createElement('div');
             card.classList.add('portlet', 'ui-widget', 'ui-widget-content', 'ui-helper-clearfix', 'ui-corner-all');
