@@ -1,353 +1,4 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-(function (global, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define(['exports', 'module'], factory);
-  } else if (typeof exports !== 'undefined' && typeof module !== 'undefined') {
-    factory(exports, module);
-  } else {
-    var mod = {
-      exports: {}
-    };
-    factory(mod.exports, mod);
-    global.fetchJsonp = mod.exports;
-  }
-})(this, function (exports, module) {
-  'use strict';
-
-  var defaultOptions = {
-    timeout: 5000,
-    jsonpCallback: 'callback',
-    jsonpCallbackFunction: null
-  };
-
-  function generateCallbackFunction() {
-    return 'jsonp_' + Date.now() + '_' + Math.ceil(Math.random() * 100000);
-  }
-
-  function clearFunction(functionName) {
-    // IE8 throws an exception when you try to delete a property on window
-    // http://stackoverflow.com/a/1824228/751089
-    try {
-      delete window[functionName];
-    } catch (e) {
-      window[functionName] = undefined;
-    }
-  }
-
-  function removeScript(scriptId) {
-    var script = document.getElementById(scriptId);
-    if (script) {
-      document.getElementsByTagName('head')[0].removeChild(script);
-    }
-  }
-
-  function fetchJsonp(_url) {
-    var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-
-    // to avoid param reassign
-    var url = _url;
-    var timeout = options.timeout || defaultOptions.timeout;
-    var jsonpCallback = options.jsonpCallback || defaultOptions.jsonpCallback;
-
-    var timeoutId = undefined;
-
-    return new Promise(function (resolve, reject) {
-      var callbackFunction = options.jsonpCallbackFunction || generateCallbackFunction();
-      var scriptId = jsonpCallback + '_' + callbackFunction;
-
-      window[callbackFunction] = function (response) {
-        resolve({
-          ok: true,
-          // keep consistent with fetch API
-          json: function json() {
-            return Promise.resolve(response);
-          }
-        });
-
-        if (timeoutId) clearTimeout(timeoutId);
-
-        removeScript(scriptId);
-
-        clearFunction(callbackFunction);
-      };
-
-      // Check if the user set their own params, and if not add a ? to start a list of params
-      url += url.indexOf('?') === -1 ? '?' : '&';
-
-      var jsonpScript = document.createElement('script');
-      jsonpScript.setAttribute('src', '' + url + jsonpCallback + '=' + callbackFunction);
-      if (options.charset) {
-        jsonpScript.setAttribute('charset', options.charset);
-      }
-      jsonpScript.id = scriptId;
-      document.getElementsByTagName('head')[0].appendChild(jsonpScript);
-
-      timeoutId = setTimeout(function () {
-        reject(new Error('JSONP request to ' + _url + ' timed out'));
-
-        clearFunction(callbackFunction);
-        removeScript(scriptId);
-      }, timeout);
-
-      // Caught if got 404/500
-      jsonpScript.onerror = function () {
-        reject(new Error('JSONP request to ' + _url + ' failed'));
-
-        clearFunction(callbackFunction);
-        removeScript(scriptId);
-        if (timeoutId) clearTimeout(timeoutId);
-      };
-    });
-  }
-
-  // export as global function
-  /*
-  let local;
-  if (typeof global !== 'undefined') {
-    local = global;
-  } else if (typeof self !== 'undefined') {
-    local = self;
-  } else {
-    try {
-      local = Function('return this')();
-    } catch (e) {
-      throw new Error('polyfill failed because global object is unavailable in this environment');
-    }
-  }
-  local.fetchJsonp = fetchJsonp;
-  */
-
-  module.exports = fetchJsonp;
-});
-},{}],2:[function(require,module,exports){
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("fetch-jsonp"));
-	else if(typeof define === 'function' && define.amd)
-		define("GetSheetDone", ["fetch-jsonp"], factory);
-	else if(typeof exports === 'object')
-		exports["GetSheetDone"] = factory(require("fetch-jsonp"));
-	else
-		root["GetSheetDone"] = factory(root["fetchJsonp"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.buildUrl = buildUrl;
-exports.parseRawCells = parseRawCells;
-exports.parseLabeledCols = parseLabeledCols;
-exports.parseLabeledRowsCols = parseLabeledRowsCols;
-exports.raw = raw;
-exports.labeledCols = labeledCols;
-exports.labeledColsRows = labeledColsRows;
-
-var _fetchJsonp = __webpack_require__(1);
-
-var _fetchJsonp2 = _interopRequireDefault(_fetchJsonp);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function buildUrl(id, sheetNum, mode) {
-  return 'https://spreadsheets.google.com/feeds/' + mode + '/' + id + '/' + sheetNum + '/public/values?alt=json-in-script';
-}
-
-// Generic fetch and parse function
-function fetchAndParse(id, sheetNum, type, parseEntries) {
-  if (id.length === 0) {
-    return Promise.reject(new Error('empty id'));
-  }
-  var url = buildUrl(id, sheetNum, type);
-  return new Promise(function (resolve, reject) {
-    (0, _fetchJsonp2.default)(url).then(function (response) {
-      return response.json();
-    }).then(function (json) {
-      var data = parseEntries(json.feed.entry);
-      var res = {
-        title: json.feed.title.$t,
-        updated: json.feed.updated.$t,
-        data: data
-      };
-      resolve(res);
-    }).catch(function (ex) {
-      reject(ex);
-    });
-  });
-}
-
-function parseRawCells(entries) {
-  var data = [];
-  entries.forEach(function (cell) {
-    var row = parseInt(cell.gs$cell.row, 10) - 1;
-    var col = parseInt(cell.gs$cell.col, 10) - 1;
-    var content = cell.gs$cell.$t;
-    if (data[row] === undefined) {
-      data[row] = [];
-    }
-    data[row][col] = content;
-  });
-  return data;
-}
-
-/**
- * Use for table with labels only for columns
- */
-function parseEntry(entry) {
-  var res = {};
-  Object.keys(entry).forEach(function (key) {
-    if (key.indexOf('gsx$') === 0) {
-      var label = key.substr(4);
-      res[label] = entry[key].$t;
-    }
-  });
-  return res;
-}
-
-/**
- * Parser for table where just the columns are labeled
- * @return array of objects where the labels are keys
- */
-function parseLabeledCols(entries) {
-  return entries.map(function (entry) {
-    return parseEntry(entry);
-  });
-}
-
-/**
- * Use for table with labels for rows AND columns
- * Example input: "bar: 123, baz: 122, bab: 234"
- */
-function parseLabeledRow(row) {
-  var cols = row.split(', ');
-  var res = cols.reduce(function (acc, col) {
-    var pair = col.split(': ');
-    acc[pair[0]] = pair[1];
-    return acc;
-  }, {});
-  return res;
-}
-
-/**
- * Parser for table where both rows and columns are labeled
- * @return object where keys are row labels and values are objects where keys are the column labels
- */
-function parseLabeledRowsCols(entries) {
-  var res = {};
-  entries.forEach(function (entry) {
-    res[entry.title.$t] = parseLabeledRow(entry.content.$t);
-  });
-  return res;
-}
-
-// fetch as raw arrays
-function raw(id) {
-  var sheetNum = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-
-  return fetchAndParse(id, sheetNum, 'cells', parseRawCells);
-}
-
-// fetch as array of labeled columns
-function labeledCols(id) {
-  var sheetNum = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-
-  return fetchAndParse(id, sheetNum, 'list', parseLabeledCols);
-}
-
-// fetch as labeled map of labeled columns
-function labeledColsRows(id) {
-  var sheetNum = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-
-  return fetchAndParse(id, sheetNum, 'list', parseLabeledRowsCols);
-}
-
-exports.default = {
-  raw: raw,
-  labeledCols: labeledCols,
-  labeledColsRows: labeledColsRows
-};
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
-
-/***/ })
-/******/ ])["default"];
-});
-
-},{"fetch-jsonp":1}],3:[function(require,module,exports){
 //! moment.js
 
 ;(function (global, factory) {
@@ -1492,22 +1143,36 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
     function createDate (y, m, d, h, M, s, ms) {
         // can't just apply() to create a date:
         // https://stackoverflow.com/q/181348
-        var date = new Date(y, m, d, h, M, s, ms);
-
+        var date;
         // the date constructor remaps years 0-99 to 1900-1999
-        if (y < 100 && y >= 0 && isFinite(date.getFullYear())) {
-            date.setFullYear(y);
+        if (y < 100 && y >= 0) {
+            // preserve leap years using a full 400 year cycle, then reset
+            date = new Date(y + 400, m, d, h, M, s, ms);
+            if (isFinite(date.getFullYear())) {
+                date.setFullYear(y);
+            }
+        } else {
+            date = new Date(y, m, d, h, M, s, ms);
         }
+
         return date;
     }
 
     function createUTCDate (y) {
-        var date = new Date(Date.UTC.apply(null, arguments));
-
+        var date;
         // the Date.UTC function remaps years 0-99 to 1900-1999
-        if (y < 100 && y >= 0 && isFinite(date.getUTCFullYear())) {
-            date.setUTCFullYear(y);
+        if (y < 100 && y >= 0) {
+            var args = Array.prototype.slice.call(arguments);
+            // preserve leap years using a full 400 year cycle, then reset
+            args[0] = y + 400;
+            date = new Date(Date.UTC.apply(null, args));
+            if (isFinite(date.getUTCFullYear())) {
+                date.setUTCFullYear(y);
+            }
+        } else {
+            date = new Date(Date.UTC.apply(null, arguments));
         }
+
         return date;
     }
 
@@ -1609,7 +1274,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
     var defaultLocaleWeek = {
         dow : 0, // Sunday is the first day of the week.
-        doy : 6  // The week that contains Jan 1st is the first week of the year.
+        doy : 6  // The week that contains Jan 6th is the first week of the year.
     };
 
     function localeFirstDayOfWeek () {
@@ -1718,25 +1383,28 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
     }
 
     // LOCALES
+    function shiftWeekdays (ws, n) {
+        return ws.slice(n, 7).concat(ws.slice(0, n));
+    }
 
     var defaultLocaleWeekdays = 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_');
     function localeWeekdays (m, format) {
-        if (!m) {
-            return isArray(this._weekdays) ? this._weekdays :
-                this._weekdays['standalone'];
-        }
-        return isArray(this._weekdays) ? this._weekdays[m.day()] :
-            this._weekdays[this._weekdays.isFormat.test(format) ? 'format' : 'standalone'][m.day()];
+        var weekdays = isArray(this._weekdays) ? this._weekdays :
+            this._weekdays[(m && m !== true && this._weekdays.isFormat.test(format)) ? 'format' : 'standalone'];
+        return (m === true) ? shiftWeekdays(weekdays, this._week.dow)
+            : (m) ? weekdays[m.day()] : weekdays;
     }
 
     var defaultLocaleWeekdaysShort = 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_');
     function localeWeekdaysShort (m) {
-        return (m) ? this._weekdaysShort[m.day()] : this._weekdaysShort;
+        return (m === true) ? shiftWeekdays(this._weekdaysShort, this._week.dow)
+            : (m) ? this._weekdaysShort[m.day()] : this._weekdaysShort;
     }
 
     var defaultLocaleWeekdaysMin = 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_');
     function localeWeekdaysMin (m) {
-        return (m) ? this._weekdaysMin[m.day()] : this._weekdaysMin;
+        return (m === true) ? shiftWeekdays(this._weekdaysMin, this._week.dow)
+            : (m) ? this._weekdaysMin[m.day()] : this._weekdaysMin;
     }
 
     function handleStrictParse$1(weekdayName, format, strict) {
@@ -2485,13 +2153,13 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
                     weekdayOverflow = true;
                 }
             } else if (w.e != null) {
-                // local weekday -- counting starts from begining of week
+                // local weekday -- counting starts from beginning of week
                 weekday = w.e + dow;
                 if (w.e < 0 || w.e > 6) {
                     weekdayOverflow = true;
                 }
             } else {
-                // default to begining of week
+                // default to beginning of week
                 weekday = dow;
             }
         }
@@ -3085,7 +2753,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
             years = normalizedInput.year || 0,
             quarters = normalizedInput.quarter || 0,
             months = normalizedInput.month || 0,
-            weeks = normalizedInput.week || 0,
+            weeks = normalizedInput.week || normalizedInput.isoWeek || 0,
             days = normalizedInput.day || 0,
             hours = normalizedInput.hour || 0,
             minutes = normalizedInput.minute || 0,
@@ -3389,7 +3057,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
                 ms : toInt(absRound(match[MILLISECOND] * 1000)) * sign // the millisecond decimal point is included in the match
             };
         } else if (!!(match = isoRegex.exec(input))) {
-            sign = (match[1] === '-') ? -1 : (match[1] === '+') ? 1 : 1;
+            sign = (match[1] === '-') ? -1 : 1;
             duration = {
                 y : parseIso(match[2], sign),
                 M : parseIso(match[3], sign),
@@ -3431,7 +3099,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
     }
 
     function positiveMomentsDifference(base, other) {
-        var res = {milliseconds: 0, months: 0};
+        var res = {};
 
         res.months = other.month() - base.month() +
             (other.year() - base.year()) * 12;
@@ -3540,7 +3208,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
         if (!(this.isValid() && localInput.isValid())) {
             return false;
         }
-        units = normalizeUnits(!isUndefined(units) ? units : 'millisecond');
+        units = normalizeUnits(units) || 'millisecond';
         if (units === 'millisecond') {
             return this.valueOf() > localInput.valueOf();
         } else {
@@ -3553,7 +3221,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
         if (!(this.isValid() && localInput.isValid())) {
             return false;
         }
-        units = normalizeUnits(!isUndefined(units) ? units : 'millisecond');
+        units = normalizeUnits(units) || 'millisecond';
         if (units === 'millisecond') {
             return this.valueOf() < localInput.valueOf();
         } else {
@@ -3562,9 +3230,14 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
     }
 
     function isBetween (from, to, units, inclusivity) {
+        var localFrom = isMoment(from) ? from : createLocal(from),
+            localTo = isMoment(to) ? to : createLocal(to);
+        if (!(this.isValid() && localFrom.isValid() && localTo.isValid())) {
+            return false;
+        }
         inclusivity = inclusivity || '()';
-        return (inclusivity[0] === '(' ? this.isAfter(from, units) : !this.isBefore(from, units)) &&
-            (inclusivity[1] === ')' ? this.isBefore(to, units) : !this.isAfter(to, units));
+        return (inclusivity[0] === '(' ? this.isAfter(localFrom, units) : !this.isBefore(localFrom, units)) &&
+            (inclusivity[1] === ')' ? this.isBefore(localTo, units) : !this.isAfter(localTo, units));
     }
 
     function isSame (input, units) {
@@ -3573,7 +3246,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
         if (!(this.isValid() && localInput.isValid())) {
             return false;
         }
-        units = normalizeUnits(units || 'millisecond');
+        units = normalizeUnits(units) || 'millisecond';
         if (units === 'millisecond') {
             return this.valueOf() === localInput.valueOf();
         } else {
@@ -3583,11 +3256,11 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
     }
 
     function isSameOrAfter (input, units) {
-        return this.isSame(input, units) || this.isAfter(input,units);
+        return this.isSame(input, units) || this.isAfter(input, units);
     }
 
     function isSameOrBefore (input, units) {
-        return this.isSame(input, units) || this.isBefore(input,units);
+        return this.isSame(input, units) || this.isBefore(input, units);
     }
 
     function diff (input, units, asFloat) {
@@ -3764,62 +3437,130 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
         return this._locale;
     }
 
+    var MS_PER_SECOND = 1000;
+    var MS_PER_MINUTE = 60 * MS_PER_SECOND;
+    var MS_PER_HOUR = 60 * MS_PER_MINUTE;
+    var MS_PER_400_YEARS = (365 * 400 + 97) * 24 * MS_PER_HOUR;
+
+    // actual modulo - handles negative numbers (for dates before 1970):
+    function mod$1(dividend, divisor) {
+        return (dividend % divisor + divisor) % divisor;
+    }
+
+    function localStartOfDate(y, m, d) {
+        // the date constructor remaps years 0-99 to 1900-1999
+        if (y < 100 && y >= 0) {
+            // preserve leap years using a full 400 year cycle, then reset
+            return new Date(y + 400, m, d) - MS_PER_400_YEARS;
+        } else {
+            return new Date(y, m, d).valueOf();
+        }
+    }
+
+    function utcStartOfDate(y, m, d) {
+        // Date.UTC remaps years 0-99 to 1900-1999
+        if (y < 100 && y >= 0) {
+            // preserve leap years using a full 400 year cycle, then reset
+            return Date.UTC(y + 400, m, d) - MS_PER_400_YEARS;
+        } else {
+            return Date.UTC(y, m, d);
+        }
+    }
+
     function startOf (units) {
+        var time;
         units = normalizeUnits(units);
-        // the following switch intentionally omits break keywords
-        // to utilize falling through the cases.
+        if (units === undefined || units === 'millisecond' || !this.isValid()) {
+            return this;
+        }
+
+        var startOfDate = this._isUTC ? utcStartOfDate : localStartOfDate;
+
         switch (units) {
             case 'year':
-                this.month(0);
-                /* falls through */
+                time = startOfDate(this.year(), 0, 1);
+                break;
             case 'quarter':
+                time = startOfDate(this.year(), this.month() - this.month() % 3, 1);
+                break;
             case 'month':
-                this.date(1);
-                /* falls through */
+                time = startOfDate(this.year(), this.month(), 1);
+                break;
             case 'week':
+                time = startOfDate(this.year(), this.month(), this.date() - this.weekday());
+                break;
             case 'isoWeek':
+                time = startOfDate(this.year(), this.month(), this.date() - (this.isoWeekday() - 1));
+                break;
             case 'day':
             case 'date':
-                this.hours(0);
-                /* falls through */
+                time = startOfDate(this.year(), this.month(), this.date());
+                break;
             case 'hour':
-                this.minutes(0);
-                /* falls through */
+                time = this._d.valueOf();
+                time -= mod$1(time + (this._isUTC ? 0 : this.utcOffset() * MS_PER_MINUTE), MS_PER_HOUR);
+                break;
             case 'minute':
-                this.seconds(0);
-                /* falls through */
+                time = this._d.valueOf();
+                time -= mod$1(time, MS_PER_MINUTE);
+                break;
             case 'second':
-                this.milliseconds(0);
+                time = this._d.valueOf();
+                time -= mod$1(time, MS_PER_SECOND);
+                break;
         }
 
-        // weeks are a special case
-        if (units === 'week') {
-            this.weekday(0);
-        }
-        if (units === 'isoWeek') {
-            this.isoWeekday(1);
-        }
-
-        // quarters are also special
-        if (units === 'quarter') {
-            this.month(Math.floor(this.month() / 3) * 3);
-        }
-
+        this._d.setTime(time);
+        hooks.updateOffset(this, true);
         return this;
     }
 
     function endOf (units) {
+        var time;
         units = normalizeUnits(units);
-        if (units === undefined || units === 'millisecond') {
+        if (units === undefined || units === 'millisecond' || !this.isValid()) {
             return this;
         }
 
-        // 'date' is an alias for 'day', so it should be considered as such.
-        if (units === 'date') {
-            units = 'day';
+        var startOfDate = this._isUTC ? utcStartOfDate : localStartOfDate;
+
+        switch (units) {
+            case 'year':
+                time = startOfDate(this.year() + 1, 0, 1) - 1;
+                break;
+            case 'quarter':
+                time = startOfDate(this.year(), this.month() - this.month() % 3 + 3, 1) - 1;
+                break;
+            case 'month':
+                time = startOfDate(this.year(), this.month() + 1, 1) - 1;
+                break;
+            case 'week':
+                time = startOfDate(this.year(), this.month(), this.date() - this.weekday() + 7) - 1;
+                break;
+            case 'isoWeek':
+                time = startOfDate(this.year(), this.month(), this.date() - (this.isoWeekday() - 1) + 7) - 1;
+                break;
+            case 'day':
+            case 'date':
+                time = startOfDate(this.year(), this.month(), this.date() + 1) - 1;
+                break;
+            case 'hour':
+                time = this._d.valueOf();
+                time += MS_PER_HOUR - mod$1(time + (this._isUTC ? 0 : this.utcOffset() * MS_PER_MINUTE), MS_PER_HOUR) - 1;
+                break;
+            case 'minute':
+                time = this._d.valueOf();
+                time += MS_PER_MINUTE - mod$1(time, MS_PER_MINUTE) - 1;
+                break;
+            case 'second':
+                time = this._d.valueOf();
+                time += MS_PER_SECOND - mod$1(time, MS_PER_SECOND) - 1;
+                break;
         }
 
-        return this.startOf(units).add(1, (units === 'isoWeek' ? 'week' : units)).subtract(1, 'ms');
+        this._d.setTime(time);
+        hooks.updateOffset(this, true);
+        return this;
     }
 
     function valueOf () {
@@ -4525,10 +4266,14 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
         units = normalizeUnits(units);
 
-        if (units === 'month' || units === 'year') {
-            days   = this._days   + milliseconds / 864e5;
+        if (units === 'month' || units === 'quarter' || units === 'year') {
+            days = this._days + milliseconds / 864e5;
             months = this._months + daysToMonths(days);
-            return units === 'month' ? months : months / 12;
+            switch (units) {
+                case 'month':   return months;
+                case 'quarter': return months / 3;
+                case 'year':    return months / 12;
+            }
         } else {
             // handle milliseconds separately because of floating point math errors (issue #1867)
             days = this._days + Math.round(monthsToDays(this._months));
@@ -4571,6 +4316,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
     var asDays         = makeAs('d');
     var asWeeks        = makeAs('w');
     var asMonths       = makeAs('M');
+    var asQuarters     = makeAs('Q');
     var asYears        = makeAs('y');
 
     function clone$1 () {
@@ -4762,6 +4508,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
     proto$2.asDays         = asDays;
     proto$2.asWeeks        = asWeeks;
     proto$2.asMonths       = asMonths;
+    proto$2.asQuarters     = asQuarters;
     proto$2.asYears        = asYears;
     proto$2.valueOf        = valueOf$1;
     proto$2._bubble        = bubble;
@@ -4806,7 +4553,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
     // Side effect imports
 
 
-    hooks.version = '2.22.2';
+    hooks.version = '2.24.0';
 
     setHookCallback(createLocal);
 
@@ -4847,7 +4594,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
         TIME: 'HH:mm',                                  // <input type="time" />
         TIME_SECONDS: 'HH:mm:ss',                       // <input type="time" step="1" />
         TIME_MS: 'HH:mm:ss.SSS',                        // <input type="time" step="0.001" />
-        WEEK: 'YYYY-[W]WW',                             // <input type="week" />
+        WEEK: 'GGGG-[W]WW',                             // <input type="week" />
         MONTH: 'YYYY-MM'                                // <input type="month" />
     };
 
@@ -4855,42 +4602,230 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
 })));
 
-},{}],4:[function(require,module,exports){
-const GetSheetDone = require('get-sheet-done');
+},{}],2:[function(require,module,exports){
+// const GetSheetDone = require('get-sheet-done');
 const moment = require('moment');
-GetSheetDone.labeledCols('1lvG1lGsKc2x5r1a5C9_sihymy9SGswBUoJElxjJpLP4').then(sheet => generateSchedule(sheet));
-document.querySelector('.date').innerHTML = moment().format('MMMM D, h:mma');
-function generateSchedule(sheet){
-  let data = sheet.data;
-  console.log(data);
-  let firstHalf = true;
-  let delimiterPosition = data[0].indexOf
-  if(!moment().isBefore(moment(data[0].changetime, 'HH:mm'))){firstHalf = false;}
-  // console.log(sheet)
-  let dataToArray = Object.getOwnPropertyNames(data[0]);
-  let currentHalf;
-  let indexOfDelimiter = dataToArray.indexOf('changetime');
-  if (firstHalf){
-    currentHalf = dataToArray.splice(0,indexOfDelimiter)
+
+// Client ID and API key from the Developer Console
+var CLIENT_ID = '1007112818313-kmg9btri07fnska7gb6l16eiue9rffj0.apps.googleusercontent.com';
+var API_KEY = 'AIzaSyAAFj5VWy_C91CluJnVyMs8rmub9_v8dF8';
+
+// Array of API discovery doc URLs for APIs used by the quickstart
+var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
+
+// Authorization scopes required by the API; multiple scopes can be
+// included, separated by spaces.
+var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+
+var authorizeButton = document.getElementById('authorize_button');
+var signoutButton = document.getElementById('signout_button');
+
+var sheet = [];
+
+var sheetPitB = [];
+
+var headers = [];
+/**
+ *  On load, called to load the auth2 library and API client library.
+ */
+
+window.onload = handleClientLoad();
+
+function handleClientLoad() {
+        gapi.load('client:auth2', initClient);
+      }
+
+
+/**
+ *  Initializes the API client library and sets up sign-in state
+ *  listeners.
+ */
+function initClient() {
+  gapi.client.init({
+    apiKey: API_KEY,
+    clientId: CLIENT_ID,
+    discoveryDocs: DISCOVERY_DOCS,
+    scope: SCOPES
+  }).then(function () {
+  //  if (!gapi.auth2.getAuthInstance().isSignedIn.get()) gapi.auth2.getAuthInstance().signIn();
+
+    // Listen for sign-in state changes.
+    gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+    // Handle the initial sign-in state.
+    updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+    authorizeButton.onclick = handleAuthClick;
+    // signoutButton.onclick = handleSignoutClick;
+  }, function(error) {
+    console.log(error);
+  });
+}
+
+
+
+/**
+ *  Called when the signed in status changes, to update the UI
+ *  appropriately. After a sign-in, the API is called.
+ */
+function updateSigninStatus(isSignedIn) {
+  if (isSignedIn) {
+    authorizeButton.style.display = 'none';
+  //  signoutButton.style.display = 'block';
+    listMajors();
+  } else {
+    authorizeButton.style.display = 'block';
+    // signoutButton.style.display = 'none';
   }
-  else { currentHalf = dataToArray.splice(indexOfDelimiter+1) }
+}
+
+/**
+ *  Sign in the user upon button click.
+ */
+function handleAuthClick(event) {
+  console.log('obj');
+  gapi.auth2.getAuthInstance().signIn();
+}
+
+/**
+ *  Sign out the user upon button click.
+ */
+// function handleSignoutClick(event) {
+//   gapi.auth2.getAuthInstance().signOut();
+// }
+
+// /**
+//  * Append a pre element to the body containing the given message
+//  * as its text node. Used to display the results of the API call.
+//  *
+//  * @param {string} message Text to be placed in pre element.
+//  */
+// function appendPre(message) {
+//   var pre = document.getElementById('content');
+//   var textContent = document.createTextNode(message + '\n');
+//   pre.appendChild(textContent);
+// }
+
+/**
+ * Print the names and majors of students in a sample spreadsheet:
+ * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+ */
+function listMajors() {
+  gapi.client.sheets.spreadsheets.values.get({
+    spreadsheetId: '120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc',
+    range: '\'' + moment().format('DD.MM ddd') + '\'!A1:Z20',
+    // majorDimension: "COLUMNS",
+  }).then(function(response) {
+    // console.log('data retrieved');
+    sheet = response.result.values;
+    generateSchedule(sheet);
+  }, function(response) {
+    appendPre('Error: ' + response.result.error.message);
+  });
+  listPitB();
+}
+
+function listPitB(){
+  gapi.client.sheets.spreadsheets.values.get({
+    spreadsheetId: '120_7j9FsFxBkoG2W0aX0d4wdgKP2r2RK52wNMq52frc',
+    range: '\'' + 'P in the Box' + '\'!A1:Z20',
+  }).then(function(response) {
+    // console.log('data retrieved');
+    sheetPitB = response.result.values;
+    generatePitB(sheetPitB);
+  }, function(response) {
+    appendPre('Error: ' + response.result.error.message);
+  });
+}
+
+// GetSheetDone.labeledCols('1lvG1lGsKc2x5r1a5C9_sihymy9SGswBUoJElxjJpLP4').then(sheet => generateSchedule(sheet));
+const classNumbers = {
+  "9:00":"1",
+  "10:40":"2",
+  "12:30":"3",
+  "14:20":"4",
+  "16:00":"5",
+  "17:40":"6",
+  "19:20":"7"
+};
+let firstHalf = true;
+let firstHalfReverse = false;
+
+function generatePitB(sheetPitB){
+
+  let tableBody = document.querySelector('.flex-container-pitb .tbody');
+  let rows = tableBody.querySelectorAll('.tr_pitb');
+  for (let t=0;t<rows.length;t++){
+    tableBody.deleteRow(0);
+  }
+  for (let i=1; i<sheetPitB.length;i++){
+     let tr = document.createElement('tr');
+     tr.classList.add('tr_pitb');
+     let tdTime = document.createElement('td');
+     tdTime.innerHTML = sheetPitB[i][0];
+     tr.appendChild(tdTime);
+     for (let l=1; l<sheetPitB[i].length;l++){
+       let td = document.createElement('td');
+       if (sheetPitB[i][l].length < 2) td.innerHTML = '&nbsp;';
+       else td.innerHTML = sheetPitB[i][l];
+       tr.appendChild(td);
+     }
+     tableBody.appendChild(tr);
+  }
+}
+
+
+document.querySelector('.date').innerHTML = moment().format('dddd DD/MM, H:mm');
+function generateSchedule(sheet){
+  let data = sheet;
+  //let delimiterPosition = headers[0].indexOf
+  // if(!moment().isBefore(moment(data[0].changetime, 'HH:mm'))){firstHalf = false;}
+  // console.log(sheet)
+  let currentHalf;
+  let indexOfDelimiter;
+  if (data[0]) indexOfDelimiter = data[0].indexOf('changetime');
+
+  if (firstHalf){
+    countStart = 0;
+    countEnd = indexOfDelimiter;
+  }
+  else { countStart = indexOfDelimiter + 1; countEnd = data[0].length}
   let rows = document.querySelectorAll('.row');
   for (let t=0;t<rows.length;t++){
     document.querySelector(".table").deleteRow(0);
   }
-  for (let k=0;k<currentHalf.length;k++){
+  for (let k=countStart;k<countEnd;k++){
     let row = document.createElement('tr');
-    row.classList.add('row')
+    row.classList.add('row');
     let timeEntry = document.createElement('td');
-    timeEntry.innerHTML = data[0][currentHalf[k]];
+
+    timeEntry.innerHTML = data[1][k].replace(/-/g,'–').replace(/—/g,' – ').replace(/–/g,' – ');
+    let timeEntryStart = data[1][k].split('–')[0];
+    let classNumber = document.createElement('td');
+    let classNumberSpan = document.createElement('span');
+    classNumberSpan.classList.add('classNumberSpan');
+    classNumber.appendChild(classNumberSpan);
+
+    if (classNumbers[timeEntryStart]){
+      classNumberSpan.innerHTML = classNumbers[timeEntryStart];
+    }
+    var beginningTime = moment(timeEntryStart, 'H:mm');
+    var endTime = moment(timeEntryStart, 'H:mm').add(90, 'minutes');
+    if (timeEntryStart.indexOf('/') < 0 && beginningTime.isBefore(moment()) && moment().isBefore(endTime) ){
+      classNumberSpan.classList.add('red_highlight');
+      timeEntry.classList.add('red_highlight');
+      timeEntry.style.color = "#fff";
+    }
+
+    classNumber.classList.add('classNumber');
     timeEntry.classList.add('time');
+    row.appendChild(classNumber);
     row.appendChild(timeEntry);
     document.querySelector('.tbody').appendChild(row);
 
     let cell = document.createElement('td');
     cell.classList.add('classes');
-    for (let i=1;i<data.length;i++){
-      let entryText = data[i][currentHalf[k]];
+    for (let i=2;i<data.length;i++){
+      let entryText = data[i][k];
       if(entryText){
       entryText = entryText.split('(');
       let title = document.createElement('span');
@@ -4900,7 +4835,10 @@ function generateSchedule(sheet){
       let professor = document.createElement('span');
       professor.classList.add('professor');
       entryText.shift();
-      let professorText = '('+entryText.join('(');
+      let professorText = '';
+      if (entryText.length) {
+        professorText = '('+entryText.join('(');
+      }
       professorText = professorText
       .replace(/\s/g,'&nbsp;')
       .replace(/(\d{3}[a-z]?),&nbsp;/g, '$1, ')
@@ -4919,17 +4857,55 @@ function generateSchedule(sheet){
     row.appendChild(cell);
     if(!cell.innerHTML){row.remove()}
   }
-  document.querySelector('.date').innerHTML = moment().format('MMMM D, H:mm');
-  document.querySelector('.announcement').src = data['1'].changetime;
+  document.querySelector('.date').innerHTML = '<span class="red">' + moment().format('dddd') + "</span> " + moment().format('DD/MM, H:mm');
 
   var announcementContainer = document.querySelector('.flex-container-img');
+  var pitbContainer = document.querySelector('.flex-container-pitb');
 
-  if(moment().format('ss')<=12 && data['1'].changetime.length > 1){
+  if((moment().format('mm')%10 === 5 && moment().format('ss')<=32) && data['2'][indexOfDelimiter].length > 1){
+    if (data['2'][indexOfDelimiter]) document.querySelector('.announcement').src = data['2'][indexOfDelimiter];
+    else if (data['3'][indexOfDelimiter]) document.querySelector('.announcement').src = data['3'][indexOfDelimiter];
     announcementContainer.style.opacity = '1';
+    announcementContainer.style.zIndex = '99';
+    firstHalfReverse = false;
+  }
+  else if((moment().format('mm')%10 === 0 && moment().format('ss')<=32) && data['3'][indexOfDelimiter].length > 1){
+    if (data['3'][indexOfDelimiter]) document.querySelector('.announcement').src = data['3'][indexOfDelimiter];
+    else if (data['2'][indexOfDelimiter]) document.querySelector('.announcement').src = data['2'][indexOfDelimiter];
+
+    announcementContainer.style.opacity = '1';
+    announcementContainer.style.zIndex = '99';
+    firstHalfReverse = true;
+  }
+  else if((moment().format('mm')%10 === 0 && moment().format('ss')<=32) && data['3'][indexOfDelimiter].length < 1){
+    if (data['3'][indexOfDelimiter]) document.querySelector('.announcement').src = data['3'][indexOfDelimiter];
+    else if (data['2'][indexOfDelimiter]) document.querySelector('.announcement').src = data['2'][indexOfDelimiter];
+    pitbContainer.style.opacity = '1';
+    pitbContainer.style.zIndex = '99';
+    document.querySelector('.schedule').innerHTML = 'Professor in the Box';
+    firstHalfReverse = true;
+  }
+  else if(((moment().format('mm')%10 === 2 || moment().format('mm')%10 === 4 || moment().format('mm')%10 === 6 || moment().format('mm')%10 === 8) && moment().format('ss')<=32) && data['4'][indexOfDelimiter].length > 1){
+    if (data['4'][indexOfDelimiter]) document.querySelector('.announcement').src = data['4'][indexOfDelimiter];
+    announcementContainer.style.opacity = '1';
+    announcementContainer.style.zIndex = '99';
+    firstHalfReverse = true;
   }
   else {
     announcementContainer.style.opacity = '0';
+    announcementContainer.style.zIndex = '-1';
+    document.querySelector('.schedule').innerHTML = 'Schedule';
+    pitbContainer.style.opacity = '0';
+    pitbContainer.style.zIndex = '-1';
   }
+
+  if(moment().format('ss')<=30){
+    !firstHalfReverse ? firstHalf = true : firstHalf = false;
+  }
+  else {
+    !firstHalfReverse ? firstHalf = false : firstHalf = true;
+  }
+
 
 
   // for (let i=1;i<data.length;i++){
@@ -4949,8 +4925,29 @@ function generateSchedule(sheet){
     // document.querySelectorAll('.row')[k].appendChild(cell);
   // }
 }
-setInterval(function(){
-  GetSheetDone.labeledCols('1lvG1lGsKc2x5r1a5C9_sihymy9SGswBUoJElxjJpLP4').then(sheet => generateSchedule(sheet));
-  console.log("refreshed"); }, 10000);
 
-},{"get-sheet-done":2,"moment":3}]},{},[4]);
+setInterval(function(){
+  listMajors();
+}, 100000);
+
+// var justHidden = false;
+// var j;
+// document.getElementsByTagName('body')[0].style.cursor = 'none';
+//
+// function hide() {
+//   document.getElementsByTagName('body')[0].style.cursor = 'none';
+//   justHidden = true;
+//   setTimeout(function() {
+//     justHidden = false;
+//   }, 500);
+// }
+// document.addEventListener("mousemove", function() {
+//   if (!justHidden) {
+//     justHidden = false;
+//     clearTimeout(j);
+//       document.getElementsByTagName('body')[0].style.cursor = 'default';
+//     j = setTimeout(hide, 1000);
+//   }
+// });
+
+},{"moment":1}]},{},[2]);
