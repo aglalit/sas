@@ -44,10 +44,10 @@ html
       font-family: 'Agipo-Regular';width: 17%;
       text-align:center;
       }
-      .schedule {font-family: 'Agipo-Regular'; line-height: 0.9;}
+      .schedule-title {font-family: 'Agipo-Regular'; line-height: 0.9;}
       .date {font-family: 'Kazimir-Text-Regular';}
       td {border-top: none !important; padding: 16px 8px 0px !important;}
-      .schedule,.date {font-size:53px;}
+      .schedule-title,.date {font-size:53px;}
       .classes {padding-left: 25px !important}
       /* .professor {display:inline-block;} */
       
@@ -145,11 +145,10 @@ html
 body
     //- video(muted id="htmlVideo" loop="loop" src="https://dl.dropboxusercontent.com/s/um7oa5ivklj9kli/%D0%AD%D1%80%D0%B8%D0%BA%D0%B0.webm?dl=0" style="position: absolute; width: 100%; height: auto;z-index: 199")
     .flex-container.header
-      h2.schedule Schedule
+      h2.schedule-title Schedule
       h2.date
     .flex-container.tablecontainer
-      table.table
-        tbody.tbody
+      .schedule
       .flex-container-pitb
         table.table
           thead.thead

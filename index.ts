@@ -44,7 +44,7 @@ let logger = winston.createLogger({
 });
 // logger.error('Error log:');
 
-const promise = mongoose.connect(process.env.MONGODB_URI
+const promise = mongoose.connect(process.env.MONGODB_URI.toString()
  , {useNewUrlParser: true}).then(
  () => {
  console.log('Database is connected');
