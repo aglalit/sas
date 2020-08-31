@@ -4611,7 +4611,7 @@ var postWrapper = document.querySelector('.schedule');
 window.onload = function () {
   window.setInterval(function () {
     generateSchedule();
-  }, 10000);
+  }, 5000);
 };
 
 function generateSchedule () {
@@ -4655,67 +4655,70 @@ function generateSchedule () {
       table.appendChild(tbody);
       var rowIndex = 0;
 
-      var timeIndex = 3; // 3 is there because we have 3 other properties at the beginning of the Map: announcement1, announcement2, divider
-      day = new Map(Object.entries(day));
-      var dayKeys = Array.from(day.keys());
-      if (!firstHalf) timeIndex = 3 + day.divider - 1;
-      for (let i = timeIndex; i++; i < 3 + day.divider + timeIndex) {
-        if (dayKeys[i] !== 'announcement1' && dayKeys[i] !== 'announcement2' && dayKeys[i] !== 'divider') {
-          var timeEntry = day.get(dayKeys[i]);
-          rowIndex++;
-          if (timeEntry && Object.keys(timeEntry).length) {
-            var row = document.createElement('tr');
-            row.classList.add('row');
-            tbody.appendChild(row);
-            var classNumber = document.createElement('td');
-            classNumber.classList.add('classNumber');
-            var classNumberSpan = document.createElement('span');
-            classNumberSpan.classList.add('classNumberSpan');
-            classNumberSpan.innerHTML = rowIndex;
-            row.appendChild(classNumber);
-            classNumber.appendChild(classNumberSpan);
-            var time = document.createElement('td');
-            time.classList.add('time');
-            time.innerHTML = dayKeys[i].replace(/-/g, '–');
-            var classes = document.createElement('td');
-            classes.classList.add('classes');
-            row.appendChild(time);
-            row.appendChild(classes);
+      var timeIndex = 0;
+      var dayKeys = Object.keys(day);
+      lastEntryIndex = day.divider - 1;
 
-            // RED HIGHLIGHTING
-            const timeEntryStart = dayKeys[i].split('-')[0];
-            const timeEntryEnd = dayKeys[i].split('-')[1];
-            var beginningTime = moment(timeEntryStart, 'H:mm');
-            var endTime = moment(timeEntryEnd, 'H:mm');
-            if (timeEntryStart.indexOf('/') < 0 && beginningTime.isBefore(moment()) && moment().isBefore(endTime)) {
-              classNumberSpan.classList.add('red_highlight');
-              time.classList.add('red_highlight');
-              time.style.color = '#fff';
-            }
+      if (!firstHalf) {
+        timeIndex = parseInt(day.divider) - 1;
+        lastEntryIndex = parseInt(day.divider) + timeIndex;
+      }
+      for (var i = timeIndex; i < lastEntryIndex; i++) {
+        if (!dayKeys[i] || dayKeys[i] === 'announcement1') break;
+        var timeEntry = day[dayKeys[i]];
+        rowIndex++;
+        if (timeEntry && Object.keys(timeEntry).length) {
+          var row = document.createElement('tr');
+          row.classList.add('row');
+          tbody.appendChild(row);
+          var classNumber = document.createElement('td');
+          classNumber.classList.add('classNumber');
+          var classNumberSpan = document.createElement('span');
+          classNumberSpan.classList.add('classNumberSpan');
+          classNumberSpan.innerHTML = i+1;
+          row.appendChild(classNumber);
+          classNumber.appendChild(classNumberSpan);
+          var time = document.createElement('td');
+          time.classList.add('time');
+          time.innerHTML = dayKeys[i].replace(/-/g, '–');
+          var classes = document.createElement('td');
+          classes.classList.add('classes');
+          row.appendChild(time);
+          row.appendChild(classes);
 
-            for (classEntry in timeEntry) {
-              var teacher = timeEntry[classEntry].teacher;
-              var room = timeEntry[classEntry].room;
-              var isURL = false;
-              // NO URLS ON THE WALL
-              // room.match(/^http(s)?:\/\/((\d+\.\d+\.\d+\.\d+)|(([\w-]+\.)+([a-z,A-Z][\w-]*)))(:[1-9][0-9]*)?(\/([\w-.\/:%+@&=]+[\w- .\/?:%+@&=]*)?)?(#(.*))?$/i);
-              var classParagraph = document.createElement('p');
-              var title = document.createElement('span');
-              title.classList.add('title');
+          // RED HIGHLIGHTING
+          const timeEntryStart = dayKeys[i].split('-')[0];
+          const timeEntryEnd = dayKeys[i].split('-')[1];
+          var beginningTime = moment(timeEntryStart, 'H:mm');
+          var endTime = moment(timeEntryEnd, 'H:mm');
+          if (timeEntryStart.indexOf('/') < 0 && beginningTime.isBefore(moment()) && moment().isBefore(endTime)) {
+            classNumberSpan.classList.add('red_highlight');
+            time.classList.add('red_highlight');
+            time.style.color = '#fff';
+          }
 
-              if (isURL) {
-                title.innerHTML = `<a href="${room}" target="_blank">${classEntry}</a>`;
-              } else title.innerHTML = classEntry;
-              classParagraph.appendChild(title);
-              var professor = document.createElement('span');
-              professor.classList.add('professor');
-              classParagraph.appendChild(professor);
+          for (classEntry in timeEntry) {
+            var teacher = timeEntry[classEntry].teacher;
+            var room = timeEntry[classEntry].room;
+            var isURL = false;
+            // NO URLS ON THE WALL
+            // room.match(/^http(s)?:\/\/((\d+\.\d+\.\d+\.\d+)|(([\w-]+\.)+([a-z,A-Z][\w-]*)))(:[1-9][0-9]*)?(\/([\w-.\/:%+@&=]+[\w- .\/?:%+@&=]*)?)?(#(.*))?$/i);
+            var classParagraph = document.createElement('p');
+            var title = document.createElement('span');
+            title.classList.add('title');
 
-              if (room && teacher && !isURL) professor.innerHTML = ` (${timeEntry[classEntry].teacher} — ${timeEntry[classEntry].room})`;
-              else if (room && !isURL) professor.innerHTML = ` (${timeEntry[classEntry].room})`;
-              else if (teacher) professor.innerHTML = ` (${timeEntry[classEntry].teacher})`;
-              classes.appendChild(classParagraph);
-            }
+            if (isURL) {
+              title.innerHTML = `<a href="${room}" target="_blank">${classEntry}</a>`;
+            } else title.innerHTML = classEntry;
+            classParagraph.appendChild(title);
+            var professor = document.createElement('span');
+            professor.classList.add('professor');
+            classParagraph.appendChild(professor);
+
+            if (room && teacher && !isURL) professor.innerHTML = ` (${timeEntry[classEntry].teacher} — ${timeEntry[classEntry].room})`;
+            else if (room && !isURL) professor.innerHTML = ` (${timeEntry[classEntry].room})`;
+            else if (teacher) professor.innerHTML = ` (${timeEntry[classEntry].teacher})`;
+            classes.appendChild(classParagraph);
           }
         }
 
