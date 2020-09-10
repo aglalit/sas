@@ -110,7 +110,7 @@ function generateSchedule () {
             professor.classList.add('professor');
             classParagraph.appendChild(professor);
 
-            if (room && teacher && !isURL) professor.innerHTML = ` (${timeEntry[classEntry].teacher} — ${timeEntry[classEntry].room})`;
+            if (room && teacher && !isURL) professor.innerHTML = ` (${timeEntry[classEntry].teacher} — <span class="bold">${timeEntry[classEntry].room}</span>)`;
             else if (room && !isURL) professor.innerHTML = ` (${timeEntry[classEntry].room})`;
             else if (teacher) professor.innerHTML = ` (${timeEntry[classEntry].teacher})`;
             classes.appendChild(classParagraph);
