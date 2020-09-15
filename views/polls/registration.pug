@@ -262,11 +262,6 @@ body
               label(for="Birthdate") Birthdate
                 sup(style="color:red") *
               input(type="date" required="required" class="form-control" name="Birthdate")
-            .flex-container.row
-              input.form-check-input(class="agreement-checkbox" id="agreement-checkbox2" type="checkbox" name="agreement2" required)                         
-              label(for="agreement-checkbox2") I confirm that I am 18 years old or older<!-- Я даю согласие на обработку своих персональных данных на основании -->
-                //- a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") <!-- Политики конфиденциальности -->
-                sup(style="color:red") *
             .flex-container.column
               label(for="Email") Email
                 sup(style="color:red") *
@@ -280,6 +275,12 @@ body
               input.form-check-input(class="agreement-checkbox" id="agreement-checkbox" type="checkbox" name="agreement" required)                         
               label(for="agreement-checkbox") I agree to the processing of my <!-- Я даю согласие на обработку своих персональных данных на основании -->
                 a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") personal data
+                sup(style="color:red") *
+            p &nbsp;
+            .flex-container.row
+              input.form-check-input(class="agreement-checkbox" id="agreement-checkbox2" type="checkbox" name="agreement2" required)                         
+              label(for="agreement-checkbox2") I confirm that I am 18 years old or older<!-- Я даю согласие на обработку своих персональных данных на основании -->
+                //- a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") <!-- Политики конфиденциальности -->
                 sup(style="color:red") *
             label 
               sup(style="color:red") * 
