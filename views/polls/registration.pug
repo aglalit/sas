@@ -70,11 +70,11 @@ html
         text-align: left;
         width:100%;
       }
-      label[for="agreement-checkbox"]{
+      label[for="agreement-checkbox"],label[for="agreement-checkbox2"]{
         width:92%;
         margin-top:0;
       }
-      #agreement-checkbox {
+      .agreement-checkbox {
         width:5%;
         margin-left: 10px;
       }
@@ -272,12 +272,12 @@ body
               input(type="hidden" id="event" value="default" name="event")
             p &nbsp;              
             .flex-container.row
-              input.form-check-input(id="agreement-checkbox" type="checkbox" name="agreement" required)                         
+              input.form-check-input(class="agreement-checkbox" id="agreement-checkbox" type="checkbox" name="agreement" required)                         
               label(for="agreement-checkbox") I agree to the processing of my <!-- Я даю согласие на обработку своих персональных данных на основании -->
                 a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") personal data
                 sup(style="color:red") *
             .flex-container.row
-              input.form-check-input(id="agreement-checkbox2" type="checkbox" name="agreement2" required)                         
+              input.form-check-input(class="agreement-checkbox" id="agreement-checkbox2" type="checkbox" name="agreement2" required)                         
               label(for="agreement-checkbox2") I confirm that I am 18 years old or older<!-- Я даю согласие на обработку своих персональных данных на основании -->
                 //- a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") <!-- Политики конфиденциальности -->
                 sup(style="color:red") *
