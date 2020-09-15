@@ -250,14 +250,18 @@ body
               label(for="ФИО") Name
                 sup(style="color:red") *
               input(type="text" required="required" class="form-control" name="ФИО")
+            .flex-container.column
+              label(for="City") City
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="City")
             //- .flex-container.column
             //-   label(for="Passport") Серия и номер паспорта
             //-     sup(style="color:red") *
             //-   input(type="text" id="passport" required="required" class="form-control" name="Passport" )
-            //- .flex-container.column
-            //-   label(for="Birthdate") Дата рождения
-            //-     sup(style="color:red") *
-            //-   input(type="date" required="required" class="form-control" name="Birthdate")
+            .flex-container.column
+              label(for="Birthdate") Birthdate
+                sup(style="color:red") *
+              input(type="date" required="required" class="form-control" name="Birthdate")
             .flex-container.column
               label(for="Email") Email
                 sup(style="color:red") *
@@ -269,7 +273,12 @@ body
             p &nbsp;              
             .flex-container.row
               input.form-check-input(id="agreement-checkbox" type="checkbox" name="agreement" required)                         
-              label(for="agreement-checkbox") I agree to the processing of my personal data<!-- Я даю согласие на обработку своих персональных данных на основании -->
+              label(for="agreement-checkbox") I agree to the processing of my <!-- Я даю согласие на обработку своих персональных данных на основании -->
+                a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") personal data
+                sup(style="color:red") *
+            .flex-container.row
+              input.form-check-input(id="agreement-checkbox2" type="checkbox" name="agreement2" required)                         
+              label(for="agreement-checkbox2") I confirm that I am 18 years old or older<!-- Я даю согласие на обработку своих персональных данных на основании -->
                 //- a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") <!-- Политики конфиденциальности -->
                 sup(style="color:red") *
             label 
