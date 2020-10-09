@@ -1,0 +1,228 @@
+doctype html
+html
+  head
+    title Electives
+    link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/cards.css')
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js")
+    script(src="/touch_sortable.js")
+body
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/logo_sas_ut_short-red.svg")
+      h1 Electives. Year 2020–2021. Module 2. 
+      h3 Sort the following electives in the order from the most preferable to the least preferable one (from the top to the bottom)
+      h3 Click on a course title to see its syllabus. Please make your choice carefully because lower priorities may matter.
+      form(id="form" action="/polls/electives_2020_2021_2" method="post")
+        // DON'T REMOVE THIS INPUT!!!
+        input(type="hidden") 
+        fieldset   
+            .cards.offset-sm-1.col-sm-11                
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    script(src="/cards.js")
+    script(src="/default.js") 
+    script.
+            var cards = document.querySelector('.cards');
+            var dict = {
+            "year1": [
+              {
+                "instructors": "Giacomo Andreoletti",
+                "title": "First Year Seminar: Argumentation",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/Finding-Bodies_2020-21_syllabus-Silverstein-July-2020.pdf"
+            },
+            {
+                "instructors": "Peter Jones",
+                "title": "First Year Seminar: Humor",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/The-Seven-Deadly-Sins_Syllabus-Q1-2020-21.pdf"
+            },
+            {
+                "instructors": "Louis Vervoort",
+                "title": "First Year Seminar: Free Will",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/The-Street_2020-21_syllabus.pdf"
+            },
+            {
+                "instructors": "Velemira Ivanova",
+                "title": "English as a Second Language — Level A1",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+            },
+            {
+                "instructors": "Velemira Ivanova",
+                "title": "English as a Second Language — Level A2",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+            },
+            {
+                "instructors": "Velemira Ivanova",
+                "title": "English as a Second Language — Level B1",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+            }
+          ],
+          "year2": [
+            {
+              "instructors": "Vitaly Nikolaev",
+              "title": "Algorithms and Programming",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/Finding-Bodies_2020-21_syllabus-Silverstein-July-2020.pdf"
+          },
+          {
+              "instructors": "Krishna K",
+              "title": "Competition, Cooperation, and the Selfish Gene",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/The-Seven-Deadly-Sins_Syllabus-Q1-2020-21.pdf"
+          },
+          {
+              "instructors": "Alexander Usvitskiy",
+              "title": "Experimental Economics",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/The-Street_2020-21_syllabus.pdf"
+          },
+          {
+              "instructors": "Julie Reshe, Krishna K",
+              "title": "Love and Sociality",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/Nutrition-Health-Environment_2020-21_syllabus.pdf"
+          },
+          {
+              "instructors": "Sulgi Lie",
+              "title": "Media of Comedy",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/Challenges-in-Social-Robotics_2020-21_syllabus.pdf"
+          },
+          {
+              "instructors": "Siyaves Azeri",
+              "title": "Moral Reasoning",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+          },
+          {
+              "instructors": "David Dusseault",
+              "title": "On Japanese Society",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+          },
+          {
+              "instructors": "Olga Dobrovidova",
+              "title": "Science Communication",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+          },
+          {
+              "instructors": "Velemira Ivanova",
+              "title": "English as a Second Language",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+          }
+        ],
+        "year34": [
+            {
+              "instructors": "Vitaly Nikolaev",
+              "title": "Algorithms and Programming",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/Finding-Bodies_2020-21_syllabus-Silverstein-July-2020.pdf"
+          },
+          {
+              "instructors": "Krishna K",
+              "title": "Competition, Cooperation, and the Selfish Gene",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/The-Seven-Deadly-Sins_Syllabus-Q1-2020-21.pdf"
+          },
+          {
+              "instructors": "Alexander Usvitskiy",
+              "title": "Experimental Economics",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/The-Street_2020-21_syllabus.pdf"
+          },
+          {
+              "instructors": "Julie Reshe, Krishna K",
+              "title": "Love and Sociality",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/Nutrition-Health-Environment_2020-21_syllabus.pdf"
+          },
+          {
+              "instructors": "Sulgi Lie",
+              "title": "Media of Comedy",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/Challenges-in-Social-Robotics_2020-21_syllabus.pdf"
+          },
+          {
+              "instructors": "Siyaves Azeri",
+              "title": "Moral Reasoning",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+          },
+          {
+              "instructors": "David Dusseault",
+              "title": "On Japanese Society",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+          },
+          {
+              "instructors": "Olga Dobrovidova",
+              "title": "Science Communication",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+          },
+          {
+              "instructors": "Velemira Ivanova",
+              "title": "English as a Second Language",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+          },
+            {
+              "instructors": "Sergey Chuvakin",
+              "title": "Quantitative Methods",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/Finding-Bodies_2020-21_syllabus-Silverstein-July-2020.pdf"
+          },
+          {
+              "instructors": "Andrey Shcherbenok",
+              "title": "Russian Culture: The Classics and the Avant-garde",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/The-Seven-Deadly-Sins_Syllabus-Q1-2020-21.pdf"
+          },
+          {
+              "instructors": "Pavel Kocourek",
+              "title": "Microeconomics 2",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/The-Street_2020-21_syllabus.pdf"
+          },
+          {
+              "instructors": "Pavel Kocourek",
+              "title": "Game Theory",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/Nutrition-Health-Environment_2020-21_syllabus.pdf"
+          },
+          {
+              "instructors": "Kirill M",
+              "title": "Film Form & History 2",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/Challenges-in-Social-Robotics_2020-21_syllabus.pdf"
+          },
+          {
+              "instructors": "Erika Wolf",
+              "title": "Avant-garde and Media",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+          },
+          {
+              "instructors": "Peter Lesnik",
+              "title": "Advanced Film Aesthetics",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+          },
+          {
+              "instructors": "Peter Jones",
+              "title": "Angels of History? Theory and History of Historiography",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+          },
+          {
+              "instructors": "Munesh Chaukhan",
+              "title": "Databases",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+          },
+          {
+              "instructors": "Juliette Colinas",
+              "title": "Genomics",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+          },
+          {
+              "instructors": "Matvey Lomonosov",
+              "title": "Contemporary Anthropological and Sociological Theory",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/07/ESL-Syllabus-Q1-2020-21.pdf"
+          }
+      ]
+      }
+            var urlParams = new URLSearchParams(window.location.search);
+            var year = urlParams.get('year');
+            
+    
+    
+    
+    
+          dict.year.forEach(function(entry, index){
+            var card = document.createElement('div');
+            card.classList.add('portlet', 'ui-widget', 'ui-widget-content', 'ui-helper-clearfix', 'ui-corner-all');
+            card.innerHTML = `<div class="portlet-header ui-sortable-handle ui-widget-header ui-corner-all" id="${entry["title"]} — ${entry["instructors"]}"><div class="row"><div class="col-12 col-md-10"><a data-toggle="collapse" role="button" href="#collapse${index}">${entry["title"]} — ${entry["instructors"]}</a><div class="collapse" id="collapse${index}"> 
+            <p><a target="_blank" href="${entry["syllabus"]}">Syllabus link</a></p></div></div></div></div>`
+            cards.appendChild(card);
+          })
