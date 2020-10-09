@@ -124,7 +124,7 @@ var userSchema = mongoose.Schema({
         elective4: String
       },
       electives_pre_2020: String,
-      electives_2020_2021_1: String,
+      electives_2020_2021_2: String,
       "2020_1": {
         time: String,
         elective1: String,

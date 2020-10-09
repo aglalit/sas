@@ -1,10 +1,10 @@
 module.exports = function(app, Session, transporter, isLoggedIn, User){
 
-  app.get('/polls/electives_2020_1', isLoggedIn, function(req, res) {
-    res.render('electives_2020_1', {user: req.user})
+  app.get('/polls/electives_2020_2021_2', isLoggedIn, function(req, res) {
+    res.render('electives_2020_2021_2', {user: req.user})
   });
 
-  app.post('/polls/electives_2020_2021_1', function(req, res) {
+  app.post('/polls/electives_2020_2021_2', function(req, res) {
     if (req.user){
       User.findOne({
         '_id': req.user._id
@@ -15,7 +15,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         }
 
         if (user) {
-           user.polls.ELECTIVES["electives_2020_2021_1"] = JSON.stringify(req.body);
+           user.polls.ELECTIVES["electives_2020_2021_2"] = JSON.stringify(req.body);
 
           user.save(function(err, user) {
             if (err)
