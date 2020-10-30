@@ -448,7 +448,7 @@ var sessionSchema = mongoose.Schema({
 
       ba_2020_q1_elective1: String,
       ba_2020_q1_elective2: String,
-      ba_2020_q1_elective3: Boolean,
+      ba_2020_q1_elective3: String,
       ba_2020_q1_major1: String,
       ba_2020_q1_major2: String,
       ba_2020_q1_major3: String,
