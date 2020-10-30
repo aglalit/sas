@@ -23,6 +23,7 @@ if (!teacherSelector) {
 } else {
   teacherSelectorInput = document.createElement('select');
   teacherSelectorInput.name = 'Who taught this course';
+  teacherSelectorInput.id = 'Who taught this course';
   for (let i = 0; i < teacherSelector.length; i++) {
     let selectorEntry = document.createElement('option');
     selectorEntry.value = teacherSelector[i];
@@ -169,6 +170,7 @@ function wrapAndAppend (params) {
     if (!params.tag) elementInner = document.createElement('input');
     else elementInner = document.createElement(params.tag);
     elementInner.name = params.name;
+    elementInner.id = params.name;
     if (params.type) elementInner.type = params.type;
     if (params.type === 'number'){
       elementInner.min = '1';
@@ -182,7 +184,7 @@ function wrapAndAppend (params) {
   var flexContainer = document.createElement('div');
   flexContainer.classList.add('flex-container');
   var label = document.createElement('label');
-  label.for = elementInner.name || params.name;
+  label.setAttribute('for', elementInner.name || params.name);
   label.innerHTML = params.fullname;
   flexContainer.appendChild(label);
   flexContainer.appendChild(elementInner);
