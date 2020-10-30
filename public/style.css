@@ -33,6 +33,12 @@ h3 {
 .input-group{
   margin-bottom:20px;
 }
+
+/* for the Courses page */
+#input-group {width: 100%;}
+#input-group .form-control {width: 100%;}
+/* for the Courses page */
+
 .input-group label {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 500;
