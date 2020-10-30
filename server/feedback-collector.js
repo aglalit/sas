@@ -217,7 +217,7 @@ module.exports = function (app, Session, transporter, officeTransporter, isLogge
         // text: JSON.stringify(req.user), // plain text body
         html: emailBody.toString() // html body
       };
-      officeTransporter.sendMail(mailOptions, (error, info) => {
+      transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           logger.error(error);
           logger.error(mailOptions.subject);
@@ -237,7 +237,7 @@ module.exports = function (app, Session, transporter, officeTransporter, isLogge
         // text: JSON.stringify(req.user), // plain text body
         html: req.body.subject.replace(/-/g, '_')
       };
-      transporter.sendMail(mailOptions, (error, info) => {
+      officeTransporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           logger.error(error);
           logger.error(mailOptions.subject);
