@@ -27,9 +27,10 @@ if (!teacherSelector) {
     selectorEntry.value = teacherSelector[i];
     selectorEntry.innerHTML = teacherSelector[i];
     teacherSelectorInput.appendChild(selectorEntry);
+
   }
 
-  wrapAndAppend({element: teacherSelectorInput, name: 'Who taught this course', fullname: 'Who taught this course?'});
+  wrapAndAppend({elementOuter: teacherSelectorInput, name: 'Who taught this course', fullname: 'Who taught this course?'});
 }
 
 wrapAndAppend({
