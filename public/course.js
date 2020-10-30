@@ -6,6 +6,8 @@ if (teachers) teachers = teachers.split(',');
 var subject = urlParams.get('subject');
 var subjectId = urlParams.get('subject_id');
 var teacherSelector = urlParams.get('select')
+var teacherSelectorInput;
+
 if (teacherSelector) teacherSelector = teacherSelector.split(',');
 
 document.getElementById('title').innerHTML += ` ${subject}.`;
@@ -18,10 +20,10 @@ if (!teacherSelector) {
   teacherHiddenInput.name = 'Who taught this course';
   form.appendChild(teacherHiddenInput);
 } else {
-  var teacherSelectorInput = document.createElement('select');
+  teacherSelectorInput = document.createElement('select');
   teacherSelectorInput.name = 'Who taught this course';
   for (let i = 0; i < teacherSelector.length; i++) {
-    const selectorEntry = document.createElement('option');
+    let selectorEntry = document.createElement('option');
     selectorEntry.value = teacherSelector[i];
     selectorEntry.innerHTML = teacherSelector[i];
     teacherSelectorInput.appendChild(selectorEntry);
