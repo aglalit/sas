@@ -1,7 +1,7 @@
 var form = document.getElementById('form');
 var inputGroup = document.getElementById('input-group');
 const urlParams = new URLSearchParams(window.location.search);
-var teachers = urlParams.get('teachers');
+var teachers = urlParams.get('teachers') || '';
 if (teachers) teachers = teachers.split(',');
 var subject = urlParams.get('subject');
 var subjectId = urlParams.get('subject_id');
@@ -113,7 +113,7 @@ wrapAndAppend({
   rows:'8'
 });
 
-// @params {element: object, required: boolean, tag: string, type: string, name: string, fullname: string, rows: string}
+// @params {element: string, required: boolean, tag: string, type: string, name: string, fullname: string, rows: string}
 function wrapAndAppend (params) {
   let element;
   if (!params.element) {
