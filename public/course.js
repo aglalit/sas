@@ -51,7 +51,7 @@ function wrapAndAppend (params) {
     if (params.rows) element.rows = params.rows;
   }
   else element = params.element;
-  if (params.required !== False) element.required = 'required';
+  if (params.required !== false) element.required = 'required';
   element.classList.add('form-control');
   var flexContainer = document.createElement('div');
   var label = document.createElement('label');
