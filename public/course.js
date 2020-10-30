@@ -19,7 +19,6 @@ if (!teacherSelector) {
   form.appendChild(teacherHiddenInput);
 } else {
   var teacherSelectorInput = document.createElement('select');
-  teacherSelectorInput.required = 'required';
   teacherSelectorInput.name = 'Who taught this course';
   for (let i = 0; i < teacherSelector.length; i++) {
     const selectorEntry = document.createElement('option');
@@ -28,7 +27,7 @@ if (!teacherSelector) {
     teacherSelectorInput.appendChild(selectorEntry);
   }
 
-  wrapAndAppend({element: teacherSelectorInput});
+  wrapAndAppend({element: teacherSelectorInput, name: 'Who taught this course', fullname: 'Who taught this course?'});
 }
 
 wrapAndAppend({
