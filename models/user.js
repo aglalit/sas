@@ -85,11 +85,13 @@ var userSchema = mongoose.Schema({
 
       ba_2020_q1_elective1: Boolean,
       ba_2020_q1_elective2: Boolean,
+      ba_2020_q1_elective3: Boolean,
       ba_2020_q1_major1: Boolean,
       ba_2020_q1_major2: Boolean,
       ba_2020_q1_major3: Boolean,
       ba_2020_year1_q1_wtai: Boolean,
       ba_2020_year1_q1_qm: Boolean,
+      ba_2020_year1_q1_esl: Boolean,
       ba_2020_year2_q1_poms: Boolean,
       ba_2020_year2_q1_art: Boolean,
       ba_2020_year2_q1_aw: Boolean,
