@@ -182,8 +182,8 @@ function wrapAndAppend (params) {
   var flexContainer = document.createElement('div');
   flexContainer.classList.add('flex-container');
   var label = document.createElement('label');
-  label.for = elementOuter.name || params.name;
-  label.innerHTML = elementOuter.name || params.fullname;
+  label.for = elementInner.name || params.name;
+  label.innerHTML = elementInner.name || params.fullname;
   flexContainer.appendChild(label);
   flexContainer.appendChild(elementInner);
   inputGroup.appendChild(flexContainer);
