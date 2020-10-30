@@ -73,13 +73,13 @@ else {
 
 wrapAndAppend({
   name: 'Evaluate the overall quality of the course',
-  fullname:'Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS, [where 1 is “The quality of the course was terrible, incomparably worse than other SAS courses I have taken”, 6 is “The quality of the course was average,” 10 is “The quality of the course is the best I have seen at SAS by a large margin”].',
+  fullname:`Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS, [where 1 is “The quality of the course was terrible, incomparably worse than other SAS courses I have taken”, 6 is “The quality of the course was average,” 10 is “The quality of the course is the best I have seen at SAS by a large margin”].`,
   type:'number'
 });
 
 wrapAndAppend({
   name: 'Evaluate the impact of the course on your knowledge',
-  fullname:'Evaluate the impact of the course on your knowledge, skills, competencies, personal qualities and worldview, [where 1 is no development has taken place, 6 is a generally satisfactory development has taken place in several of the parameters, 10 is “I have become a different person”].',
+  fullname:`Evaluate the impact of the course on your knowledge, skills, competencies, personal qualities and worldview, [where 1 is no development has taken place, 6 is a generally satisfactory development has taken place in several of the parameters, 10 is “I have become a different person”].`,
   type:'number'
 });
 
@@ -182,8 +182,8 @@ function wrapAndAppend (params) {
   var flexContainer = document.createElement('div');
   flexContainer.classList.add('flex-container');
   var label = document.createElement('label');
-  label.for = elementInner.name || params.name;
-  label.innerHTML = elementInner.name || params.fullname;
+  label.for = elementOuter.name || params.name;
+  label.innerHTML = elementOuter.name || params.fullname;
   flexContainer.appendChild(label);
   flexContainer.appendChild(elementInner);
   inputGroup.appendChild(flexContainer);
