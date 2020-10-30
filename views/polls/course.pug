@@ -2,13 +2,8 @@ doctype html
 html
   head
     title Course Evaluations
-    link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
     link(rel='stylesheet', href='/style.css')
-    link(rel='stylesheet', href='/cards.css')
-    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
-    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
-    // script(src="/touch_sortable.js")
 body
   .container
     .jumbotron.text-center
@@ -23,28 +18,7 @@ body
         input(type="hidden" value="Corinne Doria" name="Who taught this course")  
         fieldset
           div#input-group(class="input-group")
-            .flex-container
-               label(for="Who taught this course") Who is the instructor for this course?
-               select(class="form-control" required="required" name="Who taught this course")
-                 option(value="Irina Parakhina") Irina Parakhina
-                 option(value="Anna Syrchina") Daniel Williamson
-            .flex-container
-               label(for="To what extent was this course an improvement over English language courses you have had previously") To what extent is this course an improvement over English language courses you have had previously? Give a score from 1 to 10, where 1 = It is not helping at all and 10 = It is helping significantly.
-               input(type="number" required="required" class="form-control" name="To what extent was this course an improvement over English language courses you have had previously" min="1" max="10")
-            .flex-container
-               label(for="In what ways was this course useful in terms of improving your English language skills") In what ways is this course useful in terms of improving your English language skills? Put your thoughts.
-               textarea(required="required" class="form-control" name="In what ways was this course useful in terms of improving your English language skills" rows="4")
-            .flex-container
-               label(for="If you had the chance to change some aspects of the course what would they be?") If you had the chance to change some aspects of the course what would they be? Put your thoughts.
-               textarea(required="required" class="form-control" name="If you had the chance to change some aspects of the course what would they be?" rows="4")
-            .flex-container
-               label(for="To what extent did the instructors focus on speaking skills?") To what extent is the instructor focusing on speaking skills? Put your thoughts.
-               textarea(required="required" class="form-control" name="To what extent did the instructor focus on speaking skills?" rows="4")
-            .flex-container
-               label(for="To what extent did the instructors focus on grammar skills?") To what extent is the instructor focusing on grammar skills? Put your thoughts.
-               textarea(required="required" class="form-control" name="To what extent did the instructor focus on grammar skills?" rows="4")
         button(type="submit" class="btn btn-primary btn-lg") Submit
-    //- script(src="/cards.js")
     script(src="/default.js")
     script(src="/course.js")
       

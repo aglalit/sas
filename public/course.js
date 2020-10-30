@@ -29,13 +29,33 @@ if (!teacherSelector) {
 
   wrapAndAppend(teacherSelectorInput, true);
 }
-function wrapAndAppend (element, required, type) {
-  if (required) element.required = 'required';
+
+wrapAndAppend({
+  name:'Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS, [where 1 is “The quality of the course was terrible, incomparably worse than other SAS courses I have taken”, 6 is “The quality of the course was average,” 10 is “The quality of the course is the best I have seen at SAS by a large margin”].',
+  type:'number'
+});
+
+// @params {element: string, required: boolean, tag: string, type: string, name: string, rows: string}
+function wrapAndAppend (params) {
+  let element;
+  if (!params.element) {
+    if (!params.tag) element = document.createElement('input');
+    else element = document.createElement(params.tag);
+    element.name = params.name;
+    element.type = params.type;
+    if (params.type === 'number'){
+      element.min = '1';
+      element.max = '10';
+    }
+    if (params.rows) element.rows = params.rows;
+  }
+  else element = params.element;
+  if (params.required !== False) element.required = 'required';
   element.classList.add('form-control');
   var flexContainer = document.createElement('div');
   var label = document.createElement('label');
-  label.for = element.name;
-  label.innerHTML = element.name;
+  label.for = element.name || params.name;
+  label.innerHTML = element.name || params.name;
   flexContainer.appendChild(label);
   flexContainer.appendChild(element);
   inputGroup.appendChild(flexContainer);
