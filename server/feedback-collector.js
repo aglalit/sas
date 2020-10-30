@@ -213,7 +213,7 @@ module.exports = function (app, Session, transporter, officeTransporter, isLogge
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
         to: 'm.agliulin@utmn.ru', // list of receivers
-        subject: 'Feedback', // Subject line
+        subject: `${name}: ${email}`, // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: emailBody.toString() // html body
       };
