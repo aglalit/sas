@@ -109,42 +109,48 @@ wrapAndAppend({
   name: `What did you find  most instructive / informative / useful? Consider the course organisation (optional).`,
   fullname:`What did you find  most instructive / informative / useful? Consider the course organisation (optional).`,
   tag:'textarea',
-  rows:'4'
+  rows:'4',
+  required: false
 });
 
 wrapAndAppend({
   name: `What did you find  most instructive / informative / useful? Consider the course content (optional).`,
   fullname:`What did you find  most instructive / informative / useful? Consider the course content (optional).`,
   tag:'textarea',
-  rows:'4'
+  rows:'4',
+  required: false
 });
 
 wrapAndAppend({
   name: `What did you find  most instructive / informative / useful? Consider the course teaching / delivery (optional).`,
   fullname:`What did you find  most instructive / informative / useful? Consider the course teaching / delivery (optional).`,
   tag:'textarea',
-  rows:'4'
+  rows:'4',
+  required: false
 });
 
 wrapAndAppend({
   name: `Do you have any specific recommendations for improving the course? Consider the course organisation (optional).`,
   fullname:`Do you have any specific recommendations for improving the course? Consider the course organisation (optional).`,
   tag:'textarea',
-  rows:'4'
+  rows:'4',
+  required: false
 });
 
 wrapAndAppend({
   name: `Do you have any specific recommendations for improving the course? Consider the course content (optional).`,
   fullname:`Do you have any specific recommendations for improving the course? Consider the course content (optional).`,
   tag:'textarea',
-  rows:'4'
+  rows:'4',
+  required: false
 });
 
 wrapAndAppend({
   name: `Do you have any specific recommendations for improving the course? Consider the course teaching / delivery (optional).`,
   fullname:`Do you have any specific recommendations for improving the course? Consider the course teaching / delivery (optional).`,
   tag:'textarea',
-  rows:'4'
+  rows:'4',
+  required: false
 });
 
 wrapAndAppend({
