@@ -113,29 +113,29 @@ wrapAndAppend({
   rows:'8'
 });
 
-// @params {element: string, required: boolean, tag: string, type: string, name: string, fullname: string, rows: string}
+// @params {elementOuter: string, required: boolean, tag: string, type: string, name: string, fullname: string, rows: string}
 function wrapAndAppend (params) {
-  let element;
-  if (!params.element) {
-    if (!params.tag) element = document.createElement('input');
-    else element = document.createElement(params.tag);
-    element.name = params.name;
-    if (params.type) element.type = params.type;
+  let elementInner;
+  if (!params.elementOuter) {
+    if (!params.tag) elementInner = document.createElement('input');
+    else elementInner = document.createElement(params.tag);
+    elementInner.name = params.name;
+    if (params.type) elementInner.type = params.type;
     if (params.type === 'number'){
-      element.min = '1';
-      element.max = '10';
+      elementInner.min = '1';
+      elementInner.max = '10';
     }
-    if (params.rows) element.rows = params.rows;
+    if (params.rows) elementInner.rows = params.rows;
   }
-  else element = params.element;
-  if (params.required !== false) element.required = 'required';
-  element.classList.add('form-control');
+  else elementInner = params.elementOuter;
+  if (params.required !== false) elementInner.required = 'required';
+  elementInner.classList.add('form-control');
   var flexContainer = document.createElement('div');
   flexContainer.classList.add('flex-container');
   var label = document.createElement('label');
-  label.for = element.name || params.name;
-  label.innerHTML = element.name || params.fullname;
+  label.for = elementInner.name || params.name;
+  label.innerHTML = elementInner.name || params.fullname;
   flexContainer.appendChild(label);
-  flexContainer.appendChild(element);
+  flexContainer.appendChild(elementInner);
   inputGroup.appendChild(flexContainer);
 }
