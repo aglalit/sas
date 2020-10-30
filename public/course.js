@@ -1,7 +1,8 @@
 var form = document.getElementById('form');
 var inputGroup = document.getElementById('input-group');
 const urlParams = new URLSearchParams(window.location.search);
-var teachers = urlParams.get('teachers').split(',');
+var teachers = urlParams.get('teachers');
+if (teachers) teachers = teachers.split(',');
 var subject = urlParams.get('subject');
 var subjectId = urlParams.get('subject_id');
 var teacherSelector = urlParams.get('select')
