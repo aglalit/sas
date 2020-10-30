@@ -34,6 +34,43 @@ if (!teacherSelector) {
   wrapAndAppend({elementOuter: teacherSelectorInput, name: 'Who taught this course', fullname: 'Who taught this course?'});
 }
 
+if (isESL){
+  wrapAndAppend({
+    name: 'To what extent was this course an improvement over English language courses you have had previously?',
+    fullname:'To what extent was this course an improvement over English language courses you have had previously? Give a score from 1 to 10, where 1 = It is not helping at all and 10 = It is helping significantly.',
+    type:'number'
+  });
+
+  wrapAndAppend({
+    name: 'In what ways was this course useful in terms of improving your English language skills? Put your thoughts.',
+    fullname:'In what ways was this course useful in terms of improving your English language skills? Put your thoughts.',
+    tag:'textarea',
+    rows: '4'
+  });
+
+  wrapAndAppend({
+    name: 'If you had the chance to change some aspects of the course what would they be? Put your thoughts.',
+    fullname:'If you had the chance to change some aspects of the course what would they be? Put your thoughts.',
+    tag:'textarea',
+    rows: '4'
+  });
+
+  wrapAndAppend({
+    name: 'To what extent did the instructor focus on speaking skills? Put your thoughts.',
+    fullname:'To what extent did the instructor focus on speaking skills? Put your thoughts.',
+    tag:'textarea',
+    rows: '4'
+  });
+
+  wrapAndAppend({
+    name: 'To what extent did the instructor focus on grammar skills? Put your thoughts.',
+    fullname:'To what extent did the instructor focus on grammar skills? Put your thoughts.',
+    tag:'textarea',
+    rows: '4'
+  });
+}
+else {
+
 wrapAndAppend({
   name: 'Evaluate the overall quality of the course',
   fullname:'Evaluate the overall quality of the course, which involves both course design and teaching, as compared to other courses that you took at SAS, [where 1 is “The quality of the course was terrible, incomparably worse than other SAS courses I have taken”, 6 is “The quality of the course was average,” 10 is “The quality of the course is the best I have seen at SAS by a large margin”].',
@@ -45,6 +82,7 @@ wrapAndAppend({
   fullname:'Evaluate the impact of the course on your knowledge, skills, competencies, personal qualities and worldview, [where 1 is no development has taken place, 6 is a generally satisfactory development has taken place in several of the parameters, 10 is “I have become a different person”].',
   type:'number'
 });
+
 
 
 for (let t=0;t<teachers.length;t++){
@@ -115,6 +153,8 @@ wrapAndAppend({
   tag:'textarea',
   rows:'8'
 });
+
+}
 
 // @params {elementOuter: string, required: boolean, tag: string, type: string, name: string, fullname: string, rows: string}
 function wrapAndAppend (params) {
