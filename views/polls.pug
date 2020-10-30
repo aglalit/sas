@@ -51,120 +51,60 @@ html
                     span Name: #{user.google.name}
                 a.btn.btn-default.btn-lg(href='/logout') Log out
             div(class="col-xs-12")
-                //- h1
-                //-   a(href="/polls/majors") Registration of Major Course of Study 
-                //h1
-                //  a(href="/polls/ma_2019_kleshchev") Sergey Kleshchev — Основы мультимедийного дизайна / Introduction to Multimedia Design
-                //h1
-                //  a(href="/polls/ma_2019_krasni") Jan Krasni — Софт-культура / Soft Culture
-                //h1
-                //  a(href="/polls/ma_2019_manirko") Andrey Manirko — Организация медиапроизводства / Organization of media production
-                //h1
-                //  a(href="/polls/ma_2019_chubarov") Igor Chubarov — Софт-культура / Soft Culture
-                //- h1  
-                //-   a(target="_blank" href="https://schoolofadvancedstudies.herokuapp.com/polls/generic") SAS Psychologist
-                //-h1  
-                //-   a(target="_blank" href="https://schoolofadvancedstudies.herokuapp.com/polls/generic2") Majors
-                //- a(target="_blank" href="/polls/planned-absences-students") Planned absences — Students
                 div(class="col-xs-12")
+                  h1 Majors and Electives:
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Elective 1&subject_id=ba_2020_q1_elective1&select=Jay Silverstein,David Dusseault,Juliette Colinas,Peter Jones,Velemira Ivanova") Elective 1
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Elective 2&subject_id=ba_2020_q1_elective2&select=Jay Silverstein,David Dusseault,Juliette Colinas,Peter Jones,Velemira Ivanova") Elective 2 (if exists)
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Major course 1&subject_id=ba_2020_q1_major1&select=Matvey Lomonosov,Irina Kotkina,Erika Wolf,Alexander Usvitskiy,Peter Lesnik,Maxim Alyukov,Peter Jones,Tomasz Blusiewicz,Vladimir Prischepa,Denis Zmeev,Vitaly Nikolaev,Ayla Arslan") Major course 1
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Major course 2&subject_id=ba_2020_q1_major2&select=Matvey Lomonosov,Irina Kotkina,Erika Wolf,Alexander Usvitskiy,Peter Lesnik,Maxim Alyukov,Peter Jones,Tomasz Blusiewicz,Vladimir Prischepa,Denis Zmeev,Vitaly Nikolaev,Ayla Arslan") Major course 2 (if exists)
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Major course 3&subject_id=ba_2020_q1_major3&select=Matvey Lomonosov,Irina Kotkina,Erika Wolf,Alexander Usvitskiy,Peter Lesnik,Maxim Alyukov,Peter Jones,Tomasz Blusiewicz,Vladimir Prischepa,Denis Zmeev,Vitaly Nikolaev,Ayla Arslan") Major course 3 (if exists)
+                  h1 Core Courses:
                   h1 Year 1:
                   h1 
-                    a(target="_blank" href="/polls/course?subject=Writing, Thinking, Analysis and Interpretation&subject_id=ba_2019_year1_q1_wtai&select=Siyaves Azeri,Tomasz Blusiewicz,Marko Turk,Maxim Alyukov,Julie Reshe,Giacomo Andreoletti") Writing, Thinking, Analysis and Interpretation
+                    a(target="_blank" href="/polls/course?subject=Writing, Thinking, Analysis and Interpretation&subject_id=ba_2020_year1_q1_wtai&select=Siyaves Azeri,Tomasz Blusiewicz,Marko Turk,Maxim Alyukov,Julie Reshe,Giacomo Andreoletti") Writing, Thinking, Analysis and Interpretation
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Quantitative Methods&subject_id=ba_2020_year1_q1_qm&select=Dmitry Sharmin,Olga Ufukova,Tatiana Saltanova") Quantitative Methods
                   h1 Year 2:
                   h1 
-                    a(target="_blank" href="/polls/electives-2019-4-year2-1") Year 2 — 1 elective (with English as a mandatory second course)
+                    a(target="_blank" href="/polls/course?subject=Problems of Modern Sciences&subject_id=ba_2020_year2_q1_poms&teachers=Krishna K,Ayla Arslan") Problems of Modern Sciences
                   h1 
-                    a(target="_blank" href="/polls/electives-2019-4-year2-2") Year 2 — 2 electives
-                  h1 Year 3:
+                    a(target="_blank" href="/polls/course?subject=Interpreting Artworks I&subject_id=ba_2020_year2_q1_art&teachers=Erika Wolf") Interpreting Artworks I 
                   h1 
-                    a(target="_blank" href="/polls/electives-2019-4-year3-art") Cultural Studies
+                    a(target="_blank" href="/polls/course?subject=Academic Writing&subject_id=ba_2020_year2_q1_aw&teachers=Melina Aarnikoivu") Academic Writing 
+                  h1 Year 4:
                   h1 
-                    a(target="_blank" href="/polls/electives-2019-4-year3-media") Film and Media Studies
+                    a(target="_blank" href="/polls/course?subject=Effective Communication&subject_id=ba_2020_year4_q1_ec&teachers=Ekaterina Selikhovkina ") Effective Communication
+                  h1 Research Seminars:
                   h1 
-                    a(target="_blank" href="/polls/electives-2019-4-year3-history") Historical Studies
+                    a(target="_blank" href="/polls/course?subject=Research Seminar&subject_id=ba_2020_q1_rs&select=Matvey Lomonosov,Irina Kotkina,Alexander Usvitskiy,Andrey Shcherbenok,Peter Jones,Vitaly Nikolaev,Juliette Colinas") Research Seminar
+                  h1 DCMP Year 1
                   h1 
-                    a(target="_blank" href="/polls/electives-2019-4-year3-bio") Life Sciences
+                    a(target="_blank" href="/polls/course?subject=Media: Forms and Contexts&subject_id=ma_2020_year1_q1_mfc&teachers=Maxim Alyukov") Media: Forms and Contexts
                   h1 
-                    a(target="_blank" href="/polls/electives-2019-4-year3-it") Information Technology and Digital Society
+                    a(target="_blank" href="/polls/course?subject=Film Form & History 1&subject_id=ma_2020_year1_q1_ffh1&teachers=Peter Lesnik") Film Form & History 1
                   h1 
-                    a(target="_blank" href="/polls/electives-2019-4-year3-soc") Sociology and Anthropology
-                //-   h1 Foreign Students:
-                //-   h1 
-                //-     a(target="_blank" href="/polls/electives-2019-4-foreign") Foreign Students
-                //- h1 Year 1
-                //- ul(class="list-unstyled")
-                //-   li
-                //-     h1
-                //-       a(target="_blank" href="/polls/ba-2019-year1-module4-electives") Elective
-                //-   li
-                //-     h1
-                //-       a(target="_blank" href="/polls/ba-2019-year1-module4-tfy") TFY
-                //-   li
-                //-     h1
-                //-       a(target="_blank" href="/polls/ba-2019-year1-module4-it") IT
-                //-   li
-                //-     h1
-                //-       a(target="_blank" href="/polls/ba-2019-year1-module4-history") History
-                //-   li
-                //-     h1
-                //-       a(target="_blank" href="/polls/ba-2019-year1-module4-gb") Great Books: Philosophy
-                //- h1 Year 2
-                //- ul(class="list-unstyled")
-                //-   li
-                //-     h1
-                //-       a(target="_blank" href="/polls/ba-2019-year2-module8-electives") Elective 1
-                //-   li
-                //-     h1
-                //-       a(target="_blank" href="/polls/ba-2019-year2-module8-electives2") Elective 2
-                //-   li
-                //-     h1
-                //-       a(target="_blank" href="/polls/ba-2019-year2-module8-gb") Great Books: Literature
-                //-   li
-                //-     h1
-                //-       a(target="_blank" href="/polls/ba-2019-year2-module8-design-thinking") Design Thinking
-                //- h1
-                //-   a(target="_blank" href="/polls/ba_2019_q2_esl_speaking") English as a Second Language (SPEAKING)
-                //- h1
-                //-   a(target="_blank" href="/polls/ba_2019_q2_esl_grammar") English as a Second Language (GRAMMAR)
-                //- h1
-                //-   a(target="_blank" href="/polls/ba_2019_q4_elective1") Elective 1
-                //- h1
-                //-   a(target="_blank" href="/polls/ba_2019_q4_elective2") Elective 2 (if exists)
-                //- h1
-                //-   a(target="_blank" href="/polls/ba_2019_q4_elective3") Elective 3 (if exists)
-                //- //- //h1
-                //- //- //  a(target="_blank" href="/polls/ba_2019_q3_esl") ESL
-                //- //- 
-                //- //- 
-                //- h1 Year 1:
-                //- 
-                //- h1
-                //-   a(target="_blank" href="/polls/ba_2019_year1_q4_tfy") Topics of the First Year
-                //- h1
-                //-   a(target="_blank" href="/polls/ba_2019_year1_q4_history") History
-                //- h1
-                //-   a(target="_blank" href="/polls/ba_2019_year1_q4_gb") Great Books: Philosophy and Social Thought
-                //- h1
-                //-   a(target="_blank" href="/polls/ba_2019_year1_q4_it") IT
-                //- h1 Year 2:
-                //- h1
-                //-   a(target="_blank" href="/polls/ba_2019_year2_q4_gb") Great Books: Literature
-                //- h1
-                //-   a(target="_blank" href="/polls/ba_2019_year2_q4_dt") Design Thinking
-                //- h1 Year 3:
-                //- h1
-                //-     a(target="_blank" href="/polls/ba_2019_q4_major1") Major course 1
-                //- h1
-                //-     a(target="_blank" href="/polls/ba_2019_q4_major2") Major course 2 (if exists)
-                //- h1
-                //-     a(target="_blank" href="/polls/ba_2019_q4_major3") Major course 3 (if exists)
-                //- h1
-                //-   a(target="_blank" href="/polls/ba_2019_year3_q4_rs") Research Seminar
-                //-h1
-                //-  a(target="_blank" href="/polls/generic" ) English as a Second Language Elective
-                //- h1.closable
-                //-   a(target="_blank" href="/polls/generic2") Quarter 3 — Major course as elective (year 3 only) 
-
+                    a(target="_blank" href="/polls/course?subject=Professional and Creative Interships&subject_id=ma_2020_year1_q1_pci&teachers=Artem Bagiev,Daniel Kontowski") Professional and Creative Interships
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Academic English&subject_id=ma_2020_year1_q1_ae&teachers=Velemira Ivanova") Academic English
+                  h1 DCMP Year 2
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Theories and practices of the internet research&subject_id=ma_2020_year2_q1_tpir&teachers=Polina Kolozaridi") Theories and practices of the internet research
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Media Economics&subject_id=ma_2020_year2_q1_me&teachers=Olga Andreevskikh") Media Economics
+                  h1 X-HE Year 1
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=The Modern University&subject_id=ma_xhe_2020_year1_q1_mu&teachers=Dara Melnyk") The Modern University
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Philosophy of Knowledge&subject_id=ma_xhe_2020_year1_q1_phok&teachers=Giacomo Andreoletti") Philosophy of Knowledge
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Fundamentals of Learning&subject_id=ma_xhe_2020_year1_q1_fl&teachers=Marko Turk") Fundamentals of Learning
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Professional Seminar 1&subject_id=ma_xhe_2020_year1_q1_ps1&teachers=Dara Melnyk") Professional Seminar 1
                 
   script.
     if(Date.now() > Date.parse('11 Jan 2020 18:00:00 GMT+5')){
