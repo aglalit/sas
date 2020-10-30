@@ -5,10 +5,10 @@ var bcrypt = require('bcrypt-nodejs');
 var userSchema = mongoose.Schema({
 
   google: {
-    id: String,
-    token: String,
-    email: String,
-    name: String
+    id: Boolean,
+    token: Boolean,
+    email: Boolean,
+    name: Boolean
   },
   polls: {
     AI_Metaphor: {
@@ -22,13 +22,13 @@ var userSchema = mongoose.Schema({
         "Насколько изменились ваше мышление, знания и умения": Number,
         "Хотите ли вы снова встретиться с этим преподавателем на других курсах": Number,
         "Если бы этот курс не входил в ядро, взяли бы вы его как электив": Number,
-        "Что вам больше всего понравилось в этом лекционном курсе": String,
-        "Что вам больше всего не понравилось в этом лекционном курсе": String,
-        "Что для вас было самым сложным в этом лекционном курсе": String,
-        "Как бы вы порекомендовали улучшить этот лекционный курс": String
+        "Что вам больше всего понравилось в этом лекционном курсе": Boolean,
+        "Что вам больше всего не понравилось в этом лекционном курсе": Boolean,
+        "Что для вас было самым сложным в этом лекционном курсе": Boolean,
+        "Как бы вы порекомендовали улучшить этот лекционный курс": Boolean
       },
       SEMINARS: {
-        "Укажите имя и фамилию преподавателя, работавшего с вами на семинарах": String,
+        "Укажите имя и фамилию преподавателя, работавшего с вами на семинарах": Boolean,
         "Насколько полно преподаватель следовал темам": Number,
         "Насколько хорошо преподаватель организует интерактивную коммуникацию в группе": Number,
         "Сколько раз в течение одного семинарского занятия вы (в среднем) высказывались вслух": Number,
@@ -39,10 +39,10 @@ var userSchema = mongoose.Schema({
         "Готовы ли вы снова встретиться с этим преподавателем на других курсах": Number,
         "Сколько процентов обязательных текстов по этой части курса вы успевали прочесть": Number,
         "Сколько часов в неделю вы уделяли внеаудиторной работе по этой части курса": Number,
-        "Что вам больше всего понравилось в этом семинаре": String,
-        "Что вам больше всего не понравилось в этом семинаре": String,
-        "Что для вас было самым сложным в этом семинаре": String,
-        "Как бы вы порекомендовали улучшить этот семинар": String
+        "Что вам больше всего понравилось в этом семинаре": Boolean,
+        "Что вам больше всего не понравилось в этом семинаре": Boolean,
+        "Что для вас было самым сложным в этом семинаре": Boolean,
+        "Как бы вы порекомендовали улучшить этот семинар": Boolean
       }
     },
     "FEEDBACK":{
@@ -83,112 +83,135 @@ var userSchema = mongoose.Schema({
       ba_2019_year2_q4_dt: Boolean,
       ba_2019_year3_q4_rs: Boolean,
 
+      ba_2020_q1_elective1: Boolean,
+      ba_2020_q1_elective2: Boolean,
+      ba_2020_q1_major1: Boolean,
+      ba_2020_q1_major2: Boolean,
+      ba_2020_q1_major3: Boolean,
+      ba_2020_year1_q1_wtai: Boolean,
+      ba_2020_year1_q1_qm: Boolean,
+      ba_2020_year2_q1_poms: Boolean,
+      ba_2020_year2_q1_art: Boolean,
+      ba_2020_year2_q1_aw: Boolean,
+      ba_2020_year4_q1_ec: Boolean,
+      ba_2020_q1_rs: Boolean,
+      ma_2020_year1_q1_mfc: Boolean,
+      ma_2020_year1_q1_ffh1: Boolean,
+      ma_2020_year1_q1_pci: Boolean,
+      ma_2020_year1_q1_ae: Boolean,
+      ma_2020_year2_q1_tpir: Boolean,
+      ma_2020_year2_q1_me: Boolean,
+      ma_xhe_2020_year1_q1_mu: Boolean,
+      ma_xhe_2020_year1_q1_phok: Boolean,
+      ma_xhe_2020_year1_q1_fl: Boolean,
+      ma_xhe_2020_year1_q1_ps1: Boolean,
+
       ma_2019_wolf:Boolean,
       ma_2019_manovich:Boolean
     },
     "ELECTIVES":{
       "2019_2_2nd_year": {
-        time: String,
-        elective1: String,
-        elective2: String,
-        elective3: String,
-        elective4: String,
-        elective5: String,
-        elective6: String,
-        elective7: String,
-        elective8: String
+        time: Boolean,
+        elective1: Boolean,
+        elective2: Boolean,
+        elective3: Boolean,
+        elective4: Boolean,
+        elective5: Boolean,
+        elective6: Boolean,
+        elective7: Boolean,
+        elective8: Boolean
       },
       "2019_2_1st_year": {
-        time: String,
-        elective1: String,
-        elective2: String,
-        elective3: String,
-        elective4: String
+        time: Boolean,
+        elective1: Boolean,
+        elective2: Boolean,
+        elective3: Boolean,
+        elective4: Boolean
       },
       "2019_1_2nd_year": {
-        time: String,
-        elective1: String,
-        elective2: String,
-        elective3: String,
-        elective4: String,
-        elective5: String,
-        elective6: String,
-        elective7: String,
-        elective8: String
+        time: Boolean,
+        elective1: Boolean,
+        elective2: Boolean,
+        elective3: Boolean,
+        elective4: Boolean,
+        elective5: Boolean,
+        elective6: Boolean,
+        elective7: Boolean,
+        elective8: Boolean
       },
       "2019_1_1st_year": {
-        time: String,
-        elective1: String,
-        elective2: String,
-        elective3: String,
-        elective4: String
+        time: Boolean,
+        elective1: Boolean,
+        elective2: Boolean,
+        elective3: Boolean,
+        elective4: Boolean
       },
-      electives_pre_2020: String,
-      electives_2020_2021_2: String,
+      electives_pre_2020: Boolean,
+      electives_2020_2021_2: Boolean,
       "2020_1": {
-        time: String,
-        elective1: String,
-        elective2: String,
-        elective3: String,
-        elective4: String,
-        elective5: String,
-        elective6: String,
-        elective7: String,
-        elective8: String,
-        elective9: String,
-        elective10: String,
-        elective11: String,
-        elective12: String,
-        elective13: String,
-        elective14: String,
+        time: Boolean,
+        elective1: Boolean,
+        elective2: Boolean,
+        elective3: Boolean,
+        elective4: Boolean,
+        elective5: Boolean,
+        elective6: Boolean,
+        elective7: Boolean,
+        elective8: Boolean,
+        elective9: Boolean,
+        elective10: Boolean,
+        elective11: Boolean,
+        elective12: Boolean,
+        elective13: Boolean,
+        elective14: Boolean,
       },
       "pds_2019_classes": {
-        time: String,
-        "9:40": String,
-        "11:30": String,
-        "14:00": String,
-        "15:40": String
+        time: Boolean,
+        "9:40": Boolean,
+        "11:30": Boolean,
+        "14:00": Boolean,
+        "15:40": Boolean
       },
       "ba_2018_quantitative_methods": {
-        time: String,
+        time: Boolean,
         track: Number
       },
       "ba_2018_history": {
-        time: String,
-        track: String
+        time: Boolean,
+        track: Boolean
       }
     },
     "THECITYASTEXT":{
-      video: String
+      video: Boolean
     },
     "majors": {
-      major: String,
-      minor: String,
-      time : String
+      major: Boolean,
+      minor: Boolean,
+      time : Boolean
     },
     "lesnik": {
-      major: String,
-      time : String
+      major: Boolean,
+      time : Boolean
     },
     "turk": {
-      major: String,
-      time : String
+      major: Boolean,
+      time : Boolean
     },
     "gi_topics_2020": {
-      1: String,
-      2: String,
-      3: String,
-      4: String,
-      5: String,
-      6: String,
-      7: String,
-      8: String,
-      9: String,
-      10: String,
-      time : String
+      1: Boolean,
+      2: Boolean,
+      3: Boolean,
+      4: Boolean,
+      5: Boolean,
+      6: Boolean,
+      7: Boolean,
+      8: Boolean,
+      9: Boolean,
+      10: Boolean,
+      time : Boolean
     },
-    generic: String,
-    generic2: String,
+    generic: Boolean,
+    generic2: Boolean,
   }
 });
 

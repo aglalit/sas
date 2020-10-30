@@ -5,7 +5,8 @@ var teachers = urlParams.get('teachers') || 'none';
 if (teachers) teachers = teachers.split(',');
 var subject = urlParams.get('subject');
 var subjectId = urlParams.get('subject_id');
-var teacherSelector = urlParams.get('select')
+var teacherSelector = urlParams.get('select');
+var isESL = urlParams.get('esl');
 var teacherSelectorInput;
 
 if (teacherSelector) teacherSelector = teacherSelector.split(',');
