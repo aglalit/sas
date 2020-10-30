@@ -28,7 +28,7 @@ if (!teacherSelector) {
     teacherSelectorInput.appendChild(selectorEntry);
   }
 
-  wrapAndAppend(teacherSelectorInput, true);
+  wrapAndAppend({element: teacherSelectorInput});
 }
 
 wrapAndAppend({
@@ -113,7 +113,7 @@ wrapAndAppend({
   rows:'8'
 });
 
-// @params {element: string, required: boolean, tag: string, type: string, name: string, fullname: string, rows: string}
+// @params {element: object, required: boolean, tag: string, type: string, name: string, fullname: string, rows: string}
 function wrapAndAppend (params) {
   let element;
   if (!params.element) {
@@ -131,6 +131,7 @@ function wrapAndAppend (params) {
   if (params.required !== false) element.required = 'required';
   element.classList.add('form-control');
   var flexContainer = document.createElement('div');
+  flexContainer.classList.add('flex-container');
   var label = document.createElement('label');
   label.for = element.name || params.name;
   label.innerHTML = element.name || params.fullname;
