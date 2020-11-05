@@ -317,18 +317,41 @@ body
             .flex-container.column
               label(for="USE" ) По каким предметам планируете сдавать ЕГЭ? (выбрать до 4)
                 sup(style="color:red") *
-              select(class="form-control" required="required" multiple name="USE" )
-                option(value="Русский язык")  Русский язык
-                option(value="Английский язык") Английский язык
-                option(value="Математика") Математика
-                option(value="Обществознание") Обществознание  
-                option(value="История") История
-                option(value="Информатика") Информатика  
-                option(value="Биология") Биология
-                option(value="Физика") Физика
-                option(value="Химия") Химия  
-                option(value="Литература") Литература
-                option(value="География") География  
+            .flex-container.row
+              input.checkbox(id="Русский язык" type="checkbox" name="Русский язык")                         
+              label(for="Русский язык") Русский язык
+            .flex-container.row
+              input.checkbox(id="Английский язык" type="checkbox" name="Английский язык")                         
+              label(for="Английский язык") Английский язык
+            .flex-container.row
+              input.checkbox(id="Математика" type="checkbox" name="Математика")                         
+              label(for="Математика") Математика
+            .flex-container.row
+              input.checkbox(id="Обществознание" type="checkbox" name="Обществознание")                         
+              label(for="Обществознание") Обществознание
+            .flex-container.row
+              input.checkbox(id="История" type="checkbox" name="История")                         
+              label(for="История") История
+            .flex-container.row
+              input.checkbox(id="Информатика" type="checkbox" name="Информатика")                         
+              label(for="Информатика") Информатика
+            .flex-container.row
+              input.checkbox(id="Биология" type="checkbox" name="Биология")                         
+              label(for="Биология") Биология
+            .flex-container.row
+              input.checkbox(id="Физика" type="checkbox" name="Физика")                         
+              label(for="Физика") Физика
+            .flex-container.row
+              input.checkbox(id="Химия" type="checkbox" name="Химия")                         
+              label(for="Химия") Химия
+            .flex-container.row
+              input.checkbox(id="Литература" type="checkbox" name="Литература")                         
+              label(for="Литература") Литература
+            .flex-container.row
+              input.checkbox(id="География" type="checkbox" name="География")                         
+              label(for="География") География
+
+
             .flex-container.column
               label(for="Source" ) Откуда Вы узнали об олимпиаде SAS?
               select(class="form-control" required="required" name="Source"  )
