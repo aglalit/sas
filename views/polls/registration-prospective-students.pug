@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title ЗАПИСЬ НА ОНЛАЙН-КОНСУЛЬТАЦИЮ ДЛЯ АБИТУРИЕНТОВ
+    title Интенсив “Выбор направления подготовки и профессиональная траектория”
     link(rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
     link(rel="stylesheet" href="https://sastest.utmn.ru/wp-content/themes/sasutmn/css/fontello-embedded.min.css")
     // load bootstrap css
@@ -269,11 +269,10 @@ body
       .logo
         a(href="https://sas.utmn.ru" style="border:none")
           img(src="/assets/logo_sas_ut_short-red.svg")
-      h1 ЗАПИСЬ НА ОНЛАЙН-КОНСУЛЬТАЦИЮ ДЛЯ АБИТУРИЕНТОВ
-      h3 В этой форме можно оставить свой вопрос, на который мы постараемся оперативно ответить. Также на электронную почту вы получите от нас оповещение об онлайн-консультациях в Zoom, которые мы будем проводить во время приёмной кампании. Если вы хотите быть с нами на связи в течение всей приёмной кампании, вступайте в беседу в VK 
-        a(href="https://vk.me/join/AJQ1dzsAwReYjpsDaHXc2XS4" target="_blank") «Поступление в SAS»
-        span . 
-
+      h1(style="color:red") Интенсив “Выбор направления подготовки и профессиональная траектория”
+      h1 Регистрация
+      h3 Готов планировать свое будущее и бороться за бесплатное место в самом международном бакалавриате страны?
+      h3 Тогда заполняй форму, жми «отправить» и жди дальнейших инструкций в письме. Удачи! 
       .col-xs-12
         ul(class="social")
           li(class="fb")
@@ -292,40 +291,77 @@ body
         fieldset
           div(class="input-group")
             .flex-container.column
-              label(for="Question") Задайте свой вопрос про SAS (Если вы хотите получить ответ от руководителя учебного офиса 
-                a(href="http://sas.utmn.ru/ru/daniel-kontowski" target="_blank") Даниэла Контовски
-                span , пожалуйста, напишите вопрос на английском языке)
-              input(type="text" class="form-control" name="Question")
-            .flex-container.column
               label(for="Name") ФИО
                 sup(style="color:red") *
               input(type="text" required="required" class="form-control" name="Name")
             .flex-container.column
+              label(for="Birthdate") Дата рождения
+                sup(style="color:red") *
+              input(type="date" required="required" class="form-control" name="Birthdate")
+            .flex-container.column
+              label(for="Email") Email
+                sup(style="color:red") *
+              input(type="email" required="required" class="form-control" name="Email")
+            .flex-container.column
+              label(for="Мобильный телефон") Мобильный телефон
+                sup(style="color:red") *
+              input(type="tel" required="required" class="form-control" name="Мобильный телефон")
+            .flex-container.column
               label(for="City") Город
                 sup(style="color:red") *
               input(type="text" required="required" class="form-control" name="City")
+            .flex-container.column
+              label(for="Школа, класс") Школа, класс
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="Школа, класс")
+            .flex-container.column
+              label(for="USE" ) По каким предметам планируете сдавать ЕГЭ? (выбрать до 4)
+                sup(style="color:red") *
+              select(class="form-control" required="required" multiple="multiple" name="USE" )
+                option(value="Русский язык")  Русский язык
+                option(value="Английский язык") Английский язык
+                option(value="Математика") Математика
+                option(value="Обществознание") Обществознание  
+                option(value="История") История
+                option(value="Информатика") Информатика  
+                option(value="Биология") Биология
+                option(value="Физика") Физика
+                option(value="Химия") Химия  
+                option(value="Литература") Литература
+                option(value="География") География  
+            .flex-container.column
+              label(for="Source" ) Откуда Вы узнали об олимпиаде SAS?
+              select(class="form-control" required="required" name="Source"  )
+                option(value="Портал Ucheba.ru")  Портал Ucheba.ru
+                option(value="Сайт SAS") Сайт SAS
+                option(value="Сайт UTMN") Сайт UTMN
+                option(value="Портал «Поступай правильно»") Портал «Поступай правильно»  
+                option(value="VK") VK
+                option(value="Instagram") Instagram  
+                option(value="В школе от учителя или директора") В школе от учителя или директора
+                option(value="Другое") Другое
+            .flex-container.column
+              label(for="Other source") Откуда Вы узнали об олимпиаде SAS? Другое:
+              input(type="text"  class="form-control" name="Other source")
             //- .flex-container.column
             //-   label(for="Birthdate" class="Grade") Дата рождения
             //-     sup(style="color:red") *
             //-   input(type="date" required="required" class="form-control Grade" name="Birthdate")
-            .flex-container.column
-              label(for="Grade" ) Кем вы являетесь? (школьник / студент / родитель)
-                sup(style="color:red") *
-              select(class="form-control" name="Grade" required="required" )
-                option(value="Не выбрано") Не выбрано
-                option(value="Школьник (8–10 класс)") Школьник (8–10 класс)
-                option(value="Школьник (11 класс)") Школьник (11 класс)
-                option(value="Студент") Студент  
-                option(value="Родитель") Родитель
-                option(value="Другое") Другое    
+            //- .flex-container.column
+            //-   label(for="Grade" ) Кем вы являетесь? (школьник / студент / родитель)
+            //-     sup(style="color:red") *
+            //-   select(class="form-control" name="Grade" required="required" )
+            //-     option(value="Не выбрано") Не выбрано
+            //-     option(value="Школьник (8–10 класс)") Школьник (8–10 класс)
+            //-     option(value="Школьник (11 класс)") Школьник (11 класс)
+            //-     option(value="Студент") Студент  
+            //-     option(value="Родитель") Родитель
+            //-     option(value="Другое") Другое    
             //- .flex-container.column
             //-   label(for="Source") Откуда вы узнали о мероприятии
             //-     sup(style="color:red") *
             //-   input(type="text" required="required" class="form-control" name="Source")     
-            .flex-container.column
-              label(for="Email") Email
-                sup(style="color:red") *
-              input(type="email" required="required" class="form-control" name="Email")         
+                     
             .flex-container.row
               input.checkbox(id="agreement-checkbox" type="checkbox" name="agreement" required="required")                         
               label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
