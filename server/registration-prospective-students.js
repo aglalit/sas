@@ -31,7 +31,7 @@ module.exports = function (app, Session, transporter) {
     for (let i = 0; i < bodyKeys.length; i++) {
       emailBody += '<p><b>' + bodyKeys[i] + '</b>: ' + req.body[bodyKeys[i]] + '</p>';
     }
-    const mailOptions = {
+    let mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
       to: 'm.agliulin@utmn.ru, olimpiada_sas@utmn.ru', // list of receivers
       subject: 'SAS — Интенсив “Выбор направления подготовки и профессиональная траектория”', // Subject line
@@ -45,7 +45,7 @@ module.exports = function (app, Session, transporter) {
       console.log('Message %s sent: %s', info.messageId, info.response);
     });
 
-    let emailBody = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    emailBody = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html>
      <head>
       <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -89,7 +89,7 @@ module.exports = function (app, Session, transporter) {
                      <tr>
                       <td align="left" style="width:600px">
                        <table width="100%" cellspacing="0" cellpadding="0" role="presentation">
-                         <tr> 
+                         <tr>
                           <td align="left"><p style="font-family: arial, 'helvetica neue', helvetica, sans-serif;font-size: 14px"><span style="font-size:16px"><strong><span style="font-size:15px">Дорогой(-ая) ${req.body["Name"]}<br><br>Спасибо за регистрацию!</span>&nbsp;</strong></span><br><br>Мы очень рады, что тебя заинтересовал интенсив для 11-классников<br><a target="_blank" href="https://sas.utmn.ru/ru/prospective-students-intensive-program-2021/" style="color: #fe0c05;font-family: arial, 'helvetica neue', helvetica, sans-serif;font-size: 14px">«Выбор направления подготовки и профессиональная траектория».<br><br></a>Чтобы участвовать в заочном отборе, тебе <strong>нужно в ответном письме прислать заявку.</strong><a target="_blank" href="https://sas.utmn.ru/ru/prospective-students-intensive-program-2021/" style="color: #fe0c05;font-family: arial, 'helvetica neue', helvetica, sans-serif;font-size: 14px"></a><br></p></td>
                          </tr>
                          <tr>
@@ -168,7 +168,7 @@ module.exports = function (app, Session, transporter) {
      </body>
     </html>`;
 
-    const mailOptions = {
+    let mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
       to: req.body["Email"], // list of receivers
       subject: 'Регистрация | Интенсив «Выбор направления подготовки и профессиональная траектория»', // Subject line
