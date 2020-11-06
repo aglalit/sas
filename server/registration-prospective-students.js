@@ -45,7 +45,7 @@ module.exports = function (app, Session, transporter) {
       console.log('Message %s sent: %s', info.messageId, info.response);
     });
 
-    emailBody = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    let emailBody2 = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html>
      <head>
       <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -168,14 +168,14 @@ module.exports = function (app, Session, transporter) {
      </body>
     </html>`;
 
-    let mailOptions = {
+    const mailOptions2 = {
       from: '"SAS" <sas@utmn.ru>', // sender address
       to: req.body["Email"], // list of receivers
       subject: 'Регистрация | Интенсив «Выбор направления подготовки и профессиональная траектория»', // Subject line
       // text: JSON.stringify(req.user), // plain text body
-      html: emailBody.toString() // html body
+      html: emailBody2.toString() // html body
     };
-    transporter.sendMail(mailOptions, (error, info) => {
+    transporter.sendMail(mailOptions2, (error, info) => {
       if (error) {
         return console.log(error);
       }
