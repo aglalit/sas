@@ -299,8 +299,8 @@ function displaySubject (data, subject) {
   if (subjectUrl === 'all') {
     for (var t in dataNumbers) {
       console.log(t);
-      
-      if (t !== undefined && t !== 'undefined' && t !== 'Anna Syrchina'){
+
+      if (t !== undefined && t !== 'undefined' && t !== 'Anna Syrchina') {
       // var dataNumbersToExport = iterationCopy(dataNumbers[t]);
       //
       //

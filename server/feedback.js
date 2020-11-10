@@ -220,6 +220,10 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       name: 'Anna Syrchina',
       email: 'a.s.syrchina@utmn.ru'
     },
+    Parakhina: {
+      name: 'Irina Parakhina',
+      email: 'i.s.parakhina@utmn.ru'
+    },
     Smagina: {
       name: 'Yana Smagina',
       email: 'y.v.smagina@utmn.ru'
