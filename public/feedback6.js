@@ -298,7 +298,7 @@ function displaySubject (data, subject) {
   }
   if (subjectUrl === 'all') {
     for (var t in dataNumbers) {
-      if (t !== undefined && t !== 'undefined'){
+      if (t !== undefined && t !== 'undefined' && t !== 'Anna Syrchina'){
       // var dataNumbersToExport = iterationCopy(dataNumbers[t]);
       //
       //
