@@ -298,7 +298,7 @@ function displaySubject (data, subject) {
   }
   if (subjectUrl === 'all') {
     for (var t in dataNumbers) {
-      if (t){
+      if (t !== undefined && t !== 'undefined'){
       // var dataNumbersToExport = iterationCopy(dataNumbers[t]);
       //
       //
