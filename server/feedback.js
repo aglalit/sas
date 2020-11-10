@@ -8,6 +8,10 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       name: 'Zachary Reyna',
       email: 'z.reyna@utmn.ru'
     },
+    Dusseault: {
+      name: 'David Dusseault',
+      email: 'd.dusseault@utmn.ru'
+    },
     Reshe: {
       name: 'Julie Reshe',
       email: 'j.reshe@utmn.ru'
