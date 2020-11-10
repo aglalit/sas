@@ -1138,7 +1138,7 @@ ba_2020_q1module.exports = function (app, Session, User, transporter, isLoggedIn
               docs.map((el) => {
                 console.log(el._doc.polls);
               });
-              console.log(JSON.stringify(docs);
+              console.log(JSON.stringify(docs));
               res.render('feedback6', {
                 data: JSON.stringify(docs),
                 user: req.user
@@ -1193,7 +1193,7 @@ ba_2020_q1module.exports = function (app, Session, User, transporter, isLoggedIn
               docs.map((el) => {
                 console.log(el._doc.polls);
               });
-              console.log(JSON.stringify(docs);
+              console.log(JSON.stringify(docs));
               res.render('feedback6', {
                 data: JSON.stringify(docs),
                 user: req.user
@@ -1229,7 +1229,7 @@ ba_2020_q1module.exports = function (app, Session, User, transporter, isLoggedIn
               res.send(err);
               console.log(err);
             } else {
-              console.log(JSON.stringify(docs);
+              console.log(JSON.stringify(docs));
               res.render('feedback6', {
                 data: JSON.stringify(docs),
                 user: req.user
@@ -1251,7 +1251,7 @@ ba_2020_q1module.exports = function (app, Session, User, transporter, isLoggedIn
               res.send(err);
               console.log(err);
             } else {
-              console.log(JSON.stringify(docs);
+              console.log(JSON.stringify(docs));
               res.render('feedback6', {
                 data: JSON.stringify(docs),
                 user: req.user
