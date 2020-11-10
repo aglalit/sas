@@ -1224,7 +1224,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
             ]
           }).select('polls').sort({
             _id: -1
-          }).limit(5000).exec(function (err, docs) {
+          }).limit(4000).exec(function (err, docs) {
             if (err) {
               res.send(err);
               console.log(err);
