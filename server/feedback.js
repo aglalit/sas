@@ -1,4 +1,4 @@
-module.exports = function (app, Session, User, transporter, isLoggedIn, logger) {
+ba_2020_q1module.exports = function (app, Session, User, transporter, isLoggedIn, logger) {
   var dict = {
     Louis: {
       name: 'Louis Vervoort',
@@ -1138,6 +1138,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               docs.map((el) => {
                 console.log(el._doc.polls);
               });
+              console.log(JSON.stringify(docs);
               res.render('feedback6', {
                 data: JSON.stringify(docs),
                 user: req.user
@@ -1192,6 +1193,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               docs.map((el) => {
                 console.log(el._doc.polls);
               });
+              console.log(JSON.stringify(docs);
               res.render('feedback6', {
                 data: JSON.stringify(docs),
                 user: req.user
@@ -1227,6 +1229,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               res.send(err);
               console.log(err);
             } else {
+              console.log(JSON.stringify(docs);
               res.render('feedback6', {
                 data: JSON.stringify(docs),
                 user: req.user
@@ -1248,6 +1251,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               res.send(err);
               console.log(err);
             } else {
+              console.log(JSON.stringify(docs);
               res.render('feedback6', {
                 data: JSON.stringify(docs),
                 user: req.user
@@ -1257,7 +1261,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
         } else if (isAdmin ||
           (req.query.s === 'ba_2020_year2_q1_poms' && (userEmail === 'a.arslan@utmn.ru' || userEmail === 'g.andreoletti@utmn.ru' || userEmail === 'k.mutkhukumarappan@utmn.ru')) ||
           userEmail === 'marat.goya@gmail.com')
-          {
+ {
           query['polls.' + req.query.s] = {
             $exists: true
           };
