@@ -1206,19 +1206,124 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       } else if (req.query.s === 'all') {
         if (isAdmin) {
           Session.find({
-            $and: [{
-              polls: {
+            $or: [{
+              'polls.ba_2020_q1_elective1': {
                 $exists: true
               }
             },
             {
-              'polls.registration': {
-                $exists: false
+              'polls.ba_2020_q1_elective2': {
+                $exists: true
               }
             },
             {
-              'polls.faculty_research_trips': {
-                $exists: false
+              'polls.ba_2020_q1_elective3': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2020_q1_major1': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2020_q1_major2': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2020_q1_major3': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2020_year1_q1_wtai': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2020_year1_q1_qm': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2020_year1_q1_esl': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2020_year2_q1_poms': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2020_year2_q1_art': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2020_year2_q1_aw': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2020_year4_q1_ec': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2020_q1_rs': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ma_2020_year1_q1_mfc': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ma_2020_year1_q1_ffh1': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ma_2020_year1_q1_pci': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ma_2020_year1_q1_ae': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ma_2020_year2_q1_tpir': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ma_2020_year2_q1_me': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ma_xhe_2020_year1_q1_mu': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ma_xhe_2020_year1_q1_phok': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ma_xhe_2020_year1_q1_fl': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ma_xhe_2020_year1_q1_ps1': {
+                $exists: true
               }
             }
             ]
