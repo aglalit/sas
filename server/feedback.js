@@ -1,4 +1,4 @@
-ba_2020_q1module.exports = function (app, Session, User, transporter, isLoggedIn, logger) {
+module.exports = function (app, Session, User, transporter, isLoggedIn, logger) {
   var dict = {
     Louis: {
       name: 'Louis Vervoort',
