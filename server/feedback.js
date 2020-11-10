@@ -124,6 +124,10 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       name: 'Juliette Colinas',
       email: 'j.colinas@utmn.ru'
     },
+    Tomasz: {
+      name: 'Tomasz Blusiewicz',
+      email: 't.blusiewicz@utmn.ru'
+    },
     Berdiugina: {
       name: 'O. Berdiugina',
       email: 'o.n.berdyugina@utmn.ru'
