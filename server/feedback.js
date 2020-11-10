@@ -1351,7 +1351,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
           });
         }
       } else {
-        if (req.query.t && (userEmail === dict[req.query.t].email || isAdmin)) {
+        if (req.query.t && dict[req.query.t] && (userEmail === dict[req.query.t].email || isAdmin)) {
           query['polls.' + req.query.s] = {
             $regex: `${dict[req.query.t].name}`
           };
