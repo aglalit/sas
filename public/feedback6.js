@@ -363,7 +363,7 @@ function displaySubject (data, subject) {
           if (el.innerHTML.includes(t)) size = el.dataset.size;
         });
       }
-      tableHeader.innerHTML = `${t}, response rate — <strong>${Math.round((responses / size) * 100)} %</strong> (${responses} / ${size})`;
+      tableHeader.innerHTML = `${t}, response rate — <strong>${Math.round((responses / size) * 100)} %</strong> `; /*(${responses} / ${size}) */
       // console.log(subject);
       if (elementToAppend) {
         elementToAppend.appendChild(tableHeader);
