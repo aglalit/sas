@@ -1093,7 +1093,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       }
 
       if (req.query.s === 'ba_2020_q1_electives') {
-        if (req.query.t && (userEmail === dict[req.query.t].email || isAdmin)) {
+        if (req.query.t && dict[req.query.t] && (userEmail === dict[req.query.t].email || isAdmin)) {
           Session.find({
             $or: [{
               'polls.ba_2020_q1_elective1': {
