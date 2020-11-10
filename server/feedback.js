@@ -222,7 +222,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     },
     Turk: {
       name: 'Marko Turk',
-      email: 'turk.marko1983@gmail.com'
+      email: 'm.turk@utmn.ru'
     },
     Syrchina: {
       name: 'Anna Syrchina',
