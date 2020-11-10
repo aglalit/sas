@@ -1,0 +1,493 @@
+doctype html
+html
+  head
+    title SAS — Feedback
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    // load bootstrap css
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Regular'; 
+      
+      -moz-osx-font-smoothing: grayscale;   /* Firefox */
+     -webkit-font-smoothing: antialiased; /* WebKit  */
+      }
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      @font-face {
+        font-family: 'Agipo-Regular';
+        src:url('../fonts/agipo/Agipo-Regular.woff');
+      }
+      .btn.btn-default.btn-lg {
+        background: lightgray;
+      }
+      h2 {margin-bottom:30px; margin-top:50px;
+      font-family: 'Agipo-Bold',Arial,sans-serif;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+        font-family: 'Agipo-Bold',Arial,sans-serif;
+      }
+      h3 {
+        margin-top:50px;
+        font-size: 1.5em;
+        font-weight: 400;
+        margin-bottom:30px;
+        font-family: 'Agipo-Regular',Arial,sans-serif;;
+      }
+      /* .displayTeacher {display:none;} */
+      .currentAnswerCounter {font-family: Agipo-Bold;}
+      .allLinks {display:none;}
+      table {max-width:100%;}
+      
+      thead {
+        font-size: 12px;
+        border-bottom:1px red solid;
+        hyphens: auto;
+      }
+      .all tr td:first-child {
+        font-size: 12px;
+        vertical-align: middle;
+      }
+      .all tr {
+        border-top: 1px red solid;
+      }
+      td {
+        text-align: left; 
+        padding-top:10px;
+        vertical-align: top;
+      padding: 5px;
+      }
+      .all td {
+        border-right: 1px red solid;
+      }
+      .all td:last-child {
+        border-right: none;
+      }
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+      }
+      td.key {
+        font-family: 'Agipo-Bold';
+        padding-right:30px;
+        width:70%;
+      }
+      
+      img {
+        width:80%;
+        margin-top:10px;
+      }
+      .logo {padding-bottom:30px}
+      a {color:#f00}
+      .container{
+        width:98% !important;
+      }
+      .input-group{
+        margin-bottom:20px;
+      }
+      .input-group label, h4 {
+        font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 18px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+      }
+      form {
+        margin-top: 30px;
+      }
+      fieldset {
+        margin-bottom:30px;
+      }
+      label,legend,h4 {
+        text-align: left;
+        width:100%;
+      }
+      label[for="agreement-checkbox"]{
+        width:92%;
+        margin-top:0;
+      }
+      #agreement-checkbox {
+        width:5%;
+        margin-left: 10px;
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        float:left;
+        width:75%;
+        font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
+      }
+      .label_width100 {
+        width:100%;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        top:0px
+        }
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #f00;
+        }
+        button {
+          background-color: #f00 !important;
+          border-color: #f00 !important;
+          margin: 0 25px 25px;
+          padding: 10px 15px;
+          border-radius:50px;
+        }
+        
+        .checkbox {
+          width: 5% !important;
+          height: 30px;
+          margin-top: 14px !important;
+        }
+        
+        input[type="checkbox"] {
+          /* -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none; */
+
+          width: 38px;
+          height: 38px;
+
+          border: 2px solid #999;
+          transition: 0.2s all linear;
+          outline: none;
+          margin-right: 15px;
+
+          position: relative;
+          top:0;
+          zoom:1.1;
+          }
+
+
+        @media (max-width: 1024px) {
+
+          body{padding-top:10px}
+          .container{
+          width:95%;
+          }
+          h3 {
+            font-size: 2.5em;
+          }
+          h2 {
+            font-size: 3em;
+          }
+          .jumbotron h1 {
+            font-size: 3.5em;
+          }
+        .input-group  label, h4 {
+          font-size:45px ;
+          margin-bottom:20px;
+          width:100%;
+          }
+          label[for="agreement-checkbox"]{
+            width:91%;
+            margin-top:0;
+          
+          }
+          #agreement-checkbox {
+            width:5%;
+            margin-left: 10px;
+              top: 10px;
+          }
+          .checkbox {
+            width: 5% !important;
+            height: 30px;
+            margin-top: 14px !important;
+          }
+          input[type="radio"]{
+            top:5px;
+          }
+          button.btn-lg {
+            font-size: 45px;
+          }
+          .label_width100 {
+            width:100% !important;
+          }
+          .checkbox {margin-top: 13px !important;           
+            height: 50px;
+            }
+          .input-group label, h4 {
+            
+            margin: 11px 0;
+          }
+        }
+              li {
+                line-height: 2; }
+        
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(target="_blank" href="https://sas.utmn.ru")
+          img(src="/assets/logo_sas_ut_short-red.svg")
+      h1 SAS — Course Evaluations — Q1 2020-2021
+      .row
+        div(class="col-xs-12" style="display: flex; justify-content: center; flex-direction:column; align-items:center; width: 100%;")
+            p
+              br
+              -if(user)
+                span Email: #{user.google.email}
+              br
+              -if(user)
+                span Name: #{user.google.name}
+            a.btn.btn-default.btn-lg(href='/logout') Log out
+      h2.teacher
+      div.allLinks
+        //- button(class="exportCSV" onclick="exportCSVFile(dataToExportCSV, 'feedback-2020-module1-5-9')") Download in CSV
+        ul(class="list-unstyled")
+          li
+            h3.ba_2020_q1_electives Electives and Major Courses
+            span Links: 
+            //- span
+            //-   a(target="_blank" href="/feedback6?s=ba_2020_q1_electives") All, 
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Jay" data-size="5") Jay Silverstein, 
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Dusseault" data-size="21") David Dusseault, 
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Juliette" data-size="15") Juliette Colinas, 	
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Peter" data-size="21") Peter Jones, 
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Syrchina" data-size="13") Anna Syrchina, 	
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Matvey" data-size="20") Matvey Lomonosov,  
+            span  
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Kotkina" data-size="20") Irina Kotkina, 
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Erika" data-size="20") Erika Wolf,  
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Usvitskiy" data-size="20") Alexander Usvitskiy,  
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Lesnik" data-size="24") Peter Lesnik,    
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Maxim" data-size="24") Maxim Alyukov,             
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Peter" data-size="12") Peter Jones,  
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Tomasz" data-size="7") Tomasz Blusiewicz,  
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Prischepa" data-size="13") Vladimir Prischepa,
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Zmeev" data-size="13") Denis Zmeev,
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Vitaly" data-size="13") Vitaly Nikolaev,
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_electives&t=Arslan" data-size="13") Ayla Arslan,
+          //- li
+          //-   h3.ba_2020_q1_esl_speaking English as a Second Language (SPEAKING)
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback6?s=ba_2020_q1_esl_speaking") All, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback6?s=ba_2020_q1_esl_speaking&t=Kaye") Steven Kaye, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback6?s=ba_2020_q1_esl_speaking&t=Bain") Jeff Bain
+          //- li
+          //-   h3.ba_2020_q1_esl_grammar English as a Second Language (GRAMMAR)
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback6?s=ba_2020_q1_esl_grammar") All, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback6?s=ba_2020_q1_esl_grammar&t=Glovatskaya") Diana Glovatskaya, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback6?s=ba_2020_q1_esl_grammar&t=Vasileva") Zhanna Vasileva, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback6?s=ba_2020_q1_esl_grammar&t=Parakhina") Irina Parakhina, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback6?s=ba_2020_q1_esl_grammar&t=Novokreshchennyh") Ekaterina Novokreshchennyh
+          li
+            h3.ba_2020_year1_q1_wtai Writing, Thinking, Analysis and Interpretation
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_wtai" data-size="50") All, 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_wtai&t=Azeri" data-size="16") Siyaves Azeri, 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_wtai&t=Tomasz" data-size="34") Tomasz Blusiewicz,
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_wtai&t=Turk" data-size="16") Marko Turk, 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_wtai&t=Maxim" data-size="34") Maxim Alyukov,
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_wtai&t=Reshe" data-size="16") Julie Reshe, 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_wtai&t=Giacomo" data-size="34") Giacomo Andreoletti
+          li
+            h3.ba_2020_year1_q1_qm Quantitative Methods
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_qm" data-size="50") All, 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_qm&t=Sharmin" data-size="16") Dmitry Sharmin, 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_qm&t=Ufukova" data-size="34") Olga Ufukova,
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_qm&t=Saltanova" data-size="16") Tatiana Saltanova, 
+          li
+            h3.ba_2020_year1_q1_esl English as a Second Language
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_esl" data-size="50") All, 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_esl&t=Ivanova" data-size="16") Velemira Ivanova, 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_esl&t=Parakhina" data-size="34") Irina Parakhina,
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_esl&t=Smagina" data-size="16") Yana Smagina, 
+          li
+            h3.ba_2020_year2_q1_poms Problems of Modern Sciences
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year2_q1_poms" data-size="56") Problems of Modern Sciences
+          li
+            h3.ba_2020_year2_q1_art Interpreting Artworks I
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year2_q1_art&t=Erika" data-size="56") Interpreting Artworks I
+          li
+            h3.ba_2020_year2_q1_aw Academic Writing 
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year2_q1_aw&t=Aarnikoivu" data-size="56") Academic Writing 
+          li
+            h3.ba_2020_year4_q1_ec Effective Communication
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year4_q1_ec&t=Selikhovkina" data-size="56") Effective Communication
+          li
+            h3.ba_2020_year1_q1_gb Great Books: Philosophy and Social Thought
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_gb" data-size="50") All, 
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_gb&t=Anne" data-size="12") Anne Mulhall, 
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_gb&t=Reshe" data-size="12") Julie Reshe, 
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_gb&t=Louis" data-size="26") Louis Vervoort
+          li
+            h3.ba_2020_year2_q1_gb Great Books: Literature
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year2_q1_gb" data-size="56") Alla Kononova, Andrey Shcherbenok, Joanna Longden, Ilya Kalinin, Elena Grigorieva, Anne Mulhall, Olga Ushakova, Caroline Wintersgill
+          li
+            h3.ba_2020_year1_q1_history History
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_history" data-size="50") Peter Jones
+          li
+            h3.ba_2020_year1_q1_tfy TFY
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_year1_q1_tfy" data-size="50") Peter Jones
+          li
+            h3.ba_2020_q1_rs Research Seminars
+            span Links: 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_rs") All, 
+            span
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_rs&t=Matvey" data-size="8") Matvey Lomonosov, 
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_rs&t=Kotkina" data-size="13") Irina Kotkina, 
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_rs&t=Andrey" data-size="11") Andrey Shcherbenok, 
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_rs&t=Usvitskiy" data-size="5") Alexander Usvitskiy, 
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_rs&t=Juliette" data-size="2") Juliette Colinas
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_rs&t=Peter" data-size="5") Peter Jones, 
+            span 
+              a(target="_blank" href="/feedback6?s=ba_2020_q1_rs&t=Vitaly" data-size="2") Vitaly Nikolaev
+          li
+            h3.ma_2020_year1_q1_mfc Media: Forms and Contexts
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ma_2020_year1_q1_mfc&t=Maxim" data-size="56") Media: Forms and Contexts
+          li
+            h3.ma_2020_year1_q1_ffh1 Film Form & History 1
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ma_2020_year1_q1_ffh1&t=Lesnik" data-size="56") Film Form & History 1
+          li
+            h3.ma_2020_year1_q1_pci Professional and Creative Interships
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ma_2020_year1_q1_pci&t=Bagiev" data-size="56") Professional and Creative Interships
+          li
+            h3.ma_2020_year1_q1_ae Academic English
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ma_2020_year1_q1_ae&t=Ivanova" data-size="56") Academic English
+          li
+            h3.ma_2020_year2_q1_tpir Theories and practices of the internet research
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ma_2020_year2_q1_tpir&t=Kolozaridi" data-size="56") Theories and practices of the internet research
+          li
+            h3.ma_2020_year2_q1_me Media Economics
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ma_2020_year2_q1_me&t=Andreevskikh" data-size="56") Media Economics
+          li
+            h3.ma_xhe_2020_year1_q1_mu The Modern University
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ma_xhe_2020_year1_q1_mu&t=Melnyk" data-size="56") The Modern University
+          li
+            h3.ma_xhe_2020_year1_q1_phok Philosophy of Knowledge
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ma_xhe_2020_year1_q1_phok&t=Giacomo" data-size="56") Philosophy of Knowledge
+          li
+            h3.ma_xhe_2020_year1_q1_fl Fundamentals of Learning
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ma_xhe_2020_year1_q1_fl&t=Turk" data-size="56") Fundamentals of Learning
+          li
+            h3.ma_xhe_2020_year1_q1_ps1 Professional Seminar 1
+            span Links: 
+            span
+              a(target="_blank" href="/feedback6?s=ma_xhe_2020_year1_q1_ps1&t=Melnyk" data-size="56") Professional Seminar 1
+          
+      h2.displayTeacher Full answers
+      button(class="prev displayTeacher" onclick="allPrev()") < Previous answer
+      span.currentAnswerCounter
+      button(class="next displayTeacher" onclick="allNext()") Next answer >
+      table#all
+        tbody.tablebody
+      h2 Rating scale answers (histograms)
+      div.graphs
+      h2.displayTeacher Text answers
+      div.comments
+script(src="/plotly-latest.min.js")
+script.
+  var data = [!{data}];
+script(src="/feedback6.js")
+// script(src="/papaparse.min.js")
+  
+  
+  

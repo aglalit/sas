@@ -1,4 +1,4 @@
-module.exports = function (app, Session, User, transporter, isLoggedIn, logger) {
+ba_2020_q1module.exports = function (app, Session, User, transporter, isLoggedIn, logger) {
   var dict = {
     Louis: {
       name: 'Louis Vervoort',
@@ -136,6 +136,10 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       name: 'O. Ufukova',
       email: 'a.bunkova@utmn.ru'
     },
+    Saltanova: {
+      name: 'Tatiana Saltanova',
+      email: 't.v.saltanova@utmn.ru'
+    },
     Giacomo: {
       name: 'Giacomo Andreoletti',
       email: 'g.andreoletti@utmn.ru'
@@ -155,6 +159,78 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     Fabio: {
       name: 'Fabio Grazioso',
       email: 'f.grazioso@utmn.ru'
+    },
+    Ivanova: {
+      name: 'Velemira Ivanova',
+      email: 'v.ivanova@utmn.ru'
+    },
+    Sharmin: {
+      name: 'Dmitry Sharmin',
+      email: 'd.v.sharmin@utmn.ru'
+    },
+    Arslan: {
+      name: 'Ayla Arslan',
+      email: 'a.arslan@utmn.ru'
+    },
+    Aarnikoivu: {
+      name: 'Melina Aarnikoivu',
+      email: 'melina.aarnikoivu@gmail.com'
+    },
+    Kotkina: {
+      name: 'Irina Kotkina',
+      email: 'ik341@ya.ru'
+    },
+    Usvitskiy: {
+      name: 'Alexander Usvitskiy',
+      email: 'a.usvitskiy@utmn.ru'
+    },
+    Lesnik: {
+      name: 'Peter Lesnik',
+      email: 'p.leshnik@utmn.ru'
+    },
+    Prischepa: {
+      name: 'Vladimir Prischepa',
+      email: 'prischepa.vladimirr@gmail.com'
+    },
+    Zmeev: {
+      name: 'Denis Zmeev',
+      email: 'zmdeol@gmail.com'
+    },
+    Bagiev: {
+      name: 'Artem Bagiev',
+      email: 'artem.bagiev@gmail.com '
+    },
+    Kolozaridi: {
+      name: 'Polina Kolozaridi',
+      email: 'poli.kolozaridi@gmail.com'
+    },
+    Andreevskikh: {
+      name: 'Olga Andreevskikh',
+      email: 'mlosa@leeds.ac.uk'
+    },
+    Melnyk: {
+      name: 'Dara Melnyk',
+      email: 'd.melnyk@utmn.ru'
+    },
+    Turk: {
+      name: 'Marko Turk',
+      email: 'turk.marko1983@gmail.com'
+    },
+    Syrchina: {
+      name: 'Anna Syrchina',
+      email: 'a.s.syrchina@utmn.ru'
+    },
+    Smagina: {
+      name: 'Yana Smagina',
+      email: 'y.v.smagina@utmn.ru'
+    },
+    Azeri: {
+      name: 'Siyaves Azeri',
+      email: 's.azeri@utmn.ru'
+    },
+    Krishna: {
+      name: 'Krishna K',
+      email: 'k.mutkhukumarappan@utmn.ru'
     }
   };
 
@@ -976,6 +1052,222 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
             } else {
               console.log(docs);
               res.render('feedback5', {
+                data: JSON.stringify(docs),
+                user: req.user
+              });
+            }
+          });
+        } else {
+          res.send('Access denied');
+        }
+      }
+    }
+  });
+
+  app.get('/feedback6', isLoggedIn, function (req, res) {
+    var userEmail = '';
+    User.findOne({
+      _id: req.user._id
+    }, function (err, user) {
+      if (err) { return done(err); }
+
+      if (user) {
+        userEmail = user.google.email;
+        getResponse();
+      } else {
+        console.log('There isn\'t such user in the database');
+      }
+    });
+
+    function getResponse () {
+      var query = {};
+      var isAdmin = false;
+      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' ||
+        userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'a.rusakova@utmn.ru' ||
+      userEmail === 'e.selikhovkina@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
+        isAdmin = true;
+      }
+
+      if (req.query.s === 'ba_2020_q1_electives') {
+        if (req.query.t && (userEmail === dict[req.query.t].email || isAdmin)) {
+          Session.find({
+            $or: [{
+              'polls.ba_2020_q1_elective1': {
+                $regex: `${dict[req.query.t].name}`
+              }
+            },
+            {
+              'polls.ba_2020_q1_elective2': {
+                $regex: `${dict[req.query.t].name}`
+              }
+            },
+            {
+              'polls.ba_2020_q1_elective3': {
+                $regex: `${dict[req.query.t].name}`
+              }
+            },
+            {
+              'polls.ba_2020_q1_major3': {
+                $regex: `${dict[req.query.t].name}`
+              }
+            },
+            {
+              'polls.ba_2020_q1_major1': {
+                $regex: `${dict[req.query.t].name}`
+              }
+            },
+            {
+              'polls.ba_2020_q1_major2': {
+                $regex: `${dict[req.query.t].name}`
+              }
+            }
+            ]
+          }, {
+            'polls.ba_2020_q1_elective1': 1,
+            'polls.ba_2020_q1_elective2': 1,
+            'polls.ba_2020_q1_elective3': 1,
+            'polls.ba_2020_q1_major3': 1,
+            'polls.ba_2020_q1_major1': 1,
+            'polls.ba_2020_q1_major2': 1
+          }).exec(function (err, docs) {
+            if (err) {
+              res.send(err);
+              console.log(err);
+            } else {
+              console.log(docs);
+              docs.map((el) => {
+                console.log(el._doc.polls);
+              });
+              res.render('feedback6', {
+                data: JSON.stringify(docs),
+                user: req.user
+              });
+            }
+          });
+        } else if (isAdmin) {
+          Session.find({
+            $or: [{
+              'polls.ba_2020_q1_elective1': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2020_q1_elective2': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2020_q1_elective3': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2020_q1_major3': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2020_q1_major1': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2020_q1_major2': {
+                $exists: true
+              }
+            }
+            ]
+          }, {
+            'polls.ba_2020_q1_elective1': 1,
+            'polls.ba_2020_q1_elective2': 1,
+            'polls.ba_2020_q1_elective3': 1,
+            'polls.ba_2020_q1_major3': 1,
+            'polls.ba_2020_q1_major1': 1,
+            'polls.ba_2020_q1_major2': 1
+          }).exec(function (err, docs) {
+            if (err) {
+              res.send(err);
+              console.log(err);
+            } else {
+              docs.map((el) => {
+                console.log(el._doc.polls);
+              });
+              res.render('feedback6', {
+                data: JSON.stringify(docs),
+                user: req.user
+              });
+            }
+          });
+        } else {
+          res.send('Access denied');
+        }
+      } else if (req.query.s === 'all') {
+        if (isAdmin) {
+          Session.find({
+            $and: [{
+              polls: {
+                $exists: true
+              }
+            },
+            {
+              'polls.registration': {
+                $exists: false
+              }
+            },
+            {
+              'polls.faculty_research_trips': {
+                $exists: false
+              }
+            }
+            ]
+          }).select('polls').sort({
+            _id: -1
+          }).limit(10000).exec(function (err, docs) {
+            if (err) {
+              res.send(err);
+              console.log(err);
+            } else {
+              res.render('feedback6', {
+                data: JSON.stringify(docs),
+                user: req.user
+              });
+            }
+          });
+        } else {
+          res.render('feedback6', {
+            user: req.user
+          });
+        }
+      } else {
+        if (req.query.t && (userEmail === dict[req.query.t].email || isAdmin)) {
+          query['polls.' + req.query.s] = {
+            $regex: `${dict[req.query.t].name}`
+          };
+          Session.find(query).select('polls.' + req.query.s).exec(function (err, docs) {
+            if (err) {
+              res.send(err);
+              console.log(err);
+            } else {
+              res.render('feedback6', {
+                data: JSON.stringify(docs),
+                user: req.user
+              });
+            }
+          });
+        } else if (isAdmin ||
+          (req.query.s === 'ba_2020_year2_q1_poms' && (userEmail === 'a.arslan@utmn.ru' || userEmail === 'g.andreoletti@utmn.ru' || userEmail === 'k.mutkhukumarappan@utmn.ru')) ||
+          userEmail === 'marat.goya@gmail.com')
+          {
+          query['polls.' + req.query.s] = {
+            $exists: true
+          };
+          Session.find(query).select('polls.' + req.query.s).exec(function (err, docs) {
+            if (err) {
+              res.send(err);
+              console.log(err);
+            } else {
+              console.log(docs);
+              res.render('feedback6', {
                 data: JSON.stringify(docs),
                 user: req.user
               });
