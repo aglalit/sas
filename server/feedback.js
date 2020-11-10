@@ -311,7 +311,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
           res.send(err);
           console.log(err);
         } else {
-          console.log(docs);
+
           res.render('feedback', {
             data: JSON.stringify(docs)
           });
@@ -468,7 +468,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
             res.send(err);
             console.log(err);
           } else {
-            console.log(docs);
+
             res.render('feedback2', {
               data: JSON.stringify(docs),
               user: req.user
@@ -627,7 +627,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
             res.send(err);
             console.log(err);
           } else {
-            console.log(docs);
+
             res.render('feedback3', {
               data: JSON.stringify(docs),
               user: req.user
@@ -702,7 +702,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               res.send(err);
               console.log(err);
             } else {
-              console.log(docs);
+
               docs.map((el) => {
                 console.log(el._doc.polls);
               });
@@ -831,7 +831,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               res.send(err);
               console.log(err);
             } else {
-              console.log(docs);
+
               res.render('feedback4', {
                 data: JSON.stringify(docs),
                 user: req.user
@@ -915,7 +915,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               res.send(err);
               console.log(err);
             } else {
-              console.log(docs);
+
               docs.map((el) => {
                 console.log(el._doc.polls);
               });
@@ -1050,7 +1050,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               res.send(err);
               console.log(err);
             } else {
-              console.log(docs);
+
               res.render('feedback5', {
                 data: JSON.stringify(docs),
                 user: req.user
@@ -1134,11 +1134,11 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               res.send(err);
               console.log(err);
             } else {
-              console.log(docs);
+
               docs.map((el) => {
                 console.log(el._doc.polls);
               });
-              console.log(JSON.stringify(docs));
+
               res.render('feedback6', {
                 data: JSON.stringify(docs),
                 user: req.user
@@ -1193,7 +1193,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               docs.map((el) => {
                 console.log(el._doc.polls);
               });
-              console.log(JSON.stringify(docs));
+
               res.render('feedback6', {
                 data: JSON.stringify(docs),
                 user: req.user
@@ -1229,7 +1229,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               res.send(err);
               console.log(err);
             } else {
-              console.log(JSON.stringify(docs));
+
               res.render('feedback6', {
                 data: JSON.stringify(docs),
                 user: req.user
@@ -1251,7 +1251,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               res.send(err);
               console.log(err);
             } else {
-              console.log(JSON.stringify(docs));
+
               res.render('feedback6', {
                 data: JSON.stringify(docs),
                 user: req.user
@@ -1270,7 +1270,6 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               res.send(err);
               console.log(err);
             } else {
-              console.log(docs);
               res.render('feedback6', {
                 data: JSON.stringify(docs),
                 user: req.user
