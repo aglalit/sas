@@ -970,9 +970,9 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               res.send(err);
               console.log(err);
             } else {
-              docs.map((el) => {
-                console.log(el._doc.polls);
-              });
+              // docs.map((el) => {
+              //   console.log(el._doc.polls);
+              // });
               res.render('feedback5', {
                 data: JSON.stringify(docs),
                 user: req.user
@@ -1135,9 +1135,9 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               console.log(err);
             } else {
 
-              docs.map((el) => {
-                console.log(el._doc.polls);
-              });
+              // docs.map((el) => {
+              //   console.log(el._doc.polls);
+              // });
 
               res.render('feedback6', {
                 data: JSON.stringify(docs),
