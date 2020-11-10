@@ -298,6 +298,7 @@ function displaySubject (data, subject) {
   }
   if (subjectUrl === 'all') {
     for (var t in dataNumbers) {
+      if (t){
       // var dataNumbersToExport = iterationCopy(dataNumbers[t]);
       //
       //
@@ -369,6 +370,7 @@ function displaySubject (data, subject) {
         elementToAppend.appendChild(tableHeader);
         elementToAppend.appendChild(table);
       }
+    }
     }
     document.querySelectorAll('.displayTeacher').forEach((el) => {
       el.style.display = 'none';
