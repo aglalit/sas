@@ -234,7 +234,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     },
     Smagina: {
       name: 'Yana Smagina',
-      email: 'y.v.smagina@utmn.ru'
+      email: 'yvsmagina@gmail.com'
     },
     Azeri: {
       name: 'Siyaves Azeri',
