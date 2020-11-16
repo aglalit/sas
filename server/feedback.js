@@ -172,10 +172,6 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       name: 'Velemira Ivanova',
       email: 'v.ivanova@utmn.ru'
     },
-    Sharmin: {
-      name: 'Dmitry Sharmin',
-      email: 'd.v.sharmin@utmn.ru'
-    },
     Arslan: {
       name: 'Ayla Arslan',
       email: 'a.arslan@utmn.ru'
@@ -1146,6 +1142,12 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               res.send(err);
               console.log(err);
             } else {
+
+              // docs.map((el) => {
+              //   console.log(el._doc.polls);
+              // });
+
+              res.render('feedback6', {
                 data: JSON.stringify(docs),
                 user: req.user
               });
