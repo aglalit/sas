@@ -129,19 +129,19 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       email: 't.blusiewicz@utmn.ru'
     },
     Berdiugina: {
-      name: 'O. Berdiugina',
+      name: 'Oksana Berdiugina',
       email: 'o.n.berdyugina@utmn.ru'
     },
     Platonov: {
-      name: 'M. Platonov',
+      name: 'Maksim Platonov',
       email: 'm.l.platonov@utmn.ru'
     },
     Sharmin: {
-      name: 'D. Sharmin',
+      name: 'Dmitry Sharmin',
       email: 'd.v.sharmin@utmn.ru'
     },
     Ufukova: {
-      name: 'O. Ufukova',
+      name: 'Olga Ufukova',
       email: 'a.bunkova@utmn.ru'
     },
     Saltanova: {
@@ -1146,12 +1146,6 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               res.send(err);
               console.log(err);
             } else {
-
-              // docs.map((el) => {
-              //   console.log(el._doc.polls);
-              // });
-
-              res.render('feedback6', {
                 data: JSON.stringify(docs),
                 user: req.user
               });
