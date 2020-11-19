@@ -1,4 +1,4 @@
-module.exports = function (app, Session, transporter) {
+module.exports = function (app, Session, transporter, marketingTransporter) {
   app.get('/polls/registration-prospective-students', function (req, res) {
     res.render('registration-prospective-students');
   });
@@ -34,11 +34,11 @@ module.exports = function (app, Session, transporter) {
     let mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
       to: 'm.agliulin@utmn.ru, olimpiada_sas@utmn.ru', // list of receivers
-      subject: 'SAS — Интенсив “Выбор направления подготовки и профессиональная траектория”', // Subject line
+      subject: 'SAS — Интенсив 2021', // Subject line
       // text: JSON.stringify(req.user), // plain text body
       html: emailBody.toString() // html body
     };
-    transporter.sendMail(mailOptions, (error, info) => {
+    marketingTransporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         return console.log(error);
       }
@@ -175,7 +175,7 @@ module.exports = function (app, Session, transporter) {
       // text: JSON.stringify(req.user), // plain text body
       html: emailBody2.toString() // html body
     };
-    transporter.sendMail(mailOptions2, (error, info) => {
+    marketingTransporter.sendMail(mailOptions2, (error, info) => {
       if (error) {
         return console.log(error);
       }

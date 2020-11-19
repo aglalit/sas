@@ -88,7 +88,7 @@ transporter.verify(function (error, success) {
  console.log(error);
  logger.error(error);
  } else {
- console.log('Server is ready to take our messages');
+ console.log(`${user}: server is ready to take our messages`);
  }
 });
 
@@ -102,6 +102,36 @@ const officeTransporter = nodemailer.createTransport({
  pass: officepass
  },
  debug: true
+});
+
+officeTransporter.verify(function (error, success) {
+ if (error) {
+ console.log(error);
+ logger.error(error);
+ } else {
+ console.log(`${officeuser}: server is ready to take our messages`);
+ }
+});
+
+const marketinguser = process.env.MARKETINGTRANSPORTER;
+const marketingpass = process.env.MARKETINGTRANSPORTER_PASSWORD;
+
+const marketingTransporter = nodemailer.createTransport({
+ service: 'gmail',
+ auth: {
+ user: marketinguser,
+ pass: marketingpass
+ },
+ debug: true
+});
+
+marketingTransporter.verify(function (error, success) {
+ if (error) {
+ console.log(error);
+ logger.error(error);
+ } else {
+ console.log(`${marketinguser}: server is ready to take our messages`);
+ }
 });
 
 app.set('port', (process.env.PORT || 5000));
@@ -240,7 +270,7 @@ require('./server/registration-xhe.js')(app, Session, transporter);
 require('./server/registration-xhe-open-day.js')(app, Session, transporter);
 
 require('./server/registration-media.js')(app, Session, transporter);
-require('./server/registration-prospective-students.js')(app, Session, transporter);
+require('./server/registration-prospective-students.js')(app, Session, transporter, marketingTransporter);
 
 require('./server/vue_test.js')(app, Session, transporter);
 
