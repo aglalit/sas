@@ -4684,6 +4684,7 @@
               for (classEntry in timeEntry) {
                 var teacher = timeEntry[classEntry].teacher;
                 var room = timeEntry[classEntry].room;
+                var classEntryWithoutId = classEntry.replace(/, class ID: \d+/g,'');
                 var isURL = false;
                 // NO URLS ON THE WALL
                 // room.match(/^http(s)?:\/\/((\d+\.\d+\.\d+\.\d+)|(([\w-]+\.)+([a-z,A-Z][\w-]*)))(:[1-9][0-9]*)?(\/([\w-.\/:%+@&=]+[\w- .\/?:%+@&=]*)?)?(#(.*))?$/i);
@@ -4692,8 +4693,8 @@
                 title.classList.add('title');
 
                 if (isURL) {
-                  title.innerHTML = `<a href="${room}" target="_blank">${classEntry}</a>`;
-                } else title.innerHTML = classEntry;
+                  title.innerHTML = `<a href="${room}" target="_blank">${classEntryWithoutId}</a>`;
+                } else title.innerHTML = classEntryWithoutId;
                 classParagraph.appendChild(title);
                 var professor = document.createElement('span');
                 professor.classList.add('professor');
