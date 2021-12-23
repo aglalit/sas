@@ -122,7 +122,10 @@ const marketingTransporter = nodemailer.createTransport({
  user: marketinguser,
  pass: marketingpass
  },
- debug: true
+ debug: true,
+ pool: true,
+ maxMessages: 300,
+ maxConnections: 20
 });
 
 marketingTransporter.verify(function (error, success) {
