@@ -101,7 +101,10 @@ const officeTransporter = nodemailer.createTransport({
  user: officeuser,
  pass: officepass
  },
- debug: true
+ debug: true,
+ pool: true,
+ maxMessages: 300,
+ maxConnections: 20
 });
 
 officeTransporter.verify(function (error, success) {
@@ -122,10 +125,7 @@ const marketingTransporter = nodemailer.createTransport({
  user: marketinguser,
  pass: marketingpass
  },
- debug: true,
- pool: true,
- maxMessages: 300,
- maxConnections: 20
+ debug: true
 });
 
 marketingTransporter.verify(function (error, success) {
