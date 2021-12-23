@@ -1,0 +1,376 @@
+doctype html
+html
+  head
+    title SAS — Surveys
+    link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/cards.css')
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js")
+    script(src="/touch_sortable.js")
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h2 SAS — First Year Students Poll
+      //h3 To better understand conditions for online teaching in Q4, we are running a short survey (filling it will take you 3 mins max). Please do so by Monday, 6.04, 8pm.
+      form(id="form" action="/polls/generic3" method="post")
+        // DON'T REMOVE THIS INPUT!!!
+        input(type="hidden")
+        fieldset
+          div(class="input-group")#input-group
+            .flex-container.column
+              label(for="") Preferred Variant of Quantitative Reasoning:
+            .flex-container.row
+              input.radio(id="Math as Thinking: Applied Theory of Proofs (Denis Zmeev and HITS team)" type="radio" name="Year" value="Math as Thinking: Applied Theory of Proofs (Denis Zmeev and HITS team)")                          
+              label(for="Math as Thinking: Applied Theory of Proofs (Denis Zmeev and HITS team)") Math as Thinking: Applied Theory of Proofs (Denis Zmeev and HITS team)
+            .flex-container.row
+              input.radio(id="City as a Matrix (Evgeny Vdovin and NGU/Akademgorodok team)" type="radio" name="Year" value="City as a Matrix (Evgeny Vdovin and NGU/Akademgorodok team)")                          
+              label(for="City as a Matrix (Evgeny Vdovin and NGU/Akademgorodok team)") City as a Matrix (Evgeny Vdovin and NGU/Akademgorodok team)
+            .flex-container.row
+              input.radio(id="Don't know / don't care" type="radio" name="Year" value="Don't know / don't care")                          
+              label(for="Don't know / don't care") Don't know / don't care
+            .flex-container.column
+              label(for="") Preferred First Year Seminar:
+            .flex-container.row
+              input.radio(id="Gene-Culture Coevolution (Liz and Jay)" type="radio" name="f" value="Gene-Culture Coevolution (Liz and Jay)")                          
+              label(for="Gene-Culture Coevolution (Liz and Jay)") Gene-Culture Coevolution (Liz and Jay)
+            .flex-container.row
+              input.radio(id="Modelling (Alexander and Liz, title tbc)" type="radio" name="f" value="Modelling (Alexander and Liz, title tbc)")                          
+              label(for="Modelling (Alexander and Liz, title tbc)") Modelling (Alexander and Liz, title tbc)
+            .flex-container.row
+              input.radio(id="Consciousness, emotions, and decision making (Louis and Krishna)" type="radio" name="f" value="Consciousness, emotions, and decision making (Louis and Krishna)")                          
+              label(for="Consciousness, emotions, and decision making (Louis and Krishna)") Consciousness, emotions, and decision making (Louis and Krishna)
+            .flex-container.row
+              input.radio(id="Great Educators (Marko and Siyaves)" type="radio" name="f" value="Great Educators (Marko and Siyaves)")                          
+              label(for="Great Educators (Marko and Siyaves)") Great Educators (Marko and Siyaves)
+            .flex-container.row
+              input.radio(id="Psychoanalysis, Then and Now (Julie and Duane)" type="radio" name="f" value="Psychoanalysis, Then and Now (Julie and Duane)")                          
+              label(for="Psychoanalysis, Then and Now (Julie and Duane)") Psychoanalysis, Then and Now (Julie and Duane)
+            .flex-container.row
+              input.radio(id="Don't know / don't care" type="radio" name="f" value="Don't know / don't care")                          
+              label(for="Don't know / don't care") Don't know / don't care
+            //- .flex-container
+            //-   label(for="Major") Major
+            //-   select(class="form-control" required="required" name="Major")
+            //-     option(value="-") -
+            //-     option(value="Information Technology and Digital Society") Information Technology and Digital Society
+            //-     option(value="Cultural Studies") Cultural Studies
+            //-     option(value="Economics") Economics
+            //-     option(value="History") History
+            //-     option(value="Film and Media Studies") Film and Media Studies
+            //-     option(value="Life Sciences") Life Sciences
+            //-     option(value="Anthropology and Sociology") Anthropology and Sociology
+            //- .flex-container
+            //-   label(for="Grade band from the examination") Grade band from the examination
+            //-   select(class="form-control" required="required" name="Grade band from the examination")
+            //-     option(value="-") -
+            //-     option(value="0-3.49") 0-3.49
+            //-     option(value="3.5-5.99") 3.5-5.99
+            //-     option(value="6-7.99") 6-7.99
+            //-     option(value="8-10") 8-10      
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    script(src="/cards.js")
+    script(src="/default.js") 
+    script.
+        /* var inputGroup = document.getElementById('input-group');
+        // @params {elementOuter: object, required: boolean, tag: string, type: string, name: string, fullname: string, rows: string}
+        function wrapAndAppend (params) {
+          let elementInner;
+          if (!params.elementOuter) {
+            if (!params.tag) elementInner = document.createElement('input');
+            else elementInner = document.createElement(params.tag);
+            elementInner.name = params.name;
+            elementInner.id = params.name;
+            if (params.type) elementInner.type = params.type;
+            if (params.type === 'number') {
+              elementInner.min = '0';
+              elementInner.max = '5';
+            }
+            if (params.rows) elementInner.rows = params.rows;
+          } else elementInner = params.elementOuter;
+          if (params.required !== false && params.required !== 'false') elementInner.required = 'required';
+          elementInner.classList.add('form-control');
+          var flexContainer = document.createElement('div');
+          flexContainer.classList.add('flex-container');
+          var label = document.createElement('label');
+          label.setAttribute('for', elementInner.name || params.name);
+          label.innerHTML = params.name;
+          if (params.class) flexContainer.classList.add(params.class);
+          flexContainer.appendChild(label);
+          flexContainer.appendChild(elementInner);
+          inputGroup.appendChild(flexContainer);
+        }
+        
+        
+        wrapAndAppend({
+          name: 'Ф.И.О.',
+          type: 'text',
+          required: 'true'
+        });
+        wrapAndAppend({
+          name: 'Возраст',
+          type: 'text',
+          required: 'true'
+        });
+        wrapAndAppend({
+          name: 'Почта',
+          type: 'text',
+          required: 'true'
+        });
+        wrapAndAppend({
+          name: 'Аккаунты в соцсетях',
+          type: 'text',
+          required: 'true'
+        });
+        wrapAndAppend({
+          name: 'Курс',
+          type: 'text',
+          required: 'true'
+        });
+        wrapAndAppend({
+          name: 'Какие фильмы/сериалы ты посмотрел(а) за 2021 год?',
+          type: 'text',
+          required: 'true'
+        });
+        wrapAndAppend({
+          name: 'Что из медиапродуктов произвело на тебя впечатление?',
+          type: 'text',
+          required: 'true'
+        });
+        wrapAndAppend({
+          name: 'Какую роль в команде ты бы хотел(а) занимать?',
+          type: 'text',
+          required: 'true'
+        });
+        wrapAndAppend({
+          name: 'Чему хочешь научиться?',
+          type: 'text',
+          required: 'true'
+        });
+        wrapAndAppend({
+          name: 'Сколько времени ты готов(а) тратить на деятельность команды медиацентра?',
+          type: 'text',
+          required: 'true'
+        });
+        wrapAndAppend({
+          name: 'Можешь предложить название будущей команде медиацентра?',
+          type: 'text',
+          required: 'true'
+        });
+        wrapAndAppend({
+          name: 'Прикрепи ссылку на видеовизитку',
+          type: 'text',
+          required: 'true'
+        });
+        wrapAndAppend({
+          name: 'Прикрепи ссылку на творческое задание',
+          type: 'text',
+          required: 'true'
+        }); */
+        /* wrapAndAppend({
+          name: 'Was your supervisor one of the people you have preferred to work with?',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'How often did you contact the supervisor & how?',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'What aspects of the supervision were you satisfied with?',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'What aspects of the supervision were not satisfactory?',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        inputGroup.innerHTML += '<h3>Consultant</h3><div class="flex-container"><label for="Did you have a consultant?">Did you have a consultant?</label><select class="form-control" required="required" name="Did you have a consultant?"><option value="-"> -</option><option value="Yes"> Yes</option><option value="No"> No</option></select></div>'
+        wrapAndAppend({
+          name: 'How often did you contact the consultant & how? (skip if N/A)',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'What aspects of the consultant were you satisfied with? (skip if N/A)',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'What aspects of the consultant were not satisfactory? (skip if N/A)',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'Was there communication between you, the supervisor, and the consultant? (skip if N/A)',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        inputGroup.innerHTML += '<h3>Research Seminar</h3>'
+        wrapAndAppend({
+          name: 'What parts of the major-specific research seminar did you find most useful and/or enjoyable?',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'What parts of the major-specific research seminar could be improved, and how?',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'What parts of the common research seminar did you find most useful and/or enjoyable?',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'What parts of the common research seminar could be improved, and how?',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        inputGroup.innerHTML += '<h3>Project</h3>'
+        wrapAndAppend({
+          name: 'Why did you choose to study your particular topic?',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        inputGroup.innerHTML += '<h3>What do you think about the following aspects of the research projects:</h3>'
+        wrapAndAppend({
+          name: 'Requirements for Research Projects',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'Topic Development (seminars and consultations in Q1)',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'Resources available to complete the project',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'PechaKucha presentations',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'Communication',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'Policies concerning reuse of previous coursework',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        inputGroup.innerHTML += '<h3>What do you think about the following aspects of the examination:</h3>'
+        wrapAndAppend({
+          name: 'Examination procedure',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'Choice of examiners',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'Clarity and fairness of criteria',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'Timing',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'Feedback received in the report',
+          tag: 'textarea',
+          rows: '2',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'Would you be interested in getting your project included in the compendium of research projects from this year?',
+          tag: 'textarea',
+          rows: '4',
+          required: 'false'
+        });
+        inputGroup.innerHTML += '<h3>Future</h3>'
+        wrapAndAppend({
+          name: 'Do you plan to continue this year\'s research project in Year 4?',
+          tag: 'textarea',
+          rows: '2',
+          class: 'year3',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'Would you be interested in collaborating with a student from another major on an interdisciplinary BA Thesis (ВКР)?',
+          tag: 'textarea',
+          rows: '2',
+          class: 'year3',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'How much time do you expect to spend turning your 4th Year Research Project you have defended into the BA Thesis you will submit (ВКР)?',
+          tag: 'textarea',
+          rows: '2',
+          class: 'year4',
+          required: 'false'
+        });
+        wrapAndAppend({
+          name: 'If you have any other comments or suggestions concerning undergraduate research processes at SAS, please let us know',
+          tag: 'textarea',
+          rows: '4',
+          required: 'false'
+        });
+        
+          
+            var year3 = document.getElementById('3');
+            year3.addEventListener('click', function(event){
+              var years = document.querySelectorAll('.year1, .year2, .year3, .year4');
+              years.forEach(function(el){el.style.display = 'none'})
+              var year3s = document.querySelectorAll('.year3');
+              year3s.forEach(function(el){el.style.display = 'block'})
+            })
+            
+              var year4 = document.getElementById('4');
+              year4.addEventListener('click', function(event){
+                var years = document.querySelectorAll('.year1, .year2, .year3, .year4');
+                years.forEach(function(el){el.style.display = 'none'})
+                var year4s = document.querySelectorAll('.year4');
+                year4s.forEach(function(el){el.style.display = 'block'})
+              }) */
+    

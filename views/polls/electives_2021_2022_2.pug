@@ -1,0 +1,170 @@
+doctype html
+html
+  head
+    title Electives
+    link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/cards.css')
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js")
+    script(src="/touch_sortable.js")
+body
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 First Year Seminar. Year 2021–2022. Quarter 2. 
+      h3 Sort the following courses in the order from the most preferable to the least preferable one (from the top to the bottom)  
+      h3 Click on a course title to see its syllabus. Please make your choice carefully because lower priorities may matter.
+      h3 NOTE: The syllabi could be changed.
+      form(id="form" action="/polls/electives_2021_2022_2" method="post")
+        // DON'T REMOVE THIS INPUT!!!
+        input(type="hidden") 
+        fieldset   
+            .cards.offset-sm-1.col-sm-11                
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    script(src="/cards.js")
+    script(src="/default.js") 
+    script.
+            var cards = document.querySelector('.cards');
+            var dict = {
+            "year34": [
+              {
+                "instructors": "Louis Vervoort",
+                "title": "Philosophy and Ethics of Robots and Artificial Intelligence (AI)",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-Ethics-of-Artificial-Intelligence-and-Robots-Syllabus-Vervoort.pdf"
+            },
+            {
+                "instructors": "Erika Wolf",
+                "title": "Photography and Russia",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-Photography-and-Russia-Syllabus-Wolf.pdf"
+            },
+            {
+                "instructors": "Alexander Usvitsky",
+                "title": "Mathematics for Economists",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-Math-for-Economists-Syllabus-Usvitskiy-elective.pdf"
+            },
+            {
+                "instructors": "Duane Rousselle",
+                "title": "Strange Sociology: A Challenge to the Discipline",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-Strange-Sociology-Syllabus-Rousselle-elective.pdf"
+            },
+            {
+                "instructors": "Aleksei Gudkov",
+                "title": "Blockchain",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-Blockchain-Syllabus-Gudkov-elective.pdf"
+            },
+            {
+                "instructors": "Aleksei Gudkov",
+                "title": "Core Course on Artificial Intelligence: Features and Framework",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-Artificial-Intelligence-Syllabus-Gudkov-elective.pdf"
+            },
+              {
+                "instructors": "Anastasia Merzliakova",
+                "title": "Econometrics",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-Econometrics-Syllabus-Merzliakova-ECON-3-4.pdf"
+            },
+            {
+                "instructors": "Duane Rousselle",
+                "title": "Qualitative Research Methods",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-Qualitative-Research-Methods-Syllabus-Rousselle.pdf"
+            },
+            {
+                "instructors": "Siyaves Azeri",
+                "title": "Critical Theory: Key Thinkers, Texts, and Concepts",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-Critical-Theory-Syllabus-Azeri-CULT-34-1.pdf"
+            },
+            {
+                "instructors": "Corinne Doria",
+                "title": "Into the Archive",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-Into-the-Archive-Syllabus-Doria-HIST-34-.pdf"
+            },
+            {
+                "instructors": "Joshua Reeves",
+                "title": "New Media Analysis 2",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-NMA-2-Syllabus-Reeves-FIME-4-.pdf"
+            },
+            {
+                "instructors": "Peter Lesnik",
+                "title": "Film Theory",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-Film-Theory-Syllabus-Lesnik-FIME-4-.pdf"
+            },
+              {
+                "instructors": "Sulgi Lie",
+                "title": "Film History",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-Film-History-Syllabus-Lie-FIME-3.pdf"
+            },
+            {
+                "instructors": "Denis Zmeev",
+                "title": "Business processes",
+                "syllabus": ""
+            },
+            {
+                "instructors": "Denis Zmeev",
+                "title": "Subject Domains",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-Subject-Domains-Zmeev-IT-3.pdf"
+            },
+            {
+                "instructors": "Denis Zmeev",
+                "title": "Databases",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-Databases-Syllabus-Skiba-IT-3-.pdf"
+            },
+            {
+                "instructors": "Ayla Arslan",
+                "title": "The Unit of Life",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-The-Unit-of-Life-Syllabus-Arslan-LIFE-3-4-.pdf"
+            },
+            {
+                "instructors": "Krishna Muthukumarappan",
+                "title": "Health and Illness",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-_Health-and-Illness-Syllabus-Muthukumarappan-LIFE-3-4-.pdf"
+            }
+          ],
+          "year12": [
+            {
+              "instructors": "Marko Turk, Siyaves Azeri",
+              "title": "Great Educators",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-FYS-Great-Educators-Syllabus-Turk-elective-.pdf"
+          },
+          {
+              "instructors": "Julie Reshe, Duane Rousselle",
+              "title": "Psychoanalysis, Then and Now",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-FYS-Psychoanalysis-Syllabus-Reshe.pdf"
+          },
+          {
+              "instructors": "Alexander Usviskiy,  Erzsébet Pásztor",
+              "title": "Basics of Modeling",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-FYS_Modeling-elective-Usvitskiy.pdf"
+          },
+          {
+              "instructors": "Erzsébet Pásztor,  Jay Silverstein",
+              "title": "Genes, Сulture, and Human Evolution",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-FYS-Genes-culture-and-human-ev.-Syllabus-Pasztor-elective-.pdf"
+          },
+          {
+              "instructors": "Krishna Muthukumarappan, Louis Vervoort",
+              "title": "Consciousness, Emotions, and Decision Making",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/10/21-22-Q2-FYS-Consc.-EmotionsDM-Syllabus-Muthukumarappan-elective-.pdf"
+          }
+        ]
+      }
+            var urlParams = new URLSearchParams(window.location.search);
+            var year = urlParams.get('year');
+            
+    
+    
+    
+    
+          dict[year].forEach(function(entry, index){
+            var card = document.createElement('div');
+            card.classList.add('portlet', 'ui-widget', 'ui-widget-content', 'ui-helper-clearfix', 'ui-corner-all');
+            var syllabusHTML = '';
+            if (entry["syllabus"]) syllabusHTML = `<p><a target="_blank" href="${entry["syllabus"]}">Syllabus link</a></p>`;
+            else syllabusHTML = 'Syllabus is not available yet';
+            card.innerHTML = `<div class="portlet-header ui-sortable-handle ui-widget-header ui-corner-all" id="${entry["title"]} — ${entry["instructors"]}"><div class="row"><div class="col-12 col-md-10"><a data-toggle="collapse" role="button" href="#collapse${index}">${entry["title"]} — ${entry["instructors"]}</a><div class="collapse" id="collapse${index}"> 
+            ${syllabusHTML}</div></div></div></div>`
+            cards.appendChild(card);
+          })

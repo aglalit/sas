@@ -1,0 +1,247 @@
+doctype html
+head
+  title The choice of classes
+  link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+  // load bootstrap css
+  style.
+    body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+    @font-face {
+      font-family: 'Agipo-Bold';
+      src:url('../fonts/agipo/Agipo-Bold.woff');
+    }
+    img {
+      width:80%;
+      margin-top:10px;
+    }
+    .logo {padding-bottom:30px}
+    h2 {font-weight:800; margin-bottom:20px;}
+    .jumbotron h1 {
+      font-size:36px;
+      margin-bottom: 40px;
+    }
+    h3 {
+      font-size: 1.5em;
+      font-weight: 400;
+    }
+    .jumbotron{
+      font-size:18px;
+      line-height: initial;
+      padding-top: 0px;
+    }
+    .container{
+      width:98% !important;
+    }
+    .input-group{
+      margin-bottom:20px;
+    }
+    .input-group label {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight: 500;
+      margin: 10px 0;
+      font-size:20px;
+      width:93%;
+    }
+    .input-group .label__description {
+      font-family:initial;
+    }
+    .input-group .form-control {
+      margin: 20px 0 40px 0;
+      width:75%;
+    }
+    form {
+      margin-top: 30px;
+    }
+    label,legend {
+      text-align: left;
+          float: left;
+    }
+    legend {font-size: 1.8em;}
+    input, textarea, select {
+      float:left;
+      width:75%;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    input[type="checkbox"] {
+      /* -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none; */
+
+      /* border-radius: 50%; */
+      width: 38px;
+      height: 38px;
+
+      /* border: 2px solid #999; */
+      transition: 0.2s all linear;
+      outline: none;
+      margin-right: 15px;
+
+      position: relative;
+      top:0;
+      }
+      input:focus {
+        outline: none !important;
+      }
+      input:checked {
+        border: 12px solid #00f;
+      }
+      button {
+        background-color: #00f !important;
+        border: none !important;
+      }
+      .flex-container {display:flex; flex-direction:column; margin:10px 0;}
+      .flex-container.row {flex-direction:row;}
+      
+      input[type="checkbox"] {
+        width: 5% !important;
+        height: 30px;
+        margin-top: 9px !important;
+      }
+
+      @media (max-width: 1024px) {
+
+        body{padding-top:10px}
+        .container{
+        width:95%;
+        }
+        h1,h3 {font-size:60px !important;}
+        .input-group  label {
+        font-size:40px ;
+        margin-bottom:20px;
+        }
+        input[type="checkbox"]{
+          top:6px;
+        }
+        button.btn-lg {
+          font-size: 30px;
+        }
+        input[type="checkbox"] {margin-top: 4px !important;           
+          height: 50px;
+          }
+      }
+.container
+  .jumbotron.text-center
+    .logo
+      a(href="https://sas.utmn.ru")
+        img(src="/assets/Logo__red.png")
+    h1 Отбор профессоров: сессия по дизайну мультидисциплинарных исследовательских проектов. Открытые занятия кандидатов
+    form(action="/polls/pds-2019-classes" method="post")
+      h3 09:40–11:10
+      div(class="input-group" id="slot1")
+        .flex-container.row
+          input(type="checkbox" value="Alexandra Coțofană" name="9:40" id="Alexandra Coțofană")
+          label() Alexandra Coțofană — Thinking through models of power. Approaching canonical texts in social sciences and the humanities
+        .flex-container.row
+          input(type="checkbox" value="Cormac Mc Namara" name="9:40" id="Cormac Mc Namara")
+          label() Cormac Mc Namara — Emile Durkheim’s Suicide: A Study in Sociology
+        .flex-container.row
+          input(type="checkbox" value="Christian Etzrodt" name="9:40" id="Christian Etzrodt")
+          label() Christian Etzrodt — History of Economic Thought
+        .flex-container.row
+          input(type="checkbox" value="Zulfiqar Ali Memon" name="9:40" id="Zulfiqar Ali Memon")
+          label() Zulfiqar Ali Memon — Gaining Business Intelligence using Information Systems
+        .flex-container.row
+          input(type="checkbox" value="Corinne Doria" name="9:40" id="Corinne Doria")
+          label() Corinne Doria — Introduction to disability studies
+        .flex-container.row
+          input(type="checkbox" value="Natalia Zaretskaya" name="9:40" id="Natalia Zaretskaya")
+          label() Natalia Zaretskaya — Scientific manuscript design
+      h3 11:30–13:00
+      div(class="input-group" id="slot2")
+        .flex-container.row
+          input(type="checkbox" value="Mark Geraghty" name="11:30" id="Mark Geraghty")
+          label() Mark Geraghty — Interpretative Social Science, Anthropology and Hermeneutics
+        .flex-container.row
+          input(type="checkbox" value="Irina Antoshchuk" name="11:30" id="Irina Antoshchuk")
+          label() Irina Antoshchuk — What is technology? Insights from science and technology studies
+        .flex-container.row
+          input(type="checkbox" value="Bernardo Pincheira" name="11:30" id="Bernardo Pincheira")
+          label() Bernardo Pincheira Sarmiento — Introduction to Public Economics
+        .flex-container.row
+          input(type="checkbox" value="Munesh Singh Chauhan" name="11:30" id="Munesh Singh Chauhan")
+          label() Munesh Singh Chauhan — Introduction to Parallel Computing
+        .flex-container.row
+          input(type="checkbox" value="Julie Reshe" name="11:30" id="Julie Reshe")
+          label() Julie Reshe — Are Freud and Psychoanalysis Still Relevant?
+        .flex-container.row
+          input(type="checkbox" value="Adam Szymanski" name="11:30" id="Adam Szymanski")
+          label() Adam Szymanski — The Cinema of Poetry      
+      h3 14:00–15:30
+      div(class="input-group" id="slot3")
+        .flex-container.row
+          input(type="checkbox" value="Emily Jane O’Dell" name="14:00" id="Emily Jane O’Dell")
+          label() Emily Jane O’Dell — Excavating the Silk Road: Sufism in Post-Soviet Central Asia
+        .flex-container.row
+          input(type="checkbox" value="Polina Ermolaeva" name="14:00" id="Polina Ermolaeva")
+          label() Polina Ermolaeva — In the labyrinths of sustainable cities: putting the puzzle together
+        .flex-container.row
+          input(type="checkbox" value="Kellan Anfinson" name="14:00" id="Kellan Anfinson")
+          label() Kellan Anfinson — Marx’s Economic and Philosophic Manuscripts
+        .flex-container.row
+          input(type="checkbox" value="Majid Ghaninia" name="14:00" id="Majid Ghaninia")
+          label() Majid Ghaninia — Cellular Reproduction (Cells from Cells)
+        .flex-container.row
+          input(type="checkbox" value="Joel Parthemore" name="14:00" id="Joel Parthemore")
+          label() Joel Parthemore — What is a dead metaphor?
+        .flex-container.row
+          input(type="checkbox" value="Sergey Shityakov" name="14:00" id="Sergey Shityakov")
+          label() Sergey Shityakov — Molecular Neuroscience of Human Interactions: The Behavioral Breakthrough at Molecular Level   
+      h3 15:40–17:10
+      div(class="input-group" id="slot4")
+        .flex-container.row
+          input(type="checkbox" value="Anna Varfolomeeva" name="15:40" id="Anna Varfolomeeva")
+          label() Anna Varfolomeeva — Landscapes of the changing world
+        .flex-container.row
+          input(type="checkbox" value="Gary Yeritsian" name="15:40" id="Gary Yeritsian")
+          label() Gary Yeritsian — The social construction of self
+        .flex-container.row
+          input(type="checkbox" value="Jacob Lassin" name="15:40" id="Jacob Lassin")
+          label() Jacob Lassin — The Technologies of Truth and Power
+        .flex-container.row
+          input(type="checkbox" value="Krishna-K" name="15:40" id="Krishna-K")
+          label() Krishna-K — Neurobiology of Learning and Memory    
+      button(type="submit" class="btn btn-primary btn-lg") Submit
+  script.
+    function is_touch_device() {
+      var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
+      var mq = function(query) {
+        return window.matchMedia(query).matches;
+      }
+
+      if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+        return true;
+      }
+
+      var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+      return mq(query);
+    }
+    var inputs = document.querySelectorAll('input[type="checkbox"]');
+    inputs.forEach(function(input) {
+      input.addEventListener('mousedown', function() {
+        var id = event.target.id;
+        var name = event.target.name;
+        if (!event.target.checked) {
+          if (document.querySelectorAll('.checked').length < 3) {
+            event.target.classList.add("checked");
+            inputs.forEach(function(input) {
+              if (input.name === name && input.id !== id) {
+                input.disabled = true;
+              }
+            });
+          } else {
+            event.target.checked = false;
+            event.target.classList.remove("checked");
+            if (is_touch_device()) event.target.click();
+            alert('You can choose 3 classes only');
+          }
+        } else {
+          event.target.classList.remove("checked");
+          inputs.forEach(function(input) {
+            if (input.name === name && input.id !== id) {
+              input.disabled = false;
+            }
+          });
+        }
+
+      });
+    });

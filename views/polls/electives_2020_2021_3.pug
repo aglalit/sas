@@ -1,0 +1,209 @@
+doctype html
+html
+  head
+    title Electives
+    link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/cards.css')
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js")
+    script(src="/touch_sortable.js")
+body
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 Electives. Year 2020–2021. Module 3. 
+      h3 Sort the following electives in the order from the most preferable to the least preferable one (from the top to the bottom)
+      
+      // h3 Click on a course title to see its syllabus. Please make your choice carefully because lower priorities may matter.
+      // h3 NOTE: The syllabi could be changed.
+      form(id="form" action="/polls/electives_2020_2021_2" method="post")
+        // DON'T REMOVE THIS INPUT!!!
+        input(type="hidden") 
+        fieldset   
+            .cards.offset-sm-1.col-sm-11                
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    script(src="/cards.js")
+    script(src="/default.js") 
+    script.
+            var cards = document.querySelector('.cards');
+            var dict = {
+            "year34": [
+              {
+                "instructors": "Maxim Alyukov",
+                "title": "Political Communication",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/FYS_Argumentation-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Louis Vervoort",
+                "title": "Philosophy of Science",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/FYS_Humor-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Giacomo Andreoletti",
+                "title": "Formal Logic 2",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/FYS_Free-Will-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Juliette Colinas, Matvey Lomonosov",
+                "title": "Environmental Citizenship"
+            },
+            {
+                "instructors": "Daniel Kontowski, Krystian Szadkowski",
+                "title": "Education, Workplace, Life",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Tomasz Blusiewicz",
+                "title": "History of Germany, 1871-1990",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Erzsebet Pasztor, Krishna K, Juliette Colinas",
+                "title": "Biology: important themes, implications, applications",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Peter Jones, Daniel Kontowski",
+                "title": "Creative Cities",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Ayla Arslan",
+                "title": "Selected Topics of Biopsychology",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Peter Lesnik, Andrey Shcherbenok, Sulgi Lie",
+                "title": "Film Appreciation",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Matvey Lomonosov",
+                "title": "Nations and Nationalism",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Matvey Lomonosov",
+                "title": "Current Anthropological and Sociological Theory",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Corinne Doria, Aleksey Lysenko",
+                "title": "Digital Humanities and Contemporary Culture",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Alexander Didenko",
+                "title": "Applied Economics",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Alexander Didenko",
+                "title": "Banking and Finance",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Sulgi Lie",
+                "title": "Film Form & History 3",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Victor Skiba, Vladimir Prischepa",
+                "title": "Web-frontend",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Ilya Karpov",
+                "title": "Information Transmission Systems and Networks",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Juliette Colinas",
+                "title": "Public Health and the Environment",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+            },
+            {
+                "instructors": "Erzsébet Pásztor",
+                "title": "Evolution",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+            }
+          ],
+          "year12": [
+            {
+              "instructors": "Maxim Alyukov",
+              "title": "Political Communication",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/FYS_Argumentation-Q2-2020-21.pdf"
+          },
+          {
+              "instructors": "Louis Vervoort",
+              "title": "Philosophy of Science",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/FYS_Humor-Q2-2020-21.pdf"
+          },
+          {
+              "instructors": "Giacomo Andreoletti",
+              "title": "Formal Logic 2",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/FYS_Free-Will-Q2-2020-21.pdf"
+          },
+          {
+              "instructors": "Juliette Colinas, Matvey Lomonosov",
+              "title": "Environmental Citizenship"
+          },
+          {
+              "instructors": "Daniel Kontowski, Krystian Szadkowski",
+              "title": "Education, Workplace, Life",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+          },
+          {
+              "instructors": "Tomasz Blusiewicz",
+              "title": "History of Germany, 1871-1990",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+          },
+          {
+              "instructors": "Erzsebet Pasztor, Krishna K, Juliette Colinas",
+              "title": "Biology: important themes, implications, applications",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+          },
+          {
+              "instructors": "Peter Jones, Daniel Kontowski",
+              "title": "Creative Cities",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+          },
+          {
+              "instructors": "Ayla Arslan",
+              "title": "Selected Topics of Biopsychology",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+          },
+          {
+              "instructors": "Peter Lesnik, Andrey Shcherbenok, Sulgi Lie",
+              "title": "Film Appreciation",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+          },
+          {
+              "instructors": "Matvey Lomonosov",
+              "title": "Nations and Nationalism",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2020/10/ESL-Syllabus-Q2-2020-21.pdf"
+          }
+        ]
+      }
+            var urlParams = new URLSearchParams(window.location.search);
+            var year = urlParams.get('year');
+            
+    
+    
+    
+    
+          dict[year].forEach(function(entry, index){
+            var card = document.createElement('div');
+            card.classList.add('portlet', 'ui-widget', 'ui-widget-content', 'ui-helper-clearfix', 'ui-corner-all');
+            var syllabusHTML = '';
+            /* if (entry["syllabus"]) syllabusHTML = `<p><a target="_blank" href="${entry["syllabus"]}">Syllabus link</a></p>`; */
+            
+            card.innerHTML = `<div class="portlet-header ui-sortable-handle ui-widget-header ui-corner-all" id="${entry["title"]} — ${entry["instructors"]}"><div class="row"><div class="col-12 col-md-10"><a data-toggle="collapse" role="button" href="#collapse${index}">${entry["title"]} — ${entry["instructors"]}</a><div class="collapse" id="collapse${index}"> 
+            ${syllabusHTML}</div></div></div></div>`
+            cards.appendChild(card);
+          })

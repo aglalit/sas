@@ -1,0 +1,451 @@
+doctype html
+html
+  head
+    title Онлайн-консультация
+    link(rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel="stylesheet" href="https://sastest.utmn.ru/wp-content/themes/sasutmn/css/fontello-embedded.min.css")
+    // load bootstrap css
+    script.
+      !function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?168",t.onload=function(){VK.Retargeting.Init("VK-RTRG-501131-8ENu7"),VK.Retargeting.Hit()},document.head.appendChild(t)}();
+    noscript
+      img(src="https://vk.com/rtrg?p=VK-RTRG-501131-8ENu7" style="position:fixed; left:-999px;" alt="")
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Bold'; 
+      
+      -moz-osx-font-smoothing: grayscale;   /* Firefox */
+      -webkit-font-smoothing: antialiased; /* WebKit  */
+      }
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      @font-face {
+        font-family: 'Agipo-Regular';
+        src:url('../fonts/agipo/Agipo-Regular.woff');
+      }
+      h2 {margin-bottom:20px;
+      font-family: 'Agipo-Bold',Arial,sans-serif;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+        font-family: 'Agipo-Bold',Arial,sans-serif;
+      }
+      h3 {
+        font-size: 1.5em;
+        font-weight: 400;
+        margin-bottom:30px;
+        font-family: 'Agipo-Regular',Arial,sans-serif;;
+      }
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+      }
+      img {
+        width:80%;
+        margin-top:10px;
+      }
+      .logo {padding-bottom:30px}
+      a {color:#f00;
+       border-bottom: 1px red solid;
+      }
+      a:hover {color:#f00;
+       border-bottom: none;
+      }
+      .container{
+        width:98% !important;
+      }
+      p {
+        margin: 0 0 30px;
+        font-size: 20px;
+        font-family: 'Agipo-Regular';
+      }
+      .input-group{
+        margin-bottom:20px;
+        display:block;
+      }
+      .input-group label, h4 {
+        font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 18px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+      }
+      form {
+        margin-top: 30px;
+      }
+      fieldset {
+        margin-bottom:30px;
+      }
+      label,legend,h4 {
+        text-align: left;
+        width:100%;
+      }
+      input[type="checkbox"] + label, label[for="agreement-checkbox"]{
+        width:92%;
+        margin-top: 15px;
+      }
+      #agreement-checkbox {
+        width:5%;
+        margin-left: -10px;
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        font-size: 20px !important;
+        float:left;
+        width:75%;
+        font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
+      }
+      .label_width100 {
+        width:100%;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        top:0px
+        }
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #f00;
+        }
+        button {
+          background-color: #f00 !important;
+          border-color: #f00 !important;
+        }
+        
+        .checkbox {
+          width: 5% !important;
+          height: 30px;
+          margin-top: 14px !important;
+        }
+        
+        input[type="checkbox"] {
+          /* -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none; */
+
+          width: 38px;
+          height: 38px;
+
+          border: 2px solid #999;
+          transition: 0.2s all linear;
+          outline: none;
+          margin-right: 15px;
+
+          position: relative;
+          top:0;
+          zoom:1.1;
+          margin-left: -10px;
+          margin-bottom: 10px;
+          }
+          
+          .social li {
+            display:inline-block;
+          }
+          
+          .social li a {
+            border:none;
+          }
+          
+          [class^="icon-"]::before, [class*=" icon-"]::before {
+              font-family: "fontello";
+              font-style: normal;
+              font-weight: normal;
+              speak: none;
+              display: inline-block;
+              text-decoration: inherit;
+              width: 1em;
+              margin-right: .2em;
+              text-align: center;
+              font-variant: normal;
+              text-transform: none;
+              line-height: 1em;
+              margin-left: .2em;
+              font-size:50px;
+            }
+            .icon-facebook:before {
+                content: '\f30c';
+              }
+              .icon-vkontakte:before {
+                content: '\f189';
+              }
+              .icon-instagram:before {
+                content: '\f32d';
+              }
+              .icon-youtube:before {
+                content: '\f167';
+              }
+              
+              .row + .column {
+                margin-top: 15px;
+              }
+
+              
+                  @media (max-width: 1024px) {
+
+                    body{padding-top:10px}
+                    .container{
+                    width:95%;
+                    }
+                    h3 {
+                      font-size: 2.5em;
+                    }
+                    h2 {
+                      font-size: 3em;
+                    }
+                    .jumbotron h1 {
+                      font-size: 3.5em;
+                    }
+                  .input-group  label, h4 {
+                    font-size:45px ;
+                    margin-bottom:20px;
+                    width:100%;
+                    }
+                    
+                    .input-group .form-control {
+                      height:62px;
+                    }
+                    
+                    input[type="checkbox"] + label, label[for="agreement-checkbox"]{
+                      width:91%;
+                      margin-top: 12px;
+                    
+                    }
+                    #agreement-checkbox {
+                      width:5%;
+                      margin-left: 10px;
+                        top: 10px;
+                    }
+                    .checkbox {
+                      width: 5% !important;
+                      height: 30px;
+                      margin-top: 14px !important;
+                    }
+                    input[type="radio"]{
+                      top:5px;
+                    }
+                    .btn-lg {
+                      padding: 16px 26px;
+                      font-size: 45px;
+                      line-height: 1.33;
+                      border-radius: 16px;
+                    }
+                    .label_width100 {
+                      width:100% !important;
+                    }
+                    .checkbox {margin-top: 13px !important;           
+                      height: 50px;
+                      }
+                    .input-group label, h4 {
+                      
+                      margin: 11px 0;
+                    }
+                    .social li a i::before {
+                      font-size:90px;
+                      line-height:2;
+                    }
+                    p {
+                      font-size: 40px;
+                    }
+                  }
+                  
+        
+body
+  .container
+    .jumbotron.text-center(style="background:white")
+      .logo
+        a(href="https://sas.utmn.ru" style="border:none")
+          img(src="/assets/Logo__red.png")
+      h1(style="color:red") Поступление в Школу перспективных исследований (SAS) ТюмГУ: запись на онлайн-консультацию
+        //- a(href="https://sas.utmn.ru/ru/prospective-students-intensive-program-2021/" target="_blank") «Ты. Университет. Будущее»
+      //- h1 Регистрация
+      //- h3 Хочешь сделать осознанный выбор университета и своей специальности?
+      //- h3 Тогда заполняй форму, жми «отправить» и жди дальнейших инструкций в письме. (Для участия в отборе необходимо до 1 февраля прислать видео-ролик на английском языке на одну из тем по выбору.) Удачи!
+      //- h3 Подробнее об интенсиве читай 
+      //-   a(href="https://sas.utmn.ru/ru/prospective-students-intensive-program-2021/" target="_blank") тут
+      //- .col-xs-12
+      //-   ul(class="social")
+      //-     li(class="fb")
+      //-       a(href="https://www.facebook.com/sas.utmn.ru/" target="_blank")
+      //-         i(class="icon-facebook")
+      //-     li(class="vk")
+      //-       a(href="https://vk.com/sas_tmn" target="_blank")
+      //-         i(class="icon-vkontakte")
+      //-     li(class="insta")
+      //-       a(href="https://www.instagram.com/sas_utmn/" target="_blank")
+      //-         i(class="icon-instagram")
+      //-     li(class="youtube")
+      //-       a(href="https://www.youtube.com/channel/UCTOl5FTiDD-n61Xiu0e_Uvg" target="_blank")
+      //-         i(class="icon-youtube")
+      form(action="/polls/registration-prospective-students" method="post" onsubmit="VK.Goal('conversion')")
+        fieldset
+          div(class="input-group")
+            .flex-container.column
+              label(for="Name") Ф.И.О.
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="Name")
+            //- .flex-container.column
+            //-   label(for="Birthdate") Дата рождения
+            //-     sup(style="color:red") *
+            //-   input(type="date" required="required" class="form-control" name="Birthdate")
+            .flex-container.column
+              label(for="Email") Email
+                sup(style="color:red") *
+              input(type="email" required="required" class="form-control" name="Email")
+            .flex-container.column
+              label(for="Мобильный телефон") Мобильный телефон
+                sup(style="color:red") *
+              input(type="tel" required="required" class="form-control" name="Мобильный телефон")
+            //- .flex-container.column
+            //-   label(for="City") Город
+            //-     sup(style="color:red") *
+            //-   input(type="text" required="required" class="form-control" name="City")
+            //- .flex-container.column
+            //-   label(for="Школа, класс") Школа, класс
+            //-     sup(style="color:red") *
+            //-   input(type="text" required="required" class="form-control" name="Школа, класс")
+            //- .flex-container.column
+            //-   label(for="Школа") Школа
+            //-     sup(style="color:red") *
+            //-   input(type="text" required="required" class="form-control" name="Школа")
+            .flex-container.column
+              label(for="Question") Вопрос
+              textarea(rows="4"  class="form-control" name="Question")
+            //- .flex-container.column
+            //-   label(for="USE" ) По каким предметам планируете сдавать ЕГЭ? (выбрать до 4)
+            //-     sup(style="color:red") *
+            //- .flex-container.row
+            //-   input.checkbox(id="Русский язык" type="checkbox" name="Русский язык")                         
+            //-   label(for="Русский язык") Русский язык
+            //- .flex-container.row
+            //-   input.checkbox(id="Английский язык" type="checkbox" name="Английский язык")                         
+            //-   label(for="Английский язык") Английский язык
+            //- .flex-container.row
+            //-   input.checkbox(id="Математика" type="checkbox" name="Математика")                         
+            //-   label(for="Математика") Математика
+            //- .flex-container.row
+            //-   input.checkbox(id="Обществознание" type="checkbox" name="Обществознание")                         
+            //-   label(for="Обществознание") Обществознание
+            //- .flex-container.row
+            //-   input.checkbox(id="История" type="checkbox" name="История")                         
+            //-   label(for="История") История
+            //- .flex-container.row
+            //-   input.checkbox(id="Информатика" type="checkbox" name="Информатика")                         
+            //-   label(for="Информатика") Информатика
+            //- .flex-container.row
+            //-   input.checkbox(id="Биология" type="checkbox" name="Биология")                         
+            //-   label(for="Биология") Биология
+            //- .flex-container.row
+            //-   input.checkbox(id="Физика" type="checkbox" name="Физика")                         
+            //-   label(for="Физика") Физика
+            //- .flex-container.row
+            //-   input.checkbox(id="Химия" type="checkbox" name="Химия")                         
+            //-   label(for="Химия") Химия
+            //- .flex-container.row
+            //-   input.checkbox(id="Литература" type="checkbox" name="Литература")                         
+            //-   label(for="Литература") Литература
+            //- .flex-container.row
+            //-   input.checkbox(id="География" type="checkbox" name="География")                         
+            //-   label(for="География") География
+            //- 
+            //- 
+            //- .flex-container.column
+            //-   label(for="Source" ) Откуда Вы узнали об интенсиве SAS?
+            //-     sup(style="color:red") *
+            //-   select(class="form-control" required="required" name="Source"  )
+            //-     option(value="Не выбрано")  Не выбрано
+            //-     option(value="Сайт SAS") Сайт SAS
+            //-     option(value="Сайт UTMN") Сайт UTMN
+            //-     option(value="Портал «Поступай правильно»") Портал «Поступай правильно» 
+            //-     option(value="Портал Ucheba.ru") Портал Ucheba.ru
+            //-     option(value="VK") VK
+            //-     option(value="Instagram") Instagram  
+            //-     option(value="В школе от учителя или директора") В школе от учителя или директора
+            //-     option(value="Другое") Другое
+            //- .flex-container.column
+            //-   label(for="Other source") Откуда Вы узнали об интенсиве SAS? Другое:
+            //-   input(type="text"  class="form-control" name="Other source")
+            //- .flex-container.column
+            //-   label(for="Birthdate" class="Grade") Дата рождения
+            //-     sup(style="color:red") *
+            //-   input(type="date" required="required" class="form-control Grade" name="Birthdate")
+            //- .flex-container.column
+            //-   label(for="Grade" ) Кем вы являетесь? (школьник / студент / родитель)
+            //-     sup(style="color:red") *
+            //-   select(class="form-control" name="Grade" required="required" )
+            //-     option(value="Не выбрано") Не выбрано
+            //-     option(value="Школьник (8–10 класс)") Школьник (8–10 класс)
+            //-     option(value="Школьник (11 класс)") Школьник (11 класс)
+            //-     option(value="Студент") Студент  
+            //-     option(value="Родитель") Родитель
+            //-     option(value="Другое") Другое    
+            //- .flex-container.column
+            //-   label(for="Source") Откуда вы узнали о мероприятии
+            //-     sup(style="color:red") *
+            //-   input(type="text" required="required" class="form-control" name="Source")     
+                     
+            .flex-container.row
+              input.checkbox(id="agreement-checkbox" type="checkbox" name="agreement" required="required")                         
+              label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
+                a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") Политики конфиденциальности
+                sup(style="color:red") *
+            label 
+              sup(style="color:red") * 
+              span — обязательные поля   
+        button(type="submit" class="btn btn-primary btn-lg") Отправить
+        script.
+          (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+          (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+          ym(65125612, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true
+            });
+            
+          ym(70806694, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true
+            });
+            
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '4001214329949146');
+          fbq('track', 'PageView');    
+          
+          !function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?168",t.onload=function(){VK.Retargeting.Init("VK-RTRG-547117-8lbBP"),VK.Retargeting.Hit()},document.head.appendChild(t)}();          
+        noscript
+          img(src="https://vk.com/rtrg?p=VK-RTRG-547117-8lbBP" style="position:fixed; left:-999px;" alt="")
+        noscript
+          img(height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4001214329949146&ev=PageView&noscript=1")
+        noscript
+          div
+            img(src="https://mc.yandex.ru/watch/65125612" style="position:absolute; left:-9999px;" alt="")
+          

@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    link(rel="stylesheet" type = "text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+  body
+    main.app-wrapper
+      div(id="app")
+        p {{ hideResult ? 'Отмечайте ваши ЕГЭ, чтобы узнать на какое направление подготовки подавать документы:' : resultHeader}}
+        div(class="input-group" v-show="hideResult")
+          input(type="checkbox" disabled="true" checked="checked" id="русский язык" value="русский язык")
+          label(for="русский язык") русский язык
+          input(type="checkbox" id="иностранный язык" value="иностранный язык" v-model="checkedNames")
+          label(for="иностранный язык") иностранный язык
+          input(type="checkbox" id="биология" value="биология" v-model="checkedNames")
+          label(for="биология") биология
+          input(type="checkbox" id="литература" value="литература" v-model="checkedNames")
+          label(for="литература") литература
+          input(type="checkbox" id="математика" value="математика" v-model="checkedNames")
+          label(for="математика") математика
+          input(type="checkbox" id="обществознание" value="обществознание" v-model="checkedNames")
+          label(for="обществознание") обществознание
+          input(type="checkbox" id="история" value="история" v-model="checkedNames")
+          label(for="история") история
+          input(type="checkbox" id="информатика и ИКТ" value="информатика и ИКТ" v-model="checkedNames")
+          label(for="информатика и ИКТ") информатика и ИКТ
+        div(class="results" v-show="!hideResult")
+          ul(class="results__list list__hodash h3_small")
+            li(v-for="subject in findSubjects" v-html="subject")
+        button(type="submit" v-on:click="hideResult = !hideResult") {{ hideResult ? 'Выбрать программу' : 'Сделать выбор заново'}}
+        
+        div Checked names: {{ checkedNames }}
+        div {{ findSubjects }}
+    script(src="/vue-app.js")

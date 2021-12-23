@@ -1,0 +1,46 @@
+﻿doctype html
+head
+  title School of Advanced Studies — Share Your Opinions
+  link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+  // load bootstrap css
+  link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
+  // load fontawesome
+  style.
+    body        { padding-top:80px;   font-family: 'Agipo-Bold';}
+    @font-face {
+      font-family: 'Agipo-Bold';
+      src:url('fonts/agipo/Agipo-Bold.woff');
+    }
+    @font-face {
+      font-family: 'Agipo-Regular';
+      src:url('fonts/agipo/Agipo-Regular.woff');
+    }
+    p {font-size:1.8em; font-family: "Agipo-Regular",Helvetica,Arial,sans-serif;}
+    a.btn-xl {
+      font-size:1.8em;
+    }
+    @media (max-width: 768px){
+    .jumbotron, .btn-lg {font-size:40px}
+    .container {
+      width: auto;
+      }
+
+    body {font-size:40px}
+    p {font-size:40px}
+    h1 {font-size:40px}
+    h2 {font-size:40px}}
+.container
+  -if(messages)
+    div(class="alert alert-danger") #{messages}
+  .jumbotron.text-center
+    h1 School of Advanced Studies — Share Your Opinions
+    h2
+      span.fa.fa-lock
+      span  Registration
+    p To participate in polls, log in using your Google account:
+    a.auth-button.btn.btn-danger.btn-lg.btn-xl(href='/auth/google')
+      span.fa.fa-google Google
+  script.
+    const urlParams = new URLSearchParams(window.location.search);
+    var returnTo = urlParams.get('returnTo');
+    document.querySelector('.auth-button').href = '/auth/google?returnTo=' + returnTo;

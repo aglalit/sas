@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    title SAS Mailing App
+  //- link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+  link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/style.css')
+  //- link(rel='stylesheet', href='/cards.css')
+  script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+  //- script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+  //- script(src="/touch_sortable.js")
+body
+  .container
+
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 SAS Mailing App
+      h3 Внимание: количество адресов, имен и оценок должно совпадать
+      div(class="row")
+        -if(messages)
+          div(class="alert alert-success") #{messages}
+      form(action="/office/mailing" method="post")
+        fieldset
+          .flex-container
+              label(for="addresses") Список адресов (каждый — с новой строки)
+              textarea(rows="4" required="required" class="form-control" name="addresses")
+          .flex-container
+              label(for="names") 1. Список имен+фамилий (каждое Имя+Фамилия (имя и фамилия через пробел) — с новой строки)
+              textarea(rows="4" required="required" class="form-control" name="names")
+          .flex-container
+              label(for="grades") 2. Список оценок (каждая — с новой строки)
+              textarea(rows="4" required="required" class="form-control" name="grades")
+          .flex-container
+              label(for="letter_template") Шаблон письма (образец вставки переменных: {{{2}}} ,где '2' — порядковый номер поля)
+              textarea(rows="4" required="required" class="form-control" name="letter_template")
+          .flex-container
+              label(for="letter_topic") Тема письма
+              textarea(rows="4" required="required" class="form-control" name="letter_topic")
+        button(type="submit" class="btn btn-primary btn-lg") Отправить
+  //- script(src="/cards.js")
+  script(src="/default.js")

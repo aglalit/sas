@@ -1,0 +1,377 @@
+doctype html
+html
+  head
+    title Electives
+    link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/cards.css')
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js")
+    script(src="/touch_sortable.js")
+body
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 Electives. Year 2021–2022. Preliminary survey. 
+      h3 Please select which courses you would like to take.
+      //- h3 NOTE: Click on a course title to open its description. Click "Not interested" if you are not interested in taking this course — it will be excluded from the list.
+      form(id="form" action="/polls/electives_pre_2021" method="post")
+        // DON'T REMOVE THIS INPUT!!!
+        input(type="hidden") 
+        fieldset
+          div(class="input-group")
+          div(class="input-group") 
+            .flex-container
+              label(for="If you have any comments or suggestions, please write them here.") If you have any comments or suggestions, please write them here.
+              textarea(rows="8" class="form-control" name="If you have any comments or suggestions, please write them here.")
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    script(src="/cards.js")
+    script(src="/default.js") 
+    script.
+            
+            var inputs = document.querySelector('.input-group');
+          
+              var dict = [
+              {
+                "Course coordinator": "Duane Rousselle",
+                "Other teachers": "Julie Reshe",
+                "Title": "🖤 Real Love🖤:  Solitude, Trauma, Attachment",
+                "Description": "This course pursues an interdisciplinary approach to the study of love across four registers: philosophical, sociological, psychoanalytic, and religious. We attempt to problematize our underlying hypothesis that romantic and passionate love have reached a fundamental impasse (and are perhaps even in danger of extinction). Paradoxically, ‘global connectivity’ has only produced a greater sense of solitude and loneliness. Provocative explorations of clinical case notes, philosophical and sociological theories, and diverse religious scriptures help to orient us so that we can better face the threatening and traumatic contemporary labyrinth of love."
+              },
+              {
+                "Course coordinator": "Peter Lesnik",
+                "Other teachers": "",
+                "Title": "Adaptation",
+                "Description": "This course will offer an overview of the processes of adaptation that allow content, style, affect, and ideology to be translated and transferred across media and cultural and national boundaries. We will tackle both the institutional and economic factors underpinning the adaptation industry as well as the cultural dimension of textual and ideological exchange and hybridization that define contemporary adaptation practices. Primarily focusing on films, the course will address the multiple ways in which cinematic works have been enriched and energized through their exchanges and relationships with literature, theater, graphic novels, and video games."
+              },
+              {
+                "Course coordinator": "Maxim Alyukov",
+                "Other teachers": "",
+                "Title": "Authoritarian Politics",
+                "Description": "How do autocrats maintain power? What are the social sources of support for authoritarian governments? Why do some autocrats choose to resort to repressions, while others prefer relatively non-violent means of maintaining power? Why do some authoritarian regimes fail quickly, while other authoritarian regimes are extremely resilient? This course provides answers to some of these questions. Drawing on the academic literature in comparative political science, political economy, sociology, and political communication, it explores the strategies of elites and other political actors, institutions, governance, policies, and other political issues in authoritarian contexts with particular focus on post-Soviet space. "
+              },
+              {
+                "Course coordinator": "Corinne Doria",
+                "Other teachers": "",
+                "Title": "Beyond the Panopticon: Observing, representing and managing people",
+                "Description": "A comparative and historical overview of the ways in which people have been enumerated, investigated and monitored. We will examine the long-term trajectory of state and non-state observation, emphasizing the collection and uses of data in European, colonial and post-colonial polities. Using the various insights of Foucault, Hacking, and Asad, the following tools will be considered: vital statistics (births, deaths, marriages); censuses; passports; fingerprinting; and biobanks"
+              },
+              {
+                "Course coordinator": "Siyaves Azeri",
+                "Other teachers": "",
+                "Title": "Bioethics",
+                "Description": "This course is a thematic study of certain moral issues related to medical/biological research and healthcare. Topics of study include abortion, mother-fetus conflict, reproductive technologies and prenatal screening, gene therapy and eugenics, genetic screening, life and death issues (killing, letting die, brain-death), experimentation with human subjects, and experimentation with animals. To this end a number of articles concerning each issue, which are written by contemporary philosophers, will be closely analyzed. Since no concrete background in philosophy is required for this course, some time will be spent in order to provide the framework within which these particular moral views are meant to be understood."
+              },
+              {
+                "Course coordinator": "Louis Vervoort",
+                "Other teachers": "Krishna K",
+                "Title": "Cognitive Neuroscience",
+                "Description": "This course is an introduction to cognitive neuroscience, a discipline at the interface of psychology, philosophy and neuroscience that investigates the biological processes underlying cognition, or thinking. It studies the nexus brain – mind, and addresses the question of how cognitive activities are affected or controlled by neural circuits in the brain. In this introductory course, meant for students from all disciplines, we will pay special attention to the working of neurons and brains, and to the neural mechanisms involved in memory, thinking, abstraction, speech, and vision. Finally, we will try to unravel the mystery of consciousness."
+              },
+              {
+                "Course coordinator": "Alexander Usvitskiy",
+                "Other teachers": "",
+                "Title": "Competition between people and firms: behavioral approach",
+                "Description": "In this course we will cover competitive settings such as competition for a promotion, firms-level competition, sports, politics, even competition for high grades."
+              },
+              {
+                "Course coordinator": "Alexander Usvitskiy",
+                "Other teachers": "",
+                "Title": "Conscious decision-making: what is rational and what is not",
+                "Description": "In this course we will explore the concepts of consciousness and rationality through behavioral sciences."
+              },
+              {
+                "Course coordinator": "Duane Rousselle",
+                "Other teachers": "",
+                "Title": "Desiring Mastery: Theoretical Foundations of Anarchism ",
+                "Description": "This course provides a comprehensive overview of the philosophical and theoretical foundations of anarchism. We shall explore three periods in the history of anarchism: (1) the classical period (characterized by a universal political program aimed against the state and an underlying essentialist perspective on ‘human nature’), (2) an ‘intervening’ period (whose main feature is an interrogation of ontological presuppositions and a transformation of political activity into ‘cultural’ activity, as in ‘post-anarchism’), and, (3) an ‘unrealized’ contemporary period (a defense of the political and philosophical category of universality, and the reassertion of a critical ontology)."
+              },
+              {
+                "Course coordinator": "Peter Lesnik",
+                "Other teachers": "",
+                "Title": "Documentary Cinema",
+                "Description": "When we think of cinema, we tend to identify it with narrative films. Nonfiction films nevertheless predate the advent of narrative cinema, and their popularity has recently boomed. Why are we attracted to documentary films? What is their specificity? By looking at classic and contemporary nonfiction films from around the world, this course will address such questions and it will map the crucial issues and the most influential trends in documentary cinema. "
+              },
+              {
+                "Course coordinator": "Siyaves Azeri",
+                "Other teachers": "",
+                "Title": "Doors and the Constitution of Inner Space",
+                "Description": "This course studies the development of doors (both as an object and a concept) in relation to human’s relation to space. What do doors reveal about human’s construction and conceptualization of space? What functions do doors play in absolutizing and/or relativizing the space? Are there any parallels between the development of doors and the conceptualization of inner space and the development of human consciousness and their conceiving of their inner self? What social functions do doors have? What do they reveal with regard to social relations? How do doors affect human imagination and how have been they represented in the arts?    "
+              },
+              {
+                "Course coordinator": "Joshua Reeves",
+                "Other teachers": "",
+                "Title": "Drones, Robots, and AI",
+                "Description": "Drones, robots, and artificial intelligence are three interrelated technologies that are changing the most fundamental considerations of how society and sociality should operate. Work, war, consumption, and even love are being reconfigured. This course will provide students with the means to address debates concerning the political, military, and economic considerations surrounding these technologies. "
+              },
+              {
+                "Course coordinator": "Marko Turk",
+                "Other teachers": "",
+                "Title": "Educational Research (Regionally/ Socially responsible science)",
+                "Description": "ER will be an open course for students who have highly developed research methodology skills and want to be involved in empirical research in educational sciences. Furthermore, students who would be enrolled on this course must have developed organisational and time-management competencies. The course will be oriented towards students' independent work, reading, writing, analysis, interpretation and developing and implementing an empirical research project. Their research topics should be based on the educational needs of the local community, and research results should serve to improve the educational system in Tyumen or region."
+              },
+              {
+                "Course coordinator": "Melina Aarnikoivu",
+                "Other teachers": "",
+                "Title": "English oracy skills",
+                "Description": "Out of all foreign language skills, it is usually speaking which evokes emotions the most: fear of failure or being judged, insecurity, and embarrassment. This course will focus on improving your English speaking and listening skills, or oracy skills, in a friendly and supportive environment. We will discuss the following questions, among others: What is intercultural communication? What does “having an accent” mean? How can we improve our public speaking skills to make our message more powerful? The overall aim is to increase your intercultural communication competence, public speaking skills, as well as your overall confidence as a user of English. To acquire these skills, the course will consist of many practical speaking exercises and assignments on a weekly basis. It is specifically designed for shy or introverted students. However, you should be ready to step out of your comfort zone for the duration of the course."
+              },
+              {
+                "Course coordinator": "Giacomo Andreoletti",
+                "Other teachers": "",
+                "Title": "Formal Logic 1",
+                "Description": "Logic is about reasoning. We all reason, but logic helps us distinguish what is good reasoning from bad reasoning. The study of logic improves our natural capacity to reason, and it proves especially helpful when our reasoning faces abstract and challenging questions. Formal logic is the study of what follows from what, or what inferences are valid. It originated with the work of Aristotle and it has been developing ever since. Nowadays it is used in Philosophy, Artificial Intelligence, Linguistics, and other fields."
+              },
+              {
+                "Course coordinator": "Louis Vervoort",
+                "Other teachers": "Giacomo Andreoletti",
+                "Title": "Foundations of Quantum Mechanics",
+                "Description": "Quantum mechanics is one of the major breakthroughs in the history of fundamental physics. As it is well-known even in popular culture, quantum mechanics provides a description of reality that clashes with our common sense. In quantum mechanics, we find apparently strange phenomena (e.g., superposition, entanglement, tunneling, a form of teleportation, and non-local causation) that never appeared in classical physics. This course is devoted to understanding the nature of quantum mechanics and investigating its philosophical foundations. We will look at different interpretations of quantum mechanics, and attempt to understand what quantum mechanics ultimately says about the nature of our physical universe. We will foresee 2 tracks: one with and one without mathematics: the students can choose."
+              },
+              {
+                "Course coordinator": "Liz Pásztor",
+                "Other teachers": "",
+                "Title": "Galapagos: the witch's kitchen of evolution",
+                "Description": "Why is this archipelago special? How and when did the islands form, how did they become populated and how did their inhabitants change? What tools do biologists have to reconstruct the evolution of the species living here? How has research in the Galapagos shaped biology and how have conservation biology goals changed as research methods have evolved? How can dialectics help us understand evolutionary processes and what does it mean to think in systems? These and similar questions will be addressed in the course, as you like."
+              },
+              {
+                "Course coordinator": "Liz Pásztor",
+                "Other teachers": "Jay Silverstein",
+                "Title": "Gene-culture coevolution",
+                "Description": "Nature v. Nurture has been a source of debate since the beginnings of philosophy as humanity has struggled to understand what our role is in the order of the universe. With the emergence of the modern scientific evolutionary theory, the argument continued and remains a topic of theoretical discourse. This course examines the dialectic of the interaction between genes and cultures from moral, ethical, genetic, ecological and historical perspectives to understand the implications for human evolution and the destiny of life on earth.  "
+              },
+              {
+                "Course coordinator": "Tomasz Blusiewicz",
+                "Other teachers": "",
+                "Title": "Geopolitics and Energy Markets",
+                "Description": "We will study how the access to energy carriers has been politicized by nation-states and other large corporate actors on the global arena, and the implications of these processes for international relations. We will explore this theme from the times of timber and coal in the pre-industrial era, to the Arctic shale gas and minerals in space today. We will take a look at the critical junctures between international security, conflict, war, power politics and technology. We begin with the recognition that energy has long been a major determinant of the balance of power in the international system for at least a few centuries, and that every major change in global energy consumption and production technologies has catalyzed major geopolitical shifts, with no region of the world being exempt from this fundamental relationship. We will take a closer look at how states design long-term strategies to satisfy their energy demands, as well as at what their actions imply for other players on the global scene. If you are interested in history, economics, politics and international relations, this course is for you!"
+              },
+              {
+                "Course coordinator": "Peter Lesnik",
+                "Other teachers": "",
+                "Title": "Global Art Cinema (1980-Present)",
+                "Description": "Since the 1980s, global art cinema has represented an urgent and multifaceted challenge to the worldwide domination of Hollywood narratives, style, and ideology. This course will survey the most innovative responses to globalization, modernization, and contemporary geopolitical relations from film cultures outside of Hollywood and its international imitators. We will analyze and discuss films from – among others – Iran, Taiwan, Palestine, West Africa, Denmark, and Japan.    "
+              },
+              {
+                "Course coordinator": "Corinne Doria",
+                "Other teachers": "Peter Lesnik",
+                "Title": "Global History Through Films",
+                "Description": "This course will use movies to approach significant topics and questions in history. Students will be asked to rethink the relationships between “reality” and “representation” and to reconceptualize the boundaries between history and movies."
+              },
+              {
+                "Course coordinator": "Marko Turk",
+                "Other teachers": "Siyaves Azeri",
+                "Title": "Great Thinkers of Education",
+                "Description": "This course will approach education from the perspective of great historical thinkers (Plato, J. A. Comenius, Lev Vygotsky, Paolo Freire, John Dewey and Evald Ilyenkov). Great Thinkers of Education will be a cross-disciplinary course and tackle education as a social and humanistic phenomenon through history from a philosophical and pedagogical perspective. Throughout the course, students will have the possibility to meet the life and work of great thinkers, analyse and discuss their ideas, and deeply investigate thinkers' thoughts by diverse written forms of assignments."
+              },
+              {
+                "Course coordinator": "Jay Silverstein",
+                "Other teachers": "",
+                "Title": "Hellenism: The Crucible of Western Civilization",
+                "Description": "The conquests of Alexander the Great shook the ancient world, overturning regional cultural norms and establishing a precedent for militarily and culturally-based imperialism that shaped the political and cultural landscape of the world. In this course we will examine the history, the military systems, cultural syncretism, the imperial and colonial economics, and the intellectual and scientific advances that established concepts and ideals that have carried on into our time. The course will rely heavily on archaeological studies and ancient texts. "
+              },
+              {
+                "Course coordinator": "Erika Wolf",
+                "Other teachers": "",
+                "Title": "History of Photography:  Technology, Document, Art",
+                "Description": "This course provides an overview of photography from pre-photographic times to the start of the digital era. We will explore a variety of approaches to the study of photography, its emergence as a technology for documenting the world, its evolution in relation to other art forms, its connection to other fields of knowledge (i.e., medicine, anthropology, history, postcolonial studies), its role in the development of mass culture, and its use as a means of social control. Students will consider the photographic image in a range of contexts, including art, advertising, journalism, and propaganda, and will explore the social, political and ethical consequences of photographic media."
+              },
+              {
+                "Course coordinator": "Peter Jones",
+                "Other teachers": "",
+                "Title": "Inferno: A Guide to Hell",
+                "Description": "In this class we will read Dante’s Inferno, the medieval journey through the nine circles of the underworld. We will encounter tortured lovers, snake-bitten thieves, and cannibals packed up to their necks in ice. As well as surveying a history of ideas about evil and suffering, we will try to understand the mind of Dante, who is often cited as one of the greatest poets in human history. Ultimately we will confront the poem’s deepest challenges: Should we sympathize with evil? What motivates human cruelty? And how can we learn to be better people at the bottom of hell?"
+              },
+              {
+                "Course coordinator": "Louis Vervoort",
+                "Other teachers": "Krishna K",
+                "Title": "Introduction to Nature Exploration",
+                "Description": "How to learn to love biology? In this course we propose to tackle this quest by mini-expeditions in the nature and forests around Tyumen, and by studying animals and plants in their natural habitat. We plan to use these visits to address specific questions that can trigger real biological research. The students will read scientific texts before the mini-expedition, in order to prepare themselves for the study done in-situ. This course is feasible if it is practically possible to bring a group of (maximum say) 15 students, weekly, to natural sites (at a distance of 1 – 2h from Tyumen) for a slot of up to 5 hours (the expeditions will last for a total time equal to the weekly contact hours for an elective). "
+              },
+              {
+                "Course coordinator": "Ayla Arslan",
+                "Other teachers": "Marko Turk",
+                "Title": "Journal Club",
+                "Description": "This course will allow students reading, understanding and the communication of the primary literature related to their own interest (for example related to a potential topic for the fourth year thesis). Student centered learning with different formats such as Jigsaw Class will be utilized depending on the personal preferences for learning experiences. "
+              },
+              {
+                "Course coordinator": "Erika Wolf",
+                "Other teachers": "",
+                "Title": "Kino-fot:  Early Soviet Cinema & Photography",
+                "Description": "This elective will examine the cinematic and photographic theory and practice of the Soviet vanguard group LEF (The Left Front of the Arts). We will study the development of theories of montage, photomontage, photography and documentary, as well as the practical realization of visual and literary work by members of this group. We will consider the further activity of members of this group after its dissolution in 1928, including LEF’s contributions to the development of Socialist Realist culture."
+              },
+              {
+                "Course coordinator": "Melina Aarnikoivu",
+                "Other teachers": "",
+                "Title": "Language and society",
+                "Description": "This course focuses on language use in our contemporary society. Each of the eight weeks will combine topics of linguistics with one of the seven SAS majors, as well as experimental higher education. Some of the questions we will be discussing include: How do languages evolve? Are some people better at learning languages than others? How do memes affect our everyday language use? By the end of the course, you will have a basic understanding of how language is embedded in every aspect of our lives, how to navigate some of the language-related challenges in your studies and later in your work, and how those challenges can be studied in interdisciplinary settings. The course is suitable especially for 2nd year students who are not sure which major to choose yet. However, also 3rd and 4th year students who are fascinated by language use are welcome to take part."
+              },
+              {
+                "Course coordinator": "Liz Pásztor",
+                "Other teachers": "",
+                "Title": "Life history adaptations",
+                "Description": "Fertility, longevity are life history traits. This course will look at how ecological conditions can shape these traits. Why some species are long-lived and produce few offspring, like humans, and others are short-lived and fertile. How does natural selection create such huge differences? What do we know about the genetics of these traits? What can adaptation have to do with problem solving and optimisation? Can there be \"most optimal\" evolutionary solutions? How can the theory of life history evolution and the results of its research be applied to humans?"
+              },
+              {
+                "Course coordinator": "Siyaves Azeri",
+                "Other teachers": "",
+                "Title": "Life, Death, and Meaning",
+                "Description": "This course discusses certain “big questions” about human life, death, and existence. Is there a meaning to life? If yes, what is the source of the meaningfulness of life? If not, why do we exist at all? Is it worth having a longer life? Does it matter what one makes of one’s life? Is death negation of life? Does death make life devoid of meaning? Is death the source of the meaningfulness of life? What does “meaning” mean? What is the source of meaning? Do the lives of animals have meaning? Is death bad? If positive, why is it so? If not, what reasons are there to make it not-bad? What is the source of human’s fear of death? We will also consider questions about immortality, suicide, and the “value” of life. Is immortality desirable? Is suicide defensible and advisable? Is life valuable and should it be preserved? Do lives have equal worth? We will also consider the definition of death and brain-death. Some of these questions inevitably give way to questions about the desirability or non-desirability of extinction of humankind: Is the extinction of the entire human species bad?"
+              },
+              {
+                "Course coordinator": "Liz Pásztor",
+                "Other teachers": "",
+                "Title": "Limits to growth: The Meadows report in perspective",
+                "Description": "This elective will cover global societal and environmental issues in ecological context. “The limits to growth” report of the Club of Rome will be used as a reference text and we evaluate its assumptions and predictions by collecting data on-line. We shall study the changing perceptions of global problems and discuss human population growth in ecological context. Why and when would the exponential growth of the human population lead to economic collapse, and what is the present status of thinking about the global society? What is the nature of exponential growth in general? What is the relation between demography and exponential growth, coexistence of organisms and the regulation of their populations? By the end of the course you will have scientific answers to these questions."
+              },
+              {
+                "Course coordinator": "Erika Wolf",
+                "Other teachers": "",
+                "Title": "Modern Art ",
+                "Description": "This introductory course examines successive phases of Western modern art in light of the early 20th century break with European traditions of representation. This course critically addresses the formation of avant-garde groups and movements in relation to political and social issues through the study of painting, sculpture, architecture, and performance art. The historical range of the course is from Realism and Impressionism in the 19th century to the rise of postmodernism after WW2. Particular emphasis is placed on theoretical and critical issues, as well as on the historical, intellectual, and socio-economic changes that are reflected or addressed in the works of artists."
+              },
+              {
+                "Course coordinator": "Peter Jones",
+                "Other teachers": "",
+                "Title": "Mysticism in European History",
+                "Description": "In 1310, Marguerite Porete was burnt at the stake. Her ideas were considered toxic, so her book was burned alongside her. She had claimed that she had access to the mind of God, and that she was so deeply in love with Jesus that everything she did was now perfect.  In this course we will try to understand the history of people like Marguerite, how their ideas worked, and how they impacted wider society. Focusing largely on medieval Europe (c.500–1500), we will read a range of mystical texts for ourselves, exploring the pathways and techniques mystics established for journeying “into the mind of God.” "
+              },
+              {
+                "Course coordinator": "Julie Reshe",
+                "Other teachers": "",
+                "Title": "Negative Psychoanalysis",
+                "Description": "Freudo-Marxism and beyond"
+              },
+              {
+                "Course coordinator": "Krishna K",
+                "Other teachers": "",
+                "Title": "Neural Basis of Kinship, Ethnicity, Race and Nationalism",
+                "Description": "The tendency to organise into groups is a fundamental property of human nature. The formation of social groups has evolutionary roots. Disproportionate brain size of humans and their evolutionary success is attributed to social group formation. Machiavellian Intelligence, political and economic decision making are associated with this newly evolved brain region. The objective of this elective course is to explore and understand the neural structures and physiological mechanisms involved in the various forms of social group formation such as tribes, ethnic groups and Nation and their relations. Maladaptive behaviour leading to group conflict, war and genocide will be covered. This course will also cover social fitness and cognitive reward that groups offer and certain nationalistic theories. This elective will provide a broad overview of modern socio-political group formation and its cognitive foundations."
+              },
+              {
+                "Course coordinator": "Louis Vervoort",
+                "Other teachers": "Vitaly Nikolaev (1 week)",
+                "Title": "Philosophy and Ethics of Robots and Artificial Intelligence (AI).",
+                "Description": "In this course we will study questions as: Can a machine (based on AI) think as a human? Can future computers be made that surpass human intelligence and creativity ? If yes, what are the key requirements? Can future robots have a mind and consciousness? Is the often predicted “superintelligence singularity” a real threat to humanity? What are the challenges for ensuring that future superintelligent robots will not rule humanity? The ethical aspects of AI will take up a sizable part of the course. We will study these questions through the lens of philosophy mostly, but we plan to invite guest speakers (off- or online) for lectures on specific topics. "
+              },
+              {
+                "Course coordinator": "Giacomo Andreoletti",
+                "Other teachers": "",
+                "Title": "Philosophy of Knowledge",
+                "Description": "This course revolves around the concepts of knowledge, justification, and evidence. What does it mean to know something? How can we analyze and define knowledge? We shall start with a preliminary overview of the traditional analysis of knowledge and justification. Next we consider how skepticism and the Gettier problem pose a challenge to the traditional analysis. Next we look into contemporary theories of knowledge and justification that go beyond the traditional analysis, with particular attention to the contextualist approach. In the process, we will discuss and compare the merits and shortcomings of the different theories addressed."
+              },
+              {
+                "Course coordinator": "Maxim Alyukov",
+                "Other teachers": "",
+                "Title": "Political Communication",
+                "Description": "This course examines the relationship between political actors, media, and citizens. How do media institutions function? How does the media influence elites, and how do elites influence the media? How does the media affect citizens' views and opinions, behaviors, and the way they cast ballots in elections? How do people perceive, remember, and analyze information received from the media, and how do they form opinions and make decisions based on this information? What is the role of new media, such as the Internet and social networks, in politics and opinion formation? The course considers all these questions through the lenses of both classical and contemporary literature in communication research, cognitive, social, political psychology, and political science. While the course surveys major issues and topics in political communication, we will also consider specific features of the post-Soviet media landscape, with a particular focus on Russia. This course is both theoretical and practical: we will apply knowledge and methods from political communication by analyzing and explaining real news."
+              },
+              {
+                "Course coordinator": "Peter Jones",
+                "Other teachers": "",
+                "Title": "Power: An Open History",
+                "Description": "This course will explore different techniques of power, from violence to cultural hegemony. As an “open history,” however, you students will shape how we study these topics for yourselves. At the beginning of each two-week period, students (working in groups) will be given different options for how to explore a different theme. Will you undertake a genealogy, stretching back through 2,000 years of history? Will you choose a particular historical case study, and focus on it in depth? Or will you try to understand the theme through literature, art, or film? Each two-week period will culminate with a conference, bringing our ideas together and debating how power has worked throughout history."
+              },
+              {
+                "Course coordinator": "Liz Pásztor",
+                "Other teachers": "",
+                "Title": "Predicting pandemics",
+                "Description": "Why do scientists expect more frequent pandemics? What have we learned about epidemics from ecological and evolutionary studies? What are the roles of parasites in natural communities? What are the contributions of biological research to the solutions of public health problems? We shall also analyze and discuss the various teachings of the present pandemic."
+              },
+              {
+                "Course coordinator": "Julie Reshe",
+                "Other teachers": "",
+                "Title": "Psychoanalysis and Evolution",
+                "Description": ""
+              },
+              {
+                "Course coordinator": "Duane Rousselle",
+                "Other teachers": "Julie Reshe",
+                "Title": "Psychoanalysis, Then & Now",
+                "Description": "This introductory course traces sociological perspectives within traditional and contemporary psychoanalytic texts. We shall situate clinical and theoretical themes relating to language and the body within the context of a societal shift (indexed by the prevalence of contemporary discussions concerning addictions, depression, trauma, eating disorders, panic attacks, and autism). We have two major objectives: first, to introduce the conceptual frameworks and structural models deployed across two broad periods of psychoanalysis, and; second, to justify the claim ‘psychoanalysis is not anti-social.’"
+              },
+              {
+                "Course coordinator": "Jay Silverstein",
+                "Other teachers": "",
+                "Title": "Racism: Social and Scientific History",
+                "Description": "By examining the concept of race from cultural and biological perspectives, we will explore the various origins of racism, the socio-cultural uses and consequences of racism, and the historical trajectory racist concepts with the goal of contextualizing the modern discourse. Cultural concepts of otherness, economic exploitation, psychological needs for feeling superior, fear, and political opportunism will be considered as aspects of individual and collective responses to the concept of race. "
+              },
+              {
+                "Course coordinator": "Jay Silverstein",
+                "Other teachers": "",
+                "Title": "Resistance and Rebellion: Catalysts for Change in the the Political Organization of Societies",
+                "Description": "Since the organization of complex societies, social hierarchy and economic inequality have fueled political unrest. In this course we look at rebellion against established political authority to understand the causes, the form, and the consequences of rebellion. Does rebellion generate change? What are the tactics and shapes of successful rebellions? In what ways do governments suppress rebellions? What are the consequences of successful and failed rebellion? How do the philosophical concepts of idealism clash with the pragmatic realities of survival? And, how has modern technology reshaped the tactical battlefield of repression and rebellion? This course will examine these topics from historical, economic, and socio-political perspectives.  "
+              },
+              {
+                "Course coordinator": "Tomasz Blusiewicz",
+                "Other teachers": "",
+                "Title": "Russia and the US: The world’s most passionate love-hate relationship ",
+                "Description": "The history of encounters between Russians and Americans dates back much earlier than the Cold War period that most commonly comes to mind. Before the USSR and the US became rivals in the bipolar world order following the Second World War, many Russians helped to build the US and many Americans helped to build Russia in the 18th, 19th and 20th centuries. We will look at those early entanglements and will try to understand why and how the friendly beginnings of the Russo-American relationship have eventually turned from bad to worse. Today, 30 years after the end of the Cold War, the relationship between the two countries, and the two nations, have reached its historic low point. Will this trend continue? Will it be reversed? We will study history to find some hints for possible answers as well as take a closer look at the contemporary situation to understand why the world’s most passionate love-hate relationship continues to take the world’s breath away."
+              },
+              {
+                "Course coordinator": "Ayla Arslan",
+                "Other teachers": "",
+                "Title": "Selected Topics in Biopsychology (STB)",
+                "Description": "This is an introductory course that views and explores psychology as a biological science. Thus, there is an emphasis on understanding behavior as a product of the brain's physiology and anatomy, determined by the complex interplay of genetic and environmental factors. We will start with foundations such as biological model of behavior, fundamentals of neurons, and functional neuroanatomy. The latter will be fostered by specific neuroanatomy exercises. Then the course will turn its direction to specific topics related to cognition, emotion and mental disorders.There will be special emphasis on the issues including -but not limited to- depression, anxiety, psychopathy and crime which will aid students to explore manifestations of mental state and its health.  "
+              },
+              {
+                "Course coordinator": "Marko Turk",
+                "Other teachers": "",
+                "Title": "Service-Learning",
+                "Description": "Service-learning is an experiential learning pedagogy that moves students beyond the classroom to become active participants in their learning and develop civic knowledge and skills. Students who take service-learning courses work with local non-profit and public organizations to deeply learn and practice course content by working on a real, community-identified need. Students learn the course material, get to work directly on an issue facing the community, and learn about their communities in the process."
+              },
+              {
+                "Course coordinator": "Tomasz Blusiewicz",
+                "Other teachers": "",
+                "Title": "The Age of Total War, History of Global Conflict 1917-1991",
+                "Description": "The Twentieth Century witnessed the globalization and standardization of everything from the way human beings eat (think: McDonald’s) to the way they kill each other (think: nuclear weapons). This course takes a closer look at the most destructive conflicts known to man: World War I and World War II, and tries to answer the following questions: what was different about WWI and WWII compared to all the other conflicts in history? Why did they grow out of a local dispute into a conflagration that consumed every major country in the world? Why has World War III not happened? Is it likely to happen in the Twenty-First Century? Do nuclear weapons help to prevent wars or to the contrary? What was fascism and might it return? What about “the global Cold War” – was it another total global conflict that simply has not been registered as such by major players because it was fought by means of proxies in distant places?"
+              },
+              {
+                "Course coordinator": "Krishna K",
+                "Other teachers": "",
+                "Title": "The social brain",
+                "Description": "Human beings are inherently social species, so that all aspects of our cognition and behaviour are social. The social brain rewards both survival and reproductive fitness. We have the unique ability to understand different social contexts, to emphasise and to reason about our own and others intentions, motives, and beliefs. The goal of this course is to explore the cognitive basis and neural structures involved in human social behaviour such as social learning, cooperation, competition, altruism, love, mate choice, emotion etc. Examples of topics include evolution of social brain, behaviours; social brain development; game theory and evolutionarily stable strategies. We will also explore ‘plasticity’, the brain’s capability to be shaped by cultural and environmental influences, social interactions, and contemplative practice. This course will provide a broad overview of the social brain and help the students to understand the brain in its social context."
+              },
+              {
+                "Course coordinator": "Jay Silverstein",
+                "Other teachers": "Cory",
+                "Title": "Unnaturally Human: Sensuality and the Experience of Living",
+                "Description": "The evolution of human senses and the sensorial experience of being human will be examined from a bio-technical perspective. Humans rely on their sensorium to understand and interact with the world and with each other. Unlike other animals, we have developed sophisticated ways of modifying, enhancing, and controlling the sensual experience of ourselves and of others. These manipulations have had profound consequences and, with the rapid development of new realms of medical enhancement and virtual reality, the role of humanity in nature and the structure of society appear to be on the brink of radical change. Past practices and future implications will be examined in this course through review of the history of sensory manipulation and will include various laboratory experiments related to sensorial experience."
+              },
+              {
+                "Course coordinator": "Ayla Arslan",
+                "Other teachers": "",
+                "Title": "Why We Are, the Way We Are: Evolutionary Psychology ",
+                "Description": "Evolutionary Psychology (EP) is a theoretical lens which emerged in the 1980s and encapsulates aspects of all branches of psychology. The course will explore the universality of human behavior by linking evolutionary history of problems related to survival and reproduction with behaviors such as mate selection and aggression. Thus, the topics of EP serves as a window to the mechanisms of the mind that define what it means to be a human being. "
+              },
+              {
+                "Course coordinator": "Corinne Doria",
+                "Other teachers": "",
+                "Title": "Women, Health, and Society",
+                "Description": "This course will investigate women’s historical roles as healers, patients, research subjects, and health activists. Historical topics to be covered include views of gender and the body; reproduction and childbirth; women’s roles as nurses, physicians, public health reformers, and alternative practitioners; women’s experiences of mental illness, breast cancer, and other diseases; the role of culture and government in health; and disparities in diagnosis, treatment, research, and health careers."
+              },
+              {
+                "Course coordinator": "Alexander Usvitskiy",
+                "Other teachers": "",
+                "Title": "Innovations and the role of experimentation",
+                "Description": "In this course we will consider the general process of innovation as well as a key role of experimentation in this process (and we will talk about specific cases such as co-called Research & Development)."
+              }
+             ]
+          
+          dict.forEach(function(entry, index){
+            
+            
+            var input = document.createElement('div');
+            input.classList.add('flex-container', 'column', 'border-bottom');
+            input.innerHTML = `
+            <div class="flex-container column"><label>Course title: ${entry["Title"]}<br><br>Course coordinator: ${entry["Course coordinator"]}<br><br>Other teachers: ${entry["Other teachers"] ? entry["Other teachers"] : "–"}<br><br>Course description: ${entry["Description"]}<br></label></div>
+            <div class="flex-container row"><input required type="radio" value="Yes" name="${entry["Title"]}" id="${entry["Title"]} — Yes"><label for="${entry["Title"]} — Yes">Yes</label></div>
+            <div class="flex-container row"><input required type="radio" value="Maybe" name="${entry["Title"]}" id="${entry["Title"]} — Maybe"><label for="${entry["Title"]} — Maybe">Maybe</label></div>
+            <div class="flex-container row"><input required type="radio" value="No" name="${entry["Title"]}" id="${entry["Title"]} — No"><label for="${entry["Title"]} — No">No</label></div>
+            `
+            inputs.appendChild(input);
+          })

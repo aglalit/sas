@@ -1,0 +1,133 @@
+doctype html
+html
+  head
+    title SAS Goes Live: Registration Form 
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    // load bootstrap css
+    link(rel='stylesheet', href='/style.css')
+        
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      //- h3 15 октября в рамках публичной программы биеннале совместно с "Никто не спит" в Школе перспективных исследований на 1 этаже пройдёт кинопросмотр. 
+      //- h3 Будем смотреть и затем обсуждать фильм "Квадрат", модерировать дискуссию будет Игорь Чубаров, директор Института социальных и гуманитарных наук ТюмГУ.
+      h1 SAS Goes Live: Registration Form 
+      h3 Dear Student,
+      h3 Thank you for your interest in joining the 
+        a(href="http://sasgoeslive.utmn.ru/")
+          i SAS Goes Live project
+        span — a new initiative organized by 
+        a(href="https://sas.utmn.ru/ru/") the School of Advanced Studies (SAS) 
+        span at the University of Tyumen. 
+      h3 The project aims at helping you independently think about your future at the university level (if any) beyond the state exams, your parents, friends, or teachers through moderated discussions and interviews about higher education with international experts and students. 
+      h3 Apart from that, you will be able to join the SAS Writing Lab academic workshops held by our outstanding students who know how to write well. We offer you to master this skill, too, as well as some other essential learning strategies for studying at the university.
+      h3 All meetings are held 
+        strong in English. 
+      h3 Please fill out your answers to the questions below so that we can know more about you and your interests. 
+      p &nbsp;
+      form(action="/polls/registration" method="post")
+        input(type="hidden" id="event" value="default" name="event")
+        fieldset
+          div(class="input-group")
+            .flex-container.column
+              label(for="Ф.И.О.") Full Name
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="Ф.И.О.")
+            .flex-container.column
+              label(for="City") City
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="City")
+            .flex-container.column
+              label(for="Birthdate") Date of Birth
+                sup(style="color:red") *
+              input(type="date" required="required" class="form-control" name="Birthdate")
+            .flex-container.column
+              label(for="Email") Email
+                sup(style="color:red") *
+              input(type="email" required="required" class="form-control" name="Email")
+            .flex-container.column
+              label(for="Passport") Phone Number
+                br
+                em Please leave your phone number if you do not usually check your email address so that we can reach you for organizational purposes if needed.
+              input(type="tel" class="form-control" name="Passport")
+            .flex-container.row
+              label() What parts of the project are you interested in?
+                sup(style="color:red") *
+            .flex-container.row
+              input(type="radio" required="required" value="Moderated discussions and interviews" name="What parts of the project are you interested in?" id="Moderated discussions and interviews")
+              label(for="Moderated discussions and interviews") Moderated discussions and interviews
+            .flex-container.row
+              input(type="radio" required="required" value="Academic workshops" name="What parts of the project are you interested in?" id="Academic workshops")
+              label(for="Academic workshops") Academic workshops
+            .flex-container.row
+              input(type="radio" required="required" value="Both" name="What parts of the project are you interested in?" id="Both")
+              label(for="Both") Both
+            .flex-container.row
+              label() Will you be available 
+                strong offline?
+                sup(style="color:red") *
+                br
+                em School of Advanced Studies (SAS) is located in Tyumen (Russia): 8 Marta St., 2 bldg 1
+            .flex-container.row
+              input(type="radio" required="required" value="Yes" name="Will you be available offline?" id="Yes")
+              label(for="Yes") Yes
+            .flex-container.row
+              input(type="radio" required="required" value="No" name="Will you be available offline?" id="No")
+              label(for="No") No
+            //- .flex-container.column
+            //-   label(for="About") Tell about yourself
+            //-   input(type="text" class="form-control" name="About")
+            //- .flex-container.column
+            //-   label What parts of the open course do you plan to visit? You can choose more than one answer.
+            //-     sup(style="color:red") * 
+            //-     br
+            //-     em The open course consists of 8 lectures. Please note that you can miss 
+            //-       strong only 1 
+            //-       span lecture to receive a certificate of attendance.
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="Part 1: Louis Vervoort (philosophy, physics)" name="Part 1: Louis Vervoort (philosophy, physics)" )
+            //-   label(for="Part 1: Louis Vervoort (philosophy, physics)") Part 1: Louis Vervoort (philosophy, physics)
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="Part 2: Giacomo Andreoletti (philosophy)" name="Part 2: Giacomo Andreoletti (philosophy)" )
+            //-   label(for="Part 2: Giacomo Andreoletti (philosophy)") Part 2: Giacomo Andreoletti (philosophy)
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="Part 3: Aleksey Lysenko (IT)" name="Part 3: Aleksey Lysenko (IT)" )
+            //-   label(for="Part 3: Aleksey Lysenko (IT)") Part 3: Aleksey Lysenko (IT)
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="Part 4: Alexander Usvitskiy (economics)" name="Part 4: Alexander Usvitskiy (economics)" )
+            //-   label(for="Part 4: Alexander Usvitskiy (economics)") Part 4: Alexander Usvitskiy (economics)
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="All of them" name="All of them" )
+            //-   label(for="All of them") All of them
+            p &nbsp;             
+            .flex-container.row
+              input.form-check-input(class="agreement-mask" id="mask-checkbox" type="checkbox" name="mask" required)                         
+              label(for="mask-checkbox") I am aware of the fact that wearing a face mask is mandatory to enter the building and while in the building
+                sup(style="color:red") * 
+            .flex-container.row
+              input.form-check-input(class="agreement-checkbox" id="agreement-checkbox" type="checkbox" name="agreement" required)                         
+              label(for="agreement-checkbox") I agree to the processing of my 
+                a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") personal data
+                sup(style="color:red") *
+            //- p &nbsp;
+            //- .flex-container.row
+            //-   input.form-check-input(class="agreement-checkbox" id="agreement-checkbox2" type="checkbox" name="agreement2" required)                         
+            //-   label(for="agreement-checkbox2") I confirm that I am 18 years old or older<!-- Я даю согласие на обработку своих персональных данных на основании -->
+            //-     //- a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") <!-- Политики конфиденциальности -->
+            //-     sup(style="color:red") *
+            label 
+              sup(style="color:red") * 
+              span — <!--обязательные поля-->required fields
+              
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+        script.
+          const urlParams = new URLSearchParams(window.location.search);
+          var eventUrl = urlParams.get('event');
+          if(eventUrl){
+            var input = document.getElementById('event');
+            input.value = eventUrl;
+          }
+          

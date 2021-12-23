@@ -1,0 +1,166 @@
+doctype html
+html
+  head
+    title Planned Absences Notification Form
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    // load bootstrap css
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      img {
+        width:85%;
+      }
+      a {color:#f00 !important}
+      .logo {padding-bottom:30px}
+      h2 {font-weight:800; margin-bottom:20px;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+      }
+      h3 {
+        font-size: 1.5em;
+        font-weight: 400;
+      }
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+        padding-top: 0px;
+      }
+      .container{
+        width:98% !important;
+      }
+      .input-group{
+        margin-bottom:20px;
+      }
+      .input-group label {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 10px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+        width:75%;
+      }
+      form {
+        margin-top: 30px;
+      }
+      label,legend {
+        text-align: left;
+            float: left;
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        float:left;
+        width:75%;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        -webkit-transition: 0.2s all linear;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        top:23px;
+        }
+        input[type="checkbox"] {max-width: 50px;height: 35px;margin-top:6px}
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #f00;
+        }
+        button {
+          background-color: #f00 !important;
+          border: none !important;
+        }
+        .flex-container {display:-webkit-box;display:-ms-flexbox;display:flex; margin:10px 0;}
+        .column {-webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction:column;}
+        .row label {
+          padding-left: 15px;
+        }
+        .small {
+          font-size:15px;
+        }
+        
+        @media (max-width:1024px) {
+
+          body{padding-top:10px}
+          .container{
+          width:95%;
+          }
+        .input-group  label {
+          font-size:30px ;
+          margin-bottom:20px;
+          }
+          input[type="radio"]{
+            top:23px;
+          }
+            button.btn-lg {
+              font-size: 30px;
+            }
+            .small {
+              font-size:23px;
+            }
+          }
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="../assets/Logo__red.png")
+      h1 Planned Absences Notification Form — Professors
+      form(action="/polls/planned-absences-professors" method="post" enctype="multipart/form-data")
+        fieldset
+          div(class="input-group")
+            .flex-container.column
+              label(for="Name") Your Name and Subject:
+                sup(style="color:red") *
+              select(class="form-control" required="required" name="Name")
+                option(value="Tomasz Blusiewisz") Tomasz Blusiewisz
+                option(value="Zachary Reyna") Zachary Reyna
+                option(value="Julie Reshe") Julie Reshe
+                option(value="Svetlana Erpyleva") Svetlana Erpyleva
+                option(value="Anna Varfolomeeva") Anna Varfolomeeva
+                option(value="Maxim Alyukov") Maxim Alyukov
+            .flex-container.column
+              label(for="Start") Start Date:
+                sup(style="color:red") *
+              input(type="date" required="required" class="form-control" name="Start")
+              label(for="End") End Date:
+                sup(style="color:red") *
+              input(type="date" required="required" class="form-control" name="End")
+            .flex-container.column
+              label(for="Info") Link/Place to Submit Proof:
+              input(type="text" rows="4" required="required" class="form-control" name="Info")
+            .flex-container.column
+              label(for="Documentation") Supporting Documentation:
+              input(type="file" class="form-control" name="Documentation")
+            .flex-container.column
+              label(for="Info") Additional Info:
+              textarea(rows="2" class="form-control" name="Info")
+            //- .flex-container.column
+            //-   label(for="Invitation") Abstract:
+            //-     p.small Paper, Research, Presentation.
+            //-   input(type="file" class="form-control" name="Abstract")
+            label 
+              sup(style="color:red") * 
+              span — required fields
+        button(type="submit" class="btn btn-primary btn-lg") Submit

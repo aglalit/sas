@@ -1,0 +1,147 @@
+doctype html
+html
+  head
+    title SAS Excellence Track Application
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    // load bootstrap css
+    link(rel='stylesheet', href='/style.css')
+        
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 Excellence Track Application
+      p.left SAS students in their second and third years may apply to an Excellence Track, as a way to focus their Excellence education during their remaining study years at SAS. This Track offers a small cohort experience with a thematic focus on incorporated specialized modules and experiential learning opportunities. 
+      p.left Each project will be comprised of at least four students and all students in a project will complete specific curricular requirements. Full details can be found here, but in general, these requirements will include:
+      ul.left
+        li Attending seven intensive study modules with keynote experts in interdisciplinary fields;
+        li Organizing an international interdisciplinary conference;
+        li Completing the project objectives.
+      h3.left Intensive Modules themes:
+      ol.left
+        li First module: 
+          br
+          br
+          span Theme: Psychoanalytic Theory in Film Studies 
+          br
+          span Date: January 2022
+          br
+          span Location: Lukashino, Tyumen
+          br
+          br
+        li Second module:
+          br
+          br
+          span Theme: Love and Hate in Abrahamic Religions
+          br
+          span Date: April 2022
+          br
+          span Location: St. Petersburg, Russia 
+          br
+          br
+        li Third module:
+          br
+          br
+          span Theme: European Sustainability 
+          br
+          span Date: June 2022
+          br
+          span Location: The Netherlands
+          br
+          br
+        li Fourth module:
+          br
+          br
+          span Theme: Moral and Ethical Reasoning
+          br
+          span Date: August 2022
+          br
+          span Location: Lukashino, Tyumen
+          br
+          br
+        li Fifth module: 
+          br
+          br
+          span Theme: Theories of Government
+          br
+          span Date: October 2022
+          br
+          span Location: Moscow, Russia
+          br
+          br
+        li Sixth module:
+          br
+          br
+          span Theme: Environmental Thinking
+          br
+          span Date: January 2023
+          br
+          span Location: Lukashino, Tyumen
+          br
+          br
+        li Seventh module:
+          br
+          br
+          span Theme: Language and AI 
+          br
+          span Date: April 2023
+          br
+          span Location: St. Petersburg, Russia
+          br 
+          br
+
+      h3.left Application:
+      p.left All 2nd and 3rd-year students have the opportunity to apply for the Excellence Track and pass the following procedure:
+      ul.left
+        li Students should voice out their desire in enrolling in the program by filling in the following form;
+        li All applicants should pass a selection intensive module that happens in late January;
+        li The selection module program and assessment criteria will be available once the recruitment process starts.
+      h3.left Track rules:
+      p.left Excellence Track students;
+      ul.left
+        li cannot leave the track voluntarily;
+        li will drop out in case they receive a grade below seven for any course they are attending;
+        li must attend at least five intensive modules (only applicable for those who plan to study abroad);
+        li should show an excellent example in abiding by the SAS academic policies and ethics.
+
+      p &nbsp;
+      form(action="/polls/excellence-track" method="post")
+        fieldset
+          div(class="input-group")
+            .flex-container.column
+              label(for="Ф.И.О.") Full Name
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="Ф.И.О.")
+            .flex-container.column
+              label(for="Year") Year
+                sup(style="color:red") *
+              input(type="number" required="required" class="form-control" name="Year")
+            .flex-container.row
+              label() Preferred Project
+                sup(style="color:red") *
+            .flex-container.row
+              input(type="radio" required="required" value="Teaching Assistant" name="Preferred Project" id="Teaching Assistant")
+              label(for="Teaching Assistant") Teaching Assistant 
+            .flex-container.row
+              input(type="radio" required="required" value="Scholar" name="Preferred Project" id="Scholar")
+              label(for="Scholar") Scholar
+            .flex-container.column
+              label(for="Motivation") Motivation
+                sup(style="color:red") *
+              textarea(rows="8" required="required" class="form-control" name="Motivation")
+            p &nbsp;
+            label 
+              sup(style="color:red") * 
+              span — <!--обязательные поля-->required fields
+              
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+        script.
+          const urlParams = new URLSearchParams(window.location.search);
+          var eventUrl = urlParams.get('event');
+          if(eventUrl){
+            var input = document.getElementById('event');
+            input.value = eventUrl;
+          }
+          

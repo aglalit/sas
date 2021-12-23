@@ -1,0 +1,227 @@
+doctype html
+html
+  head
+    title Electives
+    link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/cards.css')
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js")
+    script(src="/touch_sortable.js")
+body
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 Electives. Year 2021–2022. Quarter 3. 
+      h3 Sort the following courses in the order from the most preferable to the least preferable one (from the top to the bottom)  
+      h3 Click on a course title to see its syllabus. Please make your choice carefully because lower priorities may matter.
+      h3 NOTE: The syllabi could be changed.
+      form(id="form" action="/polls/electives_2021_2022_3" method="post")
+        // DON'T REMOVE THIS INPUT!!!
+        input(type="hidden") 
+        fieldset   
+            .cards.offset-sm-1.col-sm-11                
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    script(src="/cards.js")
+    script(src="/default.js") 
+    script.
+            var cards = document.querySelector('.cards');
+            var dict = {
+            "year34": [
+                {
+                  "instructors": "Duane Rousselle, Julie Reshe",
+                  "title": "Real Love",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Real-Love-Syllabus-2021-22-Q3-.docx.pdf"
+              },
+              {
+                  "instructors": "Dara Melnyk, Daniel Kontowski",
+                  "title": "Institutional Experiments in Higher Education",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Institutional-Experiments-Syllabus-2021-22-Q3-Melnyk.pdf"
+              },
+              {
+                  "instructors": "Julie Reshe",
+                  "title": "Death and Death Drive",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Death-Syllabus-2021-22-Q3-Reshe.pdf"
+              },
+              {
+                  "instructors": "Krishna Muthukumarappan",
+                  "title": "Neurobiological basis of Kinship and Nationalism",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Neurobiological-basis-of-Kinship-and-Nationalism-Syllabus-2021-22-Q3-.pdf"
+              },
+              {
+                  "instructors": "Giacomo Andreoletti, Louis Vervoort",
+                  "title": "Foundations of quantum mechanics",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Foundations-of-Quantum-Mechanics-Syllabus-2021-22-Q3-.pdf"
+              },
+              {
+                  "instructors": "Marko Turk",
+                  "title": "Educational Research",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Educational-Research-Syllabus-2021-22-Q3-.pdf"
+              },
+              {
+                  "instructors": "Tomasz Blusiewicz",
+                  "title": "The Age of Total War",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/The-Age-of-Total-War-Syllabus-2021-22-Q3-.pdf"
+              },
+              {
+                  "instructors": "Pavel Kocourek",
+                  "title": "Decisions under Uncertainty",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Decisions-under-Uncertainty-Syllabus-2021-22-Q3-Kocourek.pdf"
+              },
+              {
+                  "instructors": "Erika Wolf, Stanimir Panayotov",
+                  "title": "Body, Culture, Self",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Body-Culture-Self-2021-22-Q3-Panayotov.pdf"
+              },
+              {
+                  "instructors": "Stanimir Panayotov",
+                  "title": "What does it mean to be nobody",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/To-Be-Nobody-Syllabus-2021-22-Q3-Panayotov.pdf"
+              },
+              {
+                  "instructors": "Jay Silverstein",
+                  "title": "Catalysts for Change in the Political Organization of Societies",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Catalysts-for-Change-Syllabus-2021-22-Q3-Silverstein.pdf"
+              },
+              {
+                  "instructors": "Jay Silverstein",
+                  "title": "ANSO Current Issues and Ideas: Anthropology",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/ANSO_Anthropological-Issues-Ideas-Syllabus-2021-22-Q3-Silverstein.pdf"
+              },
+              {
+                  "instructors": "Erika Wolf",
+                  "title": "CULT Visual Culture",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/CULT_Visual-Culture-Syllabus-2021-22-Q3-Wolf.pdf"
+              },
+              {
+                  "instructors": "Pavel Kocourek",
+                  "title": "ECON Applied Economics",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/ECON_Applied-Economics-Syllabus-2021-22-Q3-Kocourek.pdf"
+              },
+              {
+                  "instructors": "Alexander Usvitskiy",
+                  "title": "ECON Game Theory",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/ECON_Game-Theory-Syllabus-2021-22-Q3-Usvitskiy.pdf"
+              },
+              {
+                  "instructors": "Peter Lesnik",
+                  "title": "FIME Film Theory",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/FIME_Film-Theory-Syllabus-2021-22-Q3-Lesnik.pdf"
+              },
+              {
+                  "instructors": "Joshua Reeves",
+                  "title": "FIME Intermediality",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/FIME_Intermediality-Syllabus-2021-22-Q3-Reeves.pdf"
+              },
+              {
+                  "instructors": "Scott Anthony",
+                  "title": "HIST Making History",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/HIST_Making-History-Syllabus-2021-22-Q3-Anthony-1.pdf"
+              },
+              {
+                  "instructors": "Erzsébet Pásztor",
+                  "title": "LIFE Nature / Nurture problem in Genetics",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/LIFE_Nature-_-Nurture-problem-in-Genetics-Syllabus-2021-22-Q3-Pásztor.pdf"
+              },
+              {
+                  "instructors": "Krishna Muthukumarappan",
+                  "title": "LIFE Brain and Behavior",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/LIFE_Brain-and-Behavior-Syllabus-2021-22-Q3-Muthukumarappan.pdf"
+              },
+              {
+                  "instructors": "Corinne Doria / Siyaves Azeri / Giacomo Andreoletti",
+                  "title": "Great Books: Philosophy and Social Thought",
+              },
+              {
+                  "instructors": "Peter Mitchell",
+                  "title": "Academic Writing",
+              },
+              {
+                  "instructors": "Andrey Shcherbenok, Duane Rousselle, Louis Vervoort, Siyaves Azeri",
+                  "title": "Great Books - Literature",
+              },
+              {
+                  "instructors": "Quinton Scribner",
+                  "title": "Global Issues",
+              }
+              
+          ],
+          "year12": [
+            {
+              "instructors": "Duane Rousselle, Julie Reshe",
+              "title": "Real Love",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Real-Love-Syllabus-2021-22-Q3-.docx.pdf"
+          },
+          {
+              "instructors": "Dara Melnyk, Daniel Kontowski",
+              "title": "Institutional Experiments in Higher Education",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Institutional-Experiments-Syllabus-2021-22-Q3-Melnyk.pdf"
+          },
+          {
+              "instructors": "Julie Reshe",
+              "title": "Death and Death Drive",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Death-Syllabus-2021-22-Q3-Reshe.pdf"
+          },
+          {
+              "instructors": "Krishna Muthukumarappan",
+              "title": "Neurobiological basis of Kinship and Nationalism",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Neurobiological-basis-of-Kinship-and-Nationalism-Syllabus-2021-22-Q3-.pdf"
+          },
+          {
+              "instructors": "Giacomo Andreoletti, Louis Vervoort",
+              "title": "Foundations of quantum mechanics",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Foundations-of-Quantum-Mechanics-Syllabus-2021-22-Q3-.pdf"
+          },
+          {
+              "instructors": "Marko Turk",
+              "title": "Educational Research",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Educational-Research-Syllabus-2021-22-Q3-.pdf"
+          },
+          {
+              "instructors": "Tomasz Blusiewicz",
+              "title": "The Age of Total War",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/The-Age-of-Total-War-Syllabus-2021-22-Q3-.pdf"
+          },
+          {
+              "instructors": "Pavel Kocourek",
+              "title": "Decisions under Uncertainty",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Decisions-under-Uncertainty-Syllabus-2021-22-Q3-Kocourek.pdf"
+          },
+          {
+              "instructors": "Erika Wolf, Stanimir Panayotov",
+              "title": "Body, Culture, Self",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Body-Culture-Self-2021-22-Q3-Panayotov.pdf"
+          },
+          {
+              "instructors": "Stanimir Panayotov",
+              "title": "What does it mean to be nobody",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/To-Be-Nobody-Syllabus-2021-22-Q3-Panayotov.pdf"
+          },
+          {
+              "instructors": "Jay Silverstein",
+              "title": "Catalysts for Change in the Political Organization of Societies",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/Catalysts-for-Change-Syllabus-2021-22-Q3-Silverstein.pdf"
+          }
+        ]
+      }
+            var urlParams = new URLSearchParams(window.location.search);
+            var year = urlParams.get('year');
+            
+    
+    
+    
+    
+          dict[year].forEach(function(entry, index){
+            var card = document.createElement('div');
+            card.classList.add('portlet', 'ui-widget', 'ui-widget-content', 'ui-helper-clearfix', 'ui-corner-all');
+            var syllabusHTML = '';
+            if (entry["syllabus"]) syllabusHTML = `<p><a target="_blank" href="${entry["syllabus"]}">Syllabus link</a></p>`;
+            else syllabusHTML = 'Syllabus is not available yet';
+            card.innerHTML = `<div class="portlet-header ui-sortable-handle ui-widget-header ui-corner-all" id="${entry["title"]} — ${entry["instructors"]}"><div class="row"><div class="col-12 col-md-10"><a data-toggle="collapse" role="button" href="#collapse${index}">${entry["title"]} — ${entry["instructors"]}</a><div class="collapse" id="collapse${index}"> 
+            ${syllabusHTML}</div></div></div></div>`
+            cards.appendChild(card);
+          })

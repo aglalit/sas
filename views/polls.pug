@@ -1,0 +1,137 @@
+﻿doctype html
+html
+  head
+    title SAS — Share Your Opinions
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
+    style.
+      body        {    font-family: 'Agipo-Bold'; ;}
+        .alert {font-size:1.8em;    margin: 15px;}
+        body {font-size:1.8em}
+        h1 {font-size:2.5em}
+        h2 {font-size:2em}
+        a:visited {
+            color: grey;
+          }
+        .row {
+      margin-top: 10px;
+      margin-bottom:10px;}
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      @media (min-width: 768px){
+        .container {
+        width: auto;
+          }}
+      @media (max-width: 768px){
+      .container {
+        width: auto;
+        }
+
+        }
+  body
+        div(class="container")
+          div(class="page-header text-center")
+            h1 School of Advanced Studies — Share Your Opinions
+          div(class="row" style="font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;")
+            -if(messages)
+              div(class="alert alert-success") #{messages}
+          .row
+            div(class="col-xs-12")
+              div(class="well")
+                h3.text-danger
+                  span.fa.fa-google-plus Google
+                p
+                  br
+                  -if(user)
+                    span Email: #{user.google.email}
+                  br
+                  -if(user)
+                    span Name: #{user.google.name}
+                a.btn.btn-default.btn-lg(href='/logout') Log out
+                div(class="col-xs-12")
+                  h1 First Year Seminars
+                    h1
+                      a(target="_blank" href="/polls/course?subject=First Year Seminar — Great Educators&subject_id=ba_2021_q2_fys&teachers=Marko Turk,Siyaves Azeri") First Year Seminar — Great Educators
+                    h1
+                      a(target="_blank" href="/polls/course?subject=First Year Seminar — Psychoanalysis, Then and Now&subject_id=ba_2021_q2_fys&teachers=Julie Reshe,Duane Rousselle") First Year Seminar — Psychoanalysis, Then and Now
+                    h1
+                      a(target="_blank" href="/polls/course?subject=First Year Seminar — Basics of Modeling&subject_id=ba_2021_q2_fys&teachers=Alexander Usvitskiy,Erzsébet Pásztor") First Year Seminar — Basics of Modeling
+                    h1
+                      a(target="_blank" href="/polls/course?subject=First Year Seminar — Genes, Сulture, and Human Evolution&subject_id=ba_2021_q2_fys&teachers=Jay Silverstein,Erzsébet Pásztor") First Year Seminar — Genes, Сulture, and Human Evolution
+                    h1
+                      a(target="_blank" href="/polls/course?subject=First Year Seminar — Consciousness, emotions, and decision making&subject_id=ba_2021_q2_fys&teachers=Krishna Muthukumarappan,Louis Vervoort") First Year Seminar — Consciousness, emotions, and decision making
+                div(class="col-xs-12")
+                  h1 Majors and Electives:
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Elective 1&subject_id=ba_2021_q2_elective1&select=Louis Vervoort — Ethics of Artificial Intelligence and Robots,Erika Wolf — Photography and Russia,Alexander Usvitskiy — Mathematics for Economists,Duane Rousselle — Strange Sociology,Aleksei Gudkov — Blockchain,Aleksei Gudkov — Artificial Intelligence") Elective 1
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Elective 2&subject_id=ba_2021_q2_elective2&select=Louis Vervoort — Ethics of Artificial Intelligence and Robots,Erika Wolf — Photography and Russia,Alexander Usvitskiy — Mathematics for Economists,Duane Rousselle — Strange Sociology,Aleksei Gudkov — Blockchain,Aleksei Gudkov — Artificial Intelligence") Elective 2 (if exists)
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Elective 3&subject_id=ba_2021_q2_elective3&select=Louis Vervoort — Ethics of Artificial Intelligence and Robots,Erika Wolf — Photography and Russia,Alexander Usvitskiy — Mathematics for Economists,Duane Rousselle — Strange Sociology,Aleksei Gudkov — Blockchain,Aleksei Gudkov — Artificial Intelligence") Elective 3 (if exists)
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Media Production&subject_id=ba_2021_q2_elective4&teachers=Andrey Zubov") Elective — Media Production
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Experimental Pedagogics&subject_id=ma_xhe_2021_year1_q2_ep&teachers=Ginie Servant-Miklos") Elective — Experimental Pedagogics
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Major course — Critical Theory&subject_id=ba_2021_q2_major4&teachers=Siyaves Azeri — Critical Theory,Stanimir Panayotov — Critical Theory") Major course — Critical Theory
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Major course — Into the Archive&subject_id=ba_2021_q2_major3&teachers=Corinne Doria — Into the Archive,Tomasz Blusiewicz — Into the Archive") Major course — Into the Archive
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Major course — Databases&subject_id=ba_2021_q2_major4&teachers=Victor Skiba — Databases,Vladimir Prishepa — Databases") Major course — Databases
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Major course 1&subject_id=ba_2021_q2_major1&select=Anastasia Merzliakova — Econometrics,Duane Rousselle — Qualitative Research Methods,Joshua Reeves — New Media Analysis 2,Peter Lešnik — Film Theory,Sulgi Lie — Film History,Denis Zmeev — Business Processes,Denis Zmeev — Subject Domains,Ayla Arslan — The Unit of Life,Krishna Muthukumarappan — Health and Illness") Major course 1
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Major course 2&subject_id=ba_2021_q2_major2&select=Anastasia Merzliakova — Econometrics,Duane Rousselle — Qualitative Research Methods,Joshua Reeves — New Media Analysis 2,Peter Lešnik — Film Theory,Sulgi Lie — Film History,Denis Zmeev — Business Processes,Denis Zmeev — Subject Domains,Ayla Arslan — The Unit of Life,Krishna Muthukumarappan — Health and Illness") Major course 2 (if exists)
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Major course 3&subject_id=ba_2021_q2_major3&select=Anastasia Merzliakova — Econometrics,Duane Rousselle — Qualitative Research Methods,Joshua Reeves — New Media Analysis 2,Peter Lešnik — Film Theory,Sulgi Lie — Film History,Denis Zmeev — Business Processes,Denis Zmeev — Subject Domains,Ayla Arslan — The Unit of Life,Krishna Muthukumarappan — Health and Illness") Major course 3 (if exists)
+                  h1 Core Courses:
+                  h1 Year 1:
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=History&subject_id=ba_2021_year1_q2_history&lecturers=Corinne Doria&teachers=Corinne Doria,Tomasz Blusiewicz") History (Quarter 1 and Quarter 2)
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Great Books 1 — Giacomo Andreoletti, Stanimir Panayotov, Julie Reshe&subject_id=ba_2021_year1_q2_gb1&lecturers=Giacomo Andreoletti,Stanimir Panayotov,Julie Reshe&select=Giacomo Andreoletti,Stanimir Panayotov,Julie Reshe") Great Books 1
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Quantitative Reasoning&subject_id=ba_2021_year1_q2_qr&select=Evgeny Vdovin — City as a Matrix,Konstantin Kim and Denis Zmeev — Math as Thinking") Quantitative Reasoning   
+                  h1 Year 2:
+                  //- h1 
+                  //-   a(target="_blank" href="/polls/course?subject_id=ba_2021_year2_q2_gb_1&subject=Great Books: Literature 2, part 1 — Irina Sadovina&teachers=Irina Sadovina") Great Books: Literature 2, part 1 — Irina Sadovina
+                  //- h1 
+                  //-   a(target="_blank" href="/polls/course?subject_id=ba_2021_year2_q2_gb_2&subject=Great Books: Literature 2, part 2 — Caroline Wintersgill&teachers=Caroline Wintersgill") Great Books: Literature 2, part 2 — Caroline Wintersgill
+                  //- h1 
+                  //-   a(target="_blank" href="/polls/course?subject_id=ba_2021_year2_q2_gb_3&subject=Great Books: Literature 2, part 3 — Alexandr Tankhilevich&teachers=Alexandr Tankhilevich") Great Books: Literature 2, part 3 — Alexandr Tankhilevich
+                  h1 
+                    a(target="_blank" href="/polls/course?subject_id=ba_2021_year2_q2_art&subject=Interpreting Artworks&lecturers=Erika Wolf,Stanimir Panayotov,Vera Trachtenberg,Corinne Doria,Julie Reshe,Duane Rouselle&teachers=Erika Wolf,Stanimir Panayotov,Vera Trachtenberg,Corinne Doria,Julie Reshe,Duane Rouselle") Interpreting Artworks (Quarter 1 and Quarter 2)
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Science and Technology&subject_id=ba_2021_year2_q2_sat&teachers=Ayla Arslan") Science and Technology
+                  h1 Year 4:
+                    h1 
+                      a(target="_blank" href="/polls/course?subject_id=ba_2021_year4_q2_ec&subject=Effective Communication — Peter Mitchell, Eva Burbo&teachers=Peter Mitchell") Effective Communication
+                  h1 Research Seminars:
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Research Seminar&subject_id=ba_2021_q2_rs&select=Erika Wolf,Jay Silverstein,Aleksey Lysenko,Alexander Usvitskiy,Corinne Doria,Peter Lešnik,Erzsébet Pásztor") Research Seminar (Quarter 1 and Quarter 2)
+                  h1 X-HE Year 1:
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Modern University&subject_id=ma_xhe_2021_year1_q2_mu&teachers=Dara Melnyk,Daniel Kontowski") Modern University (Quarter 1)
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Experimental Pedagogics&subject_id=ma_xhe_2021_year1_q2_ep&teachers=Ginie Servant-Miklos") Experimental Pedagogics
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Instructional and Curricular Design&subject_id=ma_xhe_2021_year1_q2_icd&teachers=Marko Turk") Instructional and Curricular Design
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Economics of Education&subject_id=ma_xhe_2021_year1_q2_eoe&teachers=Economics of Education") Economics of Higher Education
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Professional Seminar — Year 1&subject_id=ma_xhe_2021_year1_q2_ps2&teachers=Dara Melnyk") Professional Seminar (Quarter 1 and Quarter 2)
+                  h1 X-HE Year 2:
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Higher Education Policy&subject_id=ma_xhe_2021_year2_q2_hep&teachers=Dara Melnyk") Higher Education Policy
+                  h1 
+                    a(target="_blank" href="/polls/course?subject=Professional Seminar — Year 2&subject_id=ma_xhe_2021_year2_q2_ps6&teachers=Dara Melnyk") Professional Seminar (Quarter 1 and Quarter 2)
+                
+  script.
+    //- if(Date.now() > Date.parse('11 Jan 2021 18:00:00 GMT+5')){
+    //-   document.querySelectorAll(".closable").forEach(function(el){
+    //-       el.style.display = "none";
+    //-   })
+    //-   }
+          

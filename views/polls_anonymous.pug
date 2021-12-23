@@ -1,0 +1,55 @@
+doctype html
+html
+  head
+    title Share Your Opinions
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
+    style.
+      body        {    font-family: 'Agipo-Bold';}
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('fonts/agipo/Agipo-Bold.woff');
+      }
+      a:visited {
+          color: grey;
+        }
+  body
+    div(class="container")
+      div(class="page-header text-center")
+        h1 Share Your Opinions
+      -if(messages)
+        div(class="alert alert-success" style="font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;") #{messages}
+        //- h3
+          a(href="/polls/generic-anonymous") Заполнить форму повторно
+        //- div(class="col-xs-12")
+          h1 Year 1
+          ul(class="list-unstyled")
+            li
+              h1
+                a(href="/polls/ba-2019-year1-module4-electives") Elective
+            li
+              h1
+                a(href="/polls/ba-2019-year1-module4-tfy") TFY
+            li
+              h1
+                a(href="/polls/ba-2019-year1-module4-it") IT
+            li
+              h1
+                a(href="/polls/ba-2019-year1-module4-history") History
+            li
+              h1
+                a(href="/polls/ba-2019-year1-module4-gb") Great Books: Philosophy
+          h1 Year 2
+          ul(class="list-unstyled")
+            li
+              h1
+                a(href="/polls/ba-2019-year2-module8-electives") Elective 1
+            li
+              h1
+                a(href="/polls/ba-2019-year2-module8-electives2") Elective 2
+            li
+              h1
+                a(href="/polls/ba-2019-year2-module8-gb") Great Books: Literature
+            li
+              h1
+                a(href="/polls/ba-2019-year2-module8-design-thinking") Design Thinking

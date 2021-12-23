@@ -1,0 +1,471 @@
+doctype html
+html
+  head
+    title SAS — Feedback
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    // load bootstrap css
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Regular'; 
+      
+      -moz-osx-font-smoothing: grayscale;   /* Firefox */
+     -webkit-font-smoothing: antialiased; /* WebKit  */
+      }
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      @font-face {
+        font-family: 'Agipo-Regular';
+        src:url('../fonts/agipo/Agipo-Regular.woff');
+      }
+      .btn.btn-default.btn-lg {
+        background: lightgray;
+      }
+      h2 {margin-bottom:30px; margin-top:50px;
+      font-family: 'Agipo-Bold',Arial,sans-serif;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+        font-family: 'Agipo-Bold',Arial,sans-serif;
+      }
+      h3 {
+        margin-top:50px;
+        font-size: 1.5em;
+        font-weight: 400;
+        margin-bottom:30px;
+        font-family: 'Agipo-Regular',Arial,sans-serif;;
+      }
+      /* .displayTeacher {display:none;} */
+      .currentAnswerCounter {font-family: Agipo-Bold;}
+      .allLinks {display:none;}
+      table {max-width:100%;}
+      
+      thead {
+        font-size: 12px;
+        border-bottom:1px red solid;
+        hyphens: auto;
+      }
+      .all tr td:first-child {
+        font-size: 12px;
+        vertical-align: middle;
+      }
+      .all tr {
+        border-top: 1px red solid;
+      }
+      td {
+        text-align: left; 
+        padding-top:10px;
+        vertical-align: top;
+      padding: 5px;
+      }
+      .all td {
+        border-right: 1px red solid;
+      }
+      .all td:last-child {
+        border-right: none;
+      }
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+      }
+      td.key {
+        font-family: 'Agipo-Bold';
+        padding-right:30px;
+        width:70%;
+      }
+      
+      img {
+        width:80%;
+        margin-top:10px;
+      }
+      .logo {padding-bottom:30px}
+      a {color:#f00}
+      .container{
+        width:98% !important;
+      }
+      .input-group{
+        margin-bottom:20px;
+      }
+      .input-group label, h4 {
+        font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 18px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+      }
+      form {
+        margin-top: 30px;
+      }
+      fieldset {
+        margin-bottom:30px;
+      }
+      label,legend,h4 {
+        text-align: left;
+        width:100%;
+      }
+      label[for="agreement-checkbox"]{
+        width:92%;
+        margin-top:0;
+      }
+      #agreement-checkbox {
+        width:5%;
+        margin-left: 10px;
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        float:left;
+        width:75%;
+        font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
+      }
+      .label_width100 {
+        width:100%;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        top:0px
+        }
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #f00;
+        }
+        button {
+          background-color: #f00 !important;
+          border-color: #f00 !important;
+          margin: 0 25px 25px;
+          padding: 10px 15px;
+          border-radius:50px;
+        }
+        
+        .checkbox {
+          width: 5% !important;
+          height: 30px;
+          margin-top: 14px !important;
+        }
+        
+        input[type="checkbox"] {
+          /* -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none; */
+
+          width: 38px;
+          height: 38px;
+
+          border: 2px solid #999;
+          transition: 0.2s all linear;
+          outline: none;
+          margin-right: 15px;
+
+          position: relative;
+          top:0;
+          zoom:1.1;
+          }
+
+
+        @media (max-width: 1024px) {
+
+          body{padding-top:10px}
+          .container{
+          width:95%;
+          }
+          h3 {
+            font-size: 2.5em;
+          }
+          h2 {
+            font-size: 3em;
+          }
+          .jumbotron h1 {
+            font-size: 3.5em;
+          }
+        .input-group  label, h4 {
+          font-size:45px ;
+          margin-bottom:20px;
+          width:100%;
+          }
+          label[for="agreement-checkbox"]{
+            width:91%;
+            margin-top:0;
+          
+          }
+          #agreement-checkbox {
+            width:5%;
+            margin-left: 10px;
+              top: 10px;
+          }
+          .checkbox {
+            width: 5% !important;
+            height: 30px;
+            margin-top: 14px !important;
+          }
+          input[type="radio"]{
+            top:5px;
+          }
+          button.btn-lg {
+            font-size: 45px;
+          }
+          .label_width100 {
+            width:100% !important;
+          }
+          .checkbox {margin-top: 13px !important;           
+            height: 50px;
+            }
+          .input-group label, h4 {
+            
+            margin: 11px 0;
+          }
+        }
+              li {
+                line-height: 2; }
+        
+body
+  div
+    .jumbotron.text-center
+      .logo
+        a(target="_blank" href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 SAS — Course Evaluations — Q1 2021-2022
+      .row
+        div(class="col-xs-12" style="display: flex; justify-content: center; flex-direction:column; align-items:center; width: 100%;")
+            p
+              br
+              -if(user)
+                span Email: #{user.google.email}
+              br
+              -if(user)
+                span Name: #{user.google.name}
+            a.btn.btn-default.btn-lg(href='/logout') Log out
+      //- p.legend "How would you describe the effort you put into studying for this course?": 0 = No real effort, 1 = I made some effort, 2 = I worked hard, 3 = I gave 125%;<br>Further questions: 0 = Low, 1 = Average, 2 = High, 3 = Very high;
+      h2.teacher
+      div.allLinks
+        //- button(class="exportCSV" onclick="exportCSVFile(dataToExportCSV, 'feedback-2021-module1-5-9')") Download in CSV
+        ul(class="list-unstyled")
+          li
+            h3.ba_2021_q1_electives Electives and Major Courses
+            span Links: 
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Louis Vervoort — Consciousness Cognition Rationality, Giacomo Andreoletti — Consciousness Cognition Rationality, Alexander Usvitskiy — Consciousness Cognition Rationality, Alexei Lysenko — Consciousness Cognition Rationality" data-size="20") Louis Vervoort — Consciousness Cognition Rationality, Giacomo Andreoletti — Consciousness Cognition Rationality, Alexander Usvitskiy — Consciousness Cognition Rationality, Alexei Lysenko — Consciousness Cognition Rationality
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Julie Reshe — Understanding Diverse Perspectives of Education and Learning, Marko Turk — Understanding Diverse Perspectives of Education and Learning, Siyaves Azeri — Understanding Diverse Perspectives of Education and Learning" data-size="21") Julie Reshe — Understanding Diverse Perspectives of Education and Learning, Marko Turk — Understanding Diverse Perspectives of Education and Learning, Siyaves Azeri — Understanding Diverse Perspectives of Education and Learning
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Melina Aarnikoivu — Language and Society" data-size="20") Melina Aarnikoivu — Language and Society
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Melina Aarnikoivu — English Oracy Skills" data-size="18") Melina Aarnikoivu — English Oracy Skills
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Ayla Arslan — Evolutionary Psychology" data-size="18") Ayla Arslan — Evolutionary Psychology
+              br
+            span  
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Dmitry Zhikharevich — Science Technology and Society" data-size="18") Dmitry Zhikharevich — Science Technology and Society
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Vera Trakhtenberg — Research and Analysis of Contemporary Art" data-size="21") Vera Trakhtenberg — Research and Analysis of Contemporary Art
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Denis Zmeev — OOP Development, Victor Skiba — OOP Development, Vladimir Prischepa — OOP Development" data-size="10") Denis Zmeev — OOP Development, Victor Skiba — OOP Development, Vladimir Prischepa — OOP Development
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Dmitry Zhikharevich — Research Design and Methods" data-size="5") Dmitry Zhikharevich — Research Design and Methods
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Jay Silverstein — Anthropological and Sociological Theory 1" data-size="9") Jay Silverstein — Anthropological and Sociological Theory 1
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Yana Markova — Gender Sexuality Biopolitics" data-size="24") Yana Markova — Gender Sexuality Biopolitics
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Stanimir Panayotov — Foundations of the Humanities" data-size="10") Stanimir Panayotov — Foundations of the Humanities
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Alexander Usviskiy — Statistics" data-size="14") Alexander Usviskiy — Statistics
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Lyubov Antosik — Macroeconomics" data-size="14") Lyubov Antosik — Macroeconomics
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Denis Zmeev — Requirements" data-size="5") Denis Zmeev — Requirements
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Tomasz Blusiewicz — Russia in the Global History" data-size="9") Tomasz Blusiewicz — Russia in the Global History
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Krishna Muthukumarappan — The Origin of Life" data-size="7") Krishna Muthukumarappan — The Origin of Life
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Peter Lesnik — Film Analysis" data-size="12") Peter Lesnik — Film Analysis
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Joshua Reeves — Media Studies" data-size="15") Joshua Reeves — Media Studies
+              br
+            span 
+              a(target="_blank" href="/feedback10?s=ba_2021_q1_electives&t=Joshua Reeves — New Media Analysis " data-size="10") Joshua Reeves — New Media Analysis 1
+              br
+          //- li
+          //-   h3.ba_2021_year2_q1_gb_1 Great Books: Literature 2.1
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_year2_q1_gb_1&t=Sadovina" data-size="37") Irina Sadovina, 
+          //- li
+          //-   h3.ba_2021_year2_q1_gb_2 Great Books: Literature 2.2
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_year2_q1_gb_2&t=Wintersgill" data-size="37") Caroline Wintersgill, 
+          //- li
+          //-   h3.ba_2021_year2_q1_gb_3 Great Books: Literature 2.3
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_year2_q1_gb_3&t=Tankhilevich" data-size="37") Alexandr Tankhilevich,
+          //- li
+          //-   h3.ba_2021_year2_q1_gb_4 Great Books: Literature 2.4
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_year2_q1_gb_4&t=Longden" data-size="37") Joanna Longden, 
+          li
+            h3.ba_2021_year1_q1_wtai Writing, Thinking, Analysis and Interpretation
+            span Links: 
+            span
+              a(target="_blank" href="/feedback10?s=ba_2021_year1_q1_wtai" data-size="94") All, 
+              br
+            span
+              a(target="_blank" href="/feedback10?s=ba_2021_year1_q1_wtai&t=Siyaves Azeri" data-size="29") Siyaves Azeri
+              br
+            span
+              a(target="_blank" href="/feedback10?s=ba_2021_year1_q1_wtai&t=Stanimir Panayotov" data-size="33") Stanimir Panayotov
+              br
+            span
+              a(target="_blank" href="/feedback10?s=ba_2021_year1_q1_wtai&t=Giacomo Andreoletti" data-size="32") Giacomo Andreoletti
+              br 
+          li
+            h3.ba_2021_year1_q1_paideia Paideia
+            span Links: 
+            span
+              a(target="_blank" href="/feedback10?s=ba_2021_year1_q1_paideia" data-size="90") Paideia
+          //- li
+          //-   h3.ba_2021_year1_q1_tfy TFY
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_year1_q1_tfy&t=Melina Aarnikoivu, Giacomo Andreoletti, Ayla Arslan" data-size="71") Melina Aarnikoivu, Giacomo Andreoletti, Ayla Arslan
+          //- li
+          //-   h3.ba_2021_year1_q1_it IT 2
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_year1_q1_it&t=Vitaly Nikolaev" data-size="19") Vitaly Nikolaev
+          //-     br
+          //-   span
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_year1_q1_it&t=Alexey Lysenko" data-size="51") Alexey Lysenko
+          li
+            h3.ba_2021_year2_q1_lam Life and Matter
+            span Links: 
+            span
+              a(target="_blank" href="/feedback10?s=ba_2021_year2_q1_lam&t=Louis Vervoort, Erzsébet Pásztor" data-size="48") Louis Vervoort, Erzsébet Pásztor
+          //- li
+          //-   h3.ba_2021_year4_q1_ec Effective Communication 3
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_year4_q1_ec&t=Andrey Shcherbenok, Anastasia Rusakova, Daniel Kontowski, Artem Bagiev" data-size="37") Andrey Shcherbenok, Anastasia Rusakova, Daniel Kontowski, Artem Bagiev
+          //- li
+          //-   h3.ba_2021_q1_rscommon Common Research Seminar
+          //-   span Links: 
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_q1_rscommon&t=Erika Wolf — common" data-size="75") Erika Wolf — common
+          //- li
+          //-   h3.ba_2021_q1_rs Research Seminars
+          //-   span Links: 
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_q1_rs") All, 
+          //-   span
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_q1_rs&t=Lesnik" data-size="10") Peter Lesnik, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_q1_rs&t=Maxim" data-size="9") Maxim Alyukov, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_q1_rs&t=Wolf" data-size="17") Erika Wolf, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_q1_rs&t=Didenko" data-size="17") Alexander Didenko, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_q1_rs&t=Lie" data-size="16") Sulgi Lie
+          //-   span 
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_q1_rs&t=Doria" data-size="6") Corinne Doria, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_q1_rs&t=Nikolaev" data-size="9") Vitaly Nikolaev
+          //-   span 
+          //-     a(target="_blank" href="/feedback10?s=ba_2021_q1_rs&t=Pásztor" data-size="4") Erzsébet Pásztor
+          //- li
+          //-   h3.ma_2021_year1_q1_md Multimedia Design
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback10?s=ma_2021_year1_q1_md&t=Kleshchev" data-size="15") Sergey Kleshchev
+          li
+            h3.ma_xhe_2021_year1_q1_dm Disciplined Minds
+            span Links: 
+            span
+              a(target="_blank" href="/feedback10?s=ma_xhe_2021_year1_q1_dm" data-size="8") Disciplined Minds
+          //- li
+          //-   h3.ma_xhe_2021_year1_q1_ps4 Professional Seminar 4
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback10?s=ma_xhe_2021_year1_q1_ps4&t=Dara Melnyk" data-size="7") Dara Melnyk
+          li
+            h3.ma_xhe_2021_year1_q1_fol Fundamentals of Learning
+            span Links: 
+            span
+              a(target="_blank" href="/feedback10?s=ma_xhe_2021_year1_q1_fol&t=Marko Turk" data-size="8") Marko Turk
+          li
+            h3.ma_xhe_2021_year2_q1_che Comparative Higher Education
+            span Links: 
+            span
+              a(target="_blank" href="/feedback10?s=ma_xhe_2021_year2_q1_che&t=Lisa Unangst" data-size="6") Lisa Unangst
+          //- li
+          //-   h3.ma_xhe_2021_year1_q1_tl Teaching and Learning
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback10?s=ma_xhe_2021_year1_q1_tl&t=Turk" data-size="7") Marko Turk
+          //- li
+          //-   h3.ma_xhe_2021_year1_q1_ehe Economics of Higher Education
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback10?s=ma_xhe_2021_year1_q1_ehe&t=Prakhov" data-size="7") Ilya Prakhov
+          //- li
+          //-   h3.ma_xhe_2021_year1_q1_ps3 Professional Seminar 3
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback10?s=ma_xhe_2021_year1_q1_ps3&t=Dara Melnyk, Marko Turk, Daniel Kontowski" data-size="7") Dara Melnyk, Marko Turk, Daniel Kontowski
+          
+          
+      h2.displayTeacher Full answers
+      button.btn.btn-default.btn-lg.displayTeacher(onclick="displayAllAnswers()") Display all answers
+      br
+      button(class="prev displayTeacher" onclick="allPrev()") < Previous answer
+      span.currentAnswerCounter
+      button(class="next displayTeacher" onclick="allNext()") Next answer >
+      table#all
+        tbody.tablebody
+      h2 Rating scale answers (histograms)
+      div.graphs
+      h2.displayTeacher Text answers
+      div.comments
+script(src="/plotly-latest.min.js")
+script.
+  var data = [!{data}];
+script(src="/feedback10.js")  
+  
+  

@@ -1,0 +1,215 @@
+doctype html
+html
+  head
+    title Research Trip Request Form
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    // load bootstrap css
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      img {
+        width:85%;
+      }
+      a {color:#f00 !important}
+      .logo {padding-bottom:30px}
+      h2 {font-weight:800; margin-bottom:20px;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+      }
+      h3 {
+        font-size: 1.5em;
+        font-weight: 400;
+      }
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+        padding-top: 0px;
+      }
+      .container{
+        width:98% !important;
+      }
+      .input-group{
+        margin-bottom:20px;
+      }
+      .input-group label {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 10px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+        width:75%;
+      }
+      form {
+        margin-top: 30px;
+      }
+      label,legend {
+        text-align: left;
+            float: left;
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        float:left;
+        width:75%;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        -webkit-transition: 0.2s all linear;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        top:23px;
+        }
+        input[type="checkbox"] {max-width: 50px;height: 35px;margin-top:6px}
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #f00;
+        }
+        button {
+          background-color: #f00 !important;
+          border: none !important;
+        }
+        .flex-container {display:-webkit-box;display:-ms-flexbox;display:flex; margin:10px 0;}
+        .column {-webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction:column;}
+        .row label {
+          padding-left: 15px;
+        }
+        .small {
+          font-size:15px;
+        }
+        
+        @media (max-width:1024px) {
+
+          body{padding-top:10px}
+          .container{
+          width:95%;
+          }
+        .input-group  label {
+          font-size:30px ;
+          margin-bottom:20px;
+          }
+          input[type="radio"]{
+            top:23px;
+          }
+            button.btn-lg {
+              font-size: 30px;
+            }
+            .small {
+              font-size:23px;
+            }
+          }
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="../assets/Logo__red.png")
+      h1 Research Trip Request Form
+      form(action="/polls/faculty-research-trips" method="post" enctype="multipart/form-data" )
+        fieldset
+          div(class="input-group")
+            .flex-container.column
+              label(for="Name") Full Name:
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="Name")
+            .flex-container.column
+              label(for="Country") Country:
+                sup(style="color:red") *
+                p.small Where the conference/fieldwork will take place.
+              input(type="text" required="required" class="form-control" name="Country")
+            .flex-container.column
+              label(for="City") City:
+                sup(style="color:red") *
+                p.small Where the conference/fieldwork will take place.
+              input(type="text" required="required" class="form-control" name="City")
+            .flex-container.column
+              label(for="Organization") Organization:
+                p.small Which invites you.
+              input(type="text" class="form-control" name="Organization")
+            .flex-container.column
+              label(for="Invitation") Invitation/Conference Program: 
+              input(type="file" class="form-control" name="Invitation")
+            .flex-container.column
+              label(for="Departure date") Departure Date:
+                sup(style="color:red") *
+                p.small Please note the date when you leave Tyumen (or another city if you are not in Tyumen when your research trip starts).
+              input(type="date" required="required" class="form-control" name="Departure date")
+              label(for="Return date") Return Date:
+                sup(style="color:red") *
+                p.small Please note the date when you <span style="color:red">physically</span> arrive in Tyumen (or another city where your research trip ends). 
+              input(type="date" required="required" class="form-control" name="Return date")
+            .flex-container.column
+              label(for="Need Statement") Statement Of Purpose:
+                sup(style="color:red") *
+                p.small Briefly describe the goals of the research trip. 
+              input(type="text" required="required" class="form-control" name="Need Statement")
+            .flex-container.column
+              label(for="Invitation") Abstract:
+                p.small Paper, Research, Presentation.
+              input(type="file" class="form-control" name="Abstract")
+            .flex-container.column
+              label(for="Cost Estimates") Estimated Costs:
+                sup(style="color:red") *
+                p.small Tickets, Lodging, Registration Fees, Additional Expenses.
+              input(type="text" required="required" class="form-control" name="Cost Estimates")
+            .flex-container.row
+              input.form-check-input(type="checkbox" name="Do You Need To Get Money In Advance?")
+              label.form-check-label(for="Do you need to get money in advance?") Do you need funding in advance? 
+                p.small Please note that money can be requested only after your research trip is approved.
+            .flex-container.row
+              input.form-check-input(type="checkbox" required="required"  name="I am aware that it takes up to three working* days until my request is processed and sent to the School and UT Boards for the approval process.")
+              label.form-check-label(for="I am aware that it takes up to three working&#185; days until my request is processed and sent to the School and UT Boards for the approval process.") I am aware that processing of data will take up to three working days before the request is forwarded for approval by SAS and UT Boards.
+                sup(style="color:red") *
+                p.small *see a list of public holidays 
+                  a(href="https://docs.google.com/document/d/1327-uccnjowITwV1Nl6pTTauN3vqOoiZK0DT5QeemnY/edit") here
+            .flex-container.row
+              input.form-check-input(type="checkbox" required="required"  name="I am aware that my research trip/fieldwork is officially approved only when it is signed by the UT Rector.")
+              label.form-check-label(for="I am aware that my research trip/fieldwork is officially approved only when it is signed by the UT Rector.") I am aware that my research trip is officially approved only when it is signed by the UT Rector.
+                sup(style="color:red") *
+            .flex-container.row
+              input.form-check-input(type="checkbox" required="required"  name="I am aware that I need to save all documents (such as boarding passes, invoices, receipts, etc.) to be reimbursed or be able to report on the money given in advance.")
+              label.form-check-label(for="I am aware that I need to save all documents (such as boarding passes, invoices, receipts, etc.) to be reimbursed or be able to report on the money given in advance.") I am aware that I need to save all relevant documents (such as boarding passes, invoices, receipts, etc.) in order to either be reimbursed or to account for travel funds issued in advance.
+                sup(style="color:red") *
+            .flex-container.row
+              input.form-check-input(type="checkbox" required="required"  name="I am aware that all documentation associated with the travel costs (including payments) must be in my name only.")
+              label.form-check-label(for="I am aware that all documentation associated with the travel costs (including payments) must be in my name only.") I am aware that all documentation associated with the travel costs (including payments) must be in my name only.
+                sup(style="color:red") *
+            .flex-container.row
+              input.form-check-input(type="checkbox" required="required"  name="I am aware that I need to notify the Faculty Support Specialist about any changes connected to the requested research trip.")
+              label.form-check-label(for="I am aware that I need to notify the Faculty Support Specialist about any changes connected to the requested research trip.") I am aware that I need to notify the Faculty Support Specialist about any changes related to my research trip request.
+                sup(style="color:red") *
+            .flex-container.row
+              input.form-check-input(type="checkbox" required="required"  name="I am aware of the registration rules.")
+              label.form-check-label(for="I am aware of the registration rules.") I am aware of the 
+                a(href="https://docs.google.com/document/d/1PfIpdq2EB_0alVnUVtbuu5q_Q5FXerzDbg671LjRePs/edit") registration rules.
+                sup(style="color:red") *
+            .flex-container.row
+              input.form-check-input(type="checkbox" required="required"  name="I agree to the processing of my personal data")
+              label.form-check-label(for="I agree to the processing of my personal data") I agree to the processing of my personal data. 
+                sup(style="color:red") * 
+            label 
+              sup(style="color:red") * 
+              span — required fields
+        button(type="submit" class="btn btn-primary btn-lg") Submit

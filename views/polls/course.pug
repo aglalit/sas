@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title SAS — Share Your Opinions
+    //- link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/bootstrap-slider.min.css')
+    link(rel='stylesheet', href='/style.css')
+    //- link(rel='stylesheet', href='/cards.css')
+    // script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    // script(src="/touch_sortable.js")
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 Course Evaluations. Year 2021–2022. Quarter 2.
+      h3 Course evaluations at SAS are designed to provide teachers with an opportunity to collect anonymous feedback about their courses. The form should be filled in English. The results are completely confidential. 
+      h3 By filling out the course evaluation, you will help teachers understand what worked or did not work in their classes. At the institution level, you will contribute to the overall quality of teaching and learning by helping SAS identify and spread the best practices. Lastly, you will have a chance to evaluate the impact of a particular course on your educational journey.
+      h3 There will be a report from the SAS administration after each quarter, about what works and what can be improved. 
+      h3 Thank you for your cooperation!
+      h1#title
+      h3#teachersTitle
+      form#form(action="/polls/feedback-collector" method="post")
+        input#subject(type="hidden" value="generic" name="subject")
+        //- input#online(type="hidden" value="false" name="online")    
+        fieldset
+          div#input-group(class="input-group")
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    script(src="/bootstrap-slider.min.js")    
+    script(src="/course.js")
+      

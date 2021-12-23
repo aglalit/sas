@@ -1,0 +1,395 @@
+doctype html
+html
+  head
+    title SAS — Feedback
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    // load bootstrap css
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Bold'; 
+      
+      -moz-osx-font-smoothing: grayscale;   /* Firefox */
+     -webkit-font-smoothing: antialiased; /* WebKit  */
+      }
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      @font-face {
+        font-family: 'Agipo-Regular';
+        src:url('../fonts/agipo/Agipo-Regular.woff');
+      }
+      h2 {margin-bottom:20px;
+      font-family: 'Agipo-Bold',Arial,sans-serif;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+        font-family: 'Agipo-Bold',Arial,sans-serif;
+      }
+      h3 {
+        font-size: 1.5em;
+        font-weight: 400;
+        margin-bottom:30px;
+        font-family: 'Agipo-Regular',Arial,sans-serif;;
+      }
+      thead {
+        font-size: 30px;
+        border-bottom:3px red solid;
+      }
+      td {text-align: left;}
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+      }
+      img {
+        width:80%;
+        margin-top:10px;
+      }
+      .logo {padding-bottom:30px}
+      a {color:#f00}
+      .container{
+        width:98% !important;
+      }
+      .input-group{
+        margin-bottom:20px;
+      }
+      .input-group label, h4 {
+        font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 18px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+      }
+      form {
+        margin-top: 30px;
+      }
+      fieldset {
+        margin-bottom:30px;
+      }
+      label,legend,h4 {
+        text-align: left;
+        width:100%;
+      }
+      label[for="agreement-checkbox"]{
+        width:92%;
+        margin-top:0;
+      }
+      #agreement-checkbox {
+        width:5%;
+        margin-left: 10px;
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        float:left;
+        width:75%;
+        font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
+      }
+      .label_width100 {
+        width:100%;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        top:0px
+        }
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #f00;
+        }
+        button {
+          background-color: #f00 !important;
+          border-color: #f00 !important;
+        }
+        
+        .checkbox {
+          width: 5% !important;
+          height: 30px;
+          margin-top: 14px !important;
+        }
+        
+        input[type="checkbox"] {
+          /* -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none; */
+
+          width: 38px;
+          height: 38px;
+
+          border: 2px solid #999;
+          transition: 0.2s all linear;
+          outline: none;
+          margin-right: 15px;
+
+          position: relative;
+          top:0;
+          zoom:1.1;
+          }
+
+
+        @media (max-width: 1024px) {
+
+          body{padding-top:10px}
+          .container{
+          width:95%;
+          }
+          h3 {
+            font-size: 2.5em;
+          }
+          h2 {
+            font-size: 3em;
+          }
+          .jumbotron h1 {
+            font-size: 3.5em;
+          }
+        .input-group  label, h4 {
+          font-size:45px ;
+          margin-bottom:20px;
+          width:100%;
+          }
+          label[for="agreement-checkbox"]{
+            width:91%;
+            margin-top:0;
+          
+          }
+          #agreement-checkbox {
+            width:5%;
+            margin-left: 10px;
+              top: 10px;
+          }
+          .checkbox {
+            width: 5% !important;
+            height: 30px;
+            margin-top: 14px !important;
+          }
+          input[type="radio"]{
+            top:5px;
+          }
+          button.btn-lg {
+            font-size: 45px;
+          }
+          .label_width100 {
+            width:100% !important;
+          }
+          .checkbox {margin-top: 13px !important;           
+            height: 50px;
+            }
+          .input-group label, h4 {
+            
+            margin: 11px 0;
+          }
+        }
+              li {
+                line-height: 2; }
+
+              .shell {
+                  position: relative;
+                    line-height: 1; }
+                      .shell span {
+      position: absolute;
+      left: 3px;
+      top: 1px;
+      color: #ccc;
+        pointer-events: none;
+        z-index: -1; }
+        .shell span i {
+          font-style: normal;
+          /* any of these 3 will work */
+          color: transparent;
+          opacity: 0;
+          visibility: hidden; }
+
+          input.masked,
+          .shell span {
+            font-size: 16px;
+            padding-right: 10px;
+            /* background-color: transparent; */
+            text-transform: uppercase; }
+        
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 SAS — Feedback
+      h2 Ответы целиком
+      button.next(onclick="allNext()") Следующий ответ
+      button.prev(onclick="allPrev()") Предыдущий ответ
+      table#all
+        //- thead
+        //-   tr
+        //-     td Ф.И.О.
+        //-     td Паспорт
+        //-     td Дата рождения
+        //-     td Email
+        tbody.tablebody
+      h2 Дистрибуция по баллам
+      div.graphs
+      h2 Текстовые комментарии
+      div.comments
+script(src="/plotly-latest.min.js")
+script.
+  var data = [!{data}];
+  var dataParsed = [];
+  var currentEntry = 0;
+  data[0].forEach(function(el){
+    dataParsed.unshift(JSON.parse(el.polls.ba_2019_year1_module4_gb));
+  });
+  function allAnswers(currentEntry){
+    var table = document.querySelector('#all');
+    table.innerHTML = '';
+    for(let key in dataParsed[currentEntry]){
+      var row = document.createElement('tr');
+      table.appendChild(row);
+      let td1 = document.createElement('td');
+      td1.innerHTML = key;
+      var td2 = document.createElement('td');
+      td2.innerHTML = dataParsed[currentEntry][key];
+      row.appendChild(td1);
+      row.appendChild(td2);
+    }
+  }
+  function allNext(){
+    if(currentEntry == dataParsed.length - 1) currentEntry = 0;
+    else { currentEntry += 1; }
+    allAnswers(currentEntry)
+  }
+  function allPrev(){
+    if(currentEntry == 0) currentEntry = dataParsed.length - 1;
+    else { currentEntry -= 1; }
+    allAnswers(currentEntry)
+  }
+  allAnswers(currentEntry); 
+
+  // PLOTS
+  var dataNumbers = {};
+  dataParsed.forEach(function(el){
+    var entry = el['Who taught this course'];
+    if (dataNumbers[entry] === undefined){
+      dataNumbers[entry] = {};
+    }
+  });
+  
+  for (let key in dataParsed[0]){
+    if(!isNaN(dataParsed[0][key])){
+      for (let k in dataNumbers){
+        dataNumbers[k][key] = []
+      }
+    }
+  }
+
+  
+  dataParsed.forEach(function(el){
+    let teacher = el['Who taught this course'];
+    
+    for (let key in dataNumbers[teacher]){
+        if (key == 'What percentage of the mandatory readings were you able to do during the course'){
+          el[key] = Math.round(el[key]/10);
+        }
+        dataNumbers[teacher][key].push(el[key])
+    }
+  });
+       console.log(dataNumbers);
+
+  
+  for (let key in dataNumbers[Object.keys(dataNumbers)[0]]){
+    let graph = document.createElement('div');
+    graph.style.width = "100%";
+    graph.height = "70vw";
+    document.querySelector('.graphs').appendChild(graph);
+    
+    let data = [];
+    for(let i=0; i<Object.keys(dataNumbers).length; i++){
+      // console.log(dataNumbers[Object.keys(dataNumbers)[i]])
+      data.push(
+        { 
+          histfunc: 'count',
+          //x: ["1","2","3","4","5","6","7","8","9","10"],
+          x: dataNumbers[Object.keys(dataNumbers)[i]][key],
+          type: 'histogram',
+          name: Object.keys(dataNumbers)[i]
+        }
+      )
+    }
+    
+    var layout = {
+      title: key, 
+      barmode: 'group'
+    }
+    Plotly.newPlot(graph, data, layout);
+  }
+  
+  // COMMENTS
+  
+  var dataComments = {};
+  dataParsed.forEach(function(el){
+    var entry = el['Who taught this course'];
+    if (dataComments[entry] === undefined){
+      dataComments[entry] = {};
+    }
+  });
+  
+  for (let key in dataParsed[0]){
+    if(isNaN(dataParsed[0][key])){
+      for (let k in dataComments){
+        dataComments[k][key] = []
+      }
+    }
+  }
+
+  dataParsed.forEach(function(el){
+    let teacher = el['Who taught this course'];
+    
+    for (let key in dataComments[teacher]){
+        dataComments[teacher][key].push(el[key])
+    }
+    delete dataComments[teacher]['Who taught this course'];
+  });
+  
+   console.log(dataComments);
+   
+  let commentsDiv = document.querySelector('.comments');
+  for (let key in dataComments){
+     for (let k in dataComments[key]){
+       let question = document.getElementById(k);
+       if (!question){
+         question = document.createElement('div');
+         question.id = k;
+         let header = document.createElement('h3');
+         header.innerHTML = k;
+         question.appendChild(header);
+         commentsDiv.appendChild(question);
+       }
+       dataComments[key][k].forEach(function(el){
+         if(el.length > 1){
+         let comment = document.createElement('span');
+         comment.innerHTML = el;
+         question.appendChild(comment);
+         let teacher = document.createElement('span');
+         teacher.innerHTML = ' (' + key + '), ';
+         question.appendChild(teacher);
+       }
+       })
+     }
+  }
+  
+  

@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    title Poetry Voting
+    //- link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/style.css')
+    //- link(rel='stylesheet', href='/cards.css')
+    //- script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    //- script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    // script(src="/touch_sortable.js")
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="../assets/Logo__red.png")
+      h1 SAS Poetry Voting
+      -if(messages)
+        div(class="alert alert-success" style="font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;") #{messages}
+      form(id="form" action="/polls/poetry" method="post")
+        input(type="hidden" name="answer")
+        fieldset(style="height: 93vh;")
+          div(class="input-group" style="display: flex; justify-content: center;")
+            button(onclick="submitForm('TRUE')" style="border-radius: 12px; margin: 50px 80px; font-size: 100px; padding: 70px;" class="button_vote btn btn-default btn-lg dropdown-toggle btn-success" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 👍🏻
+            button(onclick="submitForm('FALSE')" style="border-radius: 12px; margin: 50px 80px; font-size: 100px; padding: 70px; background-color:red;" class="button_vote btn btn-default btn-lg dropdown-toggle btn-danger" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") 👎🏻
+          .flex-container(style="display: flex; align-items: center; margin-top: 40px;")
+            label(for="comments" style="margin-bottom: 20px;") Comments (optional)
+            textarea(rows="2" name="comments" id="comments")
+    //- script(src="/cards.js")
+    //- script(src="/default.js")
+    script.
+      function submitForm(answer){
+        var form = document.getElementById('form');
+        var input = document.querySelector('input[type="hidden"]');
+        input.value = answer;
+        form.submit();
+      }

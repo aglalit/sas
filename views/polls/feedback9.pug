@@ -1,0 +1,456 @@
+doctype html
+html
+  head
+    title SAS — Feedback
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    // load bootstrap css
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Regular'; 
+      
+      -moz-osx-font-smoothing: grayscale;   /* Firefox */
+     -webkit-font-smoothing: antialiased; /* WebKit  */
+      }
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      @font-face {
+        font-family: 'Agipo-Regular';
+        src:url('../fonts/agipo/Agipo-Regular.woff');
+      }
+      .btn.btn-default.btn-lg {
+        background: lightgray;
+      }
+      h2 {margin-bottom:30px; margin-top:50px;
+      font-family: 'Agipo-Bold',Arial,sans-serif;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+        font-family: 'Agipo-Bold',Arial,sans-serif;
+      }
+      h3 {
+        margin-top:50px;
+        font-size: 1.5em;
+        font-weight: 400;
+        margin-bottom:30px;
+        font-family: 'Agipo-Regular',Arial,sans-serif;;
+      }
+      /* .displayTeacher {display:none;} */
+      .currentAnswerCounter {font-family: Agipo-Bold;}
+      .allLinks {display:none;}
+      table {max-width:100%;}
+      
+      thead {
+        font-size: 12px;
+        border-bottom:1px red solid;
+        hyphens: auto;
+      }
+      .all tr td:first-child {
+        font-size: 12px;
+        vertical-align: middle;
+      }
+      .all tr {
+        border-top: 1px red solid;
+      }
+      td {
+        text-align: left; 
+        padding-top:10px;
+        vertical-align: top;
+      padding: 5px;
+      }
+      .all td {
+        border-right: 1px red solid;
+      }
+      .all td:last-child {
+        border-right: none;
+      }
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+      }
+      td.key {
+        font-family: 'Agipo-Bold';
+        padding-right:30px;
+        width:70%;
+      }
+      
+      img {
+        width:80%;
+        margin-top:10px;
+      }
+      .logo {padding-bottom:30px}
+      a {color:#f00}
+      .container{
+        width:98% !important;
+      }
+      .input-group{
+        margin-bottom:20px;
+      }
+      .input-group label, h4 {
+        font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 18px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+      }
+      form {
+        margin-top: 30px;
+      }
+      fieldset {
+        margin-bottom:30px;
+      }
+      label,legend,h4 {
+        text-align: left;
+        width:100%;
+      }
+      label[for="agreement-checkbox"]{
+        width:92%;
+        margin-top:0;
+      }
+      #agreement-checkbox {
+        width:5%;
+        margin-left: 10px;
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        float:left;
+        width:75%;
+        font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
+      }
+      .label_width100 {
+        width:100%;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        top:0px
+        }
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #f00;
+        }
+        button {
+          background-color: #f00 !important;
+          border-color: #f00 !important;
+          margin: 0 25px 25px;
+          padding: 10px 15px;
+          border-radius:50px;
+        }
+        
+        .checkbox {
+          width: 5% !important;
+          height: 30px;
+          margin-top: 14px !important;
+        }
+        
+        input[type="checkbox"] {
+          /* -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none; */
+
+          width: 38px;
+          height: 38px;
+
+          border: 2px solid #999;
+          transition: 0.2s all linear;
+          outline: none;
+          margin-right: 15px;
+
+          position: relative;
+          top:0;
+          zoom:1.1;
+          }
+
+
+        @media (max-width: 1024px) {
+
+          body{padding-top:10px}
+          .container{
+          width:95%;
+          }
+          h3 {
+            font-size: 2.5em;
+          }
+          h2 {
+            font-size: 3em;
+          }
+          .jumbotron h1 {
+            font-size: 3.5em;
+          }
+        .input-group  label, h4 {
+          font-size:45px ;
+          margin-bottom:20px;
+          width:100%;
+          }
+          label[for="agreement-checkbox"]{
+            width:91%;
+            margin-top:0;
+          
+          }
+          #agreement-checkbox {
+            width:5%;
+            margin-left: 10px;
+              top: 10px;
+          }
+          .checkbox {
+            width: 5% !important;
+            height: 30px;
+            margin-top: 14px !important;
+          }
+          input[type="radio"]{
+            top:5px;
+          }
+          button.btn-lg {
+            font-size: 45px;
+          }
+          .label_width100 {
+            width:100% !important;
+          }
+          .checkbox {margin-top: 13px !important;           
+            height: 50px;
+            }
+          .input-group label, h4 {
+            
+            margin: 11px 0;
+          }
+        }
+              li {
+                line-height: 2; }
+        
+body
+  div
+    .jumbotron.text-center
+      .logo
+        a(target="_blank" href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 SAS — Course Evaluations — q4 2020-2021
+      .row
+        div(class="col-xs-12" style="display: flex; justify-content: center; flex-direction:column; align-items:center; width: 100%;")
+            p
+              br
+              -if(user)
+                span Email: #{user.google.email}
+              br
+              -if(user)
+                span Name: #{user.google.name}
+            a.btn.btn-default.btn-lg(href='/logout') Log out
+      h2.teacher
+      div.allLinks
+        //- button(class="exportCSV" onclick="exportCSVFile(dataToExportCSV, 'feedback-2020-module1-5-9')") Download in CSV
+        ul(class="list-unstyled")
+          li
+            h3.ba_2020_q4_electives Electives and Major Courses
+            span Links: 
+            span 
+              a(target="_blank" href="/feedback9?s=ba_2020_q4_electives&t=Giacomo Andreoletti — Time travel, Louis Vervoort — Time travel" data-size="20") Giacomo Andreoletti — Time travel, Louis Vervoort — Time travel
+              br
+            span 
+              a(target="_blank" href="/feedback9?s=ba_2020_q4_electives&t=Jay Silverstein — Perspectives in Evolution, Ayla Arslan — Perspectives in Evolution" data-size="16") Jay Silverstein — Perspectives in Evolution, Ayla Arslan — Perspectives in Evolution
+              br
+            span 
+              a(target="_blank" href="/feedback9?s=ba_2020_q4_electives&t=Irina Sadovina — Truth and Conspiracy" data-size="20") Irina Sadovina — Truth and Conspiracy
+              br
+            span 
+              a(target="_blank" href="/feedback9?s=ba_2020_q4_electives&t=Jay Silverstein — Humanity past present future" data-size="20") Jay Silverstein — Humanity past present future
+              br
+            span 
+              a(target="_blank" href="/feedback9?s=ba_2020_q4_electives&t=Krishna Muthukumarappan — The Social Brain" data-size="20") Krishna Muthukumarappan — The Social Brain
+              br
+            span  
+              a(target="_blank" href="/feedback9?s=ba_2020_q4_electives&t=Corinne Doria — Pandemic" data-size="20") Corinne Doria — Pandemic
+              br
+            span 
+              a(target="_blank" href="/feedback9?s=ba_2020_q4_electives&t=Julie Reshe — Trauma Depression Anxiety in Life and Learning" data-size="20") Julie Reshe — Trauma Depression Anxiety in Life and Learning
+              br
+            span 
+              a(target="_blank" href="/feedback9?s=ba_2020_q4_electives&t=Peter Lesnik — Contemporary World Cinema" data-size="20") Peter Lesnik — Contemporary World Cinema (1980s–present)
+              br
+            span 
+              a(target="_blank" href="/feedback9?s=ba_2020_q4_electives&t=Alexander Usvitskiy — Experimental Economics" data-size="20") Alexander Usvitskiy — Experimental Economics
+              br
+            span 
+              a(target="_blank" href="/feedback9?s=ba_2020_q4_electives&t=Erika Wolf — Art in Public" data-size="9") Erika Wolf — Art in Public
+              br
+            span 
+              a(target="_blank" href="/feedback9?s=ba_2020_q4_electives&t=Erzsebet Pasztor — Limits of Exponential Growth" data-size="14") Erzsebet Pasztor — Limits of Exponential Growth
+              br
+            span 
+              a(target="_blank" href="/feedback9?s=ba_2020_q4_electives&t=Marko Turk — Intercultural Education" data-size="19") Marko Turk — Intercultural Education
+              br
+            span 
+              a(target="_blank" href="/feedback9?s=ba_2020_q4_electives&t=Corinne Doria — When Civilizations Meet: Europeans in the World, Tomasz Blusiewicz — When Civilizations Meet: Europeans in the World" data-size="14") Corinne Doria — When Civilizations Meet: Europeans in the World, Tomasz Blusiewicz — When Civilizations Meet: Europeans in the World
+              br
+            span 
+              a(target="_blank" href="/feedback9?s=ba_2020_q4_electives&t=Vladimir Prischepa — Web-backend,  Victor Skiba — Web-backend" data-size="5") Vladimir Prischepa — Web-backend,  Victor Skiba — Web-backend
+              br
+            span 
+              a(target="_blank" href="/feedback9?s=ba_2020_q4_electives&t=Alexander Usvitskiy — ECON_Behavioral Economics" data-size="6") Alexander Usvitskiy — ECON_Behavioral Economics
+              br
+            span 
+              a(target="_blank" href="/feedback9?s=ba_2020_q4_electives&t=Sulgi Lie – FIME_Transmedia Storytelling" data-size="27") Sulgi Lie – FIME_Transmedia Storytelling
+              br
+          li
+            h3.ba_2021_year2_q4_gb_1 Great Books: Literature 2.1
+            span Links: 
+            span
+              a(target="_blank" href="/feedback9?s=ba_2021_year2_q4_gb_1&t=Sadovina" data-size="37") Irina Sadovina, 
+          li
+            h3.ba_2021_year2_q4_gb_2 Great Books: Literature 2.2
+            span Links: 
+            span
+              a(target="_blank" href="/feedback9?s=ba_2021_year2_q4_gb_2&t=Wintersgill" data-size="37") Caroline Wintersgill, 
+          li
+            h3.ba_2021_year2_q4_gb_3 Great Books: Literature 2.3
+            span Links: 
+            span
+              a(target="_blank" href="/feedback9?s=ba_2021_year2_q4_gb_3&t=Tankhilevich" data-size="37") Alexandr Tankhilevich,
+          li
+            h3.ba_2021_year2_q4_gb_4 Great Books: Literature 2.4
+            span Links: 
+            span
+              a(target="_blank" href="/feedback9?s=ba_2021_year2_q4_gb_4&t=Longden" data-size="37") Joanna Longden, 
+          li
+            h3.ba_2020_year1_q4_gb Great Books: Philosophy and Social Thought 3
+            span Links: 
+            span
+              a(target="_blank" href="/feedback9?s=ba_2020_year1_q4_gb&t=Stream A - Siyaves Azeri" data-size="15") Stream A - Siyaves Azeri
+              br
+            span
+              a(target="_blank" href="/feedback9?s=ba_2020_year1_q4_gb&t=Stream B - Siyaves Azeri" data-size="17") Stream B - Siyaves Azeri
+              br
+            span
+              a(target="_blank" href="/feedback9?s=ba_2020_year1_q4_gb&t=Stream B - Julie Reshe" data-size="18") Stream B - Julie Reshe
+              br
+            span
+              a(target="_blank" href="/feedback9?s=ba_2020_year1_q4_gb&t=Stream C - Julie Reshe" data-size="16") Stream C - Julie Reshe  
+          li
+            h3.ba_2020_year1_q4_history History 3
+            span Links: 
+            span
+              a(target="_blank" href="/feedback9?s=ba_2020_year1_q4_history&t=Jones" data-size="71") Peter Jones
+          li
+            h3.ba_2020_year1_q4_tfy TFY
+            span Links: 
+            span
+              a(target="_blank" href="/feedback9?s=ba_2020_year1_q4_tfy&t=Melina Aarnikoivu, Giacomo Andreoletti, Ayla Arslan" data-size="71") Melina Aarnikoivu, Giacomo Andreoletti, Ayla Arslan
+          li
+            h3.ba_2020_year1_q4_it IT 2
+            span Links: 
+            span
+              a(target="_blank" href="/feedback9?s=ba_2020_year1_q4_it&t=Vitaly Nikolaev" data-size="19") Vitaly Nikolaev
+              br
+            span
+              a(target="_blank" href="/feedback9?s=ba_2020_year1_q4_it&t=Alexey Lysenko" data-size="51") Alexey Lysenko
+            h3.ba_2020_year2_q4_dt Design Thinking 2
+            span Links: 
+            span
+              a(target="_blank" href="/feedback9?s=ba_2020_year2_q4_dt&t=David Dusseault" data-size="37") David Dusseault
+          //- li
+          //-   h3.ba_2020_year4_q4_ec Effective Communication 3
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback9?s=ba_2020_year4_q4_ec&t=Andrey Shcherbenok, Anastasia Rusakova, Daniel Kontowski, Artem Bagiev" data-size="37") Andrey Shcherbenok, Anastasia Rusakova, Daniel Kontowski, Artem Bagiev
+          //- li
+          //-   h3.ba_2020_q4_rscommon Common Research Seminar
+          //-   span Links: 
+          //-     a(target="_blank" href="/feedback9?s=ba_2020_q4_rscommon&t=Erika Wolf — common" data-size="75") Erika Wolf — common
+          //- li
+          //-   h3.ba_2020_q4_rs Research Seminars
+          //-   span Links: 
+          //-     a(target="_blank" href="/feedback9?s=ba_2020_q4_rs") All, 
+          //-   span
+          //-     a(target="_blank" href="/feedback9?s=ba_2020_q4_rs&t=Lesnik" data-size="10") Peter Lesnik, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback9?s=ba_2020_q4_rs&t=Maxim" data-size="9") Maxim Alyukov, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback9?s=ba_2020_q4_rs&t=Wolf" data-size="17") Erika Wolf, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback9?s=ba_2020_q4_rs&t=Didenko" data-size="17") Alexander Didenko, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback9?s=ba_2020_q4_rs&t=Lie" data-size="16") Sulgi Lie
+          //-   span 
+          //-     a(target="_blank" href="/feedback9?s=ba_2020_q4_rs&t=Doria" data-size="6") Corinne Doria, 
+          //-   span 
+          //-     a(target="_blank" href="/feedback9?s=ba_2020_q4_rs&t=Nikolaev" data-size="9") Vitaly Nikolaev
+          //-   span 
+          //-     a(target="_blank" href="/feedback9?s=ba_2020_q4_rs&t=Pásztor" data-size="4") Erzsébet Pásztor
+          //- li
+          //-   h3.ma_2020_year1_q4_md Multimedia Design
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback9?s=ma_2020_year1_q4_md&t=Kleshchev" data-size="15") Sergey Kleshchev
+          li
+            h3.ma_2020_year1_q4_mooc MOOC
+            span Links: 
+            span
+              a(target="_blank" href="/feedback9?s=ma_2020_year1_q4_mooc&t=Alexandra Skorodumova" data-size="15") Alexandra Skorodumova
+          li
+            h3.ma_xhe_2020_year1_q4_ps4 Professional Seminar 4
+            span Links: 
+            span
+              a(target="_blank" href="/feedback9?s=ma_xhe_2020_year1_q4_ps4&t=Dara Melnyk" data-size="7") Dara Melnyk
+          li
+            h3.ma_xhe_2020_year1_q4_gei Governance of Educational Innovations
+            span Links: 
+            span
+              a(target="_blank" href="/feedback9?s=ma_xhe_2020_year1_q4_gei&t=Tung Tung Chan" data-size="7") Tung Tung Chan
+          li
+            h3.ma_xhe_2020_year1_q4_tl3 Teaching and Learning 3
+            span Links: 
+            span
+              a(target="_blank" href="/feedback9?s=ma_xhe_2020_year1_q4_tl3&t=Marko Turk" data-size="7") Marko Turk
+          //- li
+          //-   h3.ma_xhe_2020_year1_q4_tl Teaching and Learning
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback9?s=ma_xhe_2020_year1_q4_tl&t=Turk" data-size="7") Marko Turk
+          //- li
+          //-   h3.ma_xhe_2020_year1_q4_ehe Economics of Higher Education
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback9?s=ma_xhe_2020_year1_q4_ehe&t=Prakhov" data-size="7") Ilya Prakhov
+          //- li
+          //-   h3.ma_xhe_2020_year1_q4_ps3 Professional Seminar 3
+          //-   span Links: 
+          //-   span
+          //-     a(target="_blank" href="/feedback9?s=ma_xhe_2020_year1_q4_ps3&t=Dara Melnyk, Marko Turk, Daniel Kontowski" data-size="7") Dara Melnyk, Marko Turk, Daniel Kontowski
+          
+          
+      h2.displayTeacher Full answers
+      button.btn.btn-default.btn-lg.displayTeacher(onclick="displayAllAnswers()") Display all answers
+      br
+      button(class="prev displayTeacher" onclick="allPrev()") < Previous answer
+      span.currentAnswerCounter
+      button(class="next displayTeacher" onclick="allNext()") Next answer >
+      table#all
+        tbody.tablebody
+      h2 Rating scale answers (histograms)
+      div.graphs
+      h2.displayTeacher Text answers
+      div.comments
+script(src="/plotly-latest.min.js")
+script.
+  var data = [!{data}];
+script(src="/feedback9.js")  
+  
+  

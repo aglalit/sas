@@ -1,0 +1,338 @@
+doctype html
+html
+  head
+    title Electives
+    link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/cards.css')
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js")
+    script(src="/touch_sortable.js")
+body
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 Electives. Year 2021–2022. Preliminary survey. 
+      h3 Sort the following electives in the order from the most preferable to the least preferable one (from the top to the bottom).
+      h3 NOTE: Click on a course title to open its description. Click "Not interested" if you are not interested in taking this course — it will be excluded from the list.
+      form(id="form" action="/polls/electives_pre_2020" method="post")
+        // DON'T REMOVE THIS INPUT!!!
+        input(type="hidden") 
+        fieldset   
+            .cards.offset-sm-1.col-sm-11
+            .input-group
+                label(for="Do you have any ideas of courses you would like to take?") Do you have any ideas of courses you would like to take?
+                textarea(rows="4" class="form-control" name="Do you have any ideas of courses you would like to take?") 
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    script(src="/cards.js")
+    script(src="/default.js") 
+    script.
+            var cards = document.querySelector('.cards');
+          
+              var dict = [{
+          		"instructors": "Alexander Usvitskiy (New professor!)",
+          		"type": "Basic",
+          		"title": "Experimental Economics",
+          		"description": "TBA"
+          	},{
+          		"instructors": "Alexander Usvitskiy (New professor!)",
+          		"type": "Basic",
+          		"title": "Introduction to Economics",
+          		"description": "TBA"
+          	},{
+          		"instructors": "Anne Mulhall",
+          		"type": "Basic",
+          		"title": "Après ‘68: Introduction to Contemporary French Thought ",
+          		"description": "This course will uncover and assess the most potent writings in French thought from the 1960s until now. In doing so, we will try to understand the structural changes taking place in French society alongside the outpouring of new philosophical materials. Lastly, we will investigate how French thought has had a lasting global influence in the humanities and social sciences. Among the authors we will be investigating are Michel Foucault, Jacques Derrida, Alain Badiou, Roland Barthes, Hélène Cixous, Julia Kristeva, François Lyotard, Gilles Deleuze, Jean-Luc Nancy, Bernard Stiegler, François Laruelle, Catherine Malabou, and the Tiqqun collective."
+          	},{
+          		"instructors": "Anne Mulhall",
+          		"type": "Basic",
+          		"title": "Theatres of the Possible: Contemporary Feminist Poetry and Potentiality",
+          		"description": "What is a human actively incapable of doing within a contemporary liberal democracy? To explore this question in a new way, this course will put philosophical perspectives on potentiality, impotentiality and vulnerability, from philosophers such as Giorgio Agamben, Adriana Cavarero and others, into contact with recent writing by contemporary feminist poets, including Bhanu Kapil, Anne Boyer and Yrsa Daley-Ward. The aim of this course, then, is to widen ongoing interrogations of the question of “impotentiality” in contemporary philosophy to include gendered and other approaches. Over-layering our engagement with ideas from political theory, specifically the work on ‘democratic sacrifice’ by Juliet Hooker and on ‘democratic disrepair’ by Bonnie Honig, and from critical race studies, notably work by Kevin Quashie, Tina Campt, and Christine Sharp, we will explore the possibility that these recent female poets provides us with an inspiring starting point to consider issues of human capability and incapability in the present day."
+          	},{
+          		"instructors": "Ayla Arslan (New Professor!)",
+          		"type": "Basic",
+          		"title": "Genetic Engineering: A Primer",
+          		"description": "TBA"
+          	},{
+          		"instructors": "Corinne Doria Matvey Lomonosov Julie Reshe  Erika Wolf  and others",
+          		"type": "Basic",
+          		"title": "Introductory Gender  and Sexuality Course",
+          		"description": "This is an introductory course on issues related to gender and sexuality that will be taught in a modular manner with contributions from across the majors (i.e., “Gender and Sexuality across the Disciplines”). "
+          	},{
+          		"instructors": "Corinne Doria",
+          		"type": "Basic",
+          		"title": "In the midst of a pandemic: From the plague of  Athens of 430 BC to COVID-19",
+          		"description": "In this you’ll learn how societies and civilizations have responded to contain and fight epidemics (like quarantine laws, drug development policies), and about the multiple implications (economic, political, emotional) of the outbreak of lethal infectious diseases"
+          	},{
+          		"instructors": "Corinne Doria",
+          		"type": "Basic",
+          		"title": "Disablity Studies",
+          		"description": "This course will focus on conceptual models used in studying disability, the history of legislative and social policy for impaired persons, representations of disability in literature, the arts and new media."
+          	},{
+          		"instructors": "Corinne Doria David Melbye Jay Silverstein",
+          		"type": "Basic",
+          		"title": "(Un)naturally Human",
+          		"description": "A course related to the work and interests of the (Un)naturally Human research team  (see SAS website for more about the team)"
+          	},{
+          		"instructors": "David Dusseault David Melbye",
+          		"type": "Basic",
+          		"title": "“The Chaos of Cool”: The Cultural Significance of Seijun Suzuki",
+          		"description": "Suzuki was a cultural icon, corporate rebel and a creative genius.  His acting directing and script writing career spanned 4 decades; a period through which he produced a wide body of work ranging from scathing social commentary of Japanese society just after WWII to slick adaptations of American film noir for Japanese audiences. His visually chaotic approach to film making presents not only social commentary on his life and times but provides the material for a study in just how personal creativity can be transposed on film."
+          	},{
+          		"instructors": "David Dusseault (with contributions from David Melbye, Jay Silverstein, Erika Wolf, and guest speakers)",
+          		"type": "Basic",
+          		"title": "The African Century?",
+          		"description": "The 21st century is being hailed as that of Africa. According to the world’s financial press and influential economic think tanks, the stars are aligning for the continent to finally shed its economic backwardness and political instability by which it has been plagued for the past 50 years. With all deference to the most optimistic of political economic outlooks, this one sided narrative of the African century neglects the rich social, cultural and artistic heritage that the people of the continent embody. Logically this course then seeks to move beyond the speculative and often repetitive geo-economic and geo-political discourse.  Africa is a mosaic best illustrated by its cultural, social and intellectual heritage. I want to move beyond the headlines and allow students to delve into the continent’s social diversity (Jay Social Anthropology & Archaeology: think the Muslim North, The Christian East and the tribal South); the country’s diverse  artistic heritage (contemorary African Art w / Erika) its bourgening film industry (Nollywood: Melbye & Dusseault); contemporary photography (Dusseault); and if there is time, musical genres ( invited expert ?)."
+          	},{
+          		"instructors": "David Dusseault Erika Wolf ",
+          		"type": "Basic",
+          		"title": "The Street: Photography in the Public Realm",
+          		"description": "This course will present a critical historical look into street photography and its role of capturing the dynamic relationship between the urban environment and the city’s inhabitants. Students will be challenged to not only examine the work of various photographers but become practitioners of the trade with their work and study culminating in a virtual exhibition of their work at the end of the term."
+          	},{
+          		"instructors": "David Melbye (with a visiting professor in FIME)",
+          		"type": "Basic",
+          		"title": "Film Appreciation ",
+          		"description": "This course provides a rudimentary exposure to film analysis, and so is ideal for first-year students interested in the FIME major. A global sample of narrative films from short form to feature-length will be considered in terms of their narrative and stylistic approaches, as well as their corresponding cultural contexts. Students will practice exploring the ways thematic meaning is communicated through various conventions of visual storytelling, and should come away with a raised awareness of cinema as an artform."
+          	},{
+          		"instructors": "David Melbye ",
+          		"type": "Advanced",
+          		"title": "New Hollywood",
+          		"description": "“New Hollywood” refers to a very unusual and fascinating  period in American film history, the 1970s, when major studios, in an effort to save themselves from imminent bankruptcy, entrusted their production agendas to young directors. These directors took inspiration from boldly experimental European and Asian auteur filmmakers--in order to critique the postwar establishment. This course will examine the major directors and some of the most characteristic films emerging from this short-lived moment of artistic vision and social consciousness."
+          	},{
+          		"instructors": "David Melbye, Erika Wolf ",
+          		"type": "Advanced",
+          		"title": "Russian Cinema",
+          		"description": "This course provides a broad survey of Russian and Soviet cinema from the silent period through the 1980s, one decade per week. Commencing with early Soviet montage filmmakers such as Eisenstein, Vertov, Shub,  and Pudovkin,  we will proceed to important postwar auteurs like Kalatozov, Parajanov, and Tarkovsky, and eventually come to important filmmakers from the 1980s, such as Elem Klimov. The larger intention of the course is to expose SAS students to important Russian films they might not otherwise discover on their own. Prerequisite: FF&H I-III or Russian Culture (CULT major course)"
+          	},{
+          		"instructors": "Erika  Wolf",
+          		"type": "Advanced",
+          		"title": "Art in Public ",
+          		"description": "Examines critical issues of the public sphere, control of public space, art in public, and presumed audiences  in both international, national,  and local contexts. Students will read key critical texts to develop conceptual frames for analysis that they will then apply to a short research project on a specific example of public art. Requirement: Students must have completed the Art core course."
+          	},{
+          		"instructors": "Erika Wolf",
+          		"type": "Advanced",
+          		"title": "Photography: Technology, Document, Art",
+          		"description": "A historical survey of the invention, cultural significance, and aesthetic impact of photography, from its origins in the 19th century to the present. Requirement: Students must have completed the Art core course."
+          	},{
+          		"instructors": "Giacomo Andreoletti",
+          		"type": "Advanced",
+          		"title": "Formal Logic 2",
+          		"description": "This course is a continuation of the elective “Formal Logic.”  It covers advanced parts of formal logic (modal logic, temporal logic, and inductive logics). Prerequisite: Having passed the elective “Formal Logic.” "
+          	},{
+          		"instructors": "Giacomo Andreoletti (with contributions by Louis Vervoort)",
+          		"type": "Basic",
+          		"title": "Time and Time Travel ",
+          		"description": "This is an introductory course on time and time travel. It explores some contemporary philosophical theories of time and some of the paradoxes related to the possibility of traveling in time. The course may include some seminars by Louis Vervoort "
+          	},{
+          		"instructors": "Giacomo Andreoletti",
+          		"type": "Basic",
+          		"title": "Epistemology",
+          		"description": "The course offers an introduction into some classical problems of epistemology from the perspective of contemporary philosophy . The course offers a survey of various theories of knowledge (what is the nature of knowledge? how do we know?) such as foundationalism, coherentism and reliabilism. Moreover, the course will present some skeptical paradoxes about the possibility of knowledge and will investigate how different theories of knowledge can address those paradoxes."
+          	},{
+          		"instructors": "Jay Silverstein",
+          		"type": "Basic",
+          		"title": "Humanity Past, Present, and Future",
+          		"description": "Anthropology is the study of human biological and behavioral diversity. In this course we will use the tools of anthropology to examine how humanity arrived at its current state and what the future may hold based on the patterns of the past. Using paleoanthropological, archaeological, cultural, and genetic case studies, the course will survey the key transformations in the history of Homo sapiens."
+          	},{
+          		"instructors": "Jay Silverstein and Liz Pazstor (New Professor!) (with possible contributions from Julie Reshe) ",
+          		"type": "Advanced",
+          		"title": "Rethinking Darwinism",
+          		"description": "On 1 July 1858, the foundations for modern evolutionary theory were presented at the Linnean Society in London on behalf of Charles Darwin and Alfred Wallace.  With the publication of On the Origin of Species by Means of Natural Selection, or the Preservation of Favoured Races in the Struggle for Life in the following year, the basic concept of evolution became fixed in the body of science and in the human psyche—Darwinism became established as a natural law. In the almost 200 years since then, Darwinian Theory has not only been applied to speciation, but to any system in which there is a population of competing species struggling to be more successful than the others, be it business, war, economic strata, or social status.  This course will consider the nature of Darwinian thought in the human world view and explore fundamental flaws and limitations of Darwinism in bio-evolutionary theory and in its application outside of speciation. Requirement: Students must have completed the course “Problems of Modern Sciences.”"
+          	},{
+          		"instructors": "Jay Silverstein (possibly co-taught with Julie Reshe)",
+          		"type": "Basic",
+          		"title": "Revolution and Socio-Political Evolution",
+          		"description": "The promise of revolution is a reborn society perhaps best expressed in the ideas of the French Revolution, Liberté, Égalité, Fraternité.  What are the circumstances that lead to revolution?  What are key trigger points?  How do people become involved? What role do other nations play? And how do leaders emerge?  This class will explore the causes and consequences of revolution."
+          	},{
+          		"instructors": "Jay Silversetein (with contributions from Juliette Colinas)",
+          		"type": "Advanced",
+          		"title": "Unconventional Thinking and Shifting Paradigms in Science",
+          		"description": "Progress in science occurs not through the collective recapitulation of knowledge, but through those rare minds that, often in the face of persecution, ridicule, heresy, and academic ostracism, challenge established paradigms.  Using the framework presented by Thomas Kuhn in The Structure of Scientific Revolutions, this course will examine case studies of genius evaluating the cultural forces that nurtured and stifled creativity. Requirement: Students must have completed the core course “Problems of Modern Sciences.”"
+          	},{
+          		"instructors": "Julie Reshe (possibly with contributions from other faculty)",
+          		"type": "Basic",
+          		"title": "Love and Sociality: Philosophy, Psychoanalysis, Psychology, Neurobiology.",
+          		"description": "This course will discuss the phenomenon of love from the perspectives of philosophy, neurobiology, psychoanalysis, and psychology. Apart from romantic, parental, companionship love, the course will discuss (and practice) a phenomenon of collective love and solidarity understood as a process and a field of training for constructing a progressive society."
+          	},{
+          		"instructors": "Julie Reshe",
+          		"type": "Basic",
+          		"title": "Psychoanalysis and the Pursuit of Happiness ",
+          		"description": "In this course, we will focus on the history and theory of psychoanalysis and contemporary psychotherapies in the context of our happy-oriented culture. In our days happiness is thought to be our organic natural state, while sadness and emotional suffering are stigmatized as a pathology. We believe that at all costs we have to stay positive. Influenced by this prevailing cultural paradigm (or imposing it?) most psychotherapies today aim towards alleviating emotional suffering and towards the supposed goal of greater happiness. Freud, the father of psychoanalysis, perceived the emergence of today’s positivity-oriented psychotherapy as a distortion of his original model. He openly acknowledged universal suffering as being constituent of being human. Psychoanalysis proper rather has a function of disillusionment that opposes the aims of the overly optimistic psychologies of today. This course will introduce students to Freud’s initial model of psychoanalysis and trace its subsequent evolution up to the present time. We will pay particular attention to Michel Foucault’s and Catherine Malabou’s criticism of psychoanalysis and psychotherapies. We will also consider neo-Freudianism, Freudo-Marxism, existential psychoanalysis, Ljubljana psychoanalysis (Slavoj Žižek, Alenka Zupančič) and the Depressive Realism hypothesis in psychology."
+          	},{
+          		"instructors": "Julie Reshe (with contributions from Matvey Lomonosov)",
+          		"type": "Basic",
+          		"title": "Trauma Studies",
+          		"description": "Psychological trauma affects everyone at some point in their lives, be it through a traumatic life event, loss, disappointment, or illness. Collective trauma, when a group of people experiences a shared traumatic event, shapes collective history. Providing an opportunity to understand individual and collective psychological trauma and their role in identity formation, this course offers a diverse foundation for learning about trauma for a various range of disciplines (philosophy, psychoanalysis, psychology, cultural studies, neurobiology). You will learn experientially through lectures, group psychotherapy, and seminars aimed at developing your personal awareness, skills and knowledge. Invited speaker: Oxana Moroz"
+          	},{
+          		"instructors": "Julie Rehse",
+          		"type": "Basic",
+          		"title": "Learning, Anxiety, and Stress",
+          		"description": "Stress and anxiety are inevitable. Stress is an integral component of a learning process and life that empowers us to become active learners and self-disciplined critical thinkers. The trick with stress and anxiety is that when trying to avoid them or reduce them we only feel more stressed and anxious. In this class, you will gain a deep understanding of stress and anxiety mechanisms. The class will help to develop good academic habits, provide a range of clear, easy-to-implement strategies to manage stress, and establish academic and personal self-discipline, reliable tools to survive in a tough competitive world.  Note: This course is related to the work and interests of the SAS research team “Education in the Tragic Key.”"
+          	},{
+          		"instructors": "Juliette Colinas",
+          		"type": "Basic",
+          		"title": "Nutrition, health, and environment",
+          		"description": "Meat, no meat? Grains, no grains? Based on the primary literature, we will review and discuss the latest findings and debates concerning human diet with respect to health and environmental sustainability."
+          	},{
+          		"instructors": "Juliette Colinas and Krishna-K",
+          		"type": "Basic",
+          		"title": "Personality Psychology",
+          		"description": "The field of personality psychology has burgeoned in recent years, and the popularity of some personality frameworks has risen sharply among the general public. Here we will overview theories of personality and their neural correlates, and learn to critically evaluate some claims made in the general media."
+          	},{
+          		"instructors": "Juliette Colinas and Matvey Lomonosov",
+          		"type": "Basic",
+          		"title": "Ecological Citizenship: Towards Belonging, Attachment and Solidarity of the Future?",
+          		"description": "This course is a research-based elective. We first introduce different analytical frames for understanding citizenship, including the CITI team’s original take on late national citizenship.  Then we move to discuss the  primary literature in human geography, environmental psychology, political theory,  political sociology and urban studies that suggests ways of including the environment into the category of citizenry. Finally, we focus on the topic of how people connect to place is linked to environmental action. The course will include multiple discussion sessions as our ideas (on interdisciplinarity, citizenship and environmental action) are still in gestation."
+          	},{
+          		"instructors": "Krishna-K",
+          		"type": "Basic",
+          		"title": "Breakthroughs in Biology",
+          		"description": "This course will discuss about some of the greatest breakthroughs in life sciences"
+          	},{
+          		"instructors": "Krishna-K",
+          		"type": "Basic",
+          		"title": "The Social Brain: Neurobiology of social behaviours",
+          		"description": "This course explores the neural basis of human social interaction. Human beings are inherently social creatures (social animals), so that all aspects of our cognition and behavior are to some extent social. The goal of this course is to explore the brain processes behind such human behaviours and social interactions. Topics addressed include the need for connection between brains to thrive, learning and memory, good stress/bad stress, emotions, love, ingroup-outgroup, politics, nationalism, addiction, sex etc. we will also explore ‘plasticity’ brain’s capability to be shaped by cultural and environmental influences, social interactions, and contemplative practice."
+          	},{
+          		"instructors": "Krishna-K",
+          		"type": "Basic",
+          		"title": "Sociobiology",
+          		"description": "Sociobiology course is a relative newcomer to the social and biological sciences, and will explain  social or human behaviour within the conceptual framework of evolutionary biology. This will also give an integrated approach to understand human behavior by attempting to explain how specialized brain mechanisms, designed by a long history of evolution by natural selection, guide our present day societal behavior"
+          	},{
+          		"instructors": "Louis Vervoort",
+          		"type": "Basic",
+          		"title": "Introduction to Philosophy of Science",
+          		"description": "This course is an introduction to philosophy of science, containing two parts: 1) a very succinct overview of some key moments in the history of natural science (physics and biology); and 2) the main part on philosophy of science proper, focusing on the contemporary period (essentially the last century). In this course we will study questions as: What is science ? Which different sciences exist ? What is pseudoscience ? What are the main ingredients of scientific discovery ? Can we characterize ‘strokes of genius’ in the sciences ? “How did the geniuses do it”? What is scientific creativity?"
+          	},{
+          		"instructors": "Maxim Alyukov",
+          		"type": "Basic",
+          		"title": "Political Communication",
+          		"description": "This course examines the main approaches to the analysis of media, and their relation to politics and public opinion. How does the media influence elites, and how do elites influence the media? How does the media affect the views, opinions, behaviors of people? What is the role of new media, such as the Internet and social media, in politics and opinion formation? The course considers all these questions through the lenses of both classical and contemporary literature in communication research, social and cognitive psychology, sociology and political science. The course also includes a section focusing on the specific features of the post-soviet media landscape, with a particular focus on Russia. This course is both theoretical and practical: it includes the application of knowledge and methods from political communication by analyzing and explaining real news."
+          	},{
+          		"instructors": "Matvey Lomonosv",
+          		"type": "Basic",
+          		"title": "Sociological Imagination",
+          		"description": "The course aims to familiarize students with the discipline of sociology, develop sociological imagination, and prepare to take additional classes in a broad range of social sciences.  The course (a) introduces you to common sociological subjects and concepts, (b) sheds light on different perspectives within sociology, (c) encourages you to think deeply, critically, and coherently about our social world, (d) helps you establish links between theory, problems, and policy"
+          	},{
+          		"instructors": "Matvey Lomonosv",
+          		"type": "Basic",
+          		"title": "Nations and Nationalism",
+          		"description": "The course is set to discuss, problematize and answer all these questions. It covers the most important topics in nationalism and ethnicity. As lectures and seminars unfold, we will be marching through the themes of contemporary theories of nationalism, national identity formation, nation-building and statecraft, ethnic conflict, domestic ethnic politics, minority-majority relations and international disputes, nationalism and citizenship and the role of gender in production of nationhood. "
+          	},{
+          		"instructors": "Matvey Lomonosv",
+          		"type": "2 course sequence",
+          		"title": "Ethnicity, Nationality, Race I-II",
+          		"description": "A rethinking of the “Nations and Nationalism” (also presented as an option for 2020-21), which further goes into the issues of ethnic and race relations and includes more discussion and creative assignments. Those who took “Nations and Nationalism” previously cannot take this 2 course sequence/"
+          	},{
+          		"instructors": "Matvey Lomonosv",
+          		"type": "2 course sequence",
+          		"title": "Introduction to International Development I-II",
+          		"description": "An introductory course that covers key approaches,  ideas, actors,  issues,  and critiques of international development. It fosters the understanding of development beyond  economic growth alone, seeing it as a broader, integral societal and cultural process. The first part of the course addresses theoretical problems and looks at the macro picture. The second part focuses on specific pressing issues such as indigenous justice, reproductive rights, civil society and accountability, corporate social responsibility, refugee crises etc. The material is vast, therefore goes better as two sequence electives. Could be co-taught, perhaps, with an econ prof, but no time to co-plan and coordinate."
+          	},{
+          		"instructors": "Melina Aarnikoivu",
+          		"type": "Basic",
+          		"title": "Public Speaking ",
+          		"description": "A course for students who want to improve their public speaking and presentation skills. It is targeted especially for those who are not currently confident of their oral English skills or who are suffering from public speaking anxiety. Note: The course will be an updated version of one taught in Q3 2020, improved based on the student feedback."
+          	},{
+          		"instructors": "Munesh Chauhan",
+          		"type": "Basic",
+          		"title": "Software Engineering",
+          		"description": "No pre-requisites"
+          	},{
+          		"instructors": "Munesh Chauhan",
+          		"type": "Basic",
+          		"title": "Parallel Computing",
+          		"description": "Pre-requisites: Knowledge of programming necessary. The course involves C programming."
+          	},{
+          		"instructors": "Munesh Chauhan",
+          		"type": "Basic",
+          		"title": "Artificial Intelligence",
+          		"description": "Pre-requisites: Basic computer knowledge, programming skill in any language will be an added advantage"
+          	},{
+          		"instructors": "Munesh Chauhan",
+          		"type": "Basic",
+          		"title": " Compilers",
+          		"description": "Pre-requisites: Knowledge of programming necessary. The course involves C language and compiler tools Lex & Bison."
+          	},{
+          		"instructors": "Munesh Chauhan",
+          		"type": "Basic",
+          		"title": "Basics of Automata Theory",
+          		"description": "Pre-requisites: strong analytical skills, knowledge of programming in C language is desired but optional."
+          	},{
+          		"instructors": "Peter Jones",
+          		"type": "Basic",
+          		"title": "Laughing at the Past",
+          		"description": "A film course, looking at movies that take a humorous approach to the past. Using works of critical theory, humor studies, and historiography, we will try to understand how laughter can be a mode of relating to history."
+          	},{
+          		"instructors": "Peter Jones",
+          		"type": "Basic",
+          		"title": "Searching for Paradise: Medieval Europe, 1050–1350"
+          	},{
+          		"instructors": "Peter Jones",
+          		"type": "Basic",
+          		"title": "The Seven Deadly Sins"
+          	},{
+          		"instructors": "Tomasz Blusiewicz",
+          		"type": "Basic",
+          		"title": "History of Germany 2 (1870-1990)",
+          		"description": "The journalist Walter Lippman once referred to the 20th century as the American Century. Germany and German-speaking people, however, have stood no less at the center of world events for the last two hundred  years. Germany’s unification in 1871 turned the European balance of power upside down. Wilhelmine Germany played a major role in setting Europe aflame in 1914, Nazi Germany started World War II, and Hitler’s countrymen perpetrated the Holocaust and innumerable other atrocities. The course will offer a few interpretative frameworks to explain these political developments. This course builds upon a course taught in Q4 2019, but students do not need to have taken the earlier course."
+          	},{
+          		"instructors": "Tomasz  Blusiewicz",
+          		"type": "Basic",
+          		"title": "History of Energy",
+          		"description": "This course will equip you with in-depth knowledge of the ways in which the access to energy carriers has been politicized by nation-states and other large corporate actors on the global arena, and with what consequences for international relations. We will explore this theme from timber and coal in the pre-industrial era, to the Arctic shale gas and minerals in space today. We will take a look at the critical junctures between international security, conflict, war, power politics and technology, in a historical and analytical light."
+          	},{
+          		"instructors": "Vitaly Nikolaev",
+          		"type": "Basic",
+          		"title": "Math Tools for IT",
+          		"description": "The aim of the course is to present and/or refresh basic mathematical tools such as linear algebra, analysis, and optimization, needed in various fields of computer science (mainly practical, not theoretical). The content will be given in a way to show math applications in some areas like imaging and visualization."
+          	},{
+          		"instructors": "Vitaly Nikolaev",
+          		"type": "Basic",
+          		"title": "Data Analysis and Visualization (with Python)",
+          		"description": "Introduction to data analysis and visualization of different data (quantitative and categorical)  including necessary (basic) introduction into programming."
+          	},{
+          		"instructors": "Vitaly Nikolaev",
+          		"type": "Basic",
+          		"title": "Data Science",
+          		"description": "This course is focused on extracting knowledge from data sets of different origin. The field encompasses preparing data for analysis and presenting findings in a form of higher-level decisions. It incorporates skills from computer science, mathematics, statistics, information visualization.  Prereq.: at least one math or programming course."
+          	},{
+          		"instructors": "Vitaly Nikolaev",
+          		"type": "Basic",
+          		"title": "Data Structures and Algorithms",
+          		"description": "Can be co-taught in case of two sequence elective and/or advanced elective The course is aimed to develop good programming skills and techniques."
+          	},{
+          		"instructors": "Vitaly Nikolaev",
+          		"type": "Basic",
+          		"title": "Introduction into computation and programming with Python",
+          		"description": "Introduction into computation and programming suitable for practical applications in different fields."
+          	},{
+          		"instructors": "Siyaves Azeri (New Professor!)",
+          		"type": "Basic",
+          		"title": "Where is Knowledge?",
+          		"description": "Examination of basic issues related to epistemology and knowledge-production. Differing perspectives on the nature of knowledge can be considered"
+          	},{
+          		"instructors": "Siyaves Azeri (New Professor!)",
+          		"type": "Basic",
+          		"title": "Moral Reasoning",
+          		"description": "An analysis of particular moral and ethical problems from abortion to prostitution and pornography and other related issues; can be heavily philosophically-oriented but these issues can also be discussed from anthropological and sociological perspectives."
+          	},{
+          		"instructors": "Siyaves Azeri (New Professor!)",
+          		"type": "Basic",
+          		"title": "On the (im)possibility of the Metaphysics of Morals",
+          		"description": "A close reading of Kant’s metaphysics of Morals and political writings and analysis of the interrelation between his political and ethical philosophies."
+          	}
+          ]
+          
+          dict.forEach(function(entry, index){
+            var card = document.createElement('div');
+            card.classList.add('portlet', 'ui-widget', 'ui-widget-content', 'ui-helper-clearfix', 'ui-corner-all');
+            card.innerHTML = `<div class="portlet-header ui-sortable-handle ui-widget-header ui-corner-all" id="${entry["title"]} — ${entry["instructors"]}"><div class="row"><div class="col-12 col-md-9"><a data-toggle="collapse" role="button" href="#collapse${index}">${entry["title"]} — ${entry["instructors"]}</a><div class="collapse" id="collapse${index}"> 
+            <p>Instructors: ${entry["instructors"]}</p><p>Type: ${entry["type"]}</p><p>Description: ${entry["description"]}</p></div></div><div class="col-12 offset-md-1 col-md-2"><a style="font-size:0.55em; padding:1vw" onclick="excludeCard(event)">Not interested</a></div></div></div>`
+            cards.appendChild(card);
+          })

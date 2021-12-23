@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title SAS — Share Your Opinions
+    //- link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/bootstrap-slider.min.css')
+    link(rel='stylesheet', href='/style.css')
+    //- link(rel='stylesheet', href='/cards.css')
+    // script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    // script(src="/touch_sortable.js")
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 Please evaluate the demo class. You might want to think about the selection of content, teaching methods, class materials, student engagement, quality of discussions, timing etc.
+      h1#title
+      form#form(action="/polls/feedback-collector" method="post")
+        input#subject(type="hidden" value="generic" name="subject")
+        //- input#online(type="hidden" value="false" name="online")    
+        fieldset
+          div#input-group(class="input-group")
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    script(src="/bootstrap-slider.min.js")    
+    script(src="/pds_course.js")
+      

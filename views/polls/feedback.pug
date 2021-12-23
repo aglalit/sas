@@ -1,0 +1,338 @@
+doctype html
+html
+  head
+    title SAS — Feedback
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    // load bootstrap css
+    style.
+      body        { padding-top:20px;   font-family: 'Agipo-Regular'; 
+      
+      -moz-osx-font-smoothing: grayscale;   /* Firefox */
+     -webkit-font-smoothing: antialiased; /* WebKit  */
+      }
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      @font-face {
+        font-family: 'Agipo-Regular';
+        src:url('../fonts/agipo/Agipo-Regular.woff');
+      }
+      h2 {margin-bottom:30px; margin-top:50px;
+      font-family: 'Agipo-Bold',Arial,sans-serif;}
+      .jumbotron h1 {
+        font-size:36px;
+        margin-bottom: 40px;
+        font-family: 'Agipo-Bold',Arial,sans-serif;
+      }
+      h3 {
+        margin-top:50px;
+        font-size: 1.5em;
+        font-weight: 400;
+        margin-bottom:30px;
+        font-family: 'Agipo-Regular',Arial,sans-serif;;
+      }
+      /* .displayTeacher {display:none;} */
+      .currentAnswerCounter {font-family: Agipo-Bold;}
+      .allLinks {display:none;}
+      table {max-width:100%;}
+      
+      thead {
+        font-size: 12px;
+        border-bottom:1px red solid;
+        hyphens: auto;
+      }
+      td {
+        text-align: left; 
+        padding-top:10px;
+        vertical-align: top;
+      padding: 5px;
+      }
+      .all td {
+        border-right: 1px red solid;
+      }
+      .all td:last-child {
+        border-right: none;
+      }
+      .jumbotron{
+        font-size:18px;
+        line-height: initial;
+      }
+      td.key {
+        font-family: 'Agipo-Bold';
+        padding-right:30px;
+        width:70%;
+      }
+      
+      img {
+        width:80%;
+        margin-top:10px;
+      }
+      .logo {padding-bottom:30px}
+      a {color:#f00}
+      .container{
+        width:98% !important;
+      }
+      .input-group{
+        margin-bottom:20px;
+      }
+      .input-group label, h4 {
+        font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
+        font-weight: 500;
+        margin: 18px 0;
+        font-size:20px;
+      }
+      .input-group .label__description {
+        font-family:initial;
+      }
+      .input-group .form-control {
+        margin: 20px 0 40px 0;
+      }
+      form {
+        margin-top: 30px;
+      }
+      fieldset {
+        margin-bottom:30px;
+      }
+      label,legend,h4 {
+        text-align: left;
+        width:100%;
+      }
+      label[for="agreement-checkbox"]{
+        width:92%;
+        margin-top:0;
+      }
+      #agreement-checkbox {
+        width:5%;
+        margin-left: 10px;
+      }
+      legend {font-size: 1.8em;}
+      input, textarea, select {
+        float:left;
+        width:75%;
+        font-family: 'Agipo-Regular',Helvetica,Arial,sans-serif;
+      }
+      .label_width100 {
+        width:100%;
+      }
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+
+        border: 2px solid #999;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 15px;
+
+        position: relative;
+        top:0px
+        }
+        input:focus {
+          outline: none !important;
+        }
+        input:checked {
+          border: 12px solid #f00;
+        }
+        button {
+          background-color: #f00 !important;
+          border-color: #f00 !important;
+          margin: 0 25px 25px;
+          padding: 10px 15px;
+          border-radius:50px;
+        }
+        
+        .checkbox {
+          width: 5% !important;
+          height: 30px;
+          margin-top: 14px !important;
+        }
+        
+        input[type="checkbox"] {
+          /* -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none; */
+
+          width: 38px;
+          height: 38px;
+
+          border: 2px solid #999;
+          transition: 0.2s all linear;
+          outline: none;
+          margin-right: 15px;
+
+          position: relative;
+          top:0;
+          zoom:1.1;
+          }
+
+
+        @media (max-width: 1024px) {
+
+          body{padding-top:10px}
+          .container{
+          width:95%;
+          }
+          h3 {
+            font-size: 2.5em;
+          }
+          h2 {
+            font-size: 3em;
+          }
+          .jumbotron h1 {
+            font-size: 3.5em;
+          }
+        .input-group  label, h4 {
+          font-size:45px ;
+          margin-bottom:20px;
+          width:100%;
+          }
+          label[for="agreement-checkbox"]{
+            width:91%;
+            margin-top:0;
+          
+          }
+          #agreement-checkbox {
+            width:5%;
+            margin-left: 10px;
+              top: 10px;
+          }
+          .checkbox {
+            width: 5% !important;
+            height: 30px;
+            margin-top: 14px !important;
+          }
+          input[type="radio"]{
+            top:5px;
+          }
+          button.btn-lg {
+            font-size: 45px;
+          }
+          .label_width100 {
+            width:100% !important;
+          }
+          .checkbox {margin-top: 13px !important;           
+            height: 50px;
+            }
+          .input-group label, h4 {
+            
+            margin: 11px 0;
+          }
+        }
+              li {
+                line-height: 2; }
+        
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(target="_blank" href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 SAS — Feedback
+      h2.teacher
+      div.allLinks
+        ul(class="list-unstyled")
+          li
+            h3.ba_2019_electives Electives
+            span Links: 
+            span
+              a(target="_blank" href="/feedback?s=ba_2019_electives") All, 
+            span
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=giacomo")  Giacomo Andreoletti, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=tomasz") Tomasz Blusiewicz, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=wolf") Erika Wolf, 	
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=duskin") Duskin Drum, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=mulhall") Anne Mulhall, 	
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=david") David Dusseault,  
+            span  
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=juliette") Juliette Colinas, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=john") John Tangney, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=столяров") Арсений Столяров, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=добровидова") Ольга Добровидова,              
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=arne") Arne Dietrich,  
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=vervoort") Louis Vervoort, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_electives&t=jones") Evgeny Grishin, duskin drum, Peter Jones
+          li
+            h3.ba_2019_year1_module4_tfy TFY
+            span Links: 
+            span
+              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_tfy") All, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_tfy&t=giacomo") Giacomo Andreoletti, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_tfy&t=margret") Margret Grebowicz
+          li
+            h3.ba_2019_year1_module4_it IT
+            span Links: 
+            span
+              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_it") All, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_it&t=fabio") Fabio Grazioso, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_it&t=николаев") Виталий Николаев
+          li
+            h3.ba_2019_year1_module4_history
+            span Links: 
+              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_history") History
+          li
+            h3.ba_2019_year1_module4_gb Great Books: Philosophy
+            span Links: 
+            span
+              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_gb") All,
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_gb&t=lomonosov") Matvey Lomonosov, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_gb&t=vervoort") Louis Vervoort,              
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year1_module4_gb&t=Mulhall") Anne Mulhall 
+          li
+            h3.ba_2019_year2_module8_gb Great Books: Literature
+            span Links: 
+            span
+              a(target="_blank" href="/feedback?s=ba_2019_year2_module8_gb") All,
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year2_module8_gb&t=щербенок") Андрей Щербенок,          
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year2_module8_gb&t=ушакова") Ольга Ушакова,  
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year2_module8_gb&t=tangney") John Tangney, 
+            span 
+              a(target="_blank" href="/feedback?s=ba_2019_year2_module8_gb&t=mulhall") Anne Mulhall
+          li
+            h3.ba_2019_year2_module8_design_thinking 
+            span Links: 
+              a(target="_blank" href="/feedback?s=ba_2019_year2_module8_design_thinking") Design Thinking
+      h2.displayTeacher Full answers
+      button(class="prev displayTeacher" onclick="allPrev()") < Previous answer
+      span.currentAnswerCounter
+      button(class="next displayTeacher" onclick="allNext()") Next answer >
+      table#all
+        tbody.tablebody
+      h2 Rating scale answers (histograms)
+      div.graphs
+      h2.displayTeacher Text answers
+      div.comments
+script(src="/plotly-latest.min.js")
+script.
+  var data = [!{data}];
+script(src="/feedback.js")
+script(src="/papaparse.min.js")
+  
+  
+  

@@ -1,0 +1,56 @@
+doctype html
+html
+  head
+    title SAS — Share Your Opinions
+    link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/cards.css')
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    script(src="/touch_sortable.js")
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 Electives. Year 2019–2020. Fourth quarter. 
+      h3 Sort the following electives in the order from the most preferable to the least preferable one (from the top to the bottom).
+      h3 NOTE: Please make your choice carefully because lower priorities may matter.
+      form(id="form" action="/polls/electives_2020_1" method="post")
+        // DON'T REMOVE THIS INPUT!!!
+        input(type="hidden") 
+        fieldset   
+            .cards
+              .portlet
+                .portlet-header(id="Anthropological Archaeology — Denis Sharapov") Anthropological Archaeology — Denis Sharapov
+              .portlet
+                .portlet-header(id="What is the Anthropocene? — Zachary Reyna") What is the Anthropocene? — Zachary Reyna
+              .portlet
+                .portlet-header(id="Arctic Encounters — Anna Varfolomeeva") Arctic Encounters — Anna Varfolomeeva
+              .portlet
+                .portlet-header(id="Formal Logic — Giacomo Andreoletti") Formal Logic — Giacomo Andreoletti
+              .portlet
+                .portlet-header(id="Diasporas — Matvey Lomonosov") Diasporas — Matvey Lomonosov
+              .portlet
+                .portlet-header(id="Complex Societies — Jay Silverstein") Complex Societies — Jay Silverstein
+              .portlet
+                .portlet-header(id="Sense of Humor — Peter Jones") Sense of Humor — Peter Jones
+              .portlet
+                .portlet-header(id="Russian Literature (RU) — Elena Grigoryeva") Russian Literature (RU) — Elena Grigoryeva
+              .portlet
+                .portlet-header(id="The Structure of a Literary Text (RU) — Elena Grigoryeva") The Structure of a Literary Text (RU) — Elena Grigoryeva
+              .portlet
+                .portlet-header(id="English as a Second Language — Daniel Williamson") English as a Second Language — Daniel Williamson
+              .portlet.major
+                .portlet-header(id="Gender, Sexuality and Biopolitics — Julie Reshe") Gender, Sexuality and Biopolitics — Julie Reshe
+              .portlet.major
+                .portlet-header(id="Macroeconomics — Ekaterina Svirina") Macroeconomics — Ekaterina Svirina
+              .portlet.major
+                .portlet-header(id="Project Management in IT — Munesh Chauhan") Project Management in IT — Munesh Chauhan
+              .portlet.major
+                .portlet-header(id="Film and Transmedia Storytelling — David Melbye") Film and Transmedia Storytelling — David Melbye
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    script(src="/cards.js")
+    script(src="/default.js")      

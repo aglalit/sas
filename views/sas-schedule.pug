@@ -1,0 +1,165 @@
+doctype html
+html
+  head
+    title SAS Schedule
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    // load bootstrap css
+    style.
+      body { 
+        font-family: 'Kazimir-Text-Regular';
+        font-smooth: always;
+        -webkit-font-smoothing: antialiased;
+        background-color: #000;
+        color:#fff;
+        overflow: hidden;
+        /* cursor: none; */
+      }
+      @font-face {
+        font-family: 'Agipo-Bold';
+        src:url('../fonts/agipo/Agipo-Bold.woff');
+      }
+      @font-face {
+        font-family: 'Agipo-Regular';
+        src:url('../fonts/agipo/Agipo-Regular.woff');
+      }
+      @font-face {
+        font-family: 'Kazimir-Text';
+        src:url('../fonts/kazimir/Kazimir-Text-Medium-Web.ttf');
+      }
+      @font-face {
+        font-family: 'Kazimir-Text-Regular';
+        src:url('../fonts/kazimir/KazimirText-Regular.ttf');
+      }
+      p {margin-bottom:0; font-size:20px;}
+      .flex-container {
+        display:-webkit-box;display:-ms-flexbox;display:flex; margin:10px 0; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between;align-items: flex-start;
+      padding:0 20px;margin-left: 10px;
+      }
+      .time {        
+            padding-left: 40px !important;
+                padding-right: 40px !important;
+                min-width:250px;
+        vertical-align :baseline;
+        font-size:20px;
+      font-family: 'Agipo-Regular';width: 17%;
+      text-align:center;
+      }
+      .schedule-title {font-family: 'Agipo-Regular'; line-height: 0.9;}
+      .date {font-family: 'Kazimir-Text-Regular';}
+      td {border-top: none !important; padding: 16px 8px 0px !important;}
+      .schedule-title,.date {font-size:53px;}
+      .classes {padding-left: 25px !important}
+      /* .professor {display:inline-block;} */
+      
+      img {width:10%;margin-top: 15px;}
+      /* .table{width:90% !important} */
+      .title,.bold  {   font-family: 'Agipo-Bold';} 
+      
+      /* .room {color:#f00;} */
+      h2 {margin-top: 0px; }
+      b {font-weight:normal; opacity:0}
+      .flex-container-img {display:flex;position:absolute; opacity:0;z-index:-1;
+        top:0;width:100%;height:100%;background-color:#000;
+        justify-content:center;align-items: start;
+        transition: opacity 1s ease-in;
+      }
+      .flex-container-pitb {
+        display:flex;position:absolute; 
+        opacity:0;
+          top:11vh;width:100%;height:89%;background-color:#000;
+          justify-content:center;align-items: start;
+          transition: opacity 1s ease-in;
+      }
+      .tr_pitb {
+        height:8vh;
+        font-size: 22px;
+        vertical-align :baseline;
+      }
+      .flex-container-pitb .thead, .tr_pitb:not(:last-child) {
+        border-bottom:1px rgba(255,255,255,0.5) solid;
+      }
+      .tr_pitb td {
+          line-height:24px;  
+      }
+      .tr_pitb td:first-child {
+            padding-right: 40px !important;
+            min-width:150px;
+            vertical-align :baseline;
+            font-size:22px;
+            font-family: 'Agipo-Regular';width: 17%;
+      }
+      
+      .tr_pitb td:not(:first-child) {
+          width:12vw; 
+      }
+      
+      .flex-container-pitb .thead {
+        font-size:22px;
+        font-family: 'Agipo-Regular';
+        
+      }
+        .flex-container-pitb .thead td {
+          padding-bottom:10px !important;
+        }
+      
+      .announcement {width:95%;margin:auto; background: #000 solid}
+      .red {color:#f00; border-color:#f00 !important;}
+      .red_highlight {
+        color:#f00; 
+        border-color:#f00 !important;
+        background-repeat: no-repeat;
+        background-image: url('/highlighting.svg');
+        background-position: 0px 0px;
+        height: 70px;
+      }
+
+      .classNumber {
+        padding-top: 15px !important;
+        padding-left:0px !important;
+      }
+      .classNumberSpan {
+        text-align: center;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border: 2px #fff solid;
+        border-radius: 50%;
+        vertical-align: text-bottom;
+        font-size: 18px;
+        font-family: 'Agipo-Bold';
+      }
+body
+    //- video(muted id="htmlVideo" loop="loop" src="https://dl.dropboxusercontent.com/s/um7oa5ivklj9kli/%D0%AD%D1%80%D0%B8%D0%BA%D0%B0.webm?dl=0" style="position: absolute; width: 100%; height: auto;z-index: 199")
+    .flex-container.header
+      h2.schedule-title Schedule
+      h2.date
+    .flex-container.tablecontainer
+      .schedule
+      .flex-container-pitb
+        table.table
+          thead.thead
+            td   
+            td MON 
+            td TUE 
+            td WED
+            td THU
+            td FRI
+            td SAT
+          tbody.tbody        
+    .flex-container-img
+      img.announcement
+    
+    script(src="sas-schedule.bundle.js")
+    //script(src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()")
+    script.
+      /* window.onload = function (){
+        document.getElementById('htmlVideo').load();
+        document.getElementById('htmlVideo').play();
+        document.getElementById('htmlVideo').onended = function(){
+        this.load();
+        this.play();
+        };
+      } */
+    script.
+      
+      

@@ -1,0 +1,126 @@
+doctype html
+html
+  head
+    title Форум «Решиться на эксперимент в высшем образовании» — форма регистрации
+    link(rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel="stylesheet" href="https://sastest.utmn.ru/wp-content/themes/sasutmn/css/fontello-embedded.min.css")
+    link(rel='stylesheet', href='/style.css')
+  body
+    .container
+      .jumbotron.text-center
+        .logo
+          a(href="https://sas.utmn.ru" style="border:none")
+            img(src="/assets/Logo__red.png")
+        h1 Форум «Решиться на эксперимент в высшем образовании» — регистрация для руководителей вузов и экспертов в области высшего образования.
+        .col-xs-12
+          ul(class="social")
+            li(class="fb")
+              a(href="https://www.facebook.com/sas.utmn.ru/" target="_blank")
+                i(class="icon-facebook")
+            li(class="vk")
+              a(href="https://vk.com/sas_tmn" target="_blank")
+                i(class="icon-vkontakte")
+            li(class="insta")
+              a(href="https://www.instagram.com/sas_utmn/" target="_blank")
+                i(class="icon-instagram")
+            li(class="youtube")
+              a(href="https://www.youtube.com/channel/UCTOl5FTiDD-n61Xiu0e_Uvg" target="_blank")
+                i(class="icon-youtube")
+        form(action="/polls/dare-to-x-registration" method="post")
+          fieldset
+            div(class="input-group")
+              .flex-container.column
+                label(for="Ф.И.О.") Ф.И.О.
+                  sup(style="color:red") *
+                input(type="text" required="required" class="form-control" name="Name")
+              .flex-container.column
+                label(for="Email") Email
+                  sup(style="color:red") *
+                input(type="email" required="required" class="form-control" name="Email")
+              .flex-container.column
+                label(for="Место работы") Место работы
+                  sup(style="color:red") *
+                input(type="text" required="required" class="form-control" name="Место работы")
+              .flex-container.column
+                label(for="Должность") Должность
+                  sup(style="color:red") *
+                input(type="text" required="required" class="form-control" name="Должность")
+              .flex-container.column
+                label(for="") В каком формате вы планируете посетить мероприятие?
+                  sup(style="color:red") *
+              .flex-container.row
+                input.radio(id="broadcastOffline" type="radio" name="Broadcast" value="Online")                          
+                label(for="broadcastOffline") Онлайн
+              .flex-container.row
+                input.radio(id="broadcastOnline" type="radio" name="Broadcast" value="Offline")                          
+                label(for="broadcastOnline") Офлайн
+              //- .flex-container.column
+              //-   label В какой из дискуссий вы хотели бы принять участие?
+              //-     sup(style="color:red") *
+              //-     span К сожалению, количество участников дискуссии ограничено 10, но у вас будет возможность комментировать и задавать вопросы из зала.
+              //- .flex-container.row
+              //-   input(type="checkbox"  value="Преподавательская автономия" name="Преподавательская автономия" )
+              //-   label(for="Преподавательская автономия") 
+              //-     strong Преподавательская автономия. 
+              //-     span Кто должен определять содержание и дидактику образовательных курсов: преподаватель или руководитель образовательной программы?
+              //- .flex-container.row
+              //-   input(type="checkbox"  value="Видение" name="Видение" )
+              //-   label(for="Видение") 
+              //-     strong Видение. 
+              //-     span Как должно формироваться видение современного образовательного процесса: от философских концепций или от прагматических задач? 
+              //- .flex-container.row
+              //-   input(type="checkbox"  value="Роль студента" name="Роль студента" )
+              //-   label(for="Роль студента") 
+              //-     strong Роль студента. 
+              //-     span Должен ли студент быть со-разработчиком образовательного процесса?
+              //- .flex-container.row
+              //-   input(type="checkbox"  value="Технологии" name="Технологии" )
+              //-   label(for="Технологии") 
+              //-     strong Технологии. 
+              //-     span Меняют ли технологии суть образовательного процесса или просто снижают издержки? 
+              //- .flex-container.row
+              //-   input(type="checkbox"  value="Драйверы изменений" name="Драйверы изменений" )
+              //-   label(for="Драйверы изменений") 
+              //-     strong Драйверы изменений. 
+              //-     span Трансформация университета: естественный процесс под давлением внешней среды или личный проект управленца? 
+              p &nbsp;      
+              .flex-container.column
+                label Поделитесь, пожалуйста, вашими суждениями по следующим темам. Мы учтем их при формулировании вопросов для обсуждения.
+              .flex-container.column
+                label(for="Преподавательская автономия2") 
+                  strong Преподавательская автономия. 
+                  span Кто должен определять содержание и дидактику образовательных курсов: преподаватель или руководитель образовательной программы?
+                textarea(rows="4" name="Преподавательская автономия2" )
+              .flex-container.column
+                label(for="Видение2") 
+                  strong Видение. 
+                  span Как должно формироваться видение современного образовательного процесса: от философских концепций или от прагматических задач? 
+                textarea(rows="4" name="Видение2" )              
+              .flex-container.column
+                label(for="Роль студента2") 
+                  strong Роль студента. 
+                  span Должен ли студент быть со-разработчиком образовательного процесса?
+                textarea(rows="4"  name="Роль студента2" )
+              .flex-container.column
+                label(for="Технологии2") 
+                  strong Технологии. 
+                  span Меняют ли технологии суть образовательного процесса или просто снижают издержки? 
+                textarea(rows="4" name="Технологии2" )            
+              .flex-container.column
+                label(for="Драйверы изменений2") 
+                  strong Драйверы изменений. 
+                  span Трансформация университета: естественный процесс под давлением внешней среды или личный проект управленца? 
+                textarea(rows="4"  name="Драйверы изменений2" )
+              //- .flex-container
+              //-   label(for="Комментарий в свободной форме4") Комментарий в свободной форме
+              //-   textarea(rows="4" required="required" class="form-control" name="Комментарий в свободной форме4")
+              p &nbsp;              
+              .flex-container.row
+                input.form-check-input(id="agreement-checkbox" type="checkbox" name="agreement" required)                         
+                label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании <!-- Я даю согласие на обработку своих персональных данных на основании -->
+                  a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") Политики конфиденциальности
+                  sup(style="color:red") *
+              label 
+                sup(style="color:red") * 
+                span — обязательные поля      
+          button(type="submit" class="btn btn-primary btn-lg") Отправить

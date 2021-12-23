@@ -1,0 +1,673 @@
+doctype html
+html
+  head
+    title SAS — Share Your Opinions
+    link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/cards.css')
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js")
+    script(src="/touch_sortable.js")
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h2 Project Design Session — 2021, Teaching Demo Schedule
+      //h3 To better understand conditions for online teaching in Q4, we are running a short survey (filling it will take you 3 mins max). Please do so by Monday, 6.04, 8pm.
+      form(id="form" action="/polls/generic" method="post")
+        // DON'T REMOVE THIS INPUT!!!
+        input(type="hidden")
+        //- fieldset
+        //-   div(class="input-group")
+        //-     .flex-container.column
+        //-       label(for="Full name") Your full name
+        //-       input(type="text" required="required" class="form-control" name="Full name") 
+        //- fieldset   
+        //-     .cards.offset-sm-1.col-sm-11   
+        //- fieldset
+        //-   h2 Elective Seminars
+        //-   h3 Choose one topic you are interested in from the list below
+        //-   div(class="input-group")
+        //-     .flex-container.row
+        //-       input(type="radio" required="required" value="Philosophy" name="major" id="Philosophy")
+        //-       label(for="Philosophy") Philosophy and Thought Experiments — Giacomo Andreoletti
+        //-     .flex-container.row
+        //-       input(type="radio" required="required" value="IT" name="major" id="IT")
+        //-       label(for="IT") Informational Technologies and Digital Society: How do they interact? — Vitaly Nikolaev
+        //-     .flex-container.row
+        //-       input(type="radio" required="required" value="Economics" name="major" id="Economics")
+        //-       label(for="Economics") Economics: How People Behave and How It Can Be Predicted —  Alexander Usvitskiy  
+        //-     .flex-container.row
+        //-       input(type="radio" required="required" value="Cultural Studies" name="major" id="Cultural Studies")
+        //-       label(for="Cultural Studies") Cultural Studies: How To Intervene Within Your Culture?  —  Duane Rousselle
+        //-     .flex-container.row
+        //-       input(type="radio" required="required" value="Physics" name="major" id="Physics")
+        //-       label(for="Physics") Physics: Some Hot Topics, and What Can You Do with It? — Louis Vervoort
+        //-     .flex-container.row
+        //-       input(type="radio" required="required" value="International Relations" name="major" id="International Relations")
+        //-       label(for="International Relations") Studying International Relations at the University — Tomasz Blusiewicz
+        //-     .flex-container.row
+        //-       input(type="radio" required="required" value="Biology" name="major" id="Biology")
+        //-       label(for="Biology") Biology: Climate Change, Pandemics and Aging Populations. Responses in Labs, in Nature, in Offices, in Public Places — Erzsébet Pásztor
+        //-     .flex-container.row
+        //-       input(type="radio" required="required" value="Film Studies" name="major" id="Film Studies")
+        //-       label(for="Film Studies") Living in the Age of Images and Media — Peter Lešnik
+        //-     .flex-container.row
+        //-       input(type="radio" required="required" value="Psychology" name="major" id="Psychology")
+        //-       label(for="Psychology") Psychology: A Friend or an Enemy? — Julie Reshe
+        //-     .flex-container.row
+        //-       input(type="radio" required="required" value="Sociology" name="major" id="Sociology")
+        //-       label(for="Sociology") Sociology: Sociological Imagination — Maxim Alyukov
+        //-     .flex-container.row
+        //-       input(type="radio" required="required" value="History" name="major" id="History")
+        //-       label(for="History") History — Study Humans in All Their Complexity — Peter Jones
+        fieldset
+          div(class="input-group")#input-group
+            .flex-container.column
+              label 1.12, Wednesday, 19:20 — online
+            .flex-container.row
+              input(type="checkbox"  value="Tyler Dupont — Desistance: How do we Pull People Out of Deviant Lifestyles?" name="Tyler Dupont — Desistance: How do we Pull People Out of Deviant Lifestyles?" )
+              label(for="Tyler Dupont — Desistance: How do we Pull People Out of Deviant Lifestyles?") Tyler Dupont — Desistance: How do we Pull People Out of Deviant Lifestyles?
+            .flex-container.row  
+              p Across the world politicians struggle to identify the best way to reduce crime and deviance. Some argue that harsh punishments are the best way to deter crime, while others argue that a broad social safety net or a booming economy will reduce the crime rate. There might be some truth to these methods, but is there a better way? What can we learn from those who have stopped committing crimes? What can the experiences of former Somali pirates, drug addicts, thieves, and others tell us about drafting social policies that will reduce crime in our societies?
+            .flex-container.column
+              label 3.12, Friday, 19:20 — online
+            .flex-container.row
+              input(type="checkbox"  value="Carlos Yebra Lopez — Dancing with Nietzsche: Masters, Slaves, and Who you Might Be(come)" name="Carlos Yebra Lopez — Dancing with Nietzsche: Masters, Slaves, and Who you Might Be(come)" )
+              label(for="Carlos Yebra Lopez — Dancing with Nietzsche: Masters, Slaves, and Who you Might Be(come)") Carlos Yebra Lopez — Dancing with Nietzsche: Masters, Slaves, and Who you Might Be(come)
+            .flex-container.row
+              p For Nietzsche, dancing was another way of saying Yes! to life. Such affirmation requires us to rise above (i) the struggle between two moral structures (master morality vs slave morality) and (ii) the abandonment of any moral standard (nihilism). Only in this fashion, we will become who we are. 
+            .flex-container.column
+              label 6.12, Monday, 19:20 — online
+            .flex-container.row
+              input(type="checkbox"  value="Enrique Uribe-Jongbloed — Cultural Transduction in Videogames: The case of Kingdom Rush" name="Enrique Uribe-Jongbloed — Cultural Transduction in Videogames: The case of Kingdom Rush" )
+              label(for="Enrique Uribe-Jongbloed — Cultural Transduction in Videogames: The case of Kingdom Rush") Enrique Uribe-Jongbloed — Cultural Transduction in Videogames: The case of Kingdom Rush
+            .flex-container.row
+              p Cultural Transduction is a framework to understand the processes that take place when cultural products travel to different places. We will use the Cultural Transduction framework to analyse aspects of the successful tower-defense game Kingdom Rush
+            .flex-container.column
+              label 7.12, Tuesday, 19:20 — online
+            .flex-container.row
+              input(type="checkbox"  value="Mazen Diwani — Simpsonomics: Sensing Economics from our daily life. Evidence from the TV show 'The Simpsons'." name="Mazen Diwani — Simpsonomics: Sensing Economics from our daily life. Evidence from the TV show 'The Simpsons'." )
+              label(for="Mazen Diwani — Simpsonomics: Sensing Economics from our daily life. Evidence from the TV show 'The Simpsons'.") Mazen Diwani — Simpsonomics: Sensing Economics from our daily life. Evidence from the TV show 'The Simpsons'.
+            .flex-container.row
+              p Undergraduate students are often interested in applications of economic principles. Although popular television shows and movies are not real-world examples, drawing from these sources can motivate disinterested students and provide a pedagogical tool that enhances instruction. In this class, I am going to introduce several basic introductory economic principles that are illustrated by the television show The Simpsons. Topics include economic reasoning, opportunity cost, incentives, comparative advantage, declining marginal benefit, elasticity, free-riding, and game theory. After introducing each concept, I will introduce a discussion question followed by a real example and interact with a student in an open dialogue so they can apply what we discussed in many situations they face.  
+            .flex-container.column
+              label 13.12, Monday, 9am-9:45am — offline
+            .flex-container.row
+              input.radio(id="Aleksander Sedzielarz — Music Videos and Theories of Genre" type="radio" name="13.12, Monday, 9am-9:45am" value="Aleksander Sedzielarz — Music Videos and Theories of Genre")                          
+              label(for="Aleksander Sedzielarz — Music Videos and Theories of Genre") Aleksander Sedzielarz — Music Videos and Theories of Genre
+            .flex-container.row
+              p Examining music videos from 1980s new wave bands through current pop artists, we will discuss theories of genre proposed by critics like Charles F. Altman and György Lukács to analyze connections between the political economy and the visual and acoustic syntax of popular culture narrative systems.
+            .flex-container.row
+              input.radio(id="Ksenia Gerasimova — Sustainable Development: How can we save the world?" type="radio" name="13.12, Monday, 9am-9:45am" value="Ksenia Gerasimova — Sustainable Development: How can we save the world?")                          
+              label(for="Ksenia Gerasimova — Sustainable Development: How can we save the world?") Ksenia Gerasimova — Sustainable Development: How can we save the world?
+            .flex-container.row
+              p Sustainability is the buzz word of today, but is it a utopian vision for how the world should be governed or is it a guiding principle for management of global common goods? In the lecture we will discuss the global challenges, such as environmental pollution, growing inequalities, climate change, global food insecurity, two approaches (neo-Malthusian and cornucopian) to address them and the difficulties of modern policy-makers in managing global risks and regulating science and technology, and the role of global civil activism in shaping policies for development, and reflect what we can do as individuals and members of global community.
+            .flex-container.column
+              label 13.12, Monday, 10am-10:45am — offline
+            .flex-container.row
+              input.radio(id="Manca Bajec — From Monument to Political Art: Memorialisation in the region of former Socialist Federal Republic of Yugoslavia" type="radio" name="13.12, Monday, 10am-10:45am" value="Manca Bajec — From Monument to Political Art: Memorialisation in the region of former Socialist Federal Republic of Yugoslavia")                          
+              label(for="Manca Bajec — From Monument to Political Art: Memorialisation in the region of former Socialist Federal Republic of Yugoslavia") Manca Bajec — From Monument to Political Art: Memorialisation in the region of former Socialist Federal Republic of Yugoslavia
+            .flex-container.row
+              p Recent debates have shown that the interest in monuments is reaching audiences beyond academia. The field is contributing to important discussions surrounding symbolic reparations, diversification of public space, and revisionism but also representations of national identity. And while the greatest shifts in the development of the monument and memorial appear in the period after the Second World War, in the West, and with the emergence of so-called counter monuments, by looking at certain non-western examples of memorial practices we can see a completely different approach. The former Yugoslav region has a memorial conundrum that has developed beyond solutions that we are accustomed to witnessing in the West. This lecture will present memorial practices in former Yugoslavia through the observations of monumental shifts that have occurred in the region: the spomeniks; the Olympic Orbit; Turbo monuments and popular culture.
+            .flex-container.row
+              input.radio(id="Scott Anthony — Co-curation and other participatory practices: A workshop on theories and techniques for developing collaborative historical work" type="radio" name="13.12, Monday, 10am-10:45am" value="Scott Anthony — Co-curation and other participatory practices: A workshop on theories and techniques for developing collaborative historical work")                          
+              label(for="Scott Anthony — Co-curation and other participatory practices: A workshop on theories and techniques for developing collaborative historical work") Scott Anthony — Co-curation and other participatory practices: A workshop on theories and techniques for developing collaborative historical work
+            .flex-container.row
+              p In The Practice of Everyday Life, Michel De Certeau, explored the ways in which people create meanings from around them. Building on elements of de Certeau’s thinking, this workshop will examine the ways in which understandings of ‘creative consumption’ can help us engineer new ways of both thinking about (and generating) historical analyses of material culture. There will likely be a small amount of preparation that you need to do for this class – the exact details will be confirmed by the 8th December. 
+            .flex-container.column
+              label 13.12, Monday, 11am-11:45am — offline
+            .flex-container.row
+              input.radio(id="Sang-Keun Yoo — Time and History in Korean Dramas and K-Pop music videos" type="radio" name="13.12, Monday, 11am-11:45am" value="Sang-Keun Yoo — Time and History in Korean Dramas and K-Pop music videos")                          
+              label(for="Sang-Keun Yoo — Time and History in Korean Dramas and K-Pop music videos") Sang-Keun Yoo — Time and History in Korean Dramas and K-Pop music videos
+            .flex-container.row
+              p "We are witnessing a surge in the popularity of K-Pop and Korean dramas all around the world. What seemed to begin with PSY's ""Gangnam Style"" followed by BTS moves to Bong Joon-ho's Parasite and Netflix's Squid Game. This session aims to go one step deeper into the current popularity of Korean popular culture by delving into the theme of time. The session aims to discuss these themes.
+                br
+                span - National time and history in comparison to global time and history
+                br
+                span - Tradition and modernity
+                br
+                span - History, progress, and technology
+                br
+                span - Time of colonialism, military dictatorship, and neo-liberal reform
+                br
+                span - Distorted temporality, circular time, and imaginary time progress
+                br
+                span - Homogeneous linear temporality and multiple temporalities"
+            .flex-container.row
+              input.radio(id="Conrad Steel — Information/culture: how we became obsessed with data" type="radio" name="13.12, Monday, 11am-11:45am" value="Conrad Steel — Information/culture: how we became obsessed with data")                          
+              label(for="Conrad Steel — Information/culture: how we became obsessed with data") Conrad Steel — Information/culture: how we became obsessed with data
+            .flex-container.row
+              p Modern society is increasingly data-driven, as new technologies help us sense and picture the world in ever more complex ways. But this is not only a question of technological progress. In this class, we’ll take a look at how the idea of data has shaped our world over the last hundred years, using examples from sociology, literature and critical theory to interrogate the point where information meets imagination.
+            //- .flex-container.column
+            //-   label(for="") Your year now
+            
+            
+            //- .flex-container.column
+            //-   label(for="") Quantitative Reasoning — choose your track
+            //- .flex-container.row
+            //-   input.radio(id="City as a Matrix (Evgeny Vdovin and NGU/Akademgorodok team)" type="radio" name="QM" value="City as a Matrix (Evgeny Vdovin and NGU/Akademgorodok team)")                          
+            //-   label(for="City as a Matrix (Evgeny Vdovin and NGU/Akademgorodok team)") City as a Matrix (Evgeny Vdovin and NGU/Akademgorodok team)
+            //- .flex-container.row
+            //-   input.radio(id="Math as Thinking: Applied Theory of Proofs (Denis Zmeev and HITS team)" type="radio" name="QM" value="Math as Thinking: Applied Theory of Proofs (Denis Zmeev and HITS team)")                          
+            //-   label(for="Math as Thinking: Applied Theory of Proofs (Denis Zmeev and HITS team)") Math as Thinking: Applied Theory of Proofs (Denis Zmeev and HITS team)
+            
+            //- h3 PART 1
+            //- .flex-container
+            //-   label(for="Entry ‘major’ for SAS") Entry ‘major’ for SAS
+            //-   select(class="form-control" required="required" name="Entry ‘major’ for SAS")
+            //-     option(value="-") -
+            //-     option(value="Information Technology and Digital Society") Information Technology and Digital Society
+            //-     option(value="Cultural Studies") Cultural Studies
+            //-     option(value="Economics") Economics
+            //-     option(value="History") History
+            //-     option(value="Film and Media Studies") Film and Media Studies
+            //-     option(value="Life Sciences") Life Sciences
+            //-     option(value="Anthropology and Sociology") Anthropology and Sociology
+            //- .flex-container
+            //-   label(for="When you entered SAS, did you know that you would have no major courses in Y1-2?") When you entered SAS, did you know that you would have no major courses in Y1-2?
+            //-   select(class="form-control" required="required" name="When you entered SAS, did you know that you would have no major courses in Y1-2?")
+            //-     option(value="-") -
+            //-     option(value="Yes") Yes
+            //-     option(value="No") No
+            //-     option(value="Do not remember") Do not remember
+            //- .flex-container
+            //-   label(for="Did you know that you could change your major after year 2?") Did you know that you could change your major after year 2?
+            //-   select(class="form-control" required="required" name="Did you know that you could change your major after year 2?")
+            //-     option(value="-") -
+            //-     option(value="Yes") Yes
+            //-     option(value="No") No
+            //-     option(value="Do not remember") Do not remember
+            //- .flex-container
+            //-   label(for="Why did you enter SAS in this major?") Why did you enter SAS in this major?
+            //-   textarea(rows="4" required="required" class="form-control" name="Why did you enter SAS in this major?")
+            //- .flex-container
+            //-   label(for="What other programs and universities accepted you for study?") What other programs and universities accepted you for study?
+            //-   textarea(rows="4" required="required" class="form-control" name="What other programs and universities accepted you for study?")
+            //- .flex-container
+            //-   label(for="What other programs and universities did you apply for but were not accepted?") What other programs and universities did you apply for but were not accepted?
+            //-   textarea(rows="4" required="required" class="form-control" name="What other programs and universities did you apply for but were not accepted?")
+            //- .flex-container.column
+            //-   label Which of the following high school subjects did you feel good about?
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="Russian Language" name="Russian Language" )
+            //-   label(for="Russian Language") Russian Language
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="Literature" name="Literature" )
+            //-   label(for="Literature") Literature
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="Algebra" name="Algebra" )
+            //-   label(for="Algebra") Algebra
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="Geometry" name="Geometry" )
+            //-   label(for="Geometry") Geometry
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="History" name="History" )
+            //-   label(for="History") History
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="Geography" name="Geography" )
+            //-   label(for="Geography") Geography
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="Physics" name="Physics" )
+            //-   label(for="Physics") Physics
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="Biology" name="Biology" )
+            //-   label(for="Biology") Biology
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="Chemistry" name="Chemistry" )
+            //-   label(for="Chemistry") Chemistry
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="English / German / French" name="English / German / French" )
+            //-   label(for="English / German / French") English / German / French
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="Social Studies" name="Social Studies" )
+            //-   label(for="Social Studies") Social Studies
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="IT" name="IT" )
+            //-   label(for="IT") IT
+            //- .flex-container.row
+            //-   input(type="checkbox"  value="Physical Education" name="Physical Education" )
+            //-   label(for="Physical Education") Physical Education
+            //- h3 PART 2
+            //- .flex-container.column
+            //-   label(for="") Your year now
+            //- .flex-container.row
+            //-   input.radio(id="1" type="radio" name="Your year now" value="1")                          
+            //-   label(for="1") 1
+            //- .flex-container.row
+            //-   input.radio(id="2" type="radio" name="Your year now" value="2")                          
+            //-   label(for="2") 2
+            //- .flex-container.row
+            //-   input.radio(id="3" type="radio" name="Your year now" value="3")                          
+            //-   label(for="3") 3
+            //- .flex-container.row
+            //-   input.radio(id="4" type="radio" name="Your year now" value="4")                          
+            //-   label(for="4") 4
+            //- label(for="What major do you plan to choose?" class="year1" style="display:none") What major do you plan to choose?
+            //- select(id="year1" class="form-control year1"  name="What major do you plan to choose?" style="display:none")
+            //-   option(value="-") -
+            //-   option(value="Information Technology and Digital Society") Information Technology and Digital Society
+            //-   option(value="Cultural Studies") Cultural Studies
+            //-   option(value="Economics") Economics
+            //-   option(value="History") History
+            //-   option(value="Film and Media Studies") Film and Media Studies
+            //-   option(value="Life Sciences") Life Sciences
+            //-   option(value="Anthropology and Sociology") Anthropology and Sociology
+            //- label(class="year2" for="What is the major that you will complete at SAS?" style="display:none") What is the major that you will complete at SAS?
+            //- select(id="year2" class="form-control year2"  name="What is the major that you will complete at SAS?" style="display:none")
+            //-   option(value="-") -
+            //-   option(value="Information Technology and Digital Society") Information Technology and Digital Society
+            //-   option(value="Cultural Studies") Cultural Studies
+            //-   option(value="Economics") Economics
+            //-   option(value="History") History
+            //-   option(value="Film and Media Studies") Film and Media Studies
+            //-   option(value="Life Sciences") Life Sciences
+            //-   option(value="Anthropology and Sociology") Anthropology and Sociology
+            //- label(class="year3" for="What is the major that you will complete at SAS?" style="display:none") What is the major that you will complete at SAS?
+            //- select(id="year3" class="form-control year3" name="What is the major that you will complete at SAS?" style="display:none")
+            //-   option(value="-") -
+            //-   option(value="Information Technology and Digital Society") Information Technology and Digital Society
+            //-   option(value="Cultural Studies") Cultural Studies
+            //-   option(value="Economics") Economics
+            //-   option(value="History") History
+            //-   option(value="Film and Media Studies") Film and Media Studies
+            //-   option(value="Life Sciences") Life Sciences
+            //-   option(value="Anthropology and Sociology") Anthropology and Sociology
+            //- label(class="year4" for="What is the major that you will complete at SAS?" style="display:none") What is the major that you will complete at SAS?
+            //- select(id="year4" class="form-control year4"  name="What is the major that you will complete at SAS?" style="display:none")
+            //-   option(value="-") -
+            //-   option(value="Information Technology and Digital Society") Information Technology and Digital Society
+            //-   option(value="Cultural Studies") Cultural Studies
+            //-   option(value="Economics") Economics
+            //-   option(value="History") History
+            //-   option(value="Film and Media Studies") Film and Media Studies
+            //-   option(value="Life Sciences") Life Sciences
+            //-   option(value="Anthropology and Sociology") Anthropology and Sociology
+            //- .flex-container.year1( style="display:none")
+            //-   label(for="Are there other majors that you are considering?") Are there other majors that you are considering?
+            //-   textarea(rows="2"  class="form-control" name="Are there other majors that you are considering?") 
+            //- .flex-container.year2( style="display:none")
+            //-   label(for="What other majors were you considering?") What other majors were you considering?
+            //-   textarea(rows="2"  class="form-control" name="What other majors were you considering?") 
+            //- .flex-container.year3( style="display:none")
+            //-   label(for="Did you ever regret your choice, and if so, why? What would you choose now instead?") Did you ever regret your choice, and if so, why? What would you choose now instead?
+            //-   textarea(rows="2"  class="form-control" name="Did you ever regret your choice, and if so, why? What would you choose now instead?") 
+            //- .flex-container.year4( style="display:none")
+            //-   label(for="Did you ever regret your choice, and if so, why? What would you choose now instead?") Did you ever regret your choice, and if so, why? What would you choose now instead?
+            //-   textarea(rows="2"  class="form-control" name="Did you ever regret your choice, and if so, why? What would you choose now instead?")  
+            //- .flex-container
+            //-   label(for="What factors do you find important for choosing the major?") What factors do you find important for choosing the major? (you can select multiple options — hold Ctrl/Cmd if on a desktop computer)
+            //-   select(class="form-control" required="required" multiple name="What factors do you find important for choosing the major?")
+            //-     option(value="-") -
+            //-     option(value="Personal interest") Personal interest
+            //-     option(value="My perceived competence in the field") My perceived competence in the field
+            //-     option(value="Job prospects") Job prospects
+            //-     option(value="MA/PhD pathways") MA/PhD pathways
+            //-     option(value="Family expectations") Family expectations
+            //-     option(value="Professors expected to teach the courses") Professors expected to teach the courses
+            //-     option(value="Reputation of the major") Reputation of the major
+            //-     option(value="Number of students in the major") Number of students in the major
+            //-     option(value="Previous experience in electives") Previous experience in electives
+            //-     option(value="Previous experience in core courses") Previous experience in core courses
+            //-     option(value="Fit for study abroad") Fit for study abroad
+            //-     option(value="Other") Other
+            //- .flex-container
+            //-   label(for="What data have you taken into consideration while choosing your major?") What data have you taken into consideration while choosing your major? (you can select multiple options — hold Ctrl/Cmd if on a desktop computer)
+            //-   select(class="form-control" required="required" multiple name="What data have you taken into consideration while choosing your major?")
+            //-     option(value="Description of the major") Description of the major
+            //-     option(value="Curriculum") Curriculum
+            //-     option(value="Website") Website
+            //-     option(value="Opinion of students studying in this major") Opinion of students studying in this major
+            //-     option(value="Major fair") Major fair
+            //-     option(value="SAS staff") SAS staff
+            //-     option(value="Consultation with professors") Consultation with professors
+            //-     option(value="Internships in the major") Internships in the major
+            //-     option(value="Level of structure and development of the major") Level of structure and development of the major
+            //-     option(value="Your friends decision") Your friends decision
+            //-     option(value="Other") Other
+            //- .flex-container
+            //-   label(for="When have you made your decision about your major?") When have you made your decision about your major?
+            //-   select(class="form-control" required="required" name="When have you made your decision about your major?")
+            //-     option(value="-") -
+            //-     option(value="Y1Q1") Y1Q1
+            //-     option(value="Y1Q2") Y1Q2
+            //-     option(value="Y1Q3") Y1Q3
+            //-     option(value="Y1Q4") Y1Q4
+            //-     option(value="Y2Q1") Y2Q1
+            //-     option(value="Y2Q2") Y2Q2
+            //-     option(value="Y2Q3") Y2Q3
+            //-     option(value="Y2Q4") Y2Q4
+            //- h3 PART 3
+            
+              
+            
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate how insightful Artyom Gebelev’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Artyom Gebelev’s lecture was for your understanding of the city.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Artyom Gebelev’s lecture was for your understanding of the city." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate how helpful Artyom Gebelev’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Artyom Gebelev’s lecture was for your preparation for the plenary presentation.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Artyom Gebelev’s lecture was for your preparation for the plenary presentation." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate how insightful Dara Melnyk’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Dara Melnyk’s lecture was for your understanding of the city.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Dara Melnyk’s lecture was for your understanding of the city." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate how helpful Dara Melnyk’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Dara Melnyk’s lecture was for your preparation for the plenary presentation.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Dara Melnyk’s lecture was for your preparation for the plenary presentation." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate how insightful Marko Turk’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Marko Turk’s lecture was for your understanding of the city.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Marko Turk’s lecture was for your understanding of the city." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate how helpful Marko Turk’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Marko Turk’s lecture was for your preparation for the plenary presentation.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Marko Turk’s lecture was for your preparation for the plenary presentation." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate how insightful David Dusseault’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful David Dusseault’s lecture was for your understanding of the city.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful David Dusseault’s lecture was for your understanding of the city." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate how helpful David Dusseault’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful David Dusseault’s lecture was for your preparation for the plenary presentation.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful David Dusseault’s lecture was for your preparation for the plenary presentation." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate how insightful Nadya Khort’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Nadya Khort’s lecture was for your understanding of the city.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Nadya Khort’s lecture was for your understanding of the city." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate how helpful Nadya Khort’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Nadya Khort’s lecture was for your preparation for the plenary presentation.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Nadya Khort’s lecture was for your preparation for the plenary presentation." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate how insightful Peter Jones’ lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Peter Jones’ lecture was for your understanding of the city.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Peter Jones’ lecture was for your understanding of the city." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate how helpful Peter Jones’ lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Peter Jones’ lecture was for your preparation for the plenary presentation.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Peter Jones’ lecture was for your preparation for the plenary presentation." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate how insightful Alisa Prudnikova’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Alisa Prudnikova’s lecture was for your understanding of the city.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Alisa Prudnikova’s lecture was for your understanding of the city." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate how helpful Alisa Prudnikova’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Alisa Prudnikova’s lecture was for your preparation for the plenary presentation.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Alisa Prudnikova’s lecture was for your preparation for the plenary presentation." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate how insightful Dmitriy Bezuglov’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Dmitriy Bezuglov’s lecture was for your understanding of the city.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Dmitriy Bezuglov’s lecture was for your understanding of the city." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate how helpful Dmitriy Bezuglov’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Dmitriy Bezuglov’s lecture was for your preparation for the plenary presentation.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Dmitriy Bezuglov’s lecture was for your preparation for the plenary presentation." min="1" max="10")
+            //- .flex-container
+            //-   label(for="Your curator") Select your curator
+            //-   select(class="form-control" required="required" name="Your curator")
+            //-     option(value="Anna Banyukevich") Anna Banyukevich
+            //-     option(value="Valeria Orlova") Valeria Orlova
+            //-     option(value="Julia Khabibulina") Julia Khabibulina
+            //-     option(value="Arseniy Osokin") Arseniy Osokin
+            //-     option(value="Nikita Mogilnikov") Nikita Mogilnikov
+            //-     option(value="Olesya Krakovetskaya") Olesya Krakovetskaya
+            //-     option(value="Valeria Sidorenko") Valeria Sidorenko
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate the work of your curator — how supportive, helpful, critical, analytical they were.") On a scale of 1 to 10, please rate the work of your curator — how supportive, helpful, critical, analytical they were.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate the work of your curator — how supportive, helpful, critical, analytical they were." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate the feedback you received from Anastasia Rusakova during the plenary sessions.") On a scale of 1 to 10, please rate the feedback you received from Anastasia Rusakova during the plenary sessions.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate the feedback you received from Anastasia Rusakova during the plenary sessions." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate the feedback you received from Ahmed Elghandour during the plenary sessions.") On a scale of 1 to 10, please rate the feedback you received from Ahmed Elghandour during the plenary sessions.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate the feedback you received from Ahmed Elghandour during the plenary sessions." min="1" max="10")
+            //- .flex-container
+            //-   label(for="On a scale of 1 to 10, please rate the feedback you received from Elina Ermakova during the plenary sessions.") On a scale of 1 to 10, please rate the feedback you received from Elina Ermakova during the plenary sessions.
+            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate the feedback you received from Elina Ermakova during the plenary sessions." min="1" max="10")
+            //- .flex-container
+            //-   label(for="If you have any comments, suggestions, or detailed feedback about the course design, organization, literature, lectures, format, please write them here.") If you have any comments, suggestions, or detailed feedback about the course design, organization, literature, lectures, format, please write them here.
+            //-   textarea(rows="12" required="required" class="form-control" name="If you have any comments, suggestions, or detailed feedback about the course design, organization, literature, lectures, format, please write them here.")
+                
+            
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    script(src="/cards.js")
+    script(src="/default.js") 
+    script.
+        var inputGroup = document.getElementById('input-group');
+        // @params {elementOuter: object, required: boolean, tag: string, type: string, name: string, fullname: string, rows: string}
+        function wrapAndAppend (params) {
+          let elementInner;
+          if (!params.elementOuter) {
+            if (!params.tag) elementInner = document.createElement('input');
+            else elementInner = document.createElement(params.tag);
+            elementInner.name = params.name;
+            elementInner.id = params.name;
+            if (params.type) elementInner.type = params.type;
+            if (params.type === 'number') {
+              elementInner.min = '1';
+              elementInner.max = '10';
+            }
+            if (params.rows) elementInner.rows = params.rows;
+          } else elementInner = params.elementOuter;
+          if (params.required !== false && params.required !== 'false') elementInner.required = 'required';
+          elementInner.classList.add('form-control');
+          var flexContainer = document.createElement('div');
+          flexContainer.classList.add('flex-container');
+          var label = document.createElement('label');
+          label.setAttribute('for', elementInner.name || params.name);
+          label.innerHTML = params.name;
+          flexContainer.appendChild(label);
+          flexContainer.appendChild(elementInner);
+          inputGroup.appendChild(flexContainer);
+        }
+        
+        /* wrapAndAppend({
+          name: `On a scale of 1 to 10, what is the likelihood that you will choose this major: Information Technology and Digital Society `,
+          type: 'number', required: 'true'
+        });
+        wrapAndAppend({
+          name: `On a scale of 1 to 10, what is the likelihood that you will choose this major: Cultural Studies `,
+          type: 'number', required: 'true'
+        });
+        wrapAndAppend({
+          name: `On a scale of 1 to 10, what is the likelihood that you will choose this major: Economics `,
+          type: 'number', required: 'true'
+        });
+        wrapAndAppend({
+          name: `On a scale of 1 to 10, what is the likelihood that you will choose this major: History `,
+          type: 'number', required: 'true'
+        });
+        wrapAndAppend({
+          name: `On a scale of 1 to 10, what is the likelihood that you will choose this major: Film and Media Studies `,
+          type: 'number', required: 'true'
+        });
+        wrapAndAppend({
+          name: `On a scale of 1 to 10, what is the likelihood that you will choose this major: Evolution, Neuroscience, Biopsychology `,
+          type: 'number', required: 'true'
+        });
+        wrapAndAppend({
+          name: `On a scale of 1 to 10, what is the likelihood that you will choose this major: Anthropology and Sociology `,
+          type: 'number', required: 'true'
+        });
+        
+        wrapAndAppend({
+          name: `On a scale of 1 to 10, how much do you understand what this major is about: Information Technology and Digital Society `,
+          type: 'number', required: 'true'
+        });
+        wrapAndAppend({
+          name: `On a scale of 1 to 10, how much do you understand what this major is about: Cultural Studies `,
+          type: 'number', required: 'true'
+        });
+        wrapAndAppend({
+          name: `On a scale of 1 to 10, how much do you understand what this major is about: Economics `,
+          type: 'number', required: 'true'
+        });
+        wrapAndAppend({
+          name: `On a scale of 1 to 10, how much do you understand what this major is about: History `,
+          type: 'number', required: 'true'
+        });
+        wrapAndAppend({
+          name: `On a scale of 1 to 10, how much do you understand what this major is about: Film and Media Studies `,
+          type: 'number', required: 'true'
+        });
+        wrapAndAppend({
+          name: `On a scale of 1 to 10, how much do you understand what this major is about: Evolution, Neuroscience, Biopsychology `,
+          type: 'number', required: 'true'
+        });
+        wrapAndAppend({
+          name: `On a scale of 1 to 10, how much do you understand what this major is about: Anthropology and Sociology `,
+          type: 'number', required: 'true'
+        }); */
+        
+        /* wrapAndAppend({
+          name: `How satisfied were you with the quality of the following core courses (1-5 stars, skip if N/A)? — WTAI`,
+          type: 'number', required: 'false'
+        });
+        wrapAndAppend({
+          name: `How satisfied were you with the quality of the following core courses (1-5 stars, skip if N/A)? — First Year Seminar`,
+          type: 'number', required: 'false'
+        });
+        wrapAndAppend({
+          name: `How satisfied were you with the quality of the following core courses (1-5 stars, skip if N/A)? — Quantitative Reasoning`,
+          type: 'number', required: 'false'
+        });
+        wrapAndAppend({
+          name: `How satisfied were you with the quality of the following core courses (1-5 stars, skip if N/A)? — History`,
+          type: 'number', required: 'false'
+        });
+        wrapAndAppend({
+          name: `How satisfied were you with the quality of the following core courses (1-5 stars, skip if N/A)? — Great Books`,
+          type: 'number', required: 'false'
+        });
+        wrapAndAppend({
+          name: `How satisfied were you with the quality of the following core courses (1-5 stars, skip if N/A)? — Academic Writing`,
+          type: 'number', required: 'false'
+        });
+        wrapAndAppend({
+          name: `How satisfied were you with the quality of the following core courses (1-5 stars, skip if N/A)? — IT`,
+          type: 'number', required: 'false'
+        });
+        wrapAndAppend({
+          name: `How satisfied were you with the quality of the following core courses (1-5 stars, skip if N/A)? — TFY`,
+          type: 'number', required: 'false'
+        });
+        wrapAndAppend({
+          name: `How satisfied were you with the quality of the following core courses (1-5 stars, skip if N/A)? — POMS`,
+          type: 'number', required: 'false'
+        });
+        wrapAndAppend({
+          name: `How satisfied were you with the quality of the following core courses (1-5 stars, skip if N/A)? — Interpreting Artworks`,
+          type: 'number', required: 'false'
+        });
+        wrapAndAppend({
+          name: `How satisfied were you with the quality of the following core courses (1-5 stars, skip if N/A)? — Global Issues`,
+          type: 'number', required: 'false'
+        });
+        wrapAndAppend({
+          name: `How satisfied were you with the quality of the following core courses (1-5 stars, skip if N/A)? — Great Books: Literature`,
+          type: 'number', required: 'false'
+        });
+        wrapAndAppend({
+          name: `How satisfied were you with the quality of the following core courses (1-5 stars, skip if N/A)? — Design Thinking`,
+          type: 'number', required: 'false'
+        });
+        wrapAndAppend({
+          name: `How satisfied were you with the quality of the following core courses (1-5 stars, skip if N/A)? — Physical Education`,
+          type: 'number', required: 'false'
+        });
+        wrapAndAppend({
+          name: 'Which of these core courses were you most excited to take?',
+          tag: 'textarea',
+          rows: '4',
+          required: false
+        });
+        wrapAndAppend({
+          name: 'Were there any core courses that you did not enjoy at a time, but thought were important for your path into your major?',
+          tag: 'textarea',
+          rows: '4',
+          required: false
+        });
+        wrapAndAppend({
+          name: 'How many electives related to your major have you preferred to take? (see the list of all electives in the attachment)',
+          tag: 'textarea',
+          rows: '4',
+          required: false
+        });
+        wrapAndAppend({
+          name: 'How many electives related to your major did you get into?',
+          tag: 'textarea',
+          rows: '4',
+          required: false
+        });
+        wrapAndAppend({
+          name: 'How satisfied were you with the electives you have taken?',
+          tag: 'textarea',
+          rows: '4',
+          required: false
+        });
+        inputGroup.innerHTML += '<h3>PART 4 </h3>'
+        wrapAndAppend({
+          name: `How satisfied are you with your major? (1–5)`,
+          type: 'number', required: 'false'
+        });
+        wrapAndAppend({
+          name: 'Is there a difference between studying in a major and the first two years? What changed?',
+          tag: 'textarea',
+          rows: '4',
+          required: false
+        });
+        wrapAndAppend({
+          name: 'What are the advantages of your major?',
+          tag: 'textarea',
+          rows: '4',
+          required: false
+        });
+        wrapAndAppend({
+          name: 'What are the disadvantages of your major?',
+          tag: 'textarea',
+          rows: '4',
+          required: false
+        });
+        wrapAndAppend({
+          name: 'Suggestions for the improvement of the major?',
+          tag: 'textarea',
+          rows: '4',
+          required: false
+        });
+        wrapAndAppend({
+          name: 'Suggestions for the improvement of communication about the major?',
+          tag: 'textarea',
+          rows: '4',
+          required: false
+        });
+        wrapAndAppend({
+          name: 'What are your plans after SAS?',
+          tag: 'textarea',
+          rows: '4',
+          required: false
+        });
+        
+        var year1 = document.getElementById('1');
+        year1.addEventListener('click', function(event){
+          var years = document.querySelectorAll('.year1, .year2, .year3, .year4');
+          years.forEach(function(el){el.style.display = 'none'})
+          var year1s = document.querySelectorAll('.year1');
+          year1s.forEach(function(el){el.style.display = 'block'})
+        })
+        
+          var year2 = document.getElementById('2');
+          year2.addEventListener('click', function(event){
+            var years = document.querySelectorAll('.year1, .year2, .year3, .year4');
+            years.forEach(function(el){el.style.display = 'none'})
+            var year2s = document.querySelectorAll('.year2');
+            year2s.forEach(function(el){el.style.display = 'block'})
+          })
+          
+            var year3 = document.getElementById('3');
+            year3.addEventListener('click', function(event){
+              var years = document.querySelectorAll('.year1, .year2, .year3, .year4');
+              years.forEach(function(el){el.style.display = 'none'})
+              var year3s = document.querySelectorAll('.year3');
+              year3s.forEach(function(el){el.style.display = 'block'})
+            })
+            
+              var year4 = document.getElementById('4');
+              year4.addEventListener('click', function(event){
+                var years = document.querySelectorAll('.year1, .year2, .year3, .year4');
+                years.forEach(function(el){el.style.display = 'none'})
+                var year4s = document.querySelectorAll('.year4');
+                year4s.forEach(function(el){el.style.display = 'block'})
+              }) */
+      
