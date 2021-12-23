@@ -104,7 +104,7 @@ const officeTransporter = nodemailer.createTransport({
  debug: true,
  pool: true,
  maxMessages: 300,
- maxConnections: 20
+ maxConnections: 3
 });
 
 officeTransporter.verify(function (error, success) {
