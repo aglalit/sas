@@ -375,10 +375,16 @@ function displaySubject (data, subject) {
           var average = document.createElement('td');
           if (!dataNumbers[t][q].length) { console.log(subject);
           console.log(t);}
-          var sum = dataNumbers[t][q].reduce(function (a, b) {
-            if (!b) return a;
-            else return parseInt(a) + parseInt(b);
-          });
+          let sum;
+          if (dataNumbers[t][q]){
+            sum = dataNumbers[t][q].reduce(function (a, b) {
+              if (!b) return a;
+              else return parseInt(a) + parseInt(b);
+            });
+          } else {
+            sum = 0;
+          }
+
 
           average.innerHTML = (sum / dataNumbers[t][q].length).toPrecision(2);
           averageRow.appendChild(average);
