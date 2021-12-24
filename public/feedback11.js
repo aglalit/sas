@@ -373,24 +373,24 @@ function displaySubject (data, subject) {
           }
           tableHead.appendChild(question);
           var average = document.createElement('td');
+          var median = document.createElement('td');
           if (!dataNumbers[t][q].length) { console.log(subject);
           console.log(t);}
           let sum;
-          if (dataNumbers[t][q]){
+          if (dataNumbers[t][q].length){
             sum = dataNumbers[t][q].reduce(function (a, b) {
               if (!b) return a;
               else return parseInt(a) + parseInt(b);
             });
+            average.innerHTML = (sum / dataNumbers[t][q].length).toPrecision(2);
+            median.innerHTML = medianFunc(dataNumbers[t][q]);
           } else {
             sum = 0;
+            average.innerHTML = 0;
+            median.innerHTML = 0;
           }
 
-
-          average.innerHTML = (sum / dataNumbers[t][q].length).toPrecision(2);
           averageRow.appendChild(average);
-          var median = document.createElement('td');
-          median.innerHTML = medianFunc(dataNumbers[t][q]);
-
           medianRow.appendChild(median);
         }
 
