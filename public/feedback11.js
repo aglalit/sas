@@ -362,6 +362,7 @@ function displaySubject (data, subject) {
 
         for (var q in dataNumbers[t]) {
           var question = document.createElement('td');
+          console.log(JSON.stringify(dataNumbers[t]))
           responses = dataNumbers[t][q].length;
 
           var title = q;
