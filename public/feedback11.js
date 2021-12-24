@@ -433,4 +433,4 @@ function medianFunc (arr) {
   return m % 1 == 0 ? (parseInt(arr[m - 1]) + parseInt(arr[m])) / 2 : arr[Math.floor(m)];
 }
 
-console.log(allResponses);
+document.getElementById('totalNumber').innerHTML = `Total number: ${allResponses}`;
