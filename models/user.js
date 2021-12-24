@@ -109,12 +109,8 @@ var userSchema = mongoose.Schema({
       minor: String,
       time: String
     },
-    lesnik: {
-      major: String,
-      time: String
-    },
-    turk: {
-      major: String,
+    candidates: {
+      data: String,
       time: String
     },
     gi_topics_2020: {

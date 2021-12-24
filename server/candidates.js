@@ -1,10 +1,10 @@
 module.exports = function(app, Session, transporter, isLoggedIn, User){
 
-  app.get('/polls/wolf', isLoggedIn, function(req, res) {
-    res.render('wolf', {user: req.user})
+  app.get('/polls/candidates', isLoggedIn, function(req, res) {
+    res.render('candidates', {user: req.user})
   });
 
-  app.post('/polls/reeves', function(req, res) {
+  app.post('/polls/candidates', function(req, res) {
     User.findOne({
       '_id': req.user._id
     }, function(err, user) {
@@ -12,9 +12,9 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
         return done(err);
 
       if (user) {
-        user.polls.lesnik.major = req.body["major"];
+        user.polls.candidates.data = JSON.stringify(req.body);
         var now = new Date();
-        user.polls.lesnik.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
+        user.polls.candidates.time = now.toLocaleString('en-US', {timeZone: 'Asia/Yekaterinburg'});
 
         user.save(function(err, user) {
           if (err)
@@ -34,7 +34,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
     let mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
       to: 'm.agliulin@utmn.ru, f.gook@utmn.ru', // list of receivers
-      subject: 'wolf',  // Subject line
+      subject: 'Candidates',  // Subject line
       // text: JSON.stringify(req.user), // plain text body
       html: JSON.stringify(req.user.google.name) + ', ' + JSON.stringify(req.user.google.email) + ': ' + emailBody.toString() // html body
     };
@@ -44,7 +44,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
       }
       console.log('Message %s sent: %s', info.messageId, info.response);
     });
-    res.render('polls', {
+    res.render('polls_anonymous', {
       user: req.user,
       messages: req.flash('info')
     });

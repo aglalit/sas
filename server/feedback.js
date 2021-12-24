@@ -1,292 +1,235 @@
 module.exports = function (app, Session, User, transporter, isLoggedIn, logger) {
   var dict = {
     Vervoort: {
-      name: 'Louis Vervoort',
       email: 'l.vervoort@utmn.ru'
     },
     Reshe: {
-      name: 'Julie Reshe',
       email: 'j.reshe@utmn.ru'
     },
     Jones: {
-      name: 'Peter Jones',
       email: 'p.jones@utmn.ru'
     },
     Burbo: {
-      name: 'Eva Burbo',
       email: 'e.burbo@utmn.ru'
     },
     Daniel: {
-      name: 'Daniel Kontowski',
       email: 'd.kontowski@utmn.ru'
     },
     Kontowski: {
-      name: 'Daniel Kontowski',
       email: 'd.kontowski@utmn.ru'
     },
     Corinne: {
-      name: 'Corinne Doria',
       email: 'c.doria@utmn.ru'
     },
     Doria: {
-      name: 'Corinne Doria',
       email: 'c.doria@utmn.ru'
     },
     Thinking: {
-      name: 'Thinking on Paper',
       email: 'melina.aarnikoivu@gmail.com'
     },
     Speaking: {
-      name: 'Public Speaking',
       email: 'melina.aarnikoivu@gmail.com'
     },
     Alexander: {
-      name: 'Alexander Didenko',
       email: 'alexander.didenko@gmail.com'
     },
     Didenko: {
-      name: 'Alexander Didenko',
       email: 'alexander.didenko@gmail.com'
     },
     Erika: {
-      name: 'Erika Wolf',
       email: 'e.wolf@utmn.ru'
     },
     Wolf: {
-      name: 'Erika Wolf',
       email: 'e.wolf@utmn.ru'
     },
     Jan: {
-      name: 'Jan Krasni',
       email: 'y.krasni@utmn.ru'
     },
-    Lysenko: {
-      name: 'Alexei Lysenko',
-      email: 'aflysenko@gmail.com '
-    },
     Tomasz: {
-      name: 'Tomasz Blusiewicz',
       email: 't.blusiewicz@utmn.ru'
     },
     Blusiewicz: {
-      name: 'Tomasz Blusiewicz',
       email: 't.blusiewicz@utmn.ru'
     },
     Berdiugina: {
-      name: 'Oksana Berdiugina',
       email: 'o.n.berdyugina@utmn.ru'
     },
     Platonov: {
-      name: 'Maksim Platonov',
       email: 'm.l.platonov@utmn.ru'
     },
     Sharmin: {
-      name: 'Dmitry Sharmin',
       email: 'd.v.sharmin@utmn.ru'
     },
     Ufukova: {
-      name: 'Olga Ufukova',
       email: 'a.bunkova@utmn.ru'
     },
     Saltanova: {
-      name: 'Tatiana Saltanova',
       email: 't.v.saltanova@utmn.ru'
     },
     Giacomo: {
-      name: 'Giacomo Andreoletti',
       email: 'g.andreoletti@utmn.ru'
     },
     Andreoletti: {
-      name: 'Giacomo Andreoletti',
       email: 'g.andreoletti@utmn.ru'
     },
     Jay: {
-      name: 'Jay Silverstein',
       email: 'j.silverstein@utmn.ru'
     },
     Silverstein: {
-      name: 'Jay Silverstein',
       email: 'j.silverstein@utmn.ru'
     },
     Taisya: {
-      name: 'Taisya Pogodaeva',
       email: 't.v.pogodaeva@utmn.ru'
     },
     Pogodaeva: {
-      name: 'Taisya Pogodaeva',
       email: 't.v.pogodaeva@utmn.ru'
     },
     Shcherbenok: {
-      name: 'Andrey Shcherbenok',
       email: 'a.shcherbenok@utmn.ru'
     },
     Arslan: {
-      name: 'Ayla Arslan',
       email: 'a.arslan@utmn.ru'
     },
     Aarnikoivu: {
-      name: 'Melina Aarnikoivu',
       email: 'melina.aarnikoivu@gmail.com'
     },
     Usvitskiy: {
-      name: 'Alexander Usvitskiy',
       email: 'a.usvitskiy@utmn.ru'
     },
     Usviskiy: {
-      name: 'Alexander Usviskiy',
       email: 'a.usvitskiy@utmn.ru'
     },
+    Lešnik: {
+      email: 'p.leshnik@utmn.ru'
+    },
     Lesnik: {
-      name: 'Peter Lesnik',
       email: 'p.leshnik@utmn.ru'
     },
     Medvedev: {
-      name: 'Alexandr Medvedev',
       email: 'a.a.medvedev@utmn.ru'
     },
     Prischepa: {
-      name: 'Vladimir Prischepa',
       email: 'prischepa.vladimirr@gmail.com'
     },
     Skiba: {
-      name: 'Victor Skiba',
       email: 'victor.skiba@studdb.ru'
     },
     Zmeev: {
-      name: 'Denis Zmeev',
       email: 'zmdeol@gmail.com'
     },
-    Kolozaridi: {
-      name: 'Polina Kolozaridi',
-      email: 'poli.kolozaridi@gmail.com'
+    Merzliakova: {
+      email: 'natusik.83v@gmail.com'
     },
     Unangst: {
-      name: 'Lisa Unangst',
       email: 'lisa.unangst@gmail.com'
     },
     Melnyk: {
-      name: 'Dara Melnyk',
       email: 'd.melnyk@utmn.ru'
     },
     Turk: {
-      name: 'Marko Turk',
       email: 'm.turk@utmn.ru'
     },
     Syrchina: {
-      name: 'Anna Syrchina',
       email: 'a.s.syrchina@utmn.ru'
     },
     Parakhina: {
-      name: 'Irina Parakhina',
       email: 'i.s.parakhina@utmn.ru'
     },
     Smagina: {
-      name: 'Yana Smagina',
       email: 'yvsmagina@gmail.com'
     },
     Azeri: {
-      name: 'Siyaves Azeri',
       email: 's.azeri@utmn.ru'
     },
     Krishna: {
-      name: 'Krishna K',
       email: 'k.mutkhukumarappan@utmn.ru'
     },
     Trakhtenberg: {
-      name: 'Vera Trakhtenberg',
       email: 'vatrakhtenberg@gmail.com'
     },
     Reeves: {
-      name: 'Joshua Reeves',
-      email: 'reevejos@oregonstate.edu'
+      email: 'j.reeves@utmn.ru'
     },
     Antosik: {
-      name: 'Lyubov Antosik',
       email: 'l.antosik@utmn.ru'
     },
     Lie: {
-      name: 'Sulgi Lie',
       email: 'sulgilie07@gmail.com'
     },
     Dobrovidova: {
-      name: 'Olga Dobrovidova',
       email: 'dobrovidova@gmail.com'
     },
     Servant: {
-      name: 'Ginie Servant',
       email: 'g.servant'
     },
     Zhikharevich: {
-      name: 'Dmitry Zhikharevich',
       email: 'dzhikhar@gmail.com'
     },
     Markova: {
-      name: 'Yana Markova',
       email: 'iana.caerulea@gmail.com'
     },
     Panayotov: {
-      name: 'Stanimir Panayotov',
       email: 's.panayotov@utmn.ru'
     },
     Akhapkin: {
-      name: 'Denis Akhapkin',
       email: 'denis.akhapkin@gmail.com'
     },
     Orlov: {
-      name: 'Vladimir Orlov',
       email: 'v.orlov05@gmail.com'
     },
     Lysenko: {
-      name: 'Aleksey Lysenko',
       email: 'aflysenko@gmail.com'
     },
     Tarasov: {
-      name: 'Pavel Tarasov',
       email: 'ptarasovhseru@gmail.com'
     },
     Pásztor: {
-      name: 'Erzsébet Pásztor',
       email: 'e.pasztor@utmn.ru'
     },
     Pasztor: {
-      name: 'Erzsebet Pasztor',
       email: 'e.pasztor@utmn.ru'
     },
     Szadkowski: {
-      name: 'Krystian Szadkowski',
       email: 'szadkowski.k@gmail.com'
     },
-    Prakhov: {
-      name: 'Ilya Prakhov',
-      email: 'ipra@inbox.ru'
-    },
     Titova: {
-      name: 'Titova Ekaterina',
       email: 'e.titova.xhe@gmail.com'
     },
     Longden: {
-      name: 'Joanna Longden',
       email: 'j.longden@ucl.ac.uk'
     },
     Kalinin: {
-      name: 'Ilya Kalinin',
       email: 'ilya_kalinin@mail.ru'
     },
     Sadovina: {
-      name: 'Irina Sadovina',
       email: 'irina.sadovina@gmail.com'
     },
     Wintersgill: {
-      name: 'Caroline Wintersgill',
       email: 'caroline.wintersgill@gmail.com'
     },
     Tankhilevich: {
-      name: 'Alexander Tankhilevich',
       email: 'alextankhilevich@gmail.com'
     },
-    Tung: {
-      name: 'Tung Tung Chan',
+    Chan: {
       email: 'chan@eur.nl'
+    },
+    Rousselle: {
+      email: 'd.rousselle@utmn.ru'
+    },
+    Vdovin: {
+      email: 'veprus@gmail.com'
+    },
+    Kim: {
+      email: 'kosterio93@gmail.com'
+    },
+    Mitchell: {
+      email: 'peter_mitchell@mail.ru'
+    },
+    Prakhov: {
+      email: 'i.a.prakhov@utmn.ru'
+    },
+    Education: {
+      email: 'i.a.prakhov@utmn.ru'
     }
   };
 
@@ -2875,6 +2818,365 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
               console.log(err);
             } else {
               res.render('feedback10', {
+                data: JSON.stringify(docs),
+                user: req.user
+              });
+            }
+          });
+        } else {
+          res.send('Access denied');
+        }
+      }
+    }
+  });
+
+  app.get('/feedback11', isLoggedIn, function (req, res) {
+    var userEmail = '';
+    var teacher = null;
+    if (req.query.t) teacher = decodeURIComponent(req.query.t);
+    User.findOne({
+      _id: req.user._id
+    }, function (err, user) {
+      if (err) { return done(err); }
+
+      if (user) {
+        userEmail = user.google.email;
+        getResponse();
+      } else {
+        console.log('There isn\'t such user in the database');
+      }
+    });
+
+    function getResponse () {
+      var query = {};
+      var isAdmin = false;
+      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'a.zalyaletdinova.sas@gmail.com' || userEmail === 'e.burbo@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
+        userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'sas.tc@utmn.ru' || userEmail === 'l.b.kvashnina@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
+        isAdmin = true;
+      }
+
+      if (req.query.s === 'ba_2021_q2_electives') {
+        if (teacher && (checkTeachersAccess(dict, teacher, userEmail) || isAdmin)) {
+          Session.find({
+            $or: [{
+              'polls.ba_2021_q2_elective1': {
+                $regex: `${teacher}`
+              }
+            },
+            {
+              'polls.ba_2021_q2_elective2': {
+                $regex: `${teacher}`
+              }
+            },
+            {
+              'polls.ba_2021_q2_elective3': {
+                $regex: `${teacher}`
+              }
+            },
+            {
+              'polls.ba_2021_q2_elective4': {
+                $regex: `${teacher}`
+              }
+            },
+            {
+              'polls.ba_2021_q2_major4': {
+                $regex: `${teacher}`
+              }
+            },
+            {
+              'polls.ba_2021_q2_major3': {
+                $regex: `${teacher}`
+              }
+            },
+            {
+              'polls.ba_2021_q2_major1': {
+                $regex: `${teacher}`
+              }
+            },
+            {
+              'polls.ba_2021_q2_major2': {
+                $regex: `${teacher}`
+              }
+            }
+            ]
+          }, {
+            'polls.ba_2021_q2_elective1': 1,
+            'polls.ba_2021_q2_elective2': 1,
+            'polls.ba_2021_q2_elective3': 1,
+            'polls.ba_2021_q2_elective4': 1,
+            'polls.ba_2021_q2_major4': 1,
+            'polls.ba_2021_q2_major3': 1,
+            'polls.ba_2021_q2_major1': 1,
+            'polls.ba_2021_q2_major2': 1
+          }).exec(function (err, docs) {
+            if (err) {
+              res.send(err);
+              console.log(err);
+            } else {
+              // docs.map((el) => {
+              //   console.log(el._doc.polls);
+              // });
+
+              res.render('feedback11', {
+                data: JSON.stringify(docs),
+                user: req.user
+              });
+            }
+          });
+        } else if (isAdmin) {
+          Session.find({
+            $or: [{
+              'polls.ba_2021_q2_elective1': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2021_q2_elective2': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2021_q2_elective3': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2021_q2_elective4': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2021_q2_major4': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2021_q2_major3': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2021_q2_major1': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2021_q2_major2': {
+                $exists: true
+              }
+            }
+            ]
+          }, {
+            'polls.ba_2021_q2_elective1': 1,
+            'polls.ba_2021_q2_elective2': 1,
+            'polls.ba_2021_q2_elective3': 1,
+            'polls.ba_2021_q2_elective4': 1,
+            'polls.ba_2021_q2_major4': 1,
+            'polls.ba_2021_q2_major3': 1,
+            'polls.ba_2021_q2_major1': 1,
+            'polls.ba_2021_q2_major2': 1
+          }).exec(function (err, docs) {
+            if (err) {
+              res.send(err);
+              console.log(err);
+            } else {
+              // docs.map((el) => {
+              //   console.log(el._doc.polls);
+              // });
+
+              res.render('feedback11', {
+                data: JSON.stringify(docs),
+                user: req.user
+              });
+            }
+          });
+        } else {
+          res.send('Access denied');
+        }
+      } else if (req.query.s === 'all') {
+        if (isAdmin) {
+          Session.find({
+            $or: [
+              {
+                'polls.ba_2021_year2_q2_gb_1': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year2_q2_gb_2': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year2_q2_gb_3': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year2_q2_gb_4': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q2_elective1': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q2_elective2': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q2_elective3': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q2_elective4': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q2_major1': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q2_major2': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q2_major3': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q2_major4': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q2_fys': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year1_q2_history': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year1_q2_gb1': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year1_q2_qr': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year2_q2_art': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year2_q2_sat': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year4_q2_ec': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q2_rs': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ma_xhe_2021_year1_q2_mu': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ma_xhe_2021_year1_q2_ep': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ma_xhe_2021_year1_q2_icd': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ma_xhe_2021_year1_q2_eoe': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ma_xhe_2021_year1_q2_ps2': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ma_xhe_2021_year2_q2_hep': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ma_xhe_2021_year2_q2_ps6': {
+                  $exists: true
+                }
+              }
+            ]
+          }).select('polls').sort({
+            _id: -1
+          }).limit(2000).exec(function (err, docs) {
+            if (err) {
+              res.send(err);
+              console.log(err);
+            } else {
+              res.render('feedback11', {
+                data: JSON.stringify(docs),
+                user: req.user
+              });
+            }
+          });
+        } else {
+          res.render('feedback11', {
+            user: req.user
+          });
+        }
+      } else {
+        if (teacher && (checkTeachersAccess(dict, teacher, userEmail) || isAdmin)) {
+          query['polls.' + req.query.s] = {
+            $regex: `${teacher}`
+          };
+          Session.find(query).select('polls.' + req.query.s).exec(function (err, docs) {
+            if (err) {
+              res.send(err);
+              console.log(err);
+            } else {
+              res.render('feedback11', {
+                data: JSON.stringify(docs),
+                user: req.user
+              });
+            }
+          });
+        } else if (!teacher && isAdmin) {
+          query['polls.' + req.query.s] = {
+            $exists: true
+          };
+          Session.find(query).select('polls.' + req.query.s).exec(function (err, docs) {
+            if (err) {
+              res.send(err);
+              console.log(err);
+            } else {
+              res.render('feedback11', {
                 data: JSON.stringify(docs),
                 user: req.user
               });
