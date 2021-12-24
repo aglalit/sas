@@ -358,12 +358,15 @@ function displaySubject (data, subject) {
         table.appendChild(tableBody);
 
         var tableHeader = document.createElement('h4');
-        var responses;
+        var responses = 0;
 
         for (var q in dataNumbers[t]) {
           var question = document.createElement('td');
           console.log(JSON.stringify(dataNumbers[t]))
-          responses = dataNumbers[t][q].length;
+
+          if (responses === 0 || responses < dataNumbers[t][q].length) {
+            responses = dataNumbers[t][q].length;
+          }
 
           var title = q;
           if (title.match(new RegExp('—', 'g')) && title.match(new RegExp('—', 'g')).length > 1) {
