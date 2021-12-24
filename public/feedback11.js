@@ -111,7 +111,7 @@ function displaySubject (data, subject) {
       table.appendChild(row);
       var td1 = document.createElement('td');
 
-      let title = key;
+      const title = key;
       if (title.match(new RegExp('—', 'g')) && title.match(new RegExp('—', 'g')).length > 1) {
         td1.innerHTML = title.replace(/ — [\w\s]+$/gi, '');
       } else {
@@ -122,7 +122,7 @@ function displaySubject (data, subject) {
       td1.classList.add('key');
       var td2 = document.createElement('td');
       td2.innerHTML = dataParsed[currentEntry][key];
-      if (td2.innerHTML === "4") td2.innerHTML = "Not applicable";
+      if (td2.innerHTML === '4') td2.innerHTML = 'Not applicable';
       td2.classList.add('value');
       row.appendChild(td1);
       row.appendChild(td2);
@@ -149,8 +149,8 @@ function displaySubject (data, subject) {
   displayAllAnswers = function () {
     var table = document.querySelector('#all');
     table.innerHTML = '';
-    for (let entry in dataParsed) {
-      for (let key in dataParsed[entry]) {
+    for (const entry in dataParsed) {
+      for (const key in dataParsed[entry]) {
         if (key === 'Who taught this course' && !dataParsed[entry][key]) continue;
         if (key === 'subject') continue;
         if (key === 'online') continue;
@@ -158,7 +158,7 @@ function displaySubject (data, subject) {
         table.appendChild(row);
         var td1 = document.createElement('td');
 
-        let title = key;
+        const title = key;
         if (title.match(new RegExp('—', 'g')) && title.match(new RegExp('—', 'g')).length > 1) {
           td1.innerHTML = title.replace(/ — [\w\s]+$/gi, '');
         } else {
@@ -167,7 +167,7 @@ function displaySubject (data, subject) {
         td1.classList.add('key');
         var td2 = document.createElement('td');
         td2.innerHTML = dataParsed[entry][key];
-        if (td2.innerHTML === "4") td2.innerHTML = "Not applicable";
+        if (td2.innerHTML === '4') td2.innerHTML = 'Not applicable';
         td2.classList.add('value');
         row.appendChild(td1);
         row.appendChild(td2);
@@ -217,8 +217,8 @@ function displaySubject (data, subject) {
         dataComments[teacher][key].push(el[key]);
       }
       delete dataComments[teacher]['Who taught this course'];
-      delete dataComments[teacher]['Title'];
-      delete dataComments[teacher]['online'];
+      delete dataComments[teacher].Title;
+      delete dataComments[teacher].online;
     });
 
     var commentsDiv = document.querySelector('.comments');
@@ -247,11 +247,11 @@ function displaySubject (data, subject) {
 
   // PLOTS
   const dataNumbers = {};
-  const courseTitles = {}
+  const courseTitles = {};
   dataParsed.forEach(function (el, index) {
     const entry = el['Who taught this course'];
     if (courseTitles[entry] === undefined) {
-      courseTitles[entry] = el['Title'];
+      courseTitles[entry] = el.Title;
     }
     if (dataNumbers[entry] === undefined) {
       dataNumbers[entry] = {};
@@ -263,7 +263,7 @@ function displaySubject (data, subject) {
     }
 
     for (const key in dataNumbers[entry]) {
-      if (el[key].toString() === "4") continue;
+      if (el[key].toString() === '4') continue;
       dataNumbers[entry][key].push(el[key]);
     }
   });
@@ -271,7 +271,6 @@ function displaySubject (data, subject) {
   if (subjectUrl !== 'all') {
     for (var key in dataNumbers[Object.keys(dataNumbers)[0]]) {
       if (key !== 'Who taught this course') {
-
         var graph = document.createElement('div');
         graph.style.width = '100%';
         graph.height = '70vw';
@@ -321,7 +320,7 @@ function displaySubject (data, subject) {
             size: 16
           },
           xaxis: {
-            range: [-1,4],
+            range: [-1, 4],
             tick0: 1,
             dtick: 1,
             ticklen: 8
@@ -374,10 +373,12 @@ function displaySubject (data, subject) {
           tableHead.appendChild(question);
           var average = document.createElement('td');
           var median = document.createElement('td');
-          if (!dataNumbers[t][q].length) { console.log(subject);
-          console.log(t);}
+          if (!dataNumbers[t][q].length) {
+            console.log(subject);
+            console.log(t);
+          }
           let sum;
-          if (dataNumbers[t][q].length){
+          if (dataNumbers[t][q].length) {
             sum = dataNumbers[t][q].reduce(function (a, b) {
               if (!b) return a;
               else return parseInt(a) + parseInt(b);
