@@ -417,7 +417,7 @@ function displaySubject (data, subject) {
           teachersArray.forEach(function (el) {
             if (el.innerHTML.includes(t)) {
               size = el.dataset.size;
-              responsesTotal += size;
+              responsesTotal += parseInt(size);
             }
           });
         }
