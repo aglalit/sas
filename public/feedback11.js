@@ -416,7 +416,7 @@ function displaySubject (data, subject) {
         if (elementToAppend) {
           var teachersArray = elementToAppend.parentNode.querySelectorAll('a');
           teachersArray.forEach(function (el) {
-            if (el.innerHTML.includes(t)) {
+            if (teachersArray.length === 1 || el.innerHTML.includes(t)) {
               size = el.dataset.size;
               responsesTotal += parseInt(size);
             }
