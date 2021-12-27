@@ -454,4 +454,4 @@ function medianFunc (arr) {
   return m % 1 == 0 ? (parseInt(arr[m - 1]) + parseInt(arr[m])) / 2 : arr[Math.floor(m)];
 }
 
-document.getElementById('totalNumber').innerHTML = `Total response rate: ${receivedResponsesTotal} / ${responsesTotal} = ${Math.round((receivedResponsesTotal / responsesTotal) * 100)}`;
+document.getElementById('totalNumber').innerHTML = `Total response rate: ${receivedResponsesTotal} / ${responsesTotal} = ${Math.round((receivedResponsesTotal / responsesTotal) * 100)} %`;
