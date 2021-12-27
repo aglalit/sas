@@ -262,7 +262,7 @@ function displaySubject (data, subject) {
     if (dataNumbers[entry] === undefined) {
       dataNumbers[entry] = {};
       for (const key in el) {
-        if (key !== 'online' && parseInt(el[key]) >= 0 && parseInt(el[key]) <= 10) {
+        if (!isNaN(Number(el[key]))) {
           dataNumbers[entry][key] = [];
         }
       }
@@ -412,6 +412,7 @@ function displaySubject (data, subject) {
 
         var elementToAppend = document.querySelector(`.${subject}`);
         var size;
+        console.log(t)
         if (elementToAppend) {
           var teachersArray = elementToAppend.parentNode.querySelectorAll('a');
           teachersArray.forEach(function (el) {
