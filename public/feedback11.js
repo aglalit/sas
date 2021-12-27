@@ -3,7 +3,8 @@ const subjectId = urlParams.get('s');
 
 var allAnswers, allNext, allPrev;
 
-var allResponses = 0;
+var receivedResponsesTotal = 0;
+var responsesTotal = 0;
 
 const classSizes = {
 
@@ -404,7 +405,7 @@ function displaySubject (data, subject) {
           medianRow.appendChild(median);
         }
 
-        allResponses += responses;
+        receivedResponsesTotal += responses;
 
         console.log(subject);
         console.log(t);
@@ -414,7 +415,10 @@ function displaySubject (data, subject) {
         if (elementToAppend) {
           var teachersArray = elementToAppend.parentNode.querySelectorAll('a');
           teachersArray.forEach(function (el) {
-            if (el.innerHTML.includes(t)) size = el.dataset.size;
+            if (el.innerHTML.includes(t)) {
+              size = el.dataset.size;
+              responsesTotal += size;
+            }
           });
         }
         if (courseTitles[t]) {
@@ -449,4 +453,4 @@ function medianFunc (arr) {
   return m % 1 == 0 ? (parseInt(arr[m - 1]) + parseInt(arr[m])) / 2 : arr[Math.floor(m)];
 }
 
-document.getElementById('totalNumber').innerHTML = `Total number: ${allResponses}`;
+document.getElementById('totalNumber').innerHTML = `Total response rate: ${receivedResponsesTotal} / ${responsesTotal} = ${Math.round((receivedResponsesTotal / responsesTotal) * 100)}`;
