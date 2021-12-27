@@ -269,7 +269,7 @@ function displaySubject (data, subject) {
     }
 
     for (const key in dataNumbers[entry]) {
-      if (el[key].toString() === '4') continue;
+      if (el[key] && el[key].toString() === '4') continue;
       dataNumbers[entry][key].push(el[key]);
     }
   });
