@@ -262,7 +262,7 @@ function displaySubject (data, subject) {
     if (dataNumbers[entry] === undefined) {
       dataNumbers[entry] = {};
       for (const key in el) {
-        if (!isNaN(Number(el[key])) && Number(el[key]) >= 0 && Number(el[key]) <= 4) {
+        if (/^\d$/.test(el[key])) {
           dataNumbers[entry][key] = [];
         }
       }
