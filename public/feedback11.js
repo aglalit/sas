@@ -1,5 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
-var subjectUrl = urlParams.get('s');
+const subjectId = urlParams.get('s');
+
 var allAnswers, allNext, allPrev;
 
 var allResponses = 0;
@@ -8,7 +9,7 @@ const classSizes = {
 
 };
 
-if (subjectUrl === 'all') {
+if (subjectId === 'all') {
   document.querySelector('.allLinks').style.display = 'block';
   document.querySelectorAll('h2').forEach((el) => {
     el.style.display = 'none';
@@ -40,7 +41,7 @@ if (subjectUrl === 'all') {
     displaySubject([dataParsedAll[s]], s);
   }
 } else {
-  displaySubject(data, subjectUrl);
+  displaySubject(data, subjectId);
 }
 
 function displaySubject (data, subject) {
@@ -85,6 +86,7 @@ function displaySubject (data, subject) {
 
   var dataParsedFiltered = [];
   var teacherHeader = document.querySelector('.teacher');
+  var titleHeader = document.querySelector('.title');
 
   if (teacher) {
     var regex = new RegExp(teacher.replace(/\(/g, '\\(').replace(/\)/g, '\\)'), 'i');
@@ -93,6 +95,9 @@ function displaySubject (data, subject) {
     });
 
     teacherHeader.innerHTML = dataParsedFiltered[0]['Who taught this course'];
+    if (subject !== 'ba_2021_q2_electives') {
+      titleHeader.innerHTML = dataParsedFiltered[0]['Title'];
+    }
 
     dataParsed = dataParsedFiltered;
   }
@@ -186,7 +191,7 @@ function displaySubject (data, subject) {
     }
   };
 
-  if (subjectUrl !== 'all') {
+  if (subjectId !== 'all') {
     allAnswers(currentEntry);
 
     // COMMENTS
@@ -268,7 +273,7 @@ function displaySubject (data, subject) {
     }
   });
 
-  if (subjectUrl !== 'all') {
+  if (subjectId !== 'all') {
     for (var key in dataNumbers[Object.keys(dataNumbers)[0]]) {
       if (key !== 'Who taught this course') {
         var graph = document.createElement('div');
@@ -335,7 +340,7 @@ function displaySubject (data, subject) {
       }
     }
   }
-  if (subjectUrl === 'all') {
+  if (subjectId === 'all') {
     for (var t in dataNumbers) {
       if (t !== undefined && t !== 'undefined') {
         var table = document.createElement('table');
