@@ -230,6 +230,9 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     },
     Education: {
       email: 'i.a.prakhov@utmn.ru'
+    },
+    Gudkov: {
+      email: 'a.gudkov@utmn.ru'
     }
   };
 
