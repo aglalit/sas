@@ -115,7 +115,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       email: 'victor.skiba@studdb.ru'
     },
     Zmeev: {
-      email: 'zmdeol@gmail.com'
+      email: 'd.zmeev@utmn.ru'
     },
     Merzliakova: {
       email: 'natusik.83v@gmail.com'
