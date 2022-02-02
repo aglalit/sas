@@ -33,8 +33,8 @@ module.exports = function (app, Session, transporter, marketingTransporter) {
     }
     let mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
-      to: 'm.agliulin@utmn.ru, apply_sas@utmn.ru', // list of receivers
-      subject: 'SAS — Абитуриенты 2022', // Subject line
+      to: 'm.agliulin@utmn.ru, apply_sas@utmn.ru, olimpiada_sas@utmn.ru', // list of receivers
+      subject: 'SAS — Интенсив 2022', // Subject line
       // text: JSON.stringify(req.user), // plain text body
       html: emailBody.toString() // html body
     };
