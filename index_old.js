@@ -451,7 +451,7 @@ app.post('/polls/3rd-module-electives', function(req, res) {
   req.flash('info', `Ваш результат принят (1-й приоритет — ${req.body["elective1"]}; 2-й приоритет — ${req.body["elective2"]}; 3-й приоритет — ${req.body["elective3"]}). Благодарим за участие.`);
   let mailOptions = {
     from: '"SAS" <sas@utmn.ru>', // sender address
-    to: 'm.agliulin@utmn.ru, s.makhmudova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
+    to: 'm.agliulin@utmn.ru, apply_sas@utmn.ru, a.rusakova@utmn.ru', // list of receivers
     subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
     // text: JSON.stringify(req.user), // plain text body
     html: '<b>' + JSON.stringify(req.user.google.email) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -715,7 +715,7 @@ app.post('/polls/open-day-17', function(req, res) {
       );
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'm.agliulin@utmn.ru, s.makhmudova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
+        to: 'm.agliulin@utmn.ru, apply_sas@utmn.ru, a.rusakova@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -748,7 +748,7 @@ app.post('/polls/open-day-17', function(req, res) {
       });
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'm.agliulin@utmn.ru, s.makhmudova@utmn.ru, a.rusakova@utmn.ru', // list of receivers
+        to: 'm.agliulin@utmn.ru, apply_sas@utmn.ru, a.rusakova@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -806,7 +806,7 @@ app.post('/polls/great-books', function(req, res) {
       );
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'm.agliulin@utmn.ru, s.makhmudova@utmn.ru, a.rusakova@utmn.ru, e.selikhovkina@utmn.ru', // list of receivers
+        to: 'm.agliulin@utmn.ru, apply_sas@utmn.ru, a.rusakova@utmn.ru, e.selikhovkina@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body
@@ -842,7 +842,7 @@ app.post('/polls/great-books', function(req, res) {
       });
       let mailOptions = {
         from: '"SAS" <sas@utmn.ru>', // sender address
-        to: 'm.agliulin@utmn.ru, s.makhmudova@utmn.ru, a.rusakova@utmn.ru, e.selikhovkina@utmn.ru', // list of receivers
+        to: 'm.agliulin@utmn.ru, apply_sas@utmn.ru, a.rusakova@utmn.ru, e.selikhovkina@utmn.ru', // list of receivers
         subject: 'Новый результат опроса по семинарам и лекциям Школы', // Subject line
         // text: JSON.stringify(req.user), // plain text body
         html: '<b>' + JSON.stringify(req.session.id) + '<br/><br/>' + JSON.stringify(req.body) + '</b>' // html body

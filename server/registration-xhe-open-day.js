@@ -42,7 +42,7 @@ module.exports = function (app, Session, transporter) {
     }
     let mailOptions = {
       from: '"SAS" <sas@utmn.ru>', // sender address
-      to: 'm.agliulin@utmn.ru,s.makhmudova@utmn.ru', // list of receivers
+      to: 'm.agliulin@utmn.ru,apply_sas@utmn.ru', // list of receivers
       subject: 'SAS — X-HE Registration', // Subject line
       // text: JSON.stringify(req.user), // plain text body
       html: emailBody.toString() // html body
