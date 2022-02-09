@@ -96,11 +96,11 @@ module.exports = function(app, Session, transporter, marketingTransporter) {
       // text: JSON.stringify(req.user), // plain text body
       html: emailBody2.toString() // html body
     };
-    // marketingTransporter.sendMail(mailOptions2, (error, info) => {
-    //   if (error) {
-    //     return console.log(error);
-    //   }
-    //   console.log('Message %s sent: %s', info.messageId, info.response);
-    // });
+    marketingTransporter.sendMail(mailOptions2, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log('Message %s sent: %s', info.messageId, info.response);
+    });
   }
 };
