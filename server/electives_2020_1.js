@@ -1,13 +1,13 @@
 module.exports = function (app, Session, transporter, isLoggedIn, User, logger) {
-  app.get('/polls/electives_2021_2022_3', isLoggedIn, function (req, res) {
-    res.render('electives_2021_2022_3', { user: req.user });
+  app.get('/polls/electives_2021_2022_4', isLoggedIn, function (req, res) {
+    res.render('electives_2021_2022_4', { user: req.user });
   });
 
   app.get('/polls/electives_pre_2021', isLoggedIn, function (req, res) {
     res.render('electives_pre_2021', { user: req.user });
   });
 
-  app.post('/polls/electives_2021_2022_3', function (req, res) {
+  app.post('/polls/electives_2021_2022_4', function (req, res) {
     logger.error(JSON.stringify(req.body));
     if (req.user) {
       User.findOne({
@@ -19,7 +19,7 @@ module.exports = function (app, Session, transporter, isLoggedIn, User, logger) 
         }
 
         if (user) {
-          user.polls.ELECTIVES.electives_2021_2022_3 = JSON.stringify(req.body);
+          user.polls.ELECTIVES.electives_2021_2022_4 = JSON.stringify(req.body);
 
           user.save(function (err, user) {
             if (err) { return console.error(err); }

@@ -1,0 +1,257 @@
+doctype html
+html
+  head
+    title Electives
+    link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/cards.css')
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js")
+    script(src="/touch_sortable.js")
+body
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 Electives. Year 2021–2022. Quarter 4. 
+      h3 Sort the following courses in the order from the most preferable to the least preferable one (from the top to the bottom)  
+      h3 Click on a course title to see its syllabus. Please make your choice carefully because lower priorities may matter.
+      h3 NOTE: The syllabi could be changed.
+      form(id="form" action="/polls/electives_2021_2022_3" method="post")
+        // DON'T REMOVE THIS INPUT!!!
+        input(type="hidden") 
+        fieldset   
+            .cards.offset-sm-1.col-sm-11                
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    script(src="/cards.js")
+    script(src="/default.js") 
+    script.
+            var cards = document.querySelector('.cards');
+            var dict = {
+            "year34": [
+              {
+                "instructors": "Joanna Longden",
+                "title": "Black Atlantic",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Black-Atlantic-Syllabus-2021-22-Q4-Longden.docx-2.pdf"
+            },
+            {
+                "instructors": "Giacomo Andreoletti",
+                "title": "Formal Logic 1",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Formal-Logic-1-Syllabus-2021-22-Q4-Andreoletti.docx-1.pdf"
+            },
+            {
+                "instructors": "Duane Rousselle, Julie Reshe",
+                "title": "Desiring Mastery: Theoretical Foundations of Anarchism",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Desiring-Mastery_-TF-of-Anarchism-Syllabus-2021-22-Q4-Rousselle.docx-1.pdf"
+            },
+            {
+                "instructors": "Siyaves Azeri",
+                "title": "Doors and the Constitution of Inner Space",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Doors-and-the-Constitution-of-Inner-Space-Syllabus-2021-22-Q4-Azeri.docx-1.pdf"
+            },
+            {
+                "instructors": "Peter Lešnik",
+                "title": "Global Art Cinema",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Global-Art-Cinema-Syllabus-2021-22-Q4-Peter-Lešnik.docx-1.pdf"
+            },
+            {
+                "instructors": "Julie Reshe",
+                "title": "The Tragic Fate of Sabina Spielrein",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/The-tragic-fate-of-Sabina-Spielrein-Syllabus-2021-22-Q4-Reshe.docx-1.pdf"
+            },
+            {
+                "instructors": "Louis Vervoort",
+                "title": "Quantum Mechanics and Buddhism: a Possible Link?",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Quantum-Mechanics-and-Buddhism-Syllabus-2021-22-Q4-Vervoort.docx-1.pdf"
+            },
+            {
+                "instructors": "Joshua Reeves",
+                "title": "Surveillance, Drones, and Robots",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Surveillance-Drones-and-Robots-Syllabus-2021-22-Q4-Reeves.docx-1.pdf"
+            },
+            {
+                "instructors": "Krishna Muthukumarappan",
+                "title": "Free Will in Philosophy and Neuroscience",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Free-will-in-philosophy-and-neuroscience-Syllabus-2021-22-Q4-Muthukumarappan.docx-1.pdf"
+            },
+            {
+                "instructors": "Erzsébet Pásztor",
+                "title": "The Witch Kitchen of Galapagos",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/The-Witch-Kitchen-of-Galapagos-Syllabus-2021-22-Q4-Pasztor.docx-1.pdf"
+            },
+            {
+                "instructors": "Stanimir Panayotov",
+                "title": "One and Many",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/One-and-Many-Syllabus-2021-22-Q4-Panayotov.docx-1.pdf"
+            },
+            {
+                "instructors": "Olga Dobrovidova",
+                "title": "Science Communication",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Science-Communication-Syllabus-2021-22-Q4-Dobrovidova.docx-1.pdf"
+            },
+            {
+                "instructors": "Bryan Neal",
+                "title": "Crafting Character and Storyline",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Crafting-Character-and-Storyline-Syllabus-2021-22-Q4-Neal.docx-1.pdf"
+            },
+            {
+                "instructors": "Bryan Neal",
+                "title": "From Script to Storyboard",
+                "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/From-Script-to-Storyboard-Syllabus-2021-22-Q4-Neal.docx-1.pdf"
+            },
+              {
+                  "instructors": "Jay Silverstein",
+                  "title": "ANSO Current Issues and Ideas: Anthropology",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/ANSO_Anthropological-Issues-Ideas-Syllabus-2021-22-Q3-Silverstein.pdf"
+              },
+              {
+                  "instructors": "Erika Wolf",
+                  "title": "CULT Visual Culture",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/CULT_Visual-Culture-Syllabus-2021-22-Q3-Wolf.pdf"
+              },
+              {
+                  "instructors": "Pavel Kocourek",
+                  "title": "ECON Applied Economics",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/ECON_Applied-Economics-Syllabus-2021-22-Q3-Kocourek.pdf"
+              },
+              {
+                  "instructors": "Alexander Usvitskiy",
+                  "title": "ECON Game Theory",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/ECON_Game-Theory-Syllabus-2021-22-Q3-Usvitskiy.pdf"
+              },
+              {
+                  "instructors": "Peter Lesnik",
+                  "title": "FIME Film Theory",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/FIME_Film-Theory-Syllabus-2021-22-Q3-Lesnik.pdf"
+              },
+              {
+                  "instructors": "Joshua Reeves",
+                  "title": "FIME Intermediality",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/FIME_Intermediality-Syllabus-2021-22-Q3-Reeves.pdf"
+              },
+              {
+                  "instructors": "Scott Anthony",
+                  "title": "HIST Making History",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/HIST_Making-History-Syllabus-2021-22-Q3-Anthony-1.pdf"
+              },
+              {
+                  "instructors": "Erzsébet Pásztor",
+                  "title": "LIFE Nature / Nurture problem in Genetics",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/LIFE_Nature-_-Nurture-problem-in-Genetics-Syllabus-2021-22-Q3-Pásztor.pdf"
+              },
+              {
+                  "instructors": "Krishna Muthukumarappan",
+                  "title": "LIFE Brain and Behavior",
+                  "syllabus": "https://sas.utmn.ru/wp-content/uploads/2021/12/LIFE_Brain-and-Behavior-Syllabus-2021-22-Q3-Muthukumarappan.pdf"
+              },
+              {
+                  "instructors": "Corinne Doria / Siyaves Azeri / Giacomo Andreoletti",
+                  "title": "Great Books: Philosophy and Social Thought",
+              },
+              {
+                  "instructors": "Peter Mitchell",
+                  "title": "Academic Writing",
+              },
+              {
+                  "instructors": "Andrey Shcherbenok, Duane Rousselle, Louis Vervoort, Siyaves Azeri",
+                  "title": "Great Books - Literature",
+              },
+              {
+                  "instructors": "Quinton Scribner",
+                  "title": "Global Issues",
+              }
+              
+          ],
+          "year12": [
+            {
+              "instructors": "Joanna Longden",
+              "title": "Black Atlantic",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Black-Atlantic-Syllabus-2021-22-Q4-Longden.docx-2.pdf"
+          },
+          {
+              "instructors": "Giacomo Andreoletti",
+              "title": "Formal Logic 1",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Formal-Logic-1-Syllabus-2021-22-Q4-Andreoletti.docx-1.pdf"
+          },
+          {
+              "instructors": "Duane Rousselle, Julie Reshe",
+              "title": "Desiring Mastery: Theoretical Foundations of Anarchism",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Desiring-Mastery_-TF-of-Anarchism-Syllabus-2021-22-Q4-Rousselle.docx-1.pdf"
+          },
+          {
+              "instructors": "Siyaves Azeri",
+              "title": "Doors and the Constitution of Inner Space",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Doors-and-the-Constitution-of-Inner-Space-Syllabus-2021-22-Q4-Azeri.docx-1.pdf"
+          },
+          {
+              "instructors": "Peter Lešnik",
+              "title": "Global Art Cinema",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Global-Art-Cinema-Syllabus-2021-22-Q4-Peter-Lešnik.docx-1.pdf"
+          },
+          {
+              "instructors": "Julie Reshe",
+              "title": "The Tragic Fate of Sabina Spielrein",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/The-tragic-fate-of-Sabina-Spielrein-Syllabus-2021-22-Q4-Reshe.docx-1.pdf"
+          },
+          {
+              "instructors": "Louis Vervoort",
+              "title": "Quantum Mechanics and Buddhism: a Possible Link?",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Quantum-Mechanics-and-Buddhism-Syllabus-2021-22-Q4-Vervoort.docx-1.pdf"
+          },
+          {
+              "instructors": "Joshua Reeves",
+              "title": "Surveillance, Drones, and Robots",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Surveillance-Drones-and-Robots-Syllabus-2021-22-Q4-Reeves.docx-1.pdf"
+          },
+          {
+              "instructors": "Krishna Muthukumarappan",
+              "title": "Free Will in Philosophy and Neuroscience",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Free-will-in-philosophy-and-neuroscience-Syllabus-2021-22-Q4-Muthukumarappan.docx-1.pdf"
+          },
+          {
+              "instructors": "Erzsébet Pásztor",
+              "title": "The Witch Kitchen of Galapagos",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/The-Witch-Kitchen-of-Galapagos-Syllabus-2021-22-Q4-Pasztor.docx-1.pdf"
+          },
+          {
+              "instructors": "Stanimir Panayotov",
+              "title": "One and Many",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/One-and-Many-Syllabus-2021-22-Q4-Panayotov.docx-1.pdf"
+          },
+          {
+              "instructors": "Olga Dobrovidova",
+              "title": "Science Communication",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Science-Communication-Syllabus-2021-22-Q4-Dobrovidova.docx-1.pdf"
+          },
+          {
+              "instructors": "Bryan Neal",
+              "title": "Crafting Character and Storyline",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/Crafting-Character-and-Storyline-Syllabus-2021-22-Q4-Neal.docx-1.pdf"
+          },
+          {
+              "instructors": "Bryan Neal",
+              "title": "From Script to Storyboard",
+              "syllabus": "https://sas.utmn.ru/wp-content/uploads/2022/02/From-Script-to-Storyboard-Syllabus-2021-22-Q4-Neal.docx-1.pdf"
+          }
+        ]
+      }
+            var urlParams = new URLSearchParams(window.location.search);
+            var year = urlParams.get('year');
+            
+    
+    
+    
+    
+          dict[year].forEach(function(entry, index){
+            var card = document.createElement('div');
+            card.classList.add('portlet', 'ui-widget', 'ui-widget-content', 'ui-helper-clearfix', 'ui-corner-all');
+            var syllabusHTML = '';
+            if (entry["syllabus"]) syllabusHTML = `<p><a target="_blank" href="${entry["syllabus"]}">Syllabus link</a></p>`;
+            else syllabusHTML = 'Syllabus is not available yet';
+            card.innerHTML = `<div class="portlet-header ui-sortable-handle ui-widget-header ui-corner-all" id="${entry["title"]} — ${entry["instructors"]}"><div class="row"><div class="col-12 col-md-10"><a data-toggle="collapse" role="button" href="#collapse${index}">${entry["title"]} — ${entry["instructors"]}</a><div class="collapse" id="collapse${index}"> 
+            ${syllabusHTML}</div></div></div></div>`
+            cards.appendChild(card);
+          })
