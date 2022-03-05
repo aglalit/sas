@@ -1,4 +1,4 @@
-module.exports = function(app, Session, transporter, isLoggedIn, User){
+module.exports = function(app, Session, officeTransporter, isLoggedIn, User){
 
   app.get('/polls/candidates', isLoggedIn, function(req, res) {
     res.render('candidates', {user: req.user})
@@ -38,7 +38,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, User){
       // text: JSON.stringify(req.user), // plain text body
       html: JSON.stringify(req.user.google.name) + ', ' + JSON.stringify(req.user.google.email) + ': ' + emailBody.toString() // html body
     };
-    transporter.sendMail(mailOptions, (error, info) => {
+    officeTransporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         return console.log(error);
       }

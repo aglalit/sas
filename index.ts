@@ -241,7 +241,7 @@ require('./server/unsubscribe.js')(app, Session, transporter);
 
 require('./server/majors.js')(app, Session, transporter, isLoggedIn, User);
 require('./server/kontowski.js')(app, Session, transporter, isLoggedIn, User);
-require('./server/candidates.js')(app, Session, transporter, isLoggedIn, User);
+require('./server/candidates.js')(app, Session, officeTransporter, isLoggedIn, User);
 
 require('./server/gi_topics_2020.js')(app, Session, transporter, isLoggedIn, User);
 
