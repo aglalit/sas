@@ -1,0 +1,176 @@
+doctype html
+head
+  title SAS — Candidates
+  link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+  // load bootstrap css
+  style.
+    body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+    @font-face {
+      font-family: 'Agipo-Bold';
+      src:url('../fonts/agipo/Agipo-Bold.woff');
+    }
+    img {
+      width:80%;
+      margin-top:10px;
+    }
+    .logo {padding-bottom:30px}
+    h2 {font-weight:800; margin-bottom:20px;}
+    .jumbotron h1 {
+      font-size:36px;
+      margin-bottom: 40px;
+    }
+    h3 {
+      font-size: 1.5em;
+      font-weight: 400;
+    }
+    .jumbotron{
+      font-size:18px;
+      line-height: initial;
+      padding-top: 0px;
+    }
+    .container{
+      width:98% !important;
+    }
+    .input-group{
+      margin-bottom:20px;
+    }
+    .input-group label {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight: 500;
+      margin: 10px 0;
+      font-size:20px;
+      width:93%;
+    }
+    .input-group .label__description {
+      font-family:initial;
+    }
+    .input-group .form-control {
+      margin: 20px 0 40px 0;
+      width:75%;
+    }
+    form {
+      margin-top: 30px;
+    }
+    label,legend {
+      text-align: left;
+          float: left;
+    }
+    legend {font-size: 1.8em;}
+    input, textarea, select {
+      float:left;
+      width:75%;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    input[type="radio"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      border-radius: 50%;
+      width: 50px;
+      height: 38px;
+
+      border: 2px solid #999;
+      transition: 0.2s all linear;
+      outline: none;
+      margin-right: 15px;
+
+      position: relative;
+      top:0;
+      }
+      input:focus {
+        outline: none !important;
+      }
+      input:checked {
+        border: 12px solid #f00;
+        width: 44px;
+        height: 38px;
+      }
+      button {
+        background-color: #f00 !important;
+        border: none !important;
+      }
+      .flex-container {display:flex; flex-direction:column; margin:10px 0;}
+      .flex-container.row {flex-direction:row;}
+
+      @media (max-width: 1024px) {
+
+        body{padding-top:10px}
+        .container{
+        width:95%;
+        }
+      h1,h3 {font-size:60px !important;}
+    .input-group  label {
+      font-size:40px ;
+      margin-bottom:20px;
+      }
+      input[type="checkbox"]{
+        top:14px;
+        zoom:1.1;
+      }
+      input[type="radio"]{
+        top:14px;
+      }
+      button.btn-lg {
+        font-size: 30px;
+      }
+      }
+      
+.container
+  .jumbotron.text-center
+    .logo
+      a(href="https://sas.utmn.ru")
+        img(src="/assets/Logo__red.png")
+    h1 Кандидаты на голосование (продление трудовых договоров):
+    h1 Поддерживаете ли вы проект решения Комиссии в отношении: Решетникова Юлия?
+    h3 - должность: профессор
+    h3 - продолжительность договора 1 год (до 14.08.2023)
+    h3 - заработная плата в размере 160 тыс. рублей в месяц
+    h3 - исследовательский бюджет в размере 200 тыс. рублей в год
+    h3 - преподавательская нагрузка в размере 256 условных аудиторных академических часов
+    form(action="/polls/candidates" method="post")
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" required="required" value="Да" name="reshe" id="Да1")
+          label(for="Да1") Да
+        .flex-container.row
+          input(type="radio" required="required" value="Нет" name="reshe" id="Нет1")
+          label(for="Нет1") Нет
+        .flex-container.row
+          input(type="radio" required="required" value="Воздержался" name="reshe" id="Воздержался1")
+          label(for="Воздержался1") Воздержался
+      h1 Поддерживаете ли вы проект решения Комиссии в отношении: Руссель Дуэйн?
+      h3 - должность: профессор
+      h3 - продолжительность договора 1 год (до 14.08.2023) 
+      h3 - заработная плата в размере 170 тыс. рублей в месяц
+      h3 - исследовательский бюджет в размере 200 тыс. рублей в год
+      h3 - преподавательская нагрузка в размере 256 условных аудиторных академических часов
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" required="required" value="Да" name="rousselle" id="Да2")
+          label(for="Да2") Да
+        .flex-container.row
+          input(type="radio" required="required" value="Нет" name="rousselle" id="Нет2")
+          label(for="Нет2") Нет
+        .flex-container.row
+          input(type="radio" required="required" value="Воздержался" name="rousselle" id="Воздержался2")
+          label(for="Воздержался2") Воздержался
+      h1 Поддерживаете ли вы проект решения Комиссии в отношении: Турк Марко?
+      h3 - должность: профессор
+      h3 - продолжительность договора 1 год (до 14.08.2023) 
+      h3 - заработная плата в размере 180 тыс. рублей в месяц
+      h3 - исследовательский бюджет в размере 200 тыс. рублей в год
+      h3 - преподавательская нагрузка в размере 256 условных аудиторных академических часов
+      div(class="input-group")
+        .flex-container.row
+          input(type="radio" required="required" value="Да" name="turk" id="Да3")
+          label(for="Да3") Да
+        .flex-container.row
+          input(type="radio" required="required" value="Нет" name="turk" id="Нет3")
+          label(for="Нет3") Нет
+        .flex-container.row
+          input(type="radio" required="required" value="Воздержался" name="turk" id="Воздержался3")
+          label(for="Воздержался3") Воздержался  
+       
+      button(type="submit" class="btn btn-primary btn-lg") Отправить

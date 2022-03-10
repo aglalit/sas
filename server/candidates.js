@@ -4,6 +4,10 @@ module.exports = function(app, Session, officeTransporter, isLoggedIn, User){
     res.render('candidates', {user: req.user})
   });
 
+  app.get('/polls/candidates2', isLoggedIn, function(req, res) {
+    res.render('candidates2', {user: req.user})
+  });
+
   app.post('/polls/candidates', function(req, res) {
     User.findOne({
       '_id': req.user._id
