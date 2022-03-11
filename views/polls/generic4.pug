@@ -17,14 +17,30 @@ body
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/Logo__red.png")
-      h2 SAS — First Year Students Poll
-      h3 For those who attended the presentation "City as a Matrix" last Saturday:
+      h2 SAS — Economic Experiments — Registration
+      //- h3 For those who attended the presentation "City as a Matrix" last Saturday:
       //h3 To better understand conditions for online teaching in Q4, we are running a short survey (filling it will take you 3 mins max). Please do so by Monday, 6.04, 8pm.
       form(id="form" action="/polls/generic4" method="post")
         // DON'T REMOVE THIS INPUT!!!
         input(type="hidden")
         fieldset
           div(class="input-group")#input-group
+            .flex-container.column
+              label(for="Ф.И.О.") Ф.И.О.
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="Ф.И.О.")
+            .flex-container.column
+              label(for="Email") Email
+                sup(style="color:red") *
+              input(type="email" required="required" class="form-control" name="Email")
+            .flex-container.row
+              input.form-check-input(class="agreement-checkbox" id="agreement-checkbox" type="checkbox" name="agreement" required)                         
+              label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
+                a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") политики конфиденциальности
+                sup(style="color:red") *
+            label 
+              sup(style="color:red") * 
+              span — обязательные поля<!--required fields -->
             //- .flex-container.column
             //-   label(for="") Preferred Variant of Quantitative Reasoning:
             //- .flex-container.row
