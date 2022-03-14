@@ -38,17 +38,18 @@ body
               input(type="tel"  class="form-control" name="Мобильный телефон")
             .flex-container.column
               label(for="") Место учебы
+                sup(style="color:red") *
             .flex-container.row
-              input.radio(id="Студент SAS" type="radio" name="institution" value="Студент SAS")                          
+              input.radio(id="Студент SAS" type="radio" required="required" name="institution" value="Студент SAS")                          
               label(for="Студент SAS") Студент SAS
             .flex-container.row
-              input.radio(id="Студент ТюмГУ (не SAS)" type="radio" name="institution" value="Студент ТюмГУ (не SAS)")                          
+              input.radio(id="Студент ТюмГУ (не SAS)" type="radio" required="required" name="institution" value="Студент ТюмГУ (не SAS)")                          
               label(for="Студент ТюмГУ (не SAS)") Студент ТюмГУ (не SAS)
             .flex-container.row
-              input.radio(id="Студент (не ТюмГУ)" type="radio" name="institution" value="Студент (не ТюмГУ)")                          
+              input.radio(id="Студент (не ТюмГУ)" type="radio" required="required" name="institution" value="Студент (не ТюмГУ)")                          
               label(for="Студент (не ТюмГУ)") Студент (не ТюмГУ)
             .flex-container.row
-              input.radio(id="Другое" type="radio" name="institution" value="Другое")                          
+              input.radio(id="Другое" type="radio" required="required" name="institution" value="Другое")                          
               label(for="Другое") Другое
             .flex-container.row
               input.form-check-input(class="agreement-checkbox" id="agreement-checkbox" type="checkbox" name="experiments" required)                         
