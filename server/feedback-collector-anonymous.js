@@ -54,7 +54,7 @@ module.exports = function (app, Session, transporter, officeTransporter, logger)
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
       });
-      sess.polls[req.body.subject.replace(/-/g, '_')] = JSON.stringify(req.body);
+      sess.polls.generic_anonymous = JSON.stringify(req.body);
       sess.save(function (err) {
         if (err) { logger.error(err); }
         return console.error(err);
