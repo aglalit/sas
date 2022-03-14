@@ -15,7 +15,7 @@ module.exports = function (app, Session, transporter, officeTransporter, logger)
     var newSession = new Session();
     parseSession(newSession, req);
 
-    req.flash('info', 'Ваша форма отправлена. Благодарим за участие.');
+    req.flash('info', 'Ваша форма отправлена.');
     res.render('polls_anonymous', {
       messages: req.flash('info')
     });
