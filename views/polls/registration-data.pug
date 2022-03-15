@@ -245,8 +245,8 @@ script.
   var data = [!{data}];
   var registrations = [];
   data.forEach(function(el){
-    var parsed = JSON.parse(el.polls.registration.data)
-    parsed.time = el.polls.registration.time;    
+    var parsed = JSON.parse(el.polls.generic_anonymous.data)
+    parsed.time = el.polls.generic_anonymous.time;    
     registrations.unshift(parsed);
   });
   registrations.reverse();
