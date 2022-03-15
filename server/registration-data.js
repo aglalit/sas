@@ -38,7 +38,7 @@ module.exports = function(app, Session, transporter, isLoggedIn, logger){
 // });
 
 app.get('/registration-data', function(req, res) {
-  Session.find({'polls.registration': {$exists : true}},{'polls.registration':true, _id: 0}).sort( { "_id": -1 } ).limit(100).exec(function (err, docs){
+  Session.find({'polls.generic_anonymous': {$exists : true}},{'polls.generic_anonymous':true, _id: 0}).sort( { "_id": -1 } ).limit(200).exec(function (err, docs){
     console.log(docs)
     if (err) {
       res.send(err);
