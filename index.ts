@@ -30,30 +30,30 @@ const Session = require('./models/session');
 const Schedule = require('./models/schedule');
 
 let logger = winston.createLogger({
- level: 'error',
- format: winston.format.json(),
- defaultMeta: { service: 'user-service' },
- transports: [
- //
- // - Write to all logs with level `info` and below to `combined.log`
- // - Write all logs error (and below) to `error.log`.
- //
- new winston.transports.File({ filename: './public/error.log', level: 'error' }),
- new winston.transports.File({ filename: './public/combined.log' })
- ]
+  level: 'error',
+  format: winston.format.json(),
+  defaultMeta: { service: 'user-service' },
+  transports: [
+    //
+    // - Write to all logs with level `info` and below to `combined.log`
+    // - Write all logs error (and below) to `error.log`.
+    //
+    new winston.transports.File({ filename: './public/error.log', level: 'error' }),
+    new winston.transports.File({ filename: './public/combined.log' })
+  ]
 });
 // logger.error('Error log:');
 
 const promise = mongoose.connect(process.env.MONGODB_URI.toString()
- , {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}).then(
- () => {
- console.log('Database is connected');
- },
- err => {
- logger.error(err);
- console.log('Can not connect to the database' + err);
- }
-);
+  , { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }).then(
+    () => {
+      console.log('Database is connected');
+    },
+    err => {
+      logger.error(err);
+      console.log('Can not connect to the database' + err);
+    }
+  );
 
 // Connection URL
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
@@ -61,93 +61,94 @@ const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 // Use connect method to connect to the server
 const db = mongoose.connection;
 
-promise.then(function (db) {
- db.on('error', function (error) {
- console.error.bind(console, 'connection error:');
- logger.error(error);
- });
- db.on('open', function () {
- logger.error('Mongo is connected');
- console.log('Mongo is connected');
- });
+promise.then(function(db) {
+  db.on('error', function(error) {
+    console.error.bind(console, 'connection error:');
+    logger.error(error);
+  });
+  db.on('open', function() {
+    logger.error('Mongo is connected');
+    console.log('Mongo is connected');
+  });
 });
 
 const user = process.env.TRANSPORTER;
 const pass = process.env.TRANSPORTER_PASSWORD;
 // create reusable transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport({
- service: 'gmail',
- auth: {
- user: user,
- pass: pass
- },
- debug: true
+  service: 'gmail',
+  auth: {
+    user: user,
+    pass: pass
+  },
+  debug: true
 });
-transporter.verify(function (error, success) {
- if (error) {
- console.log(error);
- logger.error(error);
- } else {
- console.log(`${user}: server is ready to take our messages`);
- }
+transporter.verify(function(error, success) {
+  if (error) {
+    console.log(error);
+    logger.error(error);
+  } else {
+    console.log(`${user}: server is ready to take our messages`);
+  }
 });
 
 const officeuser = process.env.OFFICETRANSPORTER;
 const officepass = process.env.OFFICETRANSPORTER_PASSWORD;
 
 const officeTransporter = nodemailer.createTransport({
- host: 'smtp.office365.com',                  // hostname
-    service: 'outlook',                             // service name
-    secureConnection: false,
-    tls: {
-        ciphers: 'STARTTLS'                            // tls version
-    },
- port: 587,
- auth: {
- user: officeuser,
- pass: officepass
- },
- debug: true,
- pool: true,
- maxMessages: 300,
- maxConnections: 3
+  host: 'smtp.office365.com',                  // hostname
+  service: 'outlook',                             // service name
+  secureConnection: false,
+  secure: false,
+  requireTLS: true,
+  auth: {
+    user: officeuser,
+    pass: officepass
+  },
+  tls: {
+    rejectUnauthorized: false
+  },
+  debug: true,
+  pool: true,
+  maxMessages: 300,
+  maxConnections: 3
 });
 
-officeTransporter.verify(function (error, success) {
- if (error) {
- console.log(error);
- logger.error(error);
- } else {
- console.log(`${officeuser}: server is ready to take our messages`);
- }
+officeTransporter.verify(function(error, success) {
+  if (error) {
+    console.log(error);
+    logger.error(error);
+  } else {
+    console.log(`${officeuser}: server is ready to take our messages`);
+  }
 });
 
 const marketinguser = process.env.MARKETINGTRANSPORTER;
 const marketingpass = process.env.MARKETINGTRANSPORTER_PASSWORD;
 
 const marketingTransporter = nodemailer.createTransport({
- service: 'gmail',
- auth: {
- user: marketinguser,
- pass: marketingpass
- },
- debug: true
+  service: 'gmail',
+  auth: {
+    user: marketinguser,
+    pass: marketingpass
+  },
+  debug: true
 });
 
-marketingTransporter.verify(function (error, success) {
- if (error) {
- console.log(error);
- logger.error(error);
- } else {
- console.log(`${marketinguser}: server is ready to take our messages`);
- }
+marketingTransporter.verify(function(error, success) {
+  if (error) {
+    console.log(error);
+    logger.error(error);
+  } else {
+    console.log(`${marketinguser}: server is ready to take our messages`);
+  }
 });
 
 app.set('port', (process.env.PORT || 5000));
 // view engine setup
 app.set('views', [
- path.join(__dirname, 'views'),
- path.join(__dirname, 'views/polls/')
+  path.join(__dirname, 'views'),
+  path.join(__dirname, 'views/polls/')
 ]);
 app.set('view engine', 'pug');
 
@@ -159,17 +160,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 const corsOptions = {
- origin: 'https://sas.utmn.ru',
- optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  origin: 'https://sas.utmn.ru',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
 app.use(cors(corsOptions));
 
 // required for passport
 app.use(session({
- secret: 'schoolofadvancedstudiessecret',
- cookie: { maxAge: 600000000 },
- store: new MongoStore({ mongooseConnection: mongoose.connection, collection: 'sessions_storage' })
+  secret: 'schoolofadvancedstudiessecret',
+  cookie: { maxAge: 600000000 },
+  store: new MongoStore({ mongooseConnection: mongoose.connection, collection: 'sessions_storage' })
 })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
@@ -185,41 +186,41 @@ app.use(compression());
 app.use('/', index);
 app.use(subdomain('advanced', router));
 
-app.listen(app.get('port'), function () {
- console.log('Node app is running on port', app.get('port'));
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
 
 app.get('/auth/google', checkReturnTo, passport.authenticate('google', {
- scope: ['profile', 'email']
+  scope: ['profile', 'email']
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google', {
- successReturnToOrRedirect: '/polls',
- failureRedirect: '/login'
+  successReturnToOrRedirect: '/polls',
+  failureRedirect: '/login'
 }));
 
-app.get('/polls', isLoggedIn, function (req, res) {
- res.render('polls', { user: req.user });
+app.get('/polls', isLoggedIn, function(req, res) {
+  res.render('polls', { user: req.user });
 });
 
-app.get('/polls-anonymous', function (req, res) {
- res.render('polls_anonymous', { messages: req.flash('info') });
+app.get('/polls-anonymous', function(req, res) {
+  res.render('polls_anonymous', { messages: req.flash('info') });
 });
 
 app.get('/sas-folder-tree', isLoggedIn, function(req, res, next) {
-  res.sendFile('views/sas-folder-tree.html', {root: __dirname });
+  res.sendFile('views/sas-folder-tree.html', { root: __dirname });
 });
 
-function checkReturnTo (req, res, next) {
- let returnTo = req.query.returnTo;
- if (returnTo) {
- // Maybe unnecessary, but just to be sure.
- req.session = req.session || {};
+function checkReturnTo(req, res, next) {
+  let returnTo = req.query.returnTo;
+  if (returnTo) {
+    // Maybe unnecessary, but just to be sure.
+    req.session = req.session || {};
 
- // Set returnTo to the absolute path you want to be redirect to after the authentication succeeds.
- req.session.returnTo = req.baseUrl + querystring.unescape(returnTo);
- }
- next();
+    // Set returnTo to the absolute path you want to be redirect to after the authentication succeeds.
+    req.session.returnTo = req.baseUrl + querystring.unescape(returnTo);
+  }
+  next();
 }
 
 require('./server/electives_2020_1.js')(app, Session, transporter, isLoggedIn, User, logger);
@@ -260,49 +261,49 @@ require('./server/schedule_data.js')(app, Schedule, logger);
 
 require('./server/feedback-collector.js')(app, Session, transporter, officeTransporter, isLoggedIn, User, logger);
 
-app.get('/logout', function (req, res) {
- req.logout();
- res.redirect('/polls');
+app.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/polls');
 });
 
-function isLoggedIn (req, res, next) {
- // DEV
- if (process.env.NODE_ENV === 'development'){
-   return next();
- }
+function isLoggedIn(req, res, next) {
+  // DEV
+  if (process.env.NODE_ENV === 'development') {
+    return next();
+  }
 
- // if user is authenticated in the session, carry on
- if (req.isAuthenticated()) {
- console.log(req.isAuthenticated());
- console.log('isAuthenticated');
- return next();
- }
+  // if user is authenticated in the session, carry on
+  if (req.isAuthenticated()) {
+    console.log(req.isAuthenticated());
+    console.log('isAuthenticated');
+    return next();
+  }
 
- // if they aren't redirect them to the home page
- console.log(req.isAuthenticated());
- res.redirect('/login?returnTo=' + querystring.escape(req.url));
+  // if they aren't redirect them to the home page
+  console.log(req.isAuthenticated());
+  res.redirect('/login?returnTo=' + querystring.escape(req.url));
 }
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
- let err = new Error('Not Found');
- // @ts-ignore
- err.status = 404;
- next(err);
+app.use(function(req, res, next) {
+  let err = new Error('Not Found');
+  // @ts-ignore
+  err.status = 404;
+  next(err);
 });
 
 // error handler
-app.use(function (err, req, res, next) {
- // set locals, only providing error in development
- res.locals.message = err.message;
- res.locals.error = err;
- // = req.app.get('env') === 'development'
- // ? err
- // : {};
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = err;
+  // = req.app.get('env') === 'development'
+  // ? err
+  // : {};
 
- // render the error page
- res.status(err.status || 500);
- res.render('error');
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
 });
 
 module.exports = app;
