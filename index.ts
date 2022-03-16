@@ -96,13 +96,13 @@ const officeuser = process.env.OFFICETRANSPORTER;
 const officepass = process.env.OFFICETRANSPORTER_PASSWORD;
 
 const officeTransporter = nodemailer.createTransport({
- host: 'smtp-mail.outlook.com',                  // hostname
+ host: 'smtp.office365.com',                  // hostname
     service: 'outlook',                             // service name
     secureConnection: false,
     tls: {
-        ciphers: 'SSLv3'                            // tls version
+        ciphers: 'STARTTLS'                            // tls version
     },
- port: 587,   
+ port: 587,
  auth: {
  user: officeuser,
  pass: officepass
