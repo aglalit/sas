@@ -250,7 +250,7 @@ script.
   
   data.forEach(function(el){
     var parsed;
-    if (el.polls[field].data){
+    if (el.polls[field] && el.polls[field].data){
           parsed = JSON.parse(el.polls[field].data)
       }
     else if (electives){
