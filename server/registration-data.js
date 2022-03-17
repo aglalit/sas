@@ -44,7 +44,7 @@ app.get('/registration-data', function(req, res) {
   query['polls.' + req.query.field] = {
     $exists: true
   };
-  queryFilter['polls' + req.query.field] = true;
+  queryFilter['polls.' + req.query.field] = true;
 
   Session.find(query, queryFilter).sort( { "_id": -1 } ).limit(200).exec(function (err, docs){
     console.log(docs)
