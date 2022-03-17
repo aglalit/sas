@@ -244,18 +244,15 @@ body
 script.
   var data = [!{data}];
   var registrations = [];
+  const urlParams = new URLSearchParams(window.location.search);
+  var field = urlParams.get('field');
   
-  /*UPDATE FOR USVITSKIY*/
   data.forEach(function(el){
-    var parsed = JSON.parse(el.polls.generic_anonymous.data)
-    parsed.time = el.polls.generic_anonymous.time;    
+    var parsed = JSON.parse(el.polls[field].data)
+    parsed.time = el.polls[field].time;    
     registrations.unshift(parsed);
   });
-  /* data.forEach(function(el){
-    var parsed = JSON.parse(el.polls.registration.data)
-    parsed.time = el.polls.registration.time;    
-    registrations.unshift(parsed);
-  }); */ 
+  
   registrations.reverse();
   registrations.forEach(function(elem){
     var row = document.createElement('tr');
