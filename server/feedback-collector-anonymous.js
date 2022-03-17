@@ -12,7 +12,7 @@ module.exports = function (app, Session, transporter, officeTransporter, logger)
   });
 
   app.get('/polls/generic-anonymous-3', function (req, res) {
-    res.render('generic-anonymous-4');
+    res.render('generic-anonymous-3');
   });
 
   app.get('/polls/generic-anonymous-4', function (req, res) {
