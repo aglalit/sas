@@ -17,10 +17,10 @@ body
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/Logo__red.png")
-      h2 SAS – Регистрация на участие в экономических экспериментах
+      h2 SAS – Участие в экономических экспериментах - неделя 21.03.22-27.03.22
       //- h3 For those who attended the presentation "City as a Matrix" last Saturday:
-      //h3 To better understand conditions for online teaching in Q4, we are running a short survey (filling it will take you 3 mins max). Please do so by Monday, 6.04, 8pm.
-      form(id="form" action="/polls/feedback-collector-anonymous" method="post")
+      h3 Выберите временные промежутки, в которые вы сможете принять участие в экспериментах:
+      form(id="form" action="/polls/feedback-collector-anonymous2" method="post")
         // DON'T REMOVE THIS INPUT!!!
         input(type="hidden")
         fieldset
@@ -33,36 +33,22 @@ body
               label(for="Email") Email
                 sup(style="color:red") *
               input(type="email" required="required" class="form-control" name="Email")
-            .flex-container.column
-              label(for="Мобильный телефон") Мобильный телефон
-              input(type="tel"  class="form-control" name="Мобильный телефон")
-            .flex-container.column
-              label(for="") Место учебы
-                sup(style="color:red") *
             .flex-container.row
-              input.radio(id="Студент SAS" type="radio" required="required" name="institution" value="Студент SAS")                          
-              label(for="Студент SAS") Студент SAS
+              input.radio(id="Среда, 23 марта, 14:20-15:50" type="checkbox" name="slot" value="Среда, 23 марта, 14:20-15:50")                          
+              label(for="Среда, 23 марта, 14:20-15:50") Среда, 23 марта, 14:20-15:50
             .flex-container.row
-              input.radio(id="Студент ТюмГУ (не SAS)" type="radio" required="required" name="institution" value="Студент ТюмГУ (не SAS)")                          
-              label(for="Студент ТюмГУ (не SAS)") Студент ТюмГУ (не SAS)
+              input.radio(id="Среда, 23 марта, 16:00-17:30" type="checkbox" name="slot" value="Среда, 23 марта, 16:00-17:30")                          
+              label(for="Среда, 23 марта, 16:00-17:30") Среда, 23 марта, 16:00-17:30
             .flex-container.row
-              input.radio(id="Студент (не ТюмГУ)" type="radio" required="required" name="institution" value="Студент (не ТюмГУ)")                          
-              label(for="Студент (не ТюмГУ)") Студент (не ТюмГУ)
+              input.radio(id="Четверг, 24 марта, 14:20-15:50" type="checkbox"  name="slot" value="Четверг, 24 марта, 14:20-15:50")                          
+              label(for="Четверг, 24 марта, 14:20-15:50") Четверг, 24 марта, 14:20-15:50
             .flex-container.row
-              input.radio(id="Другое" type="radio" required="required" name="institution" value="Другое")                          
-              label(for="Другое") Другое
-            .flex-container.row
-              input.form-check-input(class="agreement-checkbox" id="agreement-checkbox" type="checkbox" name="experiments" required)                         
-              label(for="experiments-checkbox") Я даю согласие на получение приглашений к участия в экономических экспериментах
-                sup(style="color:red") *
-            .flex-container.row
-              input.form-check-input(class="agreement-checkbox" id="agreement-checkbox" type="checkbox" name="agreement" required)                         
-              label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
-                a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") политики конфиденциальности
-                sup(style="color:red") *
+              input.radio(id="Четверг, 24 марта, 16:00-17:30" type="checkbox"  name="slot" value="Четверг, 24 марта, 16:00-17:30")                          
+              label(for="Четверг, 24 марта, 16:00-17:30") Четверг, 24 марта, 16:00-17:30
             label 
               sup(style="color:red") * 
               span — обязательные поля<!--required fields -->
+            h3 Вы получите письмо-приглашение на конкретный день и время, минимум за 48 часов до эксперимента. В нём мы попросим вас либо подтвердить, либо отменить своё участие.
             //- .flex-container.column
             //-   label(for="") Preferred Variant of Quantitative Reasoning:
             //- .flex-container.row
