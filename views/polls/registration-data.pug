@@ -248,7 +248,13 @@ script.
   var field = urlParams.get('field');
   
   data.forEach(function(el){
-    var parsed = JSON.parse(el.polls[field].data)
+    var parsed;
+    if (el.polls[field].data){
+          parsed = JSON.parse(el.polls[field].data)
+      }
+    else {
+        parsed = JSON.parse(el.polls[field])
+      }
     parsed.time = el.polls[field].time;    
     registrations.unshift(parsed);
   });
