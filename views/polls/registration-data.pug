@@ -251,10 +251,7 @@ script.
   
   data.forEach(function(el){
     var parsed;
-    if (users){
-      parsed.name = el.google.name
-      parsed.email = el.google.email
-      }
+    
     if (el.polls[field] && el.polls[field].data){
           parsed = JSON.parse(el.polls[field].data)
           parsed.time = el.polls[field].time;
@@ -267,7 +264,10 @@ script.
         parsed = JSON.parse(el.polls[field])
       }
       
-    
+    if (users){
+      parsed.name = el.google.name
+      parsed.email = el.google.email
+      }
         
     registrations.unshift(parsed);
   });
@@ -283,10 +283,6 @@ script.
     td.innerHTML = key;
     headerRow.appendChild(td);
   }
-  
-  var td = document.createElement('td');
-  td.innerHTML = 'time';
-  headerRow.appendChild(td);
   
   registrations.forEach(function(elem){
     var row = document.createElement('tr');
@@ -316,10 +312,10 @@ script.
     row.appendChild(td5);
     var td6 = document.createElement('td');
     td6.innerHTML = elem["event"];
-    row.appendChild(td6); */
+    row.appendChild(td6); 
     var td7 = document.createElement('td');
     td7.innerHTML = elem["time"];
-    row.appendChild(td7);
+    row.appendChild(td7);*/
   });
   
   
