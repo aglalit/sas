@@ -39,12 +39,16 @@ module.exports = function(app, Session, transporter, isLoggedIn, logger){
 
 
 app.get('/registration-data', function(req, res) {
-  var queryString = `polls.${req.query.field}`;
+  var query = {};
+  query['polls.' + req.query.field] = {
+    $exists: true
+  };
+  queryFilter = {`polls.${req.query.field}`:true, _id: 0}
   console.log(req.query);
     console.log(req.query.field);
 
 
-  Session.find({queryString: {$exists : true}},{queryString:true, _id: 0}).sort( { "_id": -1 } ).limit(200).exec(function (err, docs){
+  Session.find(query, queryFilter).sort( { "_id": -1 } ).limit(200).exec(function (err, docs){
     console.log(docs)
     if (err) {
       res.send(err);
