@@ -258,7 +258,13 @@ script.
     var row = document.createElement('tr');
     var table = document.querySelector('.tablebody');
     table.appendChild(row);
-    var td1 = document.createElement('td');
+    
+    for (var key in elem) {
+      var td = document.createElement('td');
+      td.innerHTML = elem[key];
+      row.appendChild(td);
+      
+    /* var td1 = document.createElement('td');
     td1.innerHTML = elem["Ф.И.О."];
     row.appendChild(td1);
     var td2 = document.createElement('td');
@@ -270,12 +276,12 @@ script.
     var td4 = document.createElement('td');
     td4.innerHTML = elem["Email"];
     row.appendChild(td4);
-    /* var td5 = document.createElement('td');
+    var td5 = document.createElement('td');
     td5.innerHTML = elem["About"];
-    row.appendChild(td5); */
+    row.appendChild(td5);
     var td6 = document.createElement('td');
     td6.innerHTML = elem["event"];
-    row.appendChild(td6);
+    row.appendChild(td6); */
     var td7 = document.createElement('td');
     td7.innerHTML = elem["time"];
     row.appendChild(td7);
