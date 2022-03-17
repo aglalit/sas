@@ -1,0 +1,53 @@
+doctype html
+html
+  head
+    title Intensive Registration Form
+    link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/cards.css')
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    script(src="/touch_sortable.js")
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 Day At University (18 March, early bird arrivals - 9.00 onwards)
+      form(id="form" action="/polls/feedback-collector-anonymous" method="post")
+        input(type="hidden" value="generic_anonymous" name="subject")    
+        fieldset
+          div(class="input-group")
+            .flex-container.column
+              label(for="Ф.И.О.") Name
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="Ф.И.О.")
+            .flex-container.column
+              label(for="Ф.И.О.2") Surname
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="Ф.И.О.2")
+            .flex-container.row
+              label() Lecture you would like to attend:
+            .flex-container.row
+              input(type="radio"  value="10.40 (TMN): Great Books: Philosophy, Siyaves Azeri " name="Preferred Project" id="10.40 (TMN): Great Books: Philosophy, Siyaves Azeri ")
+              label(for="10.40 (TMN): Great Books: Philosophy, Siyaves Azeri ") 10.40 (TMN): Great Books: Philosophy, Siyaves Azeri 
+            .flex-container.row
+              input(type="radio"  value="10.40 (TMN): Great Books: Philosophy, Giacomo Andreoletti" name="Preferred Project" id="10.40 (TMN): Great Books: Philosophy, Giacomo Andreoletti")
+              label(for="10.40 (TMN): Great Books: Philosophy, Giacomo Andreoletti") 10.40 (TMN): Great Books: Philosophy, Giacomo Andreoletti
+            .flex-container.row
+              label() Economic Experiment:
+            .flex-container.row
+              input(type="radio"  value="11:00 - 12:30 " name="exp" id="11:00 - 12:30 ")
+              label(for="11:00 - 12:30 ") 11:00 - 12:30
+            .flex-container.row
+              input(type="radio"  value="13:00 - 14:30" name="exp" id="13:00 - 14:30")
+              label(for="13:00 - 14:30") 13:00 - 14:30
+            .flex-container.column
+              label 
+                sup(style="color:red") * 
+                span — required fields
+            
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    script(src="/default.js")

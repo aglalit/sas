@@ -1,0 +1,57 @@
+doctype html
+html
+  head
+    title Intensive Registration Form
+    link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/style.css')
+    link(rel='stylesheet', href='/cards.css')
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    script(src="/touch_sortable.js")
+body
+  .container
+    .jumbotron.text-center
+      .logo
+        a(href="https://sas.utmn.ru")
+          img(src="/assets/Logo__red.png")
+      h1 Seminars (20 March, all participants)
+      form(id="form" action="/polls/feedback-collector-anonymous" method="post")
+        input(type="hidden" value="generic_anonymous" name="subject")    
+        fieldset
+          div(class="input-group")
+            .flex-container.column
+              label(for="Ф.И.О.") Name
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="Ф.И.О.")
+            .flex-container.column
+              label(for="Ф.И.О.2") Surname
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="Ф.И.О.2")
+            .flex-container.row
+              label() Seminar you would like to attend (10.30-12.00 TMN):
+            // DON'T REMOVE THIS INPUT!!!
+            h3 h3 Sort the following electives in the order from the most preferable to the least preferable one (from the top to the bottom).
+            input(type="hidden") 
+            fieldset   
+                .cards
+                  .portlet
+                    .portlet-header(id="The Problem of Free Will in Philosophy and Science, Louis Vervoort, Physics") The Problem of Free Will in Philosophy and Science, Louis Vervoort, Physics
+                  .portlet
+                    .portlet-header(id="Economics: How People Behave and How It Can Be Predicted Alexander Usvitskiy") Economics: How People Behave and How It Can Be Predicted Alexander Usvitskiy
+                  .portlet
+                    .portlet-header(id="Analytic Philosophy and Thought Experiments, Giacomo Andreoletti") Analytic Philosophy and Thought Experiments, Giacomo Andreoletti
+                  .portlet
+                    .portlet-header(id="Towards the Decentralized World (Economics and IT Perspective) (online) - Alexey Lysenko") Towards the Decentralized World (Economics and IT Perspective) (online) - Alexey Lysenko
+                  .portlet
+                    .portlet-header(id="Living in the Age of Images and Media, Peter Lešnik") Living in the Age of Images and Media, Peter Lešnik
+                  .portlet
+                    .portlet-header(id="Philosophy and Social Thought, Siyaves Azeri") Philosophy and Social Thought, Siyaves Azeri
+            .flex-container.column
+              label 
+                sup(style="color:red") * 
+                span — required fields
+            
+        button(type="submit" class="btn btn-primary btn-lg") Submit
+    script(src="/cards.js")
+    script(src="/default.js")      
