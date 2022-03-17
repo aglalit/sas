@@ -254,7 +254,7 @@ script.
           parsed = JSON.parse(el.polls[field].data)
       }
     else if (electives){
-        parsed = JSON.parse(`el.polls.${field}`)
+        parsed = JSON.parse(el.polls[field.split('.')[0]][field.split('.')[1]])
       }
     else {
         parsed = JSON.parse(el.polls[field])
