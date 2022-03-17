@@ -1,4 +1,4 @@
-module.exports = function(app, Session, transporter, isLoggedIn, logger){
+module.exports = function(app, Session, User, transporter, isLoggedIn, logger){
 
 // var passport = require('passport')
 //   , LocalStrategy = require('passport-local').Strategy;
@@ -46,17 +46,30 @@ app.get('/registration-data', function(req, res) {
   };
   queryFilter['polls.' + req.query.field] = true;
 
-  Session.find(query, queryFilter).sort( { "_id": -1 } ).limit(200).exec(function (err, docs){
-    console.log(docs)
-    if (err) {
-      res.send(err);
-      logger.error(err);
-    }
-    res.render('registration-data', {
-      data: docs
+  if (req.query.users == 1){
+    User.find(query, queryFilter).sort( { "_id": -1 } ).limit(200).exec(function (err, docs){
+      console.log(docs)
+      if (err) {
+        res.send(err);
+        logger.error(err);
+      }
+      res.render('registration-data', {
+        data: docs
+      });
     });
-  });
-
+  }
+  else {
+    Session.find(query, queryFilter).sort( { "_id": -1 } ).limit(200).exec(function (err, docs){
+      console.log(docs)
+      if (err) {
+        res.send(err);
+        logger.error(err);
+      }
+      res.render('registration-data', {
+        data: docs
+      });
+    });
+  }
 });
 
 // app.post('/polls/registration-list', function(req, res) {

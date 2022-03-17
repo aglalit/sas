@@ -245,7 +245,7 @@ require('./server/candidates.js')(app, Session, transporter, isLoggedIn, User);
 
 require('./server/gi_topics_2020.js')(app, Session, transporter, isLoggedIn, User);
 
-require('./server/registration-data.js')(app, Session, transporter, isLoggedIn, logger);
+require('./server/registration-data.js')(app, Session, User, transporter, isLoggedIn, logger);
 require('./server/feedback.js')(app, Session, User, transporter, isLoggedIn, logger);
 require('./server/feedback-collector-anonymous.js')(app, Session, transporter, officeTransporter, logger);
 
