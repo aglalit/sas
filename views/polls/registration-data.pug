@@ -247,19 +247,27 @@ script.
   const urlParams = new URLSearchParams(window.location.search);
   var field = urlParams.get('field');
   var electives = urlParams.get('electives');
+  var users = urlParams.get('users');
   
   data.forEach(function(el){
     var parsed;
+    if (users){
+      parsed.name = el.google.name
+      parsed.email = el.google.email
+      }
     if (el.polls[field] && el.polls[field].data){
           parsed = JSON.parse(el.polls[field].data)
           parsed.time = el.polls[field].time;
       }
     else if (electives){
+        parsed.name = 
         parsed = JSON.parse(el.polls[field.split('.')[0]][field.split('.')[1]])
       }
     else {
         parsed = JSON.parse(el.polls[field])
       }
+      
+    
         
     registrations.unshift(parsed);
   });
