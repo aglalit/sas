@@ -246,11 +246,15 @@ script.
   var registrations = [];
   const urlParams = new URLSearchParams(window.location.search);
   var field = urlParams.get('field');
+  var electives = urlParams.get('electives');
   
   data.forEach(function(el){
     var parsed;
     if (el.polls[field].data){
           parsed = JSON.parse(el.polls[field].data)
+      }
+    else if (electives){
+        parsed = JSON.parse(el.polls.ELECTIVES[field])
       }
     else {
         parsed = JSON.parse(el.polls[field])
@@ -270,6 +274,10 @@ script.
     td.innerHTML = key;
     headerRow.appendChild(td);
   }
+  
+  var td = document.createElement('td');
+  td.innerHTML = 'time';
+  headerRow.appendChild(td);
   
   registrations.forEach(function(elem){
     var row = document.createElement('tr');
