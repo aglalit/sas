@@ -70,7 +70,10 @@ var sessionSchema = mongoose.Schema({
       pds_2021_9: String,
       pds_2021_10: String,
 
-      generic_anonymous: String,
+      generic_anonymous: {
+        data: String,
+        time: String
+      },
 
       registration: {
         data: String,

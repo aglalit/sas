@@ -247,8 +247,8 @@ script.
   
   /*UPDATE FOR USVITSKIY*/
   data.forEach(function(el){
-    var parsed = JSON.parse(el.polls.generic_anonymous)
-    parsed.time = '';    
+    var parsed = JSON.parse(el.polls.generic_anonymous.data)
+    parsed.time = el.polls.generic_anonymous.time;    
     registrations.unshift(parsed);
   });
   /* data.forEach(function(el){
