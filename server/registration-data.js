@@ -40,10 +40,11 @@ module.exports = function(app, Session, transporter, isLoggedIn, logger){
 
 app.get('/registration-data', function(req, res) {
   var query = {};
+  queryFilter = {_id: 0};
   query['polls.' + req.query.field] = {
     $exists: true
   };
-  queryFilter = {`polls.${req.query.field}`:true, _id: 0}
+  queryFilter['polls' + req.query.field] = true;
 
   Session.find(query, queryFilter).sort( { "_id": -1 } ).limit(200).exec(function (err, docs){
     console.log(docs)
