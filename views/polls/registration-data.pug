@@ -252,6 +252,7 @@ script.
     var parsed;
     if (el.polls[field] && el.polls[field].data){
           parsed = JSON.parse(el.polls[field].data)
+          parsed.time = el.polls[field].time;
       }
     else if (electives){
         parsed = JSON.parse(el.polls[field.split('.')[0]][field.split('.')[1]])
@@ -259,7 +260,7 @@ script.
     else {
         parsed = JSON.parse(el.polls[field])
       }
-    parsed.time = el.polls[field].time;    
+        
     registrations.unshift(parsed);
   });
   
