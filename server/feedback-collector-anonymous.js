@@ -11,6 +11,14 @@ module.exports = function (app, Session, transporter, officeTransporter, logger)
     res.render('generic-anonymous-2');
   });
 
+  app.get('/polls/generic-anonymous-3', function (req, res) {
+    res.render('generic-anonymous-4');
+  });
+
+  app.get('/polls/generic-anonymous-4', function (req, res) {
+    res.render('generic-anonymous-4');
+  });
+
   app.post('/polls/feedback-collector-anonymous', function (req, res) {
     var newSession = new Session();
     parseSession(newSession, req);
