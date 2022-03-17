@@ -40,7 +40,7 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger){
 
 app.get('/registration-data', function(req, res) {
   var query = {};
-  queryFilter = {_id: 0};
+  queryFilter = {_id: 0, "google.name":1,"google.email":1};
   query['polls.' + req.query.field] = {
     $exists: true
   };
