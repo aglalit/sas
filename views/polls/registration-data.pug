@@ -232,14 +232,14 @@ body
       h1 Список зарегистрировавшихся
       table.table 
         thead
-          tr
-            td Ф.И.О.
-            td Паспорт
-            td Дата рождения
-            td Email
-            //- td О себе
-            td Мероприятие
-            td Время регистрации
+          //- tr
+          //-   td Ф.И.О.
+          //-   td Паспорт
+          //-   td Дата рождения
+          //-   td Email
+          //-   //- td О себе
+          //-   td Мероприятие
+          //-   td Время регистрации
         tbody.tablebody
 script.
   var data = [!{data}];
@@ -260,6 +260,17 @@ script.
   });
   
   registrations.reverse();
+  
+  var headerRow = document.createElement('tr');
+  var table = document.querySelector('.tablebody');
+  table.appendChild(headerRow);
+  
+  for (var key in registrations[0]) {
+    var td = document.createElement('td');
+    td.innerHTML = key;
+    headerRow.appendChild(td);
+  }
+  
   registrations.forEach(function(elem){
     var row = document.createElement('tr');
     var table = document.querySelector('.tablebody');
@@ -269,6 +280,7 @@ script.
       var td = document.createElement('td');
       td.innerHTML = elem[key];
       row.appendChild(td);
+    }
       
     /* var td1 = document.createElement('td');
     td1.innerHTML = elem["Ф.И.О."];
