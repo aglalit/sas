@@ -24,96 +24,96 @@ body
         // DON'T REMOVE THIS INPUT!!!
         input(type="hidden")
         fieldset
-          div(class="input-group")#input-group
-            .flex-container.column
-              label(for="Ф.И.О.") Ф.И.О.
-                sup(style="color:red") *
-              input(type="text" required="required" class="form-control" name="Ф.И.О.")
-            .flex-container.column
-              label(for="Email") Email
-                sup(style="color:red") *
-              input(type="email" required="required" class="form-control" name="Email")
-            .flex-container.column
-              label(for="Мобильный телефон") Мобильный телефон
-              input(type="tel"  class="form-control" name="Мобильный телефон")
-            .flex-container.column
-              label(for="") Место учебы
-                sup(style="color:red") *
-            .flex-container.row
-              input.radio(id="Студент SAS" type="radio" required="required" name="institution" value="Студент SAS")                          
-              label(for="Студент SAS") Студент SAS
-            .flex-container.row
-              input.radio(id="Студент ТюмГУ (не SAS)" type="radio" required="required" name="institution" value="Студент ТюмГУ (не SAS)")                          
-              label(for="Студент ТюмГУ (не SAS)") Студент ТюмГУ (не SAS)
-            .flex-container.row
-              input.radio(id="Студент (не ТюмГУ)" type="radio" required="required" name="institution" value="Студент (не ТюмГУ)")                          
-              label(for="Студент (не ТюмГУ)") Студент (не ТюмГУ)
-            .flex-container.row
-              input.radio(id="Другое" type="radio" required="required" name="institution" value="Другое")                          
-              label(for="Другое") Другое
-            .flex-container.row
-              input.form-check-input(class="agreement-checkbox" id="agreement-checkbox" type="checkbox" name="experiments" required)                         
-              label(for="experiments-checkbox") Я даю согласие на получение приглашений к участия в экономических экспериментах
-                sup(style="color:red") *
-            .flex-container.row
-              input.form-check-input(class="agreement-checkbox" id="agreement-checkbox" type="checkbox" name="agreement" required)                         
-              label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
-                a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") политики конфиденциальности
-                sup(style="color:red") *
-            label 
-              sup(style="color:red") * 
-              span — обязательные поля<!--required fields -->
-            //- .flex-container.column
-            //-   label(for="") Preferred Variant of Quantitative Reasoning:
-            //- .flex-container.row
-            //-   input.radio(id="Студент SAS" type="radio" name="institution" value="Студент SAS")                          
-            //-   label(for="Студент SAS") Студент SAS
-            //- .flex-container.row
-            //-   input.radio(id="Студент ТюмГУ (не SAS)" type="radio" name="institution" value="Студент ТюмГУ (не SAS)")                          
-            //-   label(for="Студент ТюмГУ (не SAS)") Студент ТюмГУ (не SAS)
-            //- .flex-container.row
-            //-   input.radio(id="Студент (не ТюмГУ)" type="radio" name="institution" value="Студент (не ТюмГУ)")                          
-            //-   label(for="Студент (не ТюмГУ)") Студент (не ТюмГУ)
-            //- .flex-container.column
-            //-   label(for="") Preferred First institution Seminar:
-            //- .flex-container.row
-            //-   input.radio(id="Gene-Culture Coevolution (Liz and Jay)" type="radio" name="f" value="Gene-Culture Coevolution (Liz and Jay)")                          
-            //-   label(for="Gene-Culture Coevolution (Liz and Jay)") Gene-Culture Coevolution (Liz and Jay)
-            //- .flex-container.row
-            //-   input.radio(id="Modelling (Alexander and Liz, title tbc)" type="radio" name="f" value="Modelling (Alexander and Liz, title tbc)")                          
-            //-   label(for="Modelling (Alexander and Liz, title tbc)") Modelling (Alexander and Liz, title tbc)
-            //- .flex-container.row
-            //-   input.radio(id="Consciousness, emotions, and decision making (Louis and Krishna)" type="radio" name="f" value="Consciousness, emotions, and decision making (Louis and Krishna)")                          
-            //-   label(for="Consciousness, emotions, and decision making (Louis and Krishna)") Consciousness, emotions, and decision making (Louis and Krishna)
-            //- .flex-container.row
-            //-   input.radio(id="Great Educators (Marko and Siyaves)" type="radio" name="f" value="Great Educators (Marko and Siyaves)")                          
-            //-   label(for="Great Educators (Marko and Siyaves)") Great Educators (Marko and Siyaves)
-            //- .flex-container.row
-            //-   input.radio(id="Psychoanalysis, Then and Now (Julie and Duane)" type="radio" name="f" value="Psychoanalysis, Then and Now (Julie and Duane)")                          
-            //-   label(for="Psychoanalysis, Then and Now (Julie and Duane)") Psychoanalysis, Then and Now (Julie and Duane)
-            //- .flex-container.row
-            //-   input.radio(id="Студент (не ТюмГУ)" type="radio" name="f" value="Студент (не ТюмГУ)")                          
-            //-   label(for="Студент (не ТюмГУ)") Студент (не ТюмГУ)
-            //- .flex-container
-            //-   label(for="Major") Major
-            //-   select(class="form-control" required="required" name="Major")
-            //-     option(value="-") -
-            //-     option(value="Information Technology and Digital Society") Information Technology and Digital Society
-            //-     option(value="Cultural Studies") Cultural Studies
-            //-     option(value="Economics") Economics
-            //-     option(value="History") History
-            //-     option(value="Film and Media Studies") Film and Media Studies
-            //-     option(value="Life Sciences") Life Sciences
-            //-     option(value="Anthropology and Sociology") Anthropology and Sociology
-            //- .flex-container
-            //-   label(for="Grade band from the examination") Grade band from the examination
-            //-   select(class="form-control" required="required" name="Grade band from the examination")
-            //-     option(value="-") -
-            //-     option(value="0-3.49") 0-3.49
-            //-     option(value="3.5-5.99") 3.5-5.99
-            //-     option(value="6-7.99") 6-7.99
-            //-     option(value="8-10") 8-10      
-        button(type="submit" class="btn btn-primary btn-lg") Зарегистрироваться
+        //-   div(class="input-group")#input-group
+        //-     .flex-container.column
+        //-       label(for="Ф.И.О.") Ф.И.О.
+        //-         sup(style="color:red") *
+        //-       input(type="text" required="required" class="form-control" name="Ф.И.О.")
+        //-     .flex-container.column
+        //-       label(for="Email") Email
+        //-         sup(style="color:red") *
+        //-       input(type="email" required="required" class="form-control" name="Email")
+        //-     .flex-container.column
+        //-       label(for="Мобильный телефон") Мобильный телефон
+        //-       input(type="tel"  class="form-control" name="Мобильный телефон")
+        //-     .flex-container.column
+        //-       label(for="") Место учебы
+        //-         sup(style="color:red") *
+        //-     .flex-container.row
+        //-       input.radio(id="Студент SAS" type="radio" required="required" name="institution" value="Студент SAS")                          
+        //-       label(for="Студент SAS") Студент SAS
+        //-     .flex-container.row
+        //-       input.radio(id="Студент ТюмГУ (не SAS)" type="radio" required="required" name="institution" value="Студент ТюмГУ (не SAS)")                          
+        //-       label(for="Студент ТюмГУ (не SAS)") Студент ТюмГУ (не SAS)
+        //-     .flex-container.row
+        //-       input.radio(id="Студент (не ТюмГУ)" type="radio" required="required" name="institution" value="Студент (не ТюмГУ)")                          
+        //-       label(for="Студент (не ТюмГУ)") Студент (не ТюмГУ)
+        //-     .flex-container.row
+        //-       input.radio(id="Другое" type="radio" required="required" name="institution" value="Другое")                          
+        //-       label(for="Другое") Другое
+        //-     .flex-container.row
+        //-       input.form-check-input(class="agreement-checkbox" id="agreement-checkbox" type="checkbox" name="experiments" required)                         
+        //-       label(for="experiments-checkbox") Я даю согласие на получение приглашений к участия в экономических экспериментах
+        //-         sup(style="color:red") *
+        //-     .flex-container.row
+        //-       input.form-check-input(class="agreement-checkbox" id="agreement-checkbox" type="checkbox" name="agreement" required)                         
+        //-       label(for="agreement-checkbox") Я даю согласие на обработку своих персональных данных на основании 
+        //-         a(href="https://www.utmn.ru/o-tyumgu/soglasheniya/politika-konfidentsialnosti.php") политики конфиденциальности
+        //-         sup(style="color:red") *
+        //-     label 
+        //-       sup(style="color:red") * 
+        //-       span — обязательные поля<!--required fields -->
+        //-     //- .flex-container.column
+        //-     //-   label(for="") Preferred Variant of Quantitative Reasoning:
+        //-     //- .flex-container.row
+        //-     //-   input.radio(id="Студент SAS" type="radio" name="institution" value="Студент SAS")                          
+        //-     //-   label(for="Студент SAS") Студент SAS
+        //-     //- .flex-container.row
+        //-     //-   input.radio(id="Студент ТюмГУ (не SAS)" type="radio" name="institution" value="Студент ТюмГУ (не SAS)")                          
+        //-     //-   label(for="Студент ТюмГУ (не SAS)") Студент ТюмГУ (не SAS)
+        //-     //- .flex-container.row
+        //-     //-   input.radio(id="Студент (не ТюмГУ)" type="radio" name="institution" value="Студент (не ТюмГУ)")                          
+        //-     //-   label(for="Студент (не ТюмГУ)") Студент (не ТюмГУ)
+        //-     //- .flex-container.column
+        //-     //-   label(for="") Preferred First institution Seminar:
+        //-     //- .flex-container.row
+        //-     //-   input.radio(id="Gene-Culture Coevolution (Liz and Jay)" type="radio" name="f" value="Gene-Culture Coevolution (Liz and Jay)")                          
+        //-     //-   label(for="Gene-Culture Coevolution (Liz and Jay)") Gene-Culture Coevolution (Liz and Jay)
+        //-     //- .flex-container.row
+        //-     //-   input.radio(id="Modelling (Alexander and Liz, title tbc)" type="radio" name="f" value="Modelling (Alexander and Liz, title tbc)")                          
+        //-     //-   label(for="Modelling (Alexander and Liz, title tbc)") Modelling (Alexander and Liz, title tbc)
+        //-     //- .flex-container.row
+        //-     //-   input.radio(id="Consciousness, emotions, and decision making (Louis and Krishna)" type="radio" name="f" value="Consciousness, emotions, and decision making (Louis and Krishna)")                          
+        //-     //-   label(for="Consciousness, emotions, and decision making (Louis and Krishna)") Consciousness, emotions, and decision making (Louis and Krishna)
+        //-     //- .flex-container.row
+        //-     //-   input.radio(id="Great Educators (Marko and Siyaves)" type="radio" name="f" value="Great Educators (Marko and Siyaves)")                          
+        //-     //-   label(for="Great Educators (Marko and Siyaves)") Great Educators (Marko and Siyaves)
+        //-     //- .flex-container.row
+        //-     //-   input.radio(id="Psychoanalysis, Then and Now (Julie and Duane)" type="radio" name="f" value="Psychoanalysis, Then and Now (Julie and Duane)")                          
+        //-     //-   label(for="Psychoanalysis, Then and Now (Julie and Duane)") Psychoanalysis, Then and Now (Julie and Duane)
+        //-     //- .flex-container.row
+        //-     //-   input.radio(id="Студент (не ТюмГУ)" type="radio" name="f" value="Студент (не ТюмГУ)")                          
+        //-     //-   label(for="Студент (не ТюмГУ)") Студент (не ТюмГУ)
+        //-     //- .flex-container
+        //-     //-   label(for="Major") Major
+        //-     //-   select(class="form-control" required="required" name="Major")
+        //-     //-     option(value="-") -
+        //-     //-     option(value="Information Technology and Digital Society") Information Technology and Digital Society
+        //-     //-     option(value="Cultural Studies") Cultural Studies
+        //-     //-     option(value="Economics") Economics
+        //-     //-     option(value="History") History
+        //-     //-     option(value="Film and Media Studies") Film and Media Studies
+        //-     //-     option(value="Life Sciences") Life Sciences
+        //-     //-     option(value="Anthropology and Sociology") Anthropology and Sociology
+        //-     //- .flex-container
+        //-     //-   label(for="Grade band from the examination") Grade band from the examination
+        //-     //-   select(class="form-control" required="required" name="Grade band from the examination")
+        //-     //-     option(value="-") -
+        //-     //-     option(value="0-3.49") 0-3.49
+        //-     //-     option(value="3.5-5.99") 3.5-5.99
+        //-     //-     option(value="6-7.99") 6-7.99
+        //-     //-     option(value="8-10") 8-10      
+        //- button(type="submit" class="btn btn-primary btn-lg") Зарегистрироваться
     script(src="/cards.js")
     script(src="/default.js") 
     script.
