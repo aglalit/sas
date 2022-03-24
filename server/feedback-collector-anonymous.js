@@ -1,7 +1,4 @@
 module.exports = function (app, Session, transporter, officeTransporter, logger) {
-  app.get('/polls/ba-2019-year1-module1-english', function (req, res) {
-    res.render('ba-2019-year1-module1-english');
-  });
 
   app.get('/polls/generic-anonymous', function (req, res) {
     res.render('generic-anonymous');
@@ -31,12 +28,7 @@ module.exports = function (app, Session, transporter, officeTransporter, logger)
     function parseSession (sess, req) {
       var now = new Date();
       sess.session_id = req.session.id;
-      //   var keyNames = Object.keys(req.body);
-      //   keyNames.forEach((el)=>{
-      //     console.log(req.body[el]);
-      //
-      //       sess.polls.ba_2018_year2_the_city_as_text[el] = req.body[el];
-      // });
+
       console.log(req.body);
       let emailBody = '';
       var bodyKeys = Object.keys(req.body);
@@ -73,7 +65,7 @@ module.exports = function (app, Session, transporter, officeTransporter, logger)
     }
   });
 
-  app.post('/polls/feedback-collector-anonymous2', function (req, res) {
+  app.post('/polls/feedback-collector-anonymous-second', function (req, res) {
     var newSession = new Session();
     parseSession(newSession, req);
 
@@ -85,12 +77,7 @@ module.exports = function (app, Session, transporter, officeTransporter, logger)
     function parseSession (sess, req) {
       var now = new Date();
       sess.session_id = req.session.id;
-      //   var keyNames = Object.keys(req.body);
-      //   keyNames.forEach((el)=>{
-      //     console.log(req.body[el]);
-      //
-      //       sess.polls.ba_2018_year2_the_city_as_text[el] = req.body[el];
-      // });
+
       console.log(req.body);
       let emailBody = '';
       var bodyKeys = Object.keys(req.body);
@@ -116,8 +103,8 @@ module.exports = function (app, Session, transporter, officeTransporter, logger)
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
       });
-      sess.polls.generic_anonymous2.data = JSON.stringify(req.body);
-      sess.polls.generic_anonymous2.time = now.toLocaleString('en-US', {
+      sess.polls.generic_anonymous_second.data = JSON.stringify(req.body);
+      sess.polls.generic_anonymous_second.time = now.toLocaleString('en-US', {
         timeZone: 'Asia/Yekaterinburg'
       });
       sess.save(function (err) {

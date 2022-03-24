@@ -5,7 +5,6 @@ var sessionSchema = mongoose.Schema({
 
   session_id: String,
   polls: {
-      ba_2018_year2_module5_poms: String,
       faculty_trips: String,
       faculty_research_trips: String,
       planned_absences_professors: String,
@@ -97,7 +96,7 @@ var sessionSchema = mongoose.Schema({
         time: String
       },
 
-      generic_anonymous2: {
+      generic_anonymous_second: {
         data: String,
         time: String
       },

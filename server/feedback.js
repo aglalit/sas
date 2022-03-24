@@ -3191,6 +3191,364 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       }
     }
   });
+  app.get('/feedback12', isLoggedIn, function (req, res) {
+    var userEmail = '';
+    var teacher = null;
+    if (req.query.t) teacher = decodeURIComponent(req.query.t);
+    User.findOne({
+      _id: req.user._id
+    }, function (err, user) {
+      if (err) { return done(err); }
+
+      if (user) {
+        userEmail = user.google.email;
+        getResponse();
+      } else {
+        console.log('There isn\'t such user in the database');
+      }
+    });
+
+    function getResponse () {
+      var query = {};
+      var isAdmin = false;
+      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'a.zalyaletdinova.sas@gmail.com' || userEmail === 'e.burbo@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
+        userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'sas.tc@utmn.ru' || userEmail === 'l.b.kvashnina@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
+        isAdmin = true;
+      }
+
+      if (req.query.s === 'ba_2021_q3_electives') {
+        if (teacher && (checkTeachersAccess(dict, teacher, userEmail) || isAdmin)) {
+          Session.find({
+            $or: [{
+              'polls.ba_2021_q3_elective1': {
+                $regex: `${teacher}`
+              }
+            },
+            {
+              'polls.ba_2021_q3_elective2': {
+                $regex: `${teacher}`
+              }
+            },
+            {
+              'polls.ba_2021_q3_elective3': {
+                $regex: `${teacher}`
+              }
+            },
+            {
+              'polls.ba_2021_q3_elective4': {
+                $regex: `${teacher}`
+              }
+            },
+            {
+              'polls.ba_2021_q3_major4': {
+                $regex: `${teacher}`
+              }
+            },
+            {
+              'polls.ba_2021_q3_major3': {
+                $regex: `${teacher}`
+              }
+            },
+            {
+              'polls.ba_2021_q3_major1': {
+                $regex: `${teacher}`
+              }
+            },
+            {
+              'polls.ba_2021_q3_major2': {
+                $regex: `${teacher}`
+              }
+            }
+            ]
+          }, {
+            'polls.ba_2021_q3_elective1': 1,
+            'polls.ba_2021_q3_elective2': 1,
+            'polls.ba_2021_q3_elective3': 1,
+            'polls.ba_2021_q3_elective4': 1,
+            'polls.ba_2021_q3_major4': 1,
+            'polls.ba_2021_q3_major3': 1,
+            'polls.ba_2021_q3_major1': 1,
+            'polls.ba_2021_q3_major2': 1
+          }).exec(function (err, docs) {
+            if (err) {
+              res.send(err);
+              console.log(err);
+            } else {
+              // docs.map((el) => {
+              //   console.log(el._doc.polls);
+              // });
+
+              res.render('feedback12', {
+                data: JSON.stringify(docs),
+                user: req.user
+              });
+            }
+          });
+        } else if (isAdmin) {
+          Session.find({
+            $or: [{
+              'polls.ba_2021_q3_elective1': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2021_q3_elective2': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2021_q3_elective3': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2021_q3_elective4': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2021_q3_major4': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2021_q3_major3': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2021_q3_major1': {
+                $exists: true
+              }
+            },
+            {
+              'polls.ba_2021_q3_major2': {
+                $exists: true
+              }
+            }
+            ]
+          }, {
+            'polls.ba_2021_q3_elective1': 1,
+            'polls.ba_2021_q3_elective2': 1,
+            'polls.ba_2021_q3_elective3': 1,
+            'polls.ba_2021_q3_elective4': 1,
+            'polls.ba_2021_q3_major4': 1,
+            'polls.ba_2021_q3_major3': 1,
+            'polls.ba_2021_q3_major1': 1,
+            'polls.ba_2021_q3_major2': 1
+          }).exec(function (err, docs) {
+            if (err) {
+              res.send(err);
+              console.log(err);
+            } else {
+              // docs.map((el) => {
+              //   console.log(el._doc.polls);
+              // });
+
+              res.render('feedback12', {
+                data: JSON.stringify(docs),
+                user: req.user
+              });
+            }
+          });
+        } else {
+          res.send('Access denied');
+        }
+      } else if (req.query.s === 'all') {
+        if (isAdmin) {
+          Session.find({
+            $or: [
+              {
+                'polls.ba_2021_year2_q3_gb_1': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year2_q3_gb_2': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year2_q3_gb_3': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year2_q3_gb_4': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q3_elective1': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q3_elective2': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q3_elective3': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q3_elective4': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q3_major1': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q3_major2': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q3_major3': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q3_major4': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q3_fys': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year1_q3_history': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year1_q3_gb1': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year1_q3_qr': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year2_q3_art': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year2_q3_sat': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_year4_q3_ec': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ba_2021_q3_rs': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ma_xhe_2021_year1_q3_mu': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ma_xhe_2021_year1_q3_ep': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ma_xhe_2021_year1_q3_icd': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ma_xhe_2021_year1_q3_eoe': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ma_xhe_2021_year1_q3_ps2': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ma_xhe_2021_year2_q3_hep': {
+                  $exists: true
+                }
+              },
+              {
+                'polls.ma_xhe_2021_year2_q3_ps6': {
+                  $exists: true
+                }
+              }
+            ]
+          }).select('polls').sort({
+            _id: -1
+          }).limit(2000).exec(function (err, docs) {
+            if (err) {
+              res.send(err);
+              console.log(err);
+            } else {
+              res.render('feedback12', {
+                data: JSON.stringify(docs),
+                user: req.user
+              });
+            }
+          });
+        } else {
+          res.render('feedback12', {
+            user: req.user
+          });
+        }
+      } else {
+        if (teacher && (checkTeachersAccess(dict, teacher, userEmail) || isAdmin)) {
+          query['polls.' + req.query.s] = {
+            $regex: `${teacher}`
+          };
+          Session.find(query).select('polls.' + req.query.s).exec(function (err, docs) {
+            if (err) {
+              res.send(err);
+              console.log(err);
+            } else {
+              res.render('feedback12', {
+                data: JSON.stringify(docs),
+                user: req.user
+              });
+            }
+          });
+        } else if (!teacher && isAdmin) {
+          query['polls.' + req.query.s] = {
+            $exists: true
+          };
+          Session.find(query).select('polls.' + req.query.s).exec(function (err, docs) {
+            if (err) {
+              res.send(err);
+              console.log(err);
+            } else {
+              res.render('feedback12', {
+                data: JSON.stringify(docs),
+                user: req.user
+              });
+            }
+          });
+        } else {
+          res.send('Access denied');
+        }
+      }
+    }
+  });
 };
 
 function checkTeachersAccess (dict, teachers, userEmail) {
