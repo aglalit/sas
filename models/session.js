@@ -96,7 +96,7 @@ var sessionSchema = mongoose.Schema({
         time: String
       },
 
-      generic_anonymous_second: {
+      generic_anonymous2: {
         data: String,
         time: String
       },

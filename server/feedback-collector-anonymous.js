@@ -16,6 +16,14 @@ module.exports = function (app, Session, transporter, officeTransporter, logger)
     res.render('generic-anonymous-4');
   });
 
+  app.get('/polls/experiments', function (req, res) {
+    res.render('experiments');
+  });
+
+  app.get('/polls/experiments-03-22', function (req, res) {
+    res.render('experiments-03-22');
+  });
+
   app.post('/polls/feedback-collector-anonymous', function (req, res) {
     var newSession = new Session();
     parseSession(newSession, req);
@@ -65,7 +73,7 @@ module.exports = function (app, Session, transporter, officeTransporter, logger)
     }
   });
 
-  app.post('/polls/feedback-collector-anonymous-second', function (req, res) {
+  app.post('/polls/feedback-collector-anonymous2', function (req, res) {
     var newSession = new Session();
     parseSession(newSession, req);
 
@@ -103,8 +111,8 @@ module.exports = function (app, Session, transporter, officeTransporter, logger)
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
       });
-      sess.polls.generic_anonymous_second.data = JSON.stringify(req.body);
-      sess.polls.generic_anonymous_second.time = now.toLocaleString('en-US', {
+      sess.polls.generic_anonymous2.data = JSON.stringify(req.body);
+      sess.polls.generic_anonymous2.time = now.toLocaleString('en-US', {
         timeZone: 'Asia/Yekaterinburg'
       });
       sess.save(function (err) {
