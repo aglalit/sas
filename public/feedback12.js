@@ -96,7 +96,7 @@ function displaySubject (data, subject) {
     });
 
     teacherHeader.innerHTML = dataParsedFiltered[0]['Who taught this course'];
-    if (subject !== 'ba_2021_q3_electives') {
+    if (subject !== dataParsedFiltered[0]['Who taught this course'].split(' — ')[1]) {
       titleHeader.innerHTML = dataParsedFiltered[0]['Title'];
     }
 
