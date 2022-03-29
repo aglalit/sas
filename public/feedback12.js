@@ -240,7 +240,7 @@ function displaySubject (data, subject) {
           commentsDiv.appendChild(question);
         }
         dataComments[key][k].forEach(function (el) {
-          if (el.length > 2 || el === 'Да') {
+          if (el && (el.length > 2 || el === 'Да')) {
             var comment = document.createElement('p');
             comment.innerHTML = el;
             question.appendChild(comment);
