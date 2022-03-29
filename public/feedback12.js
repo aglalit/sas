@@ -96,7 +96,7 @@ function displaySubject (data, subject) {
     });
 
     teacherHeader.innerHTML = dataParsedFiltered[0]['Who taught this course'];
-    if (subject !== dataParsedFiltered[0]['Who taught this course'].split(' — ')[1]) {
+    if (dataParsedFiltered[0]['Title'] && subject !== dataParsedFiltered[0]['Who taught this course'].split(' — ')[1]) {
       titleHeader.innerHTML = dataParsedFiltered[0]['Title'];
     }
 
