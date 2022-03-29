@@ -341,7 +341,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     function getResponse () {
       var query = {};
       var isAdmin = false;
-      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'a.zalyaletdinova.sas@gmail.com' || userEmail === 'e.ermakova@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
+      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'i.parakhina@utmn.ru' || userEmail === 'e.ermakova@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
         userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'sas.tc@utmn.ru' || userEmail === 'a.rusakova@utmn.ru' ||
       userEmail === 'e.selikhovkina@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
         isAdmin = true;
@@ -501,7 +501,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     function getResponse () {
       var query = {};
       var isAdmin = false;
-      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'a.zalyaletdinova.sas@gmail.com' || userEmail === 'e.ermakova@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
+      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'i.parakhina@utmn.ru' || userEmail === 'e.ermakova@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
         userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'sas.tc@utmn.ru' || userEmail === 'a.rusakova@utmn.ru' ||
       userEmail === 'e.selikhovkina@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
         isAdmin = true;
@@ -661,7 +661,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     function getResponse () {
       var query = {};
       var isAdmin = false;
-      if (userEmail === 'd.kontowski@utmn.ru' || userEmail === 'm.agliulin@utmn.ru' || userEmail === 'a.zalyaletdinova.sas@gmail.com' || userEmail === 'e.ermakova@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
+      if (userEmail === 'd.kontowski@utmn.ru' || userEmail === 'm.agliulin@utmn.ru' || userEmail === 'i.parakhina@utmn.ru' || userEmail === 'e.ermakova@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
         userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'sas.tc@utmn.ru' || userEmail === 'a.rusakova@utmn.ru' ||
       userEmail === 'e.selikhovkina@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
         isAdmin = true;
@@ -868,7 +868,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     function getResponse () {
       var query = {};
       var isAdmin = false;
-      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'a.zalyaletdinova.sas@gmail.com' || userEmail === 'e.ermakova@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
+      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'i.parakhina@utmn.ru' || userEmail === 'e.ermakova@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
         userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'sas.tc@utmn.ru' || userEmail === 'a.rusakova@utmn.ru' ||
       userEmail === 'e.selikhovkina@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
         isAdmin = true;
@@ -1087,7 +1087,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     function getResponse () {
       var query = {};
       var isAdmin = false;
-      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'a.zalyaletdinova.sas@gmail.com' || userEmail === 'e.ermakova@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
+      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'i.parakhina@utmn.ru' || userEmail === 'e.ermakova@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
         userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'sas.tc@utmn.ru' || userEmail === 'a.rusakova@utmn.ru' ||
       userEmail === 'e.selikhovkina@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
         isAdmin = true;
@@ -1408,7 +1408,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     function getResponse () {
       var query = {};
       var isAdmin = false;
-      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'a.zalyaletdinova.sas@gmail.com' || userEmail === 'e.ermakova@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
+      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'i.parakhina@utmn.ru' || userEmail === 'e.ermakova@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
         userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'sas.tc@utmn.ru' || userEmail === 'a.rusakova@utmn.ru' ||
       userEmail === 'e.selikhovkina@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
         isAdmin = true;
@@ -1819,7 +1819,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     function getResponse () {
       var query = {};
       var isAdmin = false;
-      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'a.zalyaletdinova.sas@gmail.com' || userEmail === 'e.ermakova@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
+      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'i.parakhina@utmn.ru' || userEmail === 'e.ermakova@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
         userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'sas.tc@utmn.ru' || userEmail === 'a.rusakova@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
         isAdmin = true;
       }
@@ -2170,7 +2170,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     function getResponse () {
       var query = {};
       var isAdmin = false;
-      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'a.zalyaletdinova.sas@gmail.com' || userEmail === 'e.ermakova@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
+      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'i.parakhina@utmn.ru' || userEmail === 'e.ermakova@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
         userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'sas.tc@utmn.ru' || userEmail === 'a.rusakova@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
         isAdmin = true;
       }
@@ -2539,7 +2539,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     function getResponse () {
       var query = {};
       var isAdmin = false;
-      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'a.zalyaletdinova.sas@gmail.com' || userEmail === 'e.burbo@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
+      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'i.parakhina@utmn.ru' || userEmail === 'e.burbo@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
         userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'sas.tc@utmn.ru' || userEmail === 'l.b.kvashnina@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
         isAdmin = true;
       }
@@ -2853,7 +2853,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     function getResponse () {
       var query = {};
       var isAdmin = false;
-      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'a.zalyaletdinova.sas@gmail.com' || userEmail === 'e.burbo@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
+      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'i.parakhina@utmn.ru' || userEmail === 'e.burbo@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
         userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'sas.tc@utmn.ru' || userEmail === 'l.b.kvashnina@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
         isAdmin = true;
       }
@@ -3211,7 +3211,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     function getResponse () {
       var query = {};
       var isAdmin = false;
-      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'a.zalyaletdinova.sas@gmail.com' || userEmail === 'e.burbo@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
+      if (userEmail === 'm.agliulin@utmn.ru' || userEmail === 'i.parakhina@utmn.ru' || userEmail === 'e.burbo@utmn.ru' || userEmail === 'sasteachingcouncil@gmail.com' || userEmail === 'e.wolf@utmn.ru' ||
         userEmail === 'a.shcherbenok@utmn.ru' || userEmail === 'sas_education@utmn.ru' || userEmail === 'sas.tc@utmn.ru' || userEmail === 'l.b.kvashnina@utmn.ru' || userEmail === 'i.telipko@utmn.ru') {
         isAdmin = true;
       }
