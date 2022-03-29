@@ -3424,22 +3424,22 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
                 }
               },
               {
-                'polls.ba_2021_year1_q3_history': {
+                'polls.ba_2021_year1_q3_aw': {
                   $exists: true
                 }
               },
               {
-                'polls.ba_2021_year1_q3_gb1': {
+                'polls.ba_2021_year1_q3_gb2': {
                   $exists: true
                 }
               },
               {
-                'polls.ba_2021_year1_q3_qr': {
+                'polls.ba_2021_year1_q3_it': {
                   $exists: true
                 }
               },
               {
-                'polls.ba_2021_year2_q3_art': {
+                'polls.ba_2021_year2_q3_gi': {
                   $exists: true
                 }
               },
@@ -3459,12 +3459,12 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
                 }
               },
               {
-                'polls.ma_xhe_2021_year1_q3_mu': {
+                'polls.ma_xhe_2021_year1_q3_oa': {
                   $exists: true
                 }
               },
               {
-                'polls.ma_xhe_2021_year1_q3_ep': {
+                'polls.ma_xhe_2021_year1_q3_pd': {
                   $exists: true
                 }
               },
@@ -3474,22 +3474,22 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
                 }
               },
               {
-                'polls.ma_xhe_2021_year1_q3_eoe': {
+                'polls.ma_xhe_2021_year1_q3_ie': {
                   $exists: true
                 }
               },
               {
-                'polls.ma_xhe_2021_year1_q3_ps2': {
+                'polls.ma_xhe_2021_year1_q3_ps3': {
                   $exists: true
                 }
               },
               {
-                'polls.ma_xhe_2021_year2_q3_hep': {
+                'polls.ma_xhe_2021_year2_q3_her': {
                   $exists: true
                 }
               },
               {
-                'polls.ma_xhe_2021_year2_q3_ps6': {
+                'polls.ma_xhe_2021_year2_q3_ps7': {
                   $exists: true
                 }
               }
