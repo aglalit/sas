@@ -92,7 +92,10 @@ function displaySubject (data, subject) {
   if (teacher) {
     var regex = new RegExp(teacher.replace(/\(/g, '\\(').replace(/\)/g, '\\)'), 'i');
     dataParsedFiltered = dataParsed.filter((entry) => {
-      return entry['Who taught this course'].match(regex);
+      // GBL FILTER OUT PREVIOUS YEAR, REMOVE LATER
+      if (!entry['Evaluate the overall quality of the course']){
+          return entry['Who taught this course'].match(regex);
+      }
     });
 
     teacherHeader.innerHTML = dataParsedFiltered[0]['Who taught this course'];
