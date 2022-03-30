@@ -68,7 +68,7 @@ function displaySubject (data, subject) {
   } else {
     data[0].forEach(function (el) {
             // GBL FILTER OUT PREVIOUS YEAR, REMOVE LATER
-      if (JSON.parse(el.polls[subject])['Evaluate the overall quality of the course']) return;
+      if (typeof el.polls[subject] === 'string' JSON.parse(el.polls[subject])['Evaluate the overall quality of the course']) return;
             // GBL FILTER OUT PREVIOUS YEAR, REMOVE LATER
 
       if (typeof el.polls[subject] === 'object' && el.polls[subject] !== null) dataParsed.unshift(el.polls[subject]);
