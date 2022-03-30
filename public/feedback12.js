@@ -67,7 +67,10 @@ function displaySubject (data, subject) {
     });
   } else {
     data[0].forEach(function (el) {
-      if (JSON.parse(el.polls[subject])['Evaluate the overall quality of the course']) continue;
+            // GBL FILTER OUT PREVIOUS YEAR, REMOVE LATER
+      if (JSON.parse(el.polls[subject])['Evaluate the overall quality of the course']) return;
+            // GBL FILTER OUT PREVIOUS YEAR, REMOVE LATER
+
       if (typeof el.polls[subject] === 'object' && el.polls[subject] !== null) dataParsed.unshift(el.polls[subject]);
       else dataParsed.unshift(JSON.parse(el.polls[subject]));
     });
@@ -93,10 +96,7 @@ function displaySubject (data, subject) {
   if (teacher) {
     var regex = new RegExp(teacher.replace(/\(/g, '\\(').replace(/\)/g, '\\)'), 'i');
     dataParsedFiltered = dataParsed.filter((entry) => {
-      // GBL FILTER OUT PREVIOUS YEAR, REMOVE LATER
-      if (!entry['Evaluate the overall quality of the course']){
           return entry['Who taught this course'].match(regex);
-      }
     });
 
     teacherHeader.innerHTML = dataParsedFiltered[0]['Who taught this course'];
