@@ -144,6 +144,9 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     Krishna: {
       email: 'k.mutkhukumarappan@utmn.ru'
     },
+    Muthukumarappan: {
+      email: 'k.mutkhukumarappan@utmn.ru'
+    },
     Trakhtenberg: {
       email: 'vatrakhtenberg@gmail.com'
     },
@@ -233,7 +236,17 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     },
     Gudkov: {
       email: 'a.gudkov@utmn.ru'
+    },
+    Scribner: {
+      email: 'quinnscribner@gmail.com'
+    },
+    Kocourek: {
+      email: 'pavel.kocourek@cerge-ei.cz'
+    },
+    Iatluk: {
+      email: 'lidiaoutlook@gmail.com'
     }
+
   };
 
   app.get('/feedback', function (req, res) {
