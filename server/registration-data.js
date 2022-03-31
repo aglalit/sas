@@ -47,7 +47,7 @@ app.get('/registration-data', function(req, res) {
   queryFilter['polls.' + req.query.field] = true;
 
   if (req.query.users == 1){
-    User.find(query, queryFilter).sort( { "_id": -1 } ).limit(200).exec(function (err, docs){
+    User.find(query, queryFilter).sort( { "_id": -1 } ).limit(400).exec(function (err, docs){
       console.log(docs)
       if (err) {
         res.send(err);
@@ -59,7 +59,7 @@ app.get('/registration-data', function(req, res) {
     });
   }
   else {
-    Session.find(query, queryFilter).sort( { "_id": -1 } ).limit(200).exec(function (err, docs){
+    Session.find(query, queryFilter).sort( { "_id": -1 } ).limit(400).exec(function (err, docs){
       console.log(docs)
       if (err) {
         res.send(err);
