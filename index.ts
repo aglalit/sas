@@ -225,7 +225,7 @@ require('./server/faculty-research-trips.js')(app, Session, transporter);
 require('./server/planned-absences-professors.js')(app, Session, transporter, isLoggedIn, User, logger);
 require('./server/planned-absences-students.js')(app, Session, transporter, isLoggedIn, User, logger);
 
-require('./server/open-day-12-2020.js')(app, Session, transporter);
+require('./server/open-day-04-2022.js')(app, Session, transporter);
 require('./server/registration.js')(app, Session, transporter);
 require('./server/registration-xhe.js')(app, Session, transporter);
 require('./server/registration-xhe-open-day.js')(app, Session, transporter);

@@ -56,7 +56,7 @@ h3 {
 /* for the Courses page */
 
 .input-group label {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Agipo-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 500;
   margin: 15px 0;
   font-size:20px;
@@ -81,7 +81,7 @@ legend {font-size: 1.8em;}
 input, textarea, select {
   float:left;
   width:80%;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Agipo-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 input[type="radio"] {

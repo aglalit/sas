@@ -118,6 +118,7 @@ var sessionSchema = mongoose.Schema({
         time: String
       },
       dare_to_x_registration: String,
+      open_day_04_2022: String,
       generic: String,
       generic2: String,
       poetry: {

@@ -1,10 +1,10 @@
 module.exports = function(app, Session, transporter){
 
-app.get('/polls/open-day-12-2020', function(req, res) {
-  res.render('open-day-12-2020', {user: req.user})
+app.get('/polls/open-day-04-2022', function(req, res) {
+  res.render('open-day-04-2022', {user: req.user})
 });
 
-app.post('/polls/open-day-12-2020', function(req, res) {
+app.post('/polls/open-day-04-2022', function(req, res) {
   Session.findOne({
     'session_id': req.session.id
   }, function(err, session) {
@@ -46,7 +46,7 @@ function parseSession (sess, req, transporter){
     }
     console.log('Message %s sent: %s', info.messageId, info.response);
   });
-  sess.polls.open_day_12_2020 = JSON.stringify(req.body);
+  sess.polls.open_day_04_2022 = JSON.stringify(req.body);
   sess.save(function(err) {
     if (err)
       return console.error(err);
