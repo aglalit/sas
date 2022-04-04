@@ -1,4 +1,4 @@
-body        { padding-top:20px;   font-family: 'Agipo-Bold';}
+body        { padding-top:20px;   font-family: 'Agipo-Bold'; margin: 0;}
 @font-face {
   font-family: 'Agipo-Bold';
   src:url('../fonts/agipo/Agipo-Bold.woff');
@@ -34,6 +34,11 @@ h3 {
 }
 .input-group{
   margin-bottom:20px;
+}
+fieldset {
+  border: none;
+  padding-left: 0;
+    padding-top: 0;
 }
 .input-group label {
   font-family: "Agipo-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
