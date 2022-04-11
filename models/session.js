@@ -67,6 +67,7 @@ var sessionSchema = mongoose.Schema({
       ba_2021_year1_q3_gb2: String,
       ba_2021_year1_q3_it: String,
       ba_2021_year1_q3_aw: String,
+      ba_2021_year1_q3_cat: String,
       ba_2021_year2_q3_gb_1: String,
       ba_2021_year2_q3_gb_2: String,
       ba_2021_year2_q3_gb_3: String,
