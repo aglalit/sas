@@ -41,11 +41,14 @@ module.exports = function(app, Session, User, transporter, isLoggedIn, logger){
 app.get('/registration-data', function(req, res) {
   var query = {};
   queryFilter = {_id: 0, "google.name":1,"google.email":1};
+  if (req.query.anonymous) {
+    queryFilter = {_id: 0, "google.name":0,"google.email":0};
+  }
   query['polls.' + req.query.field] = {
     $exists: true
   };
   if (req.query.regex) {
-    var regex = new RegExp (req.query.regex)
+    var regex = new RegExp(req.query.regex)
     query['polls.' + req.query.field] = {
       $regex: regex
     };
