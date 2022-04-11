@@ -17,7 +17,7 @@ body
       .logo
         a(href="https://sas.utmn.ru")
           img(src="/assets/Logo__red.png")
-      h2 Majors Survey
+      h2 City as Text — Course Evaluation
       //h3 To better understand conditions for online teaching in Q4, we are running a short survey (filling it will take you 3 mins max). Please do so by Monday, 6.04, 8pm.
       form(id="form" action="/polls/generic" method="post")
         // DON'T REMOVE THIS INPUT!!!
@@ -65,7 +65,7 @@ body
         //-       label(for="Sociology") Sociology: Sociological Imagination — Maxim Alyukov
         //-     .flex-container.row
         //-       input(type="radio" required="required" value="History" name="major" id="History")
-        //-       label(for="History") History — Study Humans in All Their Complexity — Peter Jones
+        //-       label(for="History") History — Study Humans in All Their Complexity — Andrey Scherbenok's
         fieldset
           div(class="input-group")#input-group
           //-   .flex-container.column
@@ -343,82 +343,88 @@ body
             //-     option(value="Y2Q3") Y2Q3
             //-     option(value="Y2Q4") Y2Q4
             //- h3 PART 3
-            
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how insightful Veronika Prokopenya’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Veronika Prokopenya’s lecture was for your understanding of the city.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Veronika Prokopenya’s lecture was for your understanding of the city." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how helpful Veronika Prokopenya’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Veronika Prokopenya’s lecture was for your preparation for the plenary presentation.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Veronika Prokopenya’s lecture was for your preparation for the plenary presentation." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how insightful Vasilina Shchetkina’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Vasilina Shchetkina’s lecture was for your understanding of the city.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Vasilina Shchetkina’s lecture was for your understanding of the city." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how helpful Vasilina Shchetkina’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Vasilina Shchetkina’s lecture was for your preparation for the plenary presentation.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Vasilina Shchetkina’s lecture was for your preparation for the plenary presentation." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how insightful Elena Grigoreva’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Elena Grigoreva’s lecture was for your understanding of the city.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Elena Grigoreva’s lecture was for your understanding of the city." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how helpful Elena Grigoreva’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Elena Grigoreva’s lecture was for your preparation for the plenary presentation.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Elena Grigoreva’s lecture was for your preparation for the plenary presentation." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how insightful Dmitryi Kalugin’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Dmitryi Kalugin’s lecture was for your understanding of the city.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Dmitryi Kalugin’s lecture was for your understanding of the city." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how helpful Dmitryi Kalugin’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Dmitryi Kalugin’s lecture was for your preparation for the plenary presentation.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Dmitryi Kalugin’s lecture was for your preparation for the plenary presentation." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how insightful Denis Akhapkin’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Denis Akhapkin’s lecture was for your understanding of the city.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Denis Akhapkin’s lecture was for your understanding of the city." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how helpful Denis Akhapkin’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Denis Akhapkin’s lecture was for your preparation for the plenary presentation.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Denis Akhapkin’s lecture was for your preparation for the plenary presentation." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how insightful Andrey Scherbenok's’ lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Andrey Scherbenok's’ lecture was for your understanding of the city.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Andrey Scherbenok's’ lecture was for your understanding of the city." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how helpful Andrey Scherbenok's’ lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Andrey Scherbenok's’ lecture was for your preparation for the plenary presentation.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Andrey Scherbenok's’ lecture was for your preparation for the plenary presentation." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how insightful Alisa Prudnikova’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Alisa Prudnikova’s lecture was for your understanding of the city.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Alisa Prudnikova’s lecture was for your understanding of the city." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how helpful Alisa Prudnikova’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Alisa Prudnikova’s lecture was for your preparation for the plenary presentation.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Alisa Prudnikova’s lecture was for your preparation for the plenary presentation." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how insightful Sergey Kleshev’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Sergey Kleshev’s lecture was for your understanding of the city.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Sergey Kleshev’s lecture was for your understanding of the city." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how helpful Sergey Kleshev’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Sergey Kleshev’s lecture was for your preparation for the plenary presentation.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Sergey Kleshev’s lecture was for your preparation for the plenary presentation." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how insightful Daniyar Yusupov’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Daniyar Yusupov’s lecture was for your understanding of the city.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Daniyar Yusupov’s lecture was for your understanding of the city." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate how helpful Daniyar Yusupov’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Daniyar Yusupov’s lecture was for your preparation for the plenary presentation.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Daniyar Yusupov’s lecture was for your preparation for the plenary presentation." min="1" max="10")
+          .flex-container
+            label(for="Your curator") Select your curator
+            select(class="form-control" required="required" name="Your curator")
+              option(value="Victoria Leushkina") Victoria Leushkina
+              option(value="Milana Vakhrusheva") Milana Vakhrusheva
+              option(value="Darya Kozhevnikova") Darya Kozhevnikova
+              option(value="Vitaly Mizyakov") Vitaly Mizyakov
+              option(value="Yulia Arkhipova") Yulia Arkhipova
+              option(value="Vlada Zemlyanukhina") Vlada Zemlyanukhina
+              option(value="Anastasia Volobueva") Anastasia Volobueva
+              option(value="Alexander Li") Alexander Li
+              option(value="Polina Shish") Polina Shish
+              option(value="Melanika Vainshtein") Melanika Vainshtein
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate the work of your curator — how supportive, helpful, critical, analytical they were.") On a scale of 1 to 10, please rate the work of your curator — how supportive, helpful, critical, analytical they were.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate the work of your curator — how supportive, helpful, critical, analytical they were." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate the feedback you received from Ahmed Elghandour during the plenary sessions.") On a scale of 1 to 10, please rate the feedback you received from Ahmed Elghandour during the plenary sessions.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate the feedback you received from Ahmed Elghandour during the plenary sessions." min="1" max="10")
+          .flex-container
+            label(for="On a scale of 1 to 10, please rate the feedback you received from Eva Burbo during the plenary sessions.") On a scale of 1 to 10, please rate the feedback you received from Eva Burbo during the plenary sessions.
+            input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate the feedback you received from Eva Burbo during the plenary sessions." min="1" max="10")
+          .flex-container
+            label(for="If you have any comments, suggestions, or detailed feedback about the course design, organization, literature, lectures, format, please write them here.") If you have any comments, suggestions, or detailed feedback about the course design, organization, literature, lectures, format, please write them here.
+            textarea(rows="12" required="required" class="form-control" name="If you have any comments, suggestions, or detailed feedback about the course design, organization, literature, lectures, format, please write them here.")  
               
             
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate how insightful Artyom Gebelev’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Artyom Gebelev’s lecture was for your understanding of the city.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Artyom Gebelev’s lecture was for your understanding of the city." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate how helpful Artyom Gebelev’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Artyom Gebelev’s lecture was for your preparation for the plenary presentation.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Artyom Gebelev’s lecture was for your preparation for the plenary presentation." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate how insightful Dara Melnyk’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Dara Melnyk’s lecture was for your understanding of the city.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Dara Melnyk’s lecture was for your understanding of the city." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate how helpful Dara Melnyk’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Dara Melnyk’s lecture was for your preparation for the plenary presentation.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Dara Melnyk’s lecture was for your preparation for the plenary presentation." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate how insightful Marko Turk’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Marko Turk’s lecture was for your understanding of the city.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Marko Turk’s lecture was for your understanding of the city." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate how helpful Marko Turk’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Marko Turk’s lecture was for your preparation for the plenary presentation.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Marko Turk’s lecture was for your preparation for the plenary presentation." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate how insightful David Dusseault’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful David Dusseault’s lecture was for your understanding of the city.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful David Dusseault’s lecture was for your understanding of the city." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate how helpful David Dusseault’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful David Dusseault’s lecture was for your preparation for the plenary presentation.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful David Dusseault’s lecture was for your preparation for the plenary presentation." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate how insightful Nadya Khort’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Nadya Khort’s lecture was for your understanding of the city.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Nadya Khort’s lecture was for your understanding of the city." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate how helpful Nadya Khort’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Nadya Khort’s lecture was for your preparation for the plenary presentation.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Nadya Khort’s lecture was for your preparation for the plenary presentation." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate how insightful Peter Jones’ lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Peter Jones’ lecture was for your understanding of the city.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Peter Jones’ lecture was for your understanding of the city." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate how helpful Peter Jones’ lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Peter Jones’ lecture was for your preparation for the plenary presentation.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Peter Jones’ lecture was for your preparation for the plenary presentation." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate how insightful Alisa Prudnikova’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Alisa Prudnikova’s lecture was for your understanding of the city.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Alisa Prudnikova’s lecture was for your understanding of the city." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate how helpful Alisa Prudnikova’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Alisa Prudnikova’s lecture was for your preparation for the plenary presentation.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Alisa Prudnikova’s lecture was for your preparation for the plenary presentation." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate how insightful Dmitriy Bezuglov’s lecture was for your understanding of the city.") On a scale of 1 to 10, please rate how insightful Dmitriy Bezuglov’s lecture was for your understanding of the city.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how insightful Dmitriy Bezuglov’s lecture was for your understanding of the city." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate how helpful Dmitriy Bezuglov’s lecture was for your preparation for the plenary presentation.") On a scale of 1 to 10, please rate how helpful Dmitriy Bezuglov’s lecture was for your preparation for the plenary presentation.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate how helpful Dmitriy Bezuglov’s lecture was for your preparation for the plenary presentation." min="1" max="10")
-            //- .flex-container
-            //-   label(for="Your curator") Select your curator
-            //-   select(class="form-control" required="required" name="Your curator")
-            //-     option(value="Anna Banyukevich") Anna Banyukevich
-            //-     option(value="Valeria Orlova") Valeria Orlova
-            //-     option(value="Julia Khabibulina") Julia Khabibulina
-            //-     option(value="Arseniy Osokin") Arseniy Osokin
-            //-     option(value="Nikita Mogilnikov") Nikita Mogilnikov
-            //-     option(value="Olesya Krakovetskaya") Olesya Krakovetskaya
-            //-     option(value="Valeria Sidorenko") Valeria Sidorenko
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate the work of your curator — how supportive, helpful, critical, analytical they were.") On a scale of 1 to 10, please rate the work of your curator — how supportive, helpful, critical, analytical they were.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate the work of your curator — how supportive, helpful, critical, analytical they were." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate the feedback you received from Anastasia Rusakova during the plenary sessions.") On a scale of 1 to 10, please rate the feedback you received from Anastasia Rusakova during the plenary sessions.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate the feedback you received from Anastasia Rusakova during the plenary sessions." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate the feedback you received from Ahmed Elghandour during the plenary sessions.") On a scale of 1 to 10, please rate the feedback you received from Ahmed Elghandour during the plenary sessions.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate the feedback you received from Ahmed Elghandour during the plenary sessions." min="1" max="10")
-            //- .flex-container
-            //-   label(for="On a scale of 1 to 10, please rate the feedback you received from Elina Ermakova during the plenary sessions.") On a scale of 1 to 10, please rate the feedback you received from Elina Ermakova during the plenary sessions.
-            //-   input(type="number" required="required" class="form-control" name="On a scale of 1 to 10, please rate the feedback you received from Elina Ermakova during the plenary sessions." min="1" max="10")
-            //- .flex-container
-            //-   label(for="If you have any comments, suggestions, or detailed feedback about the course design, organization, literature, lectures, format, please write them here.") If you have any comments, suggestions, or detailed feedback about the course design, organization, literature, lectures, format, please write them here.
-            //-   textarea(rows="12" required="required" class="form-control" name="If you have any comments, suggestions, or detailed feedback about the course design, organization, literature, lectures, format, please write them here.")
+            
                 
             
         button(type="submit" class="btn btn-primary btn-lg") Submit
@@ -452,7 +458,7 @@ body
           flexContainer.appendChild(elementInner);
           inputGroup.appendChild(flexContainer);
         }
-        
+          /*
         wrapAndAppend({
           name: `On a scale of 1 to 10, what is the likelihood that you will choose this major: IT and Systems Analysis `,
           type: 'number', required: 'true'
@@ -482,7 +488,7 @@ body
           type: 'number', required: 'true'
         });
         
-        /*
+      
         
         wrapAndAppend({
           name: `On a scale of 1 to 10, how much do you understand what this major is about: Information Technology and Digital Society `,
