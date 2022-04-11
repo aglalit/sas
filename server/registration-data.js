@@ -44,6 +44,12 @@ app.get('/registration-data', function(req, res) {
   query['polls.' + req.query.field] = {
     $exists: true
   };
+  if (req.query.regex) {
+    var regex = new RegExp (req.query.regex)
+    query['polls.' + req.query.field] = {
+      $regex: regex
+    };
+  }
   queryFilter['polls.' + req.query.field] = true;
 
   if (req.query.users == 1){
