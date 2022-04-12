@@ -58,6 +58,7 @@ app.get('/registration-data', function(req, res) {
       if (err) {
         res.send(err);
         logger.error(err);
+        return;
       }
       res.render('registration-data', {
         data: docs
@@ -70,6 +71,7 @@ app.get('/registration-data', function(req, res) {
       if (err) {
         res.send(err);
         logger.error(err);
+        return;
       }
       res.render('registration-data', {
         data: docs
