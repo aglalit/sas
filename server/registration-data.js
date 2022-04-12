@@ -42,8 +42,8 @@ app.get('/registration-data', function(req, res) {
   var query = {};
   var queryFilter; = {_id: 0, "google.name":1,"google.email":1};
   if (req.query.anonymous) {
-    queryFilter.google.name = 0;
-    queryFilter.google.email = 0;
+    queryFilter["google.name"] = 0;
+    queryFilter["google.email"] = 0;
   }
   query['polls.' + req.query.field] = {
     $exists: true
