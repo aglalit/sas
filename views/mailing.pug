@@ -25,19 +25,22 @@ body
         fieldset
           .flex-container
               label(for="addresses") Список адресов (каждый — с новой строки)
-              textarea(rows="4" required="required" class="form-control" name="addresses")
+              textarea(rows="8" required="required" class="form-control" name="addresses")
           .flex-container
               label(for="names") 1. Список имен+фамилий (каждое Имя+Фамилия (имя и фамилия через пробел) — с новой строки)
-              textarea(rows="4" required="required" class="form-control" name="names")
+              textarea(rows="8" required="required" class="form-control" name="names")
           .flex-container
               label(for="grades") 2. Список оценок (каждая — с новой строки)
-              textarea(rows="4" required="required" class="form-control" name="grades")
+              textarea(rows="8" required="required" class="form-control" name="grades")
+          .flex-container
+              label(for="additional") 3. Дополнительная информация (каждая — с новой строки)
+              textarea(rows="8" required="required" class="form-control" name="additional")
           .flex-container
               label(for="letter_template") Шаблон письма (образец вставки переменных: {{{2}}} ,где '2' — порядковый номер поля)
-              textarea(rows="4" required="required" class="form-control" name="letter_template")
+              textarea(rows="6" required="required" class="form-control" name="letter_template")
           .flex-container
               label(for="letter_topic") Тема письма
-              textarea(rows="4" required="required" class="form-control" name="letter_topic")
+              textarea(rows="2" required="required" class="form-control" name="letter_topic")
         button(type="submit" class="btn btn-primary btn-lg") Отправить
   //- script(src="/cards.js")
   script(src="/default.js")

@@ -22,13 +22,14 @@ app.post('/office/mailing', function(req, res) {
   let addresses = req.body.addresses.split('\n');
   let names = req.body.names.split('\n');
   let grades = req.body.grades.split('\n');
+  let additional = req.body.additional.split('\n');
   let letter_template = req.body.letter_template;
   let allMails = '';
   var promises = [];
   for (let i=0;i<addresses.length;i++){
 
     promises.push(new Promise(function(resolve, reject) {
-    let letter = letter_template.replace('{{{1}}}', names[i]).replace('{{{2}}}', grades[i]);
+    let letter = letter_template.replace('{{{1}}}', names[i]).replace('{{{2}}}', grades[i]).replace('{{{3}}}', additional[i]);
 
     allMails += addresses[i] + ' ' + names[i] + '<br/>' + letter + '<br/>';
 
