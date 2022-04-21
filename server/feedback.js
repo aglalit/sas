@@ -245,6 +245,9 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
     },
     Iatluk: {
       email: 'lidiaoutlook@gmail.com'
+    },
+    Golechkova: {
+      email: 'o.golechkova@gmail.com'
     }
 
   };
