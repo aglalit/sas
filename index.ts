@@ -163,7 +163,8 @@ app.use(cors(corsOptions));
 app.use(session({
  secret: 'schoolofadvancedstudiessecret',
  cookie: { maxAge: 600000000 },
- store: new MongoStore({ mongooseConnection: mongoose.connection, collection: 'sessions_storage' })
+ store: new MongoStore({ mongooseConnection: mongoose.connection, collection: 'sessions_storage' }),
+ resave: true
 })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
