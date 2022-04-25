@@ -251,9 +251,39 @@ body
                 sup(style="color:red") *
               input(type="text" required="required" class="form-control" name="Ф.И.О.")
             .flex-container.column
-              label(for="City") Город
+              label(for="Email") Email
+                sup(style="color:red") *
+              input(type="email" required="required" class="form-control" name="Email")
+            .flex-container.column
+              label(for="Мобильный телефон") Мобильный телефон
+                sup(style="color:red") *
+              input(type="tel" required="required" class="form-control" name="Мобильный телефон")
+            .flex-container.column
+              label(for="City") Город, населенный пункт
                 sup(style="color:red") *
               input(type="text" required="required" class="form-control" name="City")
+            .flex-container.column
+              label(for="Школа") Школа
+                sup(style="color:red") *
+              input(type="text" required="required" class="form-control" name="Школа")
+            //- .flex-container.column
+            //-   label(for="Школа") Школа
+            //-     sup(style="color:red") *
+            //-   input(type="text" required="required" class="form-control" name="Школа")
+            //- .flex-container.column
+            //-   label(for="Question") Вопрос
+            //-   textarea(rows="4"  class="form-control" name="Question")
+            .flex-container.column
+              label(for="Класс" ) Класс
+                sup(style="color:red") *
+              select(class="form-control" required="required" name="Класс"  )
+                option(value="Не выбрано")  Не выбрано
+                option(value="9") 9
+                option(value="10") 10
+            .flex-container.column
+              label(for="Other source") Как вы узнали о Летней школе?
+              input(type="text"  class="form-control" name="Other source")
+            
             //- .flex-container.column
             //-   label(for="Passport") Passport: Series and Number
             //-     sup(style="color:red") *
@@ -264,10 +294,7 @@ body
             //-   label(for="Birthdate") Date of Birth
             //-     sup(style="color:red") *
             //-   input(type="date" required="required" class="form-control" name="Birthdate")
-            .flex-container.column
-              label(for="Email") Email
-                sup(style="color:red") *
-              input(type="email" required="required" class="form-control" name="Email")
+            
             //- .flex-container.column
             //-   label(for="About") Tell about yourself
             //-   input(type="text" class="form-control" name="About")
