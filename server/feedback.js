@@ -181,7 +181,7 @@ module.exports = function (app, Session, User, transporter, isLoggedIn, logger) 
       email: 'v.orlov05@gmail.com'
     },
     Lysenko: {
-      email: 'aflysenko@gmail.com'
+      email: 'a.lysenko@utmn.ru'
     },
     Tarasov: {
       email: 'ptarasovhseru@gmail.com'
