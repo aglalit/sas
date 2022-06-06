@@ -62,16 +62,18 @@ const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 // Use connect method to connect to the server
 const db = mongoose.connection;
 
-promise.then(function (db) {
- db.on('error', function (error) {
- console.error.bind(console, 'connection error:');
- logger.error(error);
- });
- db.on('open', function () {
- logger.error('Mongo is connected');
- console.log('Mongo is connected');
- });
-});
+if (db){
+  promise.then(function (db) {
+   db.on('error', function (error) {
+   console.error.bind(console, 'connection error:');
+   logger.error(error);
+   });
+   db.on('open', function () {
+   logger.error('Mongo is connected');
+   console.log('Mongo is connected');
+   });
+  });
+}
 
 const user = process.env.TRANSPORTER;
 const pass = process.env.TRANSPORTER_PASSWORD;
