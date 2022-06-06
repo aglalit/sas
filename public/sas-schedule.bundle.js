@@ -4595,7 +4595,7 @@
     window.onload = function () {
       window.setInterval(function () {
         generateSchedule();
-      }, 5000);
+      }, 30000);
     };
 
     function generateSchedule () {
