@@ -55,6 +55,11 @@ const promise = mongoose.connect(process.env.MONGODB_URI.toString()
  }
 );
 
+process.on('unhandledRejection', error => {
+
+  console.log('unhandledRejection', error.message);
+});
+
 
 // Connection URL
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
