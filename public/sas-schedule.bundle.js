@@ -4604,7 +4604,12 @@
           return response.json();
         })
         .then((data) => {
-          var dataParsed = JSON.parse(data);
+          var dataParsed;
+          if (typeof data === 'object'){
+            dataParsed = data;
+          } else {
+            dataParsed = JSON.parse(data);
+          }
           // set to Monday of this week
           var monday = new Date();
           var sunday = new Date();

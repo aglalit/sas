@@ -15,7 +15,6 @@ module.exports = function (app, Schedule, logger) {
 )
 
   app.get('/schedule_data', function (req, res) {
-    res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(data_manual));
     // Schedule.find().exec(function (err, data) {
     //   if (err) { res.send(err); console.log(err); } else {
