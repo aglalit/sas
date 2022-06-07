@@ -44,33 +44,33 @@ let logger = winston.createLogger({
 });
 // logger.error('Error log:');
 
-// const promise = mongoose.connect(process.env.MONGODB_URI.toString()
-//  , {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}).then(
-//  () => {
-//  console.log('Database is connected');
-//  },
-//  err => {
-//  logger.error(err);
-//  console.log('Can not connect to the database' + err);
-//  }
-// );
+const promise = mongoose.connect(process.env.MONGODB_URI.toString()
+ , {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}).then(
+ () => {
+ console.log('Database is connected');
+ },
+ err => {
+ logger.error(err);
+ console.log('Can not connect to the database' + err);
+ }
+);
 
 // Connection URL
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 // Use connect method to connect to the server
-// const db = mongoose.connection;
-//
-// promise.then(function (db) {
-//  db.on('error', function (error) {
-//  console.error.bind(console, 'connection error:');
-//  logger.error(error);
-//  });
-//  db.on('open', function () {
-//  logger.error('Mongo is connected');
-//  console.log('Mongo is connected');
-//  });
-// });
+const db = mongoose.connection;
+
+promise.then(function (db) {
+ db.on('error', function (error) {
+ console.error.bind(console, 'connection error:');
+ logger.error(error);
+ });
+ db.on('open', function () {
+ logger.error('Mongo is connected');
+ console.log('Mongo is connected');
+ });
+});
 
 const user = process.env.TRANSPORTER;
 const pass = process.env.TRANSPORTER_PASSWORD;
@@ -160,13 +160,12 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // required for passport
-// app.use(session({
-//  secret: 'schoolofadvancedstudiessecret',
-//  cookie: { maxAge: 600000000 },
-//  store: new MongoStore({ mongooseConnection: mongoose.connection, collection: 'sessions_storage' }),
-//  resave: true
-// })); 
-
+app.use(session({
+ secret: 'schoolofadvancedstudiessecret',
+ cookie: { maxAge: 600000000 },
+ store: new MongoStore({ mongooseConnection: mongoose.connection, collection: 'sessions_storage' }),
+ resave: true
+})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 require('./config/passport')(passport);
