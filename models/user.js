@@ -107,7 +107,7 @@ var userSchema = mongoose.Schema({
       ba_2021_year2_q4_dt: Boolean,
       ba_2021_q4_rs: Boolean,
       ma_xhe_2021_year1_q4_eep: Boolean,
-      ma_xhe_2021_year1_q4_oa: Boolean,
+      ma_xhe_2021_year1_q4_oc: Boolean,
       ma_xhe_2021_year1_q4_pd: Boolean,
       ma_xhe_2021_year2_q4_her: Boolean,
       ma_xhe_2021_year1_q4_ps4: Boolean,
